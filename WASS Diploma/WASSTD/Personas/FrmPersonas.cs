@@ -14,7 +14,7 @@ namespace WASSTD.Personas
         // Declaro las variables que voy a utilizar en el formulario
         private static FrmPersonas instancia;
         Controladora. cPersona cPersona; 
-        FrmPersonas FormPersona;
+        FrmPersona FormPersona;
         BindingSource BsPersonas;
         Modelo_Entidades.Usuario miUsuario;
 
@@ -112,7 +112,7 @@ namespace WASSTD.Personas
                 return;
             }
 
-            FormPersona = new FrmProfesional("Modifica", (Modelo_Entidades.Profesional)dgv_datos.CurrentRow.DataBoundItem, miUsuario);
+            FormPersona = new FrmPersona("Modifica", (Modelo_Entidades.Persona)dgv_datos.CurrentRow.DataBoundItem, miUsuario);
             DialogResult dr = FormPersona.ShowDialog();
             if (dr == DialogResult.OK)
             {
@@ -128,7 +128,7 @@ namespace WASSTD.Personas
                 return;
             }
 
-            FormPersona = new FrmProfesional("Consulta", (Modelo_Entidades.Profesional)dgv_datos.CurrentRow.DataBoundItem, miUsuario);
+            FormPersona = new FrmPersona("Consulta", (Modelo_Entidades.Persona)dgv_datos.CurrentRow.DataBoundItem, miUsuario);
             DialogResult dr = FormPersona.ShowDialog();
         }
 
