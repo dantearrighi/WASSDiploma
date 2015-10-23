@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Listado_Tit_Esp" targetNamespace="http://tempuri.org/Listado_Tit_Esp.xsd" xmlns:mstns="http://tempuri.org/Listado_Tit_Esp.xsd" xmlns="http://tempuri.org/Listado_Tit_Esp.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="WASSTDConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="WASSTDConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WASSTD.Properties.Settings.GlobalReference.Default.WASSTDConnectionString2" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TitulosTableAdapter" GeneratorDataComponentClassName="TitulosTableAdapter" Name="Titulos" UserDataComponentName="TitulosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="WASSTDConnectionString2 (Settings)" DbObjectName="WASSTD.dbo.Especialidades" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        COUNT(Titulos.id) AS Cantidad, Especialidades.descripcion
+FROM            Titulos INNER JOIN
+                         Especialidades ON Titulos.Especialidad_id = Especialidades.id
+GROUP BY Especialidades.descripcion</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="descripcion" DataSetColumn="descripcion" />
+              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Listado_Tit_Esp" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Listado_Tit_Esp" msprop:Generator_UserDSName="Listado_Tit_Esp">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Titulos" msprop:Generator_TableClassName="TitulosDataTable" msprop:Generator_TableVarName="tableTitulos" msprop:Generator_TablePropName="Titulos" msprop:Generator_RowDeletingName="TitulosRowDeleting" msprop:Generator_UserTableName="Titulos" msprop:Generator_RowChangingName="TitulosRowChanging" msprop:Generator_RowEvHandlerName="TitulosRowChangeEventHandler" msprop:Generator_RowDeletedName="TitulosRowDeleted" msprop:Generator_RowEvArgName="TitulosRowChangeEvent" msprop:Generator_RowChangedName="TitulosRowChanged" msprop:Generator_RowClassName="TitulosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantidad" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

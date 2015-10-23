@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Controladora
+{
+    public class cNivel
+    {
+        // Declaro las variables a utilizar en la clase
+        private static cNivel instancia;
+        private Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
+
+        // Aplico el patrón de diseño Singleton a la clase
+        public static cNivel ObtenerInstancia()
+        {
+            if (instancia == null)
+                instancia = new cNivel();
+
+            return instancia;
+        }
+
+        // Coloco al constructor como privado.
+        private cNivel()
+        {
+            oModelo_Entidades = Modelo_Entidades.WASSTDEntidades.ObtenerInstancia();
+        }
+
+        // Obtener las provincias
+        public List<Modelo_Entidades.Nivel> ObtenerNiveles()
+        {
+            return oModelo_Entidades.Niveles.ToList();
+        }
+    }
+}
