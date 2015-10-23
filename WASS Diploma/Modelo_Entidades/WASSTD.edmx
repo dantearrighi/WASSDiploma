@@ -1499,6 +1499,15 @@
             <End Role="Expediente" EntitySet="Expedientes" />
           </AssociationSet>
           <EntitySet Name="Videos" EntityType="WASSTDModelo.Video" />
+          <EntitySet Name="Personas" EntityType="WASSTDModelo.Persona" />
+          <AssociationSet Name="Tipo_DocumentoPersona" Association="WASSTDModelo.Tipo_DocumentoPersona">
+            <End Role="Persona" EntitySet="Personas" />
+            <End Role="Tipo_Documento" EntitySet="Tipos_Documentos" />
+          </AssociationSet>
+          <AssociationSet Name="PersonaDirecciones" Association="WASSTDModelo.PersonaDirecciones">
+            <End Role="Persona" EntitySet="Personas" />
+            <End Role="Direccion" EntitySet="Direcciones" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="Usuario">
           <Key>
@@ -1823,6 +1832,8 @@
           <Property Type="String" Name="direccion" Nullable="false" />
           <NavigationProperty Name="Profesional" Relationship="WASSTDModelo.ProfesionalDirecciones" FromRole="Direccion" ToRole="Profesional" />
           <NavigationProperty Name="Localidad" Relationship="WASSTDModelo.LocalidadDireccion" FromRole="Direccion" ToRole="Localidad" />
+          <NavigationProperty Name="Persona" Relationship="WASSTDModelo.PersonaDirecciones" FromRole="Direccion" ToRole="Persona" />
+          <Property Name="Persona_dni_cuil" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="ProfesionalDirecciones">
           <End Type="WASSTDModelo.Profesional" Role="Profesional" Multiplicity="1" />
@@ -1835,6 +1846,7 @@
           <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="descripcion" Nullable="false" />
           <NavigationProperty Name="Profesionales" Relationship="WASSTDModelo.Tipo_DocumentoProfesional" FromRole="Tipo_Documento" ToRole="Profesional" />
+          <NavigationProperty Name="Persona" Relationship="WASSTDModelo.Tipo_DocumentoPersona" FromRole="Tipo_Documento" ToRole="Persona" />
         </EntityType>
         <EntityType Name="Matricula">
           <Key>
@@ -2095,6 +2107,32 @@
           <Property Type="String" Name="descripcion" Nullable="false" />
           <Property Type="String" Name="link" Nullable="false" />
         </EntityType>
+        <EntityType Name="Persona">
+          <Key>
+            <PropertyRef Name="dni_cuil" />
+          </Key>
+          <Property Name="dni_cuil" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="apellido_nombre" Type="String" Nullable="false" />
+          <Property Name="nrotelfijo" Type="Int32" Nullable="false" />
+          <Property Name="nrotelcelu" Type="Int32" Nullable="false" />
+          <Property Name="email" Type="String" Nullable="false" />
+          <NavigationProperty Name="Tipo_Documento" Relationship="WASSTDModelo.Tipo_DocumentoPersona" FromRole="Persona" ToRole="Tipo_Documento" />
+          <NavigationProperty Name="Direcciones" Relationship="WASSTDModelo.PersonaDirecciones" FromRole="Persona" ToRole="Direccion" />
+        </EntityType>
+        <EntityType Name="Abogado" BaseType="WASSTDModelo.Persona">
+        </EntityType>
+        <EntityType Name="Cliente" BaseType="WASSTDModelo.Persona" >
+          <Property Name="clave_fiscal" Type="String" Nullable="false" />
+          <Property Name="fecha_nacimiento" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <Association Name="Tipo_DocumentoPersona">
+          <End Type="WASSTDModelo.Persona" Role="Persona" Multiplicity="*" />
+          <End Type="WASSTDModelo.Tipo_Documento" Role="Tipo_Documento" Multiplicity="1" />
+        </Association>
+        <Association Name="PersonaDirecciones">
+          <End Type="WASSTDModelo.Persona" Role="Persona" Multiplicity="1" />
+          <End Type="WASSTDModelo.Direccion" Role="Direccion" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2852,7 +2890,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="WASSTD" ZoomLevel="163" ShowGrid="true" DisplayType="false">
+      <Diagram Name="WASSTD" ZoomLevel="63" ShowGrid="true" DisplayType="false">
         <EntityTypeShape EntityType="WASSTDModelo.Usuario" Width="1.5" PointX="0.75" PointY="2.875" Height="2.085348307291667" />
         <EntityTypeShape EntityType="WASSTDModelo.Grupo" Width="1.5" PointX="0.75" PointY="0.5" Height="1.5923063151041665" />
         <AssociationConnector Association="WASSTDModelo.UsuarioGrupo">
@@ -2940,7 +2978,7 @@
           <ConnectorPoint PointX="10.479164166666665" PointY="14.797841796874998" />
           <ConnectorPoint PointX="2.625" PointY="14.797841796874998" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="WASSTDModelo.Tipo_Documento" Width="1.875" PointX="3.375" PointY="6.875" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="WASSTDModelo.Tipo_Documento" Width="1.875" PointX="3.375" PointY="6.75" Height="1.5956835937499996" IsExpanded="true" />
         <EntityTypeShape EntityType="WASSTDModelo.Matricula" Width="1.875" PointX="6.5" PointY="15.25" Height="2.7494921874999996" />
         <AssociationConnector Association="WASSTDModelo.ProfesionalMatricula">
           <ConnectorPoint PointX="10.5624975" PointY="13.124410807291666" />
@@ -3128,6 +3166,14 @@
           <ConnectorPoint PointX="20.25" PointY="9.1295475260416659" />
         </AssociationConnector>
         <EntityTypeShape EntityType="WASSTDModelo.Video" Width="1.875" PointX="0.75" PointY="24.75" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="WASSTDModelo.Persona" Width="1.5" PointX="8.25" PointY="3.75" />
+        <EntityTypeShape EntityType="WASSTDModelo.Abogado" Width="1.5" PointX="7.25" PointY="6.25" IsExpanded="true" />
+        <InheritanceConnector EntityType="WASSTDModelo.Abogado" />
+        <EntityTypeShape EntityType="WASSTDModelo.Cliente" Width="1.5" PointX="9.875" PointY="6.25" IsExpanded="true" />
+        <InheritanceConnector EntityType="WASSTDModelo.Cliente" />
+        <AssociationConnector Association="WASSTDModelo.Tipo_DocumentoPersona" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="WASSTDModelo.PersonaDirecciones" />
         </Diagram>
     </Diagrams>
   </Designer>
