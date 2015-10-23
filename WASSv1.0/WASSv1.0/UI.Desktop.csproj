@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E77E3E85-A428-4BDE-811E-F28D9E33B002}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WASSv1._0</RootNamespace>
+    <AssemblyName>WASSv1.0</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Absolute</BootstrapperComponentsLocation>
+    <BootstrapperComponentsUrl>https://www.dropbox.com/sh/rvaxmbmx40sy3nr/X3lbtBlXE_</BootstrapperComponentsUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Microsoft.Office.Tools.Excel, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Office, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\windows\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Calculos\frmCalculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculos\frmCalculos.Designer.cs">
+      <DependentUpon>frmCalculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculos\frmHaber24241.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculos\frmHaber24241.Designer.cs">
+      <DependentUpon>frmHaber24241.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\frmClienteABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\frmClienteABM.Designer.cs">
+      <DependentUpon>frmClienteABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\frmListaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\frmListaClientes.Designer.cs">
+      <DependentUpon>frmListaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInformeTramite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInformeTramite.Designer.cs">
+      <DependentUpon>frmInformeTramite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="informeTramite.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>informeTramite.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Interacción\frmConfirmarElim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interacción\frmConfirmarElim.Designer.cs">
+      <DependentUpon>frmConfirmarElim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interacción\frmTeclasAccRap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interacción\frmTeclasAccRap.Designer.cs">
+      <DependentUpon>frmTeclasAccRap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Clientes\frmClienteABM.resx">
+      <DependentUpon>frmClienteABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes\frmListaClientes.resx">
+      <DependentUpon>frmListaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interacción\frmConfirmarElim.resx">
+      <DependentUpon>frmConfirmarElim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interacción\frmTeclasAccRap.resx">
+      <DependentUpon>frmTeclasAccRap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tramites\frmListaTramites.resx">
+      <DependentUpon>frmListaTramites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tramites\frmTramiteABM.resx">
+      <DependentUpon>frmTramiteABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tramites\informeTramite.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Tramites\frmListaTramites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tramites\frmListaTramites.Designer.cs">
+      <DependentUpon>frmListaTramites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tramites\frmTramiteABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tramites\frmTramiteABM.Designer.cs">
+      <DependentUpon>frmTramiteABM.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data.Database\Data.Database.csproj">
+      <Project>{06CBE73D-02BA-4B03-8C89-1DA8B819FBB8}</Project>
+      <Name>Data.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{B5993B5B-3EC2-4252-8A8E-A5112AE1DF39}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_add_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Check_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Check_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_add_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excel-icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Excel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stockmarket.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dollar_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\surveys24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\theory32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\schedule32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\options32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wallpaperMain.fw.png" />
+    <None Include="Resources\Check_16x16.png" />
+    <EmbeddedResource Include="Calculos\frmCalculos.resx">
+      <DependentUpon>frmCalculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculos\frmHaber24241.resx">
+      <DependentUpon>frmHaber24241.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInformeTramite.resx">
+      <DependentUpon>frmInformeTramite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="informeTramite.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>informeTramite.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Cinzano Dandy_78.wav" />
+    <None Include="Resources\Delete_24x24.png" />
+    <None Include="Resources\close_16.png" />
+    <None Include="Resources\delete_16.png" />
+    <None Include="Resources\calculator32.png" />
+    <None Include="Resources\card file.ico" />
+    <None Include="Resources\chart32.png" />
+    <Content Include="Resources\Espn_69.wav" />
+    <None Include="Resources\Refresh_48x48.png" />
+    <None Include="Resources\Rename_32x32.png" />
+    <None Include="Resources\forward24.png" />
+    <None Include="Resources\Statistics.png" />
+    <None Include="Resources\Information_48x48.png" />
+    <None Include="Resources\go-into32.png" />
+    <None Include="Resources\forward32.png" />
+    <None Include="Resources\Log Out_48x48.png" />
+    <None Include="Resources\Log Out_256x256.png" />
+    <None Include="Resources\warning_256.png" />
+    <None Include="Resources\warning_48.png" />
+    <None Include="Resources\WASS W.A Tramites Previsionales.gif" />
+    <None Include="Resources\WASS W.A Fondo1.gif" />
+    <None Include="Resources\WASS W.A Fondo.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="BusinessObjects.CrystalReports.10.5">
+      <Visible>False</Visible>
+      <ProductName>Crystal Reports Basic para Visual Studio 2008 %28x86, x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Abogados\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

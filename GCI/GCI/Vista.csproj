@@ -1,0 +1,1034 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{56C15B7A-F7C9-4D5C-90A4-88A6F9C82BB9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GCI</RootNamespace>
+    <AssemblyName>GCI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>GCI.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Boletas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Boletas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Boleta_Prof.cs">
+      <DependentUpon>Boleta_Prof.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Boleta_Prof.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Boleta_Prof.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Botoneras\Botonera1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Botoneras\Botonera1.Designer.cs">
+      <DependentUpon>Botonera1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Auditorias\FrmAuditoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auditorias\FrmAuditoria.Designer.cs">
+      <DependentUpon>FrmAuditoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Auditorias\FrmAuditorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auditorias\FrmAuditorias.Designer.cs">
+      <DependentUpon>FrmAuditorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Certificado_Prof.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Certificado_Prof.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Certificado_Prof_I.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Certificado_Prof_I.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Auditorias\FrmAuditoriaCuotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auditorias\FrmAuditoriaCuotas.Designer.cs">
+      <DependentUpon>FrmAuditoriaCuotas.cs</DependentUpon>
+    </Compile>
+    <None Include="App.Config" />
+    <Compile Include="Estadísticas\FrmEstadisticas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadísticas\FrmEstadisticas.Designer.cs">
+      <DependentUpon>FrmEstadisticas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayuda\FrmManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayuda\FrmManual.Designer.cs">
+      <DependentUpon>FrmManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadísticas\FrmListado_Prof_Est.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadísticas\FrmListado_Prof_Est.Designer.cs">
+      <DependentUpon>FrmListado_Prof_Est.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadísticas\FrmListado_Prof_TM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadísticas\FrmListado_Prof_TM.Designer.cs">
+      <DependentUpon>FrmListado_Prof_TM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadísticas\FrmListado_Mat_Esp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadísticas\FrmListado_Mat_Esp.Designer.cs">
+      <DependentUpon>FrmListado_Mat_Esp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadísticas\FrmListado_Tit_Uni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadísticas\FrmListado_Tit_Uni.Designer.cs">
+      <DependentUpon>FrmListado_Tit_Uni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadísticas\FrmListado_Tit_Esp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadísticas\FrmListado_Tit_Esp.Designer.cs">
+      <DependentUpon>FrmListado_Tit_Esp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadísticas\FrmListado_Cuotas_Esp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadísticas\FrmListado_Cuotas_Esp.Designer.cs">
+      <DependentUpon>FrmListado_Cuotas_Esp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadísticas\FrmListado_Cuotas_Desc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadísticas\FrmListado_Cuotas_Desc.Designer.cs">
+      <DependentUpon>FrmListado_Cuotas_Desc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comitente\FrmComitente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comitente\FrmComitente.Designer.cs">
+      <DependentUpon>FrmComitente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comitente\FrmComitentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comitente\FrmComitentes.Designer.cs">
+      <DependentUpon>FrmComitentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Expediente\FrmSeleccionExpedientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expediente\FrmSeleccionExpedientes.Designer.cs">
+      <DependentUpon>FrmSeleccionExpedientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadísticas\FrmListado_Expte_Esp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadísticas\FrmListado_Expte_Esp.Designer.cs">
+      <DependentUpon>FrmListado_Expte_Esp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadísticas\FrmListado_Expte_Monto_Esp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadísticas\FrmListado_Expte_Monto_Esp.Designer.cs">
+      <DependentUpon>FrmListado_Expte_Monto_Esp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadísticas\FrmListado_Expte_Obra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadísticas\FrmListado_Expte_Obra.Designer.cs">
+      <DependentUpon>FrmListado_Expte_Obra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tarea\FrmTarea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarea\FrmTarea.Designer.cs">
+      <DependentUpon>FrmTarea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tarea\FrmTareas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarea\FrmTareas.Designer.cs">
+      <DependentUpon>FrmTareas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listados_Cuotas_Desc.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Listados_Cuotas_Desc.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Listados_Expte_Obra.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Listados_Expte_Obra.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Listados_Mat_Esp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Listados_Mat_Esp.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Listados_Prof_Est.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Listados_Prof_Est.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Listados_Prof_TM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Listados_Prof_TM.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Listados_Tit_Uni.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Listados_Tit_Uni.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Listado_Cuotas_Esp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Listado_Cuotas_Esp.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Listado_Exptes_Monto_Esp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Listado_Exptes_Monto_Esp.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Listado_Expte_Esp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Listado_Expte_Esp.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Listado_Tit_Esp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Listado_Tit_Esp.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\FrmCambiarClave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seguridad\FrmCambiarClave.Designer.cs">
+      <DependentUpon>FrmCambiarClave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Profesional\FrmImprimirCertificado_I.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profesional\FrmImprimirCertificado_I.Designer.cs">
+      <DependentUpon>FrmImprimirCertificado_I.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cta_Cte\FrmRecibos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cta_Cte\FrmRecibos.Designer.cs">
+      <DependentUpon>FrmRecibos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cuotas\FrmSeleccionCuotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cuotas\FrmSeleccionCuotas.Designer.cs">
+      <DependentUpon>FrmSeleccionCuotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Expediente\FrmExpediente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expediente\FrmExpediente.Designer.cs">
+      <DependentUpon>FrmExpediente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Expediente\FrmExpedientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expediente\FrmExpedientes.Designer.cs">
+      <DependentUpon>FrmExpedientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comitente\FrmSeleccionComitentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comitente\FrmSeleccionComitentes.Designer.cs">
+      <DependentUpon>FrmSeleccionComitentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cta_Cte\FrmImprimirRecibo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cta_Cte\FrmImprimirRecibo.Designer.cs">
+      <DependentUpon>FrmImprimirRecibo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cuotas\FrmImprimirBoleta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cuotas\FrmImprimirBoleta.Designer.cs">
+      <DependentUpon>FrmImprimirBoleta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cuotas\FrmImprimirBoleta_Prof.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cuotas\FrmImprimirBoleta_Prof.Designer.cs">
+      <DependentUpon>FrmImprimirBoleta_Prof.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Profesional\FrmImprimirCertificado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profesional\FrmImprimirCertificado.Designer.cs">
+      <DependentUpon>FrmImprimirCertificado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Titulo\FrmImprimirTitulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Titulo\FrmImprimirTitulo.Designer.cs">
+      <DependentUpon>FrmImprimirTitulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Profesional\FrmSeleccionProfesionales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profesional\FrmSeleccionProfesionales.Designer.cs">
+      <DependentUpon>FrmSeleccionProfesionales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recibos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recibos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\FrmRecuperarClave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seguridad\FrmRecuperarClave.Designer.cs">
+      <DependentUpon>FrmRecuperarClave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Titulos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Titulos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Titulo\FrmPlanesTitulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Titulo\FrmPlanesTitulo.Designer.cs">
+      <DependentUpon>FrmPlanesTitulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Profesional\FrmMatriculasProfesional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profesional\FrmMatriculasProfesional.Designer.cs">
+      <DependentUpon>FrmMatriculasProfesional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cuotas\FrmCuotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cuotas\FrmCuotas.Designer.cs">
+      <DependentUpon>FrmCuotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Titulo\FrmTitulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Titulo\FrmTitulos.Designer.cs">
+      <DependentUpon>FrmTitulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Profesional\FrmProfesional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profesional\FrmProfesional.Designer.cs">
+      <DependentUpon>FrmProfesional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Profesional\FrmProfesionales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profesional\FrmProfesionales.Designer.cs">
+      <DependentUpon>FrmProfesionales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Titulo\FrmTitulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Titulo\FrmTitulo.Designer.cs">
+      <DependentUpon>FrmTitulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\FrmGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seguridad\FrmGrupo.Designer.cs">
+      <DependentUpon>FrmGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\FrmGrupos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seguridad\FrmGrupos.Designer.cs">
+      <DependentUpon>FrmGrupos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\FrmPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seguridad\FrmPerfil.Designer.cs">
+      <DependentUpon>FrmPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\FrmPerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seguridad\FrmPerfiles.Designer.cs">
+      <DependentUpon>FrmPerfiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seguridad\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\FrmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seguridad\FrmUsuario.Designer.cs">
+      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\FrmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seguridad\FrmUsuarios.Designer.cs">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Botoneras\Botonera1.resx">
+      <DependentUpon>Botonera1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Auditorias\FrmAuditoria.resx">
+      <DependentUpon>FrmAuditoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Auditorias\FrmAuditorias.resx">
+      <DependentUpon>FrmAuditorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cta_Cte\Recibos.rdlc" />
+    <EmbeddedResource Include="Auditorias\FrmAuditoriaCuotas.resx">
+      <DependentUpon>FrmAuditoriaCuotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadísticas\FrmEstadisticas.resx">
+      <DependentUpon>FrmEstadisticas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ayuda\FrmManual.resx">
+      <DependentUpon>FrmManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadísticas\Profesionales_Por_Estado.rdlc" />
+    <EmbeddedResource Include="Estadísticas\FrmListado_Prof_Est.resx">
+      <DependentUpon>FrmListado_Prof_Est.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadísticas\FrmListado_Prof_TM.resx">
+      <DependentUpon>FrmListado_Prof_TM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadísticas\Profesionales_Por_TM.rdlc" />
+    <EmbeddedResource Include="Estadísticas\FrmListado_Mat_Esp.resx">
+      <DependentUpon>FrmListado_Mat_Esp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadísticas\Matriculas_Por_Esp.rdlc" />
+    <EmbeddedResource Include="Estadísticas\FrmListado_Tit_Uni.resx">
+      <DependentUpon>FrmListado_Tit_Uni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadísticas\Cuotas_Por_Esp.rdlc" />
+    <EmbeddedResource Include="Estadísticas\Titulos_Por_Uni.rdlc" />
+    <EmbeddedResource Include="Estadísticas\FrmListado_Tit_Esp.resx">
+      <DependentUpon>FrmListado_Tit_Esp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadísticas\Titulos_Por_Esp.rdlc" />
+    <EmbeddedResource Include="Estadísticas\FrmListado_Cuotas_Esp.resx">
+      <DependentUpon>FrmListado_Cuotas_Esp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadísticas\FrmListado_Cuotas_Desc.resx">
+      <DependentUpon>FrmListado_Cuotas_Desc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadísticas\Cuotas_Por_Desc.rdlc" />
+    <EmbeddedResource Include="Expediente\FrmSeleccionExpedientes.resx">
+      <DependentUpon>FrmSeleccionExpedientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comitente\FrmComitente.resx">
+      <DependentUpon>FrmComitente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comitente\FrmComitentes.resx">
+      <DependentUpon>FrmComitentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadísticas\FrmListado_Expte_Esp.resx">
+      <DependentUpon>FrmListado_Expte_Esp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadísticas\Expedientes_Por_Esp.rdlc" />
+    <EmbeddedResource Include="Estadísticas\FrmListado_Expte_Monto_Esp.resx">
+      <DependentUpon>FrmListado_Expte_Monto_Esp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadísticas\Expedientes_Por_Monto_Esp.rdlc" />
+    <EmbeddedResource Include="Estadísticas\FrmListado_Expte_Obra.resx">
+      <DependentUpon>FrmListado_Expte_Obra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadísticas\Expedientes_Por_Obra.rdlc" />
+    <EmbeddedResource Include="Tarea\FrmTarea.resx">
+      <DependentUpon>FrmTarea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarea\FrmTareas.resx">
+      <DependentUpon>FrmTareas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\FrmCambiarClave.resx">
+      <DependentUpon>FrmCambiarClave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profesional\FrmImprimirCertificado_I.resx">
+      <DependentUpon>FrmImprimirCertificado_I.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cuotas\Boleta_Prof.rdlc" />
+    <EmbeddedResource Include="Cuotas\FrmCuotas.resx">
+      <DependentUpon>FrmCuotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cta_Cte\FrmRecibos.resx">
+      <DependentUpon>FrmRecibos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cuotas\FrmSeleccionCuotas.resx">
+      <DependentUpon>FrmSeleccionCuotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expediente\FrmExpediente.resx">
+      <DependentUpon>FrmExpediente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expediente\FrmExpedientes.resx">
+      <DependentUpon>FrmExpedientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comitente\FrmSeleccionComitentes.resx">
+      <DependentUpon>FrmSeleccionComitentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cta_Cte\FrmImprimirRecibo.resx">
+      <DependentUpon>FrmImprimirRecibo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cuotas\Boletas.rdlc" />
+    <EmbeddedResource Include="Cuotas\FrmImprimirBoleta.resx">
+      <DependentUpon>FrmImprimirBoleta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cuotas\FrmImprimirBoleta_Prof.resx">
+      <DependentUpon>FrmImprimirBoleta_Prof.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profesional\FrmImprimirCertificado.resx">
+      <DependentUpon>FrmImprimirCertificado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profesional\Certificado_Habilitación.rdlc" />
+    <EmbeddedResource Include="Profesional\Certificado_Incumbencias.rdlc" />
+    <EmbeddedResource Include="Titulo\FrmImprimirTitulo.resx">
+      <DependentUpon>FrmImprimirTitulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profesional\FrmSeleccionProfesionales.resx">
+      <DependentUpon>FrmSeleccionProfesionales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Titulo\Titulos.rdlc" />
+    <EmbeddedResource Include="Seguridad\FrmRecuperarClave.resx">
+      <DependentUpon>FrmRecuperarClave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Titulo\FrmPlanesTitulo.resx">
+      <DependentUpon>FrmPlanesTitulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profesional\FrmMatriculasProfesional.resx">
+      <DependentUpon>FrmMatriculasProfesional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Titulo\FrmTitulos.resx">
+      <DependentUpon>FrmTitulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profesional\FrmProfesional.resx">
+      <DependentUpon>FrmProfesional.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profesional\FrmProfesionales.resx">
+      <DependentUpon>FrmProfesionales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Titulo\FrmTitulo.resx">
+      <DependentUpon>FrmTitulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\FrmGrupo.resx">
+      <DependentUpon>FrmGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\FrmGrupos.resx">
+      <DependentUpon>FrmGrupos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\FrmPerfil.resx">
+      <DependentUpon>FrmPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\FrmPerfiles.resx">
+      <DependentUpon>FrmPerfiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\FrmUsuario.resx">
+      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\FrmUsuarios.resx">
+      <DependentUpon>FrmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Boletas.xsc">
+      <DependentUpon>Boletas.xsd</DependentUpon>
+    </None>
+    <None Include="Boletas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Boletas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Boletas.xss">
+      <DependentUpon>Boletas.xsd</DependentUpon>
+    </None>
+    <None Include="Boleta_Prof.xsc">
+      <DependentUpon>Boleta_Prof.xsd</DependentUpon>
+    </None>
+    <None Include="Boleta_Prof.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Boleta_Prof.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Boleta_Prof.xss">
+      <DependentUpon>Boleta_Prof.xsd</DependentUpon>
+    </None>
+    <None Include="Certificado_Prof.xsc">
+      <DependentUpon>Certificado_Prof.xsd</DependentUpon>
+    </None>
+    <None Include="Certificado_Prof.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Certificado_Prof.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Certificado_Prof.xss">
+      <DependentUpon>Certificado_Prof.xsd</DependentUpon>
+    </None>
+    <None Include="Certificado_Prof_I.xsc">
+      <DependentUpon>Certificado_Prof_I.xsd</DependentUpon>
+    </None>
+    <None Include="Certificado_Prof_I.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Certificado_Prof_I.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Certificado_Prof_I.xss">
+      <DependentUpon>Certificado_Prof_I.xsd</DependentUpon>
+    </None>
+    <None Include="Listados_Cuotas_Desc.xsc">
+      <DependentUpon>Listados_Cuotas_Desc.xsd</DependentUpon>
+    </None>
+    <None Include="Listados_Cuotas_Desc.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Listados_Cuotas_Desc.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Listados_Cuotas_Desc.xss">
+      <DependentUpon>Listados_Cuotas_Desc.xsd</DependentUpon>
+    </None>
+    <None Include="Listados_Expte_Obra.xsc">
+      <DependentUpon>Listados_Expte_Obra.xsd</DependentUpon>
+    </None>
+    <None Include="Listados_Expte_Obra.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Listados_Expte_Obra.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Listados_Expte_Obra.xss">
+      <DependentUpon>Listados_Expte_Obra.xsd</DependentUpon>
+    </None>
+    <None Include="Listados_Mat_Esp.xsc">
+      <DependentUpon>Listados_Mat_Esp.xsd</DependentUpon>
+    </None>
+    <None Include="Listados_Mat_Esp.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Listados_Mat_Esp.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Listados_Mat_Esp.xss">
+      <DependentUpon>Listados_Mat_Esp.xsd</DependentUpon>
+    </None>
+    <None Include="Listados_Prof_Est.xsc">
+      <DependentUpon>Listados_Prof_Est.xsd</DependentUpon>
+    </None>
+    <None Include="Listados_Prof_Est.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Listados_Prof_Est.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Listados_Prof_Est.xss">
+      <DependentUpon>Listados_Prof_Est.xsd</DependentUpon>
+    </None>
+    <None Include="Listados_Prof_TM.xsc">
+      <DependentUpon>Listados_Prof_TM.xsd</DependentUpon>
+    </None>
+    <None Include="Listados_Prof_TM.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Listados_Prof_TM.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Listados_Prof_TM.xss">
+      <DependentUpon>Listados_Prof_TM.xsd</DependentUpon>
+    </None>
+    <None Include="Listados_Tit_Uni.xsc">
+      <DependentUpon>Listados_Tit_Uni.xsd</DependentUpon>
+    </None>
+    <None Include="Listados_Tit_Uni.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Listados_Tit_Uni.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Listados_Tit_Uni.xss">
+      <DependentUpon>Listados_Tit_Uni.xsd</DependentUpon>
+    </None>
+    <None Include="Listado_Cuotas_Esp.xsc">
+      <DependentUpon>Listado_Cuotas_Esp.xsd</DependentUpon>
+    </None>
+    <None Include="Listado_Cuotas_Esp.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Listado_Cuotas_Esp.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Listado_Cuotas_Esp.xss">
+      <DependentUpon>Listado_Cuotas_Esp.xsd</DependentUpon>
+    </None>
+    <None Include="Listado_Exptes_Monto_Esp.xsc">
+      <DependentUpon>Listado_Exptes_Monto_Esp.xsd</DependentUpon>
+    </None>
+    <None Include="Listado_Exptes_Monto_Esp.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Listado_Exptes_Monto_Esp.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Listado_Exptes_Monto_Esp.xss">
+      <DependentUpon>Listado_Exptes_Monto_Esp.xsd</DependentUpon>
+    </None>
+    <None Include="Listado_Expte_Esp.xsc">
+      <DependentUpon>Listado_Expte_Esp.xsd</DependentUpon>
+    </None>
+    <None Include="Listado_Expte_Esp.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Listado_Expte_Esp.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Listado_Expte_Esp.xss">
+      <DependentUpon>Listado_Expte_Esp.xsd</DependentUpon>
+    </None>
+    <None Include="Listado_Tit_Esp.xsc">
+      <DependentUpon>Listado_Tit_Esp.xsd</DependentUpon>
+    </None>
+    <None Include="Listado_Tit_Esp.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Listado_Tit_Esp.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Listado_Tit_Esp.xss">
+      <DependentUpon>Listado_Tit_Esp.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\Modelo_Entidades.Perfil.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Recibos.xsc">
+      <DependentUpon>Recibos.xsd</DependentUpon>
+    </None>
+    <None Include="Recibos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Recibos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Recibos.xss">
+      <DependentUpon>Recibos.xsd</DependentUpon>
+    </None>
+    <None Include="Titulos.xsc">
+      <DependentUpon>Titulos.xsd</DependentUpon>
+    </None>
+    <None Include="Titulos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Titulos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Titulos.xss">
+      <DependentUpon>Titulos.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Controladora\Controladora.csproj">
+      <Project>{6A2411B6-AE36-4C94-B3AC-347F5B14D659}</Project>
+      <Name>Controladora</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelo_Entidades\Modelo_Entidades.csproj">
+      <Project>{F31944DF-5392-4330-BC2E-E0F8BCDB249D}</Project>
+      <Name>Modelo_Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_1_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\on-off_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\585x285_A.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo principal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo_A.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doc_new_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doc_delete_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doc_edit_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doc_lines_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_icon&amp;161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_bottom_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmark_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reload_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo_B.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo_final&amp;48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trama_comprobantes&amp;48.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\round_minus_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\round_checkmark_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notepad_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkbox_checked_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye_inv_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail_2_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_bar_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark_1_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark_2_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book_icon&amp;161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\font_italic_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contact_card_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\font_strokethrough_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_layout_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\globe_3_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\globe_2_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\globe_1_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cc_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone_2_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail_2_icon&amp;161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_layout_icon&amp;161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pin_map_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pin_map_down_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chat_bubble_message_square_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cert_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrench_plus_2_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrench_plus_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrench_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wallet_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_bottom_icon&amp;161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_right_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_pie_icon&amp;16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo D.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo Final.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo Final1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo Final2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo Final3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo Final4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\youtube_icon&amp;16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
