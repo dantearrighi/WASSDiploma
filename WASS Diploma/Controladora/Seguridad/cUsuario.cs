@@ -64,14 +64,14 @@ namespace Controladora
         public void ResetearClave(Modelo_Entidades.Usuario oUsuario, string email) 
         {
             //generar una clave aleatoria
-            oUsuario.clave = GenerarClaveAleatoria(8, false);
+            oUsuario.clave = GenerarClaveAleatoria(4, false);
             //enviar la clave sin encriptar por mail
 
-            string De = "dantea@fibertel.com.ar";
+            string De = "dantearrighi@gmail.com";
             string Password = "9789hrqs";
             string Para = email;
-            string Mensaje = "Bienvenido al sistema. Su nombre de usuario es " + oUsuario.usuario + " y su clave temporal es " + oUsuario.clave + ". Por favor cambie su clave la primera vez que entre al sistema.";
-            string Asunto = "Usuario y Contraseña para el sistema";
+            string Mensaje = "Bienvenido al WASS.  Su nombre de usuario es: " + oUsuario.usuario + ". El sistema a generado una clave aleatoria porque el administrador de WASS le ha dado de alta. Su clave temporal es: " + oUsuario.clave + ". Por favor cambie su clave la primera vez que entre al sistema.";
+            string Asunto = "AUTOMATICO: Usuario y Contraseña para WASS";
             System.Net.Mail.MailMessage Email;
 
             Email = new System.Net.Mail.MailMessage(De, Para, Asunto, Mensaje);
@@ -91,7 +91,7 @@ namespace Controladora
              * Gmail:  smtp.gmail.com  puerto:587
              * Hotmail: smtp.liva.com  puerto:25
              */
-            SmtpClient server = new SmtpClient("a2plcpnl0071.prod.iad2.secureserver.net", 993);
+            SmtpClient server = new SmtpClient("smtp.gmail.com", 587);
             /*
             * Autenticacion en el Servidor
             * Utilizaremos nuestra cuenta de correo

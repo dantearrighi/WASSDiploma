@@ -22,6 +22,7 @@
   <EntityType Name="Auditorias_Tramites">
     <Key>
       <PropertyRef Name="id" />
+      <PropertyRef Name="id_tramite" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="tipoTramite" Type="bit" Nullable="false" />
@@ -29,16 +30,19 @@
     <Property Name="dni_cuil_cliente" Type="int" Nullable="false" />
     <Property Name="accion" Type="nvarchar(max)" Nullable="false" />
     <Property Name="usuario" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="id_tramite" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Auditoria_Detalles_Tramites">
     <Key>
       <PropertyRef Name="id" />
+      <PropertyRef Name="id_tramite" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="detalle_anterior" Type="nvarchar(max)" Nullable="false" />
     <Property Name="usuario" Type="nvarchar(max)" Nullable="false" />
     <Property Name="fecha_detalle_anterior" Type="datetime" Nullable="false" />
     <Property Name="accion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="id_tramite" Type="int" Nullable="false" />
   </EntityType>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -61,6 +65,7 @@
         <EntityType Name="Auditoria_Tramite">
           <Key>
             <PropertyRef Name="id" />
+            <PropertyRef Name="id_tramite" />
           </Key>
           <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Boolean" Name="tipoTramite" Nullable="false" />
@@ -68,16 +73,19 @@
           <Property Type="Int32" Name="dni_cuil_cliente" Nullable="false" />
           <Property Type="String" Name="accion" Nullable="false" />
           <Property Name="usuario" Type="String" Nullable="false" />
+          <Property Name="id_tramite" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Auditoria_Detalles_Tramite">
           <Key>
             <PropertyRef Name="id" />
+            <PropertyRef Name="id_tramite" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="detalle_anterior" Type="String" Nullable="false" />
           <Property Name="usuario" Type="String" Nullable="false" />
           <Property Name="fecha_detalle_anterior" Type="DateTime" Nullable="false" />
           <Property Name="accion" Type="String" Nullable="false" />
+          <Property Name="id_tramite" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -99,6 +107,7 @@
       <EntityTypeMapping TypeName="IsTypeOf(WASSTD_Auditoria.Auditoria_Tramite)">
         <MappingFragment StoreEntitySet="Auditorias_Tramites">
           <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_tramite" ColumnName="id_tramite" />
           <ScalarProperty Name="tipoTramite" ColumnName="tipoTramite" />
           <ScalarProperty Name="enviadoPor" ColumnName="enviadoPor" />
           <ScalarProperty Name="dni_cuil_cliente" ColumnName="dni_cuil_cliente" />
@@ -111,6 +120,7 @@
       <EntityTypeMapping TypeName="IsTypeOf(WASSTD_Auditoria.Auditoria_Detalles_Tramite)">
         <MappingFragment StoreEntitySet="Auditoria_Detalles_Tramites">
           <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_tramite" ColumnName="id_tramite" />
           <ScalarProperty Name="detalle_anterior" ColumnName="detalle_anterior" />
           <ScalarProperty Name="usuario" ColumnName="usuario" />
           <ScalarProperty Name="fecha_detalle_anterior" ColumnName="fecha_detalle_anterior" />

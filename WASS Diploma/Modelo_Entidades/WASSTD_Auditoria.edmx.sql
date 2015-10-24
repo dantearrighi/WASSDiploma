@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/24/2015 15:04:29
+-- Date Created: 10/24/2015 16:58:57
 -- Generated from EDMX file: D:\Documentos\UAI\WASS\WASS Diploma\Modelo_Entidades\WASSTD_Auditoria.edmx
 -- --------------------------------------------------
 
@@ -25,11 +25,11 @@ GO
 IF OBJECT_ID(N'[dbo].[Auditorias_Log]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Auditorias_Log];
 GO
-IF OBJECT_ID(N'[dbo].[Auditorias_Cuotas]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Auditorias_Cuotas];
+IF OBJECT_ID(N'[dbo].[Auditorias_Tramites]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Auditorias_Tramites];
 GO
-IF OBJECT_ID(N'[dbo].[Auditoria_Detalles_TramiteSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Auditoria_Detalles_TramiteSet];
+IF OBJECT_ID(N'[dbo].[Auditoria_Detalles_Tramites]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Auditoria_Detalles_Tramites];
 GO
 
 -- --------------------------------------------------
@@ -52,7 +52,8 @@ CREATE TABLE [dbo].[Auditorias_Tramites] (
     [enviadoPor] nvarchar(max)  NOT NULL,
     [dni_cuil_cliente] int  NOT NULL,
     [accion] nvarchar(max)  NOT NULL,
-    [usuario] nvarchar(max)  NOT NULL
+    [usuario] nvarchar(max)  NOT NULL,
+    [id_tramite] int  NOT NULL
 );
 GO
 
@@ -62,7 +63,8 @@ CREATE TABLE [dbo].[Auditoria_Detalles_Tramites] (
     [detalle_anterior] nvarchar(max)  NOT NULL,
     [usuario] nvarchar(max)  NOT NULL,
     [fecha_detalle_anterior] datetime  NOT NULL,
-    [accion] nvarchar(max)  NOT NULL
+    [accion] nvarchar(max)  NOT NULL,
+    [id_tramite] int  NOT NULL
 );
 GO
 
@@ -76,16 +78,16 @@ ADD CONSTRAINT [PK_Auditorias_Log]
     PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
--- Creating primary key on [id] in table 'Auditorias_Tramites'
+-- Creating primary key on [id], [id_tramite] in table 'Auditorias_Tramites'
 ALTER TABLE [dbo].[Auditorias_Tramites]
 ADD CONSTRAINT [PK_Auditorias_Tramites]
-    PRIMARY KEY CLUSTERED ([id] ASC);
+    PRIMARY KEY CLUSTERED ([id], [id_tramite] ASC);
 GO
 
--- Creating primary key on [id] in table 'Auditoria_Detalles_Tramites'
+-- Creating primary key on [id], [id_tramite] in table 'Auditoria_Detalles_Tramites'
 ALTER TABLE [dbo].[Auditoria_Detalles_Tramites]
 ADD CONSTRAINT [PK_Auditoria_Detalles_Tramites]
-    PRIMARY KEY CLUSTERED ([id] ASC);
+    PRIMARY KEY CLUSTERED ([id], [id_tramite] ASC);
 GO
 
 -- --------------------------------------------------

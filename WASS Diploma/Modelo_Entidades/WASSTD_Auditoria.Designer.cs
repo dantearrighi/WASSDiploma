@@ -167,7 +167,8 @@ namespace Modelo_Entidades
         /// <param name="usuario">Valor inicial de la propiedad usuario.</param>
         /// <param name="fecha_detalle_anterior">Valor inicial de la propiedad fecha_detalle_anterior.</param>
         /// <param name="accion">Valor inicial de la propiedad accion.</param>
-        public static Auditoria_Detalles_Tramite CreateAuditoria_Detalles_Tramite(global::System.Int32 id, global::System.String detalle_anterior, global::System.String usuario, global::System.DateTime fecha_detalle_anterior, global::System.String accion)
+        /// <param name="id_tramite">Valor inicial de la propiedad id_tramite.</param>
+        public static Auditoria_Detalles_Tramite CreateAuditoria_Detalles_Tramite(global::System.Int32 id, global::System.String detalle_anterior, global::System.String usuario, global::System.DateTime fecha_detalle_anterior, global::System.String accion, global::System.Int32 id_tramite)
         {
             Auditoria_Detalles_Tramite auditoria_Detalles_Tramite = new Auditoria_Detalles_Tramite();
             auditoria_Detalles_Tramite.id = id;
@@ -175,6 +176,7 @@ namespace Modelo_Entidades
             auditoria_Detalles_Tramite.usuario = usuario;
             auditoria_Detalles_Tramite.fecha_detalle_anterior = fecha_detalle_anterior;
             auditoria_Detalles_Tramite.accion = accion;
+            auditoria_Detalles_Tramite.id_tramite = id_tramite;
             return auditoria_Detalles_Tramite;
         }
 
@@ -304,6 +306,33 @@ namespace Modelo_Entidades
         private global::System.String _accion;
         partial void OnaccionChanging(global::System.String value);
         partial void OnaccionChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id_tramite
+        {
+            get
+            {
+                return _id_tramite;
+            }
+            set
+            {
+                if (_id_tramite != value)
+                {
+                    Onid_tramiteChanging(value);
+                    ReportPropertyChanging("id_tramite");
+                    _id_tramite = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id_tramite");
+                    Onid_tramiteChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id_tramite;
+        partial void Onid_tramiteChanging(global::System.Int32 value);
+        partial void Onid_tramiteChanged();
 
         #endregion
 
@@ -464,7 +493,8 @@ namespace Modelo_Entidades
         /// <param name="dni_cuil_cliente">Valor inicial de la propiedad dni_cuil_cliente.</param>
         /// <param name="accion">Valor inicial de la propiedad accion.</param>
         /// <param name="usuario">Valor inicial de la propiedad usuario.</param>
-        public static Auditoria_Tramite CreateAuditoria_Tramite(global::System.Int32 id, global::System.Boolean tipoTramite, global::System.String enviadoPor, global::System.Int32 dni_cuil_cliente, global::System.String accion, global::System.String usuario)
+        /// <param name="id_tramite">Valor inicial de la propiedad id_tramite.</param>
+        public static Auditoria_Tramite CreateAuditoria_Tramite(global::System.Int32 id, global::System.Boolean tipoTramite, global::System.String enviadoPor, global::System.Int32 dni_cuil_cliente, global::System.String accion, global::System.String usuario, global::System.Int32 id_tramite)
         {
             Auditoria_Tramite auditoria_Tramite = new Auditoria_Tramite();
             auditoria_Tramite.id = id;
@@ -473,6 +503,7 @@ namespace Modelo_Entidades
             auditoria_Tramite.dni_cuil_cliente = dni_cuil_cliente;
             auditoria_Tramite.accion = accion;
             auditoria_Tramite.usuario = usuario;
+            auditoria_Tramite.id_tramite = id_tramite;
             return auditoria_Tramite;
         }
 
@@ -626,6 +657,33 @@ namespace Modelo_Entidades
         private global::System.String _usuario;
         partial void OnusuarioChanging(global::System.String value);
         partial void OnusuarioChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id_tramite
+        {
+            get
+            {
+                return _id_tramite;
+            }
+            set
+            {
+                if (_id_tramite != value)
+                {
+                    Onid_tramiteChanging(value);
+                    ReportPropertyChanging("id_tramite");
+                    _id_tramite = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id_tramite");
+                    Onid_tramiteChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id_tramite;
+        partial void Onid_tramiteChanging(global::System.Int32 value);
+        partial void Onid_tramiteChanged();
 
         #endregion
 

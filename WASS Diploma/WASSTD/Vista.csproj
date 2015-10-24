@@ -161,10 +161,10 @@
     <Compile Include="Seguridad\FrmCambiarClave.Designer.cs">
       <DependentUpon>FrmCambiarClave.cs</DependentUpon>
     </Compile>
-    <Compile Include="Profesional\FrmImprimirCertificado_I.cs">
+    <Compile Include="Persona\FrmImprimirCertificado_I.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Profesional\FrmImprimirCertificado_I.Designer.cs">
+    <Compile Include="Persona\FrmImprimirCertificado_I.Designer.cs">
       <DependentUpon>FrmImprimirCertificado_I.cs</DependentUpon>
     </Compile>
     <Compile Include="Cta_Cte\FrmRecibos.cs">
@@ -179,16 +179,16 @@
     <Compile Include="Cta_Cte\FrmImprimirRecibo.Designer.cs">
       <DependentUpon>FrmImprimirRecibo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Profesional\FrmImprimirCertificado.cs">
+    <Compile Include="Persona\FrmImprimirCertificado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Profesional\FrmImprimirCertificado.Designer.cs">
+    <Compile Include="Persona\FrmImprimirCertificado.Designer.cs">
       <DependentUpon>FrmImprimirCertificado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Profesional\FrmSeleccionPersonas.cs">
+    <Compile Include="Persona\FrmSeleccionPersonas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Profesional\FrmSeleccionPersonas.Designer.cs">
+    <Compile Include="Persona\FrmSeleccionPersonas.Designer.cs">
       <DependentUpon>FrmSeleccionPersonas.cs</DependentUpon>
     </Compile>
     <Compile Include="Recibos.Designer.cs">
@@ -207,16 +207,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Titulos.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Profesional\FrmPersona.cs">
+    <Compile Include="Persona\FrmPersona.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Profesional\FrmPersona.Designer.cs">
+    <Compile Include="Persona\FrmPersona.Designer.cs">
       <DependentUpon>FrmPersona.cs</DependentUpon>
     </Compile>
-    <Compile Include="Profesional\FrmPersonas.cs">
+    <Compile Include="Persona\FrmPersonas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Profesional\FrmPersonas.Designer.cs">
+    <Compile Include="Persona\FrmPersonas.Designer.cs">
       <DependentUpon>FrmPersonas.cs</DependentUpon>
     </Compile>
     <Compile Include="Seguridad\FrmGrupo.cs">
@@ -285,7 +285,7 @@
     <EmbeddedResource Include="Seguridad\FrmCambiarClave.resx">
       <DependentUpon>FrmCambiarClave.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Profesional\FrmImprimirCertificado_I.resx">
+    <EmbeddedResource Include="Persona\FrmImprimirCertificado_I.resx">
       <DependentUpon>FrmImprimirCertificado_I.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cta_Cte\FrmRecibos.resx">
@@ -294,21 +294,21 @@
     <EmbeddedResource Include="Cta_Cte\FrmImprimirRecibo.resx">
       <DependentUpon>FrmImprimirRecibo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Profesional\FrmImprimirCertificado.resx">
+    <EmbeddedResource Include="Persona\FrmImprimirCertificado.resx">
       <DependentUpon>FrmImprimirCertificado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Profesional\Certificado_Habilitación.rdlc" />
-    <EmbeddedResource Include="Profesional\Certificado_Incumbencias.rdlc" />
-    <EmbeddedResource Include="Profesional\FrmSeleccionPersonas.resx">
+    <EmbeddedResource Include="Persona\Certificado_Habilitación.rdlc" />
+    <EmbeddedResource Include="Persona\Certificado_Incumbencias.rdlc" />
+    <EmbeddedResource Include="Persona\FrmSeleccionPersonas.resx">
       <DependentUpon>FrmSeleccionPersonas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\FrmRecuperarClave.resx">
       <DependentUpon>FrmRecuperarClave.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Profesional\FrmPersona.resx">
+    <EmbeddedResource Include="Persona\FrmPersona.resx">
       <DependentUpon>FrmPersona.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Profesional\FrmPersonas.resx">
+    <EmbeddedResource Include="Persona\FrmPersonas.resx">
       <DependentUpon>FrmPersonas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\FrmGrupo.resx">

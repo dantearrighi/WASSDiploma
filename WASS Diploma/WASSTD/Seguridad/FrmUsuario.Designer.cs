@@ -279,7 +279,7 @@
             // 
             this.lb_resetaercontraseña.Image = global::WASSTD.Properties.Resources.key_icon_16;
             this.lb_resetaercontraseña.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lb_resetaercontraseña.Location = new System.Drawing.Point(338, 0);
+            this.lb_resetaercontraseña.Location = new System.Drawing.Point(338, 3);
             this.lb_resetaercontraseña.Name = "lb_resetaercontraseña";
             this.lb_resetaercontraseña.Size = new System.Drawing.Size(132, 35);
             this.lb_resetaercontraseña.TabIndex = 0;
