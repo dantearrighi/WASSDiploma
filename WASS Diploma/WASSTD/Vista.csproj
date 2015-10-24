@@ -195,18 +195,6 @@
     <Compile Include="Estadísticas\FrmListado_Expte_Obra.Designer.cs">
       <DependentUpon>FrmListado_Expte_Obra.cs</DependentUpon>
     </Compile>
-    <Compile Include="Personas\FrmPersona.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Personas\FrmPersona.Designer.cs">
-      <DependentUpon>FrmPersona.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Personas\FrmPersonas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Personas\FrmPersonas.Designer.cs">
-      <DependentUpon>FrmPersonas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Tarea\FrmTarea.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -523,12 +511,6 @@
       <DependentUpon>FrmListado_Expte_Obra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Estadísticas\Expedientes_Por_Obra.rdlc" />
-    <EmbeddedResource Include="Personas\FrmPersona.resx">
-      <DependentUpon>FrmPersona.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Personas\FrmPersonas.resx">
-      <DependentUpon>FrmPersonas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Tarea\FrmTarea.resx">
       <DependentUpon>FrmTarea.cs</DependentUpon>
     </EmbeddedResource>

@@ -55,8 +55,6 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "ProfesionalCuota", "Profesional", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Profesional), "Cuota", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Cuota))]
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "ComitenteExpediente", "Comitente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Comitente), "Expediente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Expediente))]
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "TareaExpediente", "Tarea", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Tarea), "Expediente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Expediente))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "Tipo_DocumentoPersona", "Persona", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Persona), "Tipo_Documento", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Tipo_Documento))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "PersonaDirecciones", "Persona", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Persona), "Direccion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Direccion))]
 
 #endregion
 
@@ -763,22 +761,6 @@ namespace Modelo_Entidades
             }
         }
         private ObjectSet<Video> _Videos;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Persona> Personas
-        {
-            get
-            {
-                if ((_Personas == null))
-                {
-                    _Personas = base.CreateObjectSet<Persona>("Personas");
-                }
-                return _Personas;
-            }
-        }
-        private ObjectSet<Persona> _Personas;
 
         #endregion
 
@@ -1111,14 +1093,6 @@ namespace Modelo_Entidades
         {
             base.AddObject("Videos", video);
         }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Personas. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToPersonas(Persona persona)
-        {
-            base.AddObject("Personas", persona);
-        }
 
         #endregion
 
@@ -1127,40 +1101,6 @@ namespace Modelo_Entidades
     #endregion
 
     #region Entidades
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Abogado")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Abogado : Persona
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Abogado.
-        /// </summary>
-        /// <param name="dni_cuil">Valor inicial de la propiedad dni_cuil.</param>
-        /// <param name="apellido_nombre">Valor inicial de la propiedad apellido_nombre.</param>
-        /// <param name="nrotelfijo">Valor inicial de la propiedad nrotelfijo.</param>
-        /// <param name="nrotelcelu">Valor inicial de la propiedad nrotelcelu.</param>
-        /// <param name="email">Valor inicial de la propiedad email.</param>
-        public static Abogado CreateAbogado(global::System.Int32 dni_cuil, global::System.String apellido_nombre, global::System.Int32 nrotelfijo, global::System.Int32 nrotelcelu, global::System.String email)
-        {
-            Abogado abogado = new Abogado();
-            abogado.dni_cuil = dni_cuil;
-            abogado.apellido_nombre = apellido_nombre;
-            abogado.nrotelfijo = nrotelfijo;
-            abogado.nrotelcelu = nrotelcelu;
-            abogado.email = email;
-            return abogado;
-        }
-
-        #endregion
-
-    
-    }
     
     /// <summary>
     /// No hay documentación de metadatos disponible.
@@ -1726,96 +1666,6 @@ namespace Modelo_Entidades
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Cliente")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Cliente : Persona
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Cliente.
-        /// </summary>
-        /// <param name="dni_cuil">Valor inicial de la propiedad dni_cuil.</param>
-        /// <param name="apellido_nombre">Valor inicial de la propiedad apellido_nombre.</param>
-        /// <param name="nrotelfijo">Valor inicial de la propiedad nrotelfijo.</param>
-        /// <param name="nrotelcelu">Valor inicial de la propiedad nrotelcelu.</param>
-        /// <param name="email">Valor inicial de la propiedad email.</param>
-        /// <param name="clave_fiscal">Valor inicial de la propiedad clave_fiscal.</param>
-        /// <param name="fecha_nacimiento">Valor inicial de la propiedad fecha_nacimiento.</param>
-        public static Cliente CreateCliente(global::System.Int32 dni_cuil, global::System.String apellido_nombre, global::System.Int32 nrotelfijo, global::System.Int32 nrotelcelu, global::System.String email, global::System.String clave_fiscal, global::System.DateTime fecha_nacimiento)
-        {
-            Cliente cliente = new Cliente();
-            cliente.dni_cuil = dni_cuil;
-            cliente.apellido_nombre = apellido_nombre;
-            cliente.nrotelfijo = nrotelfijo;
-            cliente.nrotelcelu = nrotelcelu;
-            cliente.email = email;
-            cliente.clave_fiscal = clave_fiscal;
-            cliente.fecha_nacimiento = fecha_nacimiento;
-            return cliente;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String clave_fiscal
-        {
-            get
-            {
-                return _clave_fiscal;
-            }
-            set
-            {
-                Onclave_fiscalChanging(value);
-                ReportPropertyChanging("clave_fiscal");
-                _clave_fiscal = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("clave_fiscal");
-                Onclave_fiscalChanged();
-            }
-        }
-        private global::System.String _clave_fiscal;
-        partial void Onclave_fiscalChanging(global::System.String value);
-        partial void Onclave_fiscalChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime fecha_nacimiento
-        {
-            get
-            {
-                return _fecha_nacimiento;
-            }
-            set
-            {
-                Onfecha_nacimientoChanging(value);
-                ReportPropertyChanging("fecha_nacimiento");
-                _fecha_nacimiento = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fecha_nacimiento");
-                Onfecha_nacimientoChanged();
-            }
-        }
-        private global::System.DateTime _fecha_nacimiento;
-        partial void Onfecha_nacimientoChanging(global::System.DateTime value);
-        partial void Onfecha_nacimientoChanged();
-
-        #endregion
-
-    
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Colegio")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -2278,14 +2128,14 @@ namespace Modelo_Entidades
         /// <param name="id">Valor inicial de la propiedad id.</param>
         /// <param name="estado">Valor inicial de la propiedad estado.</param>
         /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
-        public static Con_Recargo CreateCon_Recargo(global::System.Int32 id, global::System.Boolean estado, global::System.String descripcion)
+        /*public static Con_Recargo CreateCon_Recargo(global::System.Int32 id, global::System.Boolean estado, global::System.String descripcion)
         {
             Con_Recargo con_Recargo = new Con_Recargo();
             con_Recargo.id = id;
             con_Recargo.estado = estado;
             con_Recargo.descripcion = descripcion;
             return con_Recargo;
-        }
+        }*/
 
         #endregion
 
@@ -2903,14 +2753,14 @@ namespace Modelo_Entidades
         /// <param name="id">Valor inicial de la propiedad id.</param>
         /// <param name="estado">Valor inicial de la propiedad estado.</param>
         /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
-        public static Descuento_Anual CreateDescuento_Anual(global::System.Int32 id, global::System.Boolean estado, global::System.String descripcion)
+        /*public static Descuento_Anual CreateDescuento_Anual(global::System.Int32 id, global::System.Boolean estado, global::System.String descripcion)
         {
             Descuento_Anual descuento_Anual = new Descuento_Anual();
             descuento_Anual.id = id;
             descuento_Anual.estado = estado;
             descuento_Anual.descripcion = descripcion;
             return descuento_Anual;
-        }
+        }*/
 
         #endregion
 
@@ -2932,13 +2782,11 @@ namespace Modelo_Entidades
         /// </summary>
         /// <param name="id">Valor inicial de la propiedad id.</param>
         /// <param name="direccion1">Valor inicial de la propiedad direccion.</param>
-        /// <param name="persona_dni_cuil">Valor inicial de la propiedad Persona_dni_cuil.</param>
-        public static Direccion CreateDireccion(global::System.Int32 id, global::System.String direccion1, global::System.Int32 persona_dni_cuil)
+        public static Direccion CreateDireccion(global::System.Int32 id, global::System.String direccion1)
         {
             Direccion direccion = new Direccion();
             direccion.id = id;
             direccion.direccion = direccion1;
-            direccion.Persona_dni_cuil = persona_dni_cuil;
             return direccion;
         }
 
@@ -2996,30 +2844,6 @@ namespace Modelo_Entidades
         private global::System.String _direccion;
         partial void OndireccionChanging(global::System.String value);
         partial void OndireccionChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 Persona_dni_cuil
-        {
-            get
-            {
-                return _Persona_dni_cuil;
-            }
-            set
-            {
-                OnPersona_dni_cuilChanging(value);
-                ReportPropertyChanging("Persona_dni_cuil");
-                _Persona_dni_cuil = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Persona_dni_cuil");
-                OnPersona_dni_cuilChanged();
-            }
-        }
-        private global::System.Int32 _Persona_dni_cuil;
-        partial void OnPersona_dni_cuilChanging(global::System.Int32 value);
-        partial void OnPersona_dni_cuilChanged();
 
         #endregion
 
@@ -3098,44 +2922,6 @@ namespace Modelo_Entidades
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Localidad>("WASSTDModelo.LocalidadDireccion", "Localidad", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "PersonaDirecciones", "Persona")]
-        public Persona Persona
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Persona>("WASSTDModelo.PersonaDirecciones", "Persona").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Persona>("WASSTDModelo.PersonaDirecciones", "Persona").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Persona> PersonaReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Persona>("WASSTDModelo.PersonaDirecciones", "Persona");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Persona>("WASSTDModelo.PersonaDirecciones", "Persona", value);
                 }
             }
         }
@@ -6603,233 +6389,6 @@ namespace Modelo_Entidades
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Persona")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    [KnownTypeAttribute(typeof(Abogado))]
-    [KnownTypeAttribute(typeof(Cliente))]
-    public partial class Persona : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Persona.
-        /// </summary>
-        /// <param name="dni_cuil">Valor inicial de la propiedad dni_cuil.</param>
-        /// <param name="apellido_nombre">Valor inicial de la propiedad apellido_nombre.</param>
-        /// <param name="nrotelfijo">Valor inicial de la propiedad nrotelfijo.</param>
-        /// <param name="nrotelcelu">Valor inicial de la propiedad nrotelcelu.</param>
-        /// <param name="email">Valor inicial de la propiedad email.</param>
-        public static Persona CreatePersona(global::System.Int32 dni_cuil, global::System.String apellido_nombre, global::System.Int32 nrotelfijo, global::System.Int32 nrotelcelu, global::System.String email)
-        {
-            Persona persona = new Persona();
-            persona.dni_cuil = dni_cuil;
-            persona.apellido_nombre = apellido_nombre;
-            persona.nrotelfijo = nrotelfijo;
-            persona.nrotelcelu = nrotelcelu;
-            persona.email = email;
-            return persona;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 dni_cuil
-        {
-            get
-            {
-                return _dni_cuil;
-            }
-            set
-            {
-                if (_dni_cuil != value)
-                {
-                    Ondni_cuilChanging(value);
-                    ReportPropertyChanging("dni_cuil");
-                    _dni_cuil = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("dni_cuil");
-                    Ondni_cuilChanged();
-                }
-            }
-        }
-        private global::System.Int32 _dni_cuil;
-        partial void Ondni_cuilChanging(global::System.Int32 value);
-        partial void Ondni_cuilChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String apellido_nombre
-        {
-            get
-            {
-                return _apellido_nombre;
-            }
-            set
-            {
-                Onapellido_nombreChanging(value);
-                ReportPropertyChanging("apellido_nombre");
-                _apellido_nombre = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("apellido_nombre");
-                Onapellido_nombreChanged();
-            }
-        }
-        private global::System.String _apellido_nombre;
-        partial void Onapellido_nombreChanging(global::System.String value);
-        partial void Onapellido_nombreChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 nrotelfijo
-        {
-            get
-            {
-                return _nrotelfijo;
-            }
-            set
-            {
-                OnnrotelfijoChanging(value);
-                ReportPropertyChanging("nrotelfijo");
-                _nrotelfijo = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("nrotelfijo");
-                OnnrotelfijoChanged();
-            }
-        }
-        private global::System.Int32 _nrotelfijo;
-        partial void OnnrotelfijoChanging(global::System.Int32 value);
-        partial void OnnrotelfijoChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 nrotelcelu
-        {
-            get
-            {
-                return _nrotelcelu;
-            }
-            set
-            {
-                OnnrotelceluChanging(value);
-                ReportPropertyChanging("nrotelcelu");
-                _nrotelcelu = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("nrotelcelu");
-                OnnrotelceluChanged();
-            }
-        }
-        private global::System.Int32 _nrotelcelu;
-        partial void OnnrotelceluChanging(global::System.Int32 value);
-        partial void OnnrotelceluChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String email
-        {
-            get
-            {
-                return _email;
-            }
-            set
-            {
-                OnemailChanging(value);
-                ReportPropertyChanging("email");
-                _email = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("email");
-                OnemailChanged();
-            }
-        }
-        private global::System.String _email;
-        partial void OnemailChanging(global::System.String value);
-        partial void OnemailChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "Tipo_DocumentoPersona", "Tipo_Documento")]
-        public Tipo_Documento Tipo_Documento
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tipo_Documento>("WASSTDModelo.Tipo_DocumentoPersona", "Tipo_Documento").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tipo_Documento>("WASSTDModelo.Tipo_DocumentoPersona", "Tipo_Documento").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Tipo_Documento> Tipo_DocumentoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tipo_Documento>("WASSTDModelo.Tipo_DocumentoPersona", "Tipo_Documento");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Tipo_Documento>("WASSTDModelo.Tipo_DocumentoPersona", "Tipo_Documento", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "PersonaDirecciones", "Direccion")]
-        public EntityCollection<Direccion> Direcciones
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Direccion>("WASSTDModelo.PersonaDirecciones", "Direccion");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Direccion>("WASSTDModelo.PersonaDirecciones", "Direccion", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Plan")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -8107,28 +7666,6 @@ namespace Modelo_Entidades
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Profesional>("WASSTDModelo.Tipo_DocumentoProfesional", "Profesional", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "Tipo_DocumentoPersona", "Persona")]
-        public EntityCollection<Persona> Persona
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Persona>("WASSTDModelo.Tipo_DocumentoPersona", "Persona");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Persona>("WASSTDModelo.Tipo_DocumentoPersona", "Persona", value);
                 }
             }
         }
