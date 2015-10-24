@@ -53,50 +53,16 @@ namespace Controladora
             return oModelo_Entidades.Movimientos.ToList();
         }
 
-        // Busco si ya existe un movimiento y devuelvo un true, si es que existe 
-        public Boolean BuscarCuotaNormalGenerada(string desc)
-        {
-            Modelo_Entidades.Movimiento oMovimiento = oModelo_Entidades.Movimientos.ToList().Find(delegate(Modelo_Entidades.Movimiento fMovimiento)
-            {
-                return fMovimiento.descripcion == desc && fMovimiento.Tipo_Movimiento.id == 1 && fMovimiento.CtaCte.Profesional.Tipo_Matricula.descripcion == "Normal";
-            });
+       
 
-            if (oMovimiento == null)
-            {
-                return false;
-            }
-
-            else
-            {
-                return true;
-            }            
-        }
-
-        // Busco si ya existe un movimiento y devuelvo un true, si es que existe 
-        public Boolean BuscarCuotaEnRelGenerada(string desc)
-        {
-            Modelo_Entidades.Movimiento oMovimiento = oModelo_Entidades.Movimientos.ToList().Find(delegate(Modelo_Entidades.Movimiento fMovimiento)
-            {
-                return fMovimiento.descripcion == desc && fMovimiento.Tipo_Movimiento.id == 1 && fMovimiento.CtaCte.Profesional.Tipo_Matricula.descripcion == "Relación de Dependencia";
-            });
-
-            if (oMovimiento == null)
-            {
-                return false;
-            }
-
-            else
-            {
-                return true;
-            }
-        }
+        
 
         // Busco si ya existe un movimiento y devuelvo un true, si es que existe 
         public Boolean BuscarCuotaEnReciprocidadGenerada(string desc)
         {
             Modelo_Entidades.Movimiento oMovimiento = oModelo_Entidades.Movimientos.ToList().Find(delegate(Modelo_Entidades.Movimiento fMovimiento)
             {
-                return fMovimiento.descripcion == desc && fMovimiento.Tipo_Movimiento.id == 1 && fMovimiento.CtaCte.Profesional.Tipo_Matricula.descripcion == "Reciprocidad de Matrícula";
+                return fMovimiento.descripcion == desc && fMovimiento.Tipo_Movimiento.id == 1 ;
             });
 
             if (oMovimiento == null)

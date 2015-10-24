@@ -43,19 +43,8 @@
             this.gb_conceptos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_factura)).BeginInit();
             this.SuspendLayout();
-            // 
-            // chk_matriculado
-            // 
-            this.chk_matriculado.AutoSize = true;
-            this.chk_matriculado.BackColor = System.Drawing.Color.Transparent;
-            this.chk_matriculado.Location = new System.Drawing.Point(12, 100);
-            this.chk_matriculado.Name = "chk_matriculado";
-            this.chk_matriculado.Size = new System.Drawing.Size(81, 17);
-            this.chk_matriculado.TabIndex = 0;
-            this.chk_matriculado.Text = "Matriculado";
-            this.chk_matriculado.UseVisualStyleBackColor = false;
-            this.chk_matriculado.CheckedChanged += new System.EventHandler(this.chk_matriculado_CheckedChanged);
-            // 
+          
+
             // lb_profesional
             // 
             this.lb_profesional.BackColor = System.Drawing.Color.Transparent;
@@ -79,7 +68,7 @@
             this.btn_cobrar_cuotas.Text = "Cobrar cuotas";
             this.btn_cobrar_cuotas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_cobrar_cuotas.UseVisualStyleBackColor = true;
-            this.btn_cobrar_cuotas.Click += new System.EventHandler(this.btn_cobrar_cuotas_Click);
+          
             // 
             // btn_imprimir
             // 
@@ -158,7 +147,7 @@
             this.btn_cobrar_expediente.Text = "Cobrar expediente";
             this.btn_cobrar_expediente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_cobrar_expediente.UseVisualStyleBackColor = true;
-            this.btn_cobrar_expediente.Click += new System.EventHandler(this.btn_cobrar_expediente_Click);
+   
             // 
             // dgv_factura
             // 

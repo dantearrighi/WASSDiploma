@@ -105,108 +105,6 @@
       <DependentUpon>FrmAuditoriaCuotas.cs</DependentUpon>
     </Compile>
     <None Include="App.Config" />
-    <Compile Include="Estadísticas\FrmEstadisticas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Estadísticas\FrmEstadisticas.Designer.cs">
-      <DependentUpon>FrmEstadisticas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Ayuda\FrmManual.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ayuda\FrmManual.Designer.cs">
-      <DependentUpon>FrmManual.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Estadísticas\FrmListado_Prof_Est.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Estadísticas\FrmListado_Prof_Est.Designer.cs">
-      <DependentUpon>FrmListado_Prof_Est.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Estadísticas\FrmListado_Prof_TM.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Estadísticas\FrmListado_Prof_TM.Designer.cs">
-      <DependentUpon>FrmListado_Prof_TM.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Estadísticas\FrmListado_Mat_Esp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Estadísticas\FrmListado_Mat_Esp.Designer.cs">
-      <DependentUpon>FrmListado_Mat_Esp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Estadísticas\FrmListado_Tit_Uni.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Estadísticas\FrmListado_Tit_Uni.Designer.cs">
-      <DependentUpon>FrmListado_Tit_Uni.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Estadísticas\FrmListado_Tit_Esp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Estadísticas\FrmListado_Tit_Esp.Designer.cs">
-      <DependentUpon>FrmListado_Tit_Esp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Estadísticas\FrmListado_Cuotas_Esp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Estadísticas\FrmListado_Cuotas_Esp.Designer.cs">
-      <DependentUpon>FrmListado_Cuotas_Esp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Estadísticas\FrmListado_Cuotas_Desc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Estadísticas\FrmListado_Cuotas_Desc.Designer.cs">
-      <DependentUpon>FrmListado_Cuotas_Desc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Comitente\FrmComitente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Comitente\FrmComitente.Designer.cs">
-      <DependentUpon>FrmComitente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Comitente\FrmComitentes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Comitente\FrmComitentes.Designer.cs">
-      <DependentUpon>FrmComitentes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Expediente\FrmSeleccionExpedientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Expediente\FrmSeleccionExpedientes.Designer.cs">
-      <DependentUpon>FrmSeleccionExpedientes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Estadísticas\FrmListado_Expte_Esp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Estadísticas\FrmListado_Expte_Esp.Designer.cs">
-      <DependentUpon>FrmListado_Expte_Esp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Estadísticas\FrmListado_Expte_Monto_Esp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Estadísticas\FrmListado_Expte_Monto_Esp.Designer.cs">
-      <DependentUpon>FrmListado_Expte_Monto_Esp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Estadísticas\FrmListado_Expte_Obra.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Estadísticas\FrmListado_Expte_Obra.Designer.cs">
-      <DependentUpon>FrmListado_Expte_Obra.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Tarea\FrmTarea.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Tarea\FrmTarea.Designer.cs">
-      <DependentUpon>FrmTarea.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Tarea\FrmTareas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Tarea\FrmTareas.Designer.cs">
-      <DependentUpon>FrmTareas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Listados_Cuotas_Desc.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -275,47 +173,11 @@
     <Compile Include="Cta_Cte\FrmRecibos.Designer.cs">
       <DependentUpon>FrmRecibos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cuotas\FrmSeleccionCuotas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cuotas\FrmSeleccionCuotas.Designer.cs">
-      <DependentUpon>FrmSeleccionCuotas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Expediente\FrmExpediente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Expediente\FrmExpediente.Designer.cs">
-      <DependentUpon>FrmExpediente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Expediente\FrmExpedientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Expediente\FrmExpedientes.Designer.cs">
-      <DependentUpon>FrmExpedientes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Comitente\FrmSeleccionComitentes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Comitente\FrmSeleccionComitentes.Designer.cs">
-      <DependentUpon>FrmSeleccionComitentes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Cta_Cte\FrmImprimirRecibo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Cta_Cte\FrmImprimirRecibo.Designer.cs">
       <DependentUpon>FrmImprimirRecibo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Cuotas\FrmImprimirBoleta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cuotas\FrmImprimirBoleta.Designer.cs">
-      <DependentUpon>FrmImprimirBoleta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Cuotas\FrmImprimirBoleta_Prof.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cuotas\FrmImprimirBoleta_Prof.Designer.cs">
-      <DependentUpon>FrmImprimirBoleta_Prof.cs</DependentUpon>
     </Compile>
     <Compile Include="Profesional\FrmImprimirCertificado.cs">
       <SubType>Form</SubType>
@@ -323,17 +185,11 @@
     <Compile Include="Profesional\FrmImprimirCertificado.Designer.cs">
       <DependentUpon>FrmImprimirCertificado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Titulo\FrmImprimirTitulo.cs">
+    <Compile Include="Profesional\FrmSeleccionPersonas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Titulo\FrmImprimirTitulo.Designer.cs">
-      <DependentUpon>FrmImprimirTitulo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Profesional\FrmSeleccionProfesionales.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Profesional\FrmSeleccionProfesionales.Designer.cs">
-      <DependentUpon>FrmSeleccionProfesionales.cs</DependentUpon>
+    <Compile Include="Profesional\FrmSeleccionPersonas.Designer.cs">
+      <DependentUpon>FrmSeleccionPersonas.cs</DependentUpon>
     </Compile>
     <Compile Include="Recibos.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -351,47 +207,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Titulos.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Titulo\FrmPlanesTitulo.cs">
+    <Compile Include="Profesional\FrmPersona.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Titulo\FrmPlanesTitulo.Designer.cs">
-      <DependentUpon>FrmPlanesTitulo.cs</DependentUpon>
+    <Compile Include="Profesional\FrmPersona.Designer.cs">
+      <DependentUpon>FrmPersona.cs</DependentUpon>
     </Compile>
-    <Compile Include="Profesional\FrmMatriculasProfesional.cs">
+    <Compile Include="Profesional\FrmPersonas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Profesional\FrmMatriculasProfesional.Designer.cs">
-      <DependentUpon>FrmMatriculasProfesional.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Cuotas\FrmCuotas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cuotas\FrmCuotas.Designer.cs">
-      <DependentUpon>FrmCuotas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Titulo\FrmTitulos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Titulo\FrmTitulos.Designer.cs">
-      <DependentUpon>FrmTitulos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Profesional\FrmProfesional.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Profesional\FrmProfesional.Designer.cs">
-      <DependentUpon>FrmProfesional.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Profesional\FrmProfesionales.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Profesional\FrmProfesionales.Designer.cs">
-      <DependentUpon>FrmProfesionales.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Titulo\FrmTitulo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Titulo\FrmTitulo.Designer.cs">
-      <DependentUpon>FrmTitulo.cs</DependentUpon>
+    <Compile Include="Profesional\FrmPersonas.Designer.cs">
+      <DependentUpon>FrmPersonas.cs</DependentUpon>
     </Compile>
     <Compile Include="Seguridad\FrmGrupo.cs">
       <SubType>Form</SubType>
@@ -456,134 +282,34 @@
     <EmbeddedResource Include="Auditorias\FrmAuditoriaCuotas.resx">
       <DependentUpon>FrmAuditoriaCuotas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Estadísticas\FrmEstadisticas.resx">
-      <DependentUpon>FrmEstadisticas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ayuda\FrmManual.resx">
-      <DependentUpon>FrmManual.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Estadísticas\Profesionales_Por_Estado.rdlc" />
-    <EmbeddedResource Include="Estadísticas\FrmListado_Prof_Est.resx">
-      <DependentUpon>FrmListado_Prof_Est.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Estadísticas\FrmListado_Prof_TM.resx">
-      <DependentUpon>FrmListado_Prof_TM.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Estadísticas\Profesionales_Por_TM.rdlc" />
-    <EmbeddedResource Include="Estadísticas\FrmListado_Mat_Esp.resx">
-      <DependentUpon>FrmListado_Mat_Esp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Estadísticas\Matriculas_Por_Esp.rdlc" />
-    <EmbeddedResource Include="Estadísticas\FrmListado_Tit_Uni.resx">
-      <DependentUpon>FrmListado_Tit_Uni.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Estadísticas\Cuotas_Por_Esp.rdlc" />
-    <EmbeddedResource Include="Estadísticas\Titulos_Por_Uni.rdlc" />
-    <EmbeddedResource Include="Estadísticas\FrmListado_Tit_Esp.resx">
-      <DependentUpon>FrmListado_Tit_Esp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Estadísticas\Titulos_Por_Esp.rdlc" />
-    <EmbeddedResource Include="Estadísticas\FrmListado_Cuotas_Esp.resx">
-      <DependentUpon>FrmListado_Cuotas_Esp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Estadísticas\FrmListado_Cuotas_Desc.resx">
-      <DependentUpon>FrmListado_Cuotas_Desc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Estadísticas\Cuotas_Por_Desc.rdlc" />
-    <EmbeddedResource Include="Expediente\FrmSeleccionExpedientes.resx">
-      <DependentUpon>FrmSeleccionExpedientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Comitente\FrmComitente.resx">
-      <DependentUpon>FrmComitente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Comitente\FrmComitentes.resx">
-      <DependentUpon>FrmComitentes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Estadísticas\FrmListado_Expte_Esp.resx">
-      <DependentUpon>FrmListado_Expte_Esp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Estadísticas\Expedientes_Por_Esp.rdlc" />
-    <EmbeddedResource Include="Estadísticas\FrmListado_Expte_Monto_Esp.resx">
-      <DependentUpon>FrmListado_Expte_Monto_Esp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Estadísticas\Expedientes_Por_Monto_Esp.rdlc" />
-    <EmbeddedResource Include="Estadísticas\FrmListado_Expte_Obra.resx">
-      <DependentUpon>FrmListado_Expte_Obra.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Estadísticas\Expedientes_Por_Obra.rdlc" />
-    <EmbeddedResource Include="Tarea\FrmTarea.resx">
-      <DependentUpon>FrmTarea.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Tarea\FrmTareas.resx">
-      <DependentUpon>FrmTareas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\FrmCambiarClave.resx">
       <DependentUpon>FrmCambiarClave.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profesional\FrmImprimirCertificado_I.resx">
       <DependentUpon>FrmImprimirCertificado_I.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cuotas\Boleta_Prof.rdlc" />
-    <EmbeddedResource Include="Cuotas\FrmCuotas.resx">
-      <DependentUpon>FrmCuotas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Cta_Cte\FrmRecibos.resx">
       <DependentUpon>FrmRecibos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cuotas\FrmSeleccionCuotas.resx">
-      <DependentUpon>FrmSeleccionCuotas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Expediente\FrmExpediente.resx">
-      <DependentUpon>FrmExpediente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Expediente\FrmExpedientes.resx">
-      <DependentUpon>FrmExpedientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Comitente\FrmSeleccionComitentes.resx">
-      <DependentUpon>FrmSeleccionComitentes.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Cta_Cte\FrmImprimirRecibo.resx">
       <DependentUpon>FrmImprimirRecibo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Cuotas\Boletas.rdlc" />
-    <EmbeddedResource Include="Cuotas\FrmImprimirBoleta.resx">
-      <DependentUpon>FrmImprimirBoleta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Cuotas\FrmImprimirBoleta_Prof.resx">
-      <DependentUpon>FrmImprimirBoleta_Prof.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profesional\FrmImprimirCertificado.resx">
       <DependentUpon>FrmImprimirCertificado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profesional\Certificado_Habilitación.rdlc" />
     <EmbeddedResource Include="Profesional\Certificado_Incumbencias.rdlc" />
-    <EmbeddedResource Include="Titulo\FrmImprimirTitulo.resx">
-      <DependentUpon>FrmImprimirTitulo.cs</DependentUpon>
+    <EmbeddedResource Include="Profesional\FrmSeleccionPersonas.resx">
+      <DependentUpon>FrmSeleccionPersonas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Profesional\FrmSeleccionProfesionales.resx">
-      <DependentUpon>FrmSeleccionProfesionales.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Titulo\Titulos.rdlc" />
     <EmbeddedResource Include="Seguridad\FrmRecuperarClave.resx">
       <DependentUpon>FrmRecuperarClave.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Titulo\FrmPlanesTitulo.resx">
-      <DependentUpon>FrmPlanesTitulo.cs</DependentUpon>
+    <EmbeddedResource Include="Profesional\FrmPersona.resx">
+      <DependentUpon>FrmPersona.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Profesional\FrmMatriculasProfesional.resx">
-      <DependentUpon>FrmMatriculasProfesional.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Titulo\FrmTitulos.resx">
-      <DependentUpon>FrmTitulos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Profesional\FrmProfesional.resx">
-      <DependentUpon>FrmProfesional.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Profesional\FrmProfesionales.resx">
-      <DependentUpon>FrmProfesionales.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Titulo\FrmTitulo.resx">
-      <DependentUpon>FrmTitulo.cs</DependentUpon>
+    <EmbeddedResource Include="Profesional\FrmPersonas.resx">
+      <DependentUpon>FrmPersonas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\FrmGrupo.resx">
       <DependentUpon>FrmGrupo.cs</DependentUpon>
@@ -1023,7 +749,9 @@
   <ItemGroup>
     <None Include="Resources\youtube_icon&amp;16.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Ayuda\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

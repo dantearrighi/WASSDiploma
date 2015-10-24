@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/24/2015 14:47:02
+-- Date Created: 10/24/2015 15:05:31
 -- Generated from EDMX file: D:\Documentos\UAI\WASS\WASS Diploma\Modelo_Entidades\WASSTD.edmx
 -- --------------------------------------------------
 
@@ -35,8 +35,8 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_FormularioModulo]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Formularios] DROP CONSTRAINT [FK_FormularioModulo];
 GO
-IF OBJECT_ID(N'[dbo].[FK_CtaCteProfesional]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[CtasCtes] DROP CONSTRAINT [FK_CtaCteProfesional];
+IF OBJECT_ID(N'[dbo].[FK_CtaCtePersona]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[CtasCtes] DROP CONSTRAINT [FK_CtaCtePersona];
 GO
 IF OBJECT_ID(N'[dbo].[FK_MovimientoCtaCte]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Movimientos] DROP CONSTRAINT [FK_MovimientoCtaCte];
@@ -50,17 +50,17 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ProvinciaLocalidades]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Localidades] DROP CONSTRAINT [FK_ProvinciaLocalidades];
 GO
-IF OBJECT_ID(N'[dbo].[FK_ProfesionalHistoriales]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Historiales] DROP CONSTRAINT [FK_ProfesionalHistoriales];
+IF OBJECT_ID(N'[dbo].[FK_PersonaHistoriales]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Historiales] DROP CONSTRAINT [FK_PersonaHistoriales];
 GO
-IF OBJECT_ID(N'[dbo].[FK_ProfesionalDirecciones]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Direcciones] DROP CONSTRAINT [FK_ProfesionalDirecciones];
+IF OBJECT_ID(N'[dbo].[FK_PersonaDirecciones]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Direcciones] DROP CONSTRAINT [FK_PersonaDirecciones];
 GO
-IF OBJECT_ID(N'[dbo].[FK_Tipo_DocumentoProfesional]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Profesionales] DROP CONSTRAINT [FK_Tipo_DocumentoProfesional];
+IF OBJECT_ID(N'[dbo].[FK_Tipo_DocumentoPersona]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Personas] DROP CONSTRAINT [FK_Tipo_DocumentoPersona];
 GO
-IF OBJECT_ID(N'[dbo].[FK_EstadoProfesional]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Profesionales] DROP CONSTRAINT [FK_EstadoProfesional];
+IF OBJECT_ID(N'[dbo].[FK_EstadoPersona]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Personas] DROP CONSTRAINT [FK_EstadoPersona];
 GO
 IF OBJECT_ID(N'[dbo].[FK_LocalidadDireccion]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Direcciones] DROP CONSTRAINT [FK_LocalidadDireccion];
@@ -94,8 +94,8 @@ GO
 IF OBJECT_ID(N'[dbo].[Modulos]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Modulos];
 GO
-IF OBJECT_ID(N'[dbo].[Profesionales]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Profesionales];
+IF OBJECT_ID(N'[dbo].[Personas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Personas];
 GO
 IF OBJECT_ID(N'[dbo].[CtasCtes]', 'U') IS NOT NULL
     DROP TABLE [dbo].[CtasCtes];
@@ -202,7 +202,8 @@ CREATE TABLE [dbo].[Personas] (
     [sexo] nvarchar(max)  NOT NULL,
     [telefono] int  NOT NULL,
     [celular] int  NOT NULL,
-    [email] nvarchar(max)  NOT NULL,
+    [email1] nvarchar(max)  NOT NULL,
+    [email2] nvarchar(max)  NOT NULL,
     [observaciones] nvarchar(max)  NOT NULL,
     [lugar_trabajo] nvarchar(max)  NULL,
     [convenio_año] int  NULL,

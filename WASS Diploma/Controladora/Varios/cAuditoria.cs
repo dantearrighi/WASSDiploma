@@ -34,9 +34,9 @@ namespace Controladora
         }
 
         // Audito el login de un usuario y agrego la auditoria
-        public void AuditarCuota(Modelo_Entidades.Auditoria_Cuota oCuota)
+        public void AuditarCuota(Modelo_Entidades.Auditoria_Tramite oTramite)
         {
-            oModelo_Entidades.AddToAuditorias_Cuotas(oCuota);
+            oModelo_Entidades.AddToAuditorias_Tramites(oTramite);
             oModelo_Entidades.SaveChanges();
         }
 
@@ -47,9 +47,9 @@ namespace Controladora
         }
 
         // Obtener las auditorias de la cuotas
-        public List<Modelo_Entidades.Auditoria_Cuota> ObtenerAuditoriasCuotas()
+        public List<Modelo_Entidades.Auditoria_Tramite> ObtenerAuditoriasCuotas()
         {
-            return oModelo_Entidades.Auditorias_Cuotas.ToList();
+            return oModelo_Entidades.Auditorias_Tramites.ToList();
         }
 
         // Obtengo las acciones de todas las auditorias
@@ -104,9 +104,9 @@ namespace Controladora
         }
 
         // Metodo de filtrado general para todos las auditorias de las cuotas
-        public List<Modelo_Entidades.Auditoria_Cuota> FiltrarAuditoriasCuotas(string nya, string dni, string cuota)
+        public List<Modelo_Entidades.Auditoria_Tramite> FiltrarAuditoriasCuotas(string nya, string dni, string cuota)
         {
-            var Consulta = from oAuditoria in oModelo_Entidades.Auditorias_Cuotas.ToList()
+            var Consulta = from oAuditoria in oModelo_Entidades.Auditorias_Tramites.ToList()
                            select oAuditoria;
 
             if (nya != "0")
@@ -116,15 +116,11 @@ namespace Controladora
 
             if (dni != "0")
             {
-                Consulta = Consulta.Where(oAuditoria => oAuditoria.Profesional_dni.ToString() == dni);
+                Consulta = Consulta.Where(oAuditoria => oAuditoria.dni_cuil_cliente.ToString() == dni);
             }
 
-            if (cuota != "0")
-            {
-                Consulta = Consulta.Where(oAuditoria => oAuditoria.descripcion == cuota);
-            }
-
-            return (List<Modelo_Entidades.Auditoria_Cuota>)Consulta.ToList();
+           
+            return (List<Modelo_Entidades.Auditoria_Tramite>)Consulta.ToList();
         }
 
     }

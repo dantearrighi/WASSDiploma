@@ -84,18 +84,34 @@ namespace Modelo_Entidades
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        public ObjectSet<Auditoria_Cuota> Auditorias_Cuotas
+        public ObjectSet<Auditoria_Tramite> Auditorias_Tramites
         {
             get
             {
-                if ((_Auditorias_Cuotas == null))
+                if ((_Auditorias_Tramites == null))
                 {
-                    _Auditorias_Cuotas = base.CreateObjectSet<Auditoria_Cuota>("Auditorias_Cuotas");
+                    _Auditorias_Tramites = base.CreateObjectSet<Auditoria_Tramite>("Auditorias_Tramites");
                 }
-                return _Auditorias_Cuotas;
+                return _Auditorias_Tramites;
             }
         }
-        private ObjectSet<Auditoria_Cuota> _Auditorias_Cuotas;
+        private ObjectSet<Auditoria_Tramite> _Auditorias_Tramites;
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        public ObjectSet<Auditoria_Detalles_Tramite> Auditoria_Detalles_Tramites
+        {
+            get
+            {
+                if ((_Auditoria_Detalles_Tramites == null))
+                {
+                    _Auditoria_Detalles_Tramites = base.CreateObjectSet<Auditoria_Detalles_Tramite>("Auditoria_Detalles_Tramites");
+                }
+                return _Auditoria_Detalles_Tramites;
+            }
+        }
+        private ObjectSet<Auditoria_Detalles_Tramite> _Auditoria_Detalles_Tramites;
 
         #endregion
 
@@ -110,11 +126,19 @@ namespace Modelo_Entidades
         }
     
         /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Auditorias_Cuotas. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// Método desusado para agregar un nuevo objeto al EntitySet Auditorias_Tramites. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
         /// </summary>
-        public void AddToAuditorias_Cuotas(Auditoria_Cuota auditoria_Cuota)
+        public void AddToAuditorias_Tramites(Auditoria_Tramite auditoria_Tramite)
         {
-            base.AddObject("Auditorias_Cuotas", auditoria_Cuota);
+            base.AddObject("Auditorias_Tramites", auditoria_Tramite);
+        }
+    
+        /// <summary>
+        /// Método desusado para agregar un nuevo objeto al EntitySet Auditoria_Detalles_Tramites. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// </summary>
+        public void AddToAuditoria_Detalles_Tramites(Auditoria_Detalles_Tramite auditoria_Detalles_Tramite)
+        {
+            base.AddObject("Auditoria_Detalles_Tramites", auditoria_Detalles_Tramite);
         }
 
         #endregion
@@ -128,34 +152,30 @@ namespace Modelo_Entidades
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTD_Auditoria", Name="Auditoria_Cuota")]
+    [EdmEntityTypeAttribute(NamespaceName="WASSTD_Auditoria", Name="Auditoria_Detalles_Tramite")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Auditoria_Cuota : EntityObject
+    public partial class Auditoria_Detalles_Tramite : EntityObject
     {
         #region Método de generador
     
         /// <summary>
-        /// Crear un nuevo objeto Auditoria_Cuota.
+        /// Crear un nuevo objeto Auditoria_Detalles_Tramite.
         /// </summary>
         /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="estado">Valor inicial de la propiedad estado.</param>
-        /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
-        /// <param name="profesional_dni">Valor inicial de la propiedad Profesional_dni.</param>
+        /// <param name="detalle_anterior">Valor inicial de la propiedad detalle_anterior.</param>
         /// <param name="usuario">Valor inicial de la propiedad usuario.</param>
-        /// <param name="fecha">Valor inicial de la propiedad fecha.</param>
+        /// <param name="fecha_detalle_anterior">Valor inicial de la propiedad fecha_detalle_anterior.</param>
         /// <param name="accion">Valor inicial de la propiedad accion.</param>
-        public static Auditoria_Cuota CreateAuditoria_Cuota(global::System.Int32 id, global::System.Boolean estado, global::System.String descripcion, global::System.Int32 profesional_dni, global::System.String usuario, global::System.DateTime fecha, global::System.String accion)
+        public static Auditoria_Detalles_Tramite CreateAuditoria_Detalles_Tramite(global::System.Int32 id, global::System.String detalle_anterior, global::System.String usuario, global::System.DateTime fecha_detalle_anterior, global::System.String accion)
         {
-            Auditoria_Cuota auditoria_Cuota = new Auditoria_Cuota();
-            auditoria_Cuota.id = id;
-            auditoria_Cuota.estado = estado;
-            auditoria_Cuota.descripcion = descripcion;
-            auditoria_Cuota.Profesional_dni = profesional_dni;
-            auditoria_Cuota.usuario = usuario;
-            auditoria_Cuota.fecha = fecha;
-            auditoria_Cuota.accion = accion;
-            return auditoria_Cuota;
+            Auditoria_Detalles_Tramite auditoria_Detalles_Tramite = new Auditoria_Detalles_Tramite();
+            auditoria_Detalles_Tramite.id = id;
+            auditoria_Detalles_Tramite.detalle_anterior = detalle_anterior;
+            auditoria_Detalles_Tramite.usuario = usuario;
+            auditoria_Detalles_Tramite.fecha_detalle_anterior = fecha_detalle_anterior;
+            auditoria_Detalles_Tramite.accion = accion;
+            return auditoria_Detalles_Tramite;
         }
 
         #endregion
@@ -194,72 +214,24 @@ namespace Modelo_Entidades
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Boolean estado
+        public global::System.String detalle_anterior
         {
             get
             {
-                return _estado;
+                return _detalle_anterior;
             }
             set
             {
-                OnestadoChanging(value);
-                ReportPropertyChanging("estado");
-                _estado = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("estado");
-                OnestadoChanged();
+                Ondetalle_anteriorChanging(value);
+                ReportPropertyChanging("detalle_anterior");
+                _detalle_anterior = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("detalle_anterior");
+                Ondetalle_anteriorChanged();
             }
         }
-        private global::System.Boolean _estado;
-        partial void OnestadoChanging(global::System.Boolean value);
-        partial void OnestadoChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String descripcion
-        {
-            get
-            {
-                return _descripcion;
-            }
-            set
-            {
-                OndescripcionChanging(value);
-                ReportPropertyChanging("descripcion");
-                _descripcion = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("descripcion");
-                OndescripcionChanged();
-            }
-        }
-        private global::System.String _descripcion;
-        partial void OndescripcionChanging(global::System.String value);
-        partial void OndescripcionChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 Profesional_dni
-        {
-            get
-            {
-                return _Profesional_dni;
-            }
-            set
-            {
-                OnProfesional_dniChanging(value);
-                ReportPropertyChanging("Profesional_dni");
-                _Profesional_dni = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Profesional_dni");
-                OnProfesional_dniChanged();
-            }
-        }
-        private global::System.Int32 _Profesional_dni;
-        partial void OnProfesional_dniChanging(global::System.Int32 value);
-        partial void OnProfesional_dniChanged();
+        private global::System.String _detalle_anterior;
+        partial void Ondetalle_anteriorChanging(global::System.String value);
+        partial void Ondetalle_anteriorChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
@@ -290,24 +262,24 @@ namespace Modelo_Entidades
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.DateTime fecha
+        public global::System.DateTime fecha_detalle_anterior
         {
             get
             {
-                return _fecha;
+                return _fecha_detalle_anterior;
             }
             set
             {
-                OnfechaChanging(value);
-                ReportPropertyChanging("fecha");
-                _fecha = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fecha");
-                OnfechaChanged();
+                Onfecha_detalle_anteriorChanging(value);
+                ReportPropertyChanging("fecha_detalle_anterior");
+                _fecha_detalle_anterior = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("fecha_detalle_anterior");
+                Onfecha_detalle_anteriorChanged();
             }
         }
-        private global::System.DateTime _fecha;
-        partial void OnfechaChanging(global::System.DateTime value);
-        partial void OnfechaChanged();
+        private global::System.DateTime _fecha_detalle_anterior;
+        partial void Onfecha_detalle_anteriorChanging(global::System.DateTime value);
+        partial void Onfecha_detalle_anteriorChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
@@ -467,6 +439,193 @@ namespace Modelo_Entidades
         private global::System.String _accion;
         partial void OnaccionChanging(global::System.String value);
         partial void OnaccionChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="WASSTD_Auditoria", Name="Auditoria_Tramite")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Auditoria_Tramite : EntityObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto Auditoria_Tramite.
+        /// </summary>
+        /// <param name="id">Valor inicial de la propiedad id.</param>
+        /// <param name="tipoTramite">Valor inicial de la propiedad tipoTramite.</param>
+        /// <param name="enviadoPor">Valor inicial de la propiedad enviadoPor.</param>
+        /// <param name="dni_cuil_cliente">Valor inicial de la propiedad dni_cuil_cliente.</param>
+        /// <param name="accion">Valor inicial de la propiedad accion.</param>
+        /// <param name="usuario">Valor inicial de la propiedad usuario.</param>
+        public static Auditoria_Tramite CreateAuditoria_Tramite(global::System.Int32 id, global::System.Boolean tipoTramite, global::System.String enviadoPor, global::System.Int32 dni_cuil_cliente, global::System.String accion, global::System.String usuario)
+        {
+            Auditoria_Tramite auditoria_Tramite = new Auditoria_Tramite();
+            auditoria_Tramite.id = id;
+            auditoria_Tramite.tipoTramite = tipoTramite;
+            auditoria_Tramite.enviadoPor = enviadoPor;
+            auditoria_Tramite.dni_cuil_cliente = dni_cuil_cliente;
+            auditoria_Tramite.accion = accion;
+            auditoria_Tramite.usuario = usuario;
+            return auditoria_Tramite;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
+        partial void OnidChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean tipoTramite
+        {
+            get
+            {
+                return _tipoTramite;
+            }
+            set
+            {
+                OntipoTramiteChanging(value);
+                ReportPropertyChanging("tipoTramite");
+                _tipoTramite = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("tipoTramite");
+                OntipoTramiteChanged();
+            }
+        }
+        private global::System.Boolean _tipoTramite;
+        partial void OntipoTramiteChanging(global::System.Boolean value);
+        partial void OntipoTramiteChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String enviadoPor
+        {
+            get
+            {
+                return _enviadoPor;
+            }
+            set
+            {
+                OnenviadoPorChanging(value);
+                ReportPropertyChanging("enviadoPor");
+                _enviadoPor = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("enviadoPor");
+                OnenviadoPorChanged();
+            }
+        }
+        private global::System.String _enviadoPor;
+        partial void OnenviadoPorChanging(global::System.String value);
+        partial void OnenviadoPorChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 dni_cuil_cliente
+        {
+            get
+            {
+                return _dni_cuil_cliente;
+            }
+            set
+            {
+                Ondni_cuil_clienteChanging(value);
+                ReportPropertyChanging("dni_cuil_cliente");
+                _dni_cuil_cliente = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("dni_cuil_cliente");
+                Ondni_cuil_clienteChanged();
+            }
+        }
+        private global::System.Int32 _dni_cuil_cliente;
+        partial void Ondni_cuil_clienteChanging(global::System.Int32 value);
+        partial void Ondni_cuil_clienteChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String accion
+        {
+            get
+            {
+                return _accion;
+            }
+            set
+            {
+                OnaccionChanging(value);
+                ReportPropertyChanging("accion");
+                _accion = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("accion");
+                OnaccionChanged();
+            }
+        }
+        private global::System.String _accion;
+        partial void OnaccionChanging(global::System.String value);
+        partial void OnaccionChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String usuario
+        {
+            get
+            {
+                return _usuario;
+            }
+            set
+            {
+                OnusuarioChanging(value);
+                ReportPropertyChanging("usuario");
+                _usuario = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("usuario");
+                OnusuarioChanged();
+            }
+        }
+        private global::System.String _usuario;
+        partial void OnusuarioChanging(global::System.String value);
+        partial void OnusuarioChanged();
 
         #endregion
 
