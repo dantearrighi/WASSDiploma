@@ -45,7 +45,7 @@ namespace WASSTD
             // Ingreso al sistema mediante un TryCatch - Controladora.cEncriptacion.Encriptar(txt_contraseña.Text)
             try
             {
-                oUsuario = cUsuario.Login(txt_nombredeusuario.Text, Controladora.cEncriptacion.Encriptar(txt_contraseña.Text));
+                oUsuario = cUsuario.Login(txt_nombredeusuario.Text,txt_contraseña.Text);
                 this.DialogResult = DialogResult.OK;
             }
             catch (Exception Exc)
