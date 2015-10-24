@@ -73,19 +73,7 @@ namespace WASSTD
             dgv_datos.Columns[7].Visible = false;
             dgv_datos.Columns[8].Visible = false;
             dgv_datos.Columns[9].Visible = false;
-            dgv_datos.Columns[10].Visible = false;
-            dgv_datos.Columns[11].Visible = false;
-            dgv_datos.Columns[12].Visible = false;
-            dgv_datos.Columns[13].Visible = false;
-            dgv_datos.Columns[14].Visible = false;
-            dgv_datos.Columns[15].Visible = false;
-            dgv_datos.Columns[16].Visible = false;
-            dgv_datos.Columns[17].HeaderText = "Estado";
-            dgv_datos.Columns[18].Visible = false;
-            dgv_datos.Columns[19].HeaderText = "Tipo de Matricula";
-            dgv_datos.Columns[20].Visible = false;
-            dgv_datos.Columns[21].Visible = false;
-            dgv_datos.Columns[22].Visible = false;
+           
         }
 
         // Al hacer click en "Agregar"

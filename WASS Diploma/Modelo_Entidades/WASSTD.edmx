@@ -1120,7 +1120,7 @@
           <ConnectorPoint PointX="4.375" PointY="3.5889794921875" />
           <ConnectorPoint PointX="5.375" PointY="3.5889794921875" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="WASSTDModelo.Persona" Width="1.875" PointX="10.125" PointY="7.875" Height="5.2494108072916656" />
+        <EntityTypeShape EntityType="WASSTDModelo.Persona" Width="1.875" PointX="9.125" PointY="6.25" Height="5.2494108072916656" />
         <EntityTypeShape EntityType="WASSTDModelo.CtaCte" Width="1.5" PointX="13" PointY="5" Height="1.7879850260416665" />
         <AssociationConnector Association="WASSTDModelo.CtaCtePersona">
           <ConnectorPoint PointX="13.75" PointY="6.7879850260416665" />
