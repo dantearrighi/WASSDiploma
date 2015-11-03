@@ -36,18 +36,14 @@ namespace WASSTD
        
         Modelo_Entidades.Direccion oDireccion;
         Modelo_Entidades.Direccion oDireccionE;
-        Modelo_Entidades.CtaCte oCtaCte;
+        //Modelo_Entidades.CtaCte oCtaCte;
         Modelo_Entidades.Usuario miUsuario;
         
 
         List<Modelo_Entidades.Movimiento> ListaMovimientos = new List<Modelo_Entidades.Movimiento>();
 
-        // Declaro los binding sources
-        BindingSource BsHistoriales;
-        BindingSource BsMatriculas;
-        BindingSource BsDeudas;
-        BindingSource BsCreditos;
-        BindingSource BsExpedientes;
+        
+        
 
         
 
