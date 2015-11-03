@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Seguridad\cCU_GestionarGrupos.cs" />
     <Compile Include="Seguridad\cCU_GestionarPerfiles.cs" />
+    <Compile Include="Seguridad\cCU_GestionarUsuarios.cs" />
     <Compile Include="Varios\cBackup.cs" />
     <Compile Include="Cta Cte\cComprobante.cs" />
     <Compile Include="Cta Cte\cCtaCte.cs" />

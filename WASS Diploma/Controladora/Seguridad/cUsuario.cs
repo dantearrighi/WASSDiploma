@@ -230,7 +230,7 @@ namespace Controladora
         }
 
         // Valido el usuario
-        private void ValidarUsuario(Modelo_Entidades.Usuario oUsuario, string clave)
+        public void ValidarUsuario(Modelo_Entidades.Usuario oUsuario, string clave)
         {
             // Pregunto si el usuario es nulo, y devuelvo un mensaje, en caso de que sea así.
             if (oUsuario == null)

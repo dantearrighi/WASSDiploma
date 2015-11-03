@@ -15,6 +15,8 @@ namespace WASSTD
         Controladora.cUsuario cUsuario;
         Modelo_Entidades.Usuario oUsuario;
         Controladora.cGrupo cGrupo;
+        Controladora.Seguridad.cCU_GestionarUsuarios cCu_GestionarUsuarios;
+        
 
         // Necesito devolver el usuario que consegui en el Login
         public Modelo_Entidades.Usuario UsuarioLogin
@@ -29,6 +31,7 @@ namespace WASSTD
             // Creo una controladora de usuario para trabajarla durante el formulario
             cUsuario = Controladora.cUsuario.ObtenerInstancia();
             cGrupo = Controladora.cGrupo.ObtenerInstancia();
+            cCu_GestionarUsuarios = Controladora.Seguridad.cCU_GestionarUsuarios.ObtenerInstancia();
         }
 
         // Al hacer click en cancelar
@@ -40,16 +43,25 @@ namespace WASSTD
         // Al hacer click en ingresar
         private void btn_ingresar_Click(object sender, EventArgs e)
         {
-            ValidarObligatorios();
-
-            // Ingreso al sistema mediante un TryCatch - Controladora.cEncriptacion.Encriptar(txt_contraseña.Text)
+            
+            // Ingreso al sistema mediante un TryCatch 
             try
             {
-                oUsuario = cUsuario.Login(txt_nombredeusuario.Text, Controladora.cEncriptacion.Encriptar(txt_contraseña.Text));
-                this.DialogResult = DialogResult.OK;
+
+                if (cCu_GestionarUsuarios.ValidarObligatorios(txt_nombredeusuario.Text, txt_contraseña.Text))
+                {
+                    oUsuario = cCu_GestionarUsuarios.Login(txt_nombredeusuario.Text, txt_contraseña.Text);
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    this.MostrarErrorCamposObligatorios();
+                }
+                
             }
             catch (Exception Exc)
             {
+                
                 MessageBox.Show(Exc.Message, "Ingreso al sistema", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
@@ -61,17 +73,14 @@ namespace WASSTD
         }
 
         // Valido los datos obligatorios
-        private void ValidarObligatorios()
+        private void MostrarErrorCamposObligatorios()
         {
-            if (txt_nombredeusuario.Text == "")
+            if (txt_nombredeusuario.Text == "" || txt_contraseña.Text =="")
             {
-                MessageBox.Show("Debe ingresar el nombre del usuario");
+                MessageBox.Show("Falta ingresar algun dato obligatorio. Verifique y vuelva a intentar");
             }
 
-            if (txt_contraseña.Text == "")
-            {
-                MessageBox.Show("Debe ingresar la contraseña del usuario");
-            }
+            
         }
     }
 }
