@@ -11,7 +11,8 @@ namespace WASSTD
 {
     public partial class FrmRecibos : Form
     {
-        // Declaro las variables que voy a utilizar en el formulario
+      /*
+       * // Declaro las variables que voy a utilizar en el formulario
         private static FrmRecibos instancia;
         Modelo_Entidades.Usuario miUsuario;
         Modelo_Entidades.Persona miPersona;
@@ -320,7 +321,7 @@ namespace WASSTD
                     this.Close();
                     #endregion
                     break;
-            }*/
+            }
         }
 
         // Cuando cierro el formulario
@@ -330,7 +331,7 @@ namespace WASSTD
         }
 
      
-
+    */
         
     }
 }
