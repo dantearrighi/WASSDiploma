@@ -30,10 +30,13 @@ namespace Controladora.Seguridad
             cUsuario = cUsuario.ObtenerInstancia();
         }
 
-        // Validar que se hayan ingresado un nombre de usuario y contraseña
-        public bool ValidarObligatorios(string username, string password)
+       
+    
+
+        // Validar que se hayan INGRESADO un nombre de usuario y contraseña
+        public bool ValidarObligatoriosLogin(string username, string password)
         {
-         
+
             if (username == "")
             {
                 return false;
@@ -46,27 +49,100 @@ namespace Controladora.Seguridad
 
             return true;
         }
-
-        // Loguear usuario
+        
+        
+        // LOGUEAR USUARIO
         public Modelo_Entidades.Usuario Login(string usuario, string clave)
         {
             // Aca instancio un objeto "Usuario" y tomo el objeto "Entidades" que instancie en un principio.
             // Luego, a esas "Entidades", les pido que me traigan a todos los "Usuarios" en forma de Lista.
-            // A esa Lista de "Usuarios" le pido que me encuentre y que me devuelva el id del usuario "usuario" que pasé por parámetros. 
+            // A esa Lista de "Usuarios" le pido que me encuentre y que me devuelva el usuario "usuario" que pasé por parámetros. 
             Modelo_Entidades.Usuario oUsuario = oModelo_Entidades.Usuarios.ToList().Find(delegate(Modelo_Entidades.Usuario fUsuario)
             {
                 return fUsuario.usuario == usuario;
             });
 
-            cUsuario.ValidarUsuario(oUsuario, cEncriptacion.Encriptar(clave));
 
-            // En caso de que pase todas la validaciones, devuelvo al Usuario
-            return oUsuario;
+            if (cUsuario.ValidarUsuarioExistente(oUsuario))
+            {
+                if (cUsuario.ValidarUsuarioActivo(oUsuario))
+                {
+                    if (cUsuario.ValidarContraseñaIngresada(oUsuario, clave))
+                    {
+                        // En caso de que pase todas la validaciones, devuelvo al Usuario
+                        return oUsuario;
+                    }
+                    else
+                    {
+                        throw new Exception("La contraseña ingresada es incorrecta."); 
+                    }
+                }
+                else
+                {
+                    throw new Exception("El usuario se encuentra desactivado.");
+                }
+            }
+            else
+            {
+                throw new Exception("El usuario ingresado no se encuentra registrado en el sistema.");
+                
+            }
+            
         }
 
 
-      
+
+
+        // Validar que se hayan ingresado clave actual y la nueva 2 veces para modificarla
+        private bool ValidarObligatoriosCambiarClave(string claveNueva, string claveNuevaConfirmar, string claveActual, Modelo_Entidades.Usuario usrActual)
+        {
+            // VALIDACION CAMPOS VACIOS:     ClaveNueva   -     Confirmacion                    y que coincida la confirmacion
+            if (string.IsNullOrEmpty(claveNueva) || string.IsNullOrEmpty(claveNuevaConfirmar) ||  claveNueva != claveNuevaConfirmar)
+            {
+                throw new Exception("Debe ingresar una contraseña, ya que o no las ha ingresado, o no coinciden");
+                
+
+            }
+
+            // Validacion CAMPO VACIO CLAVE ACTUAL
+            if (string.IsNullOrEmpty(claveActual))
+            {
+                throw new Exception("Es obligatorio ingresar la clave actual.");
+            }
+           
+            // Validacion de la clave actual
+           if (!cUsuario.ValidarContraseñaIngresada(usrActual, claveActual))
+            {
+                //MessageBox.Show("La contraseña actual es incorrecta, por favor introduscula nuevamente");
+                throw new Exception("La contraseña actual es incorrecta.");
+            }
+
+           
+
+
+            return true;
+        }
         
+        // CAMBIAR CONTRASEÑA
+        public bool CambiarContraseña(string claveNueva, string claveNuevaConfirmar, string claveActual, Modelo_Entidades.Usuario usrActual)
+        {
+            //SI ESTAN MAL LOS DATOS
+            if (ValidarObligatoriosCambiarClave(claveNueva, claveNuevaConfirmar, claveActual, usrActual))
+            {
+                usrActual.clave = Controladora.cEncriptacion.Encriptar(claveNueva);
+                cUsuario.Modificacion(usrActual);
+                return true;
+            }
+            else
+            {
+                throw new Exception("Las contraseñas no coinciden o la clave actual es incorrecta. Verifique y vuelva a intentarlo.");
+            }
+                                   
+          
+        }
+
+     
+
     
     }
 }

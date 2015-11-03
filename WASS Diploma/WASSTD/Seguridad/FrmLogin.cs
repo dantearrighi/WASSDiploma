@@ -48,7 +48,7 @@ namespace WASSTD
             try
             {
 
-                if (cCu_GestionarUsuarios.ValidarObligatorios(txt_nombredeusuario.Text, txt_contraseña.Text))
+                if (cCu_GestionarUsuarios.ValidarObligatoriosLogin(txt_nombredeusuario.Text, txt_contraseña.Text))
                 {
                     oUsuario = cCu_GestionarUsuarios.Login(txt_nombredeusuario.Text, txt_contraseña.Text);
                     this.DialogResult = DialogResult.OK;

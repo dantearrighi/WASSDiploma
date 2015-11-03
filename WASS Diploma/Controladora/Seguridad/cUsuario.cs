@@ -12,6 +12,7 @@ namespace Controladora
         private static cUsuario instancia;
         private Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
         Controladora.cEncriptacion cEncriptacion = new cEncriptacion();
+      
 
         // Aplico el patrón de diseño Singleton a la clase
         public static cUsuario ObtenerInstancia()
@@ -26,7 +27,10 @@ namespace Controladora
         private cUsuario()
         {
             oModelo_Entidades = Modelo_Entidades.WASSTDEntidades.ObtenerInstancia();
+             
         }
+
+       
 
         // Busco al usuario según su email y código
         public Modelo_Entidades.Usuario ObtenerUsuario(string usuario)
@@ -111,7 +115,7 @@ namespace Controladora
             Modificacion(oUsuario);
         }
 
-        // Busco al usuario en las entidades, haciendo las validaciones necesarias
+        /*// Busco al usuario en las entidades, haciendo las validaciones necesarias
         public Modelo_Entidades.Usuario Login(string usuario, string clave)
         {
             // Aca instancio un objeto "Usuario" y tomo el objeto "Entidades" que instancie en un principio.
@@ -126,7 +130,7 @@ namespace Controladora
 
             // En caso de que pase todas la validaciones, devuelvo al Usuario
             return oUsuario;
-        }
+        }*/
 
         // Obtengo los grupos de un usuario
         public List<Modelo_Entidades.Grupo> ObtenerGruposUsuario(int id)
@@ -229,26 +233,56 @@ namespace Controladora
             return oGrupo;
         }
 
-        // Valido el usuario
-        public void ValidarUsuario(Modelo_Entidades.Usuario oUsuario, string clave)
+
+
+
+
+
+        // Validar USUARIO ACTIVO
+        public bool ValidarUsuarioActivo(Modelo_Entidades.Usuario oUsuario)
+        {
+                
+            // Pregunto por el estado del usuario, y devuelvo un mensaje, en caso de que sea inactivo.
+            if (oUsuario.estado == false)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        // Validar USUARIO EXISTENTE
+        public bool ValidarUsuarioExistente(Modelo_Entidades.Usuario oUsuario)
         {
             // Pregunto si el usuario es nulo, y devuelvo un mensaje, en caso de que sea así.
             if (oUsuario == null)
             {
-                throw new Exception("El usuario ingresado no se encuentra registrado en el sistema");
+                return false;
+                
+            }
+            return true;
+                
+        }
+
+        // Validar CONTRASEÑA INGRESADA
+        public bool ValidarContraseñaIngresada(Modelo_Entidades.Usuario usrActual, string claveIngresada)
+        {
+            if (usrActual.clave != cEncriptacion.Encriptar(claveIngresada))
+            {
+                return false;
+            }
+            return true;
+ 
+        }
+
+        // Validar USUARIO: EXISTENTE, ACTIVO Y CONTRASEÑA
+        public bool ValidarUsuarioExistenteActivoContraseña(Modelo_Entidades.Usuario usrActual, string claveIngresada)
+        {
+            if(ValidarContraseñaIngresada(usrActual,claveIngresada) || ValidarUsuarioActivo(usrActual) || ValidarUsuarioExistente(usrActual))
+            {
+                return true;
             }
 
-            // Pregunto por la clave del usuario, y devuelvo un mensaje, en caso de que sea incorrecta.
-            if (oUsuario.clave != clave)
-            {
-                throw new Exception("La contraseña ingresada es incorrecta");
-            }
-
-            // Pregunto por el estado del usuario, y devuelvo un mensaje, en caso de que sea inactivo.
-            if (oUsuario.estado == false)
-            {
-                throw new Exception("El usuario ingresado se encuentra inactivo");
-            }
+            return false;
         }
     }
 }
