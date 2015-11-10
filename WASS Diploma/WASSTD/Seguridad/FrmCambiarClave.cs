@@ -42,7 +42,7 @@ namespace WASSTD
         {
             try
             {
-                if (cCU_GestionarUsuarios.CambiarContraseña(txt_nuevacontraseña.Text, txt_repetircontraseña.Text, txt_contraseña_actual.Text, oUsuario))
+                if (cCU_GestionarUsuarios.CambiarContraseña(Controladora.cEncriptacion.Encriptar(txt_nuevacontraseña.Text), Controladora.cEncriptacion.Encriptar(txt_repetircontraseña.Text), Controladora.cEncriptacion.Encriptar(txt_contraseña_actual.Text), oUsuario))
                 {
                     MessageBox.Show("La contraseña se ha modificado con éxito.");
                     this.Close();

@@ -17,7 +17,8 @@ namespace WASSTD
         Controladora.cGrupo cGrupo;
         Controladora.Seguridad.cCU_GestionarUsuarios cCu_GestionarUsuarios;
         
-
+        
+        
         // Necesito devolver el usuario que consegui en el Login
         public Modelo_Entidades.Usuario UsuarioLogin
         {
@@ -32,6 +33,7 @@ namespace WASSTD
             cUsuario = Controladora.cUsuario.ObtenerInstancia();
             cGrupo = Controladora.cGrupo.ObtenerInstancia();
             cCu_GestionarUsuarios = Controladora.Seguridad.cCU_GestionarUsuarios.ObtenerInstancia();
+          
         }
 
         // Al hacer click en cancelar
@@ -43,14 +45,15 @@ namespace WASSTD
         // Al hacer click en ingresar
         private void btn_ingresar_Click(object sender, EventArgs e)
         {
-            
+           
             // Ingreso al sistema mediante un TryCatch 
             try
             {
 
+                
                 if (cCu_GestionarUsuarios.ValidarObligatoriosLogin(txt_nombredeusuario.Text, txt_contraseña.Text))
                 {
-                    oUsuario = cCu_GestionarUsuarios.Login(txt_nombredeusuario.Text, txt_contraseña.Text);
+                    oUsuario = cCu_GestionarUsuarios.Login(txt_nombredeusuario.Text,Controladora.cEncriptacion.Encriptar(txt_contraseña.Text));
                     this.DialogResult = DialogResult.OK;
                 }
                 else

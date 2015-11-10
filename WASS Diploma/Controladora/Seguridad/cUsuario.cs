@@ -266,7 +266,7 @@ namespace Controladora
         // Validar CONTRASEÑA INGRESADA
         public bool ValidarContraseñaIngresada(Modelo_Entidades.Usuario usrActual, string claveIngresada)
         {
-            if (usrActual.clave != cEncriptacion.Encriptar(claveIngresada))
+            if (usrActual.clave != claveIngresada)
             {
                 return false;
             }

@@ -129,7 +129,7 @@ namespace Controladora.Seguridad
             //SI ESTAN MAL LOS DATOS
             if (ValidarObligatoriosCambiarClave(claveNueva, claveNuevaConfirmar, claveActual, usrActual))
             {
-                usrActual.clave = Controladora.cEncriptacion.Encriptar(claveNueva);
+                usrActual.clave = claveNueva;
                 cUsuario.Modificacion(usrActual);
                 return true;
             }
