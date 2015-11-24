@@ -31,11 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPersonas));
             this.lb_nya_Persona = new System.Windows.Forms.Label();
             this.lb_dni = new System.Windows.Forms.Label();
-            this.lb_num_matricula = new System.Windows.Forms.Label();
             this.txt_nya_Persona = new System.Windows.Forms.TextBox();
             this.dgv_datos = new System.Windows.Forms.DataGridView();
             this.txt_dni = new System.Windows.Forms.MaskedTextBox();
-            this.txt_num_matricula = new System.Windows.Forms.MaskedTextBox();
             this.botonera1 = new WASSTD.Botonera1();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_datos)).BeginInit();
             this.SuspendLayout();
@@ -63,18 +61,6 @@
             this.lb_dni.TabIndex = 1;
             this.lb_dni.Text = "Nº de documento del Persona:";
             this.lb_dni.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lb_num_matricula
-            // 
-            this.lb_num_matricula.BackColor = System.Drawing.Color.Transparent;
-            this.lb_num_matricula.Image = global::WASSTD.Properties.Resources.page_layout_icon_16;
-            this.lb_num_matricula.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lb_num_matricula.Location = new System.Drawing.Point(13, 50);
-            this.lb_num_matricula.Name = "lb_num_matricula";
-            this.lb_num_matricula.Size = new System.Drawing.Size(220, 35);
-            this.lb_num_matricula.TabIndex = 2;
-            this.lb_num_matricula.Text = "Número de matrícula del Persona:";
-            this.lb_num_matricula.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txt_nya_Persona
             // 
@@ -108,14 +94,6 @@
             this.txt_dni.TabIndex = 9;
             this.txt_dni.TextChanged += new System.EventHandler(this.txt_dni_TextChanged);
             // 
-            // txt_num_matricula
-            // 
-            this.txt_num_matricula.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txt_num_matricula.Location = new System.Drawing.Point(239, 58);
-            this.txt_num_matricula.Name = "txt_num_matricula";
-            this.txt_num_matricula.Size = new System.Drawing.Size(262, 20);
-            this.txt_num_matricula.TabIndex = 10;
-            // 
             // botonera1
             // 
             this.botonera1.Location = new System.Drawing.Point(16, 419);
@@ -132,12 +110,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(509, 462);
-            this.Controls.Add(this.txt_num_matricula);
             this.Controls.Add(this.txt_dni);
             this.Controls.Add(this.botonera1);
             this.Controls.Add(this.dgv_datos);
             this.Controls.Add(this.txt_nya_Persona);
-            this.Controls.Add(this.lb_num_matricula);
             this.Controls.Add(this.lb_dni);
             this.Controls.Add(this.lb_nya_Persona);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -160,11 +136,9 @@
 
         private System.Windows.Forms.Label lb_nya_Persona;
         private System.Windows.Forms.Label lb_dni;
-        private System.Windows.Forms.Label lb_num_matricula;
         private System.Windows.Forms.TextBox txt_nya_Persona;
         private System.Windows.Forms.DataGridView dgv_datos;
         private Botonera1 botonera1;
         private System.Windows.Forms.MaskedTextBox txt_dni;
-        private System.Windows.Forms.MaskedTextBox txt_num_matricula;
     }
 }

@@ -54,10 +54,6 @@
       <End Role="Formulario" EntitySet="Formularios" />
       <End Role="Modulo" EntitySet="Modulos" />
     </AssociationSet>
-    <AssociationSet Name="CtasCtesPersonas" Association="WASSTDModelo.Store.CtaCtePersona">
-      <End Role="CtaCte" EntitySet="CtasCtes" />
-      <End Role="Persona" EntitySet="Personas" />
-    </AssociationSet>
     <AssociationSet Name="MovimientosCtaCtes" Association="WASSTDModelo.Store.MovimientoCtaCte">
       <End Role="Movimiento" EntitySet="Movimientos" />
       <End Role="CtaCte" EntitySet="CtasCtes" />
@@ -190,7 +186,6 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="saldo" Type="decimal" Nullable="false" DefaultValue="0" />
-    <Property Name="CtaCtePersona_CtaCte_dni" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Movimientos">
     <Key>
@@ -370,18 +365,6 @@
       </Principal>
       <Dependent Role="Formulario">
         <PropertyRef Name="Modulo_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="CtaCtePersona">
-    <End Role="CtaCte" Type="WASSTDModelo.Store.CtasCtes" Multiplicity="*" />
-    <End Role="Persona" Type="WASSTDModelo.Store.Personas" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Persona">
-        <PropertyRef Name="dni" />
-      </Principal>
-      <Dependent Role="CtaCte">
-        <PropertyRef Name="CtaCtePersona_CtaCte_dni" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -630,10 +613,6 @@
           </AssociationSet>
           <EntitySet Name="Personas" EntityType="WASSTDModelo.Persona" />
           <EntitySet Name="CtasCtes" EntityType="WASSTDModelo.CtaCte" />
-          <AssociationSet Name="CtasCtesPersonas" Association="WASSTDModelo.CtaCtePersona">
-            <End Role="CtaCte" EntitySet="CtasCtes" />
-            <End Role="Persona" EntitySet="Personas" />
-          </AssociationSet>
           <EntitySet Name="Movimientos" EntityType="WASSTDModelo.Movimiento" />
           <AssociationSet Name="MovimientosCtaCtes" Association="WASSTDModelo.MovimientoCtaCte">
             <End Role="Movimiento" EntitySet="Movimientos" />
@@ -779,7 +758,6 @@
           <Property Type="String" Name="celular" Nullable="false" />
           <Property Type="String" Name="email1" Nullable="false" />
           <Property Type="String" Name="observaciones" Nullable="false" />
-          <NavigationProperty Name="CtaCte" Relationship="WASSTDModelo.CtaCtePersona" FromRole="Persona" ToRole="CtaCte" />
           <Property Type="String" Name="lugar_trabajo" />
           <NavigationProperty Name="Direcciones" Relationship="WASSTDModelo.PersonaDirecciones" FromRole="Persona" ToRole="Direccion" />
           <NavigationProperty Name="Tipo_Documento" Relationship="WASSTDModelo.Tipo_DocumentoPersona" FromRole="Persona" ToRole="Tipo_Documento" />
@@ -794,10 +772,6 @@
           <NavigationProperty Name="Persona" Relationship="WASSTDModelo.MovimientoCtaCte" FromRole="CtaCte" ToRole="Movimiento" />
           <NavigationProperty Name="Movimientos" Relationship="WASSTDModelo.MovimientoCtaCte" FromRole="CtaCte" ToRole="Movimiento" />
         </EntityType>
-        <Association Name="CtaCtePersona">
-          <End Type="WASSTDModelo.CtaCte" Role="CtaCte" Multiplicity="1" />
-          <End Type="WASSTDModelo.Persona" Role="Persona" Multiplicity="1" />
-        </Association>
         <EntityType Name="Movimiento">
           <Key>
             <PropertyRef Name="id" />
@@ -1223,14 +1197,6 @@
         <ScalarProperty Name="id" ColumnName="id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="CtasCtesPersonas" TypeName="WASSTDModelo.CtaCtePersona" StoreEntitySet="CtasCtes">
-      <EndProperty Name="Persona">
-        <ScalarProperty Name="dni" ColumnName="CtaCtePersona_CtaCte_dni" />
-      </EndProperty>
-      <EndProperty Name="CtaCte">
-        <ScalarProperty Name="id" ColumnName="id" />
-      </EndProperty>
-    </AssociationSetMapping>
     <AssociationSetMapping Name="MovimientosCtaCtes" TypeName="WASSTDModelo.MovimientoCtaCte" StoreEntitySet="Movimientos">
       <EndProperty Name="CtaCte">
         <ScalarProperty Name="id" ColumnName="CtaCte_id" />
@@ -1352,11 +1318,6 @@
         </AssociationConnector>
         <EntityTypeShape EntityType="WASSTDModelo.Persona" Width="1.875" PointX="9.125" PointY="6.25" Height="5.2494108072916656" IsExpanded="true" />
         <EntityTypeShape EntityType="WASSTDModelo.CtaCte" Width="1.5" PointX="13" PointY="5" Height="1.7879850260416665" />
-        <AssociationConnector Association="WASSTDModelo.CtaCtePersona">
-          <ConnectorPoint PointX="13.75" PointY="6.7879850260416665" />
-          <ConnectorPoint PointX="13.75" PointY="11.185751139322916" />
-          <ConnectorPoint PointX="12" PointY="11.185751139322916" />
-        </AssociationConnector>
         <EntityTypeShape EntityType="WASSTDModelo.Movimiento" Width="1.875" PointX="12.875" PointY="0.625" Height="2.364889322916667" />
         <AssociationConnector Association="WASSTDModelo.MovimientoCtaCte">
           <ConnectorPoint PointX="13.75" PointY="2.989889322916667" />

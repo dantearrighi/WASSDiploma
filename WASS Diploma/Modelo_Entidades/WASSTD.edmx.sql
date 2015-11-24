@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 11/24/2015 05:37:05
--- Generated from EDMX file: C:\Users\Dante\Documents\GitHub\WASSDiploma\WASS Diploma\Modelo_Entidades\WASSTD.edmx
+-- Date Created: 11/24/2015 17:40:29
+-- Generated from EDMX file: D:\Documentos\UAI\WASS\WASS Diploma\Modelo_Entidades\WASSTD.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -63,7 +63,7 @@ IF OBJECT_ID(N'[dbo].[FK_LocalidadDireccion]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Direcciones] DROP CONSTRAINT [FK_LocalidadDireccion];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Detalles_del_Tramite]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Detalles_TramiteSet] DROP CONSTRAINT [FK_Detalles_del_Tramite];
+    ALTER TABLE [dbo].[Detalles_TramiteS] DROP CONSTRAINT [FK_Detalles_del_Tramite];
 GO
 IF OBJECT_ID(N'[dbo].[FK_TramiteCliente]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Tramites] DROP CONSTRAINT [FK_TramiteCliente];
@@ -142,8 +142,8 @@ GO
 IF OBJECT_ID(N'[dbo].[Tramites]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Tramites];
 GO
-IF OBJECT_ID(N'[dbo].[Detalles_TramiteSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Detalles_TramiteSet];
+IF OBJECT_ID(N'[dbo].[Detalles_TramiteS]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Detalles_TramiteS];
 GO
 IF OBJECT_ID(N'[dbo].[Personas_Cliente]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Personas_Cliente];
@@ -220,8 +220,8 @@ CREATE TABLE [dbo].[Personas] (
     [dni] int  NOT NULL,
     [nombre_apellido] nvarchar(max)  NOT NULL,
     [sexo] nvarchar(max)  NOT NULL,
-    [telefono] int  NOT NULL,
-    [celular] int  NOT NULL,
+    [telefono] nvarchar(max)  NOT NULL,
+    [celular] nvarchar(max)  NOT NULL,
     [email1] nvarchar(max)  NOT NULL,
     [observaciones] nvarchar(max)  NOT NULL,
     [lugar_trabajo] nvarchar(max)  NULL,
@@ -233,8 +233,7 @@ GO
 -- Creating table 'CtasCtes'
 CREATE TABLE [dbo].[CtasCtes] (
     [id] int IDENTITY(1,1) NOT NULL,
-    [saldo] decimal(18,0)  NOT NULL,
-    [CtaCtePersona_CtaCte_dni] int  NOT NULL
+    [saldo] decimal(18,0)  NOT NULL
 );
 GO
 
@@ -320,8 +319,8 @@ CREATE TABLE [dbo].[Tramites] (
 );
 GO
 
--- Creating table 'Detalles_TramiteSet'
-CREATE TABLE [dbo].[Detalles_TramiteSet] (
+-- Creating table 'Detalles_TramiteS'
+CREATE TABLE [dbo].[Detalles_TramiteS] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [descripcion] nvarchar(max)  NULL,
     [fecha_desde] datetime  NULL,
@@ -482,9 +481,9 @@ ADD CONSTRAINT [PK_Tramites]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
--- Creating primary key on [Id] in table 'Detalles_TramiteSet'
-ALTER TABLE [dbo].[Detalles_TramiteSet]
-ADD CONSTRAINT [PK_Detalles_TramiteSet]
+-- Creating primary key on [Id] in table 'Detalles_TramiteS'
+ALTER TABLE [dbo].[Detalles_TramiteS]
+ADD CONSTRAINT [PK_Detalles_TramiteS]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -538,6 +537,7 @@ ADD CONSTRAINT [FK_UsuarioGrupo_Grupo]
     REFERENCES [dbo].[Grupos]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_UsuarioGrupo_Grupo'
 CREATE INDEX [IX_FK_UsuarioGrupo_Grupo]
@@ -552,6 +552,7 @@ ADD CONSTRAINT [FK_PerfilGrupo]
     REFERENCES [dbo].[Grupos]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_PerfilGrupo'
 CREATE INDEX [IX_FK_PerfilGrupo]
@@ -566,6 +567,7 @@ ADD CONSTRAINT [FK_PerfilPermiso]
     REFERENCES [dbo].[Permisos]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_PerfilPermiso'
 CREATE INDEX [IX_FK_PerfilPermiso]
@@ -580,6 +582,7 @@ ADD CONSTRAINT [FK_PerfilFormulario]
     REFERENCES [dbo].[Formularios]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_PerfilFormulario'
 CREATE INDEX [IX_FK_PerfilFormulario]
@@ -594,25 +597,12 @@ ADD CONSTRAINT [FK_FormularioModulo]
     REFERENCES [dbo].[Modulos]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_FormularioModulo'
 CREATE INDEX [IX_FK_FormularioModulo]
 ON [dbo].[Formularios]
     ([Modulo_id]);
-GO
-
--- Creating foreign key on [CtaCtePersona_CtaCte_dni] in table 'CtasCtes'
-ALTER TABLE [dbo].[CtasCtes]
-ADD CONSTRAINT [FK_CtaCtePersona]
-    FOREIGN KEY ([CtaCtePersona_CtaCte_dni])
-    REFERENCES [dbo].[Personas]
-        ([dni])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-
--- Creating non-clustered index for FOREIGN KEY 'FK_CtaCtePersona'
-CREATE INDEX [IX_FK_CtaCtePersona]
-ON [dbo].[CtasCtes]
-    ([CtaCtePersona_CtaCte_dni]);
 GO
 
 -- Creating foreign key on [CtaCte_id] in table 'Movimientos'
@@ -622,6 +612,7 @@ ADD CONSTRAINT [FK_MovimientoCtaCte]
     REFERENCES [dbo].[CtasCtes]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_MovimientoCtaCte'
 CREATE INDEX [IX_FK_MovimientoCtaCte]
@@ -636,6 +627,7 @@ ADD CONSTRAINT [FK_Tipo_MovimientoMovimiento]
     REFERENCES [dbo].[Tipos_Movimientos]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Tipo_MovimientoMovimiento'
 CREATE INDEX [IX_FK_Tipo_MovimientoMovimiento]
@@ -650,6 +642,7 @@ ADD CONSTRAINT [FK_ComprobanteMovimiento]
     REFERENCES [dbo].[Comprobantes]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ComprobanteMovimiento'
 CREATE INDEX [IX_FK_ComprobanteMovimiento]
@@ -664,6 +657,7 @@ ADD CONSTRAINT [FK_ProvinciaLocalidades]
     REFERENCES [dbo].[Provincias]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ProvinciaLocalidades'
 CREATE INDEX [IX_FK_ProvinciaLocalidades]
@@ -678,6 +672,7 @@ ADD CONSTRAINT [FK_PersonaDirecciones]
     REFERENCES [dbo].[Personas]
         ([dni])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_PersonaDirecciones'
 CREATE INDEX [IX_FK_PersonaDirecciones]
@@ -692,6 +687,7 @@ ADD CONSTRAINT [FK_Tipo_DocumentoPersona]
     REFERENCES [dbo].[Tipos_Documentos]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Tipo_DocumentoPersona'
 CREATE INDEX [IX_FK_Tipo_DocumentoPersona]
@@ -706,6 +702,7 @@ ADD CONSTRAINT [FK_EstadoPersona]
     REFERENCES [dbo].[Estados]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_EstadoPersona'
 CREATE INDEX [IX_FK_EstadoPersona]
@@ -720,6 +717,7 @@ ADD CONSTRAINT [FK_LocalidadDireccion]
     REFERENCES [dbo].[Localidades]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_LocalidadDireccion'
 CREATE INDEX [IX_FK_LocalidadDireccion]
@@ -727,17 +725,18 @@ ON [dbo].[Direcciones]
     ([Localidad_id]);
 GO
 
--- Creating foreign key on [TramiteId] in table 'Detalles_TramiteSet'
-ALTER TABLE [dbo].[Detalles_TramiteSet]
+-- Creating foreign key on [TramiteId] in table 'Detalles_TramiteS'
+ALTER TABLE [dbo].[Detalles_TramiteS]
 ADD CONSTRAINT [FK_Detalles_del_Tramite]
     FOREIGN KEY ([TramiteId])
     REFERENCES [dbo].[Tramites]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Detalles_del_Tramite'
 CREATE INDEX [IX_FK_Detalles_del_Tramite]
-ON [dbo].[Detalles_TramiteSet]
+ON [dbo].[Detalles_TramiteS]
     ([TramiteId]);
 GO
 
@@ -748,6 +747,7 @@ ADD CONSTRAINT [FK_TramiteCliente]
     REFERENCES [dbo].[Personas_Cliente]
         ([dni])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_TramiteCliente'
 CREATE INDEX [IX_FK_TramiteCliente]
@@ -762,6 +762,7 @@ ADD CONSTRAINT [FK_TramiteAbogado]
     REFERENCES [dbo].[Personas_Abogado]
         ([dni])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_TramiteAbogado'
 CREATE INDEX [IX_FK_TramiteAbogado]

@@ -24,7 +24,6 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "PerfilPermiso", "Perfil", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Perfil), "Permiso", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Permiso))]
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "PerfilFormulario", "Perfil", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Perfil), "Formulario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Formulario))]
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "FormularioModulo", "Formulario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Formulario), "Modulo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Modulo))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "CtaCtePersona", "CtaCte", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.CtaCte), "Persona", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Persona))]
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "MovimientoCtaCte", "Movimiento", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Movimiento), "CtaCte", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.CtaCte))]
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "Tipo_MovimientoMovimiento", "Tipo_Movimiento", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Tipo_Movimiento), "Movimiento", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Movimiento))]
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "ComprobanteMovimiento", "Comprobante", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Comprobante), "Movimiento", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Movimiento))]
@@ -378,18 +377,18 @@ namespace Modelo_Entidades
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        public ObjectSet<Detalles_Tramite> Detalles_TramiteSet
+        public ObjectSet<Detalles_Tramite> Detalles_TramiteS
         {
             get
             {
-                if ((_Detalles_TramiteSet == null))
+                if ((_Detalles_TramiteS == null))
                 {
-                    _Detalles_TramiteSet = base.CreateObjectSet<Detalles_Tramite>("Detalles_TramiteSet");
+                    _Detalles_TramiteS = base.CreateObjectSet<Detalles_Tramite>("Detalles_TramiteS");
                 }
-                return _Detalles_TramiteSet;
+                return _Detalles_TramiteS;
             }
         }
-        private ObjectSet<Detalles_Tramite> _Detalles_TramiteSet;
+        private ObjectSet<Detalles_Tramite> _Detalles_TramiteS;
 
         #endregion
 
@@ -540,11 +539,11 @@ namespace Modelo_Entidades
         }
     
         /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Detalles_TramiteSet. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// Método desusado para agregar un nuevo objeto al EntitySet Detalles_TramiteS. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
         /// </summary>
-        public void AddToDetalles_TramiteSet(Detalles_Tramite detalles_Tramite)
+        public void AddToDetalles_TramiteS(Detalles_Tramite detalles_Tramite)
         {
-            base.AddObject("Detalles_TramiteSet", detalles_Tramite);
+            base.AddObject("Detalles_TramiteS", detalles_Tramite);
         }
 
         #endregion
@@ -575,7 +574,7 @@ namespace Modelo_Entidades
         /// <param name="celular">Valor inicial de la propiedad celular.</param>
         /// <param name="email1">Valor inicial de la propiedad email1.</param>
         /// <param name="observaciones">Valor inicial de la propiedad observaciones.</param>
-        public static Abogado CreateAbogado(global::System.Int32 dni, global::System.String nombre_apellido, global::System.String sexo, global::System.Int32 telefono, global::System.Int32 celular, global::System.String email1, global::System.String observaciones)
+        public static Abogado CreateAbogado(global::System.Int32 dni, global::System.String nombre_apellido, global::System.String sexo, global::System.String telefono, global::System.String celular, global::System.String email1, global::System.String observaciones)
         {
             Abogado abogado = new Abogado();
             abogado.dni = dni;
@@ -848,7 +847,7 @@ namespace Modelo_Entidades
         /// <param name="observaciones">Valor inicial de la propiedad observaciones.</param>
         /// <param name="id">Valor inicial de la propiedad Id.</param>
         /// <param name="fecha_nacimiento">Valor inicial de la propiedad fecha_nacimiento.</param>
-        public static Cliente CreateCliente(global::System.Int32 dni, global::System.String nombre_apellido, global::System.String sexo, global::System.Int32 telefono, global::System.Int32 celular, global::System.String email1, global::System.String observaciones, global::System.Int32 id, global::System.DateTime fecha_nacimiento)
+        public static Cliente CreateCliente(global::System.Int32 dni, global::System.String nombre_apellido, global::System.String sexo, global::System.String telefono, global::System.String celular, global::System.String email1, global::System.String observaciones, global::System.Int32 id, global::System.DateTime fecha_nacimiento)
         {
             Cliente cliente = new Cliente();
             cliente.dni = dni;
@@ -2945,7 +2944,7 @@ namespace Modelo_Entidades
         /// <param name="celular">Valor inicial de la propiedad celular.</param>
         /// <param name="email1">Valor inicial de la propiedad email1.</param>
         /// <param name="observaciones">Valor inicial de la propiedad observaciones.</param>
-        public static Persona CreatePersona(global::System.Int32 dni, global::System.String nombre_apellido, global::System.String sexo, global::System.Int32 telefono, global::System.Int32 celular, global::System.String email1, global::System.String observaciones)
+        public static Persona CreatePersona(global::System.Int32 dni, global::System.String nombre_apellido, global::System.String sexo, global::System.String telefono, global::System.String celular, global::System.String email1, global::System.String observaciones)
         {
             Persona persona = new Persona();
             persona.dni = dni;
@@ -3042,7 +3041,7 @@ namespace Modelo_Entidades
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 telefono
+        public global::System.String telefono
         {
             get
             {
@@ -3052,13 +3051,13 @@ namespace Modelo_Entidades
             {
                 OntelefonoChanging(value);
                 ReportPropertyChanging("telefono");
-                _telefono = StructuralObject.SetValidValue(value);
+                _telefono = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("telefono");
                 OntelefonoChanged();
             }
         }
-        private global::System.Int32 _telefono;
-        partial void OntelefonoChanging(global::System.Int32 value);
+        private global::System.String _telefono;
+        partial void OntelefonoChanging(global::System.String value);
         partial void OntelefonoChanged();
     
         /// <summary>
@@ -3066,7 +3065,7 @@ namespace Modelo_Entidades
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 celular
+        public global::System.String celular
         {
             get
             {
@@ -3076,13 +3075,13 @@ namespace Modelo_Entidades
             {
                 OncelularChanging(value);
                 ReportPropertyChanging("celular");
-                _celular = StructuralObject.SetValidValue(value);
+                _celular = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("celular");
                 OncelularChanged();
             }
         }
-        private global::System.Int32 _celular;
-        partial void OncelularChanging(global::System.Int32 value);
+        private global::System.String _celular;
+        partial void OncelularChanging(global::System.String value);
         partial void OncelularChanged();
     
         /// <summary>
@@ -3161,44 +3160,6 @@ namespace Modelo_Entidades
 
     
         #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "CtaCtePersona", "CtaCte")]
-        public CtaCte CtaCte
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CtaCte>("WASSTDModelo.CtaCtePersona", "CtaCte").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CtaCte>("WASSTDModelo.CtaCtePersona", "CtaCte").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<CtaCte> CtaCteReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CtaCte>("WASSTDModelo.CtaCtePersona", "CtaCte");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<CtaCte>("WASSTDModelo.CtaCtePersona", "CtaCte", value);
-                }
-            }
-        }
     
         /// <summary>
         /// No hay documentación de metadatos disponible.

@@ -140,6 +140,7 @@ namespace WASSTD
                 oPersona.Tipo_Documento = (Modelo_Entidades.Tipo_Documento)cmb_tiposdoc.SelectedItem;
                 oPersona.dni = Convert.ToInt32(txt_numero.Text);
                 oPersona.nombre_apellido = txt_nombreapellido.Text;
+                oPersona.observaciones = txt_observaciones.Text;
           //      oPersona.fecha_nacimiento = Convert.ToDateTime(txt_fechanacimiento.Text);
 
                 if (rbtn_masculino.Checked == true)
@@ -175,9 +176,10 @@ namespace WASSTD
                     
                 }
                     
-                oPersona.telefono = Convert.ToInt32(txt_telfijo.Text);
-                oPersona.celular = Convert.ToInt32(txt_celular.Text);
+                oPersona.telefono = txt_telfijo.Text;
+                oPersona.celular = txt_celular.Text;
                 oPersona.email1 = txt_emailpricipal.Text;
+                oPersona.Estado = cEstado.ObtenerEstadoHabilitado();
               
                 #endregion
 
@@ -185,7 +187,7 @@ namespace WASSTD
 
                     #region Contabilidad del Persona
 
-                if (modo == "Alta")
+             /*   if (modo == "Alta")
                 {
                     // Doy de alta a la cta cte
                     Modelo_Entidades.CtaCte oCtaCte = new Modelo_Entidades.CtaCte();
@@ -193,7 +195,7 @@ namespace WASSTD
                     oCtaCte.Persona = oPersona.CtaCte.Movimientos;
                     oPersona.CtaCte = oCtaCte;
                 }
-
+                    */
                 #endregion
 
              
