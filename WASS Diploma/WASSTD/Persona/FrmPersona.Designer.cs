@@ -327,7 +327,7 @@
             this.cmbTipoPersona.Size = new System.Drawing.Size(121, 21);
             this.cmbTipoPersona.TabIndex = 55;
             this.cmbTipoPersona.Text = "Seleccionar";
-            this.cmbTipoPersona.SelectedIndexChanged += new System.EventHandler(this.cmbTipoPersona_SelectedIndexChanged);
+            
             // 
             // label1
             // 

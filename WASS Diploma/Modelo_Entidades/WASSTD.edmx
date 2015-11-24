@@ -289,7 +289,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="clave_fiscal" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="fecha_nacimiento" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="fecha_nacimiento" Type="datetime" Nullable="false" />
     <Property Name="dni" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Personas_Abogado">

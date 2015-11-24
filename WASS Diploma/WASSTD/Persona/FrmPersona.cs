@@ -140,7 +140,7 @@ namespace WASSTD
                 oPersona.Tipo_Documento = (Modelo_Entidades.Tipo_Documento)cmb_tiposdoc.SelectedItem;
                 oPersona.dni = Convert.ToInt32(txt_numero.Text);
                 oPersona.nombre_apellido = txt_nombreapellido.Text;
-                oPersona.fecha_nacimiento = Convert.ToDateTime(txt_fechanacimiento.Text);
+          //      oPersona.fecha_nacimiento = Convert.ToDateTime(txt_fechanacimiento.Text);
 
                 if (rbtn_masculino.Checked == true)
                 {
@@ -394,7 +394,7 @@ namespace WASSTD
 
             txt_numero.Text = oPersona.dni.ToString();
             txt_nombreapellido.Text = oPersona.nombre_apellido;
-            txt_fechanacimiento.Text = oPersona.fecha_nacimiento.ToString();
+          //  txt_fechanacimiento.Text = oPersona.fecha_nacimiento.ToString();
 
             if (oPersona.sexo == "Masculino")
             {

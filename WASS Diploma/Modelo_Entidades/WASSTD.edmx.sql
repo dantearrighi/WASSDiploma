@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 11/24/2015 05:14:33
+-- Date Created: 11/24/2015 05:37:05
 -- Generated from EDMX file: C:\Users\Dante\Documents\GitHub\WASSDiploma\WASS Diploma\Modelo_Entidades\WASSTD.edmx
 -- --------------------------------------------------
 
@@ -333,7 +333,7 @@ GO
 CREATE TABLE [dbo].[Personas_Cliente] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [clave_fiscal] nvarchar(max)  NULL,
-    [fecha_nacimiento] nvarchar(max)  NOT NULL,
+    [fecha_nacimiento] datetime  NOT NULL,
     [dni] int  NOT NULL
 );
 GO
