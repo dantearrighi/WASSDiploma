@@ -24,7 +24,7 @@
     <EntitySet Name="Tipos_Documentos" EntityType="WASSTDModelo.Store.Tipos_Documentos" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Alteradores" EntityType="WASSTDModelo.Store.Alteradores" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Tramites" EntityType="WASSTDModelo.Store.Tramites" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Detalles_TramiteSet" EntityType="WASSTDModelo.Store.Detalles_TramiteSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Detalles_TramiteS" EntityType="WASSTDModelo.Store.Detalles_TramiteS" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Personas_Cliente" EntityType="WASSTDModelo.Store.Personas_Cliente" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Personas_Abogado" EntityType="WASSTDModelo.Store.Personas_Abogado" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Comprobantes_Factura" EntityType="WASSTDModelo.Store.Comprobantes_Factura" store:Type="Tables" Schema="dbo" />
@@ -91,7 +91,7 @@
       <End Role="Direccion" EntitySet="Direcciones" />
     </AssociationSet>
     <AssociationSet Name="Detalles_del_Tramite" Association="WASSTDModelo.Store.Detalles_del_Tramite">
-      <End Role="Detalles_Tramite" EntitySet="Detalles_TramiteSet" />
+      <End Role="Detalles_Tramite" EntitySet="Detalles_TramiteS" />
       <End Role="Tramite" EntitySet="Tramites" />
     </AssociationSet>
     <AssociationSet Name="TramiteCliente" Association="WASSTDModelo.Store.TramiteCliente">
@@ -176,8 +176,8 @@
     <Property Name="dni" Type="int" Nullable="false" />
     <Property Name="nombre_apellido" Type="nvarchar(max)" Nullable="false" />
     <Property Name="sexo" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="telefono" Type="int" Nullable="false" />
-    <Property Name="celular" Type="int" Nullable="false" />
+    <Property Name="telefono" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="celular" Type="nvarchar(max)" Nullable="false" />
     <Property Name="email1" Type="nvarchar(max)" Nullable="false" />
     <Property Name="observaciones" Type="nvarchar(max)" Nullable="false" />
     <Property Name="lugar_trabajo" Type="nvarchar(max)" Nullable="true" />
@@ -274,7 +274,7 @@
     <Property Name="Cliente_dni" Type="int" Nullable="false" />
     <Property Name="Abogado_dni" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="Detalles_TramiteSet">
+  <EntityType Name="Detalles_TramiteS">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -482,7 +482,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="Detalles_del_Tramite">
-    <End Role="Detalles_Tramite" Type="WASSTDModelo.Store.Detalles_TramiteSet" Multiplicity="*" />
+    <End Role="Detalles_Tramite" Type="WASSTDModelo.Store.Detalles_TramiteS" Multiplicity="*" />
     <End Role="Tramite" Type="WASSTDModelo.Store.Tramites" Multiplicity="1" />
     <ReferentialConstraint>
       <Principal Role="Tramite">
@@ -676,9 +676,9 @@
           </AssociationSet>
           <EntitySet Name="Alteradores" EntityType="WASSTDModelo.Alterador" />
           <EntitySet Name="Tramites" EntityType="WASSTDModelo.Tramite" />
-          <EntitySet Name="Detalles_TramiteSet" EntityType="WASSTDModelo.Detalles_Tramite" />
+          <EntitySet Name="Detalles_TramiteS" EntityType="WASSTDModelo.Detalles_Tramite" />
           <AssociationSet Name="Detalles_del_Tramite" Association="WASSTDModelo.Detalles_del_Tramite">
-            <End Role="Detalles_Tramite" EntitySet="Detalles_TramiteSet" />
+            <End Role="Detalles_Tramite" EntitySet="Detalles_TramiteS" />
             <End Role="Tramite" EntitySet="Tramites" />
           </AssociationSet>
           <AssociationSet Name="TramiteCliente" Association="WASSTDModelo.TramiteCliente">
@@ -775,8 +775,8 @@
           <Property Type="Int32" Name="dni" Nullable="false" annotation:StoreGeneratedPattern="None" />
           <Property Type="String" Name="nombre_apellido" Nullable="false" />
           <Property Type="String" Name="sexo" Nullable="false" />
-          <Property Type="Int32" Name="telefono" Nullable="false" />
-          <Property Type="Int32" Name="celular" Nullable="false" />
+          <Property Type="String" Name="telefono" Nullable="false" />
+          <Property Type="String" Name="celular" Nullable="false" />
           <Property Type="String" Name="email1" Nullable="false" />
           <Property Type="String" Name="observaciones" Nullable="false" />
           <NavigationProperty Name="CtaCte" Relationship="WASSTDModelo.CtaCtePersona" FromRole="Persona" ToRole="CtaCte" />
@@ -1173,9 +1173,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Detalles_TramiteSet">
+    <EntitySetMapping Name="Detalles_TramiteS">
       <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Detalles_Tramite)">
-        <MappingFragment StoreEntitySet="Detalles_TramiteSet">
+        <MappingFragment StoreEntitySet="Detalles_TramiteS">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
           <ScalarProperty Name="fecha_desde" ColumnName="fecha_desde" />
@@ -1388,10 +1388,10 @@
         <EntityTypeShape EntityType="WASSTDModelo.Estado" Width="1.875" PointX="3.375" PointY="8.625" Height="1.5956835937499996" />
         <EntityTypeShape EntityType="WASSTDModelo.Direccion" Width="1.875" PointX="0.75" PointY="13.5" Height="1.7879850260416674" />
         <AssociationConnector Association="WASSTDModelo.PersonaDirecciones" ManuallyRouted="true">
-          <ConnectorPoint PointX="9.59375" PointY="9.576396484375" />
-          <ConnectorPoint PointX="9.59375" PointY="10.143550538574218" />
-          <ConnectorPoint PointX="5.587121419526488" PointY="10.143550538574218" />
-          <ConnectorPoint PointX="5.587121419526488" PointY="14.393992513020834" />
+          <ConnectorPoint PointX="9.8437475" PointY="9.576396484375" />
+          <ConnectorPoint PointX="9.8437475" PointY="10.094131245252745" />
+          <ConnectorPoint PointX="6.1917205997797851" PointY="10.094131245252745" />
+          <ConnectorPoint PointX="6.1917205997797851" PointY="14.393992513020834" />
           <ConnectorPoint PointX="2.625" PointY="14.393992513020834" />
         </AssociationConnector>
         <EntityTypeShape EntityType="WASSTDModelo.Tipo_Documento" Width="1.875" PointX="3.375" PointY="6.875" Height="1.5956835937499996" IsExpanded="true" />

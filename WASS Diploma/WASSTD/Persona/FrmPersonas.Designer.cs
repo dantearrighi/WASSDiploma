@@ -90,7 +90,7 @@
             this.dgv_datos.AllowUserToAddRows = false;
             this.dgv_datos.AllowUserToDeleteRows = false;
             this.dgv_datos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_datos.BackgroundColor = System.Drawing.Color.CornflowerBlue;
+            this.dgv_datos.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.dgv_datos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_datos.Location = new System.Drawing.Point(16, 93);
             this.dgv_datos.Name = "dgv_datos";
@@ -115,11 +115,9 @@
             this.txt_num_matricula.Name = "txt_num_matricula";
             this.txt_num_matricula.Size = new System.Drawing.Size(262, 20);
             this.txt_num_matricula.TabIndex = 10;
-            
             // 
             // botonera1
             // 
-            this.botonera1.BackgroundImage = global::WASSTD.Properties.Resources.Fondo_Final;
             this.botonera1.Location = new System.Drawing.Point(16, 419);
             this.botonera1.Name = "botonera1";
             this.botonera1.Size = new System.Drawing.Size(486, 42);
@@ -133,7 +131,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WASSTD.Properties.Resources.Fondo_Final;
             this.ClientSize = new System.Drawing.Size(509, 462);
             this.Controls.Add(this.txt_num_matricula);
             this.Controls.Add(this.txt_dni);
