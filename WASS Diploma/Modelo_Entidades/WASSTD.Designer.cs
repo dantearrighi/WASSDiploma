@@ -2496,7 +2496,8 @@ namespace Modelo_Entidades
         /// <param name="celular">Valor inicial de la propiedad celular.</param>
         /// <param name="email1">Valor inicial de la propiedad email1.</param>
         /// <param name="observaciones">Valor inicial de la propiedad observaciones.</param>
-        public static Persona CreatePersona(global::System.Int32 dni, global::System.String nombre_apellido, global::System.DateTime fecha_nacimiento, global::System.String sexo, global::System.Int32 telefono, global::System.Int32 celular, global::System.String email1, global::System.String observaciones)
+        /// <param name="clave_fiscal">Valor inicial de la propiedad clave_fiscal.</param>
+        public static Persona CreatePersona(global::System.Int32 dni, global::System.String nombre_apellido, global::System.DateTime fecha_nacimiento, global::System.String sexo, global::System.Int32 telefono, global::System.Int32 celular, global::System.String email1, global::System.String observaciones, global::System.String clave_fiscal)
         {
             Persona persona = new Persona();
             persona.dni = dni;
@@ -2507,6 +2508,7 @@ namespace Modelo_Entidades
             persona.celular = celular;
             persona.email1 = email1;
             persona.observaciones = observaciones;
+            persona.clave_fiscal = clave_fiscal;
             return persona;
         }
 
@@ -2732,6 +2734,30 @@ namespace Modelo_Entidades
         private global::System.String _lugar_trabajo;
         partial void Onlugar_trabajoChanging(global::System.String value);
         partial void Onlugar_trabajoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String clave_fiscal
+        {
+            get
+            {
+                return _clave_fiscal;
+            }
+            set
+            {
+                Onclave_fiscalChanging(value);
+                ReportPropertyChanging("clave_fiscal");
+                _clave_fiscal = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("clave_fiscal");
+                Onclave_fiscalChanged();
+            }
+        }
+        private global::System.String _clave_fiscal;
+        partial void Onclave_fiscalChanging(global::System.String value);
+        partial void Onclave_fiscalChanged();
 
         #endregion
 

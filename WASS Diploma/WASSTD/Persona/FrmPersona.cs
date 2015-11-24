@@ -497,6 +497,11 @@ namespace WASSTD
             }          
         }
 
+        private void tab_datos_Click(object sender, EventArgs e)
+        {
+
+        }
+
       
 
         

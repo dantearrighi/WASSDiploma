@@ -37,20 +37,6 @@
             this.txt_numero = new System.Windows.Forms.MaskedTextBox();
             this.txt_telfijo = new System.Windows.Forms.MaskedTextBox();
             this.txt_fechanacimiento = new System.Windows.Forms.MaskedTextBox();
-            this.grp_sexo = new System.Windows.Forms.GroupBox();
-            this.lb_sexo = new System.Windows.Forms.Label();
-            this.rbtn_masculino = new System.Windows.Forms.RadioButton();
-            this.rbtn_femenino = new System.Windows.Forms.RadioButton();
-            this.lb_emailalternativo = new System.Windows.Forms.Label();
-            this.grp_lugardeenvio = new System.Windows.Forms.GroupBox();
-            this.txt_cpE = new System.Windows.Forms.TextBox();
-            this.lb_cpR = new System.Windows.Forms.Label();
-            this.lb_localidadR = new System.Windows.Forms.Label();
-            this.cmb_localidadesE = new System.Windows.Forms.ComboBox();
-            this.cmb_provinciasE = new System.Windows.Forms.ComboBox();
-            this.lb_provinciaR = new System.Windows.Forms.Label();
-            this.txt_direccionE = new System.Windows.Forms.TextBox();
-            this.lb_direccionR = new System.Windows.Forms.Label();
             this.grp_direccionres = new System.Windows.Forms.GroupBox();
             this.txt_cp = new System.Windows.Forms.TextBox();
             this.lb_codigopostal = new System.Windows.Forms.Label();
@@ -62,7 +48,6 @@
             this.lb_direccion = new System.Windows.Forms.Label();
             this.cmb_tiposdoc = new System.Windows.Forms.ComboBox();
             this.lb_tipodoc = new System.Windows.Forms.Label();
-            this.txt_emailalternativo = new System.Windows.Forms.TextBox();
             this.lb_celular = new System.Windows.Forms.Label();
             this.lb_telfijo = new System.Windows.Forms.Label();
             this.lb_fechanacimiento = new System.Windows.Forms.Label();
@@ -74,13 +59,28 @@
             this.tab_observaciones = new System.Windows.Forms.TabPage();
             this.grp_observaciones = new System.Windows.Forms.GroupBox();
             this.txt_observaciones = new System.Windows.Forms.TextBox();
+            this.cmbTipoPersona = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.rbtn_femenino = new System.Windows.Forms.RadioButton();
+            this.rbtn_masculino = new System.Windows.Forms.RadioButton();
+            this.lb_sexo = new System.Windows.Forms.Label();
+            this.grp_sexo = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_ClaveFiscal = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnCopiarDNI = new System.Windows.Forms.Button();
+            this.btnCopiarClaveFiscal = new System.Windows.Forms.Button();
             this.tab_Persona.SuspendLayout();
             this.tab_datos.SuspendLayout();
-            this.grp_sexo.SuspendLayout();
-            this.grp_lugardeenvio.SuspendLayout();
             this.grp_direccionres.SuspendLayout();
             this.tab_observaciones.SuspendLayout();
             this.grp_observaciones.SuspendLayout();
+            this.grp_sexo.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_guardar
@@ -121,38 +121,22 @@
             // 
             // tab_datos
             // 
-            this.tab_datos.BackgroundImage = global::WASSTD.Properties.Resources.Fondo_Final;
-            this.tab_datos.Controls.Add(this.txt_celular);
-            this.tab_datos.Controls.Add(this.txt_numero);
-            this.tab_datos.Controls.Add(this.txt_telfijo);
-            this.tab_datos.Controls.Add(this.txt_fechanacimiento);
-            this.tab_datos.Controls.Add(this.grp_sexo);
-            this.tab_datos.Controls.Add(this.lb_emailalternativo);
-            this.tab_datos.Controls.Add(this.grp_lugardeenvio);
+            this.tab_datos.BackColor = System.Drawing.SystemColors.Control;
+            this.tab_datos.Controls.Add(this.groupBox2);
+            this.tab_datos.Controls.Add(this.groupBox1);
             this.tab_datos.Controls.Add(this.grp_direccionres);
-            this.tab_datos.Controls.Add(this.cmb_tiposdoc);
-            this.tab_datos.Controls.Add(this.lb_tipodoc);
-            this.tab_datos.Controls.Add(this.txt_emailalternativo);
-            this.tab_datos.Controls.Add(this.lb_celular);
-            this.tab_datos.Controls.Add(this.lb_telfijo);
-            this.tab_datos.Controls.Add(this.lb_fechanacimiento);
-            this.tab_datos.Controls.Add(this.lb_numero);
-            this.tab_datos.Controls.Add(this.txt_emailpricipal);
-            this.tab_datos.Controls.Add(this.lb_emailprincipal);
-            this.tab_datos.Controls.Add(this.txt_nombreapellido);
-            this.tab_datos.Controls.Add(this.lb_nombreapellido);
             this.tab_datos.Location = new System.Drawing.Point(4, 22);
             this.tab_datos.Name = "tab_datos";
             this.tab_datos.Padding = new System.Windows.Forms.Padding(3);
             this.tab_datos.Size = new System.Drawing.Size(527, 397);
             this.tab_datos.TabIndex = 0;
             this.tab_datos.Text = "Datos Personales";
-            this.tab_datos.UseVisualStyleBackColor = true;
+            this.tab_datos.Click += new System.EventHandler(this.tab_datos_Click);
             // 
             // txt_celular
             // 
             this.txt_celular.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txt_celular.Location = new System.Drawing.Point(358, 315);
+            this.txt_celular.Location = new System.Drawing.Point(352, 30);
             this.txt_celular.Mask = "9999999999999";
             this.txt_celular.Name = "txt_celular";
             this.txt_celular.Size = new System.Drawing.Size(154, 20);
@@ -161,7 +145,7 @@
             // txt_numero
             // 
             this.txt_numero.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txt_numero.Location = new System.Drawing.Point(359, 12);
+            this.txt_numero.Location = new System.Drawing.Point(350, 50);
             this.txt_numero.Mask = "99999999";
             this.txt_numero.Name = "txt_numero";
             this.txt_numero.Size = new System.Drawing.Size(153, 20);
@@ -170,7 +154,7 @@
             // txt_telfijo
             // 
             this.txt_telfijo.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txt_telfijo.Location = new System.Drawing.Point(144, 315);
+            this.txt_telfijo.Location = new System.Drawing.Point(138, 30);
             this.txt_telfijo.Mask = "99999999999";
             this.txt_telfijo.Name = "txt_telfijo";
             this.txt_telfijo.Size = new System.Drawing.Size(100, 20);
@@ -179,164 +163,12 @@
             // txt_fechanacimiento
             // 
             this.txt_fechanacimiento.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txt_fechanacimiento.Location = new System.Drawing.Point(144, 77);
+            this.txt_fechanacimiento.Location = new System.Drawing.Point(138, 79);
             this.txt_fechanacimiento.Mask = "00/00/0000";
             this.txt_fechanacimiento.Name = "txt_fechanacimiento";
             this.txt_fechanacimiento.Size = new System.Drawing.Size(100, 20);
             this.txt_fechanacimiento.TabIndex = 50;
             this.txt_fechanacimiento.ValidatingType = typeof(System.DateTime);
-            // 
-            // grp_sexo
-            // 
-            this.grp_sexo.Controls.Add(this.lb_sexo);
-            this.grp_sexo.Controls.Add(this.rbtn_masculino);
-            this.grp_sexo.Controls.Add(this.rbtn_femenino);
-            this.grp_sexo.Location = new System.Drawing.Point(252, 70);
-            this.grp_sexo.Name = "grp_sexo";
-            this.grp_sexo.Size = new System.Drawing.Size(260, 36);
-            this.grp_sexo.TabIndex = 49;
-            this.grp_sexo.TabStop = false;
-            // 
-            // lb_sexo
-            // 
-            this.lb_sexo.Image = global::WASSTD.Properties.Resources.font_strokethrough_icon_16;
-            this.lb_sexo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lb_sexo.Location = new System.Drawing.Point(6, 5);
-            this.lb_sexo.Name = "lb_sexo";
-            this.lb_sexo.Size = new System.Drawing.Size(65, 35);
-            this.lb_sexo.TabIndex = 13;
-            this.lb_sexo.Text = "Sexo:";
-            this.lb_sexo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // rbtn_masculino
-            // 
-            this.rbtn_masculino.AutoSize = true;
-            this.rbtn_masculino.Location = new System.Drawing.Point(80, 14);
-            this.rbtn_masculino.Name = "rbtn_masculino";
-            this.rbtn_masculino.Size = new System.Drawing.Size(73, 17);
-            this.rbtn_masculino.TabIndex = 6;
-            this.rbtn_masculino.TabStop = true;
-            this.rbtn_masculino.Text = "Masuclino";
-            this.rbtn_masculino.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_femenino
-            // 
-            this.rbtn_femenino.AutoSize = true;
-            this.rbtn_femenino.Location = new System.Drawing.Point(159, 14);
-            this.rbtn_femenino.Name = "rbtn_femenino";
-            this.rbtn_femenino.Size = new System.Drawing.Size(71, 17);
-            this.rbtn_femenino.TabIndex = 31;
-            this.rbtn_femenino.TabStop = true;
-            this.rbtn_femenino.Text = "Femenino";
-            this.rbtn_femenino.UseVisualStyleBackColor = true;
-            // 
-            // lb_emailalternativo
-            // 
-            this.lb_emailalternativo.Image = global::WASSTD.Properties.Resources.mail_icon_16;
-            this.lb_emailalternativo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lb_emailalternativo.Location = new System.Drawing.Point(9, 359);
-            this.lb_emailalternativo.Name = "lb_emailalternativo";
-            this.lb_emailalternativo.Size = new System.Drawing.Size(118, 35);
-            this.lb_emailalternativo.TabIndex = 21;
-            this.lb_emailalternativo.Text = "E-Mail alternativo:";
-            this.lb_emailalternativo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // grp_lugardeenvio
-            // 
-            this.grp_lugardeenvio.Controls.Add(this.txt_cpE);
-            this.grp_lugardeenvio.Controls.Add(this.lb_cpR);
-            this.grp_lugardeenvio.Controls.Add(this.lb_localidadR);
-            this.grp_lugardeenvio.Controls.Add(this.cmb_localidadesE);
-            this.grp_lugardeenvio.Controls.Add(this.cmb_provinciasE);
-            this.grp_lugardeenvio.Controls.Add(this.lb_provinciaR);
-            this.grp_lugardeenvio.Controls.Add(this.txt_direccionE);
-            this.grp_lugardeenvio.Controls.Add(this.lb_direccionR);
-            this.grp_lugardeenvio.Location = new System.Drawing.Point(6, 219);
-            this.grp_lugardeenvio.Name = "grp_lugardeenvio";
-            this.grp_lugardeenvio.Size = new System.Drawing.Size(518, 85);
-            this.grp_lugardeenvio.TabIndex = 47;
-            this.grp_lugardeenvio.TabStop = false;
-            this.grp_lugardeenvio.Text = "Lugar de envío";
-            // 
-            // txt_cpE
-            // 
-            this.txt_cpE.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txt_cpE.Location = new System.Drawing.Point(411, 59);
-            this.txt_cpE.Name = "txt_cpE";
-            this.txt_cpE.Size = new System.Drawing.Size(95, 20);
-            this.txt_cpE.TabIndex = 46;
-            // 
-            // lb_cpR
-            // 
-            this.lb_cpR.Image = global::WASSTD.Properties.Resources.cc_icon_16;
-            this.lb_cpR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lb_cpR.Location = new System.Drawing.Point(350, 50);
-            this.lb_cpR.Name = "lb_cpR";
-            this.lb_cpR.Size = new System.Drawing.Size(47, 35);
-            this.lb_cpR.TabIndex = 45;
-            this.lb_cpR.Text = "CP:";
-            this.lb_cpR.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lb_localidadR
-            // 
-            this.lb_localidadR.Image = global::WASSTD.Properties.Resources.globe_1_icon_16;
-            this.lb_localidadR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lb_localidadR.Location = new System.Drawing.Point(241, 11);
-            this.lb_localidadR.Name = "lb_localidadR";
-            this.lb_localidadR.Size = new System.Drawing.Size(76, 35);
-            this.lb_localidadR.TabIndex = 44;
-            this.lb_localidadR.Text = "Localidad:";
-            this.lb_localidadR.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cmb_localidadesE
-            // 
-            this.cmb_localidadesE.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.cmb_localidadesE.FormattingEnabled = true;
-            this.cmb_localidadesE.Location = new System.Drawing.Point(323, 19);
-            this.cmb_localidadesE.Name = "cmb_localidadesE";
-            this.cmb_localidadesE.Size = new System.Drawing.Size(183, 21);
-            this.cmb_localidadesE.TabIndex = 43;
-            this.cmb_localidadesE.Leave += new System.EventHandler(this.cmb_localidadesE_Leave);
-            // 
-            // cmb_provinciasE
-            // 
-            this.cmb_provinciasE.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.cmb_provinciasE.FormattingEnabled = true;
-            this.cmb_provinciasE.Location = new System.Drawing.Point(114, 19);
-            this.cmb_provinciasE.Name = "cmb_provinciasE";
-            this.cmb_provinciasE.Size = new System.Drawing.Size(121, 21);
-            this.cmb_provinciasE.TabIndex = 42;
-            this.cmb_provinciasE.Leave += new System.EventHandler(this.cmb_provinciasE_Leave);
-            // 
-            // lb_provinciaR
-            // 
-            this.lb_provinciaR.Image = global::WASSTD.Properties.Resources.globe_3_icon_16;
-            this.lb_provinciaR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lb_provinciaR.Location = new System.Drawing.Point(14, 11);
-            this.lb_provinciaR.Name = "lb_provinciaR";
-            this.lb_provinciaR.Size = new System.Drawing.Size(90, 35);
-            this.lb_provinciaR.TabIndex = 41;
-            this.lb_provinciaR.Text = "Provincia:";
-            this.lb_provinciaR.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txt_direccionE
-            // 
-            this.txt_direccionE.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txt_direccionE.Location = new System.Drawing.Point(114, 57);
-            this.txt_direccionE.Name = "txt_direccionE";
-            this.txt_direccionE.Size = new System.Drawing.Size(229, 20);
-            this.txt_direccionE.TabIndex = 40;
-            // 
-            // lb_direccionR
-            // 
-            this.lb_direccionR.Image = global::WASSTD.Properties.Resources.globe_2_icon_16;
-            this.lb_direccionR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lb_direccionR.Location = new System.Drawing.Point(13, 49);
-            this.lb_direccionR.Name = "lb_direccionR";
-            this.lb_direccionR.Size = new System.Drawing.Size(91, 35);
-            this.lb_direccionR.TabIndex = 39;
-            this.lb_direccionR.Text = "Dirección:";
-            this.lb_direccionR.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // grp_direccionres
             // 
@@ -348,12 +180,12 @@
             this.grp_direccionres.Controls.Add(this.lb_provincia);
             this.grp_direccionres.Controls.Add(this.txt_direccion);
             this.grp_direccionres.Controls.Add(this.lb_direccion);
-            this.grp_direccionres.Location = new System.Drawing.Point(6, 112);
+            this.grp_direccionres.Location = new System.Drawing.Point(6, 190);
             this.grp_direccionres.Name = "grp_direccionres";
-            this.grp_direccionres.Size = new System.Drawing.Size(518, 78);
+            this.grp_direccionres.Size = new System.Drawing.Size(515, 86);
             this.grp_direccionres.TabIndex = 32;
             this.grp_direccionres.TabStop = false;
-            this.grp_direccionres.Text = "Lugar de residencia";
+            this.grp_direccionres.Text = "Domicilio";
             // 
             // txt_cp
             // 
@@ -439,7 +271,7 @@
             // 
             this.cmb_tiposdoc.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.cmb_tiposdoc.FormattingEnabled = true;
-            this.cmb_tiposdoc.Location = new System.Drawing.Point(144, 12);
+            this.cmb_tiposdoc.Location = new System.Drawing.Point(138, 49);
             this.cmb_tiposdoc.Name = "cmb_tiposdoc";
             this.cmb_tiposdoc.Size = new System.Drawing.Size(121, 21);
             this.cmb_tiposdoc.TabIndex = 24;
@@ -448,26 +280,18 @@
             // 
             this.lb_tipodoc.Image = global::WASSTD.Properties.Resources.book_icon_16;
             this.lb_tipodoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lb_tipodoc.Location = new System.Drawing.Point(6, 4);
+            this.lb_tipodoc.Location = new System.Drawing.Point(2, 41);
             this.lb_tipodoc.Name = "lb_tipodoc";
             this.lb_tipodoc.Size = new System.Drawing.Size(132, 35);
             this.lb_tipodoc.TabIndex = 23;
             this.lb_tipodoc.Text = "Tipo de Documento:";
             this.lb_tipodoc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txt_emailalternativo
-            // 
-            this.txt_emailalternativo.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txt_emailalternativo.Location = new System.Drawing.Point(144, 367);
-            this.txt_emailalternativo.Name = "txt_emailalternativo";
-            this.txt_emailalternativo.Size = new System.Drawing.Size(368, 20);
-            this.txt_emailalternativo.TabIndex = 22;
-            // 
             // lb_celular
             // 
             this.lb_celular.Image = global::WASSTD.Properties.Resources.phone_icon_16;
             this.lb_celular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lb_celular.Location = new System.Drawing.Point(281, 307);
+            this.lb_celular.Location = new System.Drawing.Point(278, 22);
             this.lb_celular.Name = "lb_celular";
             this.lb_celular.Size = new System.Drawing.Size(68, 35);
             this.lb_celular.TabIndex = 19;
@@ -478,9 +302,9 @@
             // 
             this.lb_telfijo.Image = global::WASSTD.Properties.Resources.phone_2_icon_16;
             this.lb_telfijo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lb_telfijo.Location = new System.Drawing.Point(12, 307);
+            this.lb_telfijo.Location = new System.Drawing.Point(13, 22);
             this.lb_telfijo.Name = "lb_telfijo";
-            this.lb_telfijo.Size = new System.Drawing.Size(115, 35);
+            this.lb_telfijo.Size = new System.Drawing.Size(118, 35);
             this.lb_telfijo.TabIndex = 17;
             this.lb_telfijo.Text = "Teléfono Fijo:";
             this.lb_telfijo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -489,7 +313,7 @@
             // 
             this.lb_fechanacimiento.Image = global::WASSTD.Properties.Resources.calendar_1_icon_16;
             this.lb_fechanacimiento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lb_fechanacimiento.Location = new System.Drawing.Point(6, 69);
+            this.lb_fechanacimiento.Location = new System.Drawing.Point(2, 71);
             this.lb_fechanacimiento.Name = "lb_fechanacimiento";
             this.lb_fechanacimiento.Size = new System.Drawing.Size(132, 35);
             this.lb_fechanacimiento.TabIndex = 11;
@@ -500,7 +324,7 @@
             // 
             this.lb_numero.Image = global::WASSTD.Properties.Resources.page_layout_icon_16;
             this.lb_numero.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lb_numero.Location = new System.Drawing.Point(276, 4);
+            this.lb_numero.Location = new System.Drawing.Point(270, 42);
             this.lb_numero.Name = "lb_numero";
             this.lb_numero.Size = new System.Drawing.Size(74, 35);
             this.lb_numero.TabIndex = 9;
@@ -510,7 +334,7 @@
             // txt_emailpricipal
             // 
             this.txt_emailpricipal.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txt_emailpricipal.Location = new System.Drawing.Point(144, 341);
+            this.txt_emailpricipal.Location = new System.Drawing.Point(138, 60);
             this.txt_emailpricipal.Name = "txt_emailpricipal";
             this.txt_emailpricipal.Size = new System.Drawing.Size(368, 20);
             this.txt_emailpricipal.TabIndex = 3;
@@ -519,7 +343,7 @@
             // 
             this.lb_emailprincipal.Image = global::WASSTD.Properties.Resources.mail_2_icon_16;
             this.lb_emailprincipal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lb_emailprincipal.Location = new System.Drawing.Point(9, 333);
+            this.lb_emailprincipal.Location = new System.Drawing.Point(14, 52);
             this.lb_emailprincipal.Name = "lb_emailprincipal";
             this.lb_emailprincipal.Size = new System.Drawing.Size(118, 35);
             this.lb_emailprincipal.TabIndex = 2;
@@ -529,7 +353,7 @@
             // txt_nombreapellido
             // 
             this.txt_nombreapellido.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txt_nombreapellido.Location = new System.Drawing.Point(144, 44);
+            this.txt_nombreapellido.Location = new System.Drawing.Point(138, 112);
             this.txt_nombreapellido.Name = "txt_nombreapellido";
             this.txt_nombreapellido.Size = new System.Drawing.Size(368, 20);
             this.txt_nombreapellido.TabIndex = 1;
@@ -538,7 +362,7 @@
             // 
             this.lb_nombreapellido.Image = global::WASSTD.Properties.Resources.contact_card_icon_16;
             this.lb_nombreapellido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lb_nombreapellido.Location = new System.Drawing.Point(6, 39);
+            this.lb_nombreapellido.Location = new System.Drawing.Point(4, 104);
             this.lb_nombreapellido.Name = "lb_nombreapellido";
             this.lb_nombreapellido.Size = new System.Drawing.Size(132, 35);
             this.lb_nombreapellido.TabIndex = 0;
@@ -575,12 +399,174 @@
             this.txt_observaciones.Size = new System.Drawing.Size(500, 20);
             this.txt_observaciones.TabIndex = 0;
             // 
+            // cmbTipoPersona
+            // 
+            this.cmbTipoPersona.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.cmbTipoPersona.FormattingEnabled = true;
+            this.cmbTipoPersona.Location = new System.Drawing.Point(138, 19);
+            this.cmbTipoPersona.Name = "cmbTipoPersona";
+            this.cmbTipoPersona.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipoPersona.TabIndex = 55;
+            // 
+            // label1
+            // 
+            this.label1.Image = global::WASSTD.Properties.Resources.users_icon_16;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Location = new System.Drawing.Point(2, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(132, 35);
+            this.label1.TabIndex = 54;
+            this.label1.Text = "Tipo de Persona:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label2
+            // 
+            this.label2.Image = global::WASSTD.Properties.Resources.contact_card_icon_16;
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Location = new System.Drawing.Point(270, 68);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 35);
+            this.label2.TabIndex = 56;
+            this.label2.Text = "Edad:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(348, 79);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(157, 13);
+            this.label3.TabIndex = 57;
+            this.label3.Text = "65 años, 5 meses, 23 días";
+            // 
+            // rbtn_femenino
+            // 
+            this.rbtn_femenino.AutoSize = true;
+            this.rbtn_femenino.Location = new System.Drawing.Point(167, 13);
+            this.rbtn_femenino.Name = "rbtn_femenino";
+            this.rbtn_femenino.Size = new System.Drawing.Size(71, 17);
+            this.rbtn_femenino.TabIndex = 31;
+            this.rbtn_femenino.TabStop = true;
+            this.rbtn_femenino.Text = "Femenino";
+            this.rbtn_femenino.UseVisualStyleBackColor = true;
+            // 
+            // rbtn_masculino
+            // 
+            this.rbtn_masculino.AutoSize = true;
+            this.rbtn_masculino.Location = new System.Drawing.Point(91, 13);
+            this.rbtn_masculino.Name = "rbtn_masculino";
+            this.rbtn_masculino.Size = new System.Drawing.Size(73, 17);
+            this.rbtn_masculino.TabIndex = 6;
+            this.rbtn_masculino.TabStop = true;
+            this.rbtn_masculino.Text = "Masuclino";
+            this.rbtn_masculino.UseVisualStyleBackColor = true;
+            // 
+            // lb_sexo
+            // 
+            this.lb_sexo.Image = global::WASSTD.Properties.Resources.font_strokethrough_icon_16;
+            this.lb_sexo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lb_sexo.Location = new System.Drawing.Point(5, 8);
+            this.lb_sexo.Name = "lb_sexo";
+            this.lb_sexo.Size = new System.Drawing.Size(73, 26);
+            this.lb_sexo.TabIndex = 13;
+            this.lb_sexo.Text = "Sexo:";
+            this.lb_sexo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // grp_sexo
+            // 
+            this.grp_sexo.Controls.Add(this.lb_sexo);
+            this.grp_sexo.Controls.Add(this.rbtn_masculino);
+            this.grp_sexo.Controls.Add(this.rbtn_femenino);
+            this.grp_sexo.Location = new System.Drawing.Point(265, 7);
+            this.grp_sexo.Name = "grp_sexo";
+            this.grp_sexo.Size = new System.Drawing.Size(243, 36);
+            this.grp_sexo.TabIndex = 49;
+            this.grp_sexo.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.Image = global::WASSTD.Properties.Resources.key_icon_16;
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label4.Location = new System.Drawing.Point(4, 127);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(132, 35);
+            this.label4.TabIndex = 58;
+            this.label4.Text = "Clave Fiscal:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txt_ClaveFiscal
+            // 
+            this.txt_ClaveFiscal.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txt_ClaveFiscal.Location = new System.Drawing.Point(138, 135);
+            this.txt_ClaveFiscal.Name = "txt_ClaveFiscal";
+            this.txt_ClaveFiscal.Size = new System.Drawing.Size(368, 20);
+            this.txt_ClaveFiscal.TabIndex = 59;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txt_ClaveFiscal);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.grp_sexo);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.cmbTipoPersona);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txt_numero);
+            this.groupBox1.Controls.Add(this.txt_fechanacimiento);
+            this.groupBox1.Controls.Add(this.cmb_tiposdoc);
+            this.groupBox1.Controls.Add(this.lb_tipodoc);
+            this.groupBox1.Controls.Add(this.lb_fechanacimiento);
+            this.groupBox1.Controls.Add(this.lb_numero);
+            this.groupBox1.Controls.Add(this.txt_nombreapellido);
+            this.groupBox1.Controls.Add(this.lb_nombreapellido);
+            this.groupBox1.Location = new System.Drawing.Point(7, 15);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(514, 169);
+            this.groupBox1.TabIndex = 60;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Datos Personales";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txt_celular);
+            this.groupBox2.Controls.Add(this.txt_telfijo);
+            this.groupBox2.Controls.Add(this.lb_celular);
+            this.groupBox2.Controls.Add(this.lb_emailprincipal);
+            this.groupBox2.Controls.Add(this.lb_telfijo);
+            this.groupBox2.Controls.Add(this.txt_emailpricipal);
+            this.groupBox2.Location = new System.Drawing.Point(7, 282);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(514, 97);
+            this.groupBox2.TabIndex = 61;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Datos de contacto";
+            // 
+            // btnCopiarDNI
+            // 
+            this.btnCopiarDNI.Location = new System.Drawing.Point(20, 440);
+            this.btnCopiarDNI.Name = "btnCopiarDNI";
+            this.btnCopiarDNI.Size = new System.Drawing.Size(122, 35);
+            this.btnCopiarDNI.TabIndex = 6;
+            this.btnCopiarDNI.Text = "Copiar DNI";
+            this.btnCopiarDNI.UseVisualStyleBackColor = true;
+            // 
+            // btnCopiarClaveFiscal
+            // 
+            this.btnCopiarClaveFiscal.Location = new System.Drawing.Point(148, 440);
+            this.btnCopiarClaveFiscal.Name = "btnCopiarClaveFiscal";
+            this.btnCopiarClaveFiscal.Size = new System.Drawing.Size(122, 35);
+            this.btnCopiarClaveFiscal.TabIndex = 7;
+            this.btnCopiarClaveFiscal.Text = "Copiar Clave Fiscal";
+            this.btnCopiarClaveFiscal.UseVisualStyleBackColor = true;
+            // 
             // FrmPersona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WASSTD.Properties.Resources.Fondo_Final;
             this.ClientSize = new System.Drawing.Size(569, 487);
+            this.Controls.Add(this.btnCopiarClaveFiscal);
+            this.Controls.Add(this.btnCopiarDNI);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.tab_Persona);
@@ -591,16 +577,17 @@
             this.Load += new System.EventHandler(this.FrmPersona_Load);
             this.tab_Persona.ResumeLayout(false);
             this.tab_datos.ResumeLayout(false);
-            this.tab_datos.PerformLayout();
-            this.grp_sexo.ResumeLayout(false);
-            this.grp_sexo.PerformLayout();
-            this.grp_lugardeenvio.ResumeLayout(false);
-            this.grp_lugardeenvio.PerformLayout();
             this.grp_direccionres.ResumeLayout(false);
             this.grp_direccionres.PerformLayout();
             this.tab_observaciones.ResumeLayout(false);
             this.grp_observaciones.ResumeLayout(false);
             this.grp_observaciones.PerformLayout();
+            this.grp_sexo.ResumeLayout(false);
+            this.grp_sexo.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -629,24 +616,10 @@
         private System.Windows.Forms.Label lb_nombreapellido;
         private System.Windows.Forms.Label lb_numero;
         private System.Windows.Forms.Label lb_fechanacimiento;
-        private System.Windows.Forms.Label lb_sexo;
         private System.Windows.Forms.Label lb_celular;
         private System.Windows.Forms.Label lb_telfijo;
-        private System.Windows.Forms.TextBox txt_emailalternativo;
-        private System.Windows.Forms.Label lb_emailalternativo;
         private System.Windows.Forms.ComboBox cmb_tiposdoc;
         private System.Windows.Forms.Label lb_tipodoc;
-        private System.Windows.Forms.RadioButton rbtn_femenino;
-        private System.Windows.Forms.RadioButton rbtn_masculino;
-        private System.Windows.Forms.GroupBox grp_lugardeenvio;
-        private System.Windows.Forms.TextBox txt_cpE;
-        private System.Windows.Forms.Label lb_cpR;
-        private System.Windows.Forms.Label lb_localidadR;
-        private System.Windows.Forms.ComboBox cmb_localidadesE;
-        private System.Windows.Forms.ComboBox cmb_provinciasE;
-        private System.Windows.Forms.Label lb_provinciaR;
-        private System.Windows.Forms.TextBox txt_direccionE;
-        private System.Windows.Forms.Label lb_direccionR;
         private System.Windows.Forms.GroupBox grp_direccionres;
         private System.Windows.Forms.TextBox txt_cp;
         private System.Windows.Forms.Label lb_codigopostal;
@@ -659,10 +632,23 @@
         private System.Windows.Forms.TabPage tab_observaciones;
         private System.Windows.Forms.GroupBox grp_observaciones;
         private System.Windows.Forms.TextBox txt_observaciones;
-        private System.Windows.Forms.GroupBox grp_sexo;
         private System.Windows.Forms.MaskedTextBox txt_fechanacimiento;
         private System.Windows.Forms.MaskedTextBox txt_telfijo;
         private System.Windows.Forms.MaskedTextBox txt_celular;
         private System.Windows.Forms.MaskedTextBox txt_numero;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbTipoPersona;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txt_ClaveFiscal;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox grp_sexo;
+        private System.Windows.Forms.Label lb_sexo;
+        private System.Windows.Forms.RadioButton rbtn_masculino;
+        private System.Windows.Forms.RadioButton rbtn_femenino;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnCopiarDNI;
+        private System.Windows.Forms.Button btnCopiarClaveFiscal;
     }
 }
