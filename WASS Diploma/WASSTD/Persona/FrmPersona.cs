@@ -174,7 +174,7 @@ namespace WASSTD
 
                     
                 }
-
+                    
                 oPersona.telefono = Convert.ToInt32(txt_telfijo.Text);
                 oPersona.celular = Convert.ToInt32(txt_celular.Text);
                 oPersona.email1 = txt_emailpricipal.Text;
