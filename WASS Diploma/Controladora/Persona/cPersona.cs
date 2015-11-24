@@ -33,6 +33,8 @@ namespace Controladora
             oModelo_Entidades.SaveChanges();
         }
 
+
+        //hice de todo 
         // Modificar a un Persona
         public void Modificacion(Modelo_Entidades.Persona oPersona)
         {

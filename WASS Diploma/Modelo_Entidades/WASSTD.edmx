@@ -1323,7 +1323,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="WASSTD" ZoomLevel="55" ShowGrid="true" DisplayType="false">
+      <Diagram Name="WASSTD" ZoomLevel="74" ShowGrid="true" DisplayType="false">
         <EntityTypeShape EntityType="WASSTDModelo.Usuario" Width="1.5" PointX="0.75" PointY="2.875" Height="2.085348307291667" />
         <EntityTypeShape EntityType="WASSTDModelo.Grupo" Width="1.5" PointX="0.75" PointY="0.5" Height="1.5923063151041665" />
         <AssociationConnector Association="WASSTDModelo.UsuarioGrupo">
