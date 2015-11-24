@@ -90,14 +90,7 @@ namespace WASSTD
             cmb_localidades.DisplayMember = "descripcion";
             cmb_localidades.SelectedItem = null;
 
-            cmb_provinciasE.DataSource = cProvincia.ObtenerProvincias();
-            cmb_provinciasE.DisplayMember = "descripcion";
-            cmb_provinciasE.SelectedItem = null;
-
-            cmb_localidadesE.DataSource = cLocalidad.ObtenerLocalidades();
-            cmb_localidadesE.DisplayMember = "descripcion";
-            cmb_localidadesE.SelectedItem = null;
-
+            
           
 
           
@@ -143,7 +136,7 @@ namespace WASSTD
             {
                 try
                 {
-                    #region Datos personales del Persona
+                    #region Datos personales de la Persona
                 oPersona.Tipo_Documento = (Modelo_Entidades.Tipo_Documento)cmb_tiposdoc.SelectedItem;
                 oPersona.dni = Convert.ToInt32(txt_numero.Text);
                 oPersona.nombre_apellido = txt_nombreapellido.Text;
@@ -179,10 +172,7 @@ namespace WASSTD
                     oDireccion.direccion = txt_direccion.Text;
                     oPersona.Direcciones.ElementAt(0).Equals(oDireccion);
 
-                    oDireccionE = oPersona.Direcciones.ElementAt(1);
-                    oDireccionE.Localidad = (Modelo_Entidades.Localidad)cmb_localidadesE.SelectedItem;
-                    oDireccionE.direccion = txt_direccionE.Text;
-                    oPersona.Direcciones.ElementAt(1).Equals(oDireccionE);
+                    
                 }
 
                 oPersona.telefono = Convert.ToInt32(txt_telfijo.Text);
@@ -298,15 +288,11 @@ namespace WASSTD
 
             if (string.IsNullOrEmpty(txt_direccion.Text))
             {
-                MessageBox.Show("Debe ingresar la dirección del Persona");
+                MessageBox.Show("Debe ingresar la dirección de la Persona");
                 return false;
             }
 
-            if (cmb_provinciasE.SelectedItem == null)
-            {
-                MessageBox.Show("Debe ingresar la provincia de envío de la boleta del Persona");
-                return false;
-            }
+          
 
             if (cmb_localidades.SelectedItem == null)
             {
@@ -314,11 +300,7 @@ namespace WASSTD
                 return false;
             }
 
-            if (string.IsNullOrEmpty(txt_direccionE.Text))
-            {
-                MessageBox.Show("Debe ingresar la dirección de envío de la matrícula del Persona");
-                return false;
-            }
+           
 
             if (string.IsNullOrEmpty(txt_telfijo.Text) || string.IsNullOrEmpty(txt_celular.Text))
             {
@@ -358,18 +340,7 @@ namespace WASSTD
         }
 
         // Al dejar un valor en el combo de localidades, se llena el código postal
-        private void cmb_localidadesE_Leave(object sender, EventArgs e)
-        {
-            Modelo_Entidades.Localidad oLocalidad = (Modelo_Entidades.Localidad)cmb_localidadesE.SelectedItem;
-            if ((Modelo_Entidades.Localidad)cmb_localidadesE.SelectedItem == null)
-            {
-                return;
-            }
-            else
-            {
-                txt_cpE.Text = oLocalidad.cp.ToString();
-            }            
-        }
+        
 
         // Al dejar un valor en el combo de localidades, se llena el código postal
         private void cmb_localidades_Leave(object sender, EventArgs e)
@@ -410,21 +381,7 @@ namespace WASSTD
         }
 
         // Al dejar un valor en el combo de provincias, se llena el combo de localidades de esa provincia
-        private void cmb_provinciasE_Leave(object sender, EventArgs e)
-        {
-            Modelo_Entidades.Provincia oProvincia = (Modelo_Entidades.Provincia)cmb_provinciasE.SelectedItem;
-            if (oProvincia == null)
-            {
-                return;
-            }
-
-            else
-            {
-                cmb_localidadesE.DataSource = cLocalidad.ObtenerLocalidades();
-                cmb_localidadesE.DisplayMember = "descripcion";
-                cmb_localidadesE.SelectedItem = null;
-            }
-        }
+        
 
        
 
@@ -451,17 +408,14 @@ namespace WASSTD
 
             txt_direccion.Text = oPersona.Direcciones.ElementAt(0).direccion;
             txt_cp.Text = oPersona.Direcciones.ElementAt(0).Localidad.cp.ToString();
-            txt_direccionE.Text = oPersona.Direcciones.ElementAt(1).direccion;
+        
             txt_cp.Text = oPersona.Direcciones.ElementAt(1).Localidad.cp.ToString();
 
             cmb_tiposdoc.SelectedItem = oPersona.Tipo_Documento;
 
             cmb_provincias.SelectedItem = oPersona.Direcciones.ElementAt(0).Localidad.Provincia;
             cmb_localidades.SelectedItem = oPersona.Direcciones.ElementAt(0).Localidad;
-            cmb_provinciasE.SelectedItem = oPersona.Direcciones.ElementAt(1).Localidad.Provincia;
-            cmb_localidadesE.SelectedItem = oPersona.Direcciones.ElementAt(1).Localidad;
-
-          
+           
 
             txt_telfijo.Text = oPersona.telefono.ToString();
             txt_celular.Text = oPersona.celular.ToString();

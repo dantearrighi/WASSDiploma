@@ -158,6 +158,7 @@
     <Property Name="email1" Type="nvarchar(max)" Nullable="false" />
     <Property Name="observaciones" Type="nvarchar(max)" Nullable="false" />
     <Property Name="lugar_trabajo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="clave_fiscal" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Tipo_Documento_id" Type="int" Nullable="false" />
     <Property Name="Estado_id" Type="int" Nullable="false" />
   </EntityType>
@@ -651,7 +652,7 @@
           <NavigationProperty Name="Direcciones" Relationship="WASSTDModelo.PersonaDirecciones" FromRole="Persona" ToRole="Direccion" />
           <NavigationProperty Name="Tipo_Documento" Relationship="WASSTDModelo.Tipo_DocumentoPersona" FromRole="Persona" ToRole="Tipo_Documento" />
           <NavigationProperty Name="Estado" Relationship="WASSTDModelo.EstadoPersona" FromRole="Persona" ToRole="Estado" />
-          <Property Name="clave_fiscal" Type="String" Nullable="false" />
+          <Property Name="clave_fiscal" Type="String" />
         </EntityType>
         <EntityType Name="CtaCte">
           <Key>
@@ -858,6 +859,7 @@
           <ScalarProperty Name="email1" ColumnName="email1" />
           <ScalarProperty Name="observaciones" ColumnName="observaciones" />
           <ScalarProperty Name="lugar_trabajo" ColumnName="lugar_trabajo" />
+          <ScalarProperty Name="clave_fiscal" ColumnName="clave_fiscal" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1121,7 +1123,7 @@
           <ConnectorPoint PointX="4.375" PointY="3.5889794921875" />
           <ConnectorPoint PointX="5.375" PointY="3.5889794921875" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="WASSTDModelo.Persona" Width="1.875" PointX="9.125" PointY="6.25" Height="5.2494108072916656" />
+        <EntityTypeShape EntityType="WASSTDModelo.Persona" Width="1.875" PointX="9.125" PointY="6.25" Height="5.2494108072916656" IsExpanded="true" />
         <EntityTypeShape EntityType="WASSTDModelo.CtaCte" Width="1.5" PointX="13" PointY="5" Height="1.7879850260416665" />
         <AssociationConnector Association="WASSTDModelo.CtaCtePersona">
           <ConnectorPoint PointX="13.75" PointY="6.7879850260416665" />

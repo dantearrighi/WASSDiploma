@@ -1,4 +1,5 @@
-﻿namespace WASSTD
+﻿
+namespace WASSTD
 {
     partial class FrmImprimirCertificado
     {

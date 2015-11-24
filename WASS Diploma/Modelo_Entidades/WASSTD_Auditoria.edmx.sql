@@ -2,12 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/24/2015 16:58:57
--- Generated from EDMX file: D:\Documentos\UAI\WASS\WASS Diploma\Modelo_Entidades\WASSTD_Auditoria.edmx
+-- Date Created: 11/24/2015 04:11:02
+-- Generated from EDMX file: C:\Users\Dante\Documents\GitHub\WASSDiploma\WASS Diploma\Modelo_Entidades\WASSTD_Auditoria.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
+CREATE DATABASE WASSTD_Auditoria
 USE [WASSTD_Auditoria];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
