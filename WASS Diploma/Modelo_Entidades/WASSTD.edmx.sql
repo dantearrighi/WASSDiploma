@@ -2,13 +2,12 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 11/24/2015 04:01:50
+-- Date Created: 11/24/2015 05:14:33
 -- Generated from EDMX file: C:\Users\Dante\Documents\GitHub\WASSDiploma\WASS Diploma\Modelo_Entidades\WASSTD.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-CREATE DATABASE WASSTD
 USE [WASSTD];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
@@ -62,6 +61,21 @@ IF OBJECT_ID(N'[dbo].[FK_EstadoPersona]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_LocalidadDireccion]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Direcciones] DROP CONSTRAINT [FK_LocalidadDireccion];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Detalles_del_Tramite]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Detalles_TramiteSet] DROP CONSTRAINT [FK_Detalles_del_Tramite];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TramiteCliente]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Tramites] DROP CONSTRAINT [FK_TramiteCliente];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TramiteAbogado]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Tramites] DROP CONSTRAINT [FK_TramiteAbogado];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Cliente_inherits_Persona]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Personas_Cliente] DROP CONSTRAINT [FK_Cliente_inherits_Persona];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Abogado_inherits_Persona]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Personas_Abogado] DROP CONSTRAINT [FK_Abogado_inherits_Persona];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Factura_inherits_Comprobante]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Comprobantes_Factura] DROP CONSTRAINT [FK_Factura_inherits_Comprobante];
@@ -124,6 +138,18 @@ IF OBJECT_ID(N'[dbo].[Tipos_Documentos]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Alteradores]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Alteradores];
+GO
+IF OBJECT_ID(N'[dbo].[Tramites]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Tramites];
+GO
+IF OBJECT_ID(N'[dbo].[Detalles_TramiteSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Detalles_TramiteSet];
+GO
+IF OBJECT_ID(N'[dbo].[Personas_Cliente]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Personas_Cliente];
+GO
+IF OBJECT_ID(N'[dbo].[Personas_Abogado]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Personas_Abogado];
 GO
 IF OBJECT_ID(N'[dbo].[Comprobantes_Factura]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Comprobantes_Factura];
@@ -193,14 +219,12 @@ GO
 CREATE TABLE [dbo].[Personas] (
     [dni] int  NOT NULL,
     [nombre_apellido] nvarchar(max)  NOT NULL,
-    [fecha_nacimiento] datetime  NOT NULL,
     [sexo] nvarchar(max)  NOT NULL,
     [telefono] int  NOT NULL,
     [celular] int  NOT NULL,
     [email1] nvarchar(max)  NOT NULL,
     [observaciones] nvarchar(max)  NOT NULL,
     [lugar_trabajo] nvarchar(max)  NULL,
-    [clave_fiscal] nvarchar(max)  NULL,
     [Tipo_Documento_id] int  NOT NULL,
     [Estado_id] int  NOT NULL
 );
@@ -284,6 +308,39 @@ CREATE TABLE [dbo].[Alteradores] (
     [dias_gracias] int  NOT NULL,
     [valor_cuota] float  NOT NULL,
     [id] int IDENTITY(1,1) NOT NULL
+);
+GO
+
+-- Creating table 'Tramites'
+CREATE TABLE [dbo].[Tramites] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [tipo_tramite] nvarchar(max)  NOT NULL,
+    [Cliente_dni] int  NOT NULL,
+    [Abogado_dni] int  NOT NULL
+);
+GO
+
+-- Creating table 'Detalles_TramiteSet'
+CREATE TABLE [dbo].[Detalles_TramiteSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [descripcion] nvarchar(max)  NULL,
+    [fecha_desde] datetime  NULL,
+    [TramiteId] int  NOT NULL
+);
+GO
+
+-- Creating table 'Personas_Cliente'
+CREATE TABLE [dbo].[Personas_Cliente] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [clave_fiscal] nvarchar(max)  NULL,
+    [fecha_nacimiento] nvarchar(max)  NOT NULL,
+    [dni] int  NOT NULL
+);
+GO
+
+-- Creating table 'Personas_Abogado'
+CREATE TABLE [dbo].[Personas_Abogado] (
+    [dni] int  NOT NULL
 );
 GO
 
@@ -417,6 +474,30 @@ GO
 ALTER TABLE [dbo].[Alteradores]
 ADD CONSTRAINT [PK_Alteradores]
     PRIMARY KEY CLUSTERED ([id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Tramites'
+ALTER TABLE [dbo].[Tramites]
+ADD CONSTRAINT [PK_Tramites]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Detalles_TramiteSet'
+ALTER TABLE [dbo].[Detalles_TramiteSet]
+ADD CONSTRAINT [PK_Detalles_TramiteSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [dni] in table 'Personas_Cliente'
+ALTER TABLE [dbo].[Personas_Cliente]
+ADD CONSTRAINT [PK_Personas_Cliente]
+    PRIMARY KEY CLUSTERED ([dni] ASC);
+GO
+
+-- Creating primary key on [dni] in table 'Personas_Abogado'
+ALTER TABLE [dbo].[Personas_Abogado]
+ADD CONSTRAINT [PK_Personas_Abogado]
+    PRIMARY KEY CLUSTERED ([dni] ASC);
 GO
 
 -- Creating primary key on [id] in table 'Comprobantes_Factura'
@@ -644,6 +725,66 @@ ADD CONSTRAINT [FK_LocalidadDireccion]
 CREATE INDEX [IX_FK_LocalidadDireccion]
 ON [dbo].[Direcciones]
     ([Localidad_id]);
+GO
+
+-- Creating foreign key on [TramiteId] in table 'Detalles_TramiteSet'
+ALTER TABLE [dbo].[Detalles_TramiteSet]
+ADD CONSTRAINT [FK_Detalles_del_Tramite]
+    FOREIGN KEY ([TramiteId])
+    REFERENCES [dbo].[Tramites]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_Detalles_del_Tramite'
+CREATE INDEX [IX_FK_Detalles_del_Tramite]
+ON [dbo].[Detalles_TramiteSet]
+    ([TramiteId]);
+GO
+
+-- Creating foreign key on [Cliente_dni] in table 'Tramites'
+ALTER TABLE [dbo].[Tramites]
+ADD CONSTRAINT [FK_TramiteCliente]
+    FOREIGN KEY ([Cliente_dni])
+    REFERENCES [dbo].[Personas_Cliente]
+        ([dni])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_TramiteCliente'
+CREATE INDEX [IX_FK_TramiteCliente]
+ON [dbo].[Tramites]
+    ([Cliente_dni]);
+GO
+
+-- Creating foreign key on [Abogado_dni] in table 'Tramites'
+ALTER TABLE [dbo].[Tramites]
+ADD CONSTRAINT [FK_TramiteAbogado]
+    FOREIGN KEY ([Abogado_dni])
+    REFERENCES [dbo].[Personas_Abogado]
+        ([dni])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_TramiteAbogado'
+CREATE INDEX [IX_FK_TramiteAbogado]
+ON [dbo].[Tramites]
+    ([Abogado_dni]);
+GO
+
+-- Creating foreign key on [dni] in table 'Personas_Cliente'
+ALTER TABLE [dbo].[Personas_Cliente]
+ADD CONSTRAINT [FK_Cliente_inherits_Persona]
+    FOREIGN KEY ([dni])
+    REFERENCES [dbo].[Personas]
+        ([dni])
+    ON DELETE CASCADE ON UPDATE NO ACTION;
+GO
+
+-- Creating foreign key on [dni] in table 'Personas_Abogado'
+ALTER TABLE [dbo].[Personas_Abogado]
+ADD CONSTRAINT [FK_Abogado_inherits_Persona]
+    FOREIGN KEY ([dni])
+    REFERENCES [dbo].[Personas]
+        ([dni])
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- Creating foreign key on [id] in table 'Comprobantes_Factura'

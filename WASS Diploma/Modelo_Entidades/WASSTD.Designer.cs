@@ -33,6 +33,9 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "Tipo_DocumentoPersona", "Tipo_Documento", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Tipo_Documento), "Persona", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Persona))]
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "EstadoPersona", "Estado", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Estado), "Persona", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Persona))]
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "LocalidadDireccion", "Localidad", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Localidad), "Direccion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Direccion))]
+[assembly: EdmRelationshipAttribute("WASSTDModelo", "Detalles_del_Tramite", "Detalles_Tramite", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Detalles_Tramite), "Tramite", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Tramite), true)]
+[assembly: EdmRelationshipAttribute("WASSTDModelo", "TramiteCliente", "Tramite", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Tramite), "Cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Cliente), true)]
+[assembly: EdmRelationshipAttribute("WASSTDModelo", "TramiteAbogado", "Tramite", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Tramite), "Abogado", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Abogado))]
 
 #endregion
 
@@ -355,6 +358,38 @@ namespace Modelo_Entidades
             }
         }
         private ObjectSet<Alterador> _Alteradores;
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        public ObjectSet<Tramite> Tramites
+        {
+            get
+            {
+                if ((_Tramites == null))
+                {
+                    _Tramites = base.CreateObjectSet<Tramite>("Tramites");
+                }
+                return _Tramites;
+            }
+        }
+        private ObjectSet<Tramite> _Tramites;
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        public ObjectSet<Detalles_Tramite> Detalles_TramiteSet
+        {
+            get
+            {
+                if ((_Detalles_TramiteSet == null))
+                {
+                    _Detalles_TramiteSet = base.CreateObjectSet<Detalles_Tramite>("Detalles_TramiteSet");
+                }
+                return _Detalles_TramiteSet;
+            }
+        }
+        private ObjectSet<Detalles_Tramite> _Detalles_TramiteSet;
 
         #endregion
 
@@ -495,6 +530,22 @@ namespace Modelo_Entidades
         {
             base.AddObject("Alteradores", alterador);
         }
+    
+        /// <summary>
+        /// Método desusado para agregar un nuevo objeto al EntitySet Tramites. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// </summary>
+        public void AddToTramites(Tramite tramite)
+        {
+            base.AddObject("Tramites", tramite);
+        }
+    
+        /// <summary>
+        /// Método desusado para agregar un nuevo objeto al EntitySet Detalles_TramiteSet. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// </summary>
+        public void AddToDetalles_TramiteSet(Detalles_Tramite detalles_Tramite)
+        {
+            base.AddObject("Detalles_TramiteSet", detalles_Tramite);
+        }
 
         #endregion
 
@@ -503,6 +554,86 @@ namespace Modelo_Entidades
     #endregion
 
     #region Entidades
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Abogado")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Abogado : Persona
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto Abogado.
+        /// </summary>
+        /// <param name="dni">Valor inicial de la propiedad dni.</param>
+        /// <param name="nombre_apellido">Valor inicial de la propiedad nombre_apellido.</param>
+        /// <param name="sexo">Valor inicial de la propiedad sexo.</param>
+        /// <param name="telefono">Valor inicial de la propiedad telefono.</param>
+        /// <param name="celular">Valor inicial de la propiedad celular.</param>
+        /// <param name="email1">Valor inicial de la propiedad email1.</param>
+        /// <param name="observaciones">Valor inicial de la propiedad observaciones.</param>
+        public static Abogado CreateAbogado(global::System.Int32 dni, global::System.String nombre_apellido, global::System.String sexo, global::System.Int32 telefono, global::System.Int32 celular, global::System.String email1, global::System.String observaciones)
+        {
+            Abogado abogado = new Abogado();
+            abogado.dni = dni;
+            abogado.nombre_apellido = nombre_apellido;
+            abogado.sexo = sexo;
+            abogado.telefono = telefono;
+            abogado.celular = celular;
+            abogado.email1 = email1;
+            abogado.observaciones = observaciones;
+            return abogado;
+        }
+
+        #endregion
+
+    
+        #region Propiedades de navegación
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "TramiteAbogado", "Tramite")]
+        public Tramite Tramite
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tramite>("WASSTDModelo.TramiteAbogado", "Tramite").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tramite>("WASSTDModelo.TramiteAbogado", "Tramite").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Tramite> TramiteReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tramite>("WASSTDModelo.TramiteAbogado", "Tramite");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Tramite>("WASSTDModelo.TramiteAbogado", "Tramite", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
     
     /// <summary>
     /// No hay documentación de metadatos disponible.
@@ -698,6 +829,150 @@ namespace Modelo_Entidades
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Cliente")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Cliente : Persona
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto Cliente.
+        /// </summary>
+        /// <param name="dni">Valor inicial de la propiedad dni.</param>
+        /// <param name="nombre_apellido">Valor inicial de la propiedad nombre_apellido.</param>
+        /// <param name="sexo">Valor inicial de la propiedad sexo.</param>
+        /// <param name="telefono">Valor inicial de la propiedad telefono.</param>
+        /// <param name="celular">Valor inicial de la propiedad celular.</param>
+        /// <param name="email1">Valor inicial de la propiedad email1.</param>
+        /// <param name="observaciones">Valor inicial de la propiedad observaciones.</param>
+        /// <param name="id">Valor inicial de la propiedad Id.</param>
+        /// <param name="fecha_nacimiento">Valor inicial de la propiedad fecha_nacimiento.</param>
+        public static Cliente CreateCliente(global::System.Int32 dni, global::System.String nombre_apellido, global::System.String sexo, global::System.Int32 telefono, global::System.Int32 celular, global::System.String email1, global::System.String observaciones, global::System.Int32 id, global::System.DateTime fecha_nacimiento)
+        {
+            Cliente cliente = new Cliente();
+            cliente.dni = dni;
+            cliente.nombre_apellido = nombre_apellido;
+            cliente.sexo = sexo;
+            cliente.telefono = telefono;
+            cliente.celular = celular;
+            cliente.email1 = email1;
+            cliente.observaciones = observaciones;
+            cliente.Id = id;
+            cliente.fecha_nacimiento = fecha_nacimiento;
+            return cliente;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                OnIdChanging(value);
+                ReportPropertyChanging("Id");
+                _Id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Id");
+                OnIdChanged();
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String clave_fiscal
+        {
+            get
+            {
+                return _clave_fiscal;
+            }
+            set
+            {
+                Onclave_fiscalChanging(value);
+                ReportPropertyChanging("clave_fiscal");
+                _clave_fiscal = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("clave_fiscal");
+                Onclave_fiscalChanged();
+            }
+        }
+        private global::System.String _clave_fiscal;
+        partial void Onclave_fiscalChanging(global::System.String value);
+        partial void Onclave_fiscalChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime fecha_nacimiento
+        {
+            get
+            {
+                return _fecha_nacimiento;
+            }
+            set
+            {
+                Onfecha_nacimientoChanging(value);
+                ReportPropertyChanging("fecha_nacimiento");
+                _fecha_nacimiento = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("fecha_nacimiento");
+                Onfecha_nacimientoChanged();
+            }
+        }
+        private global::System.DateTime _fecha_nacimiento;
+        partial void Onfecha_nacimientoChanging(global::System.DateTime value);
+        partial void Onfecha_nacimientoChanged();
+
+        #endregion
+
+    
+        #region Propiedades de navegación
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "TramiteCliente", "Tramite")]
+        public EntityCollection<Tramite> Tramite
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Tramite>("WASSTDModelo.TramiteCliente", "Tramite");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Tramite>("WASSTDModelo.TramiteCliente", "Tramite", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Comprobante")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -886,6 +1161,179 @@ namespace Modelo_Entidades
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Movimiento>("WASSTDModelo.MovimientoCtaCte", "Movimiento", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Detalles_Tramite")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Detalles_Tramite : EntityObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto Detalles_Tramite.
+        /// </summary>
+        /// <param name="id">Valor inicial de la propiedad Id.</param>
+        /// <param name="tramiteId">Valor inicial de la propiedad TramiteId.</param>
+        public static Detalles_Tramite CreateDetalles_Tramite(global::System.Int32 id, global::System.Int32 tramiteId)
+        {
+            Detalles_Tramite detalles_Tramite = new Detalles_Tramite();
+            detalles_Tramite.Id = id;
+            detalles_Tramite.TramiteId = tramiteId;
+            return detalles_Tramite;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String descripcion
+        {
+            get
+            {
+                return _descripcion;
+            }
+            set
+            {
+                OndescripcionChanging(value);
+                ReportPropertyChanging("descripcion");
+                _descripcion = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("descripcion");
+                OndescripcionChanged();
+            }
+        }
+        private global::System.String _descripcion;
+        partial void OndescripcionChanging(global::System.String value);
+        partial void OndescripcionChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> fecha_desde
+        {
+            get
+            {
+                return _fecha_desde;
+            }
+            set
+            {
+                Onfecha_desdeChanging(value);
+                ReportPropertyChanging("fecha_desde");
+                _fecha_desde = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("fecha_desde");
+                Onfecha_desdeChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _fecha_desde;
+        partial void Onfecha_desdeChanging(Nullable<global::System.DateTime> value);
+        partial void Onfecha_desdeChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 TramiteId
+        {
+            get
+            {
+                return _TramiteId;
+            }
+            set
+            {
+                OnTramiteIdChanging(value);
+                ReportPropertyChanging("TramiteId");
+                _TramiteId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("TramiteId");
+                OnTramiteIdChanged();
+            }
+        }
+        private global::System.Int32 _TramiteId;
+        partial void OnTramiteIdChanging(global::System.Int32 value);
+        partial void OnTramiteIdChanged();
+
+        #endregion
+
+    
+        #region Propiedades de navegación
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "Detalles_del_Tramite", "Tramite")]
+        public Tramite Tramite
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tramite>("WASSTDModelo.Detalles_del_Tramite", "Tramite").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tramite>("WASSTDModelo.Detalles_del_Tramite", "Tramite").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Tramite> TramiteReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tramite>("WASSTDModelo.Detalles_del_Tramite", "Tramite");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Tramite>("WASSTDModelo.Detalles_del_Tramite", "Tramite", value);
                 }
             }
         }
@@ -2481,6 +2929,8 @@ namespace Modelo_Entidades
     [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Persona")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
+    [KnownTypeAttribute(typeof(Cliente))]
+    [KnownTypeAttribute(typeof(Abogado))]
     public partial class Persona : EntityObject
     {
         #region Método de generador
@@ -2490,18 +2940,16 @@ namespace Modelo_Entidades
         /// </summary>
         /// <param name="dni">Valor inicial de la propiedad dni.</param>
         /// <param name="nombre_apellido">Valor inicial de la propiedad nombre_apellido.</param>
-        /// <param name="fecha_nacimiento">Valor inicial de la propiedad fecha_nacimiento.</param>
         /// <param name="sexo">Valor inicial de la propiedad sexo.</param>
         /// <param name="telefono">Valor inicial de la propiedad telefono.</param>
         /// <param name="celular">Valor inicial de la propiedad celular.</param>
         /// <param name="email1">Valor inicial de la propiedad email1.</param>
         /// <param name="observaciones">Valor inicial de la propiedad observaciones.</param>
-        public static Persona CreatePersona(global::System.Int32 dni, global::System.String nombre_apellido, global::System.DateTime fecha_nacimiento, global::System.String sexo, global::System.Int32 telefono, global::System.Int32 celular, global::System.String email1, global::System.String observaciones)
+        public static Persona CreatePersona(global::System.Int32 dni, global::System.String nombre_apellido, global::System.String sexo, global::System.Int32 telefono, global::System.Int32 celular, global::System.String email1, global::System.String observaciones)
         {
             Persona persona = new Persona();
             persona.dni = dni;
             persona.nombre_apellido = nombre_apellido;
-            persona.fecha_nacimiento = fecha_nacimiento;
             persona.sexo = sexo;
             persona.telefono = telefono;
             persona.celular = celular;
@@ -2564,30 +3012,6 @@ namespace Modelo_Entidades
         private global::System.String _nombre_apellido;
         partial void Onnombre_apellidoChanging(global::System.String value);
         partial void Onnombre_apellidoChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime fecha_nacimiento
-        {
-            get
-            {
-                return _fecha_nacimiento;
-            }
-            set
-            {
-                Onfecha_nacimientoChanging(value);
-                ReportPropertyChanging("fecha_nacimiento");
-                _fecha_nacimiento = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fecha_nacimiento");
-                Onfecha_nacimientoChanged();
-            }
-        }
-        private global::System.DateTime _fecha_nacimiento;
-        partial void Onfecha_nacimientoChanging(global::System.DateTime value);
-        partial void Onfecha_nacimientoChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
@@ -2732,30 +3156,6 @@ namespace Modelo_Entidades
         private global::System.String _lugar_trabajo;
         partial void Onlugar_trabajoChanging(global::System.String value);
         partial void Onlugar_trabajoChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String clave_fiscal
-        {
-            get
-            {
-                return _clave_fiscal;
-            }
-            set
-            {
-                Onclave_fiscalChanging(value);
-                ReportPropertyChanging("clave_fiscal");
-                _clave_fiscal = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("clave_fiscal");
-                Onclave_fiscalChanged();
-            }
-        }
-        private global::System.String _clave_fiscal;
-        partial void Onclave_fiscalChanging(global::System.String value);
-        partial void Onclave_fiscalChanged();
 
         #endregion
 
@@ -3221,6 +3621,217 @@ namespace Modelo_Entidades
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Movimiento>("WASSTDModelo.Tipo_MovimientoMovimiento", "Movimiento", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Tramite")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Tramite : EntityObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto Tramite.
+        /// </summary>
+        /// <param name="id">Valor inicial de la propiedad Id.</param>
+        /// <param name="tipo_tramite">Valor inicial de la propiedad tipo_tramite.</param>
+        /// <param name="cliente_dni">Valor inicial de la propiedad Cliente_dni.</param>
+        public static Tramite CreateTramite(global::System.Int32 id, global::System.String tipo_tramite, global::System.Int32 cliente_dni)
+        {
+            Tramite tramite = new Tramite();
+            tramite.Id = id;
+            tramite.tipo_tramite = tipo_tramite;
+            tramite.Cliente_dni = cliente_dni;
+            return tramite;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String tipo_tramite
+        {
+            get
+            {
+                return _tipo_tramite;
+            }
+            set
+            {
+                Ontipo_tramiteChanging(value);
+                ReportPropertyChanging("tipo_tramite");
+                _tipo_tramite = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("tipo_tramite");
+                Ontipo_tramiteChanged();
+            }
+        }
+        private global::System.String _tipo_tramite;
+        partial void Ontipo_tramiteChanging(global::System.String value);
+        partial void Ontipo_tramiteChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Cliente_dni
+        {
+            get
+            {
+                return _Cliente_dni;
+            }
+            set
+            {
+                OnCliente_dniChanging(value);
+                ReportPropertyChanging("Cliente_dni");
+                _Cliente_dni = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Cliente_dni");
+                OnCliente_dniChanged();
+            }
+        }
+        private global::System.Int32 _Cliente_dni;
+        partial void OnCliente_dniChanging(global::System.Int32 value);
+        partial void OnCliente_dniChanged();
+
+        #endregion
+
+    
+        #region Propiedades de navegación
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "Detalles_del_Tramite", "Detalles_Tramite")]
+        public EntityCollection<Detalles_Tramite> Detalles_Tramite
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Detalles_Tramite>("WASSTDModelo.Detalles_del_Tramite", "Detalles_Tramite");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Detalles_Tramite>("WASSTDModelo.Detalles_del_Tramite", "Detalles_Tramite", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "TramiteCliente", "Cliente")]
+        public Cliente Cliente
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Cliente>("WASSTDModelo.TramiteCliente", "Cliente").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Cliente>("WASSTDModelo.TramiteCliente", "Cliente").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Cliente> ClienteReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Cliente>("WASSTDModelo.TramiteCliente", "Cliente");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Cliente>("WASSTDModelo.TramiteCliente", "Cliente", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "TramiteAbogado", "Abogado")]
+        public Abogado Abogado
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Abogado>("WASSTDModelo.TramiteAbogado", "Abogado").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Abogado>("WASSTDModelo.TramiteAbogado", "Abogado").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Abogado> AbogadoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Abogado>("WASSTDModelo.TramiteAbogado", "Abogado");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Abogado>("WASSTDModelo.TramiteAbogado", "Abogado", value);
                 }
             }
         }

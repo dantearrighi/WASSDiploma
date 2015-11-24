@@ -23,6 +23,10 @@
     <EntitySet Name="Direcciones" EntityType="WASSTDModelo.Store.Direcciones" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Tipos_Documentos" EntityType="WASSTDModelo.Store.Tipos_Documentos" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Alteradores" EntityType="WASSTDModelo.Store.Alteradores" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tramites" EntityType="WASSTDModelo.Store.Tramites" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Detalles_TramiteSet" EntityType="WASSTDModelo.Store.Detalles_TramiteSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Personas_Cliente" EntityType="WASSTDModelo.Store.Personas_Cliente" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Personas_Abogado" EntityType="WASSTDModelo.Store.Personas_Abogado" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Comprobantes_Factura" EntityType="WASSTDModelo.Store.Comprobantes_Factura" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Comprobantes_Boleta" EntityType="WASSTDModelo.Store.Comprobantes_Boleta" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UsuariosGrupos" EntityType="WASSTDModelo.Store.UsuarioGrupo" store:Type="Tables" Schema="dbo" />
@@ -85,6 +89,26 @@
     <AssociationSet Name="LocalidadesDirecciones" Association="WASSTDModelo.Store.LocalidadDireccion">
       <End Role="Localidad" EntitySet="Localidades" />
       <End Role="Direccion" EntitySet="Direcciones" />
+    </AssociationSet>
+    <AssociationSet Name="Detalles_del_Tramite" Association="WASSTDModelo.Store.Detalles_del_Tramite">
+      <End Role="Detalles_Tramite" EntitySet="Detalles_TramiteSet" />
+      <End Role="Tramite" EntitySet="Tramites" />
+    </AssociationSet>
+    <AssociationSet Name="TramiteCliente" Association="WASSTDModelo.Store.TramiteCliente">
+      <End Role="Tramite" EntitySet="Tramites" />
+      <End Role="Cliente" EntitySet="Personas_Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="TramiteAbogado" Association="WASSTDModelo.Store.TramiteAbogado">
+      <End Role="Tramite" EntitySet="Tramites" />
+      <End Role="Abogado" EntitySet="Personas_Abogado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cliente_inherits_Persona" Association="WASSTDModelo.Store.FK_Cliente_inherits_Persona">
+      <End Role="Persona" EntitySet="Personas" />
+      <End Role="Cliente" EntitySet="Personas_Cliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Abogado_inherits_Persona" Association="WASSTDModelo.Store.FK_Abogado_inherits_Persona">
+      <End Role="Persona" EntitySet="Personas" />
+      <End Role="Abogado" EntitySet="Personas_Abogado" />
     </AssociationSet>
     <AssociationSet Name="FK_Factura_inherits_Comprobante" Association="WASSTDModelo.Store.FK_Factura_inherits_Comprobante">
       <End Role="Comprobante" EntitySet="Comprobantes" />
@@ -151,14 +175,12 @@
     </Key>
     <Property Name="dni" Type="int" Nullable="false" />
     <Property Name="nombre_apellido" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="fecha_nacimiento" Type="datetime" Nullable="false" />
     <Property Name="sexo" Type="nvarchar(max)" Nullable="false" />
     <Property Name="telefono" Type="int" Nullable="false" />
     <Property Name="celular" Type="int" Nullable="false" />
     <Property Name="email1" Type="nvarchar(max)" Nullable="false" />
     <Property Name="observaciones" Type="nvarchar(max)" Nullable="false" />
     <Property Name="lugar_trabajo" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="clave_fiscal" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Tipo_Documento_id" Type="int" Nullable="false" />
     <Property Name="Estado_id" Type="int" Nullable="false" />
   </EntityType>
@@ -242,6 +264,39 @@
     <Property Name="dias_gracias" Type="int" Nullable="false" />
     <Property Name="valor_cuota" Type="float" Nullable="false" />
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tramites">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipo_tramite" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cliente_dni" Type="int" Nullable="false" />
+    <Property Name="Abogado_dni" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Detalles_TramiteSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="fecha_desde" Type="datetime" Nullable="true" />
+    <Property Name="TramiteId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Personas_Cliente">
+    <Key>
+      <PropertyRef Name="dni" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="clave_fiscal" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="fecha_nacimiento" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="dni" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Personas_Abogado">
+    <Key>
+      <PropertyRef Name="dni" />
+    </Key>
+    <Property Name="dni" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Comprobantes_Factura">
     <Key>
@@ -426,6 +481,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="Detalles_del_Tramite">
+    <End Role="Detalles_Tramite" Type="WASSTDModelo.Store.Detalles_TramiteSet" Multiplicity="*" />
+    <End Role="Tramite" Type="WASSTDModelo.Store.Tramites" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Tramite">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Detalles_Tramite">
+        <PropertyRef Name="TramiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TramiteCliente">
+    <End Role="Tramite" Type="WASSTDModelo.Store.Tramites" Multiplicity="*" />
+    <End Role="Cliente" Type="WASSTDModelo.Store.Personas_Cliente" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="dni" />
+      </Principal>
+      <Dependent Role="Tramite">
+        <PropertyRef Name="Cliente_dni" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TramiteAbogado">
+    <End Role="Tramite" Type="WASSTDModelo.Store.Tramites" Multiplicity="*" />
+    <End Role="Abogado" Type="WASSTDModelo.Store.Personas_Abogado" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Abogado">
+        <PropertyRef Name="dni" />
+      </Principal>
+      <Dependent Role="Tramite">
+        <PropertyRef Name="Abogado_dni" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_UsuarioGrupo_Usuario">
     <End Role="Usuario" Type="WASSTDModelo.Store.Usuarios" Multiplicity="1" />
     <End Role="UsuarioGrupo" Type="WASSTDModelo.Store.UsuarioGrupo" Multiplicity="*" />
@@ -447,6 +538,34 @@
       </Principal>
       <Dependent Role="UsuarioGrupo">
         <PropertyRef Name="Grupos_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cliente_inherits_Persona">
+    <End Role="Persona" Type="WASSTDModelo.Store.Personas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Cliente" Type="WASSTDModelo.Store.Personas_Cliente" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="dni" />
+      </Principal>
+      <Dependent Role="Cliente">
+        <PropertyRef Name="dni" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Abogado_inherits_Persona">
+    <End Role="Persona" Type="WASSTDModelo.Store.Personas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Abogado" Type="WASSTDModelo.Store.Personas_Abogado" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="dni" />
+      </Principal>
+      <Dependent Role="Abogado">
+        <PropertyRef Name="dni" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -556,6 +675,20 @@
             <End Role="Direccion" EntitySet="Direcciones" />
           </AssociationSet>
           <EntitySet Name="Alteradores" EntityType="WASSTDModelo.Alterador" />
+          <EntitySet Name="Tramites" EntityType="WASSTDModelo.Tramite" />
+          <EntitySet Name="Detalles_TramiteSet" EntityType="WASSTDModelo.Detalles_Tramite" />
+          <AssociationSet Name="Detalles_del_Tramite" Association="WASSTDModelo.Detalles_del_Tramite">
+            <End Role="Detalles_Tramite" EntitySet="Detalles_TramiteSet" />
+            <End Role="Tramite" EntitySet="Tramites" />
+          </AssociationSet>
+          <AssociationSet Name="TramiteCliente" Association="WASSTDModelo.TramiteCliente">
+            <End Role="Tramite" EntitySet="Tramites" />
+            <End Role="Cliente" EntitySet="Personas" />
+          </AssociationSet>
+          <AssociationSet Name="TramiteAbogado" Association="WASSTDModelo.TramiteAbogado">
+            <End Role="Tramite" EntitySet="Tramites" />
+            <End Role="Abogado" EntitySet="Personas" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="Usuario">
           <Key>
@@ -641,7 +774,6 @@
           </Key>
           <Property Type="Int32" Name="dni" Nullable="false" annotation:StoreGeneratedPattern="None" />
           <Property Type="String" Name="nombre_apellido" Nullable="false" />
-          <Property Type="DateTime" Name="fecha_nacimiento" Nullable="false" />
           <Property Type="String" Name="sexo" Nullable="false" />
           <Property Type="Int32" Name="telefono" Nullable="false" />
           <Property Type="Int32" Name="celular" Nullable="false" />
@@ -652,7 +784,6 @@
           <NavigationProperty Name="Direcciones" Relationship="WASSTDModelo.PersonaDirecciones" FromRole="Persona" ToRole="Direccion" />
           <NavigationProperty Name="Tipo_Documento" Relationship="WASSTDModelo.Tipo_DocumentoPersona" FromRole="Persona" ToRole="Tipo_Documento" />
           <NavigationProperty Name="Estado" Relationship="WASSTDModelo.EstadoPersona" FromRole="Persona" ToRole="Estado" />
-          <Property Name="clave_fiscal" Type="String" />
         </EntityType>
         <EntityType Name="CtaCte">
           <Key>
@@ -789,6 +920,64 @@
         <EntityType Name="Boleta" BaseType="WASSTDModelo.Comprobante">
           <Property Type="Int32" Name="numero" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
+        <EntityType Name="Tramite">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipo_tramite" Type="String" Nullable="false" />
+          <NavigationProperty Name="Detalles_Tramite" Relationship="WASSTDModelo.Detalles_del_Tramite" FromRole="Tramite" ToRole="Detalles_Tramite" />
+          <NavigationProperty Name="Cliente" Relationship="WASSTDModelo.TramiteCliente" FromRole="Tramite" ToRole="Cliente" />
+          <Property Name="Cliente_dni" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Abogado" Relationship="WASSTDModelo.TramiteAbogado" FromRole="Tramite" ToRole="Abogado" />
+        </EntityType>
+        <EntityType Name="Detalles_Tramite">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" Nullable="true" />
+          <Property Name="fecha_desde" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="Tramite" Relationship="WASSTDModelo.Detalles_del_Tramite" FromRole="Detalles_Tramite" ToRole="Tramite" />
+          <Property Name="TramiteId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="Detalles_del_Tramite">
+          <End Type="WASSTDModelo.Detalles_Tramite" Role="Detalles_Tramite" Multiplicity="*" />
+          <End Type="WASSTDModelo.Tramite" Role="Tramite" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Tramite">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Detalles_Tramite">
+              <PropertyRef Name="TramiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Cliente" BaseType="WASSTDModelo.Persona">
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="clave_fiscal" Type="String" Nullable="true" />
+          <Property Name="fecha_nacimiento" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Tramite" Relationship="WASSTDModelo.TramiteCliente" FromRole="Cliente" ToRole="Tramite" />
+        </EntityType>
+        <Association Name="TramiteCliente">
+          <End Type="WASSTDModelo.Tramite" Role="Tramite" Multiplicity="*" />
+          <End Type="WASSTDModelo.Cliente" Role="Cliente" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="dni" />
+            </Principal>
+            <Dependent Role="Tramite">
+              <PropertyRef Name="Cliente_dni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Abogado" BaseType="WASSTDModelo.Persona" >
+          <NavigationProperty Name="Tramite" Relationship="WASSTDModelo.TramiteAbogado" FromRole="Abogado" ToRole="Tramite" />
+        </EntityType>
+        <Association Name="TramiteAbogado">
+          <End Type="WASSTDModelo.Tramite" Role="Tramite" Multiplicity="1" />
+          <End Type="WASSTDModelo.Abogado" Role="Abogado" Multiplicity="1" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -852,14 +1041,25 @@
         <MappingFragment StoreEntitySet="Personas">
           <ScalarProperty Name="dni" ColumnName="dni" />
           <ScalarProperty Name="nombre_apellido" ColumnName="nombre_apellido" />
-          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
           <ScalarProperty Name="sexo" ColumnName="sexo" />
           <ScalarProperty Name="telefono" ColumnName="telefono" />
           <ScalarProperty Name="celular" ColumnName="celular" />
           <ScalarProperty Name="email1" ColumnName="email1" />
           <ScalarProperty Name="observaciones" ColumnName="observaciones" />
           <ScalarProperty Name="lugar_trabajo" ColumnName="lugar_trabajo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Cliente)">
+        <MappingFragment StoreEntitySet="Personas_Cliente">
+          <ScalarProperty Name="dni" ColumnName="dni" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="clave_fiscal" ColumnName="clave_fiscal" />
+          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Abogado)">
+        <MappingFragment StoreEntitySet="Personas_Abogado">
+          <ScalarProperty Name="dni" ColumnName="dni" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -961,6 +1161,25 @@
           <ScalarProperty Name="porcentaje_recargo" ColumnName="porcentaje_recargo" />
           <ScalarProperty Name="dias_gracias" ColumnName="dias_gracias" />
           <ScalarProperty Name="valor_cuota" ColumnName="valor_cuota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tramites">
+      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Tramite)">
+        <MappingFragment StoreEntitySet="Tramites">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="tipo_tramite" ColumnName="tipo_tramite" />
+          <ScalarProperty Name="Cliente_dni" ColumnName="Cliente_dni" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Detalles_TramiteSet">
+      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Detalles_Tramite)">
+        <MappingFragment StoreEntitySet="Detalles_TramiteSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fecha_desde" ColumnName="fecha_desde" />
+          <ScalarProperty Name="TramiteId" ColumnName="TramiteId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1076,6 +1295,14 @@
         <ScalarProperty Name="id" ColumnName="id" />
       </EndProperty>
     </AssociationSetMapping>
+    <AssociationSetMapping Name="TramiteAbogado" TypeName="WASSTDModelo.TramiteAbogado" StoreEntitySet="Tramites">
+      <EndProperty Name="Abogado">
+        <ScalarProperty Name="dni" ColumnName="Abogado_dni" />
+      </EndProperty>
+      <EndProperty Name="Tramite">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
@@ -1096,7 +1323,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="WASSTD" ZoomLevel="86" ShowGrid="true" DisplayType="false">
+      <Diagram Name="WASSTD" ZoomLevel="55" ShowGrid="true" DisplayType="false">
         <EntityTypeShape EntityType="WASSTDModelo.Usuario" Width="1.5" PointX="0.75" PointY="2.875" Height="2.085348307291667" />
         <EntityTypeShape EntityType="WASSTDModelo.Grupo" Width="1.5" PointX="0.75" PointY="0.5" Height="1.5923063151041665" />
         <AssociationConnector Association="WASSTDModelo.UsuarioGrupo">
@@ -1160,12 +1387,12 @@
         </AssociationConnector>
         <EntityTypeShape EntityType="WASSTDModelo.Estado" Width="1.875" PointX="3.375" PointY="8.625" Height="1.5956835937499996" />
         <EntityTypeShape EntityType="WASSTDModelo.Direccion" Width="1.875" PointX="0.75" PointY="13.5" Height="1.7879850260416674" />
-        <AssociationConnector Association="WASSTDModelo.PersonaDirecciones">
-          <ConnectorPoint PointX="11.0625" PointY="13.124410807291666" />
-          <ConnectorPoint PointX="11.0625" PointY="14.797841796874998" />
-          <ConnectorPoint PointX="10.645830833333333" PointY="14.797841796874998" />
-          <ConnectorPoint PointX="10.479164166666665" PointY="14.797841796874998" />
-          <ConnectorPoint PointX="2.625" PointY="14.797841796874998" />
+        <AssociationConnector Association="WASSTDModelo.PersonaDirecciones" ManuallyRouted="true">
+          <ConnectorPoint PointX="9.59375" PointY="9.576396484375" />
+          <ConnectorPoint PointX="9.59375" PointY="10.143550538574218" />
+          <ConnectorPoint PointX="5.587121419526488" PointY="10.143550538574218" />
+          <ConnectorPoint PointX="5.587121419526488" PointY="14.393992513020834" />
+          <ConnectorPoint PointX="2.625" PointY="14.393992513020834" />
         </AssociationConnector>
         <EntityTypeShape EntityType="WASSTDModelo.Tipo_Documento" Width="1.875" PointX="3.375" PointY="6.875" Height="1.5956835937499996" IsExpanded="true" />
         <AssociationConnector Association="WASSTDModelo.Tipo_DocumentoPersona">
@@ -1188,6 +1415,15 @@
           <ConnectorPoint PointX="16.196453170598293" PointY="2.375" />
           <ConnectorPoint PointX="16.196453170598293" PointY="2.7499999999999991" />
         </InheritanceConnector>
+        <EntityTypeShape EntityType="WASSTDModelo.Tramite" Width="1.5" PointX="12.875" PointY="8" />
+        <EntityTypeShape EntityType="WASSTDModelo.Detalles_Tramite" Width="1.5" PointX="16" PointY="8.125" />
+        <AssociationConnector Association="WASSTDModelo.Detalles_del_Tramite" />
+        <EntityTypeShape EntityType="WASSTDModelo.Cliente" Width="1.5" PointX="8.125" PointY="10.875" />
+        <InheritanceConnector EntityType="WASSTDModelo.Cliente" />
+        <AssociationConnector Association="WASSTDModelo.TramiteCliente" />
+        <EntityTypeShape EntityType="WASSTDModelo.Abogado" Width="1.5" PointX="10.375" PointY="10.875" />
+        <InheritanceConnector EntityType="WASSTDModelo.Abogado" />
+        <AssociationConnector Association="WASSTDModelo.TramiteAbogado" />
         </Diagram>
     </Diagrams>
   </Designer>
