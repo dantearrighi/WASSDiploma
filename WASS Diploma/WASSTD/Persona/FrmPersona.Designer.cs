@@ -49,7 +49,7 @@
             this.rbtn_masculino = new System.Windows.Forms.RadioButton();
             this.rbtn_femenino = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmbTipoPersona = new System.Windows.Forms.ComboBox();
+            this.cmb_TipoPersona = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_numero = new System.Windows.Forms.MaskedTextBox();
             this.txt_fechanacimiento = new System.Windows.Forms.MaskedTextBox();
@@ -90,7 +90,7 @@
             this.btn_guardar.Location = new System.Drawing.Point(394, 440);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(75, 35);
-            this.btn_guardar.TabIndex = 5;
+            this.btn_guardar.TabIndex = 1;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_guardar.UseVisualStyleBackColor = true;
@@ -103,7 +103,7 @@
             this.btn_cancelar.Location = new System.Drawing.Point(475, 440);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(75, 35);
-            this.btn_cancelar.TabIndex = 4;
+            this.btn_cancelar.TabIndex = 2;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_cancelar.UseVisualStyleBackColor = true;
@@ -117,7 +117,7 @@
             this.tab_Persona.Name = "tab_Persona";
             this.tab_Persona.SelectedIndex = 0;
             this.tab_Persona.Size = new System.Drawing.Size(535, 423);
-            this.tab_Persona.TabIndex = 3;
+            this.tab_Persona.TabIndex = 0;
             // 
             // tab_datos
             // 
@@ -155,7 +155,7 @@
             this.txt_celular.Mask = "9999999999999";
             this.txt_celular.Name = "txt_celular";
             this.txt_celular.Size = new System.Drawing.Size(154, 20);
-            this.txt_celular.TabIndex = 53;
+            this.txt_celular.TabIndex = 1;
             // 
             // txt_telfijo
             // 
@@ -164,7 +164,7 @@
             this.txt_telfijo.Mask = "99999999999";
             this.txt_telfijo.Name = "txt_telfijo";
             this.txt_telfijo.Size = new System.Drawing.Size(100, 20);
-            this.txt_telfijo.TabIndex = 51;
+            this.txt_telfijo.TabIndex = 0;
             // 
             // lb_celular
             // 
@@ -205,7 +205,7 @@
             this.txt_emailpricipal.Location = new System.Drawing.Point(138, 60);
             this.txt_emailpricipal.Name = "txt_emailpricipal";
             this.txt_emailpricipal.Size = new System.Drawing.Size(368, 20);
-            this.txt_emailpricipal.TabIndex = 3;
+            this.txt_emailpricipal.TabIndex = 2;
             // 
             // groupBox1
             // 
@@ -214,7 +214,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.grp_sexo);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.cmbTipoPersona);
+            this.groupBox1.Controls.Add(this.cmb_TipoPersona);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txt_numero);
             this.groupBox1.Controls.Add(this.txt_fechanacimiento);
@@ -227,7 +227,7 @@
             this.groupBox1.Location = new System.Drawing.Point(7, 15);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(514, 169);
-            this.groupBox1.TabIndex = 60;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
             // 
@@ -237,7 +237,7 @@
             this.txt_ClaveFiscal.Location = new System.Drawing.Point(138, 135);
             this.txt_ClaveFiscal.Name = "txt_ClaveFiscal";
             this.txt_ClaveFiscal.Size = new System.Drawing.Size(368, 20);
-            this.txt_ClaveFiscal.TabIndex = 59;
+            this.txt_ClaveFiscal.TabIndex = 6;
             // 
             // label4
             // 
@@ -288,7 +288,7 @@
             this.rbtn_masculino.Location = new System.Drawing.Point(91, 13);
             this.rbtn_masculino.Name = "rbtn_masculino";
             this.rbtn_masculino.Size = new System.Drawing.Size(73, 17);
-            this.rbtn_masculino.TabIndex = 6;
+            this.rbtn_masculino.TabIndex = 0;
             this.rbtn_masculino.TabStop = true;
             this.rbtn_masculino.Text = "Masuclino";
             this.rbtn_masculino.UseVisualStyleBackColor = true;
@@ -299,7 +299,7 @@
             this.rbtn_femenino.Location = new System.Drawing.Point(167, 13);
             this.rbtn_femenino.Name = "rbtn_femenino";
             this.rbtn_femenino.Size = new System.Drawing.Size(71, 17);
-            this.rbtn_femenino.TabIndex = 31;
+            this.rbtn_femenino.TabIndex = 1;
             this.rbtn_femenino.TabStop = true;
             this.rbtn_femenino.Text = "Femenino";
             this.rbtn_femenino.UseVisualStyleBackColor = true;
@@ -315,19 +315,18 @@
             this.label2.Text = "Edad:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // cmbTipoPersona
+            // cmb_TipoPersona
             // 
-            this.cmbTipoPersona.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.cmbTipoPersona.FormattingEnabled = true;
-            this.cmbTipoPersona.Items.AddRange(new object[] {
+            this.cmb_TipoPersona.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.cmb_TipoPersona.FormattingEnabled = true;
+            this.cmb_TipoPersona.Items.AddRange(new object[] {
             "Abogado",
             "Cliente"});
-            this.cmbTipoPersona.Location = new System.Drawing.Point(138, 19);
-            this.cmbTipoPersona.Name = "cmbTipoPersona";
-            this.cmbTipoPersona.Size = new System.Drawing.Size(121, 21);
-            this.cmbTipoPersona.TabIndex = 55;
-            this.cmbTipoPersona.Text = "Seleccionar";
-            
+            this.cmb_TipoPersona.Location = new System.Drawing.Point(138, 19);
+            this.cmb_TipoPersona.Name = "cmb_TipoPersona";
+            this.cmb_TipoPersona.Size = new System.Drawing.Size(121, 21);
+            this.cmb_TipoPersona.TabIndex = 1;
+            this.cmb_TipoPersona.Text = "Seleccionar";
             // 
             // label1
             // 
@@ -347,7 +346,7 @@
             this.txt_numero.Mask = "99999999";
             this.txt_numero.Name = "txt_numero";
             this.txt_numero.Size = new System.Drawing.Size(153, 20);
-            this.txt_numero.TabIndex = 52;
+            this.txt_numero.TabIndex = 3;
             // 
             // txt_fechanacimiento
             // 
@@ -356,7 +355,7 @@
             this.txt_fechanacimiento.Mask = "00/00/0000";
             this.txt_fechanacimiento.Name = "txt_fechanacimiento";
             this.txt_fechanacimiento.Size = new System.Drawing.Size(100, 20);
-            this.txt_fechanacimiento.TabIndex = 50;
+            this.txt_fechanacimiento.TabIndex = 4;
             this.txt_fechanacimiento.ValidatingType = typeof(System.DateTime);
             // 
             // cmb_tiposdoc
@@ -366,7 +365,7 @@
             this.cmb_tiposdoc.Location = new System.Drawing.Point(138, 49);
             this.cmb_tiposdoc.Name = "cmb_tiposdoc";
             this.cmb_tiposdoc.Size = new System.Drawing.Size(121, 21);
-            this.cmb_tiposdoc.TabIndex = 24;
+            this.cmb_tiposdoc.TabIndex = 2;
             // 
             // lb_tipodoc
             // 
@@ -407,7 +406,7 @@
             this.txt_nombreapellido.Location = new System.Drawing.Point(138, 112);
             this.txt_nombreapellido.Name = "txt_nombreapellido";
             this.txt_nombreapellido.Size = new System.Drawing.Size(368, 20);
-            this.txt_nombreapellido.TabIndex = 1;
+            this.txt_nombreapellido.TabIndex = 5;
             // 
             // lb_nombreapellido
             // 
@@ -443,7 +442,7 @@
             this.txt_cp.Location = new System.Drawing.Point(411, 51);
             this.txt_cp.Name = "txt_cp";
             this.txt_cp.Size = new System.Drawing.Size(95, 20);
-            this.txt_cp.TabIndex = 46;
+            this.txt_cp.TabIndex = 3;
             // 
             // lb_codigopostal
             // 
@@ -474,7 +473,7 @@
             this.cmb_localidades.Location = new System.Drawing.Point(323, 19);
             this.cmb_localidades.Name = "cmb_localidades";
             this.cmb_localidades.Size = new System.Drawing.Size(183, 21);
-            this.cmb_localidades.TabIndex = 43;
+            this.cmb_localidades.TabIndex = 1;
             this.cmb_localidades.Leave += new System.EventHandler(this.cmb_localidades_Leave);
             // 
             // cmb_provincias
@@ -484,7 +483,7 @@
             this.cmb_provincias.Location = new System.Drawing.Point(114, 19);
             this.cmb_provincias.Name = "cmb_provincias";
             this.cmb_provincias.Size = new System.Drawing.Size(121, 21);
-            this.cmb_provincias.TabIndex = 42;
+            this.cmb_provincias.TabIndex = 0;
             this.cmb_provincias.Leave += new System.EventHandler(this.cmb_provincias_Leave);
             // 
             // lb_provincia
@@ -504,7 +503,7 @@
             this.txt_direccion.Location = new System.Drawing.Point(110, 51);
             this.txt_direccion.Name = "txt_direccion";
             this.txt_direccion.Size = new System.Drawing.Size(233, 20);
-            this.txt_direccion.TabIndex = 40;
+            this.txt_direccion.TabIndex = 2;
             // 
             // lb_direccion
             // 
@@ -643,7 +642,7 @@
         private System.Windows.Forms.MaskedTextBox txt_numero;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbTipoPersona;
+        private System.Windows.Forms.ComboBox cmb_TipoPersona;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_ClaveFiscal;
         private System.Windows.Forms.Label label4;

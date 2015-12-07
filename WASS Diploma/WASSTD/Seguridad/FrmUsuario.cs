@@ -112,7 +112,7 @@ namespace WASSTD
 
                     else
                     {
-                       // oUsuario.clave = Controladora.cEncriptacion.Encriptar(txt_nuevacontraseña.Text);
+                        oUsuario.clave = Controladora.cEncriptacion.Encriptar(txt_nuevacontraseña.Text);
                         cUsuario.Modificacion(oUsuario);
                     }
 

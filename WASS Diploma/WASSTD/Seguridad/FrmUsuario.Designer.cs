@@ -179,7 +179,6 @@
             // 
             // tab_grupos
             // 
-            this.tab_grupos.BackgroundImage = global::WASSTD.Properties.Resources.Fondo_Final;
             this.tab_grupos.Controls.Add(this.chklstbox_grupos);
             this.tab_grupos.Location = new System.Drawing.Point(4, 22);
             this.tab_grupos.Name = "tab_grupos";

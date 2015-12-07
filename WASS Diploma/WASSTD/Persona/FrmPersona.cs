@@ -24,11 +24,11 @@ namespace WASSTD
         Controladora.cLocalidad cLocalidad;
         Controladora.cEstado cEstado;
         Controladora.cVerificacion cVerificacion;
+        Controladora.cTipo_Persona cTipo_Persona;
    
-        Controladora.cMovimiento cMovimiento;
-        Controladora.cCtaCte cCtaCte;
         
-        Controladora.cTipo_Movimiento cTipo_Movimiento;
+        
+        
         Controladora.cAuditoria cAuditoria;
 
         // Declaro las entidades
@@ -36,11 +36,10 @@ namespace WASSTD
        
         Modelo_Entidades.Direccion oDireccion;
         Modelo_Entidades.Direccion oDireccionE;
-        //Modelo_Entidades.CtaCte oCtaCte;
         Modelo_Entidades.Usuario miUsuario;
         
 
-        List<Modelo_Entidades.Movimiento> ListaMovimientos = new List<Modelo_Entidades.Movimiento>();
+       
 
         
         
@@ -56,15 +55,11 @@ namespace WASSTD
             cPersona = Controladora.cPersona.ObtenerInstancia();
             cGrupo = Controladora.cGrupo.ObtenerInstancia();
             cTipo_Documento = Controladora.cTipo_Documento.ObtenerInstancia();
+            cTipo_Persona = Controladora.cTipo_Persona.ObtenerInstancia();
             cProvincia = Controladora.cProvincia.ObtenerInstancia();
             cLocalidad = Controladora.cLocalidad.ObtenerInstancia();
             cEstado = Controladora.cEstado.ObtenerInstancia();
-            
             cVerificacion = Controladora.cVerificacion.ObtenerInstancia();
-            cMovimiento = Controladora.cMovimiento.ObtenerInstancia();
-            cCtaCte = Controladora.cCtaCte.ObtenerInstancia();
-          
-            cTipo_Movimiento = Controladora.cTipo_Movimiento.ObtenerInstancia();
             cAuditoria = Controladora.cAuditoria.ObtenerInstancia();
 
             modo = fModo;
@@ -89,6 +84,10 @@ namespace WASSTD
             cmb_localidades.DataSource = cLocalidad.ObtenerLocalidades();
             cmb_localidades.DisplayMember = "descripcion";
             cmb_localidades.SelectedItem = null;
+
+            cmb_TipoPersona.DataSource = cTipo_Persona.ObtenerTipos_Personas();
+            cmb_TipoPersona.DisplayMember = "descripcion";
+            cmb_TipoPersona.SelectedItem = null;
 
             
           
@@ -141,7 +140,8 @@ namespace WASSTD
                 oPersona.dni = Convert.ToInt32(txt_numero.Text);
                 oPersona.nombre_apellido = txt_nombreapellido.Text;
                 oPersona.observaciones = txt_observaciones.Text;
-          //      oPersona.fecha_nacimiento = Convert.ToDateTime(txt_fechanacimiento.Text);
+                oPersona.Tipo_Persona = (Modelo_Entidades.Tipo_Persona)cmb_TipoPersona.SelectedItem;
+                oPersona.fecha_nacimiento = Convert.ToDateTime(txt_fechanacimiento.Text);
 
                 if (rbtn_masculino.Checked == true)
                 {
@@ -180,6 +180,7 @@ namespace WASSTD
                 oPersona.celular = txt_celular.Text;
                 oPersona.email1 = txt_emailpricipal.Text;
                 oPersona.Estado = cEstado.ObtenerEstadoHabilitado();
+                oPersona.clave_fiscal = txt_ClaveFiscal.Text;
               
                 #endregion
 
@@ -206,13 +207,13 @@ namespace WASSTD
 
                        
 
-                        MessageBox.Show("La Persona se ha agregado correctamente");
+                        MessageBox.Show("La persona se ha registrado correctamente");
                     }
 
                     else
                     {
                         cPersona.Modificacion(oPersona);
-                        MessageBox.Show("La Persona se ha modificado correctamente");
+                        MessageBox.Show("La persona se ha modificado correctamente");
                     }               
 
                     this.DialogResult = DialogResult.OK;
@@ -232,13 +233,13 @@ namespace WASSTD
             #region Datos personales
             if (cmb_tiposdoc.SelectedItem == null)
             {
-                MessageBox.Show("Debe ingresar un tipo de documento para el Persona");
+                MessageBox.Show("Debe ingresar un tipo de documento para la Persona");
                 return false;
             }
 
             if (string.IsNullOrEmpty(txt_numero.Text))
             {
-                MessageBox.Show("Debe ingresar el número de DNI del Persona");
+                MessageBox.Show("Debe ingresar el número de documento de la Persona");
                 return false;
             }
 
@@ -247,7 +248,7 @@ namespace WASSTD
             {
                 if (oPersona.dni != Convert.ToInt32(txt_numero.Text))
                 {
-                    MessageBox.Show("Ya existe un Persona con el DNI introducido");
+                    MessageBox.Show("Ya existe un Persona con el DNI ingresado");
                     return false;
                 }
             }
@@ -278,13 +279,13 @@ namespace WASSTD
 
             if (cmb_provincias.SelectedItem == null)
             {
-                MessageBox.Show("Debe ingresar la provincia donde reside el Persona");
+                MessageBox.Show("Debe ingresar la provincia donde reside la Persona");
                 return false;
             }
 
             if (cmb_localidades.SelectedItem == null)
             {
-                MessageBox.Show("Debe ingresar la provincia donde reside el Persona");
+                MessageBox.Show("Debe ingresar la localidad donde reside la Persona");
                 return false;
             }
 
@@ -296,11 +297,7 @@ namespace WASSTD
 
           
 
-            if (cmb_localidades.SelectedItem == null)
-            {
-                MessageBox.Show("Debe ingresar la localidad de envío de la boleta del Persona");
-                return false;
-            }
+            
 
            
 
@@ -408,11 +405,15 @@ namespace WASSTD
                 rbtn_femenino.Checked = true;
             }
 
+            
             txt_direccion.Text = oPersona.Direcciones.ElementAt(0).direccion;
             txt_cp.Text = oPersona.Direcciones.ElementAt(0).Localidad.cp.ToString();
         
-            txt_cp.Text = oPersona.Direcciones.ElementAt(1).Localidad.cp.ToString();
+         //   txt_cp.Text = oPersona.Direcciones.ElementAt(1).Localidad.cp.ToString();
 
+            txt_fechanacimiento.Text = oPersona.fecha_nacimiento.ToString();
+            txt_ClaveFiscal.Text = oPersona.clave_fiscal;
+            cmb_TipoPersona.SelectedItem = oPersona.Tipo_Persona;
             cmb_tiposdoc.SelectedItem = oPersona.Tipo_Documento;
 
             cmb_provincias.SelectedItem = oPersona.Direcciones.ElementAt(0).Localidad.Provincia;

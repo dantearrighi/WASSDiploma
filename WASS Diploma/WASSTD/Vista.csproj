@@ -75,20 +75,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Boletas.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Boletas.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Boleta_Prof.cs">
-      <DependentUpon>Boleta_Prof.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Boleta_Prof.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Boleta_Prof.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Botoneras\Botonera1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -107,16 +93,6 @@
     <Compile Include="Auditorias\FrmAuditorias.Designer.cs">
       <DependentUpon>FrmAuditorias.cs</DependentUpon>
     </Compile>
-    <Compile Include="Certificado_Prof.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Certificado_Prof.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Certificado_Prof_I.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Certificado_Prof_I.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Auditorias\FrmAuditoriaCuotas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,85 +100,11 @@
       <DependentUpon>FrmAuditoriaCuotas.cs</DependentUpon>
     </Compile>
     <None Include="App.Config" />
-    <Compile Include="Listados_Cuotas_Desc.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Listados_Cuotas_Desc.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Listados_Expte_Obra.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Listados_Expte_Obra.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Listados_Mat_Esp.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Listados_Mat_Esp.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Listados_Prof_Est.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Listados_Prof_Est.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Listados_Prof_TM.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Listados_Prof_TM.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Listados_Tit_Uni.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Listados_Tit_Uni.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Listado_Cuotas_Esp.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Listado_Cuotas_Esp.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Listado_Exptes_Monto_Esp.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Listado_Exptes_Monto_Esp.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Listado_Expte_Esp.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Listado_Expte_Esp.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Listado_Tit_Esp.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Listado_Tit_Esp.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Seguridad\FrmCambiarClave.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Seguridad\FrmCambiarClave.Designer.cs">
       <DependentUpon>FrmCambiarClave.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Persona\FrmImprimirCertificado_I.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Persona\FrmImprimirCertificado_I.Designer.cs">
-      <DependentUpon>FrmImprimirCertificado_I.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Cta_Cte\FrmRecibos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cta_Cte\FrmRecibos.Designer.cs">
-      <DependentUpon>FrmRecibos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Cta_Cte\FrmImprimirRecibo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cta_Cte\FrmImprimirRecibo.Designer.cs">
-      <DependentUpon>FrmImprimirRecibo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Persona\FrmImprimirCertificado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Persona\FrmImprimirCertificado.Designer.cs">
-      <DependentUpon>FrmImprimirCertificado.cs</DependentUpon>
     </Compile>
     <Compile Include="Persona\FrmSeleccionPersonas.cs">
       <SubType>Form</SubType>
@@ -210,21 +112,11 @@
     <Compile Include="Persona\FrmSeleccionPersonas.Designer.cs">
       <DependentUpon>FrmSeleccionPersonas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Recibos.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Recibos.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Seguridad\FrmRecuperarClave.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Seguridad\FrmRecuperarClave.Designer.cs">
       <DependentUpon>FrmRecuperarClave.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Titulos.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Titulos.xsd</DependentUpon>
     </Compile>
     <Compile Include="Persona\FrmPersona.cs">
       <SubType>Form</SubType>
@@ -297,27 +189,12 @@
     <EmbeddedResource Include="Auditorias\FrmAuditorias.resx">
       <DependentUpon>FrmAuditorias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cta_Cte\Recibos.rdlc" />
     <EmbeddedResource Include="Auditorias\FrmAuditoriaCuotas.resx">
       <DependentUpon>FrmAuditoriaCuotas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\FrmCambiarClave.resx">
       <DependentUpon>FrmCambiarClave.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Persona\FrmImprimirCertificado_I.resx">
-      <DependentUpon>FrmImprimirCertificado_I.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Cta_Cte\FrmRecibos.resx">
-      <DependentUpon>FrmRecibos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Cta_Cte\FrmImprimirRecibo.resx">
-      <DependentUpon>FrmImprimirRecibo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Persona\FrmImprimirCertificado.resx">
-      <DependentUpon>FrmImprimirCertificado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Persona\Certificado_Habilitación.rdlc" />
-    <EmbeddedResource Include="Persona\Certificado_Incumbencias.rdlc" />
     <EmbeddedResource Include="Persona\FrmSeleccionPersonas.resx">
       <DependentUpon>FrmSeleccionPersonas.cs</DependentUpon>
     </EmbeddedResource>
@@ -364,160 +241,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Boletas.xsc">
-      <DependentUpon>Boletas.xsd</DependentUpon>
-    </None>
-    <None Include="Boletas.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Boletas.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Boletas.xss">
-      <DependentUpon>Boletas.xsd</DependentUpon>
-    </None>
-    <None Include="Boleta_Prof.xsc">
-      <DependentUpon>Boleta_Prof.xsd</DependentUpon>
-    </None>
-    <None Include="Boleta_Prof.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Boleta_Prof.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Boleta_Prof.xss">
-      <DependentUpon>Boleta_Prof.xsd</DependentUpon>
-    </None>
-    <None Include="Certificado_Prof.xsc">
-      <DependentUpon>Certificado_Prof.xsd</DependentUpon>
-    </None>
-    <None Include="Certificado_Prof.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Certificado_Prof.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Certificado_Prof.xss">
-      <DependentUpon>Certificado_Prof.xsd</DependentUpon>
-    </None>
-    <None Include="Certificado_Prof_I.xsc">
-      <DependentUpon>Certificado_Prof_I.xsd</DependentUpon>
-    </None>
-    <None Include="Certificado_Prof_I.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Certificado_Prof_I.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Certificado_Prof_I.xss">
-      <DependentUpon>Certificado_Prof_I.xsd</DependentUpon>
-    </None>
-    <None Include="Listados_Cuotas_Desc.xsc">
-      <DependentUpon>Listados_Cuotas_Desc.xsd</DependentUpon>
-    </None>
-    <None Include="Listados_Cuotas_Desc.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Listados_Cuotas_Desc.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Listados_Cuotas_Desc.xss">
-      <DependentUpon>Listados_Cuotas_Desc.xsd</DependentUpon>
-    </None>
-    <None Include="Listados_Expte_Obra.xsc">
-      <DependentUpon>Listados_Expte_Obra.xsd</DependentUpon>
-    </None>
-    <None Include="Listados_Expte_Obra.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Listados_Expte_Obra.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Listados_Expte_Obra.xss">
-      <DependentUpon>Listados_Expte_Obra.xsd</DependentUpon>
-    </None>
-    <None Include="Listados_Mat_Esp.xsc">
-      <DependentUpon>Listados_Mat_Esp.xsd</DependentUpon>
-    </None>
-    <None Include="Listados_Mat_Esp.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Listados_Mat_Esp.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Listados_Mat_Esp.xss">
-      <DependentUpon>Listados_Mat_Esp.xsd</DependentUpon>
-    </None>
-    <None Include="Listados_Prof_Est.xsc">
-      <DependentUpon>Listados_Prof_Est.xsd</DependentUpon>
-    </None>
-    <None Include="Listados_Prof_Est.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Listados_Prof_Est.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Listados_Prof_Est.xss">
-      <DependentUpon>Listados_Prof_Est.xsd</DependentUpon>
-    </None>
-    <None Include="Listados_Prof_TM.xsc">
-      <DependentUpon>Listados_Prof_TM.xsd</DependentUpon>
-    </None>
-    <None Include="Listados_Prof_TM.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Listados_Prof_TM.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Listados_Prof_TM.xss">
-      <DependentUpon>Listados_Prof_TM.xsd</DependentUpon>
-    </None>
-    <None Include="Listados_Tit_Uni.xsc">
-      <DependentUpon>Listados_Tit_Uni.xsd</DependentUpon>
-    </None>
-    <None Include="Listados_Tit_Uni.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Listados_Tit_Uni.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Listados_Tit_Uni.xss">
-      <DependentUpon>Listados_Tit_Uni.xsd</DependentUpon>
-    </None>
-    <None Include="Listado_Cuotas_Esp.xsc">
-      <DependentUpon>Listado_Cuotas_Esp.xsd</DependentUpon>
-    </None>
-    <None Include="Listado_Cuotas_Esp.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Listado_Cuotas_Esp.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Listado_Cuotas_Esp.xss">
-      <DependentUpon>Listado_Cuotas_Esp.xsd</DependentUpon>
-    </None>
-    <None Include="Listado_Exptes_Monto_Esp.xsc">
-      <DependentUpon>Listado_Exptes_Monto_Esp.xsd</DependentUpon>
-    </None>
-    <None Include="Listado_Exptes_Monto_Esp.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Listado_Exptes_Monto_Esp.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Listado_Exptes_Monto_Esp.xss">
-      <DependentUpon>Listado_Exptes_Monto_Esp.xsd</DependentUpon>
-    </None>
-    <None Include="Listado_Expte_Esp.xsc">
-      <DependentUpon>Listado_Expte_Esp.xsd</DependentUpon>
-    </None>
-    <None Include="Listado_Expte_Esp.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Listado_Expte_Esp.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Listado_Expte_Esp.xss">
-      <DependentUpon>Listado_Expte_Esp.xsd</DependentUpon>
-    </None>
-    <None Include="Listado_Tit_Esp.xsc">
-      <DependentUpon>Listado_Tit_Esp.xsd</DependentUpon>
-    </None>
-    <None Include="Listado_Tit_Esp.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Listado_Tit_Esp.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Listado_Tit_Esp.xss">
-      <DependentUpon>Listado_Tit_Esp.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Modelo_Entidades.Perfil.datasource" />
     <None Include="Properties\Settings.settings">
@@ -529,28 +252,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Recibos.xsc">
-      <DependentUpon>Recibos.xsd</DependentUpon>
-    </None>
-    <None Include="Recibos.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Recibos.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Recibos.xss">
-      <DependentUpon>Recibos.xsd</DependentUpon>
-    </None>
-    <None Include="Titulos.xsc">
-      <DependentUpon>Titulos.xsd</DependentUpon>
-    </None>
-    <None Include="Titulos.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Titulos.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Titulos.xss">
-      <DependentUpon>Titulos.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Controladora\Controladora.csproj">

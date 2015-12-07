@@ -3,22 +3,24 @@ use WASSTD
 
 insert into Usuarios values
 ('Dante Arrighi', 'd', 'dantearrighi@gmail.com', 1, 'd'),
-('Adrian Molinero', 'x','adigmo@gmail.com',2,'a')
+('Adrian Molinero', 'a','adigmo@gmail.com',2,'a'),
+('Administrador del Sistema', '0DPiKuNIrrVmD8IUCuw1hQxNqZc=', 'dantearrighi@gmail.com',1,'admin')
 
 insert into Grupos values
 ('Administrador'),
 ('Usuario')
 
-insert into UsuariosGrupos values
+insert into UsuariosGrupos values (3,1)
 (1,1),
-(2,1)
+(2,1),
+(3,1)
+
 
 
 insert into Modulos values
 ('Seguridad'),
 ('Auditorias'),
 ('Personas'),
-('Contabilidad'),
 ('Tramites'),
 ('Estadísticas'),
 ('Ayuda')
@@ -35,9 +37,7 @@ insert into Formularios values
 ('FrmUsuarios','Gestion de Usuarios',1),
 ('FrmAuditorias','Gestion de Auditorías',2),
 ('FrmPersonas','Gestion de Personas',3),
-('FrmCuotas', 'Gestion de Cuotas',4),
-('FrmRecibos', 'Gestion de Recibos',4),
-('FrmManual','Manual de usuario',7)
+('FrmManual','Manual de usuario',6)
 
 
 
@@ -57,9 +57,7 @@ insert into Perfiles values
 (1,2,5),
 (1,2,6),
 (1,3,6),
-(1,3,5),
-(1,1,7),
-(1,1,8)
+(1,3,5)
 
 insert into Provincias values
 ('Santa Fe'),
@@ -110,7 +108,8 @@ insert into Localidades values
 insert into Tipos_Documentos values
 ('DNI'),
 ('LC'),
-('PASAPORTE')
+('PASAPORTE'),
+('LE')
 
 insert into Estados values
 ('Habilitado'),
@@ -118,36 +117,3 @@ insert into Estados values
 ('Baja')
 
 
-
-
-
-insert into Alteradores values
-(0.005,10,120)
-
-insert into Tipos_Movimientos values
-('Deudor'),
-('Acreedor')
-
-insert into CtasCtes values
-(0,01868923),
-(0,02254345)
-
-
-
-ALTER TABLE Personas ALTER COLUMN fecha_nacimiento DATETIME2  
-
-ALTER TABLE Movimientos ALTER COLUMN fecha DATETIME2
-
-
---DELETE FROM Comprobantes_Boleta
---DELETE FROM Comprobantes_Factura
---DELETE FROM Cuotas_Anual
---DELETE FROM Cuotas_Bimensual
---DELETE FROM Cuotas
---DELETE FROM Movimientos
---DELETE FROM Comprobantes
-
---DELETE FROM Liquidaciones
-
---DELETE FROM Auditorias_Cuotas
---DELETE FROM Videos

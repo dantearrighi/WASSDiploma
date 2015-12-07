@@ -66,13 +66,19 @@ namespace WASSTD
             dgv_datos.Columns[0].HeaderText = "DNI";
             dgv_datos.Columns[1].HeaderText = "Nombre y Apellido";
             dgv_datos.Columns[2].Visible = false;
-            dgv_datos.Columns[3].Visible = false;
-            dgv_datos.Columns[4].Visible = false;
-            dgv_datos.Columns[5].Visible = false;
+            dgv_datos.Columns[3].HeaderText = "Fijo";
+            dgv_datos.Columns[4].HeaderText= "Celular";
+            dgv_datos.Columns[5].HeaderText = "Email";
             dgv_datos.Columns[6].Visible = false;
-            dgv_datos.Columns[7].Visible = false;
+           dgv_datos.Columns[7].Visible = false;
             dgv_datos.Columns[8].Visible = false;
             dgv_datos.Columns[9].Visible = false;
+            dgv_datos.Columns[10].Visible = false;
+            dgv_datos.Columns[11].Visible = false;
+            dgv_datos.Columns[12].Visible = false;
+            dgv_datos.Columns[13].Visible = false;
+            dgv_datos.Columns[14].Visible = false; // Tipo Persona
+            
            
         }
 

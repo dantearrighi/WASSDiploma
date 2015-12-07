@@ -93,7 +93,6 @@
             // 
             // tab_permiso
             // 
-            this.tab_permiso.BackgroundImage = global::WASSTD.Properties.Resources.Fondo_Final;
             this.tab_permiso.Controls.Add(this.chklstbox_permisos);
             this.tab_permiso.Controls.Add(this.cmb_formularios);
             this.tab_permiso.Controls.Add(this.lb_permisos);
@@ -148,7 +147,6 @@
             // 
             // tab_usuarios
             // 
-            this.tab_usuarios.BackgroundImage = global::WASSTD.Properties.Resources.Fondo_Final;
             this.tab_usuarios.Controls.Add(this.lb_usuariosgrupo);
             this.tab_usuarios.Controls.Add(this.chklstbox_usuarios);
             this.tab_usuarios.Location = new System.Drawing.Point(4, 22);

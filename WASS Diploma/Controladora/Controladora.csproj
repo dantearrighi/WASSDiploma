@@ -41,14 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Persona\cTipo_Persona.cs" />
     <Compile Include="Seguridad\cCU_GestionarGrupos.cs" />
     <Compile Include="Seguridad\cCU_GestionarPerfiles.cs" />
     <Compile Include="Seguridad\cCU_GestionarUsuarios.cs" />
     <Compile Include="Varios\cBackup.cs" />
-    <Compile Include="Cta Cte\cComprobante.cs" />
-    <Compile Include="Cta Cte\cCtaCte.cs" />
-    <Compile Include="Cta Cte\cMovimiento.cs" />
-    <Compile Include="Cta Cte\cTipo_Movimiento.cs" />
     <Compile Include="Varios\cAuditoria.cs" />
     <Compile Include="Varios\cEncriptacion.cs" />
     <Compile Include="Varios\cVerificacion.cs" />
