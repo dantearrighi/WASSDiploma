@@ -193,6 +193,7 @@ namespace Controladora
             }
         }
 
+
         // Metodo de validación general para todos los usuarios
         public List<Modelo_Entidades.Usuario> FiltrarUsuarios(string nya, string grupo, string estado)
         {
@@ -200,8 +201,8 @@ namespace Controladora
                            select oUsuario;
 
             if (nya != "0")
-            {
-                Consulta = Consulta.Where(oUsuario => oUsuario.nombre_apellido.Contains(nya));
+            {                                                                   // aca iba containts
+                Consulta = Consulta.Where(oUsuario => oUsuario.nombre_apellido.Contains(nya) );
             }
 
             if (grupo != "0")
@@ -232,9 +233,6 @@ namespace Controladora
 
             return oGrupo;
         }
-
-
-
 
 
 

@@ -43,7 +43,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_ClaveFiscal = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lb_Edad = new System.Windows.Forms.Label();
             this.grp_sexo = new System.Windows.Forms.GroupBox();
             this.lb_sexo = new System.Windows.Forms.Label();
             this.rbtn_masculino = new System.Windows.Forms.RadioButton();
@@ -211,7 +211,7 @@
             // 
             this.groupBox1.Controls.Add(this.txt_ClaveFiscal);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.lb_Edad);
             this.groupBox1.Controls.Add(this.grp_sexo);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.cmb_TipoPersona);
@@ -250,15 +250,15 @@
             this.label4.Text = "Clave Fiscal:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label3
+            // lb_Edad
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(348, 79);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(157, 13);
-            this.label3.TabIndex = 57;
-            this.label3.Text = "65 años, 5 meses, 23 días";
+            this.lb_Edad.AutoSize = true;
+            this.lb_Edad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Edad.Location = new System.Drawing.Point(348, 79);
+            this.lb_Edad.Name = "lb_Edad";
+            this.lb_Edad.Size = new System.Drawing.Size(157, 13);
+            this.lb_Edad.TabIndex = 57;
+            this.lb_Edad.Text = "65 años, 5 meses, 23 días";
             // 
             // grp_sexo
             // 
@@ -357,6 +357,7 @@
             this.txt_fechanacimiento.Size = new System.Drawing.Size(100, 20);
             this.txt_fechanacimiento.TabIndex = 4;
             this.txt_fechanacimiento.ValidatingType = typeof(System.DateTime);
+            this.txt_fechanacimiento.Leave += new System.EventHandler(this.txt_fechanacimiento_Leave);
             // 
             // cmb_tiposdoc
             // 
@@ -640,7 +641,7 @@
         private System.Windows.Forms.MaskedTextBox txt_telfijo;
         private System.Windows.Forms.MaskedTextBox txt_celular;
         private System.Windows.Forms.MaskedTextBox txt_numero;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lb_Edad;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmb_TipoPersona;
         private System.Windows.Forms.Label label1;

@@ -81,7 +81,7 @@
             this.dgv_datos.Location = new System.Drawing.Point(16, 93);
             this.dgv_datos.Name = "dgv_datos";
             this.dgv_datos.ReadOnly = true;
-            this.dgv_datos.Size = new System.Drawing.Size(485, 320);
+            this.dgv_datos.Size = new System.Drawing.Size(841, 320);
             this.dgv_datos.TabIndex = 7;
             // 
             // txt_dni
@@ -109,7 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(509, 462);
+            this.ClientSize = new System.Drawing.Size(869, 462);
             this.Controls.Add(this.txt_dni);
             this.Controls.Add(this.botonera1);
             this.Controls.Add(this.dgv_datos);

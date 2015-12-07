@@ -70,7 +70,7 @@ namespace WASSTD
             dgv_datos.Columns[4].HeaderText= "Celular";
             dgv_datos.Columns[5].HeaderText = "Email";
             dgv_datos.Columns[6].Visible = false;
-           dgv_datos.Columns[7].Visible = false;
+            dgv_datos.Columns[7].Visible = false;
             dgv_datos.Columns[8].Visible = false;
             dgv_datos.Columns[9].Visible = false;
             dgv_datos.Columns[10].Visible = false;

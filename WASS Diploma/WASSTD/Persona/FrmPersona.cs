@@ -70,9 +70,7 @@ namespace WASSTD
         // Al cargar el formulario
         private void FrmPersona_Load(object sender, EventArgs e)
         {
-            
-
-            // Controles asociados a los datos del Persona que contienen listas
+            // Controles asociados a los datos de la Persona y que contienen listas
             cmb_tiposdoc.DataSource = cTipo_Documento.ObtenerTipos_Documentos();
             cmb_tiposdoc.DisplayMember = "descripcion";
             cmb_tiposdoc.SelectedItem = null;
@@ -88,21 +86,11 @@ namespace WASSTD
             cmb_TipoPersona.DataSource = cTipo_Persona.ObtenerTipos_Personas();
             cmb_TipoPersona.DisplayMember = "descripcion";
             cmb_TipoPersona.SelectedItem = null;
-
-            
-          
-
-          
-
-            
-           
-           
-
+                      
             if (modo != "Alta")
             {
                 // Inhabilito el DNI
                 txt_numero.Enabled = false;
-
                 ArmaFormulario(oPersona);
            
 
@@ -255,7 +243,7 @@ namespace WASSTD
 
             if (string.IsNullOrEmpty(txt_nombreapellido.Text))
             {
-                MessageBox.Show("Debe ingresar el nombre y apellido del Persona");
+                MessageBox.Show("Debe ingresar el nombre y apellido de la Persona");
                 return false;
             }
 
@@ -267,13 +255,13 @@ namespace WASSTD
 
             if (string.IsNullOrEmpty(txt_fechanacimiento.Text))
             {
-                MessageBox.Show("Debe ingresar la fecha de nacimiento del Persona");
+                MessageBox.Show("Debe ingresar la fecha de nacimiento de la Persona");
                 return false;
             }
 
             if (rbtn_femenino.Checked == false && rbtn_masculino.Checked == false)
             {
-                MessageBox.Show("Debe ingresar un tipo de género para del Persona");
+                MessageBox.Show("Debe ingresar el sexo de la Persona");
                 return false;
             }
 
@@ -294,23 +282,18 @@ namespace WASSTD
                 MessageBox.Show("Debe ingresar la dirección de la Persona");
                 return false;
             }
-
-          
-
-            
-
-           
+                             
 
             if (string.IsNullOrEmpty(txt_telfijo.Text) || string.IsNullOrEmpty(txt_celular.Text))
             {
-                MessageBox.Show("Debe ingresar al menos un número de contacto telefónico para comunicarse con el Persona");
+                MessageBox.Show("Debe ingresar al menos un número de contacto telefónico para comunicarse con la Persona");
                 return false;
             }
 
             if (string.IsNullOrEmpty(txt_emailpricipal.Text))
             {
 
-                MessageBox.Show("Debe ingresar un correo electrónico de contacto para comunicarse con el Persona");
+                MessageBox.Show("Debe ingresar un correo electrónico de contacto para comunicarse con la Persona");
                 return false;
             }
 
@@ -318,7 +301,7 @@ namespace WASSTD
             if (!(Regex.IsMatch(this.txt_emailpricipal.Text, expresionregular))) //si el mail no concuerda con la expresion regular
             {
                 this.txt_emailpricipal.Focus();
-                MessageBox.Show("El E-Mail ingresado tiene un formato incorrecto.", "Faltan Datos.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El E-Mail ingresado tiene un formato incorrecto.", "Error en Email", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             #endregion
@@ -327,19 +310,9 @@ namespace WASSTD
             return true;
         }
 
-        // Cuando el usuario le da click al check box de la misma dirección de envío (para no tener que volver a cargar)
-        private void chk_mismolugar_CheckedChanged(object sender, EventArgs e)
-        {
-            if ((Modelo_Entidades.Localidad)cmb_localidades.SelectedItem == null)
-            {
-                return;
-            }
+      
 
-           
-        }
-
-        // Al dejar un valor en el combo de localidades, se llena el código postal
-        
+            
 
         // Al dejar un valor en el combo de localidades, se llena el código postal
         private void cmb_localidades_Leave(object sender, EventArgs e)
@@ -379,22 +352,14 @@ namespace WASSTD
             }
         }
 
-        // Al dejar un valor en el combo de provincias, se llena el combo de localidades de esa provincia
-        
-
-       
-
-
+               
         // Armo el formulario (si no es una alta)
         private void ArmaFormulario(Modelo_Entidades.Persona oPersona)
         {
-            // Sección de datos del Persona
-           
-
+            // Sección de datos de la Persona
             txt_numero.Text = oPersona.dni.ToString();
             txt_nombreapellido.Text = oPersona.nombre_apellido;
-          //  txt_fechanacimiento.Text = oPersona.fecha_nacimiento.ToString();
-
+          
             if (oPersona.sexo == "Masculino")
             {
                 rbtn_masculino.Checked = true;
@@ -408,9 +373,7 @@ namespace WASSTD
             
             txt_direccion.Text = oPersona.Direcciones.ElementAt(0).direccion;
             txt_cp.Text = oPersona.Direcciones.ElementAt(0).Localidad.cp.ToString();
-        
-         //   txt_cp.Text = oPersona.Direcciones.ElementAt(1).Localidad.cp.ToString();
-
+                
             txt_fechanacimiento.Text = oPersona.fecha_nacimiento.ToString();
             txt_ClaveFiscal.Text = oPersona.clave_fiscal;
             cmb_TipoPersona.SelectedItem = oPersona.Tipo_Persona;
@@ -419,33 +382,25 @@ namespace WASSTD
             cmb_provincias.SelectedItem = oPersona.Direcciones.ElementAt(0).Localidad.Provincia;
             cmb_localidades.SelectedItem = oPersona.Direcciones.ElementAt(0).Localidad;
            
-
             txt_telfijo.Text = oPersona.telefono.ToString();
             txt_celular.Text = oPersona.celular.ToString();
             txt_emailpricipal.Text = oPersona.email1;
            
-
-            
-
-            // Sección de las observaciones del Persona
-           
+            // Sección de las observaciones de la Persona
             txt_observaciones.Text = oPersona.observaciones;
+
+            CalcularEdad();
         }
 
-        
+             
 
-       
-
-        // Cuando le doy click a "Asentar baja"
+        // Cuando le doy click a baja
         private void btn_baja_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("¿Esta seguro de que desea suspender al Persona?", "Susoensión del Persona", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("¿Esta seguro de que desea suspender a la Persona?", "Suspensión de Personas", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                
-                 
-                    MessageBox.Show("La suspensión se ha efectuado correctamente");
-                
+                MessageBox.Show("La suspensión se ha efectuado correctamente");
             }
 
             else if (dialogResult == DialogResult.No)
@@ -459,8 +414,34 @@ namespace WASSTD
 
         }
 
-      
+        // Luego de ingresar la fecha, actualizo la edad
+        private void txt_fechanacimiento_Leave(object sender, EventArgs e)
+        {
+            CalcularEdad();
+        }
 
+        // Calcular edad en Años meses y días
+        private void CalcularEdad()
+        {
+            // Declaro variables de tipo fecha e int para calcular años, meses y días.
+            int años = 0;
+            int dias = 0;
+            int meses = 0;
+
+            años = Convert.ToInt32(txt_fechanacimiento.Text.Substring(6));
+            meses = Convert.ToInt32(txt_fechanacimiento.Text.Substring(3, 2));
+            dias = Convert.ToInt32(txt_fechanacimiento.Text.Substring(0, 2));
+
+            DateTime bday = new DateTime(años, meses, dias);
+            DateTime cday = DateTime.Today;
+            Controladora.Persona.Age edad = new Controladora.Persona.Age(bday, cday);
+
+            // Muestro la edad en el label
+            this.lb_Edad.Text = edad.Years.ToString() + " años, " + edad.Months.ToString() + " meses," + edad.Days.ToString() + " días.";
+        }
+
+
+        
         
      
     }
