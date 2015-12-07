@@ -10,11 +10,14 @@ insert into Grupos values
 ('Administrador'),
 ('Usuario')
 
-insert into UsuariosGrupos values (3,1)
+insert into UsuariosGrupos values 
 (1,1),
 (2,1),
 (3,1)
 
+insert into Tipos_Personas values
+('Abogado'),
+('Cliente')
 
 
 insert into Modulos values
