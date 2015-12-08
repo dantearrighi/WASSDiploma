@@ -469,11 +469,13 @@ namespace Modelo_Entidades
         /// Crear un nuevo objeto Detalles_Tramite.
         /// </summary>
         /// <param name="id">Valor inicial de la propiedad Id.</param>
+        /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
         /// <param name="tramiteId">Valor inicial de la propiedad TramiteId.</param>
-        public static Detalles_Tramite CreateDetalles_Tramite(global::System.Int32 id, global::System.Int32 tramiteId)
+        public static Detalles_Tramite CreateDetalles_Tramite(global::System.Int32 id, global::System.String descripcion, global::System.Int32 tramiteId)
         {
             Detalles_Tramite detalles_Tramite = new Detalles_Tramite();
             detalles_Tramite.Id = id;
+            detalles_Tramite.descripcion = descripcion;
             detalles_Tramite.TramiteId = tramiteId;
             return detalles_Tramite;
         }
@@ -512,7 +514,7 @@ namespace Modelo_Entidades
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String descripcion
         {
@@ -524,7 +526,7 @@ namespace Modelo_Entidades
             {
                 OndescripcionChanging(value);
                 ReportPropertyChanging("descripcion");
-                _descripcion = StructuralObject.SetValidValue(value, true);
+                _descripcion = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("descripcion");
                 OndescripcionChanged();
             }

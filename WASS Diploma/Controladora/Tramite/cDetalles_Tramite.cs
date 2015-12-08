@@ -28,21 +28,23 @@ namespace Controladora
         }
 
         // Obtener el ultimo detalle del tramites
-        public Modelo_Entidades.Detalles_Tramite BuscarUltimoDetalle(Modelo_Entidades.Tramite tram)
+        public List<Modelo_Entidades.Detalles_Tramite> Obtener_Detalles_Tramites()
         {
-           /* var Consulta = from oUltimo_Detalle_Tramite in oModelo_Entidades.Detalles_Tramites.ToList()
+
+            return oModelo_Entidades.Detalles_Tramites.ToList();
+            /* var Consulta = from oUltimo_Detalle_Tramite in oModelo_Entidades.Detalles_Tramites.ToList()
                            where tram.Id == oUltimo_Detalle_Tramite.TramiteId
                            select oUltimo_Detalle_Tramite;
             return Consulta.OrderByDescending(oUltimo_Detalle_Tramite => oUltimo_Detalle_Tramite.fecha_desde).FirstOrDefault();
             */
-
+            /*
             var q = from n in oModelo_Entidades.Detalles_Tramites.ToList()
                     where n.TramiteId == tram.Id
                     group n by n.fecha_desde into g
                     select g.OrderByDescending(t => t.fecha_desde).FirstOrDefault();
 
             return q.First();
-            
+            */
         }
     }
 }

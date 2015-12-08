@@ -60,20 +60,84 @@ namespace WASSTD.Tramites
             BsTramites = new BindingSource();
             BsDetalles_Tramites = new BindingSource();
             BsTramites.DataSource = dgv_datos;
+            List<Modelo_Entidades.Tramite> Tramites = cTramite.ObtenerTramites();
+            List<Modelo_Entidades.Detalles_Tramite> Detalles_Tramites = cDetalles_Tramite.Obtener_Detalles_Tramites();
 
+            var Consulta = from Modelo_Entidades.Tramite t in Tramites
+                           join Modelo_Entidades.Detalles_Tramite dt in Detalles_Tramites on t.Id equals dt.TramiteId
+                           select new
+                           {
+                               ID = t.Id,
+                               Tipo = t.tipo_tramite,
+                               Documento = t.Persona.dni,
+                               Persona = t.Persona.nombre_apellido,
+                               Descripcion = (from udt in Detalles_Tramites
+                                              where udt.fecha_desde == (from ddtt in Detalles_Tramites
+                                                                        where t.Id == ddtt.TramiteId
+                                                                        select ddtt.fecha_desde).Max()
+                                              select udt.descripcion
+
+                                               ).First(),
+                               Fecha_Ultimo = (from ddttt in Detalles_Tramites
+                                               where t.Id == ddttt.TramiteId
+                                               select dt.fecha_desde).Max(),
+                              
+                           };
+            // OTRA OPCION con GROUP BY
+
+            /*
+             * var Consulta = from Modelo_Entidades.Tramite t in Tramites
+                           join Modelo_Entidades.Detalles_Tramite dt in Detalles_Tramites on t.Id equals dt.TramiteId
+                           group t by new
+                           {
+                               ID = t.Id,
+                               Fecha_Ultimo = (from ddttt in Detalles_Tramites
+                                               where t.Id == ddttt.TramiteId
+                                               select dt.fecha_desde),
+                               Tipo = t.tipo_tramite,
+                               Documento = t.Persona.dni,
+                               Persona = t.Persona.nombre_apellido,
+                               Descripcion = (from udt in Detalles_Tramites
+                                              where udt.fecha_desde == (from ddtt in Detalles_Tramites
+                                                                        where t.Id == ddtt.TramiteId
+                                                                        select ddtt.fecha_desde).Max()
+                                              select udt.descripcion
+
+                                               ).First(),
+                            
+                           } into ListaTramites
+                           select new {
+                               IDTramite = ListaTramites.Key.ID,
+                               TipoTramite=ListaTramites.Key.Tipo,
+                               Documento = ListaTramites.Key.Documento,
+                               Persona = ListaTramites.Key.Persona,
+                               Descripcion = ListaTramites.Key.Descripcion,
+                               FechaUltimoEstado= ListaTramites.Key.Fecha_Ultimo
+                               
+                               
+                               
+                           } ;
+             * */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            BsTramites.DataSource = Consulta;
 
             dgv_datos.DataSource = null;
-            BsTramites.DataSource = cTramite.ObtenerTramites();
-           /* //BsDetalles_Tramites.DataSource = cDetalles_Tramite.BuscarUltimoDetalle();
-            //  BsTramites.Add(BsDetalles_Tramites);
-            
-
-            foreach(Modelo_Entidades.Tramite tram in BsTramites.List)
-            {
-                BsTramites.Add(cDetalles_Tramite.BuscarUltimoDetalle(tram));
-            }
-            */
             dgv_datos.DataSource = BsTramites;
+            
+              
 
             /*  dgv_datos.Columns[0].Visible = false;
                dgv_datos.Columns[1].HeaderText = "Nombre y Apellido";

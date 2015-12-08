@@ -633,7 +633,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="descripcion" Type="String" Nullable="true" />
+          <Property Name="descripcion" Type="String" Nullable="false" />
           <Property Name="fecha_desde" Type="DateTime" Nullable="true" />
           <NavigationProperty Name="Tramite" Relationship="WASSTDModelo.Detalles_del_Tramite" FromRole="Detalles_Tramite" ToRole="Tramite" />
           <Property Name="TramiteId" Type="Int32" Nullable="false" />
