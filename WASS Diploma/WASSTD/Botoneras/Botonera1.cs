@@ -80,10 +80,10 @@ namespace WASSTD
                             break;
                             
                             case "Baja":
-                            if (form == "FrmProfesionales" || form == "FrmExpedientes")
+                            /*if (form == "" || form == "")
                             {
                                 btn_eliminar.Visible = false;
-                            }
+                            }*/
                             btn_eliminar.Enabled = true;
                             break;
 

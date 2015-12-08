@@ -46,6 +46,8 @@
     <Compile Include="Seguridad\cCU_GestionarGrupos.cs" />
     <Compile Include="Seguridad\cCU_GestionarPerfiles.cs" />
     <Compile Include="Seguridad\cCU_GestionarUsuarios.cs" />
+    <Compile Include="Tramite\cDetalles_Tramite.cs" />
+    <Compile Include="Tramite\cTramite.cs" />
     <Compile Include="Varios\cBackup.cs" />
     <Compile Include="Varios\cAuditoria.cs" />
     <Compile Include="Varios\cEncriptacion.cs" />

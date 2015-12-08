@@ -40,7 +40,8 @@ insert into Formularios values
 ('FrmUsuarios','Gestion de Usuarios',1),
 ('FrmAuditorias','Gestion de Auditorías',2),
 ('FrmPersonas','Gestion de Personas',3),
-('FrmManual','Manual de usuario',6)
+('FrmManual','Manual de usuario',6),
+('FrmTramites','Gestion de Tramites',4)
 
 
 
@@ -60,7 +61,11 @@ insert into Perfiles values
 (1,2,5),
 (1,2,6),
 (1,3,6),
-(1,3,5)
+(1,3,5),
+(1,1,8),
+(1,2,8),
+(1,3,8),
+(1,4,8)
 
 insert into Provincias values
 ('Santa Fe'),
@@ -119,4 +124,10 @@ insert into Estados values
 ('No Habilitado'),
 ('Baja')
 
+
+
+--Solo para cuando ya estan cargada las personas con dni 34541691 y 11750105
+insert into Tramites values
+('Reconocimiento de servicios',34541691),
+('Jubilación',11750105)
 

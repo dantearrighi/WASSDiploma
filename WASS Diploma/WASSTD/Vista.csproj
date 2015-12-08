@@ -99,6 +99,21 @@
     <Compile Include="Auditorias\FrmAuditoriaCuotas.Designer.cs">
       <DependentUpon>FrmAuditoriaCuotas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tramites\FrmTramite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tramites\FrmTramite.Designer.cs">
+      <DependentUpon>FrmTramite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tramites\FrmTramites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tramites\FrmTramites.Designer.cs">
+      <DependentUpon>FrmTramites.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Tramites\FrmTramites.resx">
+      <DependentUpon>FrmTramites.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.Config" />
     <Compile Include="Seguridad\FrmCambiarClave.cs">
       <SubType>Form</SubType>
@@ -322,9 +337,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Fondo_B.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logo_final&amp;48.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\trama_comprobantes&amp;48.jpg" />

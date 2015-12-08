@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSeleccionPersonas));
             this.txt_nya_Persona = new System.Windows.Forms.TextBox();
             this.lb_Persona = new System.Windows.Forms.Label();
             this.dgv_datos = new System.Windows.Forms.DataGridView();
@@ -108,7 +107,6 @@
             this.Controls.Add(this.dgv_datos);
             this.Controls.Add(this.lb_Persona);
             this.Controls.Add(this.txt_nya_Persona);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmSeleccionPersonas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seleccion de Personas";

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAuditoriaCuotas));
             this.btn_nuevaconsulta = new System.Windows.Forms.Button();
             this.btn_filtrar = new System.Windows.Forms.Button();
             this.txt_usuario = new System.Windows.Forms.TextBox();
@@ -171,7 +170,6 @@
             this.Controls.Add(this.lb_cuota);
             this.Controls.Add(this.lb_nombreapellido);
             this.Controls.Add(this.dgv_datos);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAuditoriaCuotas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión de Auditorias de las cuotas";

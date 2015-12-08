@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGrupo));
             this.tabs_grupos = new System.Windows.Forms.TabControl();
             this.tab_datos = new System.Windows.Forms.TabPage();
             this.txt_descripcion = new System.Windows.Forms.TextBox();
@@ -211,7 +210,6 @@
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.tabs_grupos);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmGrupo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Grupo";

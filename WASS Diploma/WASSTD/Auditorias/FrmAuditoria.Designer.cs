@@ -28,17 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAuditoria));
             this.tabs_auditorias = new System.Windows.Forms.TabControl();
             this.tab_datos = new System.Windows.Forms.TabPage();
             this.grp_datos_principales = new System.Windows.Forms.GroupBox();
+            this.txt_fecha = new System.Windows.Forms.MaskedTextBox();
             this.txt_accion = new System.Windows.Forms.TextBox();
             this.txt_usuario = new System.Windows.Forms.TextBox();
             this.lb_accion = new System.Windows.Forms.Label();
             this.lb_fecha = new System.Windows.Forms.Label();
             this.lb_usuario = new System.Windows.Forms.Label();
             this.btn_ok = new System.Windows.Forms.Button();
-            this.txt_fecha = new System.Windows.Forms.MaskedTextBox();
             this.tabs_auditorias.SuspendLayout();
             this.tab_datos.SuspendLayout();
             this.grp_datos_principales.SuspendLayout();
@@ -79,6 +78,16 @@
             this.grp_datos_principales.TabIndex = 0;
             this.grp_datos_principales.TabStop = false;
             this.grp_datos_principales.Text = "Datos principales";
+            // 
+            // txt_fecha
+            // 
+            this.txt_fecha.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txt_fecha.Location = new System.Drawing.Point(205, 55);
+            this.txt_fecha.Mask = "00/00/0000";
+            this.txt_fecha.Name = "txt_fecha";
+            this.txt_fecha.Size = new System.Drawing.Size(299, 20);
+            this.txt_fecha.TabIndex = 12;
+            this.txt_fecha.ValidatingType = typeof(System.DateTime);
             // 
             // txt_accion
             // 
@@ -142,16 +151,6 @@
             this.btn_ok.UseVisualStyleBackColor = true;
             this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
             // 
-            // txt_fecha
-            // 
-            this.txt_fecha.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txt_fecha.Location = new System.Drawing.Point(205, 55);
-            this.txt_fecha.Mask = "00/00/0000";
-            this.txt_fecha.Name = "txt_fecha";
-            this.txt_fecha.Size = new System.Drawing.Size(299, 20);
-            this.txt_fecha.TabIndex = 12;
-            this.txt_fecha.ValidatingType = typeof(System.DateTime);
-            // 
             // FrmAuditoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -160,7 +159,6 @@
             this.ClientSize = new System.Drawing.Size(569, 247);
             this.Controls.Add(this.btn_ok);
             this.Controls.Add(this.tabs_auditorias);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAuditoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Auditoria";

@@ -40,7 +40,6 @@
             // msMenu
             // 
             this.msMenu.BackColor = System.Drawing.Color.Silver;
-            this.msMenu.BackgroundImage = global::WASSTD.Properties.Resources.Fondo_Final4;
             this.msMenu.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
@@ -53,10 +52,6 @@
             // 
             this.ssMenu.BackColor = System.Drawing.Color.Transparent;
             this.ssMenu.BackgroundImage = global::WASSTD.Properties.Resources.Fondo_Final4;
-            this.ssMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.toolStripStatusLabel3,
-            this.toolStripStatusLabel2});
             this.ssMenu.Location = new System.Drawing.Point(0, 551);
             this.ssMenu.Name = "ssMenu";
             this.ssMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -75,7 +70,7 @@
             // 
             this.toolStripStatusLabel3.BackgroundImage = global::WASSTD.Properties.Resources.Fondo_Final4;
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(811, 17);
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(842, 17);
             this.toolStripStatusLabel3.Spring = true;
             // 
             // toolStripStatusLabel2

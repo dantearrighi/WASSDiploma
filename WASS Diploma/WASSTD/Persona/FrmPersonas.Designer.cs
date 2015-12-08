@@ -28,39 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPersonas));
-            this.lb_nya_Persona = new System.Windows.Forms.Label();
-            this.lb_dni = new System.Windows.Forms.Label();
             this.txt_nya_Persona = new System.Windows.Forms.TextBox();
             this.dgv_datos = new System.Windows.Forms.DataGridView();
             this.txt_dni = new System.Windows.Forms.MaskedTextBox();
+            this.lb_dni = new System.Windows.Forms.Label();
+            this.lb_nya_Persona = new System.Windows.Forms.Label();
             this.botonera1 = new WASSTD.Botonera1();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_datos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lb_nya_Persona
-            // 
-            this.lb_nya_Persona.BackColor = System.Drawing.Color.Transparent;
-            this.lb_nya_Persona.Image = global::WASSTD.Properties.Resources.user_icon_16;
-            this.lb_nya_Persona.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lb_nya_Persona.Location = new System.Drawing.Point(13, -2);
-            this.lb_nya_Persona.Name = "lb_nya_Persona";
-            this.lb_nya_Persona.Size = new System.Drawing.Size(220, 35);
-            this.lb_nya_Persona.TabIndex = 0;
-            this.lb_nya_Persona.Text = "Nombre y Apellido del Persona:";
-            this.lb_nya_Persona.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lb_dni
-            // 
-            this.lb_dni.BackColor = System.Drawing.Color.Transparent;
-            this.lb_dni.Image = global::WASSTD.Properties.Resources.contact_card_icon_16;
-            this.lb_dni.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lb_dni.Location = new System.Drawing.Point(13, 24);
-            this.lb_dni.Name = "lb_dni";
-            this.lb_dni.Size = new System.Drawing.Size(220, 35);
-            this.lb_dni.TabIndex = 1;
-            this.lb_dni.Text = "Nº de documento del Persona:";
-            this.lb_dni.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txt_nya_Persona
             // 
@@ -94,6 +69,30 @@
             this.txt_dni.TabIndex = 9;
             this.txt_dni.TextChanged += new System.EventHandler(this.txt_dni_TextChanged);
             // 
+            // lb_dni
+            // 
+            this.lb_dni.BackColor = System.Drawing.Color.Transparent;
+            this.lb_dni.Image = global::WASSTD.Properties.Resources.contact_card_icon_16;
+            this.lb_dni.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lb_dni.Location = new System.Drawing.Point(13, 24);
+            this.lb_dni.Name = "lb_dni";
+            this.lb_dni.Size = new System.Drawing.Size(220, 35);
+            this.lb_dni.TabIndex = 1;
+            this.lb_dni.Text = "Nº de documento del Persona:";
+            this.lb_dni.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lb_nya_Persona
+            // 
+            this.lb_nya_Persona.BackColor = System.Drawing.Color.Transparent;
+            this.lb_nya_Persona.Image = global::WASSTD.Properties.Resources.user_icon_16;
+            this.lb_nya_Persona.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lb_nya_Persona.Location = new System.Drawing.Point(13, -2);
+            this.lb_nya_Persona.Name = "lb_nya_Persona";
+            this.lb_nya_Persona.Size = new System.Drawing.Size(220, 35);
+            this.lb_nya_Persona.TabIndex = 0;
+            this.lb_nya_Persona.Text = "Nombre y Apellido del Persona:";
+            this.lb_nya_Persona.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // botonera1
             // 
             this.botonera1.Location = new System.Drawing.Point(16, 419);
@@ -116,7 +115,6 @@
             this.Controls.Add(this.txt_nya_Persona);
             this.Controls.Add(this.lb_dni);
             this.Controls.Add(this.lb_nya_Persona);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPersonas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de Personas";
