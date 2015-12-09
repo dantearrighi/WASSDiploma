@@ -98,6 +98,7 @@
             this.txt_nombreapellido.Name = "txt_nombreapellido";
             this.txt_nombreapellido.Size = new System.Drawing.Size(205, 20);
             this.txt_nombreapellido.TabIndex = 6;
+            this.txt_nombreapellido.TextChanged += new System.EventHandler(this.txt_nombreapellido_TextChanged);
             // 
             // cmb_grupos
             // 

@@ -125,10 +125,7 @@
 
         }
 
-        private void txt_nya_Persona_TextChanged(object sender, System.EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
+        
 
         #endregion
 

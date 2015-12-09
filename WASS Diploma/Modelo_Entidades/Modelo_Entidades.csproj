@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
+    <Compile Include="Tramites\Tramite.cs" />
     <Compile Include="WASSTD_Auditoria.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -69,5 +69,22 @@ namespace Controladora.Persona
             }
             return this;
         }
+
+       public static Age CalcularEdad(string fecha)
+       {
+           int años = 0;
+           int meses = 0;
+           int dias = 0;
+
+           años = Convert.ToInt32(fecha.Substring(6));
+           meses = Convert.ToInt32(fecha.Substring(3, 2));
+           dias = Convert.ToInt32(fecha.Substring(0, 2)); 
+
+            DateTime bday = new DateTime(años, meses, dias);
+            DateTime cday = DateTime.Today;
+            Controladora.Persona.Age edad = new Controladora.Persona.Age(bday, cday);
+
+            return edad;
+       }
     }
 }

@@ -111,6 +111,9 @@
     <Compile Include="Tramites\FrmTramites.Designer.cs">
       <DependentUpon>FrmTramites.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Tramites\FrmTramite.resx">
+      <DependentUpon>FrmTramite.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tramites\FrmTramites.resx">
       <DependentUpon>FrmTramites.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,7 +260,10 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Modelo_Entidades.Detalles_Tramite.datasource" />
     <None Include="Properties\DataSources\Modelo_Entidades.Perfil.datasource" />
+    <None Include="Properties\DataSources\Modelo_Entidades.Persona.datasource" />
+    <None Include="Properties\DataSources\Modelo_Entidades.Tramite.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

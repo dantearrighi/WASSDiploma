@@ -63,7 +63,7 @@ namespace Controladora
         public List<Modelo_Entidades.Persona> FiltrarPorNyA(string nya)
         {
             var Consulta = from oPersona in oModelo_Entidades.Personas.ToList()
-                           where oPersona.nombre_apellido.Contains(nya)
+                           where oPersona.nombre_apellido.ToLower().Contains(nya)
                            select oPersona;
             return (List<Modelo_Entidades.Persona>)Consulta.ToList();
         }

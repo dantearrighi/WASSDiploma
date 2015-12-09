@@ -49,7 +49,7 @@ namespace WASSTD
             Arma_Lista();
         }
 
-        // Armo la lista de la grilla de datos
+        // Armo la lista de la grilla de datos COMPLETA
         private void Arma_Lista()
         {
             // Instancio el binding source
@@ -126,16 +126,68 @@ namespace WASSTD
         {
             this.Close();
         }
-
         
-
-        // Al cambiar el texto en el dni
+        // Al cambiar el texto en el dni ARMO LA LISTA FILTRADA
         private void txt_dni_TextChanged(object sender, EventArgs e)
         {
-            //BsPersonas.DataSource = cPersona.FiltrarPorDNI(txt_dni.Text);
-           // dgv_datos.DataSource = BsPersonas;
+            // Instancio el binding source
+            BsPersonas = new BindingSource();
+            //Luego lo lleno con los datos de la grilla
+            BsPersonas.DataSource = dgv_datos;
+
+            // Limpio la grilla
+            dgv_datos.DataSource = null;
+            // LLeno el binding con los datos que traigo de las entidades
+            BsPersonas.DataSource = cPersona.FiltrarPorDNI(txt_dni.Text);
+            // Asigno el binding a la grilla
+            dgv_datos.DataSource = BsPersonas;
+            dgv_datos.Columns[0].HeaderText = "DNI";
+            dgv_datos.Columns[1].HeaderText = "Nombre y Apellido";
+            dgv_datos.Columns[2].Visible = false;
+            dgv_datos.Columns[3].HeaderText = "Fijo";
+            dgv_datos.Columns[4].HeaderText = "Celular";
+            dgv_datos.Columns[5].HeaderText = "Email";
+            dgv_datos.Columns[6].Visible = false;
+            dgv_datos.Columns[7].Visible = false;
+            dgv_datos.Columns[8].Visible = false;
+            dgv_datos.Columns[9].Visible = false;
+            dgv_datos.Columns[10].Visible = false;
+            dgv_datos.Columns[11].Visible = false;
+            dgv_datos.Columns[12].Visible = false;
+            dgv_datos.Columns[13].Visible = false;
+            dgv_datos.Columns[14].Visible = false; // Tipo Persona
         }
 
+        // Al cambiar el texto en el nombre y apellido ARMO LA LISTA FILTRADA
+        private void txt_nya_Persona_TextChanged(object sender, EventArgs e)
+        {
+            // Instancio el binding source
+            BsPersonas = new BindingSource();
+            //Luego lo lleno con los datos de la grilla
+            BsPersonas.DataSource = dgv_datos;
+
+            // Limpio la grilla
+            dgv_datos.DataSource = null;
+            // LLeno el binding con los datos que traigo de las entidades
+            BsPersonas.DataSource = cPersona.FiltrarPorNyA(txt_nya_Persona.Text);
+            // Asigno el binding a la grilla
+            dgv_datos.DataSource = BsPersonas;
+            dgv_datos.Columns[0].HeaderText = "DNI";
+            dgv_datos.Columns[1].HeaderText = "Nombre y Apellido";
+            dgv_datos.Columns[2].Visible = false;
+            dgv_datos.Columns[3].HeaderText = "Fijo";
+            dgv_datos.Columns[4].HeaderText = "Celular";
+            dgv_datos.Columns[5].HeaderText = "Email";
+            dgv_datos.Columns[6].Visible = false;
+            dgv_datos.Columns[7].Visible = false;
+            dgv_datos.Columns[8].Visible = false;
+            dgv_datos.Columns[9].Visible = false;
+            dgv_datos.Columns[10].Visible = false;
+            dgv_datos.Columns[11].Visible = false;
+            dgv_datos.Columns[12].Visible = false;
+            dgv_datos.Columns[13].Visible = false;
+            dgv_datos.Columns[14].Visible = false; // Tipo Persona
+        }
         
 
     }

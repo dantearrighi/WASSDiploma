@@ -80,10 +80,10 @@ namespace WASSTD
                             break;
                             
                             case "Baja":
-                            /*if (form == "" || form == "")
+                            if (form == "FrmTramites")
                             {
                                 btn_eliminar.Visible = false;
-                            }*/
+                            }
                             btn_eliminar.Enabled = true;
                             break;
 

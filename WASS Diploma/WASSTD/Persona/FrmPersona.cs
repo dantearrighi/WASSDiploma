@@ -423,19 +423,8 @@ namespace WASSTD
         // Calcular edad en Años meses y días
         private void CalcularEdad()
         {
-            // Declaro variables de tipo fecha e int para calcular años, meses y días.
-            int años = 0;
-            int dias = 0;
-            int meses = 0;
-
-            años = Convert.ToInt32(txt_fechanacimiento.Text.Substring(6));
-            meses = Convert.ToInt32(txt_fechanacimiento.Text.Substring(3, 2));
-            dias = Convert.ToInt32(txt_fechanacimiento.Text.Substring(0, 2));
-
-            DateTime bday = new DateTime(años, meses, dias);
-            DateTime cday = DateTime.Today;
-            Controladora.Persona.Age edad = new Controladora.Persona.Age(bday, cday);
-
+           Controladora.Persona.Age edad = Controladora.Persona.Age.CalcularEdad(txt_fechanacimiento.Text);
+            
             // Muestro la edad en el label
             this.lb_Edad.Text = edad.Years.ToString() + " años, " + edad.Months.ToString() + " meses," + edad.Days.ToString() + " días.";
         }

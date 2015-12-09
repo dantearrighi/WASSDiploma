@@ -21,7 +21,7 @@ namespace Controladora
             return instancia;
         }
 
-      // Coloco al constructor como privado.
+       // Coloco al constructor como privado.
         private cTramite()
         {
             oModelo_Entidades = Modelo_Entidades.WASSTDEntidades.ObtenerInstancia();
@@ -34,58 +34,37 @@ namespace Controladora
             return oModelo_Entidades.Tramites.ToList();
         }
 
-
-      
-        // Obtener los tramites con sus detalles para mostrar en la lista
-    /*    public var ObtenerListaTramites()
+        // Obtener los tramites de una persona POR NOMBRE Y APELLIDO
+        public List<Modelo_Entidades.Tramite> ObtenerTramitesPorNombeApellido(string textoNombre)
         {
-            //Obtengo la lista de todos los tramites
-            List<Modelo_Entidades.Tramite> Tramites = oModelo_Entidades.Tramites.ToList();
-            List<Modelo_Entidades.Detalles_Tramite> Detalles_Tramites = oModelo_Entidades.Detalles_Tramites.ToList();
-
-            var Consulta = from Modelo_Entidades.Tramite t in Tramites
-                        join Modelo_Entidades.Detalles_Tramite dt in Detalles_Tramites on t.Id equals dt.TramiteId
-                        
-                        select new { 
-                            ID = t.Id,
-                            Tipo = t.tipo_tramite,
-                            Documento= t.Persona.dni,  
-                            Persona = t.Persona.nombre_apellido, 
-                            Fecha_Ultimo = (from ddtt in Detalles_Tramites
-                                            where t.Id == ddtt.TramiteId
-                                            select ddtt.fecha_desde).Max(),
-                            Descripcion = (from udt in Detalles_Tramites
-                                               where udt.fecha_desde == (from ddtt in Detalles_Tramites
-                                                                         where t.Id == ddtt.TramiteId
-                                                                         select ddtt.fecha_desde).Max()
-                                                select udt.descripcion
-                                               
-                                            )
-                        };
-
-
-          /*  //Para cada tramite
-            foreach (Modelo_Entidades.Tramite tram in Tramites)
-            {
-                //Obtengo el detalle cuya fecha es la mas reciente
-                Modelo_Entidades.Detalles_Tramite oDetTramite = oModelo_Entidades.Detalles_Tramites.ToList().Find(delegate(Modelo_Entidades.Detalles_Tramite fDetTramite)
-              {
-                  return fDetTramite.fecha_desde >= tram.Detalles_Tramite.OrderByDescending(t => t.fecha_desde).FirstOrDefault().fecha_desde;
-              });
-
-                //Al tramite seleccionado (de la lista) le limpio los detalles, y le agrego solo el ultimo
-                if (oDetTramite.fecha_desde >= tram.Detalles_Tramite.OrderByDescending(t => t.fecha_desde).FirstOrDefault().fecha_desde)
-                {
-                    tram.Detalles_Tramite = null;
-                    tram.Detalles_Tramite.Add(oDetTramite);
-                }
-            }
-
-            return Consulta.ToList();
             
-               
+             var Consulta = from oTramite in oModelo_Entidades.Tramites.ToList()
+                           where oTramite.Persona.nombre_apellido.ToLower().Contains(textoNombre)
+                           select oTramite;
+            return (List<Modelo_Entidades.Tramite>)Consulta.ToList();
+        }
 
-        }*/
+        // Obtener los tramites de una persona POR DNI
+        public List<Modelo_Entidades.Tramite> ObtenerTramitesPorDNI(string textoDNI)
+        {
+
+            var Consulta = from oTramite in oModelo_Entidades.Tramites.ToList()
+                           where oTramite.Persona.dni.ToString().ToLower().Contains(textoDNI)
+                           select oTramite;
+            return (List<Modelo_Entidades.Tramite>)Consulta.ToList();
+        }
+
+        // Obtener los tramites de una persona POR ID/ NUMERO DE TRAMITE
+        public List<Modelo_Entidades.Tramite> ObtenerTramitesPorNumeroID(string textoID)
+        {
+
+            var Consulta = from oTramite in oModelo_Entidades.Tramites.ToList()
+                           where oTramite.Id.ToString().ToLower().Contains(textoID)
+                           select oTramite;
+            return (List<Modelo_Entidades.Tramite>)Consulta.ToList();
+        }
+      
+       
 
     }
 }

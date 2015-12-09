@@ -169,7 +169,7 @@ namespace Controladora
         public List<Modelo_Entidades.Usuario> BuscarUsuarios(string texto)
         {
             var Consulta = from oUsuario in oModelo_Entidades.Usuarios.ToList()
-                           where oUsuario.nombre_apellido.Contains(texto)
+                           where oUsuario.nombre_apellido.ToLower().Contains(texto.ToLower())
                            select oUsuario;
             return (List<Modelo_Entidades.Usuario>)Consulta.ToList();
         }
@@ -194,7 +194,7 @@ namespace Controladora
         }
 
 
-        // Metodo de validación general para todos los usuarios
+        // Metodo de validación general para todos los usuarios - Los busca segun estado y grupo al que pertenecen 
         public List<Modelo_Entidades.Usuario> FiltrarUsuarios(string nya, string grupo, string estado)
         {
             var Consulta = from oUsuario in oModelo_Entidades.Usuarios.ToList()

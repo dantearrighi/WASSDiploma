@@ -62,7 +62,7 @@
             this.dgv_datos.AllowUserToAddRows = false;
             this.dgv_datos.AllowUserToDeleteRows = false;
             this.dgv_datos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_datos.BackgroundColor = System.Drawing.Color.CornflowerBlue;
+            this.dgv_datos.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.dgv_datos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_datos.Location = new System.Drawing.Point(16, 51);
             this.dgv_datos.Name = "dgv_datos";
@@ -100,7 +100,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WASSTD.Properties.Resources.Fondo_Final;
             this.ClientSize = new System.Drawing.Size(509, 461);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_seleccionar);

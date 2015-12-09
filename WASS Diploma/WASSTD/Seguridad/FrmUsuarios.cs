@@ -212,5 +212,29 @@ namespace WASSTD
         {
             Arma_Lista();
         }
+
+        // Al cambiar el texto en Nombre y Apellido
+        private void txt_nombreapellido_TextChanged(object sender, EventArgs e)
+        {
+            BsUsuarios = new BindingSource();
+            BsUsuarios.DataSource = dgv_datos;
+
+            cmb_grupos.DataSource = cGrupo.ObtenerGrupos();
+            cmb_grupos.DisplayMember = "descripcion";
+            cmb_grupos.SelectedItem = null;
+
+            dgv_datos.DataSource = null;
+            BsUsuarios.DataSource = cUsuario.BuscarUsuarios(txt_nombreapellido.Text);
+            dgv_datos.DataSource = BsUsuarios;
+            dgv_datos.Columns[0].Visible = false;
+            dgv_datos.Columns[1].HeaderText = "Nombre y Apellido";
+            dgv_datos.Columns[2].Visible = false;
+            dgv_datos.Columns[3].HeaderText = "E-Mail";
+            dgv_datos.Columns[4].HeaderText = "Estado";
+            dgv_datos.Columns[5].HeaderText = "Nombre de Usuario";
+            dgv_datos.Columns[6].Visible = false;
+        }
+
+
     }
 }
