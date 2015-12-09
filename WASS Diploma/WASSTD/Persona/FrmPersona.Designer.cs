@@ -518,7 +518,6 @@
             // 
             // tab_observaciones
             // 
-            this.tab_observaciones.BackgroundImage = global::WASSTD.Properties.Resources.Fondo_Final;
             this.tab_observaciones.Controls.Add(this.grp_observaciones);
             this.tab_observaciones.Location = new System.Drawing.Point(4, 22);
             this.tab_observaciones.Name = "tab_observaciones";
@@ -542,8 +541,9 @@
             // 
             this.txt_observaciones.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txt_observaciones.Location = new System.Drawing.Point(7, 20);
+            this.txt_observaciones.Multiline = true;
             this.txt_observaciones.Name = "txt_observaciones";
-            this.txt_observaciones.Size = new System.Drawing.Size(500, 20);
+            this.txt_observaciones.Size = new System.Drawing.Size(500, 140);
             this.txt_observaciones.TabIndex = 0;
             // 
             // btnCopiarDNI

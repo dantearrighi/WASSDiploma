@@ -49,31 +49,31 @@
             this.lb_numero = new System.Windows.Forms.Label();
             this.lb_nombreapellido = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txt_Fecha_Del_Detalle = new System.Windows.Forms.MaskedTextBox();
+            this.txt_Descripcion = new System.Windows.Forms.TextBox();
+            this.lbl_Fecha_Del_Detalle = new System.Windows.Forms.Label();
+            this.btn_AñadirDetalle = new System.Windows.Forms.Button();
             this.dgv_datos_detalles = new System.Windows.Forms.DataGridView();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.btn_CrearInforme = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btn_RealizarCalculo = new System.Windows.Forms.Button();
-            this.btn_NotificarCliente = new System.Windows.Forms.Button();
-            this.btn_VerCalculosAnteriores = new System.Windows.Forms.Button();
-            this.btn_RecordatorioVanina = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.btn_AñadirDetalle = new System.Windows.Forms.Button();
-            this.txt_Descripcion = new System.Windows.Forms.TextBox();
             this.btn_guardar = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.btn_RealizarCalculo = new System.Windows.Forms.Button();
+            this.btn_RecordatorioVanina = new System.Windows.Forms.Button();
+            this.btn_VerCalculosAnteriores = new System.Windows.Forms.Button();
+            this.btn_NotificarCliente = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txt_Ultimo_Movimiento = new System.Windows.Forms.MaskedTextBox();
+            this.txt_fecha_Alta = new System.Windows.Forms.MaskedTextBox();
+            this.cmb_tipos_tramites = new System.Windows.Forms.ComboBox();
+            this.txt_nro_tramite = new System.Windows.Forms.TextBox();
+            this.lbl_Finalizado = new System.Windows.Forms.Label();
+            this.lbl_UltimoMovimiento = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.lbl_Activo = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbl_UltimoMovimiento = new System.Windows.Forms.Label();
-            this.lbl_Finalizado = new System.Windows.Forms.Label();
-            this.txt_nro_tramite = new System.Windows.Forms.TextBox();
-            this.cmb_tipos_tramites = new System.Windows.Forms.ComboBox();
-            this.txt_fecha_Alta = new System.Windows.Forms.MaskedTextBox();
-            this.txt_Ultimo_Movimiento = new System.Windows.Forms.MaskedTextBox();
-            this.txt_Fecha_Del_Detalle = new System.Windows.Forms.MaskedTextBox();
-            this.lbl_Fecha_Del_Detalle = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.grp_sexo.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -331,6 +331,49 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalles del trámite";
             // 
+            // txt_Fecha_Del_Detalle
+            // 
+            this.txt_Fecha_Del_Detalle.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txt_Fecha_Del_Detalle.Location = new System.Drawing.Point(127, 48);
+            this.txt_Fecha_Del_Detalle.Mask = "00/00/0000";
+            this.txt_Fecha_Del_Detalle.Name = "txt_Fecha_Del_Detalle";
+            this.txt_Fecha_Del_Detalle.Size = new System.Drawing.Size(100, 20);
+            this.txt_Fecha_Del_Detalle.TabIndex = 67;
+            this.txt_Fecha_Del_Detalle.ValidatingType = typeof(System.DateTime);
+            // 
+            // txt_Descripcion
+            // 
+            this.txt_Descripcion.Location = new System.Drawing.Point(7, 22);
+            this.txt_Descripcion.Name = "txt_Descripcion";
+            this.txt_Descripcion.ReadOnly = true;
+            this.txt_Descripcion.Size = new System.Drawing.Size(771, 20);
+            this.txt_Descripcion.TabIndex = 67;
+            this.txt_Descripcion.Text = "Alta";
+            // 
+            // lbl_Fecha_Del_Detalle
+            // 
+            this.lbl_Fecha_Del_Detalle.Image = global::WASSTD.Properties.Resources.calendar_1_icon_16;
+            this.lbl_Fecha_Del_Detalle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_Fecha_Del_Detalle.Location = new System.Drawing.Point(6, 40);
+            this.lbl_Fecha_Del_Detalle.Name = "lbl_Fecha_Del_Detalle";
+            this.lbl_Fecha_Del_Detalle.Size = new System.Drawing.Size(115, 35);
+            this.lbl_Fecha_Del_Detalle.TabIndex = 66;
+            this.lbl_Fecha_Del_Detalle.Text = "Fecha del detalle:";
+            this.lbl_Fecha_Del_Detalle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btn_AñadirDetalle
+            // 
+            this.btn_AñadirDetalle.Image = global::WASSTD.Properties.Resources.doc_edit_icon_16;
+            this.btn_AñadirDetalle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_AñadirDetalle.Location = new System.Drawing.Point(784, 19);
+            this.btn_AñadirDetalle.Name = "btn_AñadirDetalle";
+            this.btn_AñadirDetalle.Size = new System.Drawing.Size(128, 49);
+            this.btn_AñadirDetalle.TabIndex = 66;
+            this.btn_AñadirDetalle.Text = "Añadir detalle";
+            this.btn_AñadirDetalle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_AñadirDetalle.UseVisualStyleBackColor = true;
+            this.btn_AñadirDetalle.Click += new System.EventHandler(this.btn_AñadirDetalle_Click);
+            // 
             // dgv_datos_detalles
             // 
             this.dgv_datos_detalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -374,53 +417,17 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Acciones";
             // 
-            // btn_RealizarCalculo
+            // btn_guardar
             // 
-            this.btn_RealizarCalculo.Image = global::WASSTD.Properties.Resources.chart_bar_icon_16;
-            this.btn_RealizarCalculo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_RealizarCalculo.Location = new System.Drawing.Point(5, 86);
-            this.btn_RealizarCalculo.Name = "btn_RealizarCalculo";
-            this.btn_RealizarCalculo.Size = new System.Drawing.Size(204, 61);
-            this.btn_RealizarCalculo.TabIndex = 67;
-            this.btn_RealizarCalculo.Text = "Realizar cálculo";
-            this.btn_RealizarCalculo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_RealizarCalculo.UseVisualStyleBackColor = true;
-            // 
-            // btn_NotificarCliente
-            // 
-            this.btn_NotificarCliente.Image = global::WASSTD.Properties.Resources.mail_2_icon_161;
-            this.btn_NotificarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_NotificarCliente.Location = new System.Drawing.Point(5, 220);
-            this.btn_NotificarCliente.Name = "btn_NotificarCliente";
-            this.btn_NotificarCliente.Size = new System.Drawing.Size(204, 61);
-            this.btn_NotificarCliente.TabIndex = 68;
-            this.btn_NotificarCliente.Text = "Notificar por Email";
-            this.btn_NotificarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_NotificarCliente.UseVisualStyleBackColor = true;
-            // 
-            // btn_VerCalculosAnteriores
-            // 
-            this.btn_VerCalculosAnteriores.Image = global::WASSTD.Properties.Resources.book_icon_16;
-            this.btn_VerCalculosAnteriores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_VerCalculosAnteriores.Location = new System.Drawing.Point(5, 153);
-            this.btn_VerCalculosAnteriores.Name = "btn_VerCalculosAnteriores";
-            this.btn_VerCalculosAnteriores.Size = new System.Drawing.Size(204, 61);
-            this.btn_VerCalculosAnteriores.TabIndex = 69;
-            this.btn_VerCalculosAnteriores.Text = "Ver cálculos anteriores";
-            this.btn_VerCalculosAnteriores.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_VerCalculosAnteriores.UseVisualStyleBackColor = true;
-            // 
-            // btn_RecordatorioVanina
-            // 
-            this.btn_RecordatorioVanina.Image = global::WASSTD.Properties.Resources.font_italic_icon_16;
-            this.btn_RecordatorioVanina.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_RecordatorioVanina.Location = new System.Drawing.Point(6, 287);
-            this.btn_RecordatorioVanina.Name = "btn_RecordatorioVanina";
-            this.btn_RecordatorioVanina.Size = new System.Drawing.Size(204, 61);
-            this.btn_RecordatorioVanina.TabIndex = 70;
-            this.btn_RecordatorioVanina.Text = "Enviar recordatorio";
-            this.btn_RecordatorioVanina.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_RecordatorioVanina.UseVisualStyleBackColor = true;
+            this.btn_guardar.Image = global::WASSTD.Properties.Resources.save_icon_16;
+            this.btn_guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_guardar.Location = new System.Drawing.Point(7, 354);
+            this.btn_guardar.Name = "btn_guardar";
+            this.btn_guardar.Size = new System.Drawing.Size(204, 61);
+            this.btn_guardar.TabIndex = 72;
+            this.btn_guardar.Text = "Guardar";
+            this.btn_guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_guardar.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
@@ -434,39 +441,53 @@
             this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // btn_AñadirDetalle
+            // btn_RealizarCalculo
             // 
-            this.btn_AñadirDetalle.Image = global::WASSTD.Properties.Resources.doc_edit_icon_16;
-            this.btn_AñadirDetalle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_AñadirDetalle.Location = new System.Drawing.Point(784, 19);
-            this.btn_AñadirDetalle.Name = "btn_AñadirDetalle";
-            this.btn_AñadirDetalle.Size = new System.Drawing.Size(128, 49);
-            this.btn_AñadirDetalle.TabIndex = 66;
-            this.btn_AñadirDetalle.Text = "Añadir detalle";
-            this.btn_AñadirDetalle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_AñadirDetalle.UseVisualStyleBackColor = true;
-            this.btn_AñadirDetalle.Click += new System.EventHandler(this.btn_AñadirDetalle_Click);
+            this.btn_RealizarCalculo.Image = global::WASSTD.Properties.Resources.chart_bar_icon_16;
+            this.btn_RealizarCalculo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_RealizarCalculo.Location = new System.Drawing.Point(5, 86);
+            this.btn_RealizarCalculo.Name = "btn_RealizarCalculo";
+            this.btn_RealizarCalculo.Size = new System.Drawing.Size(204, 61);
+            this.btn_RealizarCalculo.TabIndex = 67;
+            this.btn_RealizarCalculo.Text = "Realizar cálculo";
+            this.btn_RealizarCalculo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_RealizarCalculo.UseVisualStyleBackColor = true;
             // 
-            // txt_Descripcion
+            // btn_RecordatorioVanina
             // 
-            this.txt_Descripcion.Location = new System.Drawing.Point(7, 22);
-            this.txt_Descripcion.Name = "txt_Descripcion";
-            this.txt_Descripcion.ReadOnly = true;
-            this.txt_Descripcion.Size = new System.Drawing.Size(771, 20);
-            this.txt_Descripcion.TabIndex = 67;
-            this.txt_Descripcion.Text = "Alta";
+            this.btn_RecordatorioVanina.Image = global::WASSTD.Properties.Resources.font_italic_icon_16;
+            this.btn_RecordatorioVanina.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_RecordatorioVanina.Location = new System.Drawing.Point(6, 287);
+            this.btn_RecordatorioVanina.Name = "btn_RecordatorioVanina";
+            this.btn_RecordatorioVanina.Size = new System.Drawing.Size(204, 61);
+            this.btn_RecordatorioVanina.TabIndex = 70;
+            this.btn_RecordatorioVanina.Text = "Enviar recordatorio";
+            this.btn_RecordatorioVanina.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_RecordatorioVanina.UseVisualStyleBackColor = true;
             // 
-            // btn_guardar
+            // btn_VerCalculosAnteriores
             // 
-            this.btn_guardar.Image = global::WASSTD.Properties.Resources.save_icon_16;
-            this.btn_guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_guardar.Location = new System.Drawing.Point(7, 354);
-            this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(204, 61);
-            this.btn_guardar.TabIndex = 72;
-            this.btn_guardar.Text = "Guardar";
-            this.btn_guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_guardar.UseVisualStyleBackColor = true;
+            this.btn_VerCalculosAnteriores.Image = global::WASSTD.Properties.Resources.book_icon_16;
+            this.btn_VerCalculosAnteriores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_VerCalculosAnteriores.Location = new System.Drawing.Point(5, 153);
+            this.btn_VerCalculosAnteriores.Name = "btn_VerCalculosAnteriores";
+            this.btn_VerCalculosAnteriores.Size = new System.Drawing.Size(204, 61);
+            this.btn_VerCalculosAnteriores.TabIndex = 69;
+            this.btn_VerCalculosAnteriores.Text = "Ver cálculos anteriores";
+            this.btn_VerCalculosAnteriores.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_VerCalculosAnteriores.UseVisualStyleBackColor = true;
+            // 
+            // btn_NotificarCliente
+            // 
+            this.btn_NotificarCliente.Image = global::WASSTD.Properties.Resources.mail_2_icon_161;
+            this.btn_NotificarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_NotificarCliente.Location = new System.Drawing.Point(5, 220);
+            this.btn_NotificarCliente.Name = "btn_NotificarCliente";
+            this.btn_NotificarCliente.Size = new System.Drawing.Size(204, 61);
+            this.btn_NotificarCliente.TabIndex = 68;
+            this.btn_NotificarCliente.Text = "Notificar por Email";
+            this.btn_NotificarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_NotificarCliente.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
@@ -487,6 +508,78 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Información del trámite";
             // 
+            // txt_Ultimo_Movimiento
+            // 
+            this.txt_Ultimo_Movimiento.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txt_Ultimo_Movimiento.Location = new System.Drawing.Point(129, 131);
+            this.txt_Ultimo_Movimiento.Mask = "00/00/0000";
+            this.txt_Ultimo_Movimiento.Name = "txt_Ultimo_Movimiento";
+            this.txt_Ultimo_Movimiento.Size = new System.Drawing.Size(100, 20);
+            this.txt_Ultimo_Movimiento.TabIndex = 65;
+            this.txt_Ultimo_Movimiento.ValidatingType = typeof(System.DateTime);
+            // 
+            // txt_fecha_Alta
+            // 
+            this.txt_fecha_Alta.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txt_fecha_Alta.Location = new System.Drawing.Point(129, 100);
+            this.txt_fecha_Alta.Mask = "00/00/0000";
+            this.txt_fecha_Alta.Name = "txt_fecha_Alta";
+            this.txt_fecha_Alta.Size = new System.Drawing.Size(100, 20);
+            this.txt_fecha_Alta.TabIndex = 64;
+            this.txt_fecha_Alta.ValidatingType = typeof(System.DateTime);
+            // 
+            // cmb_tipos_tramites
+            // 
+            this.cmb_tipos_tramites.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.cmb_tipos_tramites.FormattingEnabled = true;
+            this.cmb_tipos_tramites.Location = new System.Drawing.Point(128, 64);
+            this.cmb_tipos_tramites.Name = "cmb_tipos_tramites";
+            this.cmb_tipos_tramites.Size = new System.Drawing.Size(261, 21);
+            this.cmb_tipos_tramites.TabIndex = 63;
+            // 
+            // txt_nro_tramite
+            // 
+            this.txt_nro_tramite.Location = new System.Drawing.Point(129, 24);
+            this.txt_nro_tramite.Name = "txt_nro_tramite";
+            this.txt_nro_tramite.Size = new System.Drawing.Size(87, 20);
+            this.txt_nro_tramite.TabIndex = 62;
+            // 
+            // lbl_Finalizado
+            // 
+            this.lbl_Finalizado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Finalizado.ForeColor = System.Drawing.Color.Crimson;
+            this.lbl_Finalizado.Image = global::WASSTD.Properties.Resources.on_off_icon_16;
+            this.lbl_Finalizado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_Finalizado.Location = new System.Drawing.Point(235, 16);
+            this.lbl_Finalizado.Name = "lbl_Finalizado";
+            this.lbl_Finalizado.Size = new System.Drawing.Size(154, 35);
+            this.lbl_Finalizado.TabIndex = 61;
+            this.lbl_Finalizado.Text = "FINALIZADO";
+            this.lbl_Finalizado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbl_UltimoMovimiento
+            // 
+            this.lbl_UltimoMovimiento.Image = global::WASSTD.Properties.Resources.reload_icon_16;
+            this.lbl_UltimoMovimiento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_UltimoMovimiento.Location = new System.Drawing.Point(7, 127);
+            this.lbl_UltimoMovimiento.Name = "lbl_UltimoMovimiento";
+            this.lbl_UltimoMovimiento.Size = new System.Drawing.Size(115, 35);
+            this.lbl_UltimoMovimiento.TabIndex = 60;
+            this.lbl_UltimoMovimiento.Text = "Último movimiento:";
+            this.lbl_UltimoMovimiento.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Image = global::WASSTD.Properties.Resources.notepad_icon_16;
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.Location = new System.Drawing.Point(6, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(116, 35);
+            this.label3.TabIndex = 59;
+            this.label3.Text = "Nº de Trámite:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // label19
             // 
             this.label19.Image = global::WASSTD.Properties.Resources.calendar_1_icon_16;
@@ -504,7 +597,7 @@
             this.lbl_Activo.ForeColor = System.Drawing.Color.Crimson;
             this.lbl_Activo.Image = global::WASSTD.Properties.Resources.on_off_icon_16;
             this.lbl_Activo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_Activo.Location = new System.Drawing.Point(273, 16);
+            this.lbl_Activo.Location = new System.Drawing.Point(272, 16);
             this.lbl_Activo.Name = "lbl_Activo";
             this.lbl_Activo.Size = new System.Drawing.Size(117, 35);
             this.lbl_Activo.TabIndex = 9;
@@ -521,99 +614,6 @@
             this.label21.TabIndex = 0;
             this.label21.Text = "Tipo de Trámite:";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Image = global::WASSTD.Properties.Resources.notepad_icon_16;
-            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Location = new System.Drawing.Point(6, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 35);
-            this.label3.TabIndex = 59;
-            this.label3.Text = "Nº de Trámite:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbl_UltimoMovimiento
-            // 
-            this.lbl_UltimoMovimiento.Image = global::WASSTD.Properties.Resources.reload_icon_16;
-            this.lbl_UltimoMovimiento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_UltimoMovimiento.Location = new System.Drawing.Point(7, 127);
-            this.lbl_UltimoMovimiento.Name = "lbl_UltimoMovimiento";
-            this.lbl_UltimoMovimiento.Size = new System.Drawing.Size(115, 35);
-            this.lbl_UltimoMovimiento.TabIndex = 60;
-            this.lbl_UltimoMovimiento.Text = "Último movimiento:";
-            this.lbl_UltimoMovimiento.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbl_Finalizado
-            // 
-            this.lbl_Finalizado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Finalizado.ForeColor = System.Drawing.Color.Crimson;
-            this.lbl_Finalizado.Image = global::WASSTD.Properties.Resources.on_off_icon_16;
-            this.lbl_Finalizado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_Finalizado.Location = new System.Drawing.Point(236, 16);
-            this.lbl_Finalizado.Name = "lbl_Finalizado";
-            this.lbl_Finalizado.Size = new System.Drawing.Size(154, 35);
-            this.lbl_Finalizado.TabIndex = 61;
-            this.lbl_Finalizado.Text = "FINALIZADO";
-            this.lbl_Finalizado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txt_nro_tramite
-            // 
-            this.txt_nro_tramite.Location = new System.Drawing.Point(129, 24);
-            this.txt_nro_tramite.Name = "txt_nro_tramite";
-            this.txt_nro_tramite.Size = new System.Drawing.Size(87, 20);
-            this.txt_nro_tramite.TabIndex = 62;
-            // 
-            // cmb_tipos_tramites
-            // 
-            this.cmb_tipos_tramites.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.cmb_tipos_tramites.FormattingEnabled = true;
-            this.cmb_tipos_tramites.Location = new System.Drawing.Point(128, 64);
-            this.cmb_tipos_tramites.Name = "cmb_tipos_tramites";
-            this.cmb_tipos_tramites.Size = new System.Drawing.Size(261, 21);
-            this.cmb_tipos_tramites.TabIndex = 63;
-            // 
-            // txt_fecha_Alta
-            // 
-            this.txt_fecha_Alta.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txt_fecha_Alta.Location = new System.Drawing.Point(129, 100);
-            this.txt_fecha_Alta.Mask = "00/00/0000";
-            this.txt_fecha_Alta.Name = "txt_fecha_Alta";
-            this.txt_fecha_Alta.Size = new System.Drawing.Size(100, 20);
-            this.txt_fecha_Alta.TabIndex = 64;
-            this.txt_fecha_Alta.ValidatingType = typeof(System.DateTime);
-            // 
-            // txt_Ultimo_Movimiento
-            // 
-            this.txt_Ultimo_Movimiento.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txt_Ultimo_Movimiento.Location = new System.Drawing.Point(129, 131);
-            this.txt_Ultimo_Movimiento.Mask = "00/00/0000";
-            this.txt_Ultimo_Movimiento.Name = "txt_Ultimo_Movimiento";
-            this.txt_Ultimo_Movimiento.Size = new System.Drawing.Size(100, 20);
-            this.txt_Ultimo_Movimiento.TabIndex = 65;
-            this.txt_Ultimo_Movimiento.ValidatingType = typeof(System.DateTime);
-            // 
-            // txt_Fecha_Del_Detalle
-            // 
-            this.txt_Fecha_Del_Detalle.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txt_Fecha_Del_Detalle.Location = new System.Drawing.Point(127, 48);
-            this.txt_Fecha_Del_Detalle.Mask = "00/00/0000";
-            this.txt_Fecha_Del_Detalle.Name = "txt_Fecha_Del_Detalle";
-            this.txt_Fecha_Del_Detalle.Size = new System.Drawing.Size(100, 20);
-            this.txt_Fecha_Del_Detalle.TabIndex = 67;
-            this.txt_Fecha_Del_Detalle.ValidatingType = typeof(System.DateTime);
-            // 
-            // lbl_Fecha_Del_Detalle
-            // 
-            this.lbl_Fecha_Del_Detalle.Image = global::WASSTD.Properties.Resources.calendar_1_icon_16;
-            this.lbl_Fecha_Del_Detalle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_Fecha_Del_Detalle.Location = new System.Drawing.Point(6, 40);
-            this.lbl_Fecha_Del_Detalle.Name = "lbl_Fecha_Del_Detalle";
-            this.lbl_Fecha_Del_Detalle.Size = new System.Drawing.Size(115, 35);
-            this.lbl_Fecha_Del_Detalle.TabIndex = 66;
-            this.lbl_Fecha_Del_Detalle.Text = "Fecha del detalle:";
-            this.lbl_Fecha_Del_Detalle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FrmTramite
             // 

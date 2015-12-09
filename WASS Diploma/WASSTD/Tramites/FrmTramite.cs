@@ -65,6 +65,7 @@ namespace WASSTD
                     btn_RealizarCalculo.Enabled = false;
                     btn_seleccionarPersona.Visible = false;
                     lbl_DebeSeleccionar.Visible = false;
+                    lbl_Finalizado.Visible = false; //Esto solo para sacar screenshot
                 }
             }
             else
