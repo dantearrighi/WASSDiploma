@@ -90,7 +90,19 @@ namespace WASSTD
                 lbl_Finalizado.Visible = false;
                 lbl_Activo.Visible = false;
             }
-            
+
+  /*                                             CUANDO EL TRAMITE TENGA ESTADO
+   * if (oTramite.estado == "Activo")
+            {
+                lbl_Finalizado.Visible = false;
+                lbl_Activo.Visible = true;
+            }
+            else
+            {
+                lbl_Finalizado.Visible = true;
+                lbl_Activo.Visible = false;
+            }
+    */
         }
 
 
