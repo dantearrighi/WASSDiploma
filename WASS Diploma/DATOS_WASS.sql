@@ -19,6 +19,12 @@ insert into Tipos_Personas values
 ('Abogado'),
 ('Cliente')
 
+insert into Tipos_Tramites values
+('Jubilación'),
+('Pensión'),
+('Reajuste'),
+('Reconocimiento de servicios')
+
 
 insert into Modulos values
 ('Seguridad'),
@@ -62,10 +68,10 @@ insert into Perfiles values
 (1,2,6),
 (1,3,6),
 (1,3,5),
-(1,1,8),
-(1,2,8),
-(1,3,8),
-(1,4,8)
+(1,1,7),
+(1,2,7),
+(1,3,7),
+(1,4,7)
 
 insert into Provincias values
 ('Santa Fe'),
@@ -123,7 +129,6 @@ insert into Estados values
 ('Habilitado'),
 ('No Habilitado'),
 ('Baja')
-
 
 
 --Solo para cuando ya estan cargada las personas con dni 34541691 y 11750105
