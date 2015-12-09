@@ -121,6 +121,44 @@ namespace WASSTD
             DialogResult dr = FormPersona.ShowDialog();
         }
 
+        // Al hacer click en "Eliminar"
+        private void botonera1_Click_Baja(object sender, EventArgs e)
+        {
+            if (dgv_datos.CurrentRow == null)
+            {
+                MessageBox.Show("Debe seleccionar una persona para eliminar.");
+                return;
+            }
+
+            try
+            {
+                DialogResult Rta = MessageBox.Show("¿Confirma la eliminación de la persona?", "Baja", MessageBoxButtons.YesNo);
+                if (Rta == DialogResult.Yes)
+                {
+                 
+                    /////////////////////////////////////////////////////////////////////////////////////////////////////CODIFICAR ACA LA BAJA DE LA PERSONA
+                    /*Modelo_Entidades.Grupo oGrup = (Modelo_Entidades.Grupo)dgv_datos.CurrentRow.DataBoundItem;
+                    if (cGrupo.ValidarMiembrosGrupo(oGrup) == false)
+                    {
+                        MessageBox.Show("Para eliminar el grupo, primero debe desasociar a todos sus miembros y eliminar todos sus perfiles");
+                        return;
+                    }
+                    cGrupo.EliminarGrupo(oGrup);
+                    MessageBox.Show("El Grupo fue eliminado");
+                    Arma_Lista(); */
+                }
+
+                else
+                {
+                    return;
+                }
+            }
+            catch (Exception Exc)
+            {
+                MessageBox.Show(Exc.InnerException.ToString());
+            }
+        }
+
         // Al hacer click en "Cerrar"
         private void botonera1_Click_Cerrar(object sender, EventArgs e)
         {

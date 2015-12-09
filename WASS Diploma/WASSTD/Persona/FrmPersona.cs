@@ -148,10 +148,7 @@ namespace WASSTD
                     oDireccion.Localidad = (Modelo_Entidades.Localidad)cmb_localidades.SelectedItem;
                     oPersona.Direcciones.Add(oDireccion);
 
-                    oDireccionE = new Modelo_Entidades.Direccion();
-                    oDireccionE.direccion = txt_direccion.Text;
-                    oDireccionE.Localidad = (Modelo_Entidades.Localidad)cmb_localidades.SelectedItem;
-                    oPersona.Direcciones.Add(oDireccionE);
+                    
                 }
 
                 else
@@ -174,7 +171,7 @@ namespace WASSTD
 
                    
 
-                    #region Contabilidad del Persona
+                    #region Contabilidad de la Persona
 
              /*   if (modo == "Alta")
                 {

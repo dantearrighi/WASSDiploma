@@ -131,8 +131,22 @@ insert into Estados values
 ('Baja')
 
 
+-- Cargo personas
+insert into Personas values
+('37073682','Virginia Arrighi', 'Masculino', '03414598042','0341153115510','vir@gmail.com','aca las observaciones', '1234asdf','23/02/93',1,1,1),
+('11750105','Walter Arrighi', 'Masculino', '03414598042','0341153115510','wa@gmail.com','aca las observaciones', 'asdf234234','08/01/55',2,1,1),
+('34541691','Dante Arrighi', 'Masculino', '03414598042','0341153115510','dantearrighi@gmail.com','aca las observaciones', '1234asdf','09/07/89',1,1,1)
+
+
+
 --Solo para cuando ya estan cargada las personas con dni 34541691 y 11750105
 insert into Tramites values
-('Reconocimiento de servicios',34541691),
-('Jubilación',11750105)
+(3,'Activo',34541691),
+(1,'Finalizado',11750105)
+
+insert into Detalles_Tramites values
+('Alta','20/03/15',1),
+('Alta','29/11/09',2),
+('Realizando evaluación','25/03/15',1),
+('Se derivó a ERR','03/12/09',2)
 

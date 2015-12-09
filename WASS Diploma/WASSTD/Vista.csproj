@@ -99,6 +99,12 @@
     <Compile Include="Auditorias\FrmAuditoriaCuotas.Designer.cs">
       <DependentUpon>FrmAuditoriaCuotas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\FrmReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FrmReportes.Designer.cs">
+      <DependentUpon>FrmReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tramites\FrmTramite.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     <Compile Include="Tramites\FrmTramites.Designer.cs">
       <DependentUpon>FrmTramites.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reportes\FrmReportes.resx">
+      <DependentUpon>FrmReportes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tramites\FrmTramite.resx">
       <DependentUpon>FrmTramite.cs</DependentUpon>
     </EmbeddedResource>

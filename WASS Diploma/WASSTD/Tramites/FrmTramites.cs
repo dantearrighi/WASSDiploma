@@ -64,6 +64,7 @@ namespace WASSTD.Tramites
             List<Modelo_Entidades.Tramite> Tramites = cTramite.ObtenerTramites();
             List<Modelo_Entidades.Detalles_Tramite> Detalles_Tramites = cDetalles_Tramite.Obtener_Detalles_Tramites();
             List<Modelo_Entidades.Persona> Personas = cPersonas.ObtenerPersonas();
+            
            
 
             //Conseguir ultimo detalle y ultima fecha de cada tramite en la lista
@@ -88,8 +89,75 @@ namespace WASSTD.Tramites
             BsTramites.DataSource = Tramites;
             dgv_datos.DataSource = null;
             dgv_datos.DataSource = BsTramites.List;
+
+            //DNI de la persona a la que le corresponde ese tramite
+            int i = 0;
+            foreach (DataGridViewRow fila in dgv_datos.Rows)
+            {
+                fila.Cells["dniColu"].Value = Tramites[i].Persona.dni.ToString();
+                i++;
+            }
+            dgv_datos.Columns[0].HeaderText = "DNI";
+            dgv_datos.Columns[0].DisplayIndex = 2;
+
+
+            //Tipo de tramite (lo tengo que buscar a la fuerza)
+            int j = 0;
+            foreach (DataGridViewRow fila in dgv_datos.Rows)
+            {
+                fila.Cells["tipoTramiteCol"].Value = Tramites[j].Tipo_Tramite.descripcion.ToString(); //Busco la descripción a pulmon
+                j++;
+            }
             
-            //Muestro el DNI de la persona a la que le corresponde ese tramite
+            dgv_datos.Columns[1].Width = 200;
+
+            // Ultima descripcion
+            dgv_datos.Columns[2].HeaderText = "Descripción";
+            dgv_datos.Columns[2].DisplayIndex = 4;
+            dgv_datos.Columns[2].Width = 925;
+
+            // Fecha Ultima modificacion
+            dgv_datos.Columns[3].HeaderText = "Ultima modificación";
+            dgv_datos.Columns[3].DisplayIndex = 5;
+
+            // ID TRAMITE
+            dgv_datos.Columns[4].HeaderText = "ID Trámite";
+            dgv_datos.Columns[4].DisplayIndex = 0;
+            dgv_datos.Columns[4].Width = 75;
+
+            //ID Tipo de tramite                     (NO LO MUESTRO) no me muestra la descripcion, queda en blanco
+            dgv_datos.Columns[5].HeaderText = "ID Tipo de Tramite ";
+            dgv_datos.Columns[5].Visible = false;
+            //dgv_datos.Columns[5].DataPropertyName = "descripcion";
+            
+            
+
+            //Estado del tramite (NO LO MUESTRO) no me interesa
+            dgv_datos.Columns[6].HeaderText = "Estado";
+            dgv_datos.Columns[6].Visible = false;
+
+            //Detalles del tramite (NO LO MUESTRO) no me sirve
+            dgv_datos.Columns[7].HeaderText = "Detalles_Tramite";
+            dgv_datos.Columns[7].Visible = false;
+
+            // Nombre y Apellido
+            dgv_datos.Columns[8].HeaderText = "Nombre y Apellido";
+            dgv_datos.Columns[8].DisplayIndex = 3;
+            dgv_datos.Columns[8].Width = 150;
+
+            //TIPO DE TRAMITE (NO LO MUESTRO) no funciona
+            dgv_datos.Columns[9].HeaderText = "Tipo de Tramite";
+           // dgv_datos.Columns[9].DataPropertyName = "descripcion";
+            dgv_datos.Columns[9].DisplayIndex = 1;
+            dgv_datos.Columns[9].Width = 200;
+            dgv_datos.Columns[9].Visible = false;
+            
+           
+
+          
+
+
+           /* //Muestro el DNI de la persona a la que le corresponde ese tramite
             int i = 0;
             foreach (DataGridViewRow fila in dgv_datos.Rows)
             {   
@@ -106,15 +174,18 @@ namespace WASSTD.Tramites
             // Tipo de Tramite
             dgv_datos.Columns[4].HeaderText = "Tipo de Tramite";
             dgv_datos.Columns[4].Width = 200;
+            dgv_datos.Columns[4].DataPropertyName = "descripcion";
             dgv_datos.Columns[4].DisplayIndex = 1;
 
             dgv_datos.Columns[0].HeaderText = "DNI";
             dgv_datos.Columns[0].DisplayIndex = 2;
             
             // Nombre y Apellido
+            dgv_datos.Columns[7].HeaderText = "Nombre y Apellido"; 
             dgv_datos.Columns[6].HeaderText = "Nombre y Apellido";
-            dgv_datos.Columns[6].DisplayIndex = 3;
-            dgv_datos.Columns[6].Width = 150;
+            dgv_datos.Columns[6].Visible = false;
+            dgv_datos.Columns[7].DisplayIndex = 3;
+            dgv_datos.Columns[7].Width = 150;
 
             // Ultima descripcion/detalle 
             dgv_datos.Columns[1].HeaderText = "Descripción";
@@ -126,11 +197,13 @@ namespace WASSTD.Tramites
             dgv_datos.Columns[2].DisplayIndex = 5;
 
             // Oculto la del detalle que no me sirve (es la coleccio nde detalles del tramite
-            dgv_datos.Columns[5].Visible = false;  
-            
-           
+            dgv_datos.Columns[5].Visible = false;
 
-           
+
+            dgv_datos.Columns[8].HeaderText = "Tipo de Tramite";
+            dgv_datos.Columns[8].DataPropertyName = "descripcion";
+
+           */
 
 
            
@@ -175,6 +248,46 @@ namespace WASSTD.Tramites
             DialogResult dr = FormTramite.ShowDialog();
         }
 
+
+
+        // Al hacer click en "Eliminar"
+        private void botonera1_Click_Baja(object sender, EventArgs e)
+        {
+            if (dgv_datos.CurrentRow == null)
+            {
+                MessageBox.Show("Debe seleccionar un trámite para eliminar.");
+                return;
+            }
+
+            try
+            {
+                DialogResult Rta1 = MessageBox.Show("El trámite posee muchos detalles. Se considera que no fue dado de alta por error. No es posible eliminarlo.", "Baja", MessageBoxButtons.OK);
+                DialogResult Rta = MessageBox.Show("¿Confirma la eliminación del trámite seleccionado?", "Baja", MessageBoxButtons.YesNo);
+                if (Rta == DialogResult.Yes)
+                {
+
+                    /////////////////////////////////////////////////////////////////////////////////////////////////////CODIFICAR ACA LA BAJA DEL Trámite
+                    /*Modelo_Entidades.Grupo oGrup = (Modelo_Entidades.Grupo)dgv_datos.CurrentRow.DataBoundItem;
+                    if (cGrupo.ValidarMiembrosGrupo(oGrup) == false)
+                    {
+                        MessageBox.Show("Para eliminar el grupo, primero debe desasociar a todos sus miembros y eliminar todos sus perfiles");
+                        return;
+                    }
+                    cGrupo.EliminarGrupo(oGrup);
+                    MessageBox.Show("El Grupo fue eliminado");
+                    Arma_Lista(); */
+                }
+
+                else
+                {
+                    return;
+                }
+            }
+            catch (Exception Exc)
+            {
+                MessageBox.Show(Exc.InnerException.ToString());
+            }
+        }
 
 
         // Al cambiar texto en Nombre y apellido de la persona para filtrar

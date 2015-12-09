@@ -21,6 +21,7 @@
     <EntitySet Name="Tramites" EntityType="WASSTDModelo.Store.Tramites" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Detalles_Tramites" EntityType="WASSTDModelo.Store.Detalles_Tramites" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Tipos_Personas" EntityType="WASSTDModelo.Store.Tipos_Personas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tipos_Tramites" EntityType="WASSTDModelo.Store.Tipos_Tramites" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UsuariosGrupos" EntityType="WASSTDModelo.Store.UsuarioGrupo" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="FK_UsuariosGrupos_Usuario" Association="WASSTDModelo.Store.FK_UsuarioGrupo_Usuario">
       <End Role="Usuario" EntitySet="Usuarios" />
@@ -77,6 +78,10 @@
     <AssociationSet Name="Tipo_PersonaPersona" Association="WASSTDModelo.Store.Tipo_PersonaPersona">
       <End Role="Tipo_Persona" EntitySet="Tipos_Personas" />
       <End Role="Persona" EntitySet="Personas" />
+    </AssociationSet>
+    <AssociationSet Name="Tipo_TramiteTramite" Association="WASSTDModelo.Store.Tipo_TramiteTramite">
+      <End Role="Tipo_Tramite" EntitySet="Tipos_Tramites" />
+      <End Role="Tramite" EntitySet="Tramites" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Usuarios">
@@ -190,7 +195,8 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="tipo_tramite" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Tipo_Tramite_id" Type="int" Nullable="false" />
+    <Property Name="estado" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Persona_dni" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Detalles_Tramites">
@@ -198,7 +204,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="descripcion" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
     <Property Name="fecha_desde" Type="datetime" Nullable="true" />
     <Property Name="TramiteId" Type="int" Nullable="false" />
   </EntityType>
@@ -207,6 +213,13 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tipos_Tramites">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="UsuarioGrupo">
@@ -361,6 +374,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="Tipo_TramiteTramite">
+    <End Role="Tipo_Tramite" Type="WASSTDModelo.Store.Tipos_Tramites" Multiplicity="1" />
+    <End Role="Tramite" Type="WASSTDModelo.Store.Tramites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo_Tramite">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Tramite">
+        <PropertyRef Name="Tipo_Tramite_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_UsuarioGrupo_Usuario">
     <End Role="Usuario" Type="WASSTDModelo.Store.Usuarios" Multiplicity="1" />
     <End Role="UsuarioGrupo" Type="WASSTDModelo.Store.UsuarioGrupo" Multiplicity="*" />
@@ -456,6 +481,11 @@
           <AssociationSet Name="Tipo_PersonaPersona" Association="WASSTDModelo.Tipo_PersonaPersona">
             <End Role="Tipo_Persona" EntitySet="Tipos_Personas" />
             <End Role="Persona" EntitySet="Personas" />
+          </AssociationSet>
+          <EntitySet Name="Tipos_Tramites" EntityType="WASSTDModelo.Tipo_Tramite" />
+          <AssociationSet Name="Tipo_TramiteTramite" Association="WASSTDModelo.Tipo_TramiteTramite">
+            <End Role="Tipo_Tramite" EntitySet="Tipos_Tramites" />
+            <End Role="Tramite" EntitySet="Tramites" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="Usuario">
@@ -624,9 +654,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="tipo_tramite" Type="String" Nullable="false" />
           <NavigationProperty Name="Detalles_Tramite" Relationship="WASSTDModelo.Detalles_del_Tramite" FromRole="Tramite" ToRole="Detalles_Tramite" />
           <NavigationProperty Name="Persona" Relationship="WASSTDModelo.TramitePersona" FromRole="Tramite" ToRole="Persona" />
+          <NavigationProperty Name="Tipo_Tramite" Relationship="WASSTDModelo.Tipo_TramiteTramite" FromRole="Tramite" ToRole="Tipo_Tramite" />
+          <Property Name="Tipo_Tramite_id" Type="Int32" Nullable="false" />
+          <Property Name="estado" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Detalles_Tramite">
           <Key>
@@ -671,6 +703,26 @@
             </Principal>
             <Dependent Role="Persona">
               <PropertyRef Name="Tipo_PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Tipo_Tramite">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" Nullable="false" />
+          <NavigationProperty Name="Tramite" Relationship="WASSTDModelo.Tipo_TramiteTramite" FromRole="Tipo_Tramite" ToRole="Tramite" />
+        </EntityType>
+        <Association Name="Tipo_TramiteTramite">
+          <End Type="WASSTDModelo.Tipo_Tramite" Role="Tipo_Tramite" Multiplicity="1" />
+          <End Type="WASSTDModelo.Tramite" Role="Tramite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_Tramite">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Tramite">
+              <PropertyRef Name="Tipo_Tramite_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -793,7 +845,8 @@
       <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Tramite)">
         <MappingFragment StoreEntitySet="Tramites">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="tipo_tramite" ColumnName="tipo_tramite" />
+          <ScalarProperty Name="Tipo_Tramite_id" ColumnName="Tipo_Tramite_id" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -811,6 +864,14 @@
       <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Tipo_Persona)">
         <MappingFragment StoreEntitySet="Tipos_Personas">
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipos_Tramites">
+      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Tipo_Tramite)">
+        <MappingFragment StoreEntitySet="Tipos_Tramites">
+          <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -974,12 +1035,14 @@
           <ConnectorPoint PointX="1.6875" PointY="12.730286458333334" />
           <ConnectorPoint PointX="1.6875" PointY="13.5" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="WASSTDModelo.Tramite" Width="1.5" PointX="15.5" PointY="1.5" />
+        <EntityTypeShape EntityType="WASSTDModelo.Tramite" Width="1.5" PointX="15.5" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="WASSTDModelo.Detalles_Tramite" Width="1.5" PointX="17.5" PointY="1.5" />
         <AssociationConnector Association="WASSTDModelo.Detalles_del_Tramite" />
         <AssociationConnector Association="WASSTDModelo.TramitePersona" />
-        <EntityTypeShape EntityType="WASSTDModelo.Tipo_Persona" Width="1.5" PointX="14.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WASSTDModelo.Tipo_Persona" Width="1.5" PointX="13.375" PointY="5.375" IsExpanded="true" />
         <AssociationConnector Association="WASSTDModelo.Tipo_PersonaPersona" />
+        <EntityTypeShape EntityType="WASSTDModelo.Tipo_Tramite" Width="1.5" PointX="15.625" PointY="4.5" />
+        <AssociationConnector Association="WASSTDModelo.Tipo_TramiteTramite" />
         </Diagram>
     </Diagrams>
   </Designer>

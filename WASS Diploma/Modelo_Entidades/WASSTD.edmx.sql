@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 12/06/2015 20:12:39
+-- Date Created: 12/09/2015 14:50:44
 -- Generated from EDMX file: D:\Documentos\UAI\WASS\WASS Diploma\Modelo_Entidades\WASSTD.edmx
 -- --------------------------------------------------
 
@@ -59,6 +59,9 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_Tipo_PersonaPersona]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Personas] DROP CONSTRAINT [FK_Tipo_PersonaPersona];
 GO
+IF OBJECT_ID(N'[dbo].[FK_Tipo_TramiteTramite]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Tramites] DROP CONSTRAINT [FK_Tipo_TramiteTramite];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -108,6 +111,9 @@ IF OBJECT_ID(N'[dbo].[Detalles_Tramites]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Tipos_Personas]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Tipos_Personas];
+GO
+IF OBJECT_ID(N'[dbo].[Tipos_Tramites]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Tipos_Tramites];
 GO
 IF OBJECT_ID(N'[dbo].[UsuariosGrupos]', 'U') IS NOT NULL
     DROP TABLE [dbo].[UsuariosGrupos];
@@ -226,7 +232,8 @@ GO
 -- Creating table 'Tramites'
 CREATE TABLE [dbo].[Tramites] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [tipo_tramite] nvarchar(max)  NOT NULL,
+    [Tipo_Tramite_id] int  NOT NULL,
+    [estado] nvarchar(max)  NOT NULL,
     [Persona_dni] int  NOT NULL
 );
 GO
@@ -234,7 +241,7 @@ GO
 -- Creating table 'Detalles_Tramites'
 CREATE TABLE [dbo].[Detalles_Tramites] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [descripcion] nvarchar(max)  NULL,
+    [descripcion] nvarchar(max)  NOT NULL,
     [fecha_desde] datetime  NULL,
     [TramiteId] int  NOT NULL
 );
@@ -243,6 +250,13 @@ GO
 -- Creating table 'Tipos_Personas'
 CREATE TABLE [dbo].[Tipos_Personas] (
     [Id] int IDENTITY(1,1) NOT NULL,
+    [descripcion] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'Tipos_Tramites'
+CREATE TABLE [dbo].[Tipos_Tramites] (
+    [id] int IDENTITY(1,1) NOT NULL,
     [descripcion] nvarchar(max)  NOT NULL
 );
 GO
@@ -346,6 +360,12 @@ GO
 ALTER TABLE [dbo].[Tipos_Personas]
 ADD CONSTRAINT [PK_Tipos_Personas]
     PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [id] in table 'Tipos_Tramites'
+ALTER TABLE [dbo].[Tipos_Tramites]
+ADD CONSTRAINT [PK_Tipos_Tramites]
+    PRIMARY KEY CLUSTERED ([id] ASC);
 GO
 
 -- Creating primary key on [Usuarios_id], [Grupos_id] in table 'UsuariosGrupos'
@@ -560,6 +580,21 @@ GO
 CREATE INDEX [IX_FK_Tipo_PersonaPersona]
 ON [dbo].[Personas]
     ([Tipo_PersonaId]);
+GO
+
+-- Creating foreign key on [Tipo_Tramite_id] in table 'Tramites'
+ALTER TABLE [dbo].[Tramites]
+ADD CONSTRAINT [FK_Tipo_TramiteTramite]
+    FOREIGN KEY ([Tipo_Tramite_id])
+    REFERENCES [dbo].[Tipos_Tramites]
+        ([id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_Tipo_TramiteTramite'
+CREATE INDEX [IX_FK_Tipo_TramiteTramite]
+ON [dbo].[Tramites]
+    ([Tipo_Tramite_id]);
 GO
 
 -- --------------------------------------------------

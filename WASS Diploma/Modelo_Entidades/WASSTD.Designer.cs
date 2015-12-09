@@ -32,6 +32,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "Detalles_del_Tramite", "Detalles_Tramite", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Detalles_Tramite), "Tramite", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Tramite), true)]
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "TramitePersona", "Tramite", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Tramite), "Persona", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Persona))]
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "Tipo_PersonaPersona", "Tipo_Persona", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Tipo_Persona), "Persona", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Persona), true)]
+[assembly: EdmRelationshipAttribute("WASSTDModelo", "Tipo_TramiteTramite", "Tipo_Tramite", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Tipo_Tramite), "Tramite", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Tramite), true)]
 
 #endregion
 
@@ -322,6 +323,22 @@ namespace Modelo_Entidades
             }
         }
         private ObjectSet<Tipo_Persona> _Tipos_Personas;
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        public ObjectSet<Tipo_Tramite> Tipos_Tramites
+        {
+            get
+            {
+                if ((_Tipos_Tramites == null))
+                {
+                    _Tipos_Tramites = base.CreateObjectSet<Tipo_Tramite>("Tipos_Tramites");
+                }
+                return _Tipos_Tramites;
+            }
+        }
+        private ObjectSet<Tipo_Tramite> _Tipos_Tramites;
 
         #endregion
 
@@ -445,6 +462,14 @@ namespace Modelo_Entidades
         public void AddToTipos_Personas(Tipo_Persona tipo_Persona)
         {
             base.AddObject("Tipos_Personas", tipo_Persona);
+        }
+    
+        /// <summary>
+        /// Método desusado para agregar un nuevo objeto al EntitySet Tipos_Tramites. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// </summary>
+        public void AddToTipos_Tramites(Tipo_Tramite tipo_Tramite)
+        {
+            base.AddObject("Tipos_Tramites", tipo_Tramite);
         }
 
         #endregion
@@ -2555,6 +2580,115 @@ namespace Modelo_Entidades
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Tipo_Tramite")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Tipo_Tramite : EntityObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto Tipo_Tramite.
+        /// </summary>
+        /// <param name="id">Valor inicial de la propiedad id.</param>
+        /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
+        public static Tipo_Tramite CreateTipo_Tramite(global::System.Int32 id, global::System.String descripcion)
+        {
+            Tipo_Tramite tipo_Tramite = new Tipo_Tramite();
+            tipo_Tramite.id = id;
+            tipo_Tramite.descripcion = descripcion;
+            return tipo_Tramite;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
+        partial void OnidChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String descripcion
+        {
+            get
+            {
+                return _descripcion;
+            }
+            set
+            {
+                OndescripcionChanging(value);
+                ReportPropertyChanging("descripcion");
+                _descripcion = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("descripcion");
+                OndescripcionChanged();
+            }
+        }
+        private global::System.String _descripcion;
+        partial void OndescripcionChanging(global::System.String value);
+        partial void OndescripcionChanged();
+
+        #endregion
+
+    
+        #region Propiedades de navegación
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "Tipo_TramiteTramite", "Tramite")]
+        public EntityCollection<Tramite> Tramite
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Tramite>("WASSTDModelo.Tipo_TramiteTramite", "Tramite");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Tramite>("WASSTDModelo.Tipo_TramiteTramite", "Tramite", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Tramite")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -2566,12 +2700,14 @@ namespace Modelo_Entidades
         /// Crear un nuevo objeto Tramite.
         /// </summary>
         /// <param name="id">Valor inicial de la propiedad Id.</param>
-        /// <param name="tipo_tramite">Valor inicial de la propiedad tipo_tramite.</param>
-        public static Tramite CreateTramite(global::System.Int32 id, global::System.String tipo_tramite)
+        /// <param name="tipo_Tramite_id">Valor inicial de la propiedad Tipo_Tramite_id.</param>
+        /// <param name="estado">Valor inicial de la propiedad estado.</param>
+        public static Tramite CreateTramite(global::System.Int32 id, global::System.Int32 tipo_Tramite_id, global::System.String estado)
         {
             Tramite tramite = new Tramite();
             tramite.Id = id;
-            tramite.tipo_tramite = tipo_tramite;
+            tramite.Tipo_Tramite_id = tipo_Tramite_id;
+            tramite.estado = estado;
             return tramite;
         }
 
@@ -2611,24 +2747,48 @@ namespace Modelo_Entidades
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String tipo_tramite
+        public global::System.Int32 Tipo_Tramite_id
         {
             get
             {
-                return _tipo_tramite;
+                return _Tipo_Tramite_id;
             }
             set
             {
-                Ontipo_tramiteChanging(value);
-                ReportPropertyChanging("tipo_tramite");
-                _tipo_tramite = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("tipo_tramite");
-                Ontipo_tramiteChanged();
+                OnTipo_Tramite_idChanging(value);
+                ReportPropertyChanging("Tipo_Tramite_id");
+                _Tipo_Tramite_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Tipo_Tramite_id");
+                OnTipo_Tramite_idChanged();
             }
         }
-        private global::System.String _tipo_tramite;
-        partial void Ontipo_tramiteChanging(global::System.String value);
-        partial void Ontipo_tramiteChanged();
+        private global::System.Int32 _Tipo_Tramite_id;
+        partial void OnTipo_Tramite_idChanging(global::System.Int32 value);
+        partial void OnTipo_Tramite_idChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String estado
+        {
+            get
+            {
+                return _estado;
+            }
+            set
+            {
+                OnestadoChanging(value);
+                ReportPropertyChanging("estado");
+                _estado = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("estado");
+                OnestadoChanged();
+            }
+        }
+        private global::System.String _estado;
+        partial void OnestadoChanging(global::System.String value);
+        partial void OnestadoChanged();
 
         #endregion
 
@@ -2691,6 +2851,44 @@ namespace Modelo_Entidades
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Persona>("WASSTDModelo.TramitePersona", "Persona", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "Tipo_TramiteTramite", "Tipo_Tramite")]
+        public Tipo_Tramite Tipo_Tramite
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tipo_Tramite>("WASSTDModelo.Tipo_TramiteTramite", "Tipo_Tramite").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tipo_Tramite>("WASSTDModelo.Tipo_TramiteTramite", "Tipo_Tramite").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Tipo_Tramite> Tipo_TramiteReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tipo_Tramite>("WASSTDModelo.Tipo_TramiteTramite", "Tipo_Tramite");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Tipo_Tramite>("WASSTDModelo.Tipo_TramiteTramite", "Tipo_Tramite", value);
                 }
             }
         }

@@ -20,6 +20,7 @@ namespace WASSTD
         Controladora.cPersona cPersona;
         Controladora.cDetalles_Tramite cDetalles_Tramite;
         Controladora.cAuditoria cAuditoria;
+        Controladora.cTipo_Tramite cTipo_Tramite;
 
         // Declaro las entidades
         Modelo_Entidades.Persona oPersona;
@@ -40,6 +41,7 @@ namespace WASSTD
             cAuditoria = Controladora.cAuditoria.ObtenerInstancia();
             cTramite = Controladora.cTramite.ObtenerInstancia();
             cDetalles_Tramite = Controladora.cDetalles_Tramite.ObtenerInstancia();
+            cTipo_Tramite = Controladora.cTipo_Tramite.ObtenerInstancia();
 
             modo = fModo;
             oTramite = miTramite;
@@ -66,6 +68,11 @@ namespace WASSTD
                     btn_seleccionarPersona.Visible = false;
                     lbl_DebeSeleccionar.Visible = false;
                     lbl_Finalizado.Visible = false; //Esto solo para sacar screenshot
+                    btn_AñadirDetalle.Enabled = false;
+                    btn_CrearInforme.Enabled = false;
+                    btn_NotificarCliente.Enabled = false;
+                    btn_RecordatorioVanina.Enabled = false;
+                    btn_VerCalculosAnteriores.Enabled = false;
                 }
             }
             else
@@ -74,6 +81,9 @@ namespace WASSTD
                 btn_seleccionarPersona.Visible = true;
                 lbl_DebeSeleccionar.Visible = true;
                 txt_fecha_Alta.Text = DateTime.Today.ToString();
+                cmb_tipos_tramites.DataSource = cTipo_Tramite.ObtenerTipos_Tramites();
+                cmb_tipos_tramites.DisplayMember = "descripcion";
+                cmb_tipos_tramites.Text = "SELECCIONAR";
 
                 //OCULTO
                 txt_Ultimo_Movimiento.Text = DateTime.Today.ToString();
@@ -92,8 +102,8 @@ namespace WASSTD
                 lbl_Activo.Visible = false;
             }
 
-  /*                                             CUANDO EL TRAMITE TENGA ESTADO
-   * if (oTramite.estado == "Activo")
+            //Mostrar estado                               
+            if (oTramite.estado == "Activo")
             {
                 lbl_Finalizado.Visible = false;
                 lbl_Activo.Visible = true;
@@ -103,7 +113,7 @@ namespace WASSTD
                 lbl_Finalizado.Visible = true;
                 lbl_Activo.Visible = false;
             }
-    */
+    
         }
 
 
@@ -136,7 +146,10 @@ namespace WASSTD
                 lbl_Sexo.Text = "Femenino";
             }
 
+            //                                                                                              SEGUI MODIFICANDO ACA PARA DARLE FORMA A LA VISTA
             dgv_datos_detalles.DataSource = cDetalles_Tramite.Obtener_Detalles_Tramites(oTramite.Id);
+            dgv_datos_detalles.Columns[4].Visible = false;
+            dgv_datos_detalles.Columns[1].Width = 460;
         }
 
 
