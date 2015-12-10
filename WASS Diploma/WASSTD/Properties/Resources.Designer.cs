@@ -663,16 +663,6 @@ namespace WASSTD.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap trama_comprobantes_48 {
-            get {
-                object obj = ResourceManager.GetObject("trama_comprobantes&48", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap user_icon_16 {
             get {
                 object obj = ResourceManager.GetObject("user_icon&16", resourceCulture);
