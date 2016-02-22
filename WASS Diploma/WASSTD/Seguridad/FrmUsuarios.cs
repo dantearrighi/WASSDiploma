@@ -46,6 +46,7 @@ namespace WASSTD
         // Cuando carga el formulario
         private void FrmUsuarios_Load(object sender, EventArgs e)
         {
+           
             Arma_Lista();
         }
         

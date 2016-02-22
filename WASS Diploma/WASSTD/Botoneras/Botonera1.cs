@@ -65,7 +65,7 @@ namespace WASSTD
 
             try
             {
-                foreach (Modelo_Entidades.Grupo oGrupo in cUsuario.ObtenerGruposUsuario(oUsuario.id))
+                foreach (Modelo_Entidades.Grupo oGrupo in  cUsuario.ObtenerGruposUsuario(oUsuario.id))
                 { 
                     foreach (Modelo_Entidades.Permiso oPermiso in cPerfil.ObtenerPermisos(oGrupo.id, form))
                     {
