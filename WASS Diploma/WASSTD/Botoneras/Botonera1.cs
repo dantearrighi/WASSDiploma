@@ -65,7 +65,11 @@ namespace WASSTD
 
             try
             {
+
                 foreach (Modelo_Entidades.Grupo oGrupo in oUsuario.Grupos)
+
+                
+
                 { 
                     foreach (Modelo_Entidades.Perfil oPerfil in oGrupo.Perfiles)
                     {
