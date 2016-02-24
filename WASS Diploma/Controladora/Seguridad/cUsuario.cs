@@ -12,6 +12,7 @@ namespace Controladora
         private static cUsuario instancia;
         private Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
         Controladora.cEncriptacion cEncriptacion = new cEncriptacion();
+      
 
         // Aplico el patrón de diseño Singleton a la clase
         public static cUsuario ObtenerInstancia()
@@ -26,7 +27,10 @@ namespace Controladora
         private cUsuario()
         {
             oModelo_Entidades = Modelo_Entidades.WASSTDEntidades.ObtenerInstancia();
+             
         }
+
+       
 
         // Busco al usuario según su email y código
         public Modelo_Entidades.Usuario ObtenerUsuario(string usuario)
@@ -64,14 +68,14 @@ namespace Controladora
         public void ResetearClave(Modelo_Entidades.Usuario oUsuario, string email) 
         {
             //generar una clave aleatoria
-            oUsuario.clave = GenerarClaveAleatoria(8, false);
+            oUsuario.clave = GenerarClaveAleatoria(4, false);
             //enviar la clave sin encriptar por mail
 
-            string De = "dantea@fibertel.com.ar";
+            string De = "dantearrighi@gmail.com";
             string Password = "9789hrqs";
             string Para = email;
-            string Mensaje = "Bienvenido al sistema. Su nombre de usuario es " + oUsuario.usuario + " y su clave temporal es " + oUsuario.clave + ". Por favor cambie su clave la primera vez que entre al sistema.";
-            string Asunto = "Usuario y Contraseña para el sistema";
+            string Mensaje = "Bienvenido al WASS.  Su nombre de usuario es: " + oUsuario.usuario + ". El sistema a generado una clave aleatoria porque el administrador de WASS le ha dado de alta. Su clave temporal es: " + oUsuario.clave + ". Por favor cambie su clave la primera vez que entre al sistema.";
+            string Asunto = "AUTOMATICO: Usuario y Contraseña para WASS";
             System.Net.Mail.MailMessage Email;
 
             Email = new System.Net.Mail.MailMessage(De, Para, Asunto, Mensaje);
@@ -91,7 +95,7 @@ namespace Controladora
              * Gmail:  smtp.gmail.com  puerto:587
              * Hotmail: smtp.liva.com  puerto:25
              */
-            SmtpClient server = new SmtpClient("a2plcpnl0071.prod.iad2.secureserver.net", 993);
+            SmtpClient server = new SmtpClient("smtp.gmail.com", 587);
             /*
             * Autenticacion en el Servidor
             * Utilizaremos nuestra cuenta de correo
@@ -111,7 +115,7 @@ namespace Controladora
             Modificacion(oUsuario);
         }
 
-        // Busco al usuario en las entidades, haciendo las validaciones necesarias
+        /*// Busco al usuario en las entidades, haciendo las validaciones necesarias
         public Modelo_Entidades.Usuario Login(string usuario, string clave)
         {
             // Aca instancio un objeto "Usuario" y tomo el objeto "Entidades" que instancie en un principio.
@@ -126,7 +130,7 @@ namespace Controladora
 
             // En caso de que pase todas la validaciones, devuelvo al Usuario
             return oUsuario;
-        }
+        }*/
 
         // Obtengo los grupos de un usuario
         public List<Modelo_Entidades.Grupo> ObtenerGruposUsuario(int id)
@@ -165,7 +169,7 @@ namespace Controladora
         public List<Modelo_Entidades.Usuario> BuscarUsuarios(string texto)
         {
             var Consulta = from oUsuario in oModelo_Entidades.Usuarios.ToList()
-                           where oUsuario.nombre_apellido.Contains(texto)
+                           where oUsuario.nombre_apellido.ToLower().Contains(texto.ToLower())
                            select oUsuario;
             return (List<Modelo_Entidades.Usuario>)Consulta.ToList();
         }
@@ -189,15 +193,16 @@ namespace Controladora
             }
         }
 
-        // Metodo de validación general para todos los usuarios
+
+        // Metodo de validación general para todos los usuarios - Los busca segun estado y grupo al que pertenecen 
         public List<Modelo_Entidades.Usuario> FiltrarUsuarios(string nya, string grupo, string estado)
         {
             var Consulta = from oUsuario in oModelo_Entidades.Usuarios.ToList()
                            select oUsuario;
 
             if (nya != "0")
-            {
-                Consulta = Consulta.Where(oUsuario => oUsuario.nombre_apellido.Contains(nya));
+            {                                                                   // aca iba containts
+                Consulta = Consulta.Where(oUsuario => oUsuario.nombre_apellido.Contains(nya) );
             }
 
             if (grupo != "0")
@@ -229,26 +234,53 @@ namespace Controladora
             return oGrupo;
         }
 
-        // Valido el usuario
-        private void ValidarUsuario(Modelo_Entidades.Usuario oUsuario, string clave)
+
+
+        // Validar USUARIO ACTIVO
+        public bool ValidarUsuarioActivo(Modelo_Entidades.Usuario oUsuario)
+        {
+                
+            // Pregunto por el estado del usuario, y devuelvo un mensaje, en caso de que sea inactivo.
+            if (oUsuario.estado == false)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        // Validar USUARIO EXISTENTE
+        public bool ValidarUsuarioExistente(Modelo_Entidades.Usuario oUsuario)
         {
             // Pregunto si el usuario es nulo, y devuelvo un mensaje, en caso de que sea así.
             if (oUsuario == null)
             {
-                throw new Exception("El usuario ingresado no se encuentra registrado en el sistema");
+                return false;
+                
+            }
+            return true;
+                
+        }
+
+        // Validar CONTRASEÑA INGRESADA
+        public bool ValidarContraseñaIngresada(Modelo_Entidades.Usuario usrActual, string claveIngresada)
+        {
+            if (usrActual.clave != claveIngresada)
+            {
+                return false;
+            }
+            return true;
+ 
+        }
+
+        // Validar USUARIO: EXISTENTE, ACTIVO Y CONTRASEÑA
+        public bool ValidarUsuarioExistenteActivoContraseña(Modelo_Entidades.Usuario usrActual, string claveIngresada)
+        {
+            if(ValidarContraseñaIngresada(usrActual,claveIngresada) || ValidarUsuarioActivo(usrActual) || ValidarUsuarioExistente(usrActual))
+            {
+                return true;
             }
 
-            // Pregunto por la clave del usuario, y devuelvo un mensaje, en caso de que sea incorrecta.
-            if (oUsuario.clave != clave)
-            {
-                throw new Exception("La contraseña ingresada es incorrecta");
-            }
-
-            // Pregunto por el estado del usuario, y devuelvo un mensaje, en caso de que sea inactivo.
-            if (oUsuario.estado == false)
-            {
-                throw new Exception("El usuario ingresado se encuentra inactivo");
-            }
+            return false;
         }
     }
 }

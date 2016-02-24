@@ -89,11 +89,12 @@
             // 
             // btn_cerrar
             // 
+            this.btn_cerrar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btn_cerrar.Image = global::WASSTD.Properties.Resources.cancel_icon_16;
             this.btn_cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_cerrar.Location = new System.Drawing.Point(410, 3);
+            this.btn_cerrar.Location = new System.Drawing.Point(413, 0);
             this.btn_cerrar.Name = "btn_cerrar";
-            this.btn_cerrar.Size = new System.Drawing.Size(75, 35);
+            this.btn_cerrar.Size = new System.Drawing.Size(75, 40);
             this.btn_cerrar.TabIndex = 4;
             this.btn_cerrar.Text = "Cerrar";
             this.btn_cerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

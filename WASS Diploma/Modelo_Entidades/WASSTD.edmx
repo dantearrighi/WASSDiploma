@@ -12,53 +12,17 @@
     <EntitySet Name="Permisos" EntityType="WASSTDModelo.Store.Permisos" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Formularios" EntityType="WASSTDModelo.Store.Formularios" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Modulos" EntityType="WASSTDModelo.Store.Modulos" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Profesionales" EntityType="WASSTDModelo.Store.Profesionales" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="CtasCtes" EntityType="WASSTDModelo.Store.CtasCtes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Movimientos" EntityType="WASSTDModelo.Store.Movimientos" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Tipos_Movimientos" EntityType="WASSTDModelo.Store.Tipos_Movimientos" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Comprobantes" EntityType="WASSTDModelo.Store.Comprobantes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Personas" EntityType="WASSTDModelo.Store.Personas" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Localidades" EntityType="WASSTDModelo.Store.Localidades" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Provincias" EntityType="WASSTDModelo.Store.Provincias" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Estados" EntityType="WASSTDModelo.Store.Estados" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Tipos_Matriculas" EntityType="WASSTDModelo.Store.Tipos_Matriculas" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Colegios" EntityType="WASSTDModelo.Store.Colegios" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Historiales" EntityType="WASSTDModelo.Store.Historiales" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Titulos" EntityType="WASSTDModelo.Store.Titulos" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Universidades" EntityType="WASSTDModelo.Store.Universidades" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Jurisdicciones" EntityType="WASSTDModelo.Store.Jurisdicciones" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Modalidades" EntityType="WASSTDModelo.Store.Modalidades" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Niveles" EntityType="WASSTDModelo.Store.Niveles" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Especialidades" EntityType="WASSTDModelo.Store.Especialidades" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Planes" EntityType="WASSTDModelo.Store.Planes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Tipos_Certificados" EntityType="WASSTDModelo.Store.Tipos_Certificados" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Direcciones" EntityType="WASSTDModelo.Store.Direcciones" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Tipos_Documentos" EntityType="WASSTDModelo.Store.Tipos_Documentos" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Matriculas" EntityType="WASSTDModelo.Store.Matriculas" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Legajos_Academicos" EntityType="WASSTDModelo.Store.Legajos_Academicos" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Alteradores" EntityType="WASSTDModelo.Store.Alteradores" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Comitentes" EntityType="WASSTDModelo.Store.Comitentes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Tareas" EntityType="WASSTDModelo.Store.Tareas" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Liquidaciones" EntityType="WASSTDModelo.Store.Liquidaciones" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Cursos" EntityType="WASSTDModelo.Store.Cursos" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Comisiones" EntityType="WASSTDModelo.Store.Comisiones" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Docentes" EntityType="WASSTDModelo.Store.Docentes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Clases" EntityType="WASSTDModelo.Store.Clases" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Asistencias" EntityType="WASSTDModelo.Store.Asistencias" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Expedientes" EntityType="WASSTDModelo.Store.Expedientes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Cuotas" EntityType="WASSTDModelo.Store.Cuotas" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Videos" EntityType="WASSTDModelo.Store.Videos" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Comprobantes_Factura" EntityType="WASSTDModelo.Store.Comprobantes_Factura" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Cuotas_Anual" EntityType="WASSTDModelo.Store.Cuotas_Anual" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Cuotas_Bimensual" EntityType="WASSTDModelo.Store.Cuotas_Bimensual" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Cuotas_Modificador" EntityType="WASSTDModelo.Store.Cuotas_Modificador" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Cuotas_Descuento_Anual" EntityType="WASSTDModelo.Store.Cuotas_Descuento_Anual" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Cuotas_Con_Recargo" EntityType="WASSTDModelo.Store.Cuotas_Con_Recargo" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Comprobantes_Boleta" EntityType="WASSTDModelo.Store.Comprobantes_Boleta" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Expedientes_OI" EntityType="WASSTDModelo.Store.Expedientes_OI" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Expedientes_HM" EntityType="WASSTDModelo.Store.Expedientes_HM" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Expedientes_FE" EntityType="WASSTDModelo.Store.Expedientes_FE" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tramites" EntityType="WASSTDModelo.Store.Tramites" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Detalles_Tramites" EntityType="WASSTDModelo.Store.Detalles_Tramites" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tipos_Personas" EntityType="WASSTDModelo.Store.Tipos_Personas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tipos_Tramites" EntityType="WASSTDModelo.Store.Tipos_Tramites" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UsuariosGrupos" EntityType="WASSTDModelo.Store.UsuarioGrupo" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="ProfesionalExpediente" EntityType="WASSTDModelo.Store.ProfesionalExpediente" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="FK_UsuariosGrupos_Usuario" Association="WASSTDModelo.Store.FK_UsuarioGrupo_Usuario">
       <End Role="Usuario" EntitySet="Usuarios" />
       <End Role="UsuarioGrupo" EntitySet="UsuariosGrupos" />
@@ -83,173 +47,41 @@
       <End Role="Formulario" EntitySet="Formularios" />
       <End Role="Modulo" EntitySet="Modulos" />
     </AssociationSet>
-    <AssociationSet Name="CtasCtesProfesionales" Association="WASSTDModelo.Store.CtaCteProfesional">
-      <End Role="CtaCte" EntitySet="CtasCtes" />
-      <End Role="Profesional" EntitySet="Profesionales" />
-    </AssociationSet>
-    <AssociationSet Name="MovimientosCtaCtes" Association="WASSTDModelo.Store.MovimientoCtaCte">
-      <End Role="Movimiento" EntitySet="Movimientos" />
-      <End Role="CtaCte" EntitySet="CtasCtes" />
-    </AssociationSet>
-    <AssociationSet Name="Tipo_MovimientoMovimiento" Association="WASSTDModelo.Store.Tipo_MovimientoMovimiento">
-      <End Role="Tipo_Movimiento" EntitySet="Tipos_Movimientos" />
-      <End Role="Movimiento" EntitySet="Movimientos" />
-    </AssociationSet>
-    <AssociationSet Name="ComprobantesMovimientos" Association="WASSTDModelo.Store.ComprobanteMovimiento">
-      <End Role="Comprobante" EntitySet="Comprobantes" />
-      <End Role="Movimiento" EntitySet="Movimientos" />
-    </AssociationSet>
     <AssociationSet Name="ProvinciasLocalidades" Association="WASSTDModelo.Store.ProvinciaLocalidades">
       <End Role="Provincia" EntitySet="Provincias" />
       <End Role="Localidad" EntitySet="Localidades" />
     </AssociationSet>
-    <AssociationSet Name="ProfesionalesHistoriales" Association="WASSTDModelo.Store.ProfesionalHistoriales">
-      <End Role="Profesional" EntitySet="Profesionales" />
-      <End Role="Historial" EntitySet="Historiales" />
-    </AssociationSet>
-    <AssociationSet Name="ProfesionalesDirecciones" Association="WASSTDModelo.Store.ProfesionalDirecciones">
-      <End Role="Profesional" EntitySet="Profesionales" />
+    <AssociationSet Name="PersonasDirecciones" Association="WASSTDModelo.Store.PersonaDirecciones">
+      <End Role="Persona" EntitySet="Personas" />
       <End Role="Direccion" EntitySet="Direcciones" />
     </AssociationSet>
-    <AssociationSet Name="ProfesionalesMatriculas" Association="WASSTDModelo.Store.ProfesionalMatricula">
-      <End Role="Profesional" EntitySet="Profesionales" />
-      <End Role="Matricula" EntitySet="Matriculas" />
-    </AssociationSet>
-    <AssociationSet Name="Tipos_DocumentosProfesionales" Association="WASSTDModelo.Store.Tipo_DocumentoProfesional">
+    <AssociationSet Name="Tipos_DocumentosPersonas" Association="WASSTDModelo.Store.Tipo_DocumentoPersona">
       <End Role="Tipo_Documento" EntitySet="Tipos_Documentos" />
-      <End Role="Profesional" EntitySet="Profesionales" />
+      <End Role="Persona" EntitySet="Personas" />
     </AssociationSet>
-    <AssociationSet Name="EstadosProfesionales" Association="WASSTDModelo.Store.EstadoProfesional">
+    <AssociationSet Name="EstadosPersonas" Association="WASSTDModelo.Store.EstadoPersona">
       <End Role="Estado" EntitySet="Estados" />
-      <End Role="Profesional" EntitySet="Profesionales" />
-    </AssociationSet>
-    <AssociationSet Name="ColegiosProfesionales" Association="WASSTDModelo.Store.ColegioProfesional">
-      <End Role="Colegio" EntitySet="Colegios" />
-      <End Role="Profesional" EntitySet="Profesionales" />
-    </AssociationSet>
-    <AssociationSet Name="Tipos_MatriculasProfesionales" Association="WASSTDModelo.Store.Tipo_MatriculaProfesional">
-      <End Role="Tipo_Matricula" EntitySet="Tipos_Matriculas" />
-      <End Role="Profesional" EntitySet="Profesionales" />
-    </AssociationSet>
-    <AssociationSet Name="JurisdiccionTitulo" Association="WASSTDModelo.Store.JurisdiccionTitulo">
-      <End Role="Jurisdiccion" EntitySet="Jurisdicciones" />
-      <End Role="Titulo" EntitySet="Titulos" />
-    </AssociationSet>
-    <AssociationSet Name="ModalidadTitulo" Association="WASSTDModelo.Store.ModalidadTitulo">
-      <End Role="Modalidad" EntitySet="Modalidades" />
-      <End Role="Titulo" EntitySet="Titulos" />
-    </AssociationSet>
-    <AssociationSet Name="NivelTitulo" Association="WASSTDModelo.Store.NivelTitulo">
-      <End Role="Nivel" EntitySet="Niveles" />
-      <End Role="Titulo" EntitySet="Titulos" />
-    </AssociationSet>
-    <AssociationSet Name="EspecialidadesTitulos" Association="WASSTDModelo.Store.EspecialidadTitulo">
-      <End Role="Especialidad" EntitySet="Especialidades" />
-      <End Role="Titulo" EntitySet="Titulos" />
-    </AssociationSet>
-    <AssociationSet Name="UniversidadesTitulos" Association="WASSTDModelo.Store.UniversidadTitulo">
-      <End Role="Universidad" EntitySet="Universidades" />
-      <End Role="Titulo" EntitySet="Titulos" />
+      <End Role="Persona" EntitySet="Personas" />
     </AssociationSet>
     <AssociationSet Name="LocalidadesDirecciones" Association="WASSTDModelo.Store.LocalidadDireccion">
       <End Role="Localidad" EntitySet="Localidades" />
       <End Role="Direccion" EntitySet="Direcciones" />
     </AssociationSet>
-    <AssociationSet Name="MatriculaLegajo_Academico" Association="WASSTDModelo.Store.MatriculaLegajo_Academico">
-      <End Role="Matricula" EntitySet="Matriculas" />
-      <End Role="Legajo_Academico" EntitySet="Legajos_Academicos" />
+    <AssociationSet Name="Detalles_del_Tramite" Association="WASSTDModelo.Store.Detalles_del_Tramite">
+      <End Role="Detalles_Tramite" EntitySet="Detalles_Tramites" />
+      <End Role="Tramite" EntitySet="Tramites" />
     </AssociationSet>
-    <AssociationSet Name="PlanesLegajos_Academicos" Association="WASSTDModelo.Store.PlanLegajo_Academico">
-      <End Role="Plan" EntitySet="Planes" />
-      <End Role="Legajo_Academico" EntitySet="Legajos_Academicos" />
+    <AssociationSet Name="TramitesPersonas" Association="WASSTDModelo.Store.TramitePersona">
+      <End Role="Tramite" EntitySet="Tramites" />
+      <End Role="Persona" EntitySet="Personas" />
     </AssociationSet>
-    <AssociationSet Name="TitulosLegajos_Academicos" Association="WASSTDModelo.Store.TituloLegajo_Academico">
-      <End Role="Titulo" EntitySet="Titulos" />
-      <End Role="Legajo_Academico" EntitySet="Legajos_Academicos" />
+    <AssociationSet Name="Tipo_PersonaPersona" Association="WASSTDModelo.Store.Tipo_PersonaPersona">
+      <End Role="Tipo_Persona" EntitySet="Tipos_Personas" />
+      <End Role="Persona" EntitySet="Personas" />
     </AssociationSet>
-    <AssociationSet Name="ExpedienteLiquidacion" Association="WASSTDModelo.Store.ExpedienteLiquidacion">
-      <End Role="Expediente" EntitySet="Expedientes" />
-      <End Role="Liquidacion" EntitySet="Liquidaciones" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ProfesionalExpediente_Profesional" Association="WASSTDModelo.Store.FK_ProfesionalExpediente_Profesional">
-      <End Role="Profesional" EntitySet="Profesionales" />
-      <End Role="ProfesionalExpediente" EntitySet="ProfesionalExpediente" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ProfesionalExpediente_Expediente" Association="WASSTDModelo.Store.FK_ProfesionalExpediente_Expediente">
-      <End Role="Expediente" EntitySet="Expedientes" />
-      <End Role="ProfesionalExpediente" EntitySet="ProfesionalExpediente" />
-    </AssociationSet>
-    <AssociationSet Name="ComisionCurso" Association="WASSTDModelo.Store.ComisionCurso">
-      <End Role="Comision" EntitySet="Comisiones" />
-      <End Role="Curso" EntitySet="Cursos" />
-    </AssociationSet>
-    <AssociationSet Name="DocenteCurso" Association="WASSTDModelo.Store.DocenteCurso">
-      <End Role="Docente" EntitySet="Docentes" />
-      <End Role="Curso" EntitySet="Cursos" />
-    </AssociationSet>
-    <AssociationSet Name="CursoClase" Association="WASSTDModelo.Store.CursoClase">
-      <End Role="Curso" EntitySet="Cursos" />
-      <End Role="Clase" EntitySet="Clases" />
-    </AssociationSet>
-    <AssociationSet Name="ProfesionalAsistencia" Association="WASSTDModelo.Store.ProfesionalAsistencia">
-      <End Role="Profesional" EntitySet="Profesionales" />
-      <End Role="Asistencia" EntitySet="Asistencias" />
-    </AssociationSet>
-    <AssociationSet Name="ClaseAsistencia" Association="WASSTDModelo.Store.ClaseAsistencia">
-      <End Role="Clase" EntitySet="Clases" />
-      <End Role="Asistencia" EntitySet="Asistencias" />
-    </AssociationSet>
-    <AssociationSet Name="ProfesionalCuota" Association="WASSTDModelo.Store.ProfesionalCuota">
-      <End Role="Profesional" EntitySet="Profesionales" />
-      <End Role="Cuota" EntitySet="Cuotas" />
-    </AssociationSet>
-    <AssociationSet Name="ComitenteExpediente" Association="WASSTDModelo.Store.ComitenteExpediente">
-      <End Role="Comitente" EntitySet="Comitentes" />
-      <End Role="Expediente" EntitySet="Expedientes" />
-    </AssociationSet>
-    <AssociationSet Name="TareaExpediente" Association="WASSTDModelo.Store.TareaExpediente">
-      <End Role="Tarea" EntitySet="Tareas" />
-      <End Role="Expediente" EntitySet="Expedientes" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Factura_inherits_Comprobante" Association="WASSTDModelo.Store.FK_Factura_inherits_Comprobante">
-      <End Role="Comprobante" EntitySet="Comprobantes" />
-      <End Role="Factura" EntitySet="Comprobantes_Factura" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Anual_inherits_Cuota" Association="WASSTDModelo.Store.FK_Anual_inherits_Cuota">
-      <End Role="Cuota" EntitySet="Cuotas" />
-      <End Role="Anual" EntitySet="Cuotas_Anual" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Bimensual_inherits_Cuota" Association="WASSTDModelo.Store.FK_Bimensual_inherits_Cuota">
-      <End Role="Cuota" EntitySet="Cuotas" />
-      <End Role="Bimensual" EntitySet="Cuotas_Bimensual" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Modificador_inherits_Cuota" Association="WASSTDModelo.Store.FK_Modificador_inherits_Cuota">
-      <End Role="Cuota" EntitySet="Cuotas" />
-      <End Role="Modificador" EntitySet="Cuotas_Modificador" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Descuento_Anual_inherits_Modificador" Association="WASSTDModelo.Store.FK_Descuento_Anual_inherits_Modificador">
-      <End Role="Modificador" EntitySet="Cuotas_Modificador" />
-      <End Role="Descuento_Anual" EntitySet="Cuotas_Descuento_Anual" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Con_Recargo_inherits_Modificador" Association="WASSTDModelo.Store.FK_Con_Recargo_inherits_Modificador">
-      <End Role="Modificador" EntitySet="Cuotas_Modificador" />
-      <End Role="Con_Recargo" EntitySet="Cuotas_Con_Recargo" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Boleta_inherits_Comprobante" Association="WASSTDModelo.Store.FK_Boleta_inherits_Comprobante">
-      <End Role="Comprobante" EntitySet="Comprobantes" />
-      <End Role="Boleta" EntitySet="Comprobantes_Boleta" />
-    </AssociationSet>
-    <AssociationSet Name="FK_OI_inherits_Expediente" Association="WASSTDModelo.Store.FK_OI_inherits_Expediente">
-      <End Role="Expediente" EntitySet="Expedientes" />
-      <End Role="OI" EntitySet="Expedientes_OI" />
-    </AssociationSet>
-    <AssociationSet Name="FK_HM_inherits_Expediente" Association="WASSTDModelo.Store.FK_HM_inherits_Expediente">
-      <End Role="Expediente" EntitySet="Expedientes" />
-      <End Role="HM" EntitySet="Expedientes_HM" />
-    </AssociationSet>
-    <AssociationSet Name="FK_FE_inherits_Expediente" Association="WASSTDModelo.Store.FK_FE_inherits_Expediente">
-      <End Role="Expediente" EntitySet="Expedientes" />
-      <End Role="FE" EntitySet="Expedientes_FE" />
+    <AssociationSet Name="Tipo_TramiteTramite" Association="WASSTDModelo.Store.Tipo_TramiteTramite">
+      <End Role="Tipo_Tramite" EntitySet="Tipos_Tramites" />
+      <End Role="Tramite" EntitySet="Tramites" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Usuarios">
@@ -302,59 +134,22 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
-  <EntityType Name="Profesionales">
+  <EntityType Name="Personas">
     <Key>
       <PropertyRef Name="dni" />
     </Key>
     <Property Name="dni" Type="int" Nullable="false" />
     <Property Name="nombre_apellido" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="fecha_nacimiento" Type="datetime" Nullable="false" />
     <Property Name="sexo" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="telefono" Type="int" Nullable="false" />
-    <Property Name="celular" Type="int" Nullable="false" />
+    <Property Name="telefono" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="celular" Type="nvarchar(max)" Nullable="false" />
     <Property Name="email1" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="email2" Type="nvarchar(max)" Nullable="false" />
     <Property Name="observaciones" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="lugar_trabajo" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="convenio_año" Type="int" Nullable="true" />
-    <Property Name="titulo_a_mostrar" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="clave_fiscal" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="fecha_nacimiento" Type="datetime" Nullable="false" />
+    <Property Name="Tipo_PersonaId" Type="int" Nullable="false" />
     <Property Name="Tipo_Documento_id" Type="int" Nullable="false" />
     <Property Name="Estado_id" Type="int" Nullable="false" />
-    <Property Name="Colegio_id" Type="int" Nullable="true" />
-    <Property Name="Tipo_Matricula_id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="CtasCtes">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="saldo" Type="decimal" Nullable="false" DefaultValue="0" />
-    <Property Name="Profesional_dni" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Movimientos">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="importe" Type="float" Nullable="false" />
-    <Property Name="fecha" Type="datetime" Nullable="false" />
-    <Property Name="CtaCte_id" Type="int" Nullable="false" />
-    <Property Name="Tipo_Movimiento_id" Type="int" Nullable="false" />
-    <Property Name="Comprobante_id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Tipos_Movimientos">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Comprobantes">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <EntityType Name="Localidades">
     <Key>
@@ -379,107 +174,13 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
-  <EntityType Name="Tipos_Matriculas">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Colegios">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Historiales">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="estado" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="fecha" Type="datetime" Nullable="false" />
-    <Property Name="tipo_matricula" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="observaciones" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Profesional_dni" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Titulos">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="ley_aprobacion" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="res_coneau" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="validez" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="aprobacion_cie" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Jurisdiccion_id" Type="int" Nullable="false" />
-    <Property Name="Modalidad_id" Type="int" Nullable="false" />
-    <Property Name="Nivel_id" Type="int" Nullable="false" />
-    <Property Name="Especialidad_id" Type="int" Nullable="false" />
-    <Property Name="Universidad_id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Universidades">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Jurisdicciones">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Modalidades">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Niveles">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Especialidades">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Planes">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="año" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="ordenanza" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="incumbencia" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Tipos_Certificados">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="texto" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
   <EntityType Name="Direcciones">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="direccion" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Profesional_dni" Type="int" Nullable="false" />
+    <Property Name="Persona_dni" Type="int" Nullable="false" />
     <Property Name="Localidad_id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Tipos_Documentos">
@@ -489,213 +190,37 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
-  <EntityType Name="Matriculas">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="icie" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="certificado" Type="bit" Nullable="false" />
-    <Property Name="fecha_doc" Type="datetime" Nullable="false" />
-    <Property Name="incumbencia" Type="bit" Nullable="false" />
-    <Property Name="plan" Type="bit" Nullable="false" />
-    <Property Name="analitico" Type="bit" Nullable="false" />
-    <Property Name="Profesional_dni" Type="int" Nullable="false" />
-    <Property Name="Legajo_Academico_id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Legajos_Academicos">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Plan_id" Type="int" Nullable="false" />
-    <Property Name="Titulo_id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Alteradores">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="porcentaje_recargo" Type="float" Nullable="false" />
-    <Property Name="dias_gracias" Type="int" Nullable="false" />
-    <Property Name="valor_cuota" Type="float" Nullable="false" />
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Comitentes">
+  <EntityType Name="Tramites">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="razon_social" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Tareas">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Liquidaciones">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="tarea" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="cantidad" Type="decimal" Nullable="false" />
-    <Property Name="importe" Type="decimal" Nullable="false" />
-    <Property Name="Expediente_numero" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Cursos">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="asistentes" Type="int" Nullable="false" />
-    <Property Name="cupo" Type="int" Nullable="false" />
-    <Property Name="objetivo" Type="int" Nullable="false" />
-    <Property Name="arancelado" Type="bit" Nullable="false" />
-    <Property Name="costo" Type="decimal" Nullable="false" />
-    <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Comision_id" Type="int" Nullable="false" />
-    <Property Name="Docente_id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Comisiones">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="dinero_asignado" Type="decimal" Nullable="false" />
-    <Property Name="dinero_gastado" Type="decimal" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Docentes">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nombre_apellido" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Clases">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="fecha" Type="datetime" Nullable="false" />
-    <Property Name="Curso_id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Asistencias">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="presente" Type="bit" Nullable="false" />
-    <Property Name="Profesional_dni" Type="int" Nullable="false" />
-    <Property Name="Clase_id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Expedientes">
-    <Key>
-      <PropertyRef Name="numero" />
-    </Key>
-    <Property Name="numero" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tipo_Tramite_id" Type="int" Nullable="false" />
     <Property Name="estado" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="fecha_devolucion" Type="datetime" Nullable="false" />
-    <Property Name="fecha_recepcion" Type="datetime" Nullable="false" />
-    <Property Name="tipo_aporte" Type="bit" Nullable="false" />
-    <Property Name="fecha_aprobacion" Type="datetime" Nullable="false" />
-    <Property Name="fecha_pago" Type="datetime" Nullable="false" />
-    <Property Name="Comitente_Id" Type="int" Nullable="false" />
-    <Property Name="Tarea_Id" Type="int" Nullable="false" />
+    <Property Name="Persona_dni" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="Cuotas">
+  <EntityType Name="Detalles_Tramites">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="fecha_desde" Type="datetime" Nullable="true" />
+    <Property Name="TramiteId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tipos_Personas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tipos_Tramites">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="estado" Type="bit" Nullable="false" />
     <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Profesional_dni" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Videos">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="link" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Comprobantes_Factura">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="numero" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="cantidad" Type="int" Nullable="false" />
-    <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="precio_unitario" Type="decimal" Nullable="false" />
-    <Property Name="importe" Type="decimal" Nullable="false" />
-    <Property Name="total" Type="decimal" Nullable="false" />
-    <Property Name="id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Cuotas_Anual">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Cuotas_Bimensual">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Cuotas_Modificador">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Cuotas_Descuento_Anual">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Cuotas_Con_Recargo">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Comprobantes_Boleta">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="numero" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Expedientes_OI">
-    <Key>
-      <PropertyRef Name="numero" />
-    </Key>
-    <Property Name="monto_obra" Type="decimal" Nullable="false" />
-    <Property Name="numero" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Expedientes_HM">
-    <Key>
-      <PropertyRef Name="numero" />
-    </Key>
-    <Property Name="dias_de_campo" Type="decimal" Nullable="false" />
-    <Property Name="dias_de_gabinete" Type="decimal" Nullable="false" />
-    <Property Name="numero" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Expedientes_FE">
-    <Key>
-      <PropertyRef Name="numero" />
-    </Key>
-    <Property Name="dias_de_campo" Type="decimal" Nullable="false" />
-    <Property Name="dias_de_gabinete" Type="decimal" Nullable="false" />
-    <Property Name="hps" Type="decimal" Nullable="false" />
-    <Property Name="bocas" Type="decimal" Nullable="false" />
-    <Property Name="motores" Type="decimal" Nullable="false" />
-    <Property Name="numero" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="UsuarioGrupo">
     <Key>
@@ -704,14 +229,6 @@
     </Key>
     <Property Name="Usuarios_id" Type="int" Nullable="false" />
     <Property Name="Grupos_id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="ProfesionalExpediente">
-    <Key>
-      <PropertyRef Name="Profesionales_dni" />
-      <PropertyRef Name="Expedientes_numero" />
-    </Key>
-    <Property Name="Profesionales_dni" Type="int" Nullable="false" />
-    <Property Name="Expedientes_numero" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="PerfilGrupo">
     <End Role="Perfil" Type="WASSTDModelo.Store.Perfiles" Multiplicity="*" />
@@ -761,54 +278,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="CtaCteProfesional">
-    <End Role="CtaCte" Type="WASSTDModelo.Store.CtasCtes" Multiplicity="*" />
-    <End Role="Profesional" Type="WASSTDModelo.Store.Profesionales" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Profesional">
-        <PropertyRef Name="dni" />
-      </Principal>
-      <Dependent Role="CtaCte">
-        <PropertyRef Name="Profesional_dni" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="MovimientoCtaCte">
-    <End Role="Movimiento" Type="WASSTDModelo.Store.Movimientos" Multiplicity="*" />
-    <End Role="CtaCte" Type="WASSTDModelo.Store.CtasCtes" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="CtaCte">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Movimiento">
-        <PropertyRef Name="CtaCte_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="Tipo_MovimientoMovimiento">
-    <End Role="Tipo_Movimiento" Type="WASSTDModelo.Store.Tipos_Movimientos" Multiplicity="1" />
-    <End Role="Movimiento" Type="WASSTDModelo.Store.Movimientos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Tipo_Movimiento">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Movimiento">
-        <PropertyRef Name="Tipo_Movimiento_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ComprobanteMovimiento">
-    <End Role="Comprobante" Type="WASSTDModelo.Store.Comprobantes" Multiplicity="1" />
-    <End Role="Movimiento" Type="WASSTDModelo.Store.Movimientos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Comprobante">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Movimiento">
-        <PropertyRef Name="Comprobante_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="ProvinciaLocalidades">
     <End Role="Provincia" Type="WASSTDModelo.Store.Provincias" Multiplicity="1" />
     <End Role="Localidad" Type="WASSTDModelo.Store.Localidades" Multiplicity="*" />
@@ -821,147 +290,39 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="ProfesionalHistoriales">
-    <End Role="Profesional" Type="WASSTDModelo.Store.Profesionales" Multiplicity="1" />
-    <End Role="Historial" Type="WASSTDModelo.Store.Historiales" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Profesional">
-        <PropertyRef Name="dni" />
-      </Principal>
-      <Dependent Role="Historial">
-        <PropertyRef Name="Profesional_dni" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ProfesionalDirecciones">
-    <End Role="Profesional" Type="WASSTDModelo.Store.Profesionales" Multiplicity="1" />
+  <Association Name="PersonaDirecciones">
+    <End Role="Persona" Type="WASSTDModelo.Store.Personas" Multiplicity="1" />
     <End Role="Direccion" Type="WASSTDModelo.Store.Direcciones" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Profesional">
+      <Principal Role="Persona">
         <PropertyRef Name="dni" />
       </Principal>
       <Dependent Role="Direccion">
-        <PropertyRef Name="Profesional_dni" />
+        <PropertyRef Name="Persona_dni" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="ProfesionalMatricula">
-    <End Role="Profesional" Type="WASSTDModelo.Store.Profesionales" Multiplicity="1" />
-    <End Role="Matricula" Type="WASSTDModelo.Store.Matriculas" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Profesional">
-        <PropertyRef Name="dni" />
-      </Principal>
-      <Dependent Role="Matricula">
-        <PropertyRef Name="Profesional_dni" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="Tipo_DocumentoProfesional">
+  <Association Name="Tipo_DocumentoPersona">
     <End Role="Tipo_Documento" Type="WASSTDModelo.Store.Tipos_Documentos" Multiplicity="1" />
-    <End Role="Profesional" Type="WASSTDModelo.Store.Profesionales" Multiplicity="*" />
+    <End Role="Persona" Type="WASSTDModelo.Store.Personas" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Tipo_Documento">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="Profesional">
+      <Dependent Role="Persona">
         <PropertyRef Name="Tipo_Documento_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="EstadoProfesional">
+  <Association Name="EstadoPersona">
     <End Role="Estado" Type="WASSTDModelo.Store.Estados" Multiplicity="1" />
-    <End Role="Profesional" Type="WASSTDModelo.Store.Profesionales" Multiplicity="*" />
+    <End Role="Persona" Type="WASSTDModelo.Store.Personas" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Estado">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="Profesional">
+      <Dependent Role="Persona">
         <PropertyRef Name="Estado_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ColegioProfesional">
-    <End Role="Colegio" Type="WASSTDModelo.Store.Colegios" Multiplicity="0..1" />
-    <End Role="Profesional" Type="WASSTDModelo.Store.Profesionales" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Colegio">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Profesional">
-        <PropertyRef Name="Colegio_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="Tipo_MatriculaProfesional">
-    <End Role="Tipo_Matricula" Type="WASSTDModelo.Store.Tipos_Matriculas" Multiplicity="1" />
-    <End Role="Profesional" Type="WASSTDModelo.Store.Profesionales" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Tipo_Matricula">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Profesional">
-        <PropertyRef Name="Tipo_Matricula_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="JurisdiccionTitulo">
-    <End Role="Jurisdiccion" Type="WASSTDModelo.Store.Jurisdicciones" Multiplicity="1" />
-    <End Role="Titulo" Type="WASSTDModelo.Store.Titulos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Jurisdiccion">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Titulo">
-        <PropertyRef Name="Jurisdiccion_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ModalidadTitulo">
-    <End Role="Modalidad" Type="WASSTDModelo.Store.Modalidades" Multiplicity="1" />
-    <End Role="Titulo" Type="WASSTDModelo.Store.Titulos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Modalidad">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Titulo">
-        <PropertyRef Name="Modalidad_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="NivelTitulo">
-    <End Role="Nivel" Type="WASSTDModelo.Store.Niveles" Multiplicity="1" />
-    <End Role="Titulo" Type="WASSTDModelo.Store.Titulos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Nivel">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Titulo">
-        <PropertyRef Name="Nivel_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="EspecialidadTitulo">
-    <End Role="Especialidad" Type="WASSTDModelo.Store.Especialidades" Multiplicity="1" />
-    <End Role="Titulo" Type="WASSTDModelo.Store.Titulos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Especialidad">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Titulo">
-        <PropertyRef Name="Especialidad_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="UniversidadTitulo">
-    <End Role="Universidad" Type="WASSTDModelo.Store.Universidades" Multiplicity="1" />
-    <End Role="Titulo" Type="WASSTDModelo.Store.Titulos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Universidad">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Titulo">
-        <PropertyRef Name="Universidad_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -977,147 +338,51 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="MatriculaLegajo_Academico">
-    <End Role="Matricula" Type="WASSTDModelo.Store.Matriculas" Multiplicity="*" />
-    <End Role="Legajo_Academico" Type="WASSTDModelo.Store.Legajos_Academicos" Multiplicity="1" />
+  <Association Name="Detalles_del_Tramite">
+    <End Role="Detalles_Tramite" Type="WASSTDModelo.Store.Detalles_Tramites" Multiplicity="*" />
+    <End Role="Tramite" Type="WASSTDModelo.Store.Tramites" Multiplicity="1" />
     <ReferentialConstraint>
-      <Principal Role="Legajo_Academico">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Matricula">
-        <PropertyRef Name="Legajo_Academico_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="PlanLegajo_Academico">
-    <End Role="Plan" Type="WASSTDModelo.Store.Planes" Multiplicity="1" />
-    <End Role="Legajo_Academico" Type="WASSTDModelo.Store.Legajos_Academicos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Plan">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Legajo_Academico">
-        <PropertyRef Name="Plan_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="TituloLegajo_Academico">
-    <End Role="Titulo" Type="WASSTDModelo.Store.Titulos" Multiplicity="1" />
-    <End Role="Legajo_Academico" Type="WASSTDModelo.Store.Legajos_Academicos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Titulo">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Legajo_Academico">
-        <PropertyRef Name="Titulo_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ExpedienteLiquidacion">
-    <End Role="Expediente" Type="WASSTDModelo.Store.Expedientes" Multiplicity="1" />
-    <End Role="Liquidacion" Type="WASSTDModelo.Store.Liquidaciones" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Expediente">
-        <PropertyRef Name="numero" />
-      </Principal>
-      <Dependent Role="Liquidacion">
-        <PropertyRef Name="Expediente_numero" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ComisionCurso">
-    <End Role="Comision" Type="WASSTDModelo.Store.Comisiones" Multiplicity="1" />
-    <End Role="Curso" Type="WASSTDModelo.Store.Cursos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Comision">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Curso">
-        <PropertyRef Name="Comision_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="DocenteCurso">
-    <End Role="Docente" Type="WASSTDModelo.Store.Docentes" Multiplicity="1" />
-    <End Role="Curso" Type="WASSTDModelo.Store.Cursos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Docente">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Curso">
-        <PropertyRef Name="Docente_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="CursoClase">
-    <End Role="Curso" Type="WASSTDModelo.Store.Cursos" Multiplicity="1" />
-    <End Role="Clase" Type="WASSTDModelo.Store.Clases" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Curso">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Clase">
-        <PropertyRef Name="Curso_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ProfesionalAsistencia">
-    <End Role="Profesional" Type="WASSTDModelo.Store.Profesionales" Multiplicity="1" />
-    <End Role="Asistencia" Type="WASSTDModelo.Store.Asistencias" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Profesional">
-        <PropertyRef Name="dni" />
-      </Principal>
-      <Dependent Role="Asistencia">
-        <PropertyRef Name="Profesional_dni" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ClaseAsistencia">
-    <End Role="Clase" Type="WASSTDModelo.Store.Clases" Multiplicity="1" />
-    <End Role="Asistencia" Type="WASSTDModelo.Store.Asistencias" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Clase">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Asistencia">
-        <PropertyRef Name="Clase_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ProfesionalCuota">
-    <End Role="Profesional" Type="WASSTDModelo.Store.Profesionales" Multiplicity="1" />
-    <End Role="Cuota" Type="WASSTDModelo.Store.Cuotas" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Profesional">
-        <PropertyRef Name="dni" />
-      </Principal>
-      <Dependent Role="Cuota">
-        <PropertyRef Name="Profesional_dni" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ComitenteExpediente">
-    <End Role="Comitente" Type="WASSTDModelo.Store.Comitentes" Multiplicity="1" />
-    <End Role="Expediente" Type="WASSTDModelo.Store.Expedientes" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Comitente">
+      <Principal Role="Tramite">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Expediente">
-        <PropertyRef Name="Comitente_Id" />
+      <Dependent Role="Detalles_Tramite">
+        <PropertyRef Name="TramiteId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="TareaExpediente">
-    <End Role="Tarea" Type="WASSTDModelo.Store.Tareas" Multiplicity="1" />
-    <End Role="Expediente" Type="WASSTDModelo.Store.Expedientes" Multiplicity="*" />
+  <Association Name="TramitePersona">
+    <End Role="Tramite" Type="WASSTDModelo.Store.Tramites" Multiplicity="*" />
+    <End Role="Persona" Type="WASSTDModelo.Store.Personas" Multiplicity="1" />
     <ReferentialConstraint>
-      <Principal Role="Tarea">
+      <Principal Role="Persona">
+        <PropertyRef Name="dni" />
+      </Principal>
+      <Dependent Role="Tramite">
+        <PropertyRef Name="Persona_dni" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Tipo_PersonaPersona">
+    <End Role="Tipo_Persona" Type="WASSTDModelo.Store.Tipos_Personas" Multiplicity="1" />
+    <End Role="Persona" Type="WASSTDModelo.Store.Personas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo_Persona">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="Expediente">
-        <PropertyRef Name="Tarea_Id" />
+      <Dependent Role="Persona">
+        <PropertyRef Name="Tipo_PersonaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Tipo_TramiteTramite">
+    <End Role="Tipo_Tramite" Type="WASSTDModelo.Store.Tipos_Tramites" Multiplicity="1" />
+    <End Role="Tramite" Type="WASSTDModelo.Store.Tramites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo_Tramite">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Tramite">
+        <PropertyRef Name="Tipo_Tramite_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1142,170 +407,6 @@
       </Principal>
       <Dependent Role="UsuarioGrupo">
         <PropertyRef Name="Grupos_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ProfesionalExpediente_Profesional">
-    <End Role="Profesional" Type="WASSTDModelo.Store.Profesionales" Multiplicity="1" />
-    <End Role="ProfesionalExpediente" Type="WASSTDModelo.Store.ProfesionalExpediente" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Profesional">
-        <PropertyRef Name="dni" />
-      </Principal>
-      <Dependent Role="ProfesionalExpediente">
-        <PropertyRef Name="Profesionales_dni" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ProfesionalExpediente_Expediente">
-    <End Role="ProfesionalExpediente" Type="WASSTDModelo.Store.ProfesionalExpediente" Multiplicity="*" />
-    <End Role="Expediente" Type="WASSTDModelo.Store.Expedientes" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Expediente">
-        <PropertyRef Name="numero" />
-      </Principal>
-      <Dependent Role="ProfesionalExpediente">
-        <PropertyRef Name="Expedientes_numero" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Factura_inherits_Comprobante">
-    <End Role="Comprobante" Type="WASSTDModelo.Store.Comprobantes" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="Factura" Type="WASSTDModelo.Store.Comprobantes_Factura" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Comprobante">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Factura">
-        <PropertyRef Name="id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Anual_inherits_Cuota">
-    <End Role="Cuota" Type="WASSTDModelo.Store.Cuotas" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="Anual" Type="WASSTDModelo.Store.Cuotas_Anual" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Cuota">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Anual">
-        <PropertyRef Name="id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Bimensual_inherits_Cuota">
-    <End Role="Cuota" Type="WASSTDModelo.Store.Cuotas" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="Bimensual" Type="WASSTDModelo.Store.Cuotas_Bimensual" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Cuota">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Bimensual">
-        <PropertyRef Name="id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Modificador_inherits_Cuota">
-    <End Role="Cuota" Type="WASSTDModelo.Store.Cuotas" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="Modificador" Type="WASSTDModelo.Store.Cuotas_Modificador" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Cuota">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Modificador">
-        <PropertyRef Name="id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Descuento_Anual_inherits_Modificador">
-    <End Role="Modificador" Type="WASSTDModelo.Store.Cuotas_Modificador" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="Descuento_Anual" Type="WASSTDModelo.Store.Cuotas_Descuento_Anual" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Modificador">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Descuento_Anual">
-        <PropertyRef Name="id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Con_Recargo_inherits_Modificador">
-    <End Role="Modificador" Type="WASSTDModelo.Store.Cuotas_Modificador" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="Con_Recargo" Type="WASSTDModelo.Store.Cuotas_Con_Recargo" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Modificador">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Con_Recargo">
-        <PropertyRef Name="id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Boleta_inherits_Comprobante">
-    <End Role="Comprobante" Type="WASSTDModelo.Store.Comprobantes" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="Boleta" Type="WASSTDModelo.Store.Comprobantes_Boleta" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Comprobante">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="Boleta">
-        <PropertyRef Name="id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_OI_inherits_Expediente">
-    <End Role="Expediente" Type="WASSTDModelo.Store.Expedientes" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="OI" Type="WASSTDModelo.Store.Expedientes_OI" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Expediente">
-        <PropertyRef Name="numero" />
-      </Principal>
-      <Dependent Role="OI">
-        <PropertyRef Name="numero" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_HM_inherits_Expediente">
-    <End Role="Expediente" Type="WASSTDModelo.Store.Expedientes" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="HM" Type="WASSTDModelo.Store.Expedientes_HM" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Expediente">
-        <PropertyRef Name="numero" />
-      </Principal>
-      <Dependent Role="HM">
-        <PropertyRef Name="numero" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_FE_inherits_Expediente">
-    <End Role="Expediente" Type="WASSTDModelo.Store.Expedientes" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="FE" Type="WASSTDModelo.Store.Expedientes_FE" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Expediente">
-        <PropertyRef Name="numero" />
-      </Principal>
-      <Dependent Role="FE">
-        <PropertyRef Name="numero" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -1340,27 +441,7 @@
             <End Role="Formulario" EntitySet="Formularios" />
             <End Role="Modulo" EntitySet="Modulos" />
           </AssociationSet>
-          <EntitySet Name="Profesionales" EntityType="WASSTDModelo.Profesional" />
-          <EntitySet Name="CtasCtes" EntityType="WASSTDModelo.CtaCte" />
-          <AssociationSet Name="CtasCtesProfesionales" Association="WASSTDModelo.CtaCteProfesional">
-            <End Role="CtaCte" EntitySet="CtasCtes" />
-            <End Role="Profesional" EntitySet="Profesionales" />
-          </AssociationSet>
-          <EntitySet Name="Movimientos" EntityType="WASSTDModelo.Movimiento" />
-          <AssociationSet Name="MovimientosCtaCtes" Association="WASSTDModelo.MovimientoCtaCte">
-            <End Role="Movimiento" EntitySet="Movimientos" />
-            <End Role="CtaCte" EntitySet="CtasCtes" />
-          </AssociationSet>
-          <EntitySet Name="Tipos_Movimientos" EntityType="WASSTDModelo.Tipo_Movimiento" />
-          <AssociationSet Name="Tipo_MovimientoMovimiento" Association="WASSTDModelo.Tipo_MovimientoMovimiento">
-            <End Role="Tipo_Movimiento" EntitySet="Tipos_Movimientos" />
-            <End Role="Movimiento" EntitySet="Movimientos" />
-          </AssociationSet>
-          <EntitySet Name="Comprobantes" EntityType="WASSTDModelo.Comprobante" />
-          <AssociationSet Name="ComprobantesMovimientos" Association="WASSTDModelo.ComprobanteMovimiento">
-            <End Role="Comprobante" EntitySet="Comprobantes" />
-            <End Role="Movimiento" EntitySet="Movimientos" />
-          </AssociationSet>
+          <EntitySet Name="Personas" EntityType="WASSTDModelo.Persona" />
           <EntitySet Name="Localidades" EntityType="WASSTDModelo.Localidad" />
           <EntitySet Name="Provincias" EntityType="WASSTDModelo.Provincia" />
           <AssociationSet Name="ProvinciasLocalidades" Association="WASSTDModelo.ProvinciaLocalidades">
@@ -1368,137 +449,44 @@
             <End Role="Localidad" EntitySet="Localidades" />
           </AssociationSet>
           <EntitySet Name="Estados" EntityType="WASSTDModelo.Estado" />
-          <EntitySet Name="Tipos_Matriculas" EntityType="WASSTDModelo.Tipo_Matricula" />
-          <EntitySet Name="Colegios" EntityType="WASSTDModelo.Colegio" />
-          <EntitySet Name="Historiales" EntityType="WASSTDModelo.Historial" />
-          <AssociationSet Name="ProfesionalesHistoriales" Association="WASSTDModelo.ProfesionalHistoriales">
-            <End Role="Profesional" EntitySet="Profesionales" />
-            <End Role="Historial" EntitySet="Historiales" />
-          </AssociationSet>
-          <EntitySet Name="Titulos" EntityType="WASSTDModelo.Titulo" />
-          <EntitySet Name="Universidades" EntityType="WASSTDModelo.Universidad" />
-          <EntitySet Name="Jurisdicciones" EntityType="WASSTDModelo.Jurisdiccion" />
-          <EntitySet Name="Modalidades" EntityType="WASSTDModelo.Modalidad" />
-          <EntitySet Name="Niveles" EntityType="WASSTDModelo.Nivel" />
-          <EntitySet Name="Especialidades" EntityType="WASSTDModelo.Especialidad" />
-          <EntitySet Name="Planes" EntityType="WASSTDModelo.Plan" />
-          <EntitySet Name="Tipos_Certificados" EntityType="WASSTDModelo.Tipo_Certificado" />
           <EntitySet Name="Direcciones" EntityType="WASSTDModelo.Direccion" />
-          <AssociationSet Name="ProfesionalesDirecciones" Association="WASSTDModelo.ProfesionalDirecciones">
-            <End Role="Profesional" EntitySet="Profesionales" />
+          <AssociationSet Name="PersonasDirecciones" Association="WASSTDModelo.PersonaDirecciones">
+            <End Role="Persona" EntitySet="Personas" />
             <End Role="Direccion" EntitySet="Direcciones" />
           </AssociationSet>
           <EntitySet Name="Tipos_Documentos" EntityType="WASSTDModelo.Tipo_Documento" />
-          <EntitySet Name="Matriculas" EntityType="WASSTDModelo.Matricula" />
-          <AssociationSet Name="ProfesionalesMatriculas" Association="WASSTDModelo.ProfesionalMatricula">
-            <End Role="Profesional" EntitySet="Profesionales" />
-            <End Role="Matricula" EntitySet="Matriculas" />
-          </AssociationSet>
-          <AssociationSet Name="Tipos_DocumentosProfesionales" Association="WASSTDModelo.Tipo_DocumentoProfesional">
+          <AssociationSet Name="Tipos_DocumentosPersonas" Association="WASSTDModelo.Tipo_DocumentoPersona">
             <End Role="Tipo_Documento" EntitySet="Tipos_Documentos" />
-            <End Role="Profesional" EntitySet="Profesionales" />
+            <End Role="Persona" EntitySet="Personas" />
           </AssociationSet>
-          <AssociationSet Name="EstadosProfesionales" Association="WASSTDModelo.EstadoProfesional">
+          <AssociationSet Name="EstadosPersonas" Association="WASSTDModelo.EstadoPersona">
             <End Role="Estado" EntitySet="Estados" />
-            <End Role="Profesional" EntitySet="Profesionales" />
-          </AssociationSet>
-          <AssociationSet Name="ColegiosProfesionales" Association="WASSTDModelo.ColegioProfesional">
-            <End Role="Colegio" EntitySet="Colegios" />
-            <End Role="Profesional" EntitySet="Profesionales" />
-          </AssociationSet>
-          <AssociationSet Name="Tipos_MatriculasProfesionales" Association="WASSTDModelo.Tipo_MatriculaProfesional">
-            <End Role="Tipo_Matricula" EntitySet="Tipos_Matriculas" />
-            <End Role="Profesional" EntitySet="Profesionales" />
-          </AssociationSet>
-          <AssociationSet Name="JurisdiccionTitulo" Association="WASSTDModelo.JurisdiccionTitulo">
-            <End Role="Jurisdiccion" EntitySet="Jurisdicciones" />
-            <End Role="Titulo" EntitySet="Titulos" />
-          </AssociationSet>
-          <AssociationSet Name="ModalidadTitulo" Association="WASSTDModelo.ModalidadTitulo">
-            <End Role="Modalidad" EntitySet="Modalidades" />
-            <End Role="Titulo" EntitySet="Titulos" />
-          </AssociationSet>
-          <AssociationSet Name="NivelTitulo" Association="WASSTDModelo.NivelTitulo">
-            <End Role="Nivel" EntitySet="Niveles" />
-            <End Role="Titulo" EntitySet="Titulos" />
-          </AssociationSet>
-          <AssociationSet Name="EspecialidadesTitulos" Association="WASSTDModelo.EspecialidadTitulo">
-            <End Role="Especialidad" EntitySet="Especialidades" />
-            <End Role="Titulo" EntitySet="Titulos" />
-          </AssociationSet>
-          <AssociationSet Name="UniversidadesTitulos" Association="WASSTDModelo.UniversidadTitulo">
-            <End Role="Universidad" EntitySet="Universidades" />
-            <End Role="Titulo" EntitySet="Titulos" />
+            <End Role="Persona" EntitySet="Personas" />
           </AssociationSet>
           <AssociationSet Name="LocalidadesDirecciones" Association="WASSTDModelo.LocalidadDireccion">
             <End Role="Localidad" EntitySet="Localidades" />
             <End Role="Direccion" EntitySet="Direcciones" />
           </AssociationSet>
-          <EntitySet Name="Legajos_Academicos" EntityType="WASSTDModelo.Legajo_Academico" />
-          <AssociationSet Name="MatriculaLegajo_Academico" Association="WASSTDModelo.MatriculaLegajo_Academico">
-            <End Role="Matricula" EntitySet="Matriculas" />
-            <End Role="Legajo_Academico" EntitySet="Legajos_Academicos" />
+          <EntitySet Name="Tramites" EntityType="WASSTDModelo.Tramite" />
+          <EntitySet Name="Detalles_Tramites" EntityType="WASSTDModelo.Detalles_Tramite" />
+          <AssociationSet Name="Detalles_del_Tramite" Association="WASSTDModelo.Detalles_del_Tramite">
+            <End Role="Detalles_Tramite" EntitySet="Detalles_Tramites" />
+            <End Role="Tramite" EntitySet="Tramites" />
           </AssociationSet>
-          <AssociationSet Name="PlanesLegajos_Academicos" Association="WASSTDModelo.PlanLegajo_Academico">
-            <End Role="Plan" EntitySet="Planes" />
-            <End Role="Legajo_Academico" EntitySet="Legajos_Academicos" />
+          <AssociationSet Name="TramitesPersonas" Association="WASSTDModelo.TramitePersona">
+            <End Role="Tramite" EntitySet="Tramites" />
+            <End Role="Persona" EntitySet="Personas" />
           </AssociationSet>
-          <AssociationSet Name="TitulosLegajos_Academicos" Association="WASSTDModelo.TituloLegajo_Academico">
-            <End Role="Titulo" EntitySet="Titulos" />
-            <End Role="Legajo_Academico" EntitySet="Legajos_Academicos" />
+          <EntitySet Name="Tipos_Personas" EntityType="WASSTDModelo.Tipo_Persona" />
+          <AssociationSet Name="Tipo_PersonaPersona" Association="WASSTDModelo.Tipo_PersonaPersona">
+            <End Role="Tipo_Persona" EntitySet="Tipos_Personas" />
+            <End Role="Persona" EntitySet="Personas" />
           </AssociationSet>
-          <EntitySet Name="Alteradores" EntityType="WASSTDModelo.Alterador" />
-          <EntitySet Name="Comitentes" EntityType="WASSTDModelo.Comitente" />
-          <EntitySet Name="Tareas" EntityType="WASSTDModelo.Tarea" />
-          <EntitySet Name="Liquidaciones" EntityType="WASSTDModelo.Liquidacion" />
-          <AssociationSet Name="ExpedienteLiquidacion" Association="WASSTDModelo.ExpedienteLiquidacion">
-            <End Role="Expediente" EntitySet="Expedientes" />
-            <End Role="Liquidacion" EntitySet="Liquidaciones" />
+          <EntitySet Name="Tipos_Tramites" EntityType="WASSTDModelo.Tipo_Tramite" />
+          <AssociationSet Name="Tipo_TramiteTramite" Association="WASSTDModelo.Tipo_TramiteTramite">
+            <End Role="Tipo_Tramite" EntitySet="Tipos_Tramites" />
+            <End Role="Tramite" EntitySet="Tramites" />
           </AssociationSet>
-          <AssociationSet Name="ProfesionalExpediente" Association="WASSTDModelo.ProfesionalExpediente">
-            <End Role="Profesional" EntitySet="Profesionales" />
-            <End Role="Expediente" EntitySet="Expedientes" />
-          </AssociationSet>
-          <EntitySet Name="Cursos" EntityType="WASSTDModelo.Curso" />
-          <EntitySet Name="Comisiones" EntityType="WASSTDModelo.Comision" />
-          <AssociationSet Name="ComisionCurso" Association="WASSTDModelo.ComisionCurso">
-            <End Role="Comision" EntitySet="Comisiones" />
-            <End Role="Curso" EntitySet="Cursos" />
-          </AssociationSet>
-          <EntitySet Name="Docentes" EntityType="WASSTDModelo.Docente" />
-          <AssociationSet Name="DocenteCurso" Association="WASSTDModelo.DocenteCurso">
-            <End Role="Docente" EntitySet="Docentes" />
-            <End Role="Curso" EntitySet="Cursos" />
-          </AssociationSet>
-          <EntitySet Name="Clases" EntityType="WASSTDModelo.Clase" />
-          <AssociationSet Name="CursoClase" Association="WASSTDModelo.CursoClase">
-            <End Role="Curso" EntitySet="Cursos" />
-            <End Role="Clase" EntitySet="Clases" />
-          </AssociationSet>
-          <EntitySet Name="Asistencias" EntityType="WASSTDModelo.Asistencia" />
-          <AssociationSet Name="ProfesionalAsistencia" Association="WASSTDModelo.ProfesionalAsistencia">
-            <End Role="Profesional" EntitySet="Profesionales" />
-            <End Role="Asistencia" EntitySet="Asistencias" />
-          </AssociationSet>
-          <AssociationSet Name="ClaseAsistencia" Association="WASSTDModelo.ClaseAsistencia">
-            <End Role="Clase" EntitySet="Clases" />
-            <End Role="Asistencia" EntitySet="Asistencias" />
-          </AssociationSet>
-          <EntitySet Name="Expedientes" EntityType="WASSTDModelo.Expediente" />
-          <EntitySet Name="Cuotas" EntityType="WASSTDModelo.Cuota" />
-          <AssociationSet Name="ProfesionalCuota" Association="WASSTDModelo.ProfesionalCuota">
-            <End Role="Profesional" EntitySet="Profesionales" />
-            <End Role="Cuota" EntitySet="Cuotas" />
-          </AssociationSet>
-          <AssociationSet Name="ComitenteExpediente" Association="WASSTDModelo.ComitenteExpediente">
-            <End Role="Comitente" EntitySet="Comitentes" />
-            <End Role="Expediente" EntitySet="Expedientes" />
-          </AssociationSet>
-          <AssociationSet Name="TareaExpediente" Association="WASSTDModelo.TareaExpediente">
-            <End Role="Tarea" EntitySet="Tareas" />
-            <End Role="Expediente" EntitySet="Expedientes" />
-          </AssociationSet>
-          <EntitySet Name="Videos" EntityType="WASSTDModelo.Video" />
           </EntityContainer>
         <EntityType Name="Usuario">
           <Key>
@@ -1578,103 +566,26 @@
           <End Type="WASSTDModelo.Formulario" Role="Formulario" Multiplicity="*" />
           <End Type="WASSTDModelo.Modulo" Role="Modulo" Multiplicity="1" />
         </Association>
-        <EntityType Name="Profesional">
+        <EntityType Name="Persona">
           <Key>
             <PropertyRef Name="dni" />
           </Key>
           <Property Type="Int32" Name="dni" Nullable="false" annotation:StoreGeneratedPattern="None" />
           <Property Type="String" Name="nombre_apellido" Nullable="false" />
-          <Property Type="DateTime" Name="fecha_nacimiento" Nullable="false" />
           <Property Type="String" Name="sexo" Nullable="false" />
-          <Property Type="Int32" Name="telefono" Nullable="false" />
-          <Property Type="Int32" Name="celular" Nullable="false" />
+          <Property Type="String" Name="telefono" Nullable="false" />
+          <Property Type="String" Name="celular" Nullable="false" />
           <Property Type="String" Name="email1" Nullable="false" />
-          <Property Type="String" Name="email2" Nullable="false" />
           <Property Type="String" Name="observaciones" Nullable="false" />
-          <NavigationProperty Name="CtaCte" Relationship="WASSTDModelo.CtaCteProfesional" FromRole="Profesional" ToRole="CtaCte" />
-          <Property Type="String" Name="lugar_trabajo" />
-          <Property Type="Int32" Name="convenio_año" />
-          <NavigationProperty Name="Historiales" Relationship="WASSTDModelo.ProfesionalHistoriales" FromRole="Profesional" ToRole="Historial" />
-          <NavigationProperty Name="Direcciones" Relationship="WASSTDModelo.ProfesionalDirecciones" FromRole="Profesional" ToRole="Direccion" />
-          <Property Type="String" Name="titulo_a_mostrar" Nullable="false" MaxLength="Max" />
-          <NavigationProperty Name="Matriculas" Relationship="WASSTDModelo.ProfesionalMatricula" FromRole="Profesional" ToRole="Matricula" />
-          <NavigationProperty Name="Tipo_Documento" Relationship="WASSTDModelo.Tipo_DocumentoProfesional" FromRole="Profesional" ToRole="Tipo_Documento" />
-          <NavigationProperty Name="Estado" Relationship="WASSTDModelo.EstadoProfesional" FromRole="Profesional" ToRole="Estado" />
-          <NavigationProperty Name="Colegio" Relationship="WASSTDModelo.ColegioProfesional" FromRole="Profesional" ToRole="Colegio" />
-          <NavigationProperty Name="Tipo_Matricula" Relationship="WASSTDModelo.Tipo_MatriculaProfesional" FromRole="Profesional" ToRole="Tipo_Matricula" />
-          <NavigationProperty Name="Expedientes" Relationship="WASSTDModelo.ProfesionalExpediente" FromRole="Profesional" ToRole="Expediente" />
-          <NavigationProperty Name="Asistencias" Relationship="WASSTDModelo.ProfesionalAsistencia" FromRole="Profesional" ToRole="Asistencia" />
-          <NavigationProperty Name="Cuota" Relationship="WASSTDModelo.ProfesionalCuota" FromRole="Profesional" ToRole="Cuota" />
+          <NavigationProperty Name="Direcciones" Relationship="WASSTDModelo.PersonaDirecciones" FromRole="Persona" ToRole="Direccion" />
+          <NavigationProperty Name="Tipo_Documento" Relationship="WASSTDModelo.Tipo_DocumentoPersona" FromRole="Persona" ToRole="Tipo_Documento" />
+          <NavigationProperty Name="Estado" Relationship="WASSTDModelo.EstadoPersona" FromRole="Persona" ToRole="Estado" />
+          <Property Name="clave_fiscal" Type="String" Nullable="false" />
+          <Property Name="fecha_nacimiento" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Tramite" Relationship="WASSTDModelo.TramitePersona" FromRole="Persona" ToRole="Tramite" />
+          <NavigationProperty Name="Tipo_Persona" Relationship="WASSTDModelo.Tipo_PersonaPersona" FromRole="Persona" ToRole="Tipo_Persona" />
+          <Property Name="Tipo_PersonaId" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="CtaCte">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Decimal" Name="saldo" Nullable="false" DefaultValue="0" />
-          <NavigationProperty Name="Profesional" Relationship="WASSTDModelo.CtaCteProfesional" FromRole="CtaCte" ToRole="Profesional" />
-          <NavigationProperty Name="Movimientos" Relationship="WASSTDModelo.MovimientoCtaCte" FromRole="CtaCte" ToRole="Movimiento" />
-        </EntityType>
-        <Association Name="CtaCteProfesional">
-          <End Type="WASSTDModelo.CtaCte" Role="CtaCte" Multiplicity="1" />
-          <End Type="WASSTDModelo.Profesional" Role="Profesional" Multiplicity="1" />
-        </Association>
-        <EntityType Name="Movimiento">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="descripcion" Nullable="false" />
-          <Property Type="Double" Name="importe" Nullable="false" />
-          <NavigationProperty Name="CtaCte" Relationship="WASSTDModelo.MovimientoCtaCte" FromRole="Movimiento" ToRole="CtaCte" />
-          <NavigationProperty Name="Tipo_Movimiento" Relationship="WASSTDModelo.Tipo_MovimientoMovimiento" FromRole="Movimiento" ToRole="Tipo_Movimiento" />
-          <NavigationProperty Name="Comprobante" Relationship="WASSTDModelo.ComprobanteMovimiento" FromRole="Movimiento" ToRole="Comprobante" />
-          <Property Type="DateTime" Name="fecha" Nullable="false" />
-        </EntityType>
-        <Association Name="MovimientoCtaCte">
-          <End Type="WASSTDModelo.Movimiento" Role="Movimiento" Multiplicity="*" />
-          <End Type="WASSTDModelo.CtaCte" Role="CtaCte" Multiplicity="1" />
-        </Association>
-        <EntityType Name="Cuota" Abstract="true">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <NavigationProperty Name="Profesional" Relationship="WASSTDModelo.ProfesionalCuota" FromRole="Cuota" ToRole="Profesional" />
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Boolean" Name="estado" Nullable="false" />
-          <Property Type="String" Name="descripcion" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Factura" BaseType="WASSTDModelo.Comprobante">
-          <Property Type="Int32" Name="numero" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="cantidad" Nullable="false" />
-          <Property Type="String" Name="descripcion" Nullable="false" />
-          <Property Type="Decimal" Name="precio_unitario" Nullable="false" />
-          <Property Type="Decimal" Name="importe" Nullable="false" />
-          <Property Type="Decimal" Name="total" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Tipo_Movimiento">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="descripcion" Nullable="false" />
-          <NavigationProperty Name="Movimientos" Relationship="WASSTDModelo.Tipo_MovimientoMovimiento" FromRole="Tipo_Movimiento" ToRole="Movimiento" />
-        </EntityType>
-        <Association Name="Tipo_MovimientoMovimiento">
-          <End Type="WASSTDModelo.Tipo_Movimiento" Role="Tipo_Movimiento" Multiplicity="1" />
-          <End Type="WASSTDModelo.Movimiento" Role="Movimiento" Multiplicity="*" />
-        </Association>
-        <EntityType Name="Comprobante" Abstract="true">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Movimientos" Relationship="WASSTDModelo.ComprobanteMovimiento" FromRole="Comprobante" ToRole="Movimiento" />
-        </EntityType>
-        <Association Name="ComprobanteMovimiento">
-          <End Type="WASSTDModelo.Comprobante" Role="Comprobante" Multiplicity="1" />
-          <End Type="WASSTDModelo.Movimiento" Role="Movimiento" Multiplicity="*" />
-        </Association>
         <EntityType Name="Localidad">
           <Key>
             <PropertyRef Name="id" />
@@ -1703,117 +614,7 @@
           </Key>
           <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="descripcion" Nullable="false" />
-          <NavigationProperty Name="Profesionales" Relationship="WASSTDModelo.EstadoProfesional" FromRole="Estado" ToRole="Profesional" />
-        </EntityType>
-        <EntityType Name="Tipo_Matricula">
-          <Documentation>
-            <LongDescription>Vendría a ser la condición en la que se encuentra el profesional con el colegio</LongDescription>
-          </Documentation>
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="descripcion" Nullable="false" />
-          <NavigationProperty Name="Profesionales" Relationship="WASSTDModelo.Tipo_MatriculaProfesional" FromRole="Tipo_Matricula" ToRole="Profesional" />
-        </EntityType>
-        <EntityType Name="Colegio">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="descripcion" Nullable="false" />
-          <NavigationProperty Name="Profesionales" Relationship="WASSTDModelo.ColegioProfesional" FromRole="Colegio" ToRole="Profesional" />
-        </EntityType>
-        <EntityType Name="Historial">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="estado" Nullable="false" />
-          <Property Type="DateTime" Name="fecha" Nullable="false" />
-          <NavigationProperty Name="Profesional" Relationship="WASSTDModelo.ProfesionalHistoriales" FromRole="Historial" ToRole="Profesional" />
-          <Property Type="String" Name="tipo_matricula" Nullable="false" />
-          <Property Type="String" Name="observaciones" Nullable="false" />
-        </EntityType>
-        <Association Name="ProfesionalHistoriales">
-          <End Type="WASSTDModelo.Profesional" Role="Profesional" Multiplicity="1" />
-          <End Type="WASSTDModelo.Historial" Role="Historial" Multiplicity="*" />
-        </Association>
-        <EntityType Name="Titulo">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="descripcion" Nullable="false" />
-          <Property Type="String" Name="ley_aprobacion" Nullable="false" />
-          <Property Type="String" Name="res_coneau" Nullable="false" />
-          <Property Type="String" Name="validez" Nullable="false" />
-          <Property Type="String" Name="aprobacion_cie" Nullable="false" />
-          <NavigationProperty Name="Jurisdiccion" Relationship="WASSTDModelo.JurisdiccionTitulo" FromRole="Titulo" ToRole="Jurisdiccion" />
-          <NavigationProperty Name="Modalidad" Relationship="WASSTDModelo.ModalidadTitulo" FromRole="Titulo" ToRole="Modalidad" />
-          <NavigationProperty Name="Nivel" Relationship="WASSTDModelo.NivelTitulo" FromRole="Titulo" ToRole="Nivel" />
-          <NavigationProperty Name="Especialidad" Relationship="WASSTDModelo.EspecialidadTitulo" FromRole="Titulo" ToRole="Especialidad" />
-          <NavigationProperty Name="Universidad" Relationship="WASSTDModelo.UniversidadTitulo" FromRole="Titulo" ToRole="Universidad" />
-          <NavigationProperty Name="Legajos_Academicos" Relationship="WASSTDModelo.TituloLegajo_Academico" FromRole="Titulo" ToRole="Legajo_Academico" />
-        </EntityType>
-        <EntityType Name="Universidad">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="descripcion" Nullable="false" />
-          <NavigationProperty Name="Titulos" Relationship="WASSTDModelo.UniversidadTitulo" FromRole="Universidad" ToRole="Titulo" />
-        </EntityType>
-        <EntityType Name="Jurisdiccion">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="descripcion" Nullable="false" />
-          <NavigationProperty Name="Titulos" Relationship="WASSTDModelo.JurisdiccionTitulo" FromRole="Jurisdiccion" ToRole="Titulo" />
-        </EntityType>
-        <EntityType Name="Modalidad">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="descripcion" Nullable="false" />
-          <NavigationProperty Name="Titulos" Relationship="WASSTDModelo.ModalidadTitulo" FromRole="Modalidad" ToRole="Titulo" />
-        </EntityType>
-        <EntityType Name="Nivel">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="descripcion" Nullable="false" />
-          <NavigationProperty Name="Titulos" Relationship="WASSTDModelo.NivelTitulo" FromRole="Nivel" ToRole="Titulo" />
-        </EntityType>
-        <EntityType Name="Especialidad">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="descripcion" Nullable="false" />
-          <NavigationProperty Name="Titulos" Relationship="WASSTDModelo.EspecialidadTitulo" FromRole="Especialidad" ToRole="Titulo" />
-        </EntityType>
-        <EntityType Name="Plan">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="año" Nullable="false" />
-          <Property Type="String" Name="ordenanza" Nullable="false" />
-          <Property Type="String" Name="descripcion" Nullable="false" MaxLength="Max" />
-          <Property Type="String" Name="incumbencia" Nullable="false" MaxLength="Max" />
-          <NavigationProperty Name="Legajos_Academicos" Relationship="WASSTDModelo.PlanLegajo_Academico" FromRole="Plan" ToRole="Legajo_Academico" />
-        </EntityType>
-        <EntityType Name="Tipo_Certificado">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="descripcion" Nullable="false" />
-          <Property Type="String" Name="texto" Nullable="false" MaxLength="Max" />
+          <NavigationProperty Name="Personas" Relationship="WASSTDModelo.EstadoPersona" FromRole="Estado" ToRole="Persona" />
         </EntityType>
         <EntityType Name="Direccion">
           <Key>
@@ -1821,11 +622,11 @@
           </Key>
           <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="direccion" Nullable="false" />
-          <NavigationProperty Name="Profesional" Relationship="WASSTDModelo.ProfesionalDirecciones" FromRole="Direccion" ToRole="Profesional" />
+          <NavigationProperty Name="Persona" Relationship="WASSTDModelo.PersonaDirecciones" FromRole="Direccion" ToRole="Persona" />
           <NavigationProperty Name="Localidad" Relationship="WASSTDModelo.LocalidadDireccion" FromRole="Direccion" ToRole="Localidad" />
         </EntityType>
-        <Association Name="ProfesionalDirecciones">
-          <End Type="WASSTDModelo.Profesional" Role="Profesional" Multiplicity="1" />
+        <Association Name="PersonaDirecciones">
+          <End Type="WASSTDModelo.Persona" Role="Persona" Multiplicity="1" />
           <End Type="WASSTDModelo.Direccion" Role="Direccion" Multiplicity="*" />
         </Association>
         <EntityType Name="Tipo_Documento">
@@ -1834,267 +635,97 @@
           </Key>
           <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="descripcion" Nullable="false" />
-          <NavigationProperty Name="Profesionales" Relationship="WASSTDModelo.Tipo_DocumentoProfesional" FromRole="Tipo_Documento" ToRole="Profesional" />
+          <NavigationProperty Name="Personas" Relationship="WASSTDModelo.Tipo_DocumentoPersona" FromRole="Tipo_Documento" ToRole="Persona" />
         </EntityType>
-        <EntityType Name="Matricula">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Profesional" Relationship="WASSTDModelo.ProfesionalMatricula" FromRole="Matricula" ToRole="Profesional" />
-          <Property Type="String" Name="icie" />
-          <Property Type="Boolean" Name="certificado" Nullable="false" />
-          <Property Type="DateTime" Name="fecha_doc" Nullable="false" />
-          <Property Type="Boolean" Name="incumbencia" Nullable="false" />
-          <Property Type="Boolean" Name="plan" Nullable="false" />
-          <Property Type="Boolean" Name="analitico" Nullable="false" />
-          <NavigationProperty Name="Legajo_Academico" Relationship="WASSTDModelo.MatriculaLegajo_Academico" FromRole="Matricula" ToRole="Legajo_Academico" />
-        </EntityType>
-        <Association Name="ProfesionalMatricula">
-          <End Type="WASSTDModelo.Profesional" Role="Profesional" Multiplicity="1" />
-          <End Type="WASSTDModelo.Matricula" Role="Matricula" Multiplicity="*" />
-        </Association>
-        <Association Name="Tipo_DocumentoProfesional">
+        <Association Name="Tipo_DocumentoPersona">
           <End Type="WASSTDModelo.Tipo_Documento" Role="Tipo_Documento" Multiplicity="1" />
-          <End Type="WASSTDModelo.Profesional" Role="Profesional" Multiplicity="*" />
+          <End Type="WASSTDModelo.Persona" Role="Persona" Multiplicity="*" />
         </Association>
-        <Association Name="EstadoProfesional">
+        <Association Name="EstadoPersona">
           <End Type="WASSTDModelo.Estado" Role="Estado" Multiplicity="1" />
-          <End Type="WASSTDModelo.Profesional" Role="Profesional" Multiplicity="*" />
-        </Association>
-        <Association Name="ColegioProfesional">
-          <End Type="WASSTDModelo.Colegio" Role="Colegio" Multiplicity="0..1" />
-          <End Type="WASSTDModelo.Profesional" Role="Profesional" Multiplicity="*" />
-        </Association>
-        <Association Name="Tipo_MatriculaProfesional">
-          <End Type="WASSTDModelo.Tipo_Matricula" Role="Tipo_Matricula" Multiplicity="1" />
-          <End Type="WASSTDModelo.Profesional" Role="Profesional" Multiplicity="*" />
-        </Association>
-        <Association Name="JurisdiccionTitulo">
-          <End Type="WASSTDModelo.Jurisdiccion" Role="Jurisdiccion" Multiplicity="1" />
-          <End Type="WASSTDModelo.Titulo" Role="Titulo" Multiplicity="*" />
-        </Association>
-        <Association Name="ModalidadTitulo">
-          <End Type="WASSTDModelo.Modalidad" Role="Modalidad" Multiplicity="1" />
-          <End Type="WASSTDModelo.Titulo" Role="Titulo" Multiplicity="*" />
-        </Association>
-        <Association Name="NivelTitulo">
-          <End Type="WASSTDModelo.Nivel" Role="Nivel" Multiplicity="1" />
-          <End Type="WASSTDModelo.Titulo" Role="Titulo" Multiplicity="*" />
-        </Association>
-        <Association Name="EspecialidadTitulo">
-          <End Type="WASSTDModelo.Especialidad" Role="Especialidad" Multiplicity="1" />
-          <End Type="WASSTDModelo.Titulo" Role="Titulo" Multiplicity="*" />
-        </Association>
-        <Association Name="UniversidadTitulo">
-          <End Type="WASSTDModelo.Universidad" Role="Universidad" Multiplicity="1" />
-          <End Type="WASSTDModelo.Titulo" Role="Titulo" Multiplicity="*" />
+          <End Type="WASSTDModelo.Persona" Role="Persona" Multiplicity="*" />
         </Association>
         <Association Name="LocalidadDireccion">
           <End Type="WASSTDModelo.Localidad" Role="Localidad" Multiplicity="1" />
           <End Type="WASSTDModelo.Direccion" Role="Direccion" Multiplicity="*" />
         </Association>
-        <EntityType Name="Legajo_Academico">
-          <Documentation>
-            <LongDescription>Es una entidad que me permite vincular a los planes con los titulos.</LongDescription>
-          </Documentation>
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Matriculas" Relationship="WASSTDModelo.MatriculaLegajo_Academico" FromRole="Legajo_Academico" ToRole="Matricula" />
-          <NavigationProperty Name="Plan" Relationship="WASSTDModelo.PlanLegajo_Academico" FromRole="Legajo_Academico" ToRole="Plan" />
-          <NavigationProperty Name="Titulo" Relationship="WASSTDModelo.TituloLegajo_Academico" FromRole="Legajo_Academico" ToRole="Titulo" />
-        </EntityType>
-        <Association Name="MatriculaLegajo_Academico">
-          <End Type="WASSTDModelo.Matricula" Role="Matricula" Multiplicity="*" />
-          <End Type="WASSTDModelo.Legajo_Academico" Role="Legajo_Academico" Multiplicity="1" />
-        </Association>
-        <Association Name="PlanLegajo_Academico">
-          <End Type="WASSTDModelo.Plan" Role="Plan" Multiplicity="1" />
-          <End Type="WASSTDModelo.Legajo_Academico" Role="Legajo_Academico" Multiplicity="*" />
-        </Association>
-        <Association Name="TituloLegajo_Academico">
-          <End Type="WASSTDModelo.Titulo" Role="Titulo" Multiplicity="1" />
-          <End Type="WASSTDModelo.Legajo_Academico" Role="Legajo_Academico" Multiplicity="*" />
-        </Association>
-        <EntityType Name="Anual" BaseType="WASSTDModelo.Cuota">
-        </EntityType>
-        <EntityType Name="Bimensual" BaseType="WASSTDModelo.Cuota">
-        </EntityType>
-        <EntityType Name="Modificador" Abstract="true" BaseType="WASSTDModelo.Cuota">
-          </EntityType>
-        <EntityType Name="Descuento_Anual" BaseType="WASSTDModelo.Modificador">
-          </EntityType>
-        <EntityType Name="Con_Recargo" BaseType="WASSTDModelo.Modificador">
-          </EntityType>
-        <EntityType Name="Alterador">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Double" Name="porcentaje_recargo" Nullable="false" />
-          <Property Type="Int32" Name="dias_gracias" Nullable="false" />
-          <Property Type="Double" Name="valor_cuota" Nullable="false" />
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-        </EntityType>
-        <EntityType Name="Boleta" BaseType="WASSTDModelo.Comprobante">
-          <Property Type="Int32" Name="numero" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-        </EntityType>
-        <EntityType Name="Expediente" Abstract="true">
-          <Key>
-            <PropertyRef Name="numero" />
-          </Key>
-          <Property Type="Int32" Name="numero" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="estado" Nullable="false" />
-          <Property Type="DateTime" Name="fecha_devolucion" Nullable="false" />
-          <Property Type="DateTime" Name="fecha_recepcion" Nullable="false" />
-          <Property Type="Boolean" Name="tipo_aporte" Nullable="false" />
-          <Property Type="DateTime" Name="fecha_aprobacion" Nullable="false" />
-          <NavigationProperty Name="Liquidaciones" Relationship="WASSTDModelo.ExpedienteLiquidacion" FromRole="Expediente" ToRole="Liquidacion" />
-          <NavigationProperty Name="Profesionales" Relationship="WASSTDModelo.ProfesionalExpediente" FromRole="Expediente" ToRole="Profesional" />
-          <NavigationProperty Name="Comitente" Relationship="WASSTDModelo.ComitenteExpediente" FromRole="Expediente" ToRole="Comitente" />
-          <NavigationProperty Name="Tarea" Relationship="WASSTDModelo.TareaExpediente" FromRole="Expediente" ToRole="Tarea" />
-          <Property Type="DateTime" Name="fecha_pago" Nullable="false" />
-        </EntityType>
-        <EntityType Name="OI" BaseType="WASSTDModelo.Expediente">
-          <Property Type="Decimal" Name="monto_obra" Nullable="false" />
-        </EntityType>
-        <EntityType Name="HM" BaseType="WASSTDModelo.Expediente">
-          <Property Type="Decimal" Name="dias_de_campo" Nullable="false" />
-          <Property Type="Decimal" Name="dias_de_gabinete" Nullable="false" />
-        </EntityType>
-        <EntityType Name="FE" BaseType="WASSTDModelo.Expediente">
-          <Property Type="Decimal" Name="dias_de_campo" Nullable="false" />
-          <Property Type="Decimal" Name="dias_de_gabinete" Nullable="false" />
-          <Property Type="Decimal" Name="hps" Nullable="false" />
-          <Property Type="Decimal" Name="bocas" Nullable="false" />
-          <Property Type="Decimal" Name="motores" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Comitente">
+        <EntityType Name="Tramite">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="razon_social" Nullable="false" />
-          <NavigationProperty Name="Expedientes" Relationship="WASSTDModelo.ComitenteExpediente" FromRole="Comitente" ToRole="Expediente" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Detalles_Tramite" Relationship="WASSTDModelo.Detalles_del_Tramite" FromRole="Tramite" ToRole="Detalles_Tramite" />
+          <NavigationProperty Name="Persona" Relationship="WASSTDModelo.TramitePersona" FromRole="Tramite" ToRole="Persona" />
+          <NavigationProperty Name="Tipo_Tramite" Relationship="WASSTDModelo.Tipo_TramiteTramite" FromRole="Tramite" ToRole="Tipo_Tramite" />
+          <Property Name="Tipo_Tramite_id" Type="Int32" Nullable="false" />
+          <Property Name="estado" Type="String" Nullable="false" />
         </EntityType>
-        <EntityType Name="Tarea">
+        <EntityType Name="Detalles_Tramite">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="descripcion" Nullable="false" />
-          <NavigationProperty Name="Expedientes" Relationship="WASSTDModelo.TareaExpediente" FromRole="Tarea" ToRole="Expediente" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" Nullable="false" />
+          <Property Name="fecha_desde" Type="DateTime" Nullable="true" />
+          <NavigationProperty Name="Tramite" Relationship="WASSTDModelo.Detalles_del_Tramite" FromRole="Detalles_Tramite" ToRole="Tramite" />
+          <Property Name="TramiteId" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="Liquidacion">
+        <Association Name="Detalles_del_Tramite">
+          <End Type="WASSTDModelo.Detalles_Tramite" Role="Detalles_Tramite" Multiplicity="*" />
+          <End Type="WASSTDModelo.Tramite" Role="Tramite" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Tramite">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Detalles_Tramite">
+              <PropertyRef Name="TramiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TramitePersona">
+          <End Type="WASSTDModelo.Tramite" Role="Tramite" Multiplicity="*" />
+          <End Type="WASSTDModelo.Persona" Role="Persona" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Tipo_Persona">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="tarea" Nullable="false" />
-          <Property Type="Decimal" Name="cantidad" Nullable="false" />
-          <Property Type="Decimal" Name="importe" Nullable="false" />
-          <NavigationProperty Name="Expediente" Relationship="WASSTDModelo.ExpedienteLiquidacion" FromRole="Liquidacion" ToRole="Expediente" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" Nullable="false" />
+          <NavigationProperty Name="Personas" Relationship="WASSTDModelo.Tipo_PersonaPersona" FromRole="Tipo_Persona" ToRole="Persona" />
         </EntityType>
-        <Association Name="ExpedienteLiquidacion">
-          <End Type="WASSTDModelo.Expediente" Role="Expediente" Multiplicity="1" />
-          <End Type="WASSTDModelo.Liquidacion" Role="Liquidacion" Multiplicity="*" />
+        <Association Name="Tipo_PersonaPersona">
+          <End Type="WASSTDModelo.Tipo_Persona" Role="Tipo_Persona" Multiplicity="1" />
+          <End Type="WASSTDModelo.Persona" Role="Persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_Persona">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Persona">
+              <PropertyRef Name="Tipo_PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
-        <Association Name="ProfesionalExpediente">
-          <End Type="WASSTDModelo.Profesional" Role="Profesional" Multiplicity="*" />
-          <End Type="WASSTDModelo.Expediente" Role="Expediente" Multiplicity="*" />
-        </Association>
-        <EntityType Name="Curso">
+        <EntityType Name="Tipo_Tramite">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Comision" Relationship="WASSTDModelo.ComisionCurso" FromRole="Curso" ToRole="Comision" />
-          <NavigationProperty Name="Docente" Relationship="WASSTDModelo.DocenteCurso" FromRole="Curso" ToRole="Docente" />
-          <Property Type="Int32" Name="asistentes" Nullable="false" />
-          <Property Type="Int32" Name="cupo" Nullable="false" />
-          <Property Type="Int32" Name="objetivo" Nullable="false" />
-          <Property Type="Boolean" Name="arancelado" Nullable="false" />
-          <Property Type="Decimal" Name="costo" Nullable="false" />
-          <Property Type="String" Name="descripcion" Nullable="false" />
-          <NavigationProperty Name="Clases" Relationship="WASSTDModelo.CursoClase" FromRole="Curso" ToRole="Clase" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" Nullable="false" />
+          <NavigationProperty Name="Tramite" Relationship="WASSTDModelo.Tipo_TramiteTramite" FromRole="Tipo_Tramite" ToRole="Tramite" />
         </EntityType>
-        <EntityType Name="Comision">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Cursos" Relationship="WASSTDModelo.ComisionCurso" FromRole="Comision" ToRole="Curso" />
-          <Property Type="String" Name="descripcion" Nullable="false" />
-          <Property Type="Decimal" Name="dinero_asignado" Nullable="false" />
-          <Property Type="Decimal" Name="dinero_gastado" Nullable="false" />
-        </EntityType>
-        <Association Name="ComisionCurso">
-          <End Type="WASSTDModelo.Comision" Role="Comision" Multiplicity="1" />
-          <End Type="WASSTDModelo.Curso" Role="Curso" Multiplicity="*" />
+        <Association Name="Tipo_TramiteTramite">
+          <End Type="WASSTDModelo.Tipo_Tramite" Role="Tipo_Tramite" Multiplicity="1" />
+          <End Type="WASSTDModelo.Tramite" Role="Tramite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo_Tramite">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Tramite">
+              <PropertyRef Name="Tipo_Tramite_id" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
-        <EntityType Name="Docente">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Cursos" Relationship="WASSTDModelo.DocenteCurso" FromRole="Docente" ToRole="Curso" />
-          <Property Type="String" Name="nombre_apellido" Nullable="false" />
-        </EntityType>
-        <Association Name="DocenteCurso">
-          <End Type="WASSTDModelo.Docente" Role="Docente" Multiplicity="1" />
-          <End Type="WASSTDModelo.Curso" Role="Curso" Multiplicity="*" />
-        </Association>
-        <EntityType Name="Clase">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="DateTime" Name="fecha" Nullable="false" />
-          <NavigationProperty Name="Curso" Relationship="WASSTDModelo.CursoClase" FromRole="Clase" ToRole="Curso" />
-          <NavigationProperty Name="Asistencias" Relationship="WASSTDModelo.ClaseAsistencia" FromRole="Clase" ToRole="Asistencia" />
-        </EntityType>
-        <Association Name="CursoClase">
-          <End Type="WASSTDModelo.Curso" Role="Curso" Multiplicity="1" />
-          <End Type="WASSTDModelo.Clase" Role="Clase" Multiplicity="*" />
-        </Association>
-        <EntityType Name="Asistencia">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Profesional" Relationship="WASSTDModelo.ProfesionalAsistencia" FromRole="Asistencia" ToRole="Profesional" />
-          <Property Type="Boolean" Name="presente" Nullable="false" />
-          <NavigationProperty Name="Clase" Relationship="WASSTDModelo.ClaseAsistencia" FromRole="Asistencia" ToRole="Clase" />
-        </EntityType>
-        <Association Name="ProfesionalAsistencia">
-          <End Type="WASSTDModelo.Profesional" Role="Profesional" Multiplicity="1" />
-          <End Type="WASSTDModelo.Asistencia" Role="Asistencia" Multiplicity="*" />
-        </Association>
-        <Association Name="ClaseAsistencia">
-          <End Type="WASSTDModelo.Clase" Role="Clase" Multiplicity="1" />
-          <End Type="WASSTDModelo.Asistencia" Role="Asistencia" Multiplicity="*" />
-        </Association>
-        <Association Name="ProfesionalCuota">
-          <End Type="WASSTDModelo.Profesional" Role="Profesional" Multiplicity="1" />
-          <End Type="WASSTDModelo.Cuota" Role="Cuota" Multiplicity="*" />
-        </Association>
-        <Association Name="ComitenteExpediente">
-          <End Type="WASSTDModelo.Comitente" Role="Comitente" Multiplicity="1" />
-          <End Type="WASSTDModelo.Expediente" Role="Expediente" Multiplicity="*" />
-        </Association>
-        <Association Name="TareaExpediente">
-          <End Type="WASSTDModelo.Tarea" Role="Tarea" Multiplicity="1" />
-          <End Type="WASSTDModelo.Expediente" Role="Expediente" Multiplicity="*" />
-        </Association>
-        <EntityType Name="Video">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="descripcion" Nullable="false" />
-          <Property Type="String" Name="link" Nullable="false" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2153,71 +784,19 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Profesionales">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Profesional)">
-        <MappingFragment StoreEntitySet="Profesionales">
+    <EntitySetMapping Name="Personas">
+      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Persona)">
+        <MappingFragment StoreEntitySet="Personas">
           <ScalarProperty Name="dni" ColumnName="dni" />
           <ScalarProperty Name="nombre_apellido" ColumnName="nombre_apellido" />
-          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
           <ScalarProperty Name="sexo" ColumnName="sexo" />
           <ScalarProperty Name="telefono" ColumnName="telefono" />
           <ScalarProperty Name="celular" ColumnName="celular" />
           <ScalarProperty Name="email1" ColumnName="email1" />
-          <ScalarProperty Name="email2" ColumnName="email2" />
           <ScalarProperty Name="observaciones" ColumnName="observaciones" />
-          <ScalarProperty Name="lugar_trabajo" ColumnName="lugar_trabajo" />
-          <ScalarProperty Name="convenio_año" ColumnName="convenio_año" />
-          <ScalarProperty Name="titulo_a_mostrar" ColumnName="titulo_a_mostrar" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CtasCtes">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.CtaCte)">
-        <MappingFragment StoreEntitySet="CtasCtes">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="saldo" ColumnName="saldo" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Movimientos">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Movimiento)">
-        <MappingFragment StoreEntitySet="Movimientos">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-          <ScalarProperty Name="importe" ColumnName="importe" />
-          <ScalarProperty Name="fecha" ColumnName="fecha" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Tipos_Movimientos">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Tipo_Movimiento)">
-        <MappingFragment StoreEntitySet="Tipos_Movimientos">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Comprobantes">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Comprobante)">
-        <MappingFragment StoreEntitySet="Comprobantes">
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Factura)">
-        <MappingFragment StoreEntitySet="Comprobantes_Factura">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="numero" ColumnName="numero" />
-          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-          <ScalarProperty Name="precio_unitario" ColumnName="precio_unitario" />
-          <ScalarProperty Name="importe" ColumnName="importe" />
-          <ScalarProperty Name="total" ColumnName="total" />
-        </MappingFragment>
-      </EntityTypeMapping>
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Boleta)">
-        <MappingFragment StoreEntitySet="Comprobantes_Boleta">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="clave_fiscal" ColumnName="clave_fiscal" />
+          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+          <ScalarProperty Name="Tipo_PersonaId" ColumnName="Tipo_PersonaId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -2246,105 +825,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Tipos_Matriculas">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Tipo_Matricula)">
-        <MappingFragment StoreEntitySet="Tipos_Matriculas">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Colegios">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Colegio)">
-        <MappingFragment StoreEntitySet="Colegios">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Historiales">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Historial)">
-        <MappingFragment StoreEntitySet="Historiales">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="estado" ColumnName="estado" />
-          <ScalarProperty Name="fecha" ColumnName="fecha" />
-          <ScalarProperty Name="tipo_matricula" ColumnName="tipo_matricula" />
-          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Titulos">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Titulo)">
-        <MappingFragment StoreEntitySet="Titulos">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-          <ScalarProperty Name="ley_aprobacion" ColumnName="ley_aprobacion" />
-          <ScalarProperty Name="res_coneau" ColumnName="res_coneau" />
-          <ScalarProperty Name="validez" ColumnName="validez" />
-          <ScalarProperty Name="aprobacion_cie" ColumnName="aprobacion_cie" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Universidades">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Universidad)">
-        <MappingFragment StoreEntitySet="Universidades">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Jurisdicciones">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Jurisdiccion)">
-        <MappingFragment StoreEntitySet="Jurisdicciones">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Modalidades">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Modalidad)">
-        <MappingFragment StoreEntitySet="Modalidades">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Niveles">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Nivel)">
-        <MappingFragment StoreEntitySet="Niveles">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Especialidades">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Especialidad)">
-        <MappingFragment StoreEntitySet="Especialidades">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Planes">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Plan)">
-        <MappingFragment StoreEntitySet="Planes">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="año" ColumnName="año" />
-          <ScalarProperty Name="ordenanza" ColumnName="ordenanza" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-          <ScalarProperty Name="incumbencia" ColumnName="incumbencia" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Tipos_Certificados">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Tipo_Certificado)">
-        <MappingFragment StoreEntitySet="Tipos_Certificados">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-          <ScalarProperty Name="texto" ColumnName="texto" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Direcciones">
       <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Direccion)">
         <MappingFragment StoreEntitySet="Direcciones">
@@ -2361,185 +841,38 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Matriculas">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Matricula)">
-        <MappingFragment StoreEntitySet="Matriculas">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="icie" ColumnName="icie" />
-          <ScalarProperty Name="certificado" ColumnName="certificado" />
-          <ScalarProperty Name="fecha_doc" ColumnName="fecha_doc" />
-          <ScalarProperty Name="incumbencia" ColumnName="incumbencia" />
-          <ScalarProperty Name="plan" ColumnName="plan" />
-          <ScalarProperty Name="analitico" ColumnName="analitico" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Legajos_Academicos">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Legajo_Academico)">
-        <MappingFragment StoreEntitySet="Legajos_Academicos">
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Alteradores">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Alterador)">
-        <MappingFragment StoreEntitySet="Alteradores">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="porcentaje_recargo" ColumnName="porcentaje_recargo" />
-          <ScalarProperty Name="dias_gracias" ColumnName="dias_gracias" />
-          <ScalarProperty Name="valor_cuota" ColumnName="valor_cuota" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Comitentes">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Comitente)">
-        <MappingFragment StoreEntitySet="Comitentes">
+    <EntitySetMapping Name="Tramites">
+      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Tramite)">
+        <MappingFragment StoreEntitySet="Tramites">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="razon_social" ColumnName="razon_social" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Tareas">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Tarea)">
-        <MappingFragment StoreEntitySet="Tareas">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Liquidaciones">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Liquidacion)">
-        <MappingFragment StoreEntitySet="Liquidaciones">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="tarea" ColumnName="tarea" />
-          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-          <ScalarProperty Name="importe" ColumnName="importe" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Cursos">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Curso)">
-        <MappingFragment StoreEntitySet="Cursos">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="asistentes" ColumnName="asistentes" />
-          <ScalarProperty Name="cupo" ColumnName="cupo" />
-          <ScalarProperty Name="objetivo" ColumnName="objetivo" />
-          <ScalarProperty Name="arancelado" ColumnName="arancelado" />
-          <ScalarProperty Name="costo" ColumnName="costo" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Comisiones">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Comision)">
-        <MappingFragment StoreEntitySet="Comisiones">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-          <ScalarProperty Name="dinero_asignado" ColumnName="dinero_asignado" />
-          <ScalarProperty Name="dinero_gastado" ColumnName="dinero_gastado" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Docentes">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Docente)">
-        <MappingFragment StoreEntitySet="Docentes">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="nombre_apellido" ColumnName="nombre_apellido" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Clases">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Clase)">
-        <MappingFragment StoreEntitySet="Clases">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="fecha" ColumnName="fecha" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Asistencias">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Asistencia)">
-        <MappingFragment StoreEntitySet="Asistencias">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="presente" ColumnName="presente" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Expedientes">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Expediente)">
-        <MappingFragment StoreEntitySet="Expedientes">
-          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="Tipo_Tramite_id" ColumnName="Tipo_Tramite_id" />
           <ScalarProperty Name="estado" ColumnName="estado" />
-          <ScalarProperty Name="fecha_devolucion" ColumnName="fecha_devolucion" />
-          <ScalarProperty Name="fecha_recepcion" ColumnName="fecha_recepcion" />
-          <ScalarProperty Name="tipo_aporte" ColumnName="tipo_aporte" />
-          <ScalarProperty Name="fecha_aprobacion" ColumnName="fecha_aprobacion" />
-          <ScalarProperty Name="fecha_pago" ColumnName="fecha_pago" />
-        </MappingFragment>
-      </EntityTypeMapping>
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.OI)">
-        <MappingFragment StoreEntitySet="Expedientes_OI">
-          <ScalarProperty Name="numero" ColumnName="numero" />
-          <ScalarProperty Name="monto_obra" ColumnName="monto_obra" />
-        </MappingFragment>
-      </EntityTypeMapping>
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.HM)">
-        <MappingFragment StoreEntitySet="Expedientes_HM">
-          <ScalarProperty Name="numero" ColumnName="numero" />
-          <ScalarProperty Name="dias_de_campo" ColumnName="dias_de_campo" />
-          <ScalarProperty Name="dias_de_gabinete" ColumnName="dias_de_gabinete" />
-        </MappingFragment>
-      </EntityTypeMapping>
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.FE)">
-        <MappingFragment StoreEntitySet="Expedientes_FE">
-          <ScalarProperty Name="numero" ColumnName="numero" />
-          <ScalarProperty Name="dias_de_campo" ColumnName="dias_de_campo" />
-          <ScalarProperty Name="dias_de_gabinete" ColumnName="dias_de_gabinete" />
-          <ScalarProperty Name="hps" ColumnName="hps" />
-          <ScalarProperty Name="bocas" ColumnName="bocas" />
-          <ScalarProperty Name="motores" ColumnName="motores" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Cuotas">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Cuota)">
-        <MappingFragment StoreEntitySet="Cuotas">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="estado" ColumnName="estado" />
+    <EntitySetMapping Name="Detalles_Tramites">
+      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Detalles_Tramite)">
+        <MappingFragment StoreEntitySet="Detalles_Tramites">
+          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Anual)">
-        <MappingFragment StoreEntitySet="Cuotas_Anual">
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Bimensual)">
-        <MappingFragment StoreEntitySet="Cuotas_Bimensual">
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Modificador)">
-        <MappingFragment StoreEntitySet="Cuotas_Modificador">
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Descuento_Anual)">
-        <MappingFragment StoreEntitySet="Cuotas_Descuento_Anual">
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Con_Recargo)">
-        <MappingFragment StoreEntitySet="Cuotas_Con_Recargo">
-          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fecha_desde" ColumnName="fecha_desde" />
+          <ScalarProperty Name="TramiteId" ColumnName="TramiteId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Videos">
-      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Video)">
-        <MappingFragment StoreEntitySet="Videos">
+    <EntitySetMapping Name="Tipos_Personas">
+      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Tipo_Persona)">
+        <MappingFragment StoreEntitySet="Tipos_Personas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipos_Tramites">
+      <EntityTypeMapping TypeName="IsTypeOf(WASSTDModelo.Tipo_Tramite)">
+        <MappingFragment StoreEntitySet="Tipos_Tramites">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-          <ScalarProperty Name="link" ColumnName="link" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -2583,38 +916,6 @@
         <ScalarProperty Name="id" ColumnName="id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="CtasCtesProfesionales" TypeName="WASSTDModelo.CtaCteProfesional" StoreEntitySet="CtasCtes">
-      <EndProperty Name="Profesional">
-        <ScalarProperty Name="dni" ColumnName="Profesional_dni" />
-      </EndProperty>
-      <EndProperty Name="CtaCte">
-        <ScalarProperty Name="id" ColumnName="id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="MovimientosCtaCtes" TypeName="WASSTDModelo.MovimientoCtaCte" StoreEntitySet="Movimientos">
-      <EndProperty Name="CtaCte">
-        <ScalarProperty Name="id" ColumnName="CtaCte_id" />
-      </EndProperty>
-      <EndProperty Name="Movimiento">
-        <ScalarProperty Name="id" ColumnName="id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="Tipo_MovimientoMovimiento" TypeName="WASSTDModelo.Tipo_MovimientoMovimiento" StoreEntitySet="Movimientos">
-      <EndProperty Name="Tipo_Movimiento">
-        <ScalarProperty Name="id" ColumnName="Tipo_Movimiento_id" />
-      </EndProperty>
-      <EndProperty Name="Movimiento">
-        <ScalarProperty Name="id" ColumnName="id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ComprobantesMovimientos" TypeName="WASSTDModelo.ComprobanteMovimiento" StoreEntitySet="Movimientos">
-      <EndProperty Name="Comprobante">
-        <ScalarProperty Name="id" ColumnName="Comprobante_id" />
-      </EndProperty>
-      <EndProperty Name="Movimiento">
-        <ScalarProperty Name="id" ColumnName="id" />
-      </EndProperty>
-    </AssociationSetMapping>
     <AssociationSetMapping Name="ProvinciasLocalidades" TypeName="WASSTDModelo.ProvinciaLocalidades" StoreEntitySet="Localidades">
       <EndProperty Name="Provincia">
         <ScalarProperty Name="id" ColumnName="Provincia_id" />
@@ -2623,101 +924,28 @@
         <ScalarProperty Name="id" ColumnName="id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="ProfesionalesHistoriales" TypeName="WASSTDModelo.ProfesionalHistoriales" StoreEntitySet="Historiales">
-      <EndProperty Name="Profesional">
-        <ScalarProperty Name="dni" ColumnName="Profesional_dni" />
-      </EndProperty>
-      <EndProperty Name="Historial">
-        <ScalarProperty Name="id" ColumnName="id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ProfesionalesDirecciones" TypeName="WASSTDModelo.ProfesionalDirecciones" StoreEntitySet="Direcciones">
-      <EndProperty Name="Profesional">
-        <ScalarProperty Name="dni" ColumnName="Profesional_dni" />
+    <AssociationSetMapping Name="PersonasDirecciones" TypeName="WASSTDModelo.PersonaDirecciones" StoreEntitySet="Direcciones">
+      <EndProperty Name="Persona">
+        <ScalarProperty Name="dni" ColumnName="Persona_dni" />
       </EndProperty>
       <EndProperty Name="Direccion">
         <ScalarProperty Name="id" ColumnName="id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="ProfesionalesMatriculas" TypeName="WASSTDModelo.ProfesionalMatricula" StoreEntitySet="Matriculas">
-      <EndProperty Name="Profesional">
-        <ScalarProperty Name="dni" ColumnName="Profesional_dni" />
-      </EndProperty>
-      <EndProperty Name="Matricula">
-        <ScalarProperty Name="id" ColumnName="id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="Tipos_DocumentosProfesionales" TypeName="WASSTDModelo.Tipo_DocumentoProfesional" StoreEntitySet="Profesionales">
+    <AssociationSetMapping Name="Tipos_DocumentosPersonas" TypeName="WASSTDModelo.Tipo_DocumentoPersona" StoreEntitySet="Personas">
       <EndProperty Name="Tipo_Documento">
         <ScalarProperty Name="id" ColumnName="Tipo_Documento_id" />
       </EndProperty>
-      <EndProperty Name="Profesional">
+      <EndProperty Name="Persona">
         <ScalarProperty Name="dni" ColumnName="dni" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="EstadosProfesionales" TypeName="WASSTDModelo.EstadoProfesional" StoreEntitySet="Profesionales">
+    <AssociationSetMapping Name="EstadosPersonas" TypeName="WASSTDModelo.EstadoPersona" StoreEntitySet="Personas">
       <EndProperty Name="Estado">
         <ScalarProperty Name="id" ColumnName="Estado_id" />
       </EndProperty>
-      <EndProperty Name="Profesional">
+      <EndProperty Name="Persona">
         <ScalarProperty Name="dni" ColumnName="dni" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ColegiosProfesionales" TypeName="WASSTDModelo.ColegioProfesional" StoreEntitySet="Profesionales">
-      <EndProperty Name="Colegio">
-        <ScalarProperty Name="id" ColumnName="Colegio_id" />
-      </EndProperty>
-      <EndProperty Name="Profesional">
-        <ScalarProperty Name="dni" ColumnName="dni" />
-      </EndProperty>
-      <Condition ColumnName="Colegio_id" IsNull="false" />
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="Tipos_MatriculasProfesionales" TypeName="WASSTDModelo.Tipo_MatriculaProfesional" StoreEntitySet="Profesionales">
-      <EndProperty Name="Tipo_Matricula">
-        <ScalarProperty Name="id" ColumnName="Tipo_Matricula_id" />
-      </EndProperty>
-      <EndProperty Name="Profesional">
-        <ScalarProperty Name="dni" ColumnName="dni" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="JurisdiccionTitulo" TypeName="WASSTDModelo.JurisdiccionTitulo" StoreEntitySet="Titulos">
-      <EndProperty Name="Jurisdiccion">
-        <ScalarProperty Name="id" ColumnName="Jurisdiccion_id" />
-      </EndProperty>
-      <EndProperty Name="Titulo">
-        <ScalarProperty Name="id" ColumnName="id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ModalidadTitulo" TypeName="WASSTDModelo.ModalidadTitulo" StoreEntitySet="Titulos">
-      <EndProperty Name="Modalidad">
-        <ScalarProperty Name="id" ColumnName="Modalidad_id" />
-      </EndProperty>
-      <EndProperty Name="Titulo">
-        <ScalarProperty Name="id" ColumnName="id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="NivelTitulo" TypeName="WASSTDModelo.NivelTitulo" StoreEntitySet="Titulos">
-      <EndProperty Name="Nivel">
-        <ScalarProperty Name="id" ColumnName="Nivel_id" />
-      </EndProperty>
-      <EndProperty Name="Titulo">
-        <ScalarProperty Name="id" ColumnName="id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="EspecialidadesTitulos" TypeName="WASSTDModelo.EspecialidadTitulo" StoreEntitySet="Titulos">
-      <EndProperty Name="Especialidad">
-        <ScalarProperty Name="id" ColumnName="Especialidad_id" />
-      </EndProperty>
-      <EndProperty Name="Titulo">
-        <ScalarProperty Name="id" ColumnName="id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="UniversidadesTitulos" TypeName="WASSTDModelo.UniversidadTitulo" StoreEntitySet="Titulos">
-      <EndProperty Name="Universidad">
-        <ScalarProperty Name="id" ColumnName="Universidad_id" />
-      </EndProperty>
-      <EndProperty Name="Titulo">
-        <ScalarProperty Name="id" ColumnName="id" />
       </EndProperty>
     </AssociationSetMapping>
     <AssociationSetMapping Name="LocalidadesDirecciones" TypeName="WASSTDModelo.LocalidadDireccion" StoreEntitySet="Direcciones">
@@ -2728,108 +956,12 @@
         <ScalarProperty Name="id" ColumnName="id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="MatriculaLegajo_Academico" TypeName="WASSTDModelo.MatriculaLegajo_Academico" StoreEntitySet="Matriculas">
-      <EndProperty Name="Legajo_Academico">
-        <ScalarProperty Name="id" ColumnName="Legajo_Academico_id" />
+    <AssociationSetMapping Name="TramitesPersonas" TypeName="WASSTDModelo.TramitePersona" StoreEntitySet="Tramites">
+      <EndProperty Name="Persona">
+        <ScalarProperty Name="dni" ColumnName="Persona_dni" />
       </EndProperty>
-      <EndProperty Name="Matricula">
-        <ScalarProperty Name="id" ColumnName="id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="PlanesLegajos_Academicos" TypeName="WASSTDModelo.PlanLegajo_Academico" StoreEntitySet="Legajos_Academicos">
-      <EndProperty Name="Plan">
-        <ScalarProperty Name="id" ColumnName="Plan_id" />
-      </EndProperty>
-      <EndProperty Name="Legajo_Academico">
-        <ScalarProperty Name="id" ColumnName="id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="TitulosLegajos_Academicos" TypeName="WASSTDModelo.TituloLegajo_Academico" StoreEntitySet="Legajos_Academicos">
-      <EndProperty Name="Titulo">
-        <ScalarProperty Name="id" ColumnName="Titulo_id" />
-      </EndProperty>
-      <EndProperty Name="Legajo_Academico">
-        <ScalarProperty Name="id" ColumnName="id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ExpedienteLiquidacion" TypeName="WASSTDModelo.ExpedienteLiquidacion" StoreEntitySet="Liquidaciones">
-      <EndProperty Name="Expediente">
-        <ScalarProperty Name="numero" ColumnName="Expediente_numero" />
-      </EndProperty>
-      <EndProperty Name="Liquidacion">
+      <EndProperty Name="Tramite">
         <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ProfesionalExpediente" TypeName="WASSTDModelo.ProfesionalExpediente" StoreEntitySet="ProfesionalExpediente">
-      <EndProperty Name="Profesional">
-        <ScalarProperty Name="dni" ColumnName="Profesionales_dni" />
-      </EndProperty>
-      <EndProperty Name="Expediente">
-        <ScalarProperty Name="numero" ColumnName="Expedientes_numero" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ComisionCurso" TypeName="WASSTDModelo.ComisionCurso" StoreEntitySet="Cursos">
-      <EndProperty Name="Comision">
-        <ScalarProperty Name="id" ColumnName="Comision_id" />
-      </EndProperty>
-      <EndProperty Name="Curso">
-        <ScalarProperty Name="id" ColumnName="id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="DocenteCurso" TypeName="WASSTDModelo.DocenteCurso" StoreEntitySet="Cursos">
-      <EndProperty Name="Docente">
-        <ScalarProperty Name="id" ColumnName="Docente_id" />
-      </EndProperty>
-      <EndProperty Name="Curso">
-        <ScalarProperty Name="id" ColumnName="id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="CursoClase" TypeName="WASSTDModelo.CursoClase" StoreEntitySet="Clases">
-      <EndProperty Name="Curso">
-        <ScalarProperty Name="id" ColumnName="Curso_id" />
-      </EndProperty>
-      <EndProperty Name="Clase">
-        <ScalarProperty Name="id" ColumnName="id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ProfesionalAsistencia" TypeName="WASSTDModelo.ProfesionalAsistencia" StoreEntitySet="Asistencias">
-      <EndProperty Name="Profesional">
-        <ScalarProperty Name="dni" ColumnName="Profesional_dni" />
-      </EndProperty>
-      <EndProperty Name="Asistencia">
-        <ScalarProperty Name="id" ColumnName="id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ClaseAsistencia" TypeName="WASSTDModelo.ClaseAsistencia" StoreEntitySet="Asistencias">
-      <EndProperty Name="Clase">
-        <ScalarProperty Name="id" ColumnName="Clase_id" />
-      </EndProperty>
-      <EndProperty Name="Asistencia">
-        <ScalarProperty Name="id" ColumnName="id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ProfesionalCuota" TypeName="WASSTDModelo.ProfesionalCuota" StoreEntitySet="Cuotas">
-      <EndProperty Name="Profesional">
-        <ScalarProperty Name="dni" ColumnName="Profesional_dni" />
-      </EndProperty>
-      <EndProperty Name="Cuota">
-        <ScalarProperty Name="id" ColumnName="id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="ComitenteExpediente" TypeName="WASSTDModelo.ComitenteExpediente" StoreEntitySet="Expedientes">
-      <EndProperty Name="Comitente">
-        <ScalarProperty Name="Id" ColumnName="Comitente_Id" />
-      </EndProperty>
-      <EndProperty Name="Expediente">
-        <ScalarProperty Name="numero" ColumnName="numero" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="TareaExpediente" TypeName="WASSTDModelo.TareaExpediente" StoreEntitySet="Expedientes">
-      <EndProperty Name="Tarea">
-        <ScalarProperty Name="Id" ColumnName="Tarea_Id" />
-      </EndProperty>
-      <EndProperty Name="Expediente">
-        <ScalarProperty Name="numero" ColumnName="numero" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>
@@ -2852,7 +984,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="WASSTD" ZoomLevel="122" ShowGrid="true" DisplayType="false">
+      <Diagram Name="WASSTD" ZoomLevel="74" ShowGrid="true" DisplayType="false">
         <EntityTypeShape EntityType="WASSTDModelo.Usuario" Width="1.5" PointX="0.75" PointY="2.875" Height="2.085348307291667" />
         <EntityTypeShape EntityType="WASSTDModelo.Grupo" Width="1.5" PointX="0.75" PointY="0.5" Height="1.5923063151041665" />
         <AssociationConnector Association="WASSTDModelo.UsuarioGrupo">
@@ -2879,255 +1011,38 @@
           <ConnectorPoint PointX="4.375" PointY="3.5889794921875" />
           <ConnectorPoint PointX="5.375" PointY="3.5889794921875" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="WASSTDModelo.Profesional" Width="1.875" PointX="10.125" PointY="7.875" Height="5.2494108072916656" />
-        <EntityTypeShape EntityType="WASSTDModelo.CtaCte" Width="1.5" PointX="13" PointY="5" Height="1.7879850260416665" />
-        <AssociationConnector Association="WASSTDModelo.CtaCteProfesional">
-          <ConnectorPoint PointX="13.75" PointY="6.7879850260416665" />
-          <ConnectorPoint PointX="13.75" PointY="11.185751139322916" />
-          <ConnectorPoint PointX="12" PointY="11.185751139322916" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WASSTDModelo.Movimiento" Width="1.875" PointX="12.875" PointY="0.625" Height="2.364889322916667" />
-        <AssociationConnector Association="WASSTDModelo.MovimientoCtaCte">
-          <ConnectorPoint PointX="13.75" PointY="2.989889322916667" />
-          <ConnectorPoint PointX="13.75" PointY="5" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WASSTDModelo.Cuota" Width="1.875" PointX="26.875" PointY="4.75" Height="1.7879850260416665" />
-        <EntityTypeShape EntityType="WASSTDModelo.Factura" Width="1.875" PointX="18.5" PointY="2.75" Height="2.1725878906249996" />
-        <EntityTypeShape EntityType="WASSTDModelo.Tipo_Movimiento" Width="1.875" PointX="9.5" PointY="0.625" Height="1.5956835937499996" />
-        <AssociationConnector Association="WASSTDModelo.Tipo_MovimientoMovimiento">
-          <ConnectorPoint PointX="11.375" PointY="1.4228417968749998" />
-          <ConnectorPoint PointX="12.875" PointY="1.4228417968749998" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WASSTDModelo.Comprobante" Width="1.875" PointX="16.875" PointY="0.625" Height="1.4033821614583335" IsExpanded="true" />
-        <AssociationConnector Association="WASSTDModelo.ComprobanteMovimiento">
-          <ConnectorPoint PointX="16.875" PointY="1.3266910807291672" />
-          <ConnectorPoint PointX="14.75" PointY="1.3266910807291672" />
-        </AssociationConnector>
-        <InheritanceConnector EntityType="WASSTDModelo.Factura" ManuallyRouted="false">
-          <ConnectorPoint PointX="17.8125" PointY="2.0283821614583335" />
-          <ConnectorPoint PointX="17.8125" PointY="2.375" />
-          <ConnectorPoint PointX="19.379116152899865" PointY="2.375" />
-          <ConnectorPoint PointX="19.379116152899865" PointY="2.75" />
-        </InheritanceConnector>
-        <EntityTypeShape EntityType="WASSTDModelo.Localidad" Width="1.875" PointX="0.75" PointY="10.75" Height="1.9802864583333335" />
-        <EntityTypeShape EntityType="WASSTDModelo.Provincia" Width="1.875" PointX="0.75" PointY="8.375" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="WASSTDModelo.Persona" Width="1.875" PointX="12.875" PointY="0.625" Height="5.2494108072916656" IsExpanded="true" />
+        <EntityTypeShape EntityType="WASSTDModelo.Localidad" Width="1.875" PointX="7.875" PointY="3" Height="1.9802864583333335" />
+        <EntityTypeShape EntityType="WASSTDModelo.Provincia" Width="1.875" PointX="7.875" PointY="0.625" Height="1.5956835937499996" />
         <AssociationConnector Association="WASSTDModelo.ProvinciaLocalidades">
           <ConnectorPoint PointX="1.6875" PointY="9.97068359375" />
           <ConnectorPoint PointX="1.6875" PointY="10.75" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="WASSTDModelo.Estado" Width="1.875" PointX="3.375" PointY="8.625" Height="1.5956835937499996" />
-        <EntityTypeShape EntityType="WASSTDModelo.Tipo_Matricula" Width="1.875" PointX="3.375" PointY="12.75" Height="1.4033821614583353" />
-        <EntityTypeShape EntityType="WASSTDModelo.Colegio" Width="1.875" PointX="3.375" PointY="10.5" Height="1.5956835937499996" />
-        <EntityTypeShape EntityType="WASSTDModelo.Historial" Width="1.875" PointX="0.75" PointY="6" Height="2.1725878906249996" />
-        <AssociationConnector Association="WASSTDModelo.ProfesionalHistoriales">
-          <ConnectorPoint PointX="11.0625" PointY="7.875" />
-          <ConnectorPoint PointX="11.0625" PointY="6.4062500000000018" />
-          <ConnectorPoint PointX="2.625" PointY="6.4062500000000018" />
+        <EntityTypeShape EntityType="WASSTDModelo.Estado" Width="1.875" PointX="10.25" PointY="2.375" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="WASSTDModelo.Direccion" Width="1.875" PointX="10.5" PointY="5.625" Height="1.7879850260416674" />
+        <AssociationConnector Association="WASSTDModelo.PersonaDirecciones" ManuallyRouted="false">
         </AssociationConnector>
-        <EntityTypeShape EntityType="WASSTDModelo.Titulo" Width="1.875" PointX="6.5" PointY="21.25" Height="3.3263964843750031" />
-        <EntityTypeShape EntityType="WASSTDModelo.Universidad" Width="1.875" PointX="9.875" PointY="21" Height="1.5956835937500031" />
-        <EntityTypeShape EntityType="WASSTDModelo.Jurisdiccion" Width="1.875" PointX="0.75" PointY="17.125" Height="1.5956835937500031" />
-        <EntityTypeShape EntityType="WASSTDModelo.Modalidad" Width="1.875" PointX="0.75" PointY="19" Height="1.5956835937500031" />
-        <EntityTypeShape EntityType="WASSTDModelo.Nivel" Width="1.875" PointX="0.75" PointY="20.875" Height="1.5956835937500031" />
-        <EntityTypeShape EntityType="WASSTDModelo.Especialidad" Width="1.875" PointX="9.875" PointY="23" Height="1.5956835937500031" />
-        <EntityTypeShape EntityType="WASSTDModelo.Plan" Width="1.875" PointX="9.875" PointY="18.375" Height="1.9802864583333353" />
-        <EntityTypeShape EntityType="WASSTDModelo.Tipo_Certificado" Width="1.875" PointX="0.75" PointY="22.875" Height="1.5956835937500031" />
-        <EntityTypeShape EntityType="WASSTDModelo.Direccion" Width="1.875" PointX="0.75" PointY="13.5" Height="1.7879850260416674" />
-        <AssociationConnector Association="WASSTDModelo.ProfesionalDirecciones">
-          <ConnectorPoint PointX="11.0625" PointY="13.124410807291666" />
-          <ConnectorPoint PointX="11.0625" PointY="14.797841796874998" />
-          <ConnectorPoint PointX="10.645830833333333" PointY="14.797841796874998" />
-          <ConnectorPoint PointX="10.479164166666665" PointY="14.797841796874998" />
-          <ConnectorPoint PointX="2.625" PointY="14.797841796874998" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WASSTDModelo.Tipo_Documento" Width="1.875" PointX="3.375" PointY="6.875" Height="1.5956835937499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="WASSTDModelo.Matricula" Width="1.875" PointX="6.5" PointY="15.25" Height="2.7494921874999996" />
-        <AssociationConnector Association="WASSTDModelo.ProfesionalMatricula">
-          <ConnectorPoint PointX="10.5624975" PointY="13.124410807291666" />
-          <ConnectorPoint PointX="10.5624975" PointY="16.624746093749998" />
-          <ConnectorPoint PointX="8.375" PointY="16.624746093749998" />
-        </AssociationConnector>
-        <AssociationConnector Association="WASSTDModelo.Tipo_DocumentoProfesional">
+        <EntityTypeShape EntityType="WASSTDModelo.Tipo_Documento" Width="1.875" PointX="10.25" PointY="0.625" Height="1.5956835937499996" IsExpanded="true" />
+        <AssociationConnector Association="WASSTDModelo.Tipo_DocumentoPersona">
           <ConnectorPoint PointX="5.25" PointY="8.172841796874998" />
           <ConnectorPoint PointX="10.125" PointY="8.172841796874998" />
         </AssociationConnector>
-        <AssociationConnector Association="WASSTDModelo.EstadoProfesional">
+        <AssociationConnector Association="WASSTDModelo.EstadoPersona">
           <ConnectorPoint PointX="5.25" PointY="9.422841796875" />
           <ConnectorPoint PointX="10.125" PointY="9.422841796875" />
-        </AssociationConnector>
-        <AssociationConnector Association="WASSTDModelo.ColegioProfesional">
-          <ConnectorPoint PointX="5.25" PointY="11.297841796875" />
-          <ConnectorPoint PointX="10.125" PointY="11.297841796875" />
-        </AssociationConnector>
-        <AssociationConnector Association="WASSTDModelo.Tipo_MatriculaProfesional">
-          <ConnectorPoint PointX="5.25" PointY="12.937205403645834" />
-          <ConnectorPoint PointX="10.125" PointY="12.937205403645834" />
-        </AssociationConnector>
-        <AssociationConnector Association="WASSTDModelo.JurisdiccionTitulo">
-          <ConnectorPoint PointX="2.625" PointY="18.719455144831734" />
-          <ConnectorPoint PointX="3" PointY="19.094455144831734" />
-          <ConnectorPoint PointX="3" PointY="23.393553142095868" />
-          <ConnectorPoint PointX="6.5" PointY="23.393553142095868" />
-        </AssociationConnector>
-        <AssociationConnector Association="WASSTDModelo.ModalidadTitulo">
-          <ConnectorPoint PointX="2.625" PointY="20.533082698918271" />
-          <ConnectorPoint PointX="2.9410744349011213" PointY="20.849157133819393" />
-          <ConnectorPoint PointX="3.0589255650988791" PointY="20.967008264017149" />
-          <ConnectorPoint PointX="3.3125" PointY="21.220582698918271" />
-          <ConnectorPoint PointX="3.3125" PointY="22.540823553313125" />
-          <ConnectorPoint PointX="6.5" PointY="22.540823553313125" />
-        </AssociationConnector>
-        <AssociationConnector Association="WASSTDModelo.NivelTitulo">
-          <ConnectorPoint PointX="2.625" PointY="21.860341796875" />
-          <ConnectorPoint PointX="2.9166666666666665" PointY="21.860341796875" />
-          <ConnectorPoint PointX="3.0833333333333335" PointY="21.860341796875" />
-          <ConnectorPoint PointX="3.2291666666666665" PointY="21.860341796875" />
-          <ConnectorPoint PointX="3.3958333333333335" PointY="21.860341796875" />
-          <ConnectorPoint PointX="6.5" PointY="21.860341796875" />
-        </AssociationConnector>
-        <AssociationConnector Association="WASSTDModelo.EspecialidadTitulo">
-          <ConnectorPoint PointX="9.875" PointY="23.7881982421875" />
-          <ConnectorPoint PointX="8.375" PointY="23.7881982421875" />
-        </AssociationConnector>
-        <AssociationConnector Association="WASSTDModelo.UniversidadTitulo">
-          <ConnectorPoint PointX="9.875" PointY="21.922841796875" />
-          <ConnectorPoint PointX="8.375" PointY="21.922841796875" />
         </AssociationConnector>
         <AssociationConnector Association="WASSTDModelo.LocalidadDireccion">
           <ConnectorPoint PointX="1.6875" PointY="12.730286458333334" />
           <ConnectorPoint PointX="1.6875" PointY="13.5" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="WASSTDModelo.Legajo_Academico" Width="1.875" PointX="6.5" PointY="18.75" Height="1.7879850260416674" />
-        <AssociationConnector Association="WASSTDModelo.MatriculaLegajo_Academico">
-          <ConnectorPoint PointX="7.4375" PointY="17.9994921875" />
-          <ConnectorPoint PointX="7.4375" PointY="18.75" />
-        </AssociationConnector>
-        <AssociationConnector Association="WASSTDModelo.PlanLegajo_Academico">
-          <ConnectorPoint PointX="9.875" PointY="19.547841796874998" />
-          <ConnectorPoint PointX="8.375" PointY="19.547841796874998" />
-        </AssociationConnector>
-        <AssociationConnector Association="WASSTDModelo.TituloLegajo_Academico">
-          <ConnectorPoint PointX="7.4375" PointY="21.25" />
-          <ConnectorPoint PointX="7.4375" PointY="20.537985026041667" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WASSTDModelo.Anual" Width="1.875" PointX="29.125" PointY="6.875" Height="1.0187792968749996" />
-        <EntityTypeShape EntityType="WASSTDModelo.Bimensual" Width="2.125" PointX="26.75" PointY="6.875" Height="1.0187792968749996" />
-        <EntityTypeShape EntityType="WASSTDModelo.Modificador" Width="1.875" PointX="24.625" PointY="6.875" Height="1.0187792968749996" IsExpanded="true" />
-        <EntityTypeShape EntityType="WASSTDModelo.Descuento_Anual" Width="1.875" PointX="24.625" PointY="9.25" Height="1.0187792968749996" />
-        <EntityTypeShape EntityType="WASSTDModelo.Con_Recargo" Width="1.875" PointX="26.75" PointY="9.25" Height="1.0187792968749996" />
-        <EntityTypeShape EntityType="WASSTDModelo.Alterador" Width="1.875" PointX="23.5" PointY="0.625" Height="1.787985026041667" />
-        <EntityTypeShape EntityType="WASSTDModelo.Boleta" Width="1.5" PointX="15.5" PointY="2.75" Height="1.2110807291666657" />
-        <InheritanceConnector EntityType="WASSTDModelo.Boleta" ManuallyRouted="false">
-          <ConnectorPoint PointX="17.8125" PointY="2.0283821614583335" />
-          <ConnectorPoint PointX="17.8125" PointY="2.375" />
-          <ConnectorPoint PointX="16.196453170598293" PointY="2.375" />
-          <ConnectorPoint PointX="16.196453170598293" PointY="2.7499999999999991" />
-        </InheritanceConnector>
-        <EntityTypeShape EntityType="WASSTDModelo.Expediente" Width="1.5" PointX="18.75" PointY="6.5" Height="3.1340950520833317" />
-        <EntityTypeShape EntityType="WASSTDModelo.OI" Width="1.5" PointX="16.875" PointY="11.125" Height="1.2110807291666657" />
-        <InheritanceConnector EntityType="WASSTDModelo.OI" ManuallyRouted="false" >
-          <ConnectorPoint PointX="19.5" PointY="9.6340950520833317" />
-          <ConnectorPoint PointX="19.5" PointY="10.75" />
-          <ConnectorPoint PointX="17.625" PointY="10.75" />
-          <ConnectorPoint PointX="17.625" PointY="11.125" />
-        </InheritanceConnector>
-        <EntityTypeShape EntityType="WASSTDModelo.HM" Width="1.75" PointX="18.625" PointY="11.125" Height="1.4033821614583335" />
-        <EntityTypeShape EntityType="WASSTDModelo.FE" Width="1.5" PointX="20.875" PointY="11.125" Height="1.9802864583333335" />
-        <InheritanceConnector EntityType="WASSTDModelo.HM" ManuallyRouted="false" >
-          <ConnectorPoint PointX="19.5" PointY="9.6340950520833317" />
-          <ConnectorPoint PointX="19.5" PointY="11.125" />
-        </InheritanceConnector>
-        <InheritanceConnector EntityType="WASSTDModelo.FE" ManuallyRouted="false" >
-          <ConnectorPoint PointX="19.5" PointY="9.6340950520833317" />
-          <ConnectorPoint PointX="19.5" PointY="10.75" />
-          <ConnectorPoint PointX="21.625" PointY="10.75" />
-          <ConnectorPoint PointX="21.625" PointY="11.125" />
-        </InheritanceConnector>
-        <EntityTypeShape EntityType="WASSTDModelo.Comitente" Width="1.5" PointX="21.375" PointY="6.5" Height="1.5956835937499996" />
-        <EntityTypeShape EntityType="WASSTDModelo.Tarea" Width="1.5" PointX="21.5" PointY="8.625" Height="1.5956835937499996" />
-        <EntityTypeShape EntityType="WASSTDModelo.Liquidacion" Width="1.5" PointX="16.5" PointY="6.625" Height="1.9802864583333317" />
-        <AssociationConnector Association="WASSTDModelo.ExpedienteLiquidacion" >
-          <ConnectorPoint PointX="18.75" PointY="7.6151432291666659" />
-          <ConnectorPoint PointX="18" PointY="7.6151432291666659" />
-        </AssociationConnector>
-        <AssociationConnector Association="WASSTDModelo.ProfesionalExpediente">
-          <ConnectorPoint PointX="12" PointY="9.1509407552083335" />
-          <ConnectorPoint PointX="13.666666666666666" PointY="9.1509407552083335" />
-          <ConnectorPoint PointX="13.833333333333334" PointY="9.1509407552083335" />
-          <ConnectorPoint PointX="18.75" PointY="9.1509407552083335" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WASSTDModelo.Curso" Width="1.5" PointX="18.25" PointY="16.75" Height="2.9417936197916674" />
-        <EntityTypeShape EntityType="WASSTDModelo.Comision" Width="1.5" PointX="21.625" PointY="16.75" Height="1.9802864583333353" />
-        <AssociationConnector Association="WASSTDModelo.ComisionCurso">
-          <ConnectorPoint PointX="21.625" PointY="17.740143229166669" />
-          <ConnectorPoint PointX="19.75" PointY="17.740143229166669" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WASSTDModelo.Docente" Width="1.5" PointX="21.75" PointY="20.125" Height="1.5956835937500031" />
-        <AssociationConnector Association="WASSTDModelo.DocenteCurso">
-          <ConnectorPoint PointX="21.75" PointY="20.922841796875" />
-          <ConnectorPoint PointX="19" PointY="20.922841796875" />
-          <ConnectorPoint PointX="19" PointY="19.691793619791667" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WASSTDModelo.Clase" Width="1.5" PointX="14.625" PointY="19.5" Height="1.7879850260416674" />
-        <AssociationConnector Association="WASSTDModelo.CursoClase">
-          <ConnectorPoint PointX="18.5937475" PointY="19.691793619791667" />
-          <ConnectorPoint PointX="18.5937475" PointY="20.33857020833333" />
-          <ConnectorPoint PointX="16.125" PointY="20.33857020833333" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WASSTDModelo.Asistencia" Width="1.5" PointX="14.625" PointY="16.75" Height="1.5956835937500031" />
-        <AssociationConnector Association="WASSTDModelo.ProfesionalAsistencia">
-          <ConnectorPoint PointX="11.937502499999999" PointY="13.124410807291666" />
-          <ConnectorPoint PointX="11.937502499999999" PointY="17.53125" />
-          <ConnectorPoint PointX="14.625" PointY="17.53125" />
-        </AssociationConnector>
-        <AssociationConnector Association="WASSTDModelo.ClaseAsistencia">
-          <ConnectorPoint PointX="15.375" PointY="19.5" />
-          <ConnectorPoint PointX="15.375" PointY="18.537985026041667" />
-        </AssociationConnector>
-        <AssociationConnector Association="WASSTDModelo.ProfesionalCuota">
-          <ConnectorPoint PointX="11.398438515625001" PointY="7.875" />
-          <ConnectorPoint PointX="11.398438515625001" PointY="4.75" />
-          <ConnectorPoint PointX="13.666666666666666" PointY="4.7499999999999991" />
-          <ConnectorPoint PointX="13.833333333333334" PointY="4.75" />
-          <ConnectorPoint PointX="18.25" PointY="4.75" />
-          <ConnectorPoint PointX="18.25" PointY="5.7112939453125" />
-          <ConnectorPoint PointX="26.875" PointY="5.7112939453125" />
-        </AssociationConnector>
-        <InheritanceConnector EntityType="WASSTDModelo.Anual" ManuallyRouted="false">
-          <ConnectorPoint PointX="27.8125" PointY="6.5379850260416665" />
-          <ConnectorPoint PointX="27.8125" PointY="6.6829999999999981" />
-          <ConnectorPoint PointX="30.0625" PointY="6.6829999999999981" />
-          <ConnectorPoint PointX="30.0625" PointY="6.875" />
-        </InheritanceConnector>
-        <InheritanceConnector EntityType="WASSTDModelo.Bimensual" ManuallyRouted="false">
-          <ConnectorPoint PointX="27.8125" PointY="6.5379850260416665" />
-          <ConnectorPoint PointX="27.8125" PointY="6.875" />
-        </InheritanceConnector>
-        <InheritanceConnector EntityType="WASSTDModelo.Modificador" ManuallyRouted="false">
-          <ConnectorPoint PointX="27.8125" PointY="6.5379850260416665" />
-          <ConnectorPoint PointX="27.8125" PointY="6.6829999999999981" />
-          <ConnectorPoint PointX="25.5625" PointY="6.6829999999999981" />
-          <ConnectorPoint PointX="25.5625" PointY="6.875" />
-        </InheritanceConnector>
-        <InheritanceConnector EntityType="WASSTDModelo.Con_Recargo">
-          <ConnectorPoint PointX="25.5625" PointY="7.893779296875" />
-          <ConnectorPoint PointX="25.5625" PointY="8.875" />
-          <ConnectorPoint PointX="27.6875" PointY="8.875" />
-          <ConnectorPoint PointX="27.6875" PointY="9.25" />
-        </InheritanceConnector>
-        <InheritanceConnector EntityType="WASSTDModelo.Descuento_Anual">
-          <ConnectorPoint PointX="25.5625" PointY="7.893779296875" />
-          <ConnectorPoint PointX="25.5625" PointY="9.25" />
-        </InheritanceConnector>
-        <AssociationConnector Association="WASSTDModelo.ComitenteExpediente">
-          <ConnectorPoint PointX="21.375" PointY="7.297841796875" />
-          <ConnectorPoint PointX="20.25" PointY="7.297841796875" />
-        </AssociationConnector>
-        <AssociationConnector Association="WASSTDModelo.TareaExpediente">
-          <ConnectorPoint PointX="21.5" PointY="9.1295475260416659" />
-          <ConnectorPoint PointX="20.25" PointY="9.1295475260416659" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="WASSTDModelo.Video" Width="1.875" PointX="0.75" PointY="24.75" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="WASSTDModelo.Tramite" Width="1.5" PointX="15.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WASSTDModelo.Detalles_Tramite" Width="1.5" PointX="17.5" PointY="1.5" />
+        <AssociationConnector Association="WASSTDModelo.Detalles_del_Tramite" />
+        <AssociationConnector Association="WASSTDModelo.TramitePersona" />
+        <EntityTypeShape EntityType="WASSTDModelo.Tipo_Persona" Width="1.5" PointX="13.375" PointY="5.375" IsExpanded="true" />
+        <AssociationConnector Association="WASSTDModelo.Tipo_PersonaPersona" />
+        <EntityTypeShape EntityType="WASSTDModelo.Tipo_Tramite" Width="1.5" PointX="15.625" PointY="4.5" />
+        <AssociationConnector Association="WASSTDModelo.Tipo_TramiteTramite" />
         </Diagram>
     </Diagrams>
   </Designer>

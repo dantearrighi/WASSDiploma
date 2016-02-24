@@ -205,9 +205,6 @@
   <data name="book_icon&amp;161" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\book_icon&amp;161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="trama_comprobantes&amp;48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\trama_comprobantes&amp;48.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="page_layout_icon&amp;16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\page_layout_icon&amp;16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -315,9 +312,6 @@
   </data>
   <data name="wrench_plus_2_icon&amp;16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wrench_plus_2_icon&amp;16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo_final&amp;48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo_final&amp;48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="on-off_icon&amp;16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\on-off_icon&amp;16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -65,7 +65,7 @@ namespace WASSTD
 
             try
             {
-                foreach (Modelo_Entidades.Grupo oGrupo in cUsuario.ObtenerGruposUsuario(oUsuario.id))
+                foreach (Modelo_Entidades.Grupo oGrupo in  cUsuario.ObtenerGruposUsuario(oUsuario.id))
                 { 
                     foreach (Modelo_Entidades.Permiso oPermiso in cPerfil.ObtenerPermisos(oGrupo.id, form))
                     {
@@ -80,9 +80,9 @@ namespace WASSTD
                             break;
                             
                             case "Baja":
-                            if (form == "FrmProfesionales" || form == "FrmExpedientes")
+                            if (form == "FrmTramites")
                             {
-                                btn_eliminar.Visible = false;
+                                //btn_eliminar.Visible = false;
                             }
                             btn_eliminar.Enabled = true;
                             break;

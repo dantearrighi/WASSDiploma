@@ -52,6 +52,7 @@ namespace WASSTD
                 else
                 {
                     chk_estado.Enabled = true;
+                    
                 }
             }
 
@@ -103,8 +104,10 @@ namespace WASSTD
 
                     if (modo == "Alta")
                     {
-                        oUsuario.clave = Controladora.cEncriptacion.Encriptar(txt_nuevacontraseña.Text);
+                       // oUsuario.clave = Controladora.cEncriptacion.Encriptar(txt_nuevacontraseña.Text);
+                        oUsuario.clave = "UsuarioSinClave";
                         cUsuario.Alta(oUsuario);
+                        cUsuario.ResetearClave(oUsuario, oUsuario.email);
                     }
 
                     else
@@ -181,7 +184,7 @@ namespace WASSTD
                     return false;
                 }
             }
-            
+            /*
             if (string.IsNullOrEmpty(txt_nuevacontraseña.Text) || string.IsNullOrEmpty(txt_repetircontraseña.Text) || string.IsNullOrEmpty(txt_nuevacontraseña.Text))
             {
                 if (modo != "Alta")
@@ -214,7 +217,7 @@ namespace WASSTD
                     return false;
                 }
             }
-
+            */
 
             if (this.chklstbox_grupos.CheckedItems.Count == 0)
             {

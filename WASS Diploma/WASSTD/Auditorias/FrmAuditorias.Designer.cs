@@ -50,7 +50,7 @@
             this.dgv_datos.AllowUserToAddRows = false;
             this.dgv_datos.AllowUserToDeleteRows = false;
             this.dgv_datos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_datos.BackgroundColor = System.Drawing.Color.CornflowerBlue;
+            this.dgv_datos.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.dgv_datos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_datos.Location = new System.Drawing.Point(12, 164);
             this.dgv_datos.Name = "dgv_datos";
@@ -156,7 +156,6 @@
             // 
             // botonera1
             // 
-            this.botonera1.BackgroundImage = global::WASSTD.Properties.Resources.Fondo_Final;
             this.botonera1.Location = new System.Drawing.Point(9, 404);
             this.botonera1.Name = "botonera1";
             this.botonera1.Size = new System.Drawing.Size(488, 46);
@@ -196,7 +195,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WASSTD.Properties.Resources.Fondo_Final;
             this.ClientSize = new System.Drawing.Size(509, 462);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_nuevaconsulta);
@@ -211,7 +209,6 @@
             this.Controls.Add(this.lb_nombreapellido);
             this.Controls.Add(this.dgv_datos);
             this.Controls.Add(this.botonera1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAuditorias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de Auditorias";

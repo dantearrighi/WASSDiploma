@@ -179,7 +179,6 @@
             // 
             // tab_grupos
             // 
-            this.tab_grupos.BackgroundImage = global::WASSTD.Properties.Resources.Fondo_Final;
             this.tab_grupos.Controls.Add(this.chklstbox_grupos);
             this.tab_grupos.Location = new System.Drawing.Point(4, 22);
             this.tab_grupos.Name = "tab_grupos";
@@ -279,7 +278,7 @@
             // 
             this.lb_resetaercontraseña.Image = global::WASSTD.Properties.Resources.key_icon_16;
             this.lb_resetaercontraseña.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lb_resetaercontraseña.Location = new System.Drawing.Point(338, 0);
+            this.lb_resetaercontraseña.Location = new System.Drawing.Point(338, 3);
             this.lb_resetaercontraseña.Name = "lb_resetaercontraseña";
             this.lb_resetaercontraseña.Size = new System.Drawing.Size(132, 35);
             this.lb_resetaercontraseña.TabIndex = 0;

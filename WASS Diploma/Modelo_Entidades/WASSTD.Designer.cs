@@ -24,37 +24,15 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "PerfilPermiso", "Perfil", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Perfil), "Permiso", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Permiso))]
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "PerfilFormulario", "Perfil", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Perfil), "Formulario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Formulario))]
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "FormularioModulo", "Formulario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Formulario), "Modulo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Modulo))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "CtaCteProfesional", "CtaCte", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.CtaCte), "Profesional", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Profesional))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "MovimientoCtaCte", "Movimiento", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Movimiento), "CtaCte", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.CtaCte))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "Tipo_MovimientoMovimiento", "Tipo_Movimiento", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Tipo_Movimiento), "Movimiento", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Movimiento))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "ComprobanteMovimiento", "Comprobante", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Comprobante), "Movimiento", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Movimiento))]
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "ProvinciaLocalidades", "Provincia", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Provincia), "Localidad", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Localidad))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "ProfesionalHistoriales", "Profesional", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Profesional), "Historial", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Historial))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "ProfesionalDirecciones", "Profesional", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Profesional), "Direccion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Direccion))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "ProfesionalMatricula", "Profesional", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Profesional), "Matricula", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Matricula))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "Tipo_DocumentoProfesional", "Tipo_Documento", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Tipo_Documento), "Profesional", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Profesional))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "EstadoProfesional", "Estado", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Estado), "Profesional", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Profesional))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "ColegioProfesional", "Colegio", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(Modelo_Entidades.Colegio), "Profesional", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Profesional))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "Tipo_MatriculaProfesional", "Tipo_Matricula", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Tipo_Matricula), "Profesional", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Profesional))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "JurisdiccionTitulo", "Jurisdiccion", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Jurisdiccion), "Titulo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Titulo))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "ModalidadTitulo", "Modalidad", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Modalidad), "Titulo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Titulo))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "NivelTitulo", "Nivel", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Nivel), "Titulo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Titulo))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "EspecialidadTitulo", "Especialidad", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Especialidad), "Titulo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Titulo))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "UniversidadTitulo", "Universidad", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Universidad), "Titulo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Titulo))]
+[assembly: EdmRelationshipAttribute("WASSTDModelo", "PersonaDirecciones", "Persona", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Persona), "Direccion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Direccion))]
+[assembly: EdmRelationshipAttribute("WASSTDModelo", "Tipo_DocumentoPersona", "Tipo_Documento", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Tipo_Documento), "Persona", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Persona))]
+[assembly: EdmRelationshipAttribute("WASSTDModelo", "EstadoPersona", "Estado", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Estado), "Persona", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Persona))]
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "LocalidadDireccion", "Localidad", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Localidad), "Direccion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Direccion))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "MatriculaLegajo_Academico", "Matricula", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Matricula), "Legajo_Academico", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Legajo_Academico))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "PlanLegajo_Academico", "Plan", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Plan), "Legajo_Academico", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Legajo_Academico))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "TituloLegajo_Academico", "Titulo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Titulo), "Legajo_Academico", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Legajo_Academico))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "ExpedienteLiquidacion", "Expediente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Expediente), "Liquidacion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Liquidacion))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "ProfesionalExpediente", "Profesional", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Profesional), "Expediente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Expediente))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "ComisionCurso", "Comision", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Comision), "Curso", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Curso))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "DocenteCurso", "Docente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Docente), "Curso", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Curso))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "CursoClase", "Curso", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Curso), "Clase", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Clase))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "ProfesionalAsistencia", "Profesional", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Profesional), "Asistencia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Asistencia))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "ClaseAsistencia", "Clase", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Clase), "Asistencia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Asistencia))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "ProfesionalCuota", "Profesional", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Profesional), "Cuota", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Cuota))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "ComitenteExpediente", "Comitente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Comitente), "Expediente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Expediente))]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "TareaExpediente", "Tarea", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Tarea), "Expediente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Expediente))]
+[assembly: EdmRelationshipAttribute("WASSTDModelo", "Detalles_del_Tramite", "Detalles_Tramite", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Detalles_Tramite), "Tramite", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Tramite), true)]
+[assembly: EdmRelationshipAttribute("WASSTDModelo", "TramitePersona", "Tramite", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Tramite), "Persona", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Persona))]
+[assembly: EdmRelationshipAttribute("WASSTDModelo", "Tipo_PersonaPersona", "Tipo_Persona", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Tipo_Persona), "Persona", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Persona), true)]
+[assembly: EdmRelationshipAttribute("WASSTDModelo", "Tipo_TramiteTramite", "Tipo_Tramite", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Tipo_Tramite), "Tramite", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Tramite), true)]
 
 #endregion
 
@@ -205,82 +183,18 @@ namespace Modelo_Entidades
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        public ObjectSet<Profesional> Profesionales
+        public ObjectSet<Persona> Personas
         {
             get
             {
-                if ((_Profesionales == null))
+                if ((_Personas == null))
                 {
-                    _Profesionales = base.CreateObjectSet<Profesional>("Profesionales");
+                    _Personas = base.CreateObjectSet<Persona>("Personas");
                 }
-                return _Profesionales;
+                return _Personas;
             }
         }
-        private ObjectSet<Profesional> _Profesionales;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<CtaCte> CtasCtes
-        {
-            get
-            {
-                if ((_CtasCtes == null))
-                {
-                    _CtasCtes = base.CreateObjectSet<CtaCte>("CtasCtes");
-                }
-                return _CtasCtes;
-            }
-        }
-        private ObjectSet<CtaCte> _CtasCtes;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Movimiento> Movimientos
-        {
-            get
-            {
-                if ((_Movimientos == null))
-                {
-                    _Movimientos = base.CreateObjectSet<Movimiento>("Movimientos");
-                }
-                return _Movimientos;
-            }
-        }
-        private ObjectSet<Movimiento> _Movimientos;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Tipo_Movimiento> Tipos_Movimientos
-        {
-            get
-            {
-                if ((_Tipos_Movimientos == null))
-                {
-                    _Tipos_Movimientos = base.CreateObjectSet<Tipo_Movimiento>("Tipos_Movimientos");
-                }
-                return _Tipos_Movimientos;
-            }
-        }
-        private ObjectSet<Tipo_Movimiento> _Tipos_Movimientos;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Comprobante> Comprobantes
-        {
-            get
-            {
-                if ((_Comprobantes == null))
-                {
-                    _Comprobantes = base.CreateObjectSet<Comprobante>("Comprobantes");
-                }
-                return _Comprobantes;
-            }
-        }
-        private ObjectSet<Comprobante> _Comprobantes;
+        private ObjectSet<Persona> _Personas;
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
@@ -333,182 +247,6 @@ namespace Modelo_Entidades
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        public ObjectSet<Tipo_Matricula> Tipos_Matriculas
-        {
-            get
-            {
-                if ((_Tipos_Matriculas == null))
-                {
-                    _Tipos_Matriculas = base.CreateObjectSet<Tipo_Matricula>("Tipos_Matriculas");
-                }
-                return _Tipos_Matriculas;
-            }
-        }
-        private ObjectSet<Tipo_Matricula> _Tipos_Matriculas;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Colegio> Colegios
-        {
-            get
-            {
-                if ((_Colegios == null))
-                {
-                    _Colegios = base.CreateObjectSet<Colegio>("Colegios");
-                }
-                return _Colegios;
-            }
-        }
-        private ObjectSet<Colegio> _Colegios;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Historial> Historiales
-        {
-            get
-            {
-                if ((_Historiales == null))
-                {
-                    _Historiales = base.CreateObjectSet<Historial>("Historiales");
-                }
-                return _Historiales;
-            }
-        }
-        private ObjectSet<Historial> _Historiales;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Titulo> Titulos
-        {
-            get
-            {
-                if ((_Titulos == null))
-                {
-                    _Titulos = base.CreateObjectSet<Titulo>("Titulos");
-                }
-                return _Titulos;
-            }
-        }
-        private ObjectSet<Titulo> _Titulos;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Universidad> Universidades
-        {
-            get
-            {
-                if ((_Universidades == null))
-                {
-                    _Universidades = base.CreateObjectSet<Universidad>("Universidades");
-                }
-                return _Universidades;
-            }
-        }
-        private ObjectSet<Universidad> _Universidades;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Jurisdiccion> Jurisdicciones
-        {
-            get
-            {
-                if ((_Jurisdicciones == null))
-                {
-                    _Jurisdicciones = base.CreateObjectSet<Jurisdiccion>("Jurisdicciones");
-                }
-                return _Jurisdicciones;
-            }
-        }
-        private ObjectSet<Jurisdiccion> _Jurisdicciones;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Modalidad> Modalidades
-        {
-            get
-            {
-                if ((_Modalidades == null))
-                {
-                    _Modalidades = base.CreateObjectSet<Modalidad>("Modalidades");
-                }
-                return _Modalidades;
-            }
-        }
-        private ObjectSet<Modalidad> _Modalidades;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Nivel> Niveles
-        {
-            get
-            {
-                if ((_Niveles == null))
-                {
-                    _Niveles = base.CreateObjectSet<Nivel>("Niveles");
-                }
-                return _Niveles;
-            }
-        }
-        private ObjectSet<Nivel> _Niveles;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Especialidad> Especialidades
-        {
-            get
-            {
-                if ((_Especialidades == null))
-                {
-                    _Especialidades = base.CreateObjectSet<Especialidad>("Especialidades");
-                }
-                return _Especialidades;
-            }
-        }
-        private ObjectSet<Especialidad> _Especialidades;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Plan> Planes
-        {
-            get
-            {
-                if ((_Planes == null))
-                {
-                    _Planes = base.CreateObjectSet<Plan>("Planes");
-                }
-                return _Planes;
-            }
-        }
-        private ObjectSet<Plan> _Planes;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Tipo_Certificado> Tipos_Certificados
-        {
-            get
-            {
-                if ((_Tipos_Certificados == null))
-                {
-                    _Tipos_Certificados = base.CreateObjectSet<Tipo_Certificado>("Tipos_Certificados");
-                }
-                return _Tipos_Certificados;
-            }
-        }
-        private ObjectSet<Tipo_Certificado> _Tipos_Certificados;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
         public ObjectSet<Direccion> Direcciones
         {
             get
@@ -541,226 +279,66 @@ namespace Modelo_Entidades
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        public ObjectSet<Matricula> Matriculas
+        public ObjectSet<Tramite> Tramites
         {
             get
             {
-                if ((_Matriculas == null))
+                if ((_Tramites == null))
                 {
-                    _Matriculas = base.CreateObjectSet<Matricula>("Matriculas");
+                    _Tramites = base.CreateObjectSet<Tramite>("Tramites");
                 }
-                return _Matriculas;
+                return _Tramites;
             }
         }
-        private ObjectSet<Matricula> _Matriculas;
+        private ObjectSet<Tramite> _Tramites;
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        public ObjectSet<Legajo_Academico> Legajos_Academicos
+        public ObjectSet<Detalles_Tramite> Detalles_Tramites
         {
             get
             {
-                if ((_Legajos_Academicos == null))
+                if ((_Detalles_Tramites == null))
                 {
-                    _Legajos_Academicos = base.CreateObjectSet<Legajo_Academico>("Legajos_Academicos");
+                    _Detalles_Tramites = base.CreateObjectSet<Detalles_Tramite>("Detalles_Tramites");
                 }
-                return _Legajos_Academicos;
+                return _Detalles_Tramites;
             }
         }
-        private ObjectSet<Legajo_Academico> _Legajos_Academicos;
+        private ObjectSet<Detalles_Tramite> _Detalles_Tramites;
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        public ObjectSet<Alterador> Alteradores
+        public ObjectSet<Tipo_Persona> Tipos_Personas
         {
             get
             {
-                if ((_Alteradores == null))
+                if ((_Tipos_Personas == null))
                 {
-                    _Alteradores = base.CreateObjectSet<Alterador>("Alteradores");
+                    _Tipos_Personas = base.CreateObjectSet<Tipo_Persona>("Tipos_Personas");
                 }
-                return _Alteradores;
+                return _Tipos_Personas;
             }
         }
-        private ObjectSet<Alterador> _Alteradores;
+        private ObjectSet<Tipo_Persona> _Tipos_Personas;
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        public ObjectSet<Comitente> Comitentes
+        public ObjectSet<Tipo_Tramite> Tipos_Tramites
         {
             get
             {
-                if ((_Comitentes == null))
+                if ((_Tipos_Tramites == null))
                 {
-                    _Comitentes = base.CreateObjectSet<Comitente>("Comitentes");
+                    _Tipos_Tramites = base.CreateObjectSet<Tipo_Tramite>("Tipos_Tramites");
                 }
-                return _Comitentes;
+                return _Tipos_Tramites;
             }
         }
-        private ObjectSet<Comitente> _Comitentes;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Tarea> Tareas
-        {
-            get
-            {
-                if ((_Tareas == null))
-                {
-                    _Tareas = base.CreateObjectSet<Tarea>("Tareas");
-                }
-                return _Tareas;
-            }
-        }
-        private ObjectSet<Tarea> _Tareas;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Liquidacion> Liquidaciones
-        {
-            get
-            {
-                if ((_Liquidaciones == null))
-                {
-                    _Liquidaciones = base.CreateObjectSet<Liquidacion>("Liquidaciones");
-                }
-                return _Liquidaciones;
-            }
-        }
-        private ObjectSet<Liquidacion> _Liquidaciones;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Curso> Cursos
-        {
-            get
-            {
-                if ((_Cursos == null))
-                {
-                    _Cursos = base.CreateObjectSet<Curso>("Cursos");
-                }
-                return _Cursos;
-            }
-        }
-        private ObjectSet<Curso> _Cursos;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Comision> Comisiones
-        {
-            get
-            {
-                if ((_Comisiones == null))
-                {
-                    _Comisiones = base.CreateObjectSet<Comision>("Comisiones");
-                }
-                return _Comisiones;
-            }
-        }
-        private ObjectSet<Comision> _Comisiones;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Docente> Docentes
-        {
-            get
-            {
-                if ((_Docentes == null))
-                {
-                    _Docentes = base.CreateObjectSet<Docente>("Docentes");
-                }
-                return _Docentes;
-            }
-        }
-        private ObjectSet<Docente> _Docentes;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Clase> Clases
-        {
-            get
-            {
-                if ((_Clases == null))
-                {
-                    _Clases = base.CreateObjectSet<Clase>("Clases");
-                }
-                return _Clases;
-            }
-        }
-        private ObjectSet<Clase> _Clases;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Asistencia> Asistencias
-        {
-            get
-            {
-                if ((_Asistencias == null))
-                {
-                    _Asistencias = base.CreateObjectSet<Asistencia>("Asistencias");
-                }
-                return _Asistencias;
-            }
-        }
-        private ObjectSet<Asistencia> _Asistencias;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Expediente> Expedientes
-        {
-            get
-            {
-                if ((_Expedientes == null))
-                {
-                    _Expedientes = base.CreateObjectSet<Expediente>("Expedientes");
-                }
-                return _Expedientes;
-            }
-        }
-        private ObjectSet<Expediente> _Expedientes;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Cuota> Cuotas
-        {
-            get
-            {
-                if ((_Cuotas == null))
-                {
-                    _Cuotas = base.CreateObjectSet<Cuota>("Cuotas");
-                }
-                return _Cuotas;
-            }
-        }
-        private ObjectSet<Cuota> _Cuotas;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<Video> Videos
-        {
-            get
-            {
-                if ((_Videos == null))
-                {
-                    _Videos = base.CreateObjectSet<Video>("Videos");
-                }
-                return _Videos;
-            }
-        }
-        private ObjectSet<Video> _Videos;
+        private ObjectSet<Tipo_Tramite> _Tipos_Tramites;
 
         #endregion
 
@@ -815,43 +393,11 @@ namespace Modelo_Entidades
         }
     
         /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Profesionales. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// Método desusado para agregar un nuevo objeto al EntitySet Personas. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
         /// </summary>
-        public void AddToProfesionales(Profesional profesional)
+        public void AddToPersonas(Persona persona)
         {
-            base.AddObject("Profesionales", profesional);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet CtasCtes. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToCtasCtes(CtaCte ctaCte)
-        {
-            base.AddObject("CtasCtes", ctaCte);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Movimientos. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToMovimientos(Movimiento movimiento)
-        {
-            base.AddObject("Movimientos", movimiento);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Tipos_Movimientos. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToTipos_Movimientos(Tipo_Movimiento tipo_Movimiento)
-        {
-            base.AddObject("Tipos_Movimientos", tipo_Movimiento);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Comprobantes. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToComprobantes(Comprobante comprobante)
-        {
-            base.AddObject("Comprobantes", comprobante);
+            base.AddObject("Personas", persona);
         }
     
         /// <summary>
@@ -879,94 +425,6 @@ namespace Modelo_Entidades
         }
     
         /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Tipos_Matriculas. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToTipos_Matriculas(Tipo_Matricula tipo_Matricula)
-        {
-            base.AddObject("Tipos_Matriculas", tipo_Matricula);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Colegios. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToColegios(Colegio colegio)
-        {
-            base.AddObject("Colegios", colegio);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Historiales. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToHistoriales(Historial historial)
-        {
-            base.AddObject("Historiales", historial);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Titulos. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToTitulos(Titulo titulo)
-        {
-            base.AddObject("Titulos", titulo);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Universidades. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToUniversidades(Universidad universidad)
-        {
-            base.AddObject("Universidades", universidad);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Jurisdicciones. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToJurisdicciones(Jurisdiccion jurisdiccion)
-        {
-            base.AddObject("Jurisdicciones", jurisdiccion);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Modalidades. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToModalidades(Modalidad modalidad)
-        {
-            base.AddObject("Modalidades", modalidad);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Niveles. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToNiveles(Nivel nivel)
-        {
-            base.AddObject("Niveles", nivel);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Especialidades. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToEspecialidades(Especialidad especialidad)
-        {
-            base.AddObject("Especialidades", especialidad);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Planes. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToPlanes(Plan plan)
-        {
-            base.AddObject("Planes", plan);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Tipos_Certificados. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToTipos_Certificados(Tipo_Certificado tipo_Certificado)
-        {
-            base.AddObject("Tipos_Certificados", tipo_Certificado);
-        }
-    
-        /// <summary>
         /// Método desusado para agregar un nuevo objeto al EntitySet Direcciones. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
         /// </summary>
         public void AddToDirecciones(Direccion direccion)
@@ -983,115 +441,35 @@ namespace Modelo_Entidades
         }
     
         /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Matriculas. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// Método desusado para agregar un nuevo objeto al EntitySet Tramites. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
         /// </summary>
-        public void AddToMatriculas(Matricula matricula)
+        public void AddToTramites(Tramite tramite)
         {
-            base.AddObject("Matriculas", matricula);
+            base.AddObject("Tramites", tramite);
         }
     
         /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Legajos_Academicos. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// Método desusado para agregar un nuevo objeto al EntitySet Detalles_Tramites. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
         /// </summary>
-        public void AddToLegajos_Academicos(Legajo_Academico legajo_Academico)
+        public void AddToDetalles_Tramites(Detalles_Tramite detalles_Tramite)
         {
-            base.AddObject("Legajos_Academicos", legajo_Academico);
+            base.AddObject("Detalles_Tramites", detalles_Tramite);
         }
     
         /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Alteradores. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// Método desusado para agregar un nuevo objeto al EntitySet Tipos_Personas. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
         /// </summary>
-        public void AddToAlteradores(Alterador alterador)
+        public void AddToTipos_Personas(Tipo_Persona tipo_Persona)
         {
-            base.AddObject("Alteradores", alterador);
+            base.AddObject("Tipos_Personas", tipo_Persona);
         }
     
         /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Comitentes. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// Método desusado para agregar un nuevo objeto al EntitySet Tipos_Tramites. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
         /// </summary>
-        public void AddToComitentes(Comitente comitente)
+        public void AddToTipos_Tramites(Tipo_Tramite tipo_Tramite)
         {
-            base.AddObject("Comitentes", comitente);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Tareas. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToTareas(Tarea tarea)
-        {
-            base.AddObject("Tareas", tarea);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Liquidaciones. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToLiquidaciones(Liquidacion liquidacion)
-        {
-            base.AddObject("Liquidaciones", liquidacion);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Cursos. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToCursos(Curso curso)
-        {
-            base.AddObject("Cursos", curso);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Comisiones. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToComisiones(Comision comision)
-        {
-            base.AddObject("Comisiones", comision);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Docentes. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToDocentes(Docente docente)
-        {
-            base.AddObject("Docentes", docente);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Clases. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToClases(Clase clase)
-        {
-            base.AddObject("Clases", clase);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Asistencias. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToAsistencias(Asistencia asistencia)
-        {
-            base.AddObject("Asistencias", asistencia);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Expedientes. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToExpedientes(Expediente expediente)
-        {
-            base.AddObject("Expedientes", expediente);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Cuotas. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToCuotas(Cuota cuota)
-        {
-            base.AddObject("Cuotas", cuota);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet Videos. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddToVideos(Video video)
-        {
-            base.AddObject("Videos", video);
+            base.AddObject("Tipos_Tramites", tipo_Tramite);
         }
 
         #endregion
@@ -1105,855 +483,26 @@ namespace Modelo_Entidades
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Alterador")]
+    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Detalles_Tramite")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Alterador : EntityObject
+    public partial class Detalles_Tramite : EntityObject
     {
         #region Método de generador
     
         /// <summary>
-        /// Crear un nuevo objeto Alterador.
-        /// </summary>
-        /// <param name="porcentaje_recargo">Valor inicial de la propiedad porcentaje_recargo.</param>
-        /// <param name="dias_gracias">Valor inicial de la propiedad dias_gracias.</param>
-        /// <param name="valor_cuota">Valor inicial de la propiedad valor_cuota.</param>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        public static Alterador CreateAlterador(global::System.Double porcentaje_recargo, global::System.Int32 dias_gracias, global::System.Double valor_cuota, global::System.Int32 id)
-        {
-            Alterador alterador = new Alterador();
-            alterador.porcentaje_recargo = porcentaje_recargo;
-            alterador.dias_gracias = dias_gracias;
-            alterador.valor_cuota = valor_cuota;
-            alterador.id = id;
-            return alterador;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Double porcentaje_recargo
-        {
-            get
-            {
-                return _porcentaje_recargo;
-            }
-            set
-            {
-                Onporcentaje_recargoChanging(value);
-                ReportPropertyChanging("porcentaje_recargo");
-                _porcentaje_recargo = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("porcentaje_recargo");
-                Onporcentaje_recargoChanged();
-            }
-        }
-        private global::System.Double _porcentaje_recargo;
-        partial void Onporcentaje_recargoChanging(global::System.Double value);
-        partial void Onporcentaje_recargoChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 dias_gracias
-        {
-            get
-            {
-                return _dias_gracias;
-            }
-            set
-            {
-                Ondias_graciasChanging(value);
-                ReportPropertyChanging("dias_gracias");
-                _dias_gracias = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("dias_gracias");
-                Ondias_graciasChanged();
-            }
-        }
-        private global::System.Int32 _dias_gracias;
-        partial void Ondias_graciasChanging(global::System.Int32 value);
-        partial void Ondias_graciasChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Double valor_cuota
-        {
-            get
-            {
-                return _valor_cuota;
-            }
-            set
-            {
-                Onvalor_cuotaChanging(value);
-                ReportPropertyChanging("valor_cuota");
-                _valor_cuota = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("valor_cuota");
-                Onvalor_cuotaChanged();
-            }
-        }
-        private global::System.Double _valor_cuota;
-        partial void Onvalor_cuotaChanging(global::System.Double value);
-        partial void Onvalor_cuotaChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-
-        #endregion
-
-    
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Anual")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Anual : Cuota
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Anual.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="estado">Valor inicial de la propiedad estado.</param>
-        /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
-        public static Anual CreateAnual(global::System.Int32 id, global::System.Boolean estado, global::System.String descripcion)
-        {
-            Anual anual = new Anual();
-            anual.id = id;
-            anual.estado = estado;
-            anual.descripcion = descripcion;
-            return anual;
-        }
-
-        #endregion
-
-    
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Asistencia")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Asistencia : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Asistencia.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="presente">Valor inicial de la propiedad presente.</param>
-        public static Asistencia CreateAsistencia(global::System.Int32 id, global::System.Boolean presente)
-        {
-            Asistencia asistencia = new Asistencia();
-            asistencia.id = id;
-            asistencia.presente = presente;
-            return asistencia;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean presente
-        {
-            get
-            {
-                return _presente;
-            }
-            set
-            {
-                OnpresenteChanging(value);
-                ReportPropertyChanging("presente");
-                _presente = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("presente");
-                OnpresenteChanged();
-            }
-        }
-        private global::System.Boolean _presente;
-        partial void OnpresenteChanging(global::System.Boolean value);
-        partial void OnpresenteChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ProfesionalAsistencia", "Profesional")]
-        public Profesional Profesional
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Profesional>("WASSTDModelo.ProfesionalAsistencia", "Profesional").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Profesional>("WASSTDModelo.ProfesionalAsistencia", "Profesional").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Profesional> ProfesionalReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Profesional>("WASSTDModelo.ProfesionalAsistencia", "Profesional");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Profesional>("WASSTDModelo.ProfesionalAsistencia", "Profesional", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ClaseAsistencia", "Clase")]
-        public Clase Clase
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Clase>("WASSTDModelo.ClaseAsistencia", "Clase").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Clase>("WASSTDModelo.ClaseAsistencia", "Clase").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Clase> ClaseReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Clase>("WASSTDModelo.ClaseAsistencia", "Clase");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Clase>("WASSTDModelo.ClaseAsistencia", "Clase", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Bimensual")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Bimensual : Cuota
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Bimensual.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="estado">Valor inicial de la propiedad estado.</param>
-        /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
-        public static Bimensual CreateBimensual(global::System.Int32 id, global::System.Boolean estado, global::System.String descripcion)
-        {
-            Bimensual bimensual = new Bimensual();
-            bimensual.id = id;
-            bimensual.estado = estado;
-            bimensual.descripcion = descripcion;
-            return bimensual;
-        }
-
-        #endregion
-
-    
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Boleta")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Boleta : Comprobante
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Boleta.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="numero">Valor inicial de la propiedad numero.</param>
-        public static Boleta CreateBoleta(global::System.Int32 id, global::System.Int32 numero)
-        {
-            Boleta boleta = new Boleta();
-            boleta.id = id;
-            boleta.numero = numero;
-            return boleta;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 numero
-        {
-            get
-            {
-                return _numero;
-            }
-            set
-            {
-                OnnumeroChanging(value);
-                ReportPropertyChanging("numero");
-                _numero = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("numero");
-                OnnumeroChanged();
-            }
-        }
-        private global::System.Int32 _numero;
-        partial void OnnumeroChanging(global::System.Int32 value);
-        partial void OnnumeroChanged();
-
-        #endregion
-
-    
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Clase")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Clase : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Clase.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="fecha">Valor inicial de la propiedad fecha.</param>
-        public static Clase CreateClase(global::System.Int32 id, global::System.DateTime fecha)
-        {
-            Clase clase = new Clase();
-            clase.id = id;
-            clase.fecha = fecha;
-            return clase;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime fecha
-        {
-            get
-            {
-                return _fecha;
-            }
-            set
-            {
-                OnfechaChanging(value);
-                ReportPropertyChanging("fecha");
-                _fecha = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fecha");
-                OnfechaChanged();
-            }
-        }
-        private global::System.DateTime _fecha;
-        partial void OnfechaChanging(global::System.DateTime value);
-        partial void OnfechaChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "CursoClase", "Curso")]
-        public Curso Curso
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Curso>("WASSTDModelo.CursoClase", "Curso").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Curso>("WASSTDModelo.CursoClase", "Curso").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Curso> CursoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Curso>("WASSTDModelo.CursoClase", "Curso");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Curso>("WASSTDModelo.CursoClase", "Curso", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ClaseAsistencia", "Asistencia")]
-        public EntityCollection<Asistencia> Asistencias
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Asistencia>("WASSTDModelo.ClaseAsistencia", "Asistencia");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Asistencia>("WASSTDModelo.ClaseAsistencia", "Asistencia", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Colegio")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Colegio : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Colegio.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
-        public static Colegio CreateColegio(global::System.Int32 id, global::System.String descripcion)
-        {
-            Colegio colegio = new Colegio();
-            colegio.id = id;
-            colegio.descripcion = descripcion;
-            return colegio;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String descripcion
-        {
-            get
-            {
-                return _descripcion;
-            }
-            set
-            {
-                OndescripcionChanging(value);
-                ReportPropertyChanging("descripcion");
-                _descripcion = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("descripcion");
-                OndescripcionChanged();
-            }
-        }
-        private global::System.String _descripcion;
-        partial void OndescripcionChanging(global::System.String value);
-        partial void OndescripcionChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ColegioProfesional", "Profesional")]
-        public EntityCollection<Profesional> Profesionales
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Profesional>("WASSTDModelo.ColegioProfesional", "Profesional");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Profesional>("WASSTDModelo.ColegioProfesional", "Profesional", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Comision")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Comision : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Comision.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
-        /// <param name="dinero_asignado">Valor inicial de la propiedad dinero_asignado.</param>
-        /// <param name="dinero_gastado">Valor inicial de la propiedad dinero_gastado.</param>
-        public static Comision CreateComision(global::System.Int32 id, global::System.String descripcion, global::System.Decimal dinero_asignado, global::System.Decimal dinero_gastado)
-        {
-            Comision comision = new Comision();
-            comision.id = id;
-            comision.descripcion = descripcion;
-            comision.dinero_asignado = dinero_asignado;
-            comision.dinero_gastado = dinero_gastado;
-            return comision;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String descripcion
-        {
-            get
-            {
-                return _descripcion;
-            }
-            set
-            {
-                OndescripcionChanging(value);
-                ReportPropertyChanging("descripcion");
-                _descripcion = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("descripcion");
-                OndescripcionChanged();
-            }
-        }
-        private global::System.String _descripcion;
-        partial void OndescripcionChanging(global::System.String value);
-        partial void OndescripcionChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Decimal dinero_asignado
-        {
-            get
-            {
-                return _dinero_asignado;
-            }
-            set
-            {
-                Ondinero_asignadoChanging(value);
-                ReportPropertyChanging("dinero_asignado");
-                _dinero_asignado = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("dinero_asignado");
-                Ondinero_asignadoChanged();
-            }
-        }
-        private global::System.Decimal _dinero_asignado;
-        partial void Ondinero_asignadoChanging(global::System.Decimal value);
-        partial void Ondinero_asignadoChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Decimal dinero_gastado
-        {
-            get
-            {
-                return _dinero_gastado;
-            }
-            set
-            {
-                Ondinero_gastadoChanging(value);
-                ReportPropertyChanging("dinero_gastado");
-                _dinero_gastado = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("dinero_gastado");
-                Ondinero_gastadoChanged();
-            }
-        }
-        private global::System.Decimal _dinero_gastado;
-        partial void Ondinero_gastadoChanging(global::System.Decimal value);
-        partial void Ondinero_gastadoChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ComisionCurso", "Curso")]
-        public EntityCollection<Curso> Cursos
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Curso>("WASSTDModelo.ComisionCurso", "Curso");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Curso>("WASSTDModelo.ComisionCurso", "Curso", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Comitente")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Comitente : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Comitente.
+        /// Crear un nuevo objeto Detalles_Tramite.
         /// </summary>
         /// <param name="id">Valor inicial de la propiedad Id.</param>
-        /// <param name="razon_social">Valor inicial de la propiedad razon_social.</param>
-        public static Comitente CreateComitente(global::System.Int32 id, global::System.String razon_social)
+        /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
+        /// <param name="tramiteId">Valor inicial de la propiedad TramiteId.</param>
+        public static Detalles_Tramite CreateDetalles_Tramite(global::System.Int32 id, global::System.String descripcion, global::System.Int32 tramiteId)
         {
-            Comitente comitente = new Comitente();
-            comitente.Id = id;
-            comitente.razon_social = razon_social;
-            return comitente;
+            Detalles_Tramite detalles_Tramite = new Detalles_Tramite();
+            detalles_Tramite.Id = id;
+            detalles_Tramite.descripcion = descripcion;
+            detalles_Tramite.TramiteId = tramiteId;
+            return detalles_Tramite;
         }
 
         #endregion
@@ -1992,370 +541,6 @@ namespace Modelo_Entidades
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String razon_social
-        {
-            get
-            {
-                return _razon_social;
-            }
-            set
-            {
-                Onrazon_socialChanging(value);
-                ReportPropertyChanging("razon_social");
-                _razon_social = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("razon_social");
-                Onrazon_socialChanged();
-            }
-        }
-        private global::System.String _razon_social;
-        partial void Onrazon_socialChanging(global::System.String value);
-        partial void Onrazon_socialChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ComitenteExpediente", "Expediente")]
-        public EntityCollection<Expediente> Expedientes
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Expediente>("WASSTDModelo.ComitenteExpediente", "Expediente");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Expediente>("WASSTDModelo.ComitenteExpediente", "Expediente", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Comprobante")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    [KnownTypeAttribute(typeof(Factura))]
-    [KnownTypeAttribute(typeof(Boleta))]
-    public abstract partial class Comprobante : EntityObject
-    {
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ComprobanteMovimiento", "Movimiento")]
-        public EntityCollection<Movimiento> Movimientos
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Movimiento>("WASSTDModelo.ComprobanteMovimiento", "Movimiento");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Movimiento>("WASSTDModelo.ComprobanteMovimiento", "Movimiento", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Con_Recargo")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Con_Recargo : Modificador
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Con_Recargo.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="estado">Valor inicial de la propiedad estado.</param>
-        /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
-        /*public static Con_Recargo CreateCon_Recargo(global::System.Int32 id, global::System.Boolean estado, global::System.String descripcion)
-        {
-            Con_Recargo con_Recargo = new Con_Recargo();
-            con_Recargo.id = id;
-            con_Recargo.estado = estado;
-            con_Recargo.descripcion = descripcion;
-            return con_Recargo;
-        }*/
-
-        #endregion
-
-    
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="CtaCte")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class CtaCte : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto CtaCte.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        public static CtaCte CreateCtaCte(global::System.Int32 id)
-        {
-            CtaCte ctaCte = new CtaCte();
-            ctaCte.id = id;
-            return ctaCte;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Decimal saldo
-        {
-            get
-            {
-                return _saldo;
-            }
-            set
-            {
-                OnsaldoChanging(value);
-                ReportPropertyChanging("saldo");
-                _saldo = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("saldo");
-                OnsaldoChanged();
-            }
-        }
-        private global::System.Decimal _saldo = 0m;
-        partial void OnsaldoChanging(global::System.Decimal value);
-        partial void OnsaldoChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "CtaCteProfesional", "Profesional")]
-        public Profesional Profesional
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Profesional>("WASSTDModelo.CtaCteProfesional", "Profesional").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Profesional>("WASSTDModelo.CtaCteProfesional", "Profesional").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Profesional> ProfesionalReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Profesional>("WASSTDModelo.CtaCteProfesional", "Profesional");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Profesional>("WASSTDModelo.CtaCteProfesional", "Profesional", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "MovimientoCtaCte", "Movimiento")]
-        public EntityCollection<Movimiento> Movimientos
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Movimiento>("WASSTDModelo.MovimientoCtaCte", "Movimiento");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Movimiento>("WASSTDModelo.MovimientoCtaCte", "Movimiento", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Cuota")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    [KnownTypeAttribute(typeof(Anual))]
-    [KnownTypeAttribute(typeof(Bimensual))]
-    [KnownTypeAttribute(typeof(Modificador))]
-    public abstract partial class Cuota : EntityObject
-    {
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean estado
-        {
-            get
-            {
-                return _estado;
-            }
-            set
-            {
-                OnestadoChanging(value);
-                ReportPropertyChanging("estado");
-                _estado = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("estado");
-                OnestadoChanged();
-            }
-        }
-        private global::System.Boolean _estado;
-        partial void OnestadoChanging(global::System.Boolean value);
-        partial void OnestadoChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
         public global::System.String descripcion
         {
             get
@@ -2374,6 +559,54 @@ namespace Modelo_Entidades
         private global::System.String _descripcion;
         partial void OndescripcionChanging(global::System.String value);
         partial void OndescripcionChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> fecha_desde
+        {
+            get
+            {
+                return _fecha_desde;
+            }
+            set
+            {
+                Onfecha_desdeChanging(value);
+                ReportPropertyChanging("fecha_desde");
+                _fecha_desde = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("fecha_desde");
+                Onfecha_desdeChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _fecha_desde;
+        partial void Onfecha_desdeChanging(Nullable<global::System.DateTime> value);
+        partial void Onfecha_desdeChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 TramiteId
+        {
+            get
+            {
+                return _TramiteId;
+            }
+            set
+            {
+                OnTramiteIdChanging(value);
+                ReportPropertyChanging("TramiteId");
+                _TramiteId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("TramiteId");
+                OnTramiteIdChanged();
+            }
+        }
+        private global::System.Int32 _TramiteId;
+        partial void OnTramiteIdChanging(global::System.Int32 value);
+        partial void OnTramiteIdChanged();
 
         #endregion
 
@@ -2386,16 +619,16 @@ namespace Modelo_Entidades
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ProfesionalCuota", "Profesional")]
-        public Profesional Profesional
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "Detalles_del_Tramite", "Tramite")]
+        public Tramite Tramite
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Profesional>("WASSTDModelo.ProfesionalCuota", "Profesional").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tramite>("WASSTDModelo.Detalles_del_Tramite", "Tramite").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Profesional>("WASSTDModelo.ProfesionalCuota", "Profesional").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tramite>("WASSTDModelo.Detalles_del_Tramite", "Tramite").Value = value;
             }
         }
         /// <summary>
@@ -2403,368 +636,23 @@ namespace Modelo_Entidades
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Profesional> ProfesionalReference
+        public EntityReference<Tramite> TramiteReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Profesional>("WASSTDModelo.ProfesionalCuota", "Profesional");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tramite>("WASSTDModelo.Detalles_del_Tramite", "Tramite");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Profesional>("WASSTDModelo.ProfesionalCuota", "Profesional", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Tramite>("WASSTDModelo.Detalles_del_Tramite", "Tramite", value);
                 }
             }
         }
 
         #endregion
 
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Curso")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Curso : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Curso.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="asistentes">Valor inicial de la propiedad asistentes.</param>
-        /// <param name="cupo">Valor inicial de la propiedad cupo.</param>
-        /// <param name="objetivo">Valor inicial de la propiedad objetivo.</param>
-        /// <param name="arancelado">Valor inicial de la propiedad arancelado.</param>
-        /// <param name="costo">Valor inicial de la propiedad costo.</param>
-        /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
-        public static Curso CreateCurso(global::System.Int32 id, global::System.Int32 asistentes, global::System.Int32 cupo, global::System.Int32 objetivo, global::System.Boolean arancelado, global::System.Decimal costo, global::System.String descripcion)
-        {
-            Curso curso = new Curso();
-            curso.id = id;
-            curso.asistentes = asistentes;
-            curso.cupo = cupo;
-            curso.objetivo = objetivo;
-            curso.arancelado = arancelado;
-            curso.costo = costo;
-            curso.descripcion = descripcion;
-            return curso;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 asistentes
-        {
-            get
-            {
-                return _asistentes;
-            }
-            set
-            {
-                OnasistentesChanging(value);
-                ReportPropertyChanging("asistentes");
-                _asistentes = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("asistentes");
-                OnasistentesChanged();
-            }
-        }
-        private global::System.Int32 _asistentes;
-        partial void OnasistentesChanging(global::System.Int32 value);
-        partial void OnasistentesChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 cupo
-        {
-            get
-            {
-                return _cupo;
-            }
-            set
-            {
-                OncupoChanging(value);
-                ReportPropertyChanging("cupo");
-                _cupo = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("cupo");
-                OncupoChanged();
-            }
-        }
-        private global::System.Int32 _cupo;
-        partial void OncupoChanging(global::System.Int32 value);
-        partial void OncupoChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 objetivo
-        {
-            get
-            {
-                return _objetivo;
-            }
-            set
-            {
-                OnobjetivoChanging(value);
-                ReportPropertyChanging("objetivo");
-                _objetivo = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("objetivo");
-                OnobjetivoChanged();
-            }
-        }
-        private global::System.Int32 _objetivo;
-        partial void OnobjetivoChanging(global::System.Int32 value);
-        partial void OnobjetivoChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean arancelado
-        {
-            get
-            {
-                return _arancelado;
-            }
-            set
-            {
-                OnaranceladoChanging(value);
-                ReportPropertyChanging("arancelado");
-                _arancelado = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("arancelado");
-                OnaranceladoChanged();
-            }
-        }
-        private global::System.Boolean _arancelado;
-        partial void OnaranceladoChanging(global::System.Boolean value);
-        partial void OnaranceladoChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Decimal costo
-        {
-            get
-            {
-                return _costo;
-            }
-            set
-            {
-                OncostoChanging(value);
-                ReportPropertyChanging("costo");
-                _costo = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("costo");
-                OncostoChanged();
-            }
-        }
-        private global::System.Decimal _costo;
-        partial void OncostoChanging(global::System.Decimal value);
-        partial void OncostoChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String descripcion
-        {
-            get
-            {
-                return _descripcion;
-            }
-            set
-            {
-                OndescripcionChanging(value);
-                ReportPropertyChanging("descripcion");
-                _descripcion = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("descripcion");
-                OndescripcionChanged();
-            }
-        }
-        private global::System.String _descripcion;
-        partial void OndescripcionChanging(global::System.String value);
-        partial void OndescripcionChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ComisionCurso", "Comision")]
-        public Comision Comision
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Comision>("WASSTDModelo.ComisionCurso", "Comision").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Comision>("WASSTDModelo.ComisionCurso", "Comision").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Comision> ComisionReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Comision>("WASSTDModelo.ComisionCurso", "Comision");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Comision>("WASSTDModelo.ComisionCurso", "Comision", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "DocenteCurso", "Docente")]
-        public Docente Docente
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Docente>("WASSTDModelo.DocenteCurso", "Docente").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Docente>("WASSTDModelo.DocenteCurso", "Docente").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Docente> DocenteReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Docente>("WASSTDModelo.DocenteCurso", "Docente");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Docente>("WASSTDModelo.DocenteCurso", "Docente", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "CursoClase", "Clase")]
-        public EntityCollection<Clase> Clases
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Clase>("WASSTDModelo.CursoClase", "Clase");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Clase>("WASSTDModelo.CursoClase", "Clase", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Descuento_Anual")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Descuento_Anual : Modificador
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Descuento_Anual.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="estado">Valor inicial de la propiedad estado.</param>
-        /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
-        /*public static Descuento_Anual CreateDescuento_Anual(global::System.Int32 id, global::System.Boolean estado, global::System.String descripcion)
-        {
-            Descuento_Anual descuento_Anual = new Descuento_Anual();
-            descuento_Anual.id = id;
-            descuento_Anual.estado = estado;
-            descuento_Anual.descripcion = descripcion;
-            return descuento_Anual;
-        }*/
-
-        #endregion
-
-    
     }
     
     /// <summary>
@@ -2856,16 +744,16 @@ namespace Modelo_Entidades
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ProfesionalDirecciones", "Profesional")]
-        public Profesional Profesional
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "PersonaDirecciones", "Persona")]
+        public Persona Persona
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Profesional>("WASSTDModelo.ProfesionalDirecciones", "Profesional").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Persona>("WASSTDModelo.PersonaDirecciones", "Persona").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Profesional>("WASSTDModelo.ProfesionalDirecciones", "Profesional").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Persona>("WASSTDModelo.PersonaDirecciones", "Persona").Value = value;
             }
         }
         /// <summary>
@@ -2873,17 +761,17 @@ namespace Modelo_Entidades
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Profesional> ProfesionalReference
+        public EntityReference<Persona> PersonaReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Profesional>("WASSTDModelo.ProfesionalDirecciones", "Profesional");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Persona>("WASSTDModelo.PersonaDirecciones", "Persona");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Profesional>("WASSTDModelo.ProfesionalDirecciones", "Profesional", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Persona>("WASSTDModelo.PersonaDirecciones", "Persona", value);
                 }
             }
         }
@@ -2922,224 +810,6 @@ namespace Modelo_Entidades
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Localidad>("WASSTDModelo.LocalidadDireccion", "Localidad", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Docente")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Docente : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Docente.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="nombre_apellido">Valor inicial de la propiedad nombre_apellido.</param>
-        public static Docente CreateDocente(global::System.Int32 id, global::System.String nombre_apellido)
-        {
-            Docente docente = new Docente();
-            docente.id = id;
-            docente.nombre_apellido = nombre_apellido;
-            return docente;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String nombre_apellido
-        {
-            get
-            {
-                return _nombre_apellido;
-            }
-            set
-            {
-                Onnombre_apellidoChanging(value);
-                ReportPropertyChanging("nombre_apellido");
-                _nombre_apellido = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("nombre_apellido");
-                Onnombre_apellidoChanged();
-            }
-        }
-        private global::System.String _nombre_apellido;
-        partial void Onnombre_apellidoChanging(global::System.String value);
-        partial void Onnombre_apellidoChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "DocenteCurso", "Curso")]
-        public EntityCollection<Curso> Cursos
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Curso>("WASSTDModelo.DocenteCurso", "Curso");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Curso>("WASSTDModelo.DocenteCurso", "Curso", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Especialidad")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Especialidad : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Especialidad.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
-        public static Especialidad CreateEspecialidad(global::System.Int32 id, global::System.String descripcion)
-        {
-            Especialidad especialidad = new Especialidad();
-            especialidad.id = id;
-            especialidad.descripcion = descripcion;
-            return especialidad;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String descripcion
-        {
-            get
-            {
-                return _descripcion;
-            }
-            set
-            {
-                OndescripcionChanging(value);
-                ReportPropertyChanging("descripcion");
-                _descripcion = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("descripcion");
-                OndescripcionChanged();
-            }
-        }
-        private global::System.String _descripcion;
-        partial void OndescripcionChanging(global::System.String value);
-        partial void OndescripcionChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "EspecialidadTitulo", "Titulo")]
-        public EntityCollection<Titulo> Titulos
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Titulo>("WASSTDModelo.EspecialidadTitulo", "Titulo");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Titulo>("WASSTDModelo.EspecialidadTitulo", "Titulo", value);
                 }
             }
         }
@@ -3237,695 +907,24 @@ namespace Modelo_Entidades
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "EstadoProfesional", "Profesional")]
-        public EntityCollection<Profesional> Profesionales
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "EstadoPersona", "Persona")]
+        public EntityCollection<Persona> Personas
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Profesional>("WASSTDModelo.EstadoProfesional", "Profesional");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Persona>("WASSTDModelo.EstadoPersona", "Persona");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Profesional>("WASSTDModelo.EstadoProfesional", "Profesional", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Persona>("WASSTDModelo.EstadoPersona", "Persona", value);
                 }
             }
         }
 
         #endregion
 
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Expediente")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    [KnownTypeAttribute(typeof(OI))]
-    [KnownTypeAttribute(typeof(HM))]
-    [KnownTypeAttribute(typeof(FE))]
-    public abstract partial class Expediente : EntityObject
-    {
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 numero
-        {
-            get
-            {
-                return _numero;
-            }
-            set
-            {
-                if (_numero != value)
-                {
-                    OnnumeroChanging(value);
-                    ReportPropertyChanging("numero");
-                    _numero = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("numero");
-                    OnnumeroChanged();
-                }
-            }
-        }
-        private global::System.Int32 _numero;
-        partial void OnnumeroChanging(global::System.Int32 value);
-        partial void OnnumeroChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String estado
-        {
-            get
-            {
-                return _estado;
-            }
-            set
-            {
-                OnestadoChanging(value);
-                ReportPropertyChanging("estado");
-                _estado = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("estado");
-                OnestadoChanged();
-            }
-        }
-        private global::System.String _estado;
-        partial void OnestadoChanging(global::System.String value);
-        partial void OnestadoChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime fecha_devolucion
-        {
-            get
-            {
-                return _fecha_devolucion;
-            }
-            set
-            {
-                Onfecha_devolucionChanging(value);
-                ReportPropertyChanging("fecha_devolucion");
-                _fecha_devolucion = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fecha_devolucion");
-                Onfecha_devolucionChanged();
-            }
-        }
-        private global::System.DateTime _fecha_devolucion;
-        partial void Onfecha_devolucionChanging(global::System.DateTime value);
-        partial void Onfecha_devolucionChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime fecha_recepcion
-        {
-            get
-            {
-                return _fecha_recepcion;
-            }
-            set
-            {
-                Onfecha_recepcionChanging(value);
-                ReportPropertyChanging("fecha_recepcion");
-                _fecha_recepcion = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fecha_recepcion");
-                Onfecha_recepcionChanged();
-            }
-        }
-        private global::System.DateTime _fecha_recepcion;
-        partial void Onfecha_recepcionChanging(global::System.DateTime value);
-        partial void Onfecha_recepcionChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean tipo_aporte
-        {
-            get
-            {
-                return _tipo_aporte;
-            }
-            set
-            {
-                Ontipo_aporteChanging(value);
-                ReportPropertyChanging("tipo_aporte");
-                _tipo_aporte = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("tipo_aporte");
-                Ontipo_aporteChanged();
-            }
-        }
-        private global::System.Boolean _tipo_aporte;
-        partial void Ontipo_aporteChanging(global::System.Boolean value);
-        partial void Ontipo_aporteChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime fecha_aprobacion
-        {
-            get
-            {
-                return _fecha_aprobacion;
-            }
-            set
-            {
-                Onfecha_aprobacionChanging(value);
-                ReportPropertyChanging("fecha_aprobacion");
-                _fecha_aprobacion = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fecha_aprobacion");
-                Onfecha_aprobacionChanged();
-            }
-        }
-        private global::System.DateTime _fecha_aprobacion;
-        partial void Onfecha_aprobacionChanging(global::System.DateTime value);
-        partial void Onfecha_aprobacionChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime fecha_pago
-        {
-            get
-            {
-                return _fecha_pago;
-            }
-            set
-            {
-                Onfecha_pagoChanging(value);
-                ReportPropertyChanging("fecha_pago");
-                _fecha_pago = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fecha_pago");
-                Onfecha_pagoChanged();
-            }
-        }
-        private global::System.DateTime _fecha_pago;
-        partial void Onfecha_pagoChanging(global::System.DateTime value);
-        partial void Onfecha_pagoChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ExpedienteLiquidacion", "Liquidacion")]
-        public EntityCollection<Liquidacion> Liquidaciones
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Liquidacion>("WASSTDModelo.ExpedienteLiquidacion", "Liquidacion");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Liquidacion>("WASSTDModelo.ExpedienteLiquidacion", "Liquidacion", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ProfesionalExpediente", "Profesional")]
-        public EntityCollection<Profesional> Profesionales
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Profesional>("WASSTDModelo.ProfesionalExpediente", "Profesional");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Profesional>("WASSTDModelo.ProfesionalExpediente", "Profesional", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ComitenteExpediente", "Comitente")]
-        public Comitente Comitente
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Comitente>("WASSTDModelo.ComitenteExpediente", "Comitente").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Comitente>("WASSTDModelo.ComitenteExpediente", "Comitente").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Comitente> ComitenteReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Comitente>("WASSTDModelo.ComitenteExpediente", "Comitente");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Comitente>("WASSTDModelo.ComitenteExpediente", "Comitente", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "TareaExpediente", "Tarea")]
-        public Tarea Tarea
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tarea>("WASSTDModelo.TareaExpediente", "Tarea").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tarea>("WASSTDModelo.TareaExpediente", "Tarea").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Tarea> TareaReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tarea>("WASSTDModelo.TareaExpediente", "Tarea");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Tarea>("WASSTDModelo.TareaExpediente", "Tarea", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Factura")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Factura : Comprobante
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Factura.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="numero">Valor inicial de la propiedad numero.</param>
-        /// <param name="cantidad">Valor inicial de la propiedad cantidad.</param>
-        /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
-        /// <param name="precio_unitario">Valor inicial de la propiedad precio_unitario.</param>
-        /// <param name="importe">Valor inicial de la propiedad importe.</param>
-        /// <param name="total">Valor inicial de la propiedad total.</param>
-        public static Factura CreateFactura(global::System.Int32 id, global::System.Int32 numero, global::System.Int32 cantidad, global::System.String descripcion, global::System.Decimal precio_unitario, global::System.Decimal importe, global::System.Decimal total)
-        {
-            Factura factura = new Factura();
-            factura.id = id;
-            factura.numero = numero;
-            factura.cantidad = cantidad;
-            factura.descripcion = descripcion;
-            factura.precio_unitario = precio_unitario;
-            factura.importe = importe;
-            factura.total = total;
-            return factura;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 numero
-        {
-            get
-            {
-                return _numero;
-            }
-            set
-            {
-                OnnumeroChanging(value);
-                ReportPropertyChanging("numero");
-                _numero = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("numero");
-                OnnumeroChanged();
-            }
-        }
-        private global::System.Int32 _numero;
-        partial void OnnumeroChanging(global::System.Int32 value);
-        partial void OnnumeroChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 cantidad
-        {
-            get
-            {
-                return _cantidad;
-            }
-            set
-            {
-                OncantidadChanging(value);
-                ReportPropertyChanging("cantidad");
-                _cantidad = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("cantidad");
-                OncantidadChanged();
-            }
-        }
-        private global::System.Int32 _cantidad;
-        partial void OncantidadChanging(global::System.Int32 value);
-        partial void OncantidadChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String descripcion
-        {
-            get
-            {
-                return _descripcion;
-            }
-            set
-            {
-                OndescripcionChanging(value);
-                ReportPropertyChanging("descripcion");
-                _descripcion = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("descripcion");
-                OndescripcionChanged();
-            }
-        }
-        private global::System.String _descripcion;
-        partial void OndescripcionChanging(global::System.String value);
-        partial void OndescripcionChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Decimal precio_unitario
-        {
-            get
-            {
-                return _precio_unitario;
-            }
-            set
-            {
-                Onprecio_unitarioChanging(value);
-                ReportPropertyChanging("precio_unitario");
-                _precio_unitario = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("precio_unitario");
-                Onprecio_unitarioChanged();
-            }
-        }
-        private global::System.Decimal _precio_unitario;
-        partial void Onprecio_unitarioChanging(global::System.Decimal value);
-        partial void Onprecio_unitarioChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Decimal importe
-        {
-            get
-            {
-                return _importe;
-            }
-            set
-            {
-                OnimporteChanging(value);
-                ReportPropertyChanging("importe");
-                _importe = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("importe");
-                OnimporteChanged();
-            }
-        }
-        private global::System.Decimal _importe;
-        partial void OnimporteChanging(global::System.Decimal value);
-        partial void OnimporteChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Decimal total
-        {
-            get
-            {
-                return _total;
-            }
-            set
-            {
-                OntotalChanging(value);
-                ReportPropertyChanging("total");
-                _total = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("total");
-                OntotalChanged();
-            }
-        }
-        private global::System.Decimal _total;
-        partial void OntotalChanging(global::System.Decimal value);
-        partial void OntotalChanged();
-
-        #endregion
-
-    
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="FE")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class FE : Expediente
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto FE.
-        /// </summary>
-        /// <param name="numero">Valor inicial de la propiedad numero.</param>
-        /// <param name="estado">Valor inicial de la propiedad estado.</param>
-        /// <param name="fecha_devolucion">Valor inicial de la propiedad fecha_devolucion.</param>
-        /// <param name="fecha_recepcion">Valor inicial de la propiedad fecha_recepcion.</param>
-        /// <param name="tipo_aporte">Valor inicial de la propiedad tipo_aporte.</param>
-        /// <param name="fecha_aprobacion">Valor inicial de la propiedad fecha_aprobacion.</param>
-        /// <param name="fecha_pago">Valor inicial de la propiedad fecha_pago.</param>
-        /// <param name="dias_de_campo">Valor inicial de la propiedad dias_de_campo.</param>
-        /// <param name="dias_de_gabinete">Valor inicial de la propiedad dias_de_gabinete.</param>
-        /// <param name="hps">Valor inicial de la propiedad hps.</param>
-        /// <param name="bocas">Valor inicial de la propiedad bocas.</param>
-        /// <param name="motores">Valor inicial de la propiedad motores.</param>
-        public static FE CreateFE(global::System.Int32 numero, global::System.String estado, global::System.DateTime fecha_devolucion, global::System.DateTime fecha_recepcion, global::System.Boolean tipo_aporte, global::System.DateTime fecha_aprobacion, global::System.DateTime fecha_pago, global::System.Decimal dias_de_campo, global::System.Decimal dias_de_gabinete, global::System.Decimal hps, global::System.Decimal bocas, global::System.Decimal motores)
-        {
-            FE fE = new FE();
-            fE.numero = numero;
-            fE.estado = estado;
-            fE.fecha_devolucion = fecha_devolucion;
-            fE.fecha_recepcion = fecha_recepcion;
-            fE.tipo_aporte = tipo_aporte;
-            fE.fecha_aprobacion = fecha_aprobacion;
-            fE.fecha_pago = fecha_pago;
-            fE.dias_de_campo = dias_de_campo;
-            fE.dias_de_gabinete = dias_de_gabinete;
-            fE.hps = hps;
-            fE.bocas = bocas;
-            fE.motores = motores;
-            return fE;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Decimal dias_de_campo
-        {
-            get
-            {
-                return _dias_de_campo;
-            }
-            set
-            {
-                Ondias_de_campoChanging(value);
-                ReportPropertyChanging("dias_de_campo");
-                _dias_de_campo = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("dias_de_campo");
-                Ondias_de_campoChanged();
-            }
-        }
-        private global::System.Decimal _dias_de_campo;
-        partial void Ondias_de_campoChanging(global::System.Decimal value);
-        partial void Ondias_de_campoChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Decimal dias_de_gabinete
-        {
-            get
-            {
-                return _dias_de_gabinete;
-            }
-            set
-            {
-                Ondias_de_gabineteChanging(value);
-                ReportPropertyChanging("dias_de_gabinete");
-                _dias_de_gabinete = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("dias_de_gabinete");
-                Ondias_de_gabineteChanged();
-            }
-        }
-        private global::System.Decimal _dias_de_gabinete;
-        partial void Ondias_de_gabineteChanging(global::System.Decimal value);
-        partial void Ondias_de_gabineteChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Decimal hps
-        {
-            get
-            {
-                return _hps;
-            }
-            set
-            {
-                OnhpsChanging(value);
-                ReportPropertyChanging("hps");
-                _hps = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("hps");
-                OnhpsChanged();
-            }
-        }
-        private global::System.Decimal _hps;
-        partial void OnhpsChanging(global::System.Decimal value);
-        partial void OnhpsChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Decimal bocas
-        {
-            get
-            {
-                return _bocas;
-            }
-            set
-            {
-                OnbocasChanging(value);
-                ReportPropertyChanging("bocas");
-                _bocas = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("bocas");
-                OnbocasChanged();
-            }
-        }
-        private global::System.Decimal _bocas;
-        partial void OnbocasChanging(global::System.Decimal value);
-        partial void OnbocasChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Decimal motores
-        {
-            get
-            {
-                return _motores;
-            }
-            set
-            {
-                OnmotoresChanging(value);
-                ReportPropertyChanging("motores");
-                _motores = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("motores");
-                OnmotoresChanged();
-            }
-        }
-        private global::System.Decimal _motores;
-        partial void OnmotoresChanging(global::System.Decimal value);
-        partial void OnmotoresChanged();
-
-        #endregion
-
-    
     }
     
     /// <summary>
@@ -4235,751 +1234,6 @@ namespace Modelo_Entidades
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Historial")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Historial : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Historial.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="estado">Valor inicial de la propiedad estado.</param>
-        /// <param name="fecha">Valor inicial de la propiedad fecha.</param>
-        /// <param name="tipo_matricula">Valor inicial de la propiedad tipo_matricula.</param>
-        /// <param name="observaciones">Valor inicial de la propiedad observaciones.</param>
-        public static Historial CreateHistorial(global::System.Int32 id, global::System.String estado, global::System.DateTime fecha, global::System.String tipo_matricula, global::System.String observaciones)
-        {
-            Historial historial = new Historial();
-            historial.id = id;
-            historial.estado = estado;
-            historial.fecha = fecha;
-            historial.tipo_matricula = tipo_matricula;
-            historial.observaciones = observaciones;
-            return historial;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String estado
-        {
-            get
-            {
-                return _estado;
-            }
-            set
-            {
-                OnestadoChanging(value);
-                ReportPropertyChanging("estado");
-                _estado = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("estado");
-                OnestadoChanged();
-            }
-        }
-        private global::System.String _estado;
-        partial void OnestadoChanging(global::System.String value);
-        partial void OnestadoChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime fecha
-        {
-            get
-            {
-                return _fecha;
-            }
-            set
-            {
-                OnfechaChanging(value);
-                ReportPropertyChanging("fecha");
-                _fecha = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fecha");
-                OnfechaChanged();
-            }
-        }
-        private global::System.DateTime _fecha;
-        partial void OnfechaChanging(global::System.DateTime value);
-        partial void OnfechaChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String tipo_matricula
-        {
-            get
-            {
-                return _tipo_matricula;
-            }
-            set
-            {
-                Ontipo_matriculaChanging(value);
-                ReportPropertyChanging("tipo_matricula");
-                _tipo_matricula = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("tipo_matricula");
-                Ontipo_matriculaChanged();
-            }
-        }
-        private global::System.String _tipo_matricula;
-        partial void Ontipo_matriculaChanging(global::System.String value);
-        partial void Ontipo_matriculaChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String observaciones
-        {
-            get
-            {
-                return _observaciones;
-            }
-            set
-            {
-                OnobservacionesChanging(value);
-                ReportPropertyChanging("observaciones");
-                _observaciones = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("observaciones");
-                OnobservacionesChanged();
-            }
-        }
-        private global::System.String _observaciones;
-        partial void OnobservacionesChanging(global::System.String value);
-        partial void OnobservacionesChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ProfesionalHistoriales", "Profesional")]
-        public Profesional Profesional
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Profesional>("WASSTDModelo.ProfesionalHistoriales", "Profesional").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Profesional>("WASSTDModelo.ProfesionalHistoriales", "Profesional").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Profesional> ProfesionalReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Profesional>("WASSTDModelo.ProfesionalHistoriales", "Profesional");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Profesional>("WASSTDModelo.ProfesionalHistoriales", "Profesional", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="HM")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class HM : Expediente
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto HM.
-        /// </summary>
-        /// <param name="numero">Valor inicial de la propiedad numero.</param>
-        /// <param name="estado">Valor inicial de la propiedad estado.</param>
-        /// <param name="fecha_devolucion">Valor inicial de la propiedad fecha_devolucion.</param>
-        /// <param name="fecha_recepcion">Valor inicial de la propiedad fecha_recepcion.</param>
-        /// <param name="tipo_aporte">Valor inicial de la propiedad tipo_aporte.</param>
-        /// <param name="fecha_aprobacion">Valor inicial de la propiedad fecha_aprobacion.</param>
-        /// <param name="fecha_pago">Valor inicial de la propiedad fecha_pago.</param>
-        /// <param name="dias_de_campo">Valor inicial de la propiedad dias_de_campo.</param>
-        /// <param name="dias_de_gabinete">Valor inicial de la propiedad dias_de_gabinete.</param>
-        public static HM CreateHM(global::System.Int32 numero, global::System.String estado, global::System.DateTime fecha_devolucion, global::System.DateTime fecha_recepcion, global::System.Boolean tipo_aporte, global::System.DateTime fecha_aprobacion, global::System.DateTime fecha_pago, global::System.Decimal dias_de_campo, global::System.Decimal dias_de_gabinete)
-        {
-            HM hM = new HM();
-            hM.numero = numero;
-            hM.estado = estado;
-            hM.fecha_devolucion = fecha_devolucion;
-            hM.fecha_recepcion = fecha_recepcion;
-            hM.tipo_aporte = tipo_aporte;
-            hM.fecha_aprobacion = fecha_aprobacion;
-            hM.fecha_pago = fecha_pago;
-            hM.dias_de_campo = dias_de_campo;
-            hM.dias_de_gabinete = dias_de_gabinete;
-            return hM;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Decimal dias_de_campo
-        {
-            get
-            {
-                return _dias_de_campo;
-            }
-            set
-            {
-                Ondias_de_campoChanging(value);
-                ReportPropertyChanging("dias_de_campo");
-                _dias_de_campo = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("dias_de_campo");
-                Ondias_de_campoChanged();
-            }
-        }
-        private global::System.Decimal _dias_de_campo;
-        partial void Ondias_de_campoChanging(global::System.Decimal value);
-        partial void Ondias_de_campoChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Decimal dias_de_gabinete
-        {
-            get
-            {
-                return _dias_de_gabinete;
-            }
-            set
-            {
-                Ondias_de_gabineteChanging(value);
-                ReportPropertyChanging("dias_de_gabinete");
-                _dias_de_gabinete = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("dias_de_gabinete");
-                Ondias_de_gabineteChanged();
-            }
-        }
-        private global::System.Decimal _dias_de_gabinete;
-        partial void Ondias_de_gabineteChanging(global::System.Decimal value);
-        partial void Ondias_de_gabineteChanged();
-
-        #endregion
-
-    
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Jurisdiccion")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Jurisdiccion : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Jurisdiccion.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
-        public static Jurisdiccion CreateJurisdiccion(global::System.Int32 id, global::System.String descripcion)
-        {
-            Jurisdiccion jurisdiccion = new Jurisdiccion();
-            jurisdiccion.id = id;
-            jurisdiccion.descripcion = descripcion;
-            return jurisdiccion;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String descripcion
-        {
-            get
-            {
-                return _descripcion;
-            }
-            set
-            {
-                OndescripcionChanging(value);
-                ReportPropertyChanging("descripcion");
-                _descripcion = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("descripcion");
-                OndescripcionChanged();
-            }
-        }
-        private global::System.String _descripcion;
-        partial void OndescripcionChanging(global::System.String value);
-        partial void OndescripcionChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "JurisdiccionTitulo", "Titulo")]
-        public EntityCollection<Titulo> Titulos
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Titulo>("WASSTDModelo.JurisdiccionTitulo", "Titulo");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Titulo>("WASSTDModelo.JurisdiccionTitulo", "Titulo", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <LongDescription>
-    /// Es una entidad que me permite vincular a los planes con los titulos.
-    /// </LongDescription>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Legajo_Academico")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Legajo_Academico : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Legajo_Academico.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        public static Legajo_Academico CreateLegajo_Academico(global::System.Int32 id)
-        {
-            Legajo_Academico legajo_Academico = new Legajo_Academico();
-            legajo_Academico.id = id;
-            return legajo_Academico;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "MatriculaLegajo_Academico", "Matricula")]
-        public EntityCollection<Matricula> Matriculas
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Matricula>("WASSTDModelo.MatriculaLegajo_Academico", "Matricula");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Matricula>("WASSTDModelo.MatriculaLegajo_Academico", "Matricula", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "PlanLegajo_Academico", "Plan")]
-        public Plan Plan
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Plan>("WASSTDModelo.PlanLegajo_Academico", "Plan").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Plan>("WASSTDModelo.PlanLegajo_Academico", "Plan").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Plan> PlanReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Plan>("WASSTDModelo.PlanLegajo_Academico", "Plan");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Plan>("WASSTDModelo.PlanLegajo_Academico", "Plan", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "TituloLegajo_Academico", "Titulo")]
-        public Titulo Titulo
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Titulo>("WASSTDModelo.TituloLegajo_Academico", "Titulo").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Titulo>("WASSTDModelo.TituloLegajo_Academico", "Titulo").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Titulo> TituloReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Titulo>("WASSTDModelo.TituloLegajo_Academico", "Titulo");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Titulo>("WASSTDModelo.TituloLegajo_Academico", "Titulo", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Liquidacion")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Liquidacion : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Liquidacion.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad Id.</param>
-        /// <param name="tarea">Valor inicial de la propiedad tarea.</param>
-        /// <param name="cantidad">Valor inicial de la propiedad cantidad.</param>
-        /// <param name="importe">Valor inicial de la propiedad importe.</param>
-        public static Liquidacion CreateLiquidacion(global::System.Int32 id, global::System.String tarea, global::System.Decimal cantidad, global::System.Decimal importe)
-        {
-            Liquidacion liquidacion = new Liquidacion();
-            liquidacion.Id = id;
-            liquidacion.tarea = tarea;
-            liquidacion.cantidad = cantidad;
-            liquidacion.importe = importe;
-            return liquidacion;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 Id
-        {
-            get
-            {
-                return _Id;
-            }
-            set
-            {
-                if (_Id != value)
-                {
-                    OnIdChanging(value);
-                    ReportPropertyChanging("Id");
-                    _Id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("Id");
-                    OnIdChanged();
-                }
-            }
-        }
-        private global::System.Int32 _Id;
-        partial void OnIdChanging(global::System.Int32 value);
-        partial void OnIdChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String tarea
-        {
-            get
-            {
-                return _tarea;
-            }
-            set
-            {
-                OntareaChanging(value);
-                ReportPropertyChanging("tarea");
-                _tarea = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("tarea");
-                OntareaChanged();
-            }
-        }
-        private global::System.String _tarea;
-        partial void OntareaChanging(global::System.String value);
-        partial void OntareaChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Decimal cantidad
-        {
-            get
-            {
-                return _cantidad;
-            }
-            set
-            {
-                OncantidadChanging(value);
-                ReportPropertyChanging("cantidad");
-                _cantidad = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("cantidad");
-                OncantidadChanged();
-            }
-        }
-        private global::System.Decimal _cantidad;
-        partial void OncantidadChanging(global::System.Decimal value);
-        partial void OncantidadChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Decimal importe
-        {
-            get
-            {
-                return _importe;
-            }
-            set
-            {
-                OnimporteChanging(value);
-                ReportPropertyChanging("importe");
-                _importe = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("importe");
-                OnimporteChanged();
-            }
-        }
-        private global::System.Decimal _importe;
-        partial void OnimporteChanging(global::System.Decimal value);
-        partial void OnimporteChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ExpedienteLiquidacion", "Expediente")]
-        public Expediente Expediente
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Expediente>("WASSTDModelo.ExpedienteLiquidacion", "Expediente").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Expediente>("WASSTDModelo.ExpedienteLiquidacion", "Expediente").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Expediente> ExpedienteReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Expediente>("WASSTDModelo.ExpedienteLiquidacion", "Expediente");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Expediente>("WASSTDModelo.ExpedienteLiquidacion", "Expediente", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Localidad")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -5153,419 +1407,6 @@ namespace Modelo_Entidades
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Matricula")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Matricula : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Matricula.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="certificado">Valor inicial de la propiedad certificado.</param>
-        /// <param name="fecha_doc">Valor inicial de la propiedad fecha_doc.</param>
-        /// <param name="incumbencia">Valor inicial de la propiedad incumbencia.</param>
-        /// <param name="plan">Valor inicial de la propiedad plan.</param>
-        /// <param name="analitico">Valor inicial de la propiedad analitico.</param>
-        public static Matricula CreateMatricula(global::System.Int32 id, global::System.Boolean certificado, global::System.DateTime fecha_doc, global::System.Boolean incumbencia, global::System.Boolean plan, global::System.Boolean analitico)
-        {
-            Matricula matricula = new Matricula();
-            matricula.id = id;
-            matricula.certificado = certificado;
-            matricula.fecha_doc = fecha_doc;
-            matricula.incumbencia = incumbencia;
-            matricula.plan = plan;
-            matricula.analitico = analitico;
-            return matricula;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String icie
-        {
-            get
-            {
-                return _icie;
-            }
-            set
-            {
-                OnicieChanging(value);
-                ReportPropertyChanging("icie");
-                _icie = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("icie");
-                OnicieChanged();
-            }
-        }
-        private global::System.String _icie;
-        partial void OnicieChanging(global::System.String value);
-        partial void OnicieChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean certificado
-        {
-            get
-            {
-                return _certificado;
-            }
-            set
-            {
-                OncertificadoChanging(value);
-                ReportPropertyChanging("certificado");
-                _certificado = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("certificado");
-                OncertificadoChanged();
-            }
-        }
-        private global::System.Boolean _certificado;
-        partial void OncertificadoChanging(global::System.Boolean value);
-        partial void OncertificadoChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime fecha_doc
-        {
-            get
-            {
-                return _fecha_doc;
-            }
-            set
-            {
-                Onfecha_docChanging(value);
-                ReportPropertyChanging("fecha_doc");
-                _fecha_doc = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fecha_doc");
-                Onfecha_docChanged();
-            }
-        }
-        private global::System.DateTime _fecha_doc;
-        partial void Onfecha_docChanging(global::System.DateTime value);
-        partial void Onfecha_docChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean incumbencia
-        {
-            get
-            {
-                return _incumbencia;
-            }
-            set
-            {
-                OnincumbenciaChanging(value);
-                ReportPropertyChanging("incumbencia");
-                _incumbencia = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("incumbencia");
-                OnincumbenciaChanged();
-            }
-        }
-        private global::System.Boolean _incumbencia;
-        partial void OnincumbenciaChanging(global::System.Boolean value);
-        partial void OnincumbenciaChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean plan
-        {
-            get
-            {
-                return _plan;
-            }
-            set
-            {
-                OnplanChanging(value);
-                ReportPropertyChanging("plan");
-                _plan = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("plan");
-                OnplanChanged();
-            }
-        }
-        private global::System.Boolean _plan;
-        partial void OnplanChanging(global::System.Boolean value);
-        partial void OnplanChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean analitico
-        {
-            get
-            {
-                return _analitico;
-            }
-            set
-            {
-                OnanaliticoChanging(value);
-                ReportPropertyChanging("analitico");
-                _analitico = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("analitico");
-                OnanaliticoChanged();
-            }
-        }
-        private global::System.Boolean _analitico;
-        partial void OnanaliticoChanging(global::System.Boolean value);
-        partial void OnanaliticoChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ProfesionalMatricula", "Profesional")]
-        public Profesional Profesional
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Profesional>("WASSTDModelo.ProfesionalMatricula", "Profesional").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Profesional>("WASSTDModelo.ProfesionalMatricula", "Profesional").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Profesional> ProfesionalReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Profesional>("WASSTDModelo.ProfesionalMatricula", "Profesional");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Profesional>("WASSTDModelo.ProfesionalMatricula", "Profesional", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "MatriculaLegajo_Academico", "Legajo_Academico")]
-        public Legajo_Academico Legajo_Academico
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Legajo_Academico>("WASSTDModelo.MatriculaLegajo_Academico", "Legajo_Academico").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Legajo_Academico>("WASSTDModelo.MatriculaLegajo_Academico", "Legajo_Academico").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Legajo_Academico> Legajo_AcademicoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Legajo_Academico>("WASSTDModelo.MatriculaLegajo_Academico", "Legajo_Academico");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Legajo_Academico>("WASSTDModelo.MatriculaLegajo_Academico", "Legajo_Academico", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Modalidad")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Modalidad : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Modalidad.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
-        public static Modalidad CreateModalidad(global::System.Int32 id, global::System.String descripcion)
-        {
-            Modalidad modalidad = new Modalidad();
-            modalidad.id = id;
-            modalidad.descripcion = descripcion;
-            return modalidad;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String descripcion
-        {
-            get
-            {
-                return _descripcion;
-            }
-            set
-            {
-                OndescripcionChanging(value);
-                ReportPropertyChanging("descripcion");
-                _descripcion = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("descripcion");
-                OndescripcionChanged();
-            }
-        }
-        private global::System.String _descripcion;
-        partial void OndescripcionChanging(global::System.String value);
-        partial void OndescripcionChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ModalidadTitulo", "Titulo")]
-        public EntityCollection<Titulo> Titulos
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Titulo>("WASSTDModelo.ModalidadTitulo", "Titulo");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Titulo>("WASSTDModelo.ModalidadTitulo", "Titulo", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Modificador")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    [KnownTypeAttribute(typeof(Descuento_Anual))]
-    [KnownTypeAttribute(typeof(Con_Recargo))]
-    public abstract partial class Modificador : Cuota
-    {
-    
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Modulo")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -5670,436 +1511,6 @@ namespace Modelo_Entidades
 
         #endregion
 
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Movimiento")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Movimiento : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Movimiento.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
-        /// <param name="importe">Valor inicial de la propiedad importe.</param>
-        /// <param name="fecha">Valor inicial de la propiedad fecha.</param>
-        public static Movimiento CreateMovimiento(global::System.Int32 id, global::System.String descripcion, global::System.Double importe, global::System.DateTime fecha)
-        {
-            Movimiento movimiento = new Movimiento();
-            movimiento.id = id;
-            movimiento.descripcion = descripcion;
-            movimiento.importe = importe;
-            movimiento.fecha = fecha;
-            return movimiento;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String descripcion
-        {
-            get
-            {
-                return _descripcion;
-            }
-            set
-            {
-                OndescripcionChanging(value);
-                ReportPropertyChanging("descripcion");
-                _descripcion = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("descripcion");
-                OndescripcionChanged();
-            }
-        }
-        private global::System.String _descripcion;
-        partial void OndescripcionChanging(global::System.String value);
-        partial void OndescripcionChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Double importe
-        {
-            get
-            {
-                return _importe;
-            }
-            set
-            {
-                OnimporteChanging(value);
-                ReportPropertyChanging("importe");
-                _importe = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("importe");
-                OnimporteChanged();
-            }
-        }
-        private global::System.Double _importe;
-        partial void OnimporteChanging(global::System.Double value);
-        partial void OnimporteChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.DateTime fecha
-        {
-            get
-            {
-                return _fecha;
-            }
-            set
-            {
-                OnfechaChanging(value);
-                ReportPropertyChanging("fecha");
-                _fecha = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fecha");
-                OnfechaChanged();
-            }
-        }
-        private global::System.DateTime _fecha;
-        partial void OnfechaChanging(global::System.DateTime value);
-        partial void OnfechaChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "MovimientoCtaCte", "CtaCte")]
-        public CtaCte CtaCte
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CtaCte>("WASSTDModelo.MovimientoCtaCte", "CtaCte").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CtaCte>("WASSTDModelo.MovimientoCtaCte", "CtaCte").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<CtaCte> CtaCteReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CtaCte>("WASSTDModelo.MovimientoCtaCte", "CtaCte");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<CtaCte>("WASSTDModelo.MovimientoCtaCte", "CtaCte", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "Tipo_MovimientoMovimiento", "Tipo_Movimiento")]
-        public Tipo_Movimiento Tipo_Movimiento
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tipo_Movimiento>("WASSTDModelo.Tipo_MovimientoMovimiento", "Tipo_Movimiento").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tipo_Movimiento>("WASSTDModelo.Tipo_MovimientoMovimiento", "Tipo_Movimiento").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Tipo_Movimiento> Tipo_MovimientoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tipo_Movimiento>("WASSTDModelo.Tipo_MovimientoMovimiento", "Tipo_Movimiento");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Tipo_Movimiento>("WASSTDModelo.Tipo_MovimientoMovimiento", "Tipo_Movimiento", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ComprobanteMovimiento", "Comprobante")]
-        public Comprobante Comprobante
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Comprobante>("WASSTDModelo.ComprobanteMovimiento", "Comprobante").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Comprobante>("WASSTDModelo.ComprobanteMovimiento", "Comprobante").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Comprobante> ComprobanteReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Comprobante>("WASSTDModelo.ComprobanteMovimiento", "Comprobante");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Comprobante>("WASSTDModelo.ComprobanteMovimiento", "Comprobante", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Nivel")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Nivel : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Nivel.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
-        public static Nivel CreateNivel(global::System.Int32 id, global::System.String descripcion)
-        {
-            Nivel nivel = new Nivel();
-            nivel.id = id;
-            nivel.descripcion = descripcion;
-            return nivel;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String descripcion
-        {
-            get
-            {
-                return _descripcion;
-            }
-            set
-            {
-                OndescripcionChanging(value);
-                ReportPropertyChanging("descripcion");
-                _descripcion = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("descripcion");
-                OndescripcionChanged();
-            }
-        }
-        private global::System.String _descripcion;
-        partial void OndescripcionChanging(global::System.String value);
-        partial void OndescripcionChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "NivelTitulo", "Titulo")]
-        public EntityCollection<Titulo> Titulos
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Titulo>("WASSTDModelo.NivelTitulo", "Titulo");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Titulo>("WASSTDModelo.NivelTitulo", "Titulo", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="OI")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class OI : Expediente
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto OI.
-        /// </summary>
-        /// <param name="numero">Valor inicial de la propiedad numero.</param>
-        /// <param name="estado">Valor inicial de la propiedad estado.</param>
-        /// <param name="fecha_devolucion">Valor inicial de la propiedad fecha_devolucion.</param>
-        /// <param name="fecha_recepcion">Valor inicial de la propiedad fecha_recepcion.</param>
-        /// <param name="tipo_aporte">Valor inicial de la propiedad tipo_aporte.</param>
-        /// <param name="fecha_aprobacion">Valor inicial de la propiedad fecha_aprobacion.</param>
-        /// <param name="fecha_pago">Valor inicial de la propiedad fecha_pago.</param>
-        /// <param name="monto_obra">Valor inicial de la propiedad monto_obra.</param>
-        public static OI CreateOI(global::System.Int32 numero, global::System.String estado, global::System.DateTime fecha_devolucion, global::System.DateTime fecha_recepcion, global::System.Boolean tipo_aporte, global::System.DateTime fecha_aprobacion, global::System.DateTime fecha_pago, global::System.Decimal monto_obra)
-        {
-            OI oI = new OI();
-            oI.numero = numero;
-            oI.estado = estado;
-            oI.fecha_devolucion = fecha_devolucion;
-            oI.fecha_recepcion = fecha_recepcion;
-            oI.tipo_aporte = tipo_aporte;
-            oI.fecha_aprobacion = fecha_aprobacion;
-            oI.fecha_pago = fecha_pago;
-            oI.monto_obra = monto_obra;
-            return oI;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Decimal monto_obra
-        {
-            get
-            {
-                return _monto_obra;
-            }
-            set
-            {
-                Onmonto_obraChanging(value);
-                ReportPropertyChanging("monto_obra");
-                _monto_obra = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("monto_obra");
-                Onmonto_obraChanged();
-            }
-        }
-        private global::System.Decimal _monto_obra;
-        partial void Onmonto_obraChanging(global::System.Decimal value);
-        partial void Onmonto_obraChanged();
-
-        #endregion
-
-    
     }
     
     /// <summary>
@@ -6389,227 +1800,40 @@ namespace Modelo_Entidades
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Plan")]
+    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Persona")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Plan : EntityObject
+    public partial class Persona : EntityObject
     {
         #region Método de generador
     
         /// <summary>
-        /// Crear un nuevo objeto Plan.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="año">Valor inicial de la propiedad año.</param>
-        /// <param name="ordenanza">Valor inicial de la propiedad ordenanza.</param>
-        /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
-        /// <param name="incumbencia">Valor inicial de la propiedad incumbencia.</param>
-        public static Plan CreatePlan(global::System.Int32 id, global::System.String año, global::System.String ordenanza, global::System.String descripcion, global::System.String incumbencia)
-        {
-            Plan plan = new Plan();
-            plan.id = id;
-            plan.año = año;
-            plan.ordenanza = ordenanza;
-            plan.descripcion = descripcion;
-            plan.incumbencia = incumbencia;
-            return plan;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String año
-        {
-            get
-            {
-                return _año;
-            }
-            set
-            {
-                OnañoChanging(value);
-                ReportPropertyChanging("año");
-                _año = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("año");
-                OnañoChanged();
-            }
-        }
-        private global::System.String _año;
-        partial void OnañoChanging(global::System.String value);
-        partial void OnañoChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String ordenanza
-        {
-            get
-            {
-                return _ordenanza;
-            }
-            set
-            {
-                OnordenanzaChanging(value);
-                ReportPropertyChanging("ordenanza");
-                _ordenanza = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("ordenanza");
-                OnordenanzaChanged();
-            }
-        }
-        private global::System.String _ordenanza;
-        partial void OnordenanzaChanging(global::System.String value);
-        partial void OnordenanzaChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String descripcion
-        {
-            get
-            {
-                return _descripcion;
-            }
-            set
-            {
-                OndescripcionChanging(value);
-                ReportPropertyChanging("descripcion");
-                _descripcion = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("descripcion");
-                OndescripcionChanged();
-            }
-        }
-        private global::System.String _descripcion;
-        partial void OndescripcionChanging(global::System.String value);
-        partial void OndescripcionChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String incumbencia
-        {
-            get
-            {
-                return _incumbencia;
-            }
-            set
-            {
-                OnincumbenciaChanging(value);
-                ReportPropertyChanging("incumbencia");
-                _incumbencia = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("incumbencia");
-                OnincumbenciaChanged();
-            }
-        }
-        private global::System.String _incumbencia;
-        partial void OnincumbenciaChanging(global::System.String value);
-        partial void OnincumbenciaChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "PlanLegajo_Academico", "Legajo_Academico")]
-        public EntityCollection<Legajo_Academico> Legajos_Academicos
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Legajo_Academico>("WASSTDModelo.PlanLegajo_Academico", "Legajo_Academico");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Legajo_Academico>("WASSTDModelo.PlanLegajo_Academico", "Legajo_Academico", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Profesional")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Profesional : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Profesional.
+        /// Crear un nuevo objeto Persona.
         /// </summary>
         /// <param name="dni">Valor inicial de la propiedad dni.</param>
         /// <param name="nombre_apellido">Valor inicial de la propiedad nombre_apellido.</param>
-        /// <param name="fecha_nacimiento">Valor inicial de la propiedad fecha_nacimiento.</param>
         /// <param name="sexo">Valor inicial de la propiedad sexo.</param>
         /// <param name="telefono">Valor inicial de la propiedad telefono.</param>
         /// <param name="celular">Valor inicial de la propiedad celular.</param>
         /// <param name="email1">Valor inicial de la propiedad email1.</param>
-        /// <param name="email2">Valor inicial de la propiedad email2.</param>
         /// <param name="observaciones">Valor inicial de la propiedad observaciones.</param>
-        /// <param name="titulo_a_mostrar">Valor inicial de la propiedad titulo_a_mostrar.</param>
-        public static Profesional CreateProfesional(global::System.Int32 dni, global::System.String nombre_apellido, global::System.DateTime fecha_nacimiento, global::System.String sexo, global::System.Int32 telefono, global::System.Int32 celular, global::System.String email1, global::System.String email2, global::System.String observaciones, global::System.String titulo_a_mostrar)
+        /// <param name="clave_fiscal">Valor inicial de la propiedad clave_fiscal.</param>
+        /// <param name="fecha_nacimiento">Valor inicial de la propiedad fecha_nacimiento.</param>
+        /// <param name="tipo_PersonaId">Valor inicial de la propiedad Tipo_PersonaId.</param>
+        public static Persona CreatePersona(global::System.Int32 dni, global::System.String nombre_apellido, global::System.String sexo, global::System.String telefono, global::System.String celular, global::System.String email1, global::System.String observaciones, global::System.String clave_fiscal, global::System.DateTime fecha_nacimiento, global::System.Int32 tipo_PersonaId)
         {
-            Profesional profesional = new Profesional();
-            profesional.dni = dni;
-            profesional.nombre_apellido = nombre_apellido;
-            profesional.fecha_nacimiento = fecha_nacimiento;
-            profesional.sexo = sexo;
-            profesional.telefono = telefono;
-            profesional.celular = celular;
-            profesional.email1 = email1;
-            profesional.email2 = email2;
-            profesional.observaciones = observaciones;
-            profesional.titulo_a_mostrar = titulo_a_mostrar;
-            return profesional;
+            Persona persona = new Persona();
+            persona.dni = dni;
+            persona.nombre_apellido = nombre_apellido;
+            persona.sexo = sexo;
+            persona.telefono = telefono;
+            persona.celular = celular;
+            persona.email1 = email1;
+            persona.observaciones = observaciones;
+            persona.clave_fiscal = clave_fiscal;
+            persona.fecha_nacimiento = fecha_nacimiento;
+            persona.Tipo_PersonaId = tipo_PersonaId;
+            return persona;
         }
 
         #endregion
@@ -6672,30 +1896,6 @@ namespace Modelo_Entidades
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.DateTime fecha_nacimiento
-        {
-            get
-            {
-                return _fecha_nacimiento;
-            }
-            set
-            {
-                Onfecha_nacimientoChanging(value);
-                ReportPropertyChanging("fecha_nacimiento");
-                _fecha_nacimiento = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("fecha_nacimiento");
-                Onfecha_nacimientoChanged();
-            }
-        }
-        private global::System.DateTime _fecha_nacimiento;
-        partial void Onfecha_nacimientoChanging(global::System.DateTime value);
-        partial void Onfecha_nacimientoChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
         public global::System.String sexo
         {
             get
@@ -6720,7 +1920,7 @@ namespace Modelo_Entidades
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 telefono
+        public global::System.String telefono
         {
             get
             {
@@ -6730,13 +1930,13 @@ namespace Modelo_Entidades
             {
                 OntelefonoChanging(value);
                 ReportPropertyChanging("telefono");
-                _telefono = StructuralObject.SetValidValue(value);
+                _telefono = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("telefono");
                 OntelefonoChanged();
             }
         }
-        private global::System.Int32 _telefono;
-        partial void OntelefonoChanging(global::System.Int32 value);
+        private global::System.String _telefono;
+        partial void OntelefonoChanging(global::System.String value);
         partial void OntelefonoChanged();
     
         /// <summary>
@@ -6744,7 +1944,7 @@ namespace Modelo_Entidades
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 celular
+        public global::System.String celular
         {
             get
             {
@@ -6754,13 +1954,13 @@ namespace Modelo_Entidades
             {
                 OncelularChanging(value);
                 ReportPropertyChanging("celular");
-                _celular = StructuralObject.SetValidValue(value);
+                _celular = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("celular");
                 OncelularChanged();
             }
         }
-        private global::System.Int32 _celular;
-        partial void OncelularChanging(global::System.Int32 value);
+        private global::System.String _celular;
+        partial void OncelularChanging(global::System.String value);
         partial void OncelularChanged();
     
         /// <summary>
@@ -6792,30 +1992,6 @@ namespace Modelo_Entidades
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String email2
-        {
-            get
-            {
-                return _email2;
-            }
-            set
-            {
-                Onemail2Changing(value);
-                ReportPropertyChanging("email2");
-                _email2 = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("email2");
-                Onemail2Changed();
-            }
-        }
-        private global::System.String _email2;
-        partial void Onemail2Changing(global::System.String value);
-        partial void Onemail2Changed();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
         public global::System.String observaciones
         {
             get
@@ -6838,74 +2014,74 @@ namespace Modelo_Entidades
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String lugar_trabajo
+        public global::System.String clave_fiscal
         {
             get
             {
-                return _lugar_trabajo;
+                return _clave_fiscal;
             }
             set
             {
-                Onlugar_trabajoChanging(value);
-                ReportPropertyChanging("lugar_trabajo");
-                _lugar_trabajo = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("lugar_trabajo");
-                Onlugar_trabajoChanged();
+                Onclave_fiscalChanging(value);
+                ReportPropertyChanging("clave_fiscal");
+                _clave_fiscal = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("clave_fiscal");
+                Onclave_fiscalChanged();
             }
         }
-        private global::System.String _lugar_trabajo;
-        partial void Onlugar_trabajoChanging(global::System.String value);
-        partial void Onlugar_trabajoChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> convenio_año
-        {
-            get
-            {
-                return _convenio_año;
-            }
-            set
-            {
-                Onconvenio_añoChanging(value);
-                ReportPropertyChanging("convenio_año");
-                _convenio_año = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("convenio_año");
-                Onconvenio_añoChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _convenio_año;
-        partial void Onconvenio_añoChanging(Nullable<global::System.Int32> value);
-        partial void Onconvenio_añoChanged();
+        private global::System.String _clave_fiscal;
+        partial void Onclave_fiscalChanging(global::System.String value);
+        partial void Onclave_fiscalChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String titulo_a_mostrar
+        public global::System.DateTime fecha_nacimiento
         {
             get
             {
-                return _titulo_a_mostrar;
+                return _fecha_nacimiento;
             }
             set
             {
-                Ontitulo_a_mostrarChanging(value);
-                ReportPropertyChanging("titulo_a_mostrar");
-                _titulo_a_mostrar = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("titulo_a_mostrar");
-                Ontitulo_a_mostrarChanged();
+                Onfecha_nacimientoChanging(value);
+                ReportPropertyChanging("fecha_nacimiento");
+                _fecha_nacimiento = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("fecha_nacimiento");
+                Onfecha_nacimientoChanged();
             }
         }
-        private global::System.String _titulo_a_mostrar;
-        partial void Ontitulo_a_mostrarChanging(global::System.String value);
-        partial void Ontitulo_a_mostrarChanged();
+        private global::System.DateTime _fecha_nacimiento;
+        partial void Onfecha_nacimientoChanging(global::System.DateTime value);
+        partial void Onfecha_nacimientoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Tipo_PersonaId
+        {
+            get
+            {
+                return _Tipo_PersonaId;
+            }
+            set
+            {
+                OnTipo_PersonaIdChanging(value);
+                ReportPropertyChanging("Tipo_PersonaId");
+                _Tipo_PersonaId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Tipo_PersonaId");
+                OnTipo_PersonaIdChanged();
+            }
+        }
+        private global::System.Int32 _Tipo_PersonaId;
+        partial void OnTipo_PersonaIdChanging(global::System.Int32 value);
+        partial void OnTipo_PersonaIdChanged();
 
         #endregion
 
@@ -6918,78 +2094,18 @@ namespace Modelo_Entidades
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "CtaCteProfesional", "CtaCte")]
-        public CtaCte CtaCte
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CtaCte>("WASSTDModelo.CtaCteProfesional", "CtaCte").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CtaCte>("WASSTDModelo.CtaCteProfesional", "CtaCte").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<CtaCte> CtaCteReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CtaCte>("WASSTDModelo.CtaCteProfesional", "CtaCte");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<CtaCte>("WASSTDModelo.CtaCteProfesional", "CtaCte", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ProfesionalHistoriales", "Historial")]
-        public EntityCollection<Historial> Historiales
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Historial>("WASSTDModelo.ProfesionalHistoriales", "Historial");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Historial>("WASSTDModelo.ProfesionalHistoriales", "Historial", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ProfesionalDirecciones", "Direccion")]
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "PersonaDirecciones", "Direccion")]
         public EntityCollection<Direccion> Direcciones
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Direccion>("WASSTDModelo.ProfesionalDirecciones", "Direccion");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Direccion>("WASSTDModelo.PersonaDirecciones", "Direccion");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Direccion>("WASSTDModelo.ProfesionalDirecciones", "Direccion", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Direccion>("WASSTDModelo.PersonaDirecciones", "Direccion", value);
                 }
             }
         }
@@ -7000,38 +2116,16 @@ namespace Modelo_Entidades
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ProfesionalMatricula", "Matricula")]
-        public EntityCollection<Matricula> Matriculas
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Matricula>("WASSTDModelo.ProfesionalMatricula", "Matricula");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Matricula>("WASSTDModelo.ProfesionalMatricula", "Matricula", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "Tipo_DocumentoProfesional", "Tipo_Documento")]
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "Tipo_DocumentoPersona", "Tipo_Documento")]
         public Tipo_Documento Tipo_Documento
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tipo_Documento>("WASSTDModelo.Tipo_DocumentoProfesional", "Tipo_Documento").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tipo_Documento>("WASSTDModelo.Tipo_DocumentoPersona", "Tipo_Documento").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tipo_Documento>("WASSTDModelo.Tipo_DocumentoProfesional", "Tipo_Documento").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tipo_Documento>("WASSTDModelo.Tipo_DocumentoPersona", "Tipo_Documento").Value = value;
             }
         }
         /// <summary>
@@ -7043,13 +2137,13 @@ namespace Modelo_Entidades
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tipo_Documento>("WASSTDModelo.Tipo_DocumentoProfesional", "Tipo_Documento");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tipo_Documento>("WASSTDModelo.Tipo_DocumentoPersona", "Tipo_Documento");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Tipo_Documento>("WASSTDModelo.Tipo_DocumentoProfesional", "Tipo_Documento", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Tipo_Documento>("WASSTDModelo.Tipo_DocumentoPersona", "Tipo_Documento", value);
                 }
             }
         }
@@ -7060,16 +2154,16 @@ namespace Modelo_Entidades
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "EstadoProfesional", "Estado")]
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "EstadoPersona", "Estado")]
         public Estado Estado
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Estado>("WASSTDModelo.EstadoProfesional", "Estado").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Estado>("WASSTDModelo.EstadoPersona", "Estado").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Estado>("WASSTDModelo.EstadoProfesional", "Estado").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Estado>("WASSTDModelo.EstadoPersona", "Estado").Value = value;
             }
         }
         /// <summary>
@@ -7081,13 +2175,13 @@ namespace Modelo_Entidades
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Estado>("WASSTDModelo.EstadoProfesional", "Estado");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Estado>("WASSTDModelo.EstadoPersona", "Estado");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Estado>("WASSTDModelo.EstadoProfesional", "Estado", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Estado>("WASSTDModelo.EstadoPersona", "Estado", value);
                 }
             }
         }
@@ -7098,16 +2192,38 @@ namespace Modelo_Entidades
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ColegioProfesional", "Colegio")]
-        public Colegio Colegio
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "TramitePersona", "Tramite")]
+        public EntityCollection<Tramite> Tramite
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Colegio>("WASSTDModelo.ColegioProfesional", "Colegio").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Tramite>("WASSTDModelo.TramitePersona", "Tramite");
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Colegio>("WASSTDModelo.ColegioProfesional", "Colegio").Value = value;
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Tramite>("WASSTDModelo.TramitePersona", "Tramite", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "Tipo_PersonaPersona", "Tipo_Persona")]
+        public Tipo_Persona Tipo_Persona
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tipo_Persona>("WASSTDModelo.Tipo_PersonaPersona", "Tipo_Persona").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tipo_Persona>("WASSTDModelo.Tipo_PersonaPersona", "Tipo_Persona").Value = value;
             }
         }
         /// <summary>
@@ -7115,121 +2231,17 @@ namespace Modelo_Entidades
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Colegio> ColegioReference
+        public EntityReference<Tipo_Persona> Tipo_PersonaReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Colegio>("WASSTDModelo.ColegioProfesional", "Colegio");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tipo_Persona>("WASSTDModelo.Tipo_PersonaPersona", "Tipo_Persona");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Colegio>("WASSTDModelo.ColegioProfesional", "Colegio", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "Tipo_MatriculaProfesional", "Tipo_Matricula")]
-        public Tipo_Matricula Tipo_Matricula
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tipo_Matricula>("WASSTDModelo.Tipo_MatriculaProfesional", "Tipo_Matricula").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tipo_Matricula>("WASSTDModelo.Tipo_MatriculaProfesional", "Tipo_Matricula").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Tipo_Matricula> Tipo_MatriculaReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tipo_Matricula>("WASSTDModelo.Tipo_MatriculaProfesional", "Tipo_Matricula");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Tipo_Matricula>("WASSTDModelo.Tipo_MatriculaProfesional", "Tipo_Matricula", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ProfesionalExpediente", "Expediente")]
-        public EntityCollection<Expediente> Expedientes
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Expediente>("WASSTDModelo.ProfesionalExpediente", "Expediente");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Expediente>("WASSTDModelo.ProfesionalExpediente", "Expediente", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ProfesionalAsistencia", "Asistencia")]
-        public EntityCollection<Asistencia> Asistencias
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Asistencia>("WASSTDModelo.ProfesionalAsistencia", "Asistencia");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Asistencia>("WASSTDModelo.ProfesionalAsistencia", "Asistencia", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ProfesionalCuota", "Cuota")]
-        public EntityCollection<Cuota> Cuota
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Cuota>("WASSTDModelo.ProfesionalCuota", "Cuota");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Cuota>("WASSTDModelo.ProfesionalCuota", "Cuota", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Tipo_Persona>("WASSTDModelo.Tipo_PersonaPersona", "Tipo_Persona", value);
                 }
             }
         }
@@ -7350,224 +2362,6 @@ namespace Modelo_Entidades
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Tarea")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Tarea : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Tarea.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad Id.</param>
-        /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
-        public static Tarea CreateTarea(global::System.Int32 id, global::System.String descripcion)
-        {
-            Tarea tarea = new Tarea();
-            tarea.Id = id;
-            tarea.descripcion = descripcion;
-            return tarea;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 Id
-        {
-            get
-            {
-                return _Id;
-            }
-            set
-            {
-                if (_Id != value)
-                {
-                    OnIdChanging(value);
-                    ReportPropertyChanging("Id");
-                    _Id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("Id");
-                    OnIdChanged();
-                }
-            }
-        }
-        private global::System.Int32 _Id;
-        partial void OnIdChanging(global::System.Int32 value);
-        partial void OnIdChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String descripcion
-        {
-            get
-            {
-                return _descripcion;
-            }
-            set
-            {
-                OndescripcionChanging(value);
-                ReportPropertyChanging("descripcion");
-                _descripcion = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("descripcion");
-                OndescripcionChanged();
-            }
-        }
-        private global::System.String _descripcion;
-        partial void OndescripcionChanging(global::System.String value);
-        partial void OndescripcionChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "TareaExpediente", "Expediente")]
-        public EntityCollection<Expediente> Expedientes
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Expediente>("WASSTDModelo.TareaExpediente", "Expediente");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Expediente>("WASSTDModelo.TareaExpediente", "Expediente", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Tipo_Certificado")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Tipo_Certificado : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Tipo_Certificado.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
-        /// <param name="texto">Valor inicial de la propiedad texto.</param>
-        public static Tipo_Certificado CreateTipo_Certificado(global::System.Int32 id, global::System.String descripcion, global::System.String texto)
-        {
-            Tipo_Certificado tipo_Certificado = new Tipo_Certificado();
-            tipo_Certificado.id = id;
-            tipo_Certificado.descripcion = descripcion;
-            tipo_Certificado.texto = texto;
-            return tipo_Certificado;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String descripcion
-        {
-            get
-            {
-                return _descripcion;
-            }
-            set
-            {
-                OndescripcionChanging(value);
-                ReportPropertyChanging("descripcion");
-                _descripcion = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("descripcion");
-                OndescripcionChanged();
-            }
-        }
-        private global::System.String _descripcion;
-        partial void OndescripcionChanging(global::System.String value);
-        partial void OndescripcionChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String texto
-        {
-            get
-            {
-                return _texto;
-            }
-            set
-            {
-                OntextoChanging(value);
-                ReportPropertyChanging("texto");
-                _texto = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("texto");
-                OntextoChanged();
-            }
-        }
-        private global::System.String _texto;
-        partial void OntextoChanging(global::System.String value);
-        partial void OntextoChanged();
-
-        #endregion
-
-    
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Tipo_Documento")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -7654,130 +2448,18 @@ namespace Modelo_Entidades
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "Tipo_DocumentoProfesional", "Profesional")]
-        public EntityCollection<Profesional> Profesionales
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "Tipo_DocumentoPersona", "Persona")]
+        public EntityCollection<Persona> Personas
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Profesional>("WASSTDModelo.Tipo_DocumentoProfesional", "Profesional");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Persona>("WASSTDModelo.Tipo_DocumentoPersona", "Persona");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Profesional>("WASSTDModelo.Tipo_DocumentoProfesional", "Profesional", value);
-                }
-            }
-        }
-
-        #endregion
-
-    }
-    
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <LongDescription>
-    /// Vendría a ser la condición en la que se encuentra el profesional con el colegio
-    /// </LongDescription>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Tipo_Matricula")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Tipo_Matricula : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Tipo_Matricula.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
-        public static Tipo_Matricula CreateTipo_Matricula(global::System.Int32 id, global::System.String descripcion)
-        {
-            Tipo_Matricula tipo_Matricula = new Tipo_Matricula();
-            tipo_Matricula.id = id;
-            tipo_Matricula.descripcion = descripcion;
-            return tipo_Matricula;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String descripcion
-        {
-            get
-            {
-                return _descripcion;
-            }
-            set
-            {
-                OndescripcionChanging(value);
-                ReportPropertyChanging("descripcion");
-                _descripcion = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("descripcion");
-                OndescripcionChanged();
-            }
-        }
-        private global::System.String _descripcion;
-        partial void OndescripcionChanging(global::System.String value);
-        partial void OndescripcionChanged();
-
-        #endregion
-
-    
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "Tipo_MatriculaProfesional", "Profesional")]
-        public EntityCollection<Profesional> Profesionales
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Profesional>("WASSTDModelo.Tipo_MatriculaProfesional", "Profesional");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Profesional>("WASSTDModelo.Tipo_MatriculaProfesional", "Profesional", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Persona>("WASSTDModelo.Tipo_DocumentoPersona", "Persona", value);
                 }
             }
         }
@@ -7789,24 +2471,24 @@ namespace Modelo_Entidades
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Tipo_Movimiento")]
+    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Tipo_Persona")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Tipo_Movimiento : EntityObject
+    public partial class Tipo_Persona : EntityObject
     {
         #region Método de generador
     
         /// <summary>
-        /// Crear un nuevo objeto Tipo_Movimiento.
+        /// Crear un nuevo objeto Tipo_Persona.
         /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
+        /// <param name="id">Valor inicial de la propiedad Id.</param>
         /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
-        public static Tipo_Movimiento CreateTipo_Movimiento(global::System.Int32 id, global::System.String descripcion)
+        public static Tipo_Persona CreateTipo_Persona(global::System.Int32 id, global::System.String descripcion)
         {
-            Tipo_Movimiento tipo_Movimiento = new Tipo_Movimiento();
-            tipo_Movimiento.id = id;
-            tipo_Movimiento.descripcion = descripcion;
-            return tipo_Movimiento;
+            Tipo_Persona tipo_Persona = new Tipo_Persona();
+            tipo_Persona.Id = id;
+            tipo_Persona.descripcion = descripcion;
+            return tipo_Persona;
         }
 
         #endregion
@@ -7818,27 +2500,27 @@ namespace Modelo_Entidades
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 id
+        public global::System.Int32 Id
         {
             get
             {
-                return _id;
+                return _Id;
             }
             set
             {
-                if (_id != value)
+                if (_Id != value)
                 {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
                 }
             }
         }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
@@ -7875,18 +2557,18 @@ namespace Modelo_Entidades
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "Tipo_MovimientoMovimiento", "Movimiento")]
-        public EntityCollection<Movimiento> Movimientos
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "Tipo_PersonaPersona", "Persona")]
+        public EntityCollection<Persona> Personas
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Movimiento>("WASSTDModelo.Tipo_MovimientoMovimiento", "Movimiento");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Persona>("WASSTDModelo.Tipo_PersonaPersona", "Persona");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Movimiento>("WASSTDModelo.Tipo_MovimientoMovimiento", "Movimiento", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Persona>("WASSTDModelo.Tipo_PersonaPersona", "Persona", value);
                 }
             }
         }
@@ -7898,32 +2580,24 @@ namespace Modelo_Entidades
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Titulo")]
+    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Tipo_Tramite")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Titulo : EntityObject
+    public partial class Tipo_Tramite : EntityObject
     {
         #region Método de generador
     
         /// <summary>
-        /// Crear un nuevo objeto Titulo.
+        /// Crear un nuevo objeto Tipo_Tramite.
         /// </summary>
         /// <param name="id">Valor inicial de la propiedad id.</param>
         /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
-        /// <param name="ley_aprobacion">Valor inicial de la propiedad ley_aprobacion.</param>
-        /// <param name="res_coneau">Valor inicial de la propiedad res_coneau.</param>
-        /// <param name="validez">Valor inicial de la propiedad validez.</param>
-        /// <param name="aprobacion_cie">Valor inicial de la propiedad aprobacion_cie.</param>
-        public static Titulo CreateTitulo(global::System.Int32 id, global::System.String descripcion, global::System.String ley_aprobacion, global::System.String res_coneau, global::System.String validez, global::System.String aprobacion_cie)
+        public static Tipo_Tramite CreateTipo_Tramite(global::System.Int32 id, global::System.String descripcion)
         {
-            Titulo titulo = new Titulo();
-            titulo.id = id;
-            titulo.descripcion = descripcion;
-            titulo.ley_aprobacion = ley_aprobacion;
-            titulo.res_coneau = res_coneau;
-            titulo.validez = validez;
-            titulo.aprobacion_cie = aprobacion_cie;
-            return titulo;
+            Tipo_Tramite tipo_Tramite = new Tipo_Tramite();
+            tipo_Tramite.id = id;
+            tipo_Tramite.descripcion = descripcion;
+            return tipo_Tramite;
         }
 
         #endregion
@@ -7980,102 +2654,6 @@ namespace Modelo_Entidades
         private global::System.String _descripcion;
         partial void OndescripcionChanging(global::System.String value);
         partial void OndescripcionChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String ley_aprobacion
-        {
-            get
-            {
-                return _ley_aprobacion;
-            }
-            set
-            {
-                Onley_aprobacionChanging(value);
-                ReportPropertyChanging("ley_aprobacion");
-                _ley_aprobacion = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("ley_aprobacion");
-                Onley_aprobacionChanged();
-            }
-        }
-        private global::System.String _ley_aprobacion;
-        partial void Onley_aprobacionChanging(global::System.String value);
-        partial void Onley_aprobacionChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String res_coneau
-        {
-            get
-            {
-                return _res_coneau;
-            }
-            set
-            {
-                Onres_coneauChanging(value);
-                ReportPropertyChanging("res_coneau");
-                _res_coneau = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("res_coneau");
-                Onres_coneauChanged();
-            }
-        }
-        private global::System.String _res_coneau;
-        partial void Onres_coneauChanging(global::System.String value);
-        partial void Onres_coneauChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String validez
-        {
-            get
-            {
-                return _validez;
-            }
-            set
-            {
-                OnvalidezChanging(value);
-                ReportPropertyChanging("validez");
-                _validez = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("validez");
-                OnvalidezChanged();
-            }
-        }
-        private global::System.String _validez;
-        partial void OnvalidezChanging(global::System.String value);
-        partial void OnvalidezChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String aprobacion_cie
-        {
-            get
-            {
-                return _aprobacion_cie;
-            }
-            set
-            {
-                Onaprobacion_cieChanging(value);
-                ReportPropertyChanging("aprobacion_cie");
-                _aprobacion_cie = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("aprobacion_cie");
-                Onaprobacion_cieChanged();
-            }
-        }
-        private global::System.String _aprobacion_cie;
-        partial void Onaprobacion_cieChanging(global::System.String value);
-        partial void Onaprobacion_cieChanged();
 
         #endregion
 
@@ -8088,208 +2666,18 @@ namespace Modelo_Entidades
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "JurisdiccionTitulo", "Jurisdiccion")]
-        public Jurisdiccion Jurisdiccion
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "Tipo_TramiteTramite", "Tramite")]
+        public EntityCollection<Tramite> Tramite
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Jurisdiccion>("WASSTDModelo.JurisdiccionTitulo", "Jurisdiccion").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Jurisdiccion>("WASSTDModelo.JurisdiccionTitulo", "Jurisdiccion").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Jurisdiccion> JurisdiccionReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Jurisdiccion>("WASSTDModelo.JurisdiccionTitulo", "Jurisdiccion");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Tramite>("WASSTDModelo.Tipo_TramiteTramite", "Tramite");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Jurisdiccion>("WASSTDModelo.JurisdiccionTitulo", "Jurisdiccion", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "ModalidadTitulo", "Modalidad")]
-        public Modalidad Modalidad
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Modalidad>("WASSTDModelo.ModalidadTitulo", "Modalidad").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Modalidad>("WASSTDModelo.ModalidadTitulo", "Modalidad").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Modalidad> ModalidadReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Modalidad>("WASSTDModelo.ModalidadTitulo", "Modalidad");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Modalidad>("WASSTDModelo.ModalidadTitulo", "Modalidad", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "NivelTitulo", "Nivel")]
-        public Nivel Nivel
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Nivel>("WASSTDModelo.NivelTitulo", "Nivel").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Nivel>("WASSTDModelo.NivelTitulo", "Nivel").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Nivel> NivelReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Nivel>("WASSTDModelo.NivelTitulo", "Nivel");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Nivel>("WASSTDModelo.NivelTitulo", "Nivel", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "EspecialidadTitulo", "Especialidad")]
-        public Especialidad Especialidad
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Especialidad>("WASSTDModelo.EspecialidadTitulo", "Especialidad").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Especialidad>("WASSTDModelo.EspecialidadTitulo", "Especialidad").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Especialidad> EspecialidadReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Especialidad>("WASSTDModelo.EspecialidadTitulo", "Especialidad");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Especialidad>("WASSTDModelo.EspecialidadTitulo", "Especialidad", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "UniversidadTitulo", "Universidad")]
-        public Universidad Universidad
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Universidad>("WASSTDModelo.UniversidadTitulo", "Universidad").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Universidad>("WASSTDModelo.UniversidadTitulo", "Universidad").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Universidad> UniversidadReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Universidad>("WASSTDModelo.UniversidadTitulo", "Universidad");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Universidad>("WASSTDModelo.UniversidadTitulo", "Universidad", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "TituloLegajo_Academico", "Legajo_Academico")]
-        public EntityCollection<Legajo_Academico> Legajos_Academicos
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Legajo_Academico>("WASSTDModelo.TituloLegajo_Academico", "Legajo_Academico");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Legajo_Academico>("WASSTDModelo.TituloLegajo_Academico", "Legajo_Academico", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Tramite>("WASSTDModelo.Tipo_TramiteTramite", "Tramite", value);
                 }
             }
         }
@@ -8301,24 +2689,26 @@ namespace Modelo_Entidades
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Universidad")]
+    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Tramite")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Universidad : EntityObject
+    public partial class Tramite : EntityObject
     {
         #region Método de generador
     
         /// <summary>
-        /// Crear un nuevo objeto Universidad.
+        /// Crear un nuevo objeto Tramite.
         /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
-        public static Universidad CreateUniversidad(global::System.Int32 id, global::System.String descripcion)
+        /// <param name="id">Valor inicial de la propiedad Id.</param>
+        /// <param name="tipo_Tramite_id">Valor inicial de la propiedad Tipo_Tramite_id.</param>
+        /// <param name="estado">Valor inicial de la propiedad estado.</param>
+        public static Tramite CreateTramite(global::System.Int32 id, global::System.Int32 tipo_Tramite_id, global::System.String estado)
         {
-            Universidad universidad = new Universidad();
-            universidad.id = id;
-            universidad.descripcion = descripcion;
-            return universidad;
+            Tramite tramite = new Tramite();
+            tramite.Id = id;
+            tramite.Tipo_Tramite_id = tipo_Tramite_id;
+            tramite.estado = estado;
+            return tramite;
         }
 
         #endregion
@@ -8330,51 +2720,75 @@ namespace Modelo_Entidades
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 id
+        public global::System.Int32 Id
         {
             get
             {
-                return _id;
+                return _Id;
             }
             set
             {
-                if (_id != value)
+                if (_Id != value)
                 {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
                 }
             }
         }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String descripcion
+        public global::System.Int32 Tipo_Tramite_id
         {
             get
             {
-                return _descripcion;
+                return _Tipo_Tramite_id;
             }
             set
             {
-                OndescripcionChanging(value);
-                ReportPropertyChanging("descripcion");
-                _descripcion = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("descripcion");
-                OndescripcionChanged();
+                OnTipo_Tramite_idChanging(value);
+                ReportPropertyChanging("Tipo_Tramite_id");
+                _Tipo_Tramite_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Tipo_Tramite_id");
+                OnTipo_Tramite_idChanged();
             }
         }
-        private global::System.String _descripcion;
-        partial void OndescripcionChanging(global::System.String value);
-        partial void OndescripcionChanged();
+        private global::System.Int32 _Tipo_Tramite_id;
+        partial void OnTipo_Tramite_idChanging(global::System.Int32 value);
+        partial void OnTipo_Tramite_idChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String estado
+        {
+            get
+            {
+                return _estado;
+            }
+            set
+            {
+                OnestadoChanging(value);
+                ReportPropertyChanging("estado");
+                _estado = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("estado");
+                OnestadoChanged();
+            }
+        }
+        private global::System.String _estado;
+        partial void OnestadoChanging(global::System.String value);
+        partial void OnestadoChanged();
 
         #endregion
 
@@ -8387,18 +2801,94 @@ namespace Modelo_Entidades
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "UniversidadTitulo", "Titulo")]
-        public EntityCollection<Titulo> Titulos
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "Detalles_del_Tramite", "Detalles_Tramite")]
+        public EntityCollection<Detalles_Tramite> Detalles_Tramite
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Titulo>("WASSTDModelo.UniversidadTitulo", "Titulo");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Detalles_Tramite>("WASSTDModelo.Detalles_del_Tramite", "Detalles_Tramite");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Titulo>("WASSTDModelo.UniversidadTitulo", "Titulo", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Detalles_Tramite>("WASSTDModelo.Detalles_del_Tramite", "Detalles_Tramite", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "TramitePersona", "Persona")]
+        public Persona Persona
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Persona>("WASSTDModelo.TramitePersona", "Persona").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Persona>("WASSTDModelo.TramitePersona", "Persona").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Persona> PersonaReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Persona>("WASSTDModelo.TramitePersona", "Persona");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Persona>("WASSTDModelo.TramitePersona", "Persona", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "Tipo_TramiteTramite", "Tipo_Tramite")]
+        public Tipo_Tramite Tipo_Tramite
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tipo_Tramite>("WASSTDModelo.Tipo_TramiteTramite", "Tipo_Tramite").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tipo_Tramite>("WASSTDModelo.Tipo_TramiteTramite", "Tipo_Tramite").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Tipo_Tramite> Tipo_TramiteReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Tipo_Tramite>("WASSTDModelo.Tipo_TramiteTramite", "Tipo_Tramite");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Tipo_Tramite>("WASSTDModelo.Tipo_TramiteTramite", "Tipo_Tramite", value);
                 }
             }
         }
@@ -8618,115 +3108,6 @@ namespace Modelo_Entidades
 
         #endregion
 
-    }
-    
-    /// <summary>
-    /// No hay documentación de metadatos disponible.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="WASSTDModelo", Name="Video")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class Video : EntityObject
-    {
-        #region Método de generador
-    
-        /// <summary>
-        /// Crear un nuevo objeto Video.
-        /// </summary>
-        /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="descripcion">Valor inicial de la propiedad descripcion.</param>
-        /// <param name="link">Valor inicial de la propiedad link.</param>
-        public static Video CreateVideo(global::System.Int32 id, global::System.String descripcion, global::System.String link)
-        {
-            Video video = new Video();
-            video.id = id;
-            video.descripcion = descripcion;
-            video.link = link;
-            return video;
-        }
-
-        #endregion
-
-        #region Propiedades primitivas
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (_id != value)
-                {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
-                }
-            }
-        }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String descripcion
-        {
-            get
-            {
-                return _descripcion;
-            }
-            set
-            {
-                OndescripcionChanging(value);
-                ReportPropertyChanging("descripcion");
-                _descripcion = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("descripcion");
-                OndescripcionChanged();
-            }
-        }
-        private global::System.String _descripcion;
-        partial void OndescripcionChanging(global::System.String value);
-        partial void OndescripcionChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String link
-        {
-            get
-            {
-                return _link;
-            }
-            set
-            {
-                OnlinkChanging(value);
-                ReportPropertyChanging("link");
-                _link = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("link");
-                OnlinkChanged();
-            }
-        }
-        private global::System.String _link;
-        partial void OnlinkChanging(global::System.String value);
-        partial void OnlinkChanged();
-
-        #endregion
-
-    
     }
 
     #endregion

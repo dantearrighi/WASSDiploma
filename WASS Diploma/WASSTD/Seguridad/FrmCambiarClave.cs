@@ -12,6 +12,7 @@ namespace WASSTD
     public partial class FrmCambiarClave : Form
     {
         Modelo_Entidades.Usuario oUsuario;
+        Controladora.Seguridad.cCU_GestionarUsuarios cCU_GestionarUsuarios;
 
         Controladora.cUsuario cUsuario;
 
@@ -21,6 +22,7 @@ namespace WASSTD
             InitializeComponent();
             oUsuario = fUsuario;
             cUsuario = Controladora.cUsuario.ObtenerInstancia();
+            cCU_GestionarUsuarios = Controladora.Seguridad.cCU_GestionarUsuarios.ObtenerInstancia();
         }
 
         // Cuando carga el formulario
@@ -38,7 +40,26 @@ namespace WASSTD
         // Cuando le doy click a "Guardar"
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            if (ValidarObligatorios() == true)
+            try
+            {
+                if (cCU_GestionarUsuarios.CambiarContraseña(Controladora.cEncriptacion.Encriptar(txt_nuevacontraseña.Text), Controladora.cEncriptacion.Encriptar(txt_repetircontraseña.Text), Controladora.cEncriptacion.Encriptar(txt_contraseña_actual.Text), oUsuario))
+                {
+                    MessageBox.Show("La contraseña se ha modificado con éxito.");
+                    this.Close();
+                }
+                else
+                {
+                    //MessageBox.Show("Las contraseñas no coinciden o la clave actual es incorrecta. Verifique y vuelva a intentarlo.");
+                    this.Show();
+                }
+            }
+            catch (Exception Exc)
+            {
+                MessageBox.Show(Exc.Message, "Cambiar contraseña", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+
+            
+            /*if (ValidarObligatorios() == true)
             {
 
                 try
@@ -59,7 +80,7 @@ namespace WASSTD
             else
             {
                 this.Show();
-            }
+            }*/
         
         }
 
