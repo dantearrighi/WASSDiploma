@@ -64,7 +64,9 @@ namespace WASSTD
             btn_verdetalle.Enabled = false;
 
             try
-            {
+            {   //PARA QUE LE PIDO A UN CONTROLADOR DE USUARIO, MANDANDOSELO POR PARAMETRO, LOS GRUPOS, SI YA TENGO EL oUSR
+                //DIRECTAMENTE DEBERIA HACER oUsuario.Grupos
+
                 foreach (Modelo_Entidades.Grupo oGrupo in  cUsuario.ObtenerGruposUsuario(oUsuario.id))
                 { 
                     foreach (Modelo_Entidades.Permiso oPermiso in cPerfil.ObtenerPermisos(oGrupo.id, form))
