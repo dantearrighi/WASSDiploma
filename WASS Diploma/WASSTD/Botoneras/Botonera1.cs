@@ -65,39 +65,42 @@ namespace WASSTD
 
             try
             {
-                foreach (Modelo_Entidades.Grupo oGrupo in cUsuario.ObtenerGruposUsuario(oUsuario.id))
+                foreach (Modelo_Entidades.Grupo oGrupo in oUsuario.Grupos)
                 { 
-                    foreach (Modelo_Entidades.Permiso oPermiso in cPerfil.ObtenerPermisos(oGrupo.id, form))
+                    foreach (Modelo_Entidades.Perfil oPerfil in oGrupo.Perfiles)
                     {
-                        switch (oPermiso.descripcion)
+                        if (oPerfil.Formulario.descripcion == form)
                         {
-                            case "Alta":
-                            if (form == "FrmAuditorias")
+                            switch (oPerfil.Permiso.descripcion)
                             {
-                                btn_agregar.Text = "Formatear";
-                            }
-                            btn_agregar.Enabled = true;
-                            break;
-                            
-                            case "Baja":
-                            if (form == "FrmTramites")
-                            {
-                                //btn_eliminar.Visible = false;
-                            }
-                            btn_eliminar.Enabled = true;
-                            break;
+                                case "Alta":
+                                    if (form == "FrmAuditorias")
+                                    {
+                                        btn_agregar.Text = "Formatear";
+                                    }
+                                    btn_agregar.Enabled = true;
+                                    break;
 
-                            case "Modifica":
-                            if (form == "FrmAuditorias")
-                            {
-                                btn_modificar.Visible = false;
-                            }
-                            btn_modificar.Enabled = true;
-                            break;
+                                case "Baja":
+                                    if (form == "FrmTramites")
+                                    {
+                                        //btn_eliminar.Visible = false;
+                                    }
+                                    btn_eliminar.Enabled = true;
+                                    break;
 
-                            case "Consulta":
-                            btn_verdetalle.Enabled = true;
-                            break;
+                                case "Modifica":
+                                    if (form == "FrmAuditorias")
+                                    {
+                                        btn_modificar.Visible = false;
+                                    }
+                                    btn_modificar.Enabled = true;
+                                    break;
+
+                                case "Consulta":
+                                    btn_verdetalle.Enabled = true;
+                                    break;
+                            }
                         }
                     }
                 }
