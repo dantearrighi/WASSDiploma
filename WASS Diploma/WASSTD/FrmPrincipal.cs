@@ -33,6 +33,7 @@ namespace WASSTD
             cPerfil = Controladora.cPerfil.ObtenerInstancia();
             cUsuario = Controladora.cUsuario.ObtenerInstancia();
             cAuditoria = Controladora.cAuditoria.ObtenerInstancia();
+            oAuditoria = new Modelo_Entidades.Auditoria_Log();
         }
 
         // Cuando carga el formulario
@@ -51,11 +52,11 @@ namespace WASSTD
 
             // Si dio Ok, creo el formulario de Login con el usuario.
             oUsuario = FormularioLogin.UsuarioLogin;
-            oAuditoria = new Modelo_Entidades.Auditoria_Log();
-            oAuditoria.usuario = oUsuario.nombre_apellido;
-            oAuditoria.fecha = DateTime.Now;
-            oAuditoria.accion = "Ingreso al Sistema";
-            cAuditoria.AuditarLogUsuario(oAuditoria);
+           
+            // Agrego a la auditoria el ingreso del usuario
+            AñadirAuditoria("Ingreso al Sistema");
+
+
             // Además coloco el nombre y el apellido del usuario en la barra de estado
             toolStripStatusLabel1.Text = oUsuario.nombre_apellido;
             toolStripStatusLabel2.Text = DateTime.Now.ToShortDateString();
@@ -115,6 +116,16 @@ namespace WASSTD
             }
         }
 
+
+        //AUDITORIA: Agregar accion que realiza el usuario a Auditorias_Log
+        private void AñadirAuditoria(string accion)
+        {
+            oAuditoria.usuario = oUsuario.nombre_apellido;
+            oAuditoria.fecha = DateTime.Now;
+            oAuditoria.accion = accion;
+            cAuditoria.AuditarLogUsuario(oAuditoria);
+        }
+
         // Armo los menues y submenues
         private void ArmaFormularios(int grupo, ToolStripDropDownButton Menu_Modulos, Modelo_Entidades.Modulo oModulo)
         {
@@ -142,11 +153,8 @@ namespace WASSTD
 
         void SubMenu_CerrarSesion_Click(object sender, EventArgs e)
         {
-            oAuditoria = new Modelo_Entidades.Auditoria_Log();
-            oAuditoria.usuario = oUsuario.nombre_apellido;
-            oAuditoria.fecha = DateTime.Now;
-            oAuditoria.accion = "Egreso del Sistema";
-            cAuditoria.AuditarLogUsuario(oAuditoria);
+
+            AñadirAuditoria("Egreso del Sistema");
             this.Hide();
             FrmPrincipal Form = new FrmPrincipal();
             Form.Show();
@@ -163,7 +171,7 @@ namespace WASSTD
            this.Close();
         }
 
-        // Establesco que pasa cuando hago un click en los menues y submenues
+        // CLICK EN LOS MENUES Y SUBMENUES
         private void ItemClick(object sender, EventArgs e)
         {
             // Al hacer click en algún objeto ToolStripMenuItem se dispara este evento.
@@ -201,7 +209,7 @@ namespace WASSTD
             }
         }
 
-        // Cuando se cierra el formulario
+        // CUANDO SE CIERRA EL FORMULARIO
         private void FrmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
             oAuditoria = new Modelo_Entidades.Auditoria_Log();
@@ -211,10 +219,7 @@ namespace WASSTD
             }
             else
             {
-                oAuditoria.usuario = oUsuario.nombre_apellido;
-                oAuditoria.fecha = DateTime.Now;
-                oAuditoria.accion = "Egreso del Sistema";
-                cAuditoria.AuditarLogUsuario(oAuditoria);
+                AñadirAuditoria("Egreso del Sistema");
                 Application.Exit();
             }
         }
