@@ -18,7 +18,10 @@ namespace WASSTD.Tramites
         Controladora.cTramite cTramite;
         Controladora.cDetalles_Tramite cDetalles_Tramite;
         Controladora.cPersona cPersonas;
+        Controladora.cCU_GestionarTramites cCU_GestionarTramites;
+        
         FrmTramite FormTramite;
+
         BindingSource BsTramites;
         Modelo_Entidades.Usuario miUsuario;
 
@@ -29,7 +32,7 @@ namespace WASSTD.Tramites
             {
                 instancia = new FrmTramites(oUsuario);
             }
-
+            
             if (instancia.IsDisposed)
             {
                 instancia = new FrmTramites(oUsuario);
@@ -47,13 +50,25 @@ namespace WASSTD.Tramites
             cTramite = Controladora.cTramite.ObtenerInstancia();
             cDetalles_Tramite = Controladora.cDetalles_Tramite.ObtenerInstancia();
             cPersonas = Controladora.cPersona.ObtenerInstancia();
-            botonera1.ArmaPerfil(oUsuario, "FrmTramites");
+            cCU_GestionarTramites = Controladora.cCU_GestionarTramites.ObtenerInstancia();
+            miUsuario = oUsuario;
+            
+            
         }
 
         //Cuando cargo el formulario
         private void FrmTramites_Load(object sender, EventArgs e)
         {
+            ArmarPerfil();
             Arma_Lista();
+        }
+
+        //Obtengo Permisos
+        private void ArmarPerfil()
+        {
+            List<Modelo_Entidades.Perfil> listaAccionesPermitidas = cCU_GestionarTramites.ObtenerPermisos(miUsuario, "FrmTramites");
+            botonera1.ArmaBotonera(listaAccionesPermitidas);
+
         }
 
         // Armo la lista de la grilla de datos
