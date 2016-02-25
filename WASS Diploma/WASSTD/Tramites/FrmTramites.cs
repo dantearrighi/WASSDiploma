@@ -18,6 +18,9 @@ namespace WASSTD.Tramites
         Controladora.cTramite cTramite;
         Controladora.cDetalles_Tramite cDetalles_Tramite;
         Controladora.cPersona cPersonas;
+        Controladora.cCU_GestionarTramites cCU_GestionarTramites;
+
+
         FrmTramite FormTramite;
         BindingSource BsTramites;
         Modelo_Entidades.Usuario miUsuario;
@@ -44,12 +47,15 @@ namespace WASSTD.Tramites
             InitializeComponent();
             cUsuario = Controladora.cUsuario.ObtenerInstancia();
             cGrupo = Controladora.cGrupo.ObtenerInstancia();
+            cPersonas = Controladora.cPersona.ObtenerInstancia();
             cTramite = Controladora.cTramite.ObtenerInstancia();
             cDetalles_Tramite = Controladora.cDetalles_Tramite.ObtenerInstancia();
-            cPersonas = Controladora.cPersona.ObtenerInstancia();
+            cCU_GestionarTramites = Controladora.cCU_GestionarTramites.ObtenerInstancia();
             miUsuario = oUsuario;
-            botonera1.ArmaPerfil(oUsuario, "FrmTramites");
-        
+
+            //CU Gestionar Tramites: Paso 1
+            botonera1.ArmaBotonera(cCU_GestionarTramites.ObtenerPermisos(miUsuario,"FrmTramites"));
+                   
         }
 
         //Cuando cargo el formulario
