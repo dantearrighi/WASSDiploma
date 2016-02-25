@@ -111,5 +111,51 @@ namespace WASSTD
                 throw new Exception(Exc.Message);
             }
         }
+
+
+        public void ArmaBotonera(List<Modelo_Entidades.Perfil> listaAccionesPermitidas)
+        {
+            btn_agregar.Enabled = false;
+            btn_eliminar.Enabled = false;
+            btn_modificar.Enabled = false;
+            btn_verdetalle.Enabled = false;
+
+            foreach (Modelo_Entidades.Perfil oPerfil in listaAccionesPermitidas)
+            {
+
+                switch (oPerfil.Permiso.descripcion)
+                {
+                    case "Alta":
+                        if (oPerfil.Formulario.descripcion == "FrmAuditorias")
+                        {
+                            btn_agregar.Text = "Formatear";
+                        }
+                        btn_agregar.Enabled = true;
+                        break;
+
+                    case "Baja":
+                        if (oPerfil.Formulario.descripcion == "FrmTramites")
+                        {
+                            //btn_eliminar.Visible = false;
+                        }
+                        btn_eliminar.Enabled = true;
+                        break;
+
+                    case "Modifica":
+                        if (oPerfil.Formulario.descripcion == "FrmAuditorias")
+                        {
+                            btn_modificar.Visible = false;
+                        }
+                        btn_modificar.Enabled = true;
+                        break;
+
+                    case "Consulta":
+                        btn_verdetalle.Enabled = true;
+                        break;
+                }
+
+            }
+        }
+
     }
 }
