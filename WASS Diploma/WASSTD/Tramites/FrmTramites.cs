@@ -47,7 +47,9 @@ namespace WASSTD.Tramites
             cTramite = Controladora.cTramite.ObtenerInstancia();
             cDetalles_Tramite = Controladora.cDetalles_Tramite.ObtenerInstancia();
             cPersonas = Controladora.cPersona.ObtenerInstancia();
+            miUsuario = oUsuario;
             botonera1.ArmaPerfil(oUsuario, "FrmTramites");
+        
         }
 
         //Cuando cargo el formulario
@@ -248,8 +250,7 @@ namespace WASSTD.Tramites
             DialogResult dr = FormTramite.ShowDialog();
         }
 
-
-
+        
         // Al hacer click en "Eliminar"
         private void botonera1_Click_Baja(object sender, EventArgs e)
         {

@@ -30,11 +30,18 @@
         {
             this.dgv_datos = new System.Windows.Forms.DataGridView();
             this.dniColu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoTramiteCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_dni = new System.Windows.Forms.MaskedTextBox();
             this.txt_nya_Persona = new System.Windows.Forms.TextBox();
             this.lb_dni = new System.Windows.Forms.Label();
             this.lb_nya_Persona = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.rb_finalizados = new System.Windows.Forms.RadioButton();
+            this.rb_activos = new System.Windows.Forms.RadioButton();
+            this.rb_todos = new System.Windows.Forms.RadioButton();
+            this.cmb_tipos_tramites = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.btn_RecargarLista = new System.Windows.Forms.Button();
             this.txt_NroDeTramite = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,18 +55,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.tipoTramiteCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.botonera1 = new WASSTD.Botonera1();
-            this.cmb_tipos_tramites = new System.Windows.Forms.ComboBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.rb_todos = new System.Windows.Forms.RadioButton();
-            this.rb_activos = new System.Windows.Forms.RadioButton();
-            this.rb_finalizados = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_datos)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv_datos
@@ -68,15 +68,20 @@
             this.dgv_datos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dniColu,
             this.tipoTramiteCol});
-            this.dgv_datos.Location = new System.Drawing.Point(12, 200);
+            this.dgv_datos.Location = new System.Drawing.Point(12, 188);
             this.dgv_datos.Name = "dgv_datos";
-            this.dgv_datos.Size = new System.Drawing.Size(1576, 530);
+            this.dgv_datos.Size = new System.Drawing.Size(1215, 291);
             this.dgv_datos.TabIndex = 0;
             // 
             // dniColu
             // 
             this.dniColu.HeaderText = "Documento";
             this.dniColu.Name = "dniColu";
+            // 
+            // tipoTramiteCol
+            // 
+            this.tipoTramiteCol.HeaderText = "Tipo de Tramite";
+            this.tipoTramiteCol.Name = "tipoTramiteCol";
             // 
             // txt_dni
             // 
@@ -139,6 +144,70 @@
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar tramites";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.rb_finalizados);
+            this.groupBox3.Controls.Add(this.rb_activos);
+            this.groupBox3.Controls.Add(this.rb_todos);
+            this.groupBox3.Location = new System.Drawing.Point(6, 122);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(330, 36);
+            this.groupBox3.TabIndex = 66;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Estado";
+            // 
+            // rb_finalizados
+            // 
+            this.rb_finalizados.AutoSize = true;
+            this.rb_finalizados.Location = new System.Drawing.Point(234, 13);
+            this.rb_finalizados.Name = "rb_finalizados";
+            this.rb_finalizados.Size = new System.Drawing.Size(77, 17);
+            this.rb_finalizados.TabIndex = 2;
+            this.rb_finalizados.Text = "Finalizados";
+            this.rb_finalizados.UseVisualStyleBackColor = true;
+            // 
+            // rb_activos
+            // 
+            this.rb_activos.AutoSize = true;
+            this.rb_activos.Location = new System.Drawing.Point(141, 13);
+            this.rb_activos.Name = "rb_activos";
+            this.rb_activos.Size = new System.Drawing.Size(60, 17);
+            this.rb_activos.TabIndex = 1;
+            this.rb_activos.Text = "Activos";
+            this.rb_activos.UseVisualStyleBackColor = true;
+            // 
+            // rb_todos
+            // 
+            this.rb_todos.AutoSize = true;
+            this.rb_todos.Checked = true;
+            this.rb_todos.Location = new System.Drawing.Point(44, 13);
+            this.rb_todos.Name = "rb_todos";
+            this.rb_todos.Size = new System.Drawing.Size(55, 17);
+            this.rb_todos.TabIndex = 0;
+            this.rb_todos.TabStop = true;
+            this.rb_todos.Text = "Todos";
+            this.rb_todos.UseVisualStyleBackColor = true;
+            // 
+            // cmb_tipos_tramites
+            // 
+            this.cmb_tipos_tramites.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.cmb_tipos_tramites.FormattingEnabled = true;
+            this.cmb_tipos_tramites.Location = new System.Drawing.Point(240, 95);
+            this.cmb_tipos_tramites.Name = "cmb_tipos_tramites";
+            this.cmb_tipos_tramites.Size = new System.Drawing.Size(262, 21);
+            this.cmb_tipos_tramites.TabIndex = 65;
+            // 
+            // label21
+            // 
+            this.label21.Image = global::WASSTD.Properties.Resources.book_icon_16;
+            this.label21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label21.Location = new System.Drawing.Point(14, 91);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(220, 35);
+            this.label21.TabIndex = 64;
+            this.label21.Text = "Tipo de Trámite:";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btn_RecargarLista
             // 
@@ -291,102 +360,32 @@
             // monthCalendar1
             // 
             this.monthCalendar1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(3, 1);
-            this.monthCalendar1.Location = new System.Drawing.Point(1004, 11);
+            this.monthCalendar1.Location = new System.Drawing.Point(1035, 20);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 16;
             // 
-            // tipoTramiteCol
-            // 
-            this.tipoTramiteCol.HeaderText = "Tipo de Tramite";
-            this.tipoTramiteCol.Name = "tipoTramiteCol";
-            // 
             // botonera1
             // 
-            this.botonera1.Location = new System.Drawing.Point(12, 745);
+            this.botonera1.Location = new System.Drawing.Point(12, 485);
             this.botonera1.Name = "botonera1";
-            this.botonera1.Size = new System.Drawing.Size(1576, 45);
+            this.botonera1.Size = new System.Drawing.Size(1215, 45);
             this.botonera1.TabIndex = 1;
             this.botonera1.Click_Alta += new WASSTD.Eventos_Botonera(this.botonera1_Click_Alta);
+            this.botonera1.Click_Baja += new WASSTD.Eventos_Botonera(this.botonera1_Click_Baja);
             this.botonera1.Click_Modificacion += new WASSTD.Eventos_Botonera(this.botonera1_Click_Modificacion);
             this.botonera1.Click_Consulta += new WASSTD.Eventos_Botonera(this.botonera1_Click_Consulta);
-            this.botonera1.Click_Baja += new WASSTD.Eventos_Botonera(this.botonera1_Click_Baja);
             this.botonera1.Click_Cerrar += new WASSTD.Eventos_Botonera(this.botonera1_Click_Cerrar);
-            // 
-            // cmb_tipos_tramites
-            // 
-            this.cmb_tipos_tramites.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.cmb_tipos_tramites.FormattingEnabled = true;
-            this.cmb_tipos_tramites.Location = new System.Drawing.Point(240, 95);
-            this.cmb_tipos_tramites.Name = "cmb_tipos_tramites";
-            this.cmb_tipos_tramites.Size = new System.Drawing.Size(262, 21);
-            this.cmb_tipos_tramites.TabIndex = 65;
-            // 
-            // label21
-            // 
-            this.label21.Image = global::WASSTD.Properties.Resources.book_icon_16;
-            this.label21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label21.Location = new System.Drawing.Point(14, 91);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(220, 35);
-            this.label21.TabIndex = 64;
-            this.label21.Text = "Tipo de Trámite:";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.rb_finalizados);
-            this.groupBox3.Controls.Add(this.rb_activos);
-            this.groupBox3.Controls.Add(this.rb_todos);
-            this.groupBox3.Location = new System.Drawing.Point(6, 122);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(330, 36);
-            this.groupBox3.TabIndex = 66;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Estado";
-            // 
-            // rb_todos
-            // 
-            this.rb_todos.AutoSize = true;
-            this.rb_todos.Checked = true;
-            this.rb_todos.Location = new System.Drawing.Point(44, 13);
-            this.rb_todos.Name = "rb_todos";
-            this.rb_todos.Size = new System.Drawing.Size(55, 17);
-            this.rb_todos.TabIndex = 0;
-            this.rb_todos.TabStop = true;
-            this.rb_todos.Text = "Todos";
-            this.rb_todos.UseVisualStyleBackColor = true;
-            // 
-            // rb_activos
-            // 
-            this.rb_activos.AutoSize = true;
-            this.rb_activos.Location = new System.Drawing.Point(141, 13);
-            this.rb_activos.Name = "rb_activos";
-            this.rb_activos.Size = new System.Drawing.Size(60, 17);
-            this.rb_activos.TabIndex = 1;
-            this.rb_activos.Text = "Activos";
-            this.rb_activos.UseVisualStyleBackColor = true;
-            // 
-            // rb_finalizados
-            // 
-            this.rb_finalizados.AutoSize = true;
-            this.rb_finalizados.Location = new System.Drawing.Point(234, 13);
-            this.rb_finalizados.Name = "rb_finalizados";
-            this.rb_finalizados.Size = new System.Drawing.Size(77, 17);
-            this.rb_finalizados.TabIndex = 2;
-            this.rb_finalizados.Text = "Finalizados";
-            this.rb_finalizados.UseVisualStyleBackColor = true;
             // 
             // FrmTramites
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1597, 802);
+            this.ClientSize = new System.Drawing.Size(1245, 542);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.botonera1);
             this.Controls.Add(this.dgv_datos);
+            this.Controls.Add(this.groupBox1);
             this.Name = "FrmTramites";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion de Tramites";
@@ -394,9 +393,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_datos)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

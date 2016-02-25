@@ -33,9 +33,7 @@ namespace WASSTD
 
         // Declaro las entidades
         Modelo_Entidades.Persona oPersona;
-       
         Modelo_Entidades.Direccion oDireccion;
-        Modelo_Entidades.Direccion oDireccionE;
         Modelo_Entidades.Usuario miUsuario;
         
 
