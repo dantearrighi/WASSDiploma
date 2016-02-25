@@ -12,6 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagramas de secuencia", "Diagramas de secuencia", "{C7A77ABB-017F-450A-ACD4-20BAB1C9AA8E}"
 	ProjectSection(SolutionItems) = preProject
 		DSD_CU_GestionarTramites.sequencediagram = DSD_CU_GestionarTramites.sequencediagram
+		RecuperarPerfilPorFormulario.sequencediagram = RecuperarPerfilPorFormulario.sequencediagram
 	EndProjectSection
 EndProject
 Global
