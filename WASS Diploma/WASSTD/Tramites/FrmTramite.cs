@@ -60,7 +60,7 @@ namespace WASSTD
                 
                 
                 ArmaFormulario(oTramite);
-                
+                // MODO CONSULTA
                 if (modo == "Consulta")
                 {
                     btn_guardar.Enabled = false;
@@ -77,7 +77,7 @@ namespace WASSTD
             }
             else
             {
-                //MUESTRO
+                //MODO ALTA 
                 btn_seleccionarPersona.Visible = true;
                 lbl_DebeSeleccionar.Visible = true;
                 txt_fecha_Alta.Text = DateTime.Today.ToString();
@@ -108,11 +108,17 @@ namespace WASSTD
                 lbl_Finalizado.Visible = false;
                 lbl_Activo.Visible = true;
             }
-            else
+            else if (oTramite.estado == "Finalizado")
             {
                 lbl_Finalizado.Visible = true;
                 lbl_Activo.Visible = false;
             }
+            else
+            {
+                lbl_Finalizado.Visible = false;
+                lbl_Activo.Visible = false;
+            }
+            
     
         }
 

@@ -10,6 +10,7 @@ namespace Controladora
         // Declaración de variables a usar en la clase
         private static cCU_GestionarTramites instancia;
         Controladora.Seguridad.cCU_RecuperarPerfilPorFormulario cCU_RecuperarPerfilPorFormulario;
+        private Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
 
         //Aplico el patron de diseño Singleton para la clase cGrupo (cuando la solicitan desde otra)
         public static cCU_GestionarTramites ObtenerInstancia()
@@ -24,6 +25,7 @@ namespace Controladora
         private cCU_GestionarTramites()
         {           
             cCU_RecuperarPerfilPorFormulario = Controladora.Seguridad.cCU_RecuperarPerfilPorFormulario.ObtenerInstancia();
+            oModelo_Entidades = Modelo_Entidades.WASSTDEntidades.ObtenerInstancia();
         }
 
 

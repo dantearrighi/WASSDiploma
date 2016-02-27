@@ -69,6 +69,7 @@
             this.txt_nombredeusuario.Name = "txt_nombredeusuario";
             this.txt_nombredeusuario.Size = new System.Drawing.Size(176, 20);
             this.txt_nombredeusuario.TabIndex = 2;
+            this.txt_nombredeusuario.Text = "admin";
             // 
             // txt_contraseña
             // 
@@ -78,6 +79,7 @@
             this.txt_contraseña.PasswordChar = '*';
             this.txt_contraseña.Size = new System.Drawing.Size(179, 20);
             this.txt_contraseña.TabIndex = 3;
+            this.txt_contraseña.Text = "admin";
             // 
             // btn_cancelar
             // 
