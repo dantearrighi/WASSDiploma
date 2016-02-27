@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Persona\Age.cs" />
+    <Compile Include="Persona\cCU_GestionarPersonas.cs" />
     <Compile Include="Persona\cTipo_Persona.cs" />
     <Compile Include="Seguridad\cCU_GestionarGrupos.cs" />
     <Compile Include="Seguridad\cCU_GestionarPerfiles.cs" />

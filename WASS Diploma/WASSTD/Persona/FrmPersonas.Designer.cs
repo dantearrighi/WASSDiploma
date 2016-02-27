@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txt_nya_Persona = new System.Windows.Forms.TextBox();
+            this.txt_nya_persona = new System.Windows.Forms.TextBox();
             this.dgv_datos = new System.Windows.Forms.DataGridView();
             this.txt_dni = new System.Windows.Forms.MaskedTextBox();
             this.lb_dni = new System.Windows.Forms.Label();
@@ -37,14 +37,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_datos)).BeginInit();
             this.SuspendLayout();
             // 
-            // txt_nya_Persona
+            // txt_nya_persona
             // 
-            this.txt_nya_Persona.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txt_nya_Persona.Location = new System.Drawing.Point(239, 6);
-            this.txt_nya_Persona.Name = "txt_nya_Persona";
-            this.txt_nya_Persona.Size = new System.Drawing.Size(262, 20);
-            this.txt_nya_Persona.TabIndex = 3;
-            this.txt_nya_Persona.TextChanged += new System.EventHandler(this.txt_nya_Persona_TextChanged);
+            this.txt_nya_persona.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txt_nya_persona.Location = new System.Drawing.Point(239, 6);
+            this.txt_nya_persona.Name = "txt_nya_persona";
+            this.txt_nya_persona.Size = new System.Drawing.Size(262, 20);
+            this.txt_nya_persona.TabIndex = 3;
+            this.txt_nya_persona.TextChanged += new System.EventHandler(this.txt_nya_Persona_TextChanged);
             // 
             // dgv_datos
             // 
@@ -100,9 +100,9 @@
             this.botonera1.Size = new System.Drawing.Size(486, 42);
             this.botonera1.TabIndex = 8;
             this.botonera1.Click_Alta += new WASSTD.Eventos_Botonera(this.botonera1_Click_Alta);
+            this.botonera1.Click_Baja += new WASSTD.Eventos_Botonera(this.botonera1_Click_Baja);
             this.botonera1.Click_Modificacion += new WASSTD.Eventos_Botonera(this.botonera1_Click_Modificacion);
             this.botonera1.Click_Consulta += new WASSTD.Eventos_Botonera(this.botonera1_Click_Consulta);
-            this.botonera1.Click_Baja += new WASSTD.Eventos_Botonera(this.botonera1_Click_Baja);
             this.botonera1.Click_Cerrar += new WASSTD.Eventos_Botonera(this.botonera1_Click_Cerrar);
             // 
             // FrmPersonas
@@ -113,7 +113,7 @@
             this.Controls.Add(this.txt_dni);
             this.Controls.Add(this.botonera1);
             this.Controls.Add(this.dgv_datos);
-            this.Controls.Add(this.txt_nya_Persona);
+            this.Controls.Add(this.txt_nya_persona);
             this.Controls.Add(this.lb_dni);
             this.Controls.Add(this.lb_nya_Persona);
             this.Name = "FrmPersonas";
@@ -132,7 +132,7 @@
 
         private System.Windows.Forms.Label lb_nya_Persona;
         private System.Windows.Forms.Label lb_dni;
-        private System.Windows.Forms.TextBox txt_nya_Persona;
+        private System.Windows.Forms.TextBox txt_nya_persona;
         private System.Windows.Forms.DataGridView dgv_datos;
         private Botonera1 botonera1;
         private System.Windows.Forms.MaskedTextBox txt_dni;
