@@ -217,26 +217,36 @@ namespace WASSTD.Tramites
            
         }
 
-        // Al hacer click en "Agregar"
+        // Al hacer click en "Agregar" (PASO 5.a Gestionar Tramites)
         private void botonera1_Click_Alta(object sender, EventArgs e)
-        {
+        {   
+
+            //PASO 1 y 2 de CU ALTA TRAMITE
             FormTramite = new FrmTramite("Alta", new Modelo_Entidades.Tramite(), miUsuario);
             DialogResult dr = FormTramite.ShowDialog();
             if (dr == DialogResult.OK)
             {
                 Arma_Lista();
             }
+
         }
 
         // Al hacer click en "Modificar"
         private void botonera1_Click_Modificacion(object sender, EventArgs e)
+        {
+            ModificarTramite();
+        }
+
+
+        // METODO MODIFICAR TRAMITE
+        private void ModificarTramite()
         {
             if (dgv_datos.CurrentRow == null)
             {
                 return;
             }
 
-            FormTramite = new FrmTramite("Modifica", (Modelo_Entidades.Tramite)dgv_datos.CurrentRow.DataBoundItem, miUsuario);
+            FrmTramite FormTramite = new FrmTramite("Modifica", (Modelo_Entidades.Tramite)dgv_datos.CurrentRow.DataBoundItem, miUsuario);
             DialogResult dr = FormTramite.ShowDialog();
             if (dr == DialogResult.OK)
             {

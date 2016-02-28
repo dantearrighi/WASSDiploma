@@ -21,6 +21,7 @@ namespace WASSTD
         Controladora.cDetalles_Tramite cDetalles_Tramite;
         Controladora.cAuditoria cAuditoria;
         Controladora.cTipo_Tramite cTipo_Tramite;
+        Controladora.cCU_GestionarTramites cCU_GestionarTramites;
 
         // Declaro las entidades
         Modelo_Entidades.Persona oPersona;
@@ -44,6 +45,7 @@ namespace WASSTD
             cTramite = Controladora.cTramite.ObtenerInstancia();
             cDetalles_Tramite = Controladora.cDetalles_Tramite.ObtenerInstancia();
             cTipo_Tramite = Controladora.cTipo_Tramite.ObtenerInstancia();
+            cCU_GestionarTramites = Controladora.cCU_GestionarTramites.ObtenerInstancia();
 
             modo = fModo;
             oTramite = miTramite;
@@ -299,5 +301,40 @@ namespace WASSTD
             }
 
         }
+
+
+        //CLICK GUARDAR (PASO 3 CU ALTA TRAMITE)
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+            GuardarTramite();
+        }
+
+        // GUARDAR TRAMITE (PASO 4 CU ALTA TRAMITE)
+        private void GuardarTramite()
+        {
+            //ASIGNO TODOS LOS VALORES INGRESADO POR EL USUARIO, al objeto oTramite
+
+            oTramite.Detalles_Tramite.Add(new Modelo_Entidades.Detalles_Tramite());//esto esta mal.. debo hacerlo bien
+           
+             /* *****************************************************
+             * 
+             * ACA LE ASIGNO TODOS LOS VALORES
+             * CORRESPONDIENTES AL TRAMITE...
+             * VOY MAPEANDO ENTRE LA INTERFAZ Y EL OBJETO oTramite
+             * 
+             * *****************************************************/
+        
+            //VALIDO OBLIGATORIOS (PASO 4)
+            cCU_GestionarTramites.cCU_AltaTramite.ValidarObligatorios(oTramite);
+            oTramite.estado = "Activo";
+
+            //LO REGISTRO EN EL SISTEMA (PASO 5)
+            cCU_GestionarTramites.cCU_AltaTramite.AltaTramite(oTramite);
+
+            this.DialogResult = System.Windows.Forms.DialogResult.OK;
+        }
+
+
+        
     }
 }

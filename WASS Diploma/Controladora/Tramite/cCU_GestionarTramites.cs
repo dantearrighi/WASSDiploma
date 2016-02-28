@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
 namespace Controladora
 {
     public class cCU_GestionarTramites
@@ -10,7 +11,9 @@ namespace Controladora
         // Declaración de variables a usar en la clase
         private static cCU_GestionarTramites instancia;
         Controladora.Seguridad.cCU_RecuperarPerfilPorFormulario cCU_RecuperarPerfilPorFormulario;
+        public Controladora.cCU_AltaTramite cCU_AltaTramite;
         private Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
+        
 
         //Aplico el patron de diseño Singleton para la clase cGrupo (cuando la solicitan desde otra)
         public static cCU_GestionarTramites ObtenerInstancia()
@@ -35,5 +38,35 @@ namespace Controladora
             //Invoco al caso de uso que devuelve los permisos que tiene un usuario sobre el formulario solicitado
             return cCU_RecuperarPerfilPorFormulario.ObtenerPermisosPorFormulario(oUsuario, nombreForm);
         }
+
+        #region ////    ABMC    \\\\
+
+        // CU GESTIONAR TRAMITES (PASO 5.a ALTA TRAMITE)
+        public void AltaTramite(Modelo_Entidades.Tramite oTramite)
+        {
+            cCU_AltaTramite = Controladora.cCU_AltaTramite.ObtenerInstancia();
+
+            if (cCU_AltaTramite.ValidarObligatorios(oTramite))
+            {
+                cCU_AltaTramite.AltaTramite(oTramite);
+            }
+
+            
+ 
+        }
+
+       
+
+
+        // CU MODIFICAR TRAMITE
+        public void ModificarTramite(Modelo_Entidades.Tramite oTramite)
+        {
+            oModelo_Entidades.ApplyCurrentValues("Tramites", oTramite);
+            oModelo_Entidades.SaveChanges();
+        }
+
+
+
+        #endregion
     }
 }

@@ -36,8 +36,7 @@ namespace WASSTD
             InitializeComponent();
 
             // Inicializo a las controladoras
-         
-                    
+              
             // Algunos datos que necesito recuperar para dar de alta a una persona
             cTipo_Documento = Controladora.cTipo_Documento.ObtenerInstancia(); //Sirve para cagar tipos de documento en el combo box correspondiente
             cTipo_Persona = Controladora.cTipo_Persona.ObtenerInstancia();
@@ -293,8 +292,7 @@ namespace WASSTD
 
             return true;
         }
-
-
+        
         // Al dejar un valor en el combo de localidades, se llena el código postal
         private void cmb_localidades_Leave(object sender, EventArgs e)
         {
@@ -372,8 +370,6 @@ namespace WASSTD
 
             CalcularEdad();
         }
-
-             
 
         // Cuando le doy click a baja
         private void btn_baja_Click(object sender, EventArgs e)

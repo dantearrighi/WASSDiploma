@@ -48,6 +48,7 @@
     <Compile Include="Seguridad\cCU_GestionarPerfiles.cs" />
     <Compile Include="Seguridad\cCU_GestionarUsuarios.cs" />
     <Compile Include="Seguridad\cCU_RecuperarPerfilPorFormulario.cs" />
+    <Compile Include="Tramite\cCU_AltaTramite.cs" />
     <Compile Include="Tramite\cCU_GestionarTramites.cs" />
     <Compile Include="Tramite\cDetalles_Tramite.cs" />
     <Compile Include="Tramite\cTipo_Tramite.cs" />
