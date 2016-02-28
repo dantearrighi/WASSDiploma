@@ -13,12 +13,16 @@ namespace WASSTD
     {
         // Declaro las variables que voy a utilizar en el formulario
         private static FrmSeleccionPersonas instancia;
+        private Modelo_Entidades.Usuario miUsuario;
 
         // Declaro las controladoras a usar
-        Controladora.cPersona cPersona;
+        Controladora.cCU_GestionarPersonas cCU_GestionarPersonas;
 
-        // Declaro los Binding source a usar
-        BindingSource Bspersonas;
+        // Necesito devolver la persona que seleccione
+        public Modelo_Entidades.Persona PersonaElegida
+        {
+            get { return (Modelo_Entidades.Persona)dgv_datos.CurrentRow.DataBoundItem; }
+        }
 
         // Declaro al formulario como público y le asigno el método "Obtener Instancia" para poder llamarlo desde el formulario principal
         public static FrmSeleccionPersonas ObtenerInstancia(Modelo_Entidades.Usuario oUsuario)
@@ -40,7 +44,8 @@ namespace WASSTD
         public FrmSeleccionPersonas(Modelo_Entidades.Usuario oUsuario)
         {
             InitializeComponent();
-            cPersona = Controladora.cPersona.ObtenerInstancia();
+            cCU_GestionarPersonas = Controladora.cCU_GestionarPersonas.ObtenerInstancia();
+            miUsuario = oUsuario;
         }
 
         // Cuando carga el formulario
@@ -52,17 +57,19 @@ namespace WASSTD
         // Método privado para armar el datagridview
         private void Arma_Lista()
         {
-            // Instancio el binding source
-            Bspersonas = new BindingSource();
-            //Luego lo lleno con los datos de la grilla
-            Bspersonas.DataSource = dgv_datos;
-
             // Limpio la grilla
             dgv_datos.DataSource = null;
-            // LLeno el binding con los datos que traigo de las entidades
-            Bspersonas.DataSource = cPersona.ObtenerPersonas();
-            // Asigno el binding a la grilla
-            dgv_datos.DataSource = Bspersonas;
+           
+            // LLeno la grilla
+            dgv_datos.DataSource = cCU_GestionarPersonas.ObtenerPersonas();
+
+            FormatearVista();
+        }
+
+
+        //Doy formato a la grilla al cargarle datos
+        private void FormatearVista()
+        {
             dgv_datos.Columns[0].HeaderText = "DNI";
             dgv_datos.Columns[1].HeaderText = "Nombre y Apellido";
             dgv_datos.Columns[2].Visible = false;
@@ -78,35 +85,35 @@ namespace WASSTD
             dgv_datos.Columns[12].Visible = false;
             dgv_datos.Columns[13].Visible = false;
             dgv_datos.Columns[14].Visible = false;
-            dgv_datos.Columns[15].Visible = false;
+         /*   dgv_datos.Columns[15].Visible = false;
             dgv_datos.Columns[16].Visible = false;
             dgv_datos.Columns[17].Visible = false;
             dgv_datos.Columns[18].Visible = false;
             dgv_datos.Columns[19].Visible = false;
             dgv_datos.Columns[20].Visible = false;
             dgv_datos.Columns[21].Visible = false;
-            dgv_datos.Columns[22].Visible = false;
+            dgv_datos.Columns[22].Visible = false;*/
         }
 
-        // Cuando cambio el texto en el txt de Persona
+        // FILTRAR por nombre y apellido
         private void txt_nya_Persona_TextChanged(object sender, EventArgs e)
         {
-            Bspersonas.DataSource = cPersona.FiltrarPorNyA(txt_nya_Persona.Text);
-            dgv_datos.DataSource = Bspersonas;
+            dgv_datos.DataSource = cCU_GestionarPersonas.FiltrarPorNyA(txt_nya_Persona.Text);
+            FormatearVista();
         }
 
-        // Cuando le doy click a cancelar
+        // CLICK Cancelar
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        // Cuando le doy click a seleccionar
+        // CLICK Seleccionar persona
         private void btn_seleccionar_Click(object sender, EventArgs e)
         {
             if (dgv_datos.CurrentRow.DataBoundItem == null)
             {
-                MessageBox.Show("Debe seleccionar al menos 1 Persona");
+                MessageBox.Show("Debe seleccionar una Persona");
             }
 
             // Le mando el ok al otro formulario mediante el dialogresult
@@ -120,11 +127,16 @@ namespace WASSTD
             }
         }
 
-        // Necesito devolver el usuario que consegui en el Login
-        public Modelo_Entidades.Persona PersonaElegido
+
+        // CLICK AÑADIR PERSONA 
+        private void btnAñadirPersona_Click(object sender, EventArgs e)
         {
-            get { return (Modelo_Entidades.Persona)dgv_datos.CurrentRow.DataBoundItem; }
+            FrmPersona formAlta = new FrmPersona("Alta", new Modelo_Entidades.Persona(), miUsuario);
+            if(DialogResult.OK == formAlta.ShowDialog())
+            Arma_Lista();
         }
+
+       
 
     }
 }

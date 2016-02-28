@@ -33,6 +33,7 @@
             this.dgv_datos = new System.Windows.Forms.DataGridView();
             this.btn_seleccionar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
+            this.btnAñadirPersona = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_datos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,11 +97,25 @@
             this.btn_cancelar.UseVisualStyleBackColor = true;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
+            // btnAñadirPersona
+            // 
+            this.btnAñadirPersona.Image = global::WASSTD.Properties.Resources.doc_new_icon_16;
+            this.btnAñadirPersona.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAñadirPersona.Location = new System.Drawing.Point(16, 421);
+            this.btnAñadirPersona.Name = "btnAñadirPersona";
+            this.btnAñadirPersona.Size = new System.Drawing.Size(96, 35);
+            this.btnAñadirPersona.TabIndex = 5;
+            this.btnAñadirPersona.Text = "Agregar";
+            this.btnAñadirPersona.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAñadirPersona.UseVisualStyleBackColor = true;
+            this.btnAñadirPersona.Click += new System.EventHandler(this.btnAñadirPersona_Click);
+            // 
             // FrmSeleccionPersonas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(509, 461);
+            this.Controls.Add(this.btnAñadirPersona);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_seleccionar);
             this.Controls.Add(this.dgv_datos);
@@ -123,5 +138,6 @@
         private System.Windows.Forms.DataGridView dgv_datos;
         private System.Windows.Forms.Button btn_seleccionar;
         private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.Button btnAñadirPersona;
     }
 }

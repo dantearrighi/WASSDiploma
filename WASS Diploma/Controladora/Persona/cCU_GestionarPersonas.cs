@@ -94,6 +94,7 @@ namespace Controladora
 
 
         #region ****    VALIDACIONES PERSONAS    ****
+
         // Valido que una Persona no exista
         public Boolean ValidarPersona(int dni)
         {
@@ -116,7 +117,7 @@ namespace Controladora
 
 
         // Valido que no un grupo no tengo miembros asociados
-        public Boolean ValidarMiembrosPersona(Modelo_Entidades.Persona oPersona)
+        public Boolean ValidarTramitesAsociadosPersona(Modelo_Entidades.Persona oPersona)
         {
             Modelo_Entidades.Persona oPers = oModelo_Entidades.Personas.ToList().Find(delegate(Modelo_Entidades.Persona fPersona)
             {
@@ -133,6 +134,7 @@ namespace Controladora
                 return false;
             }
         }
+
         #endregion
     }
 }

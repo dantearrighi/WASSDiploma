@@ -130,6 +130,7 @@
             this.btn_seleccionarPersona.Text = "Buscar";
             this.btn_seleccionarPersona.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_seleccionarPersona.UseVisualStyleBackColor = true;
+            this.btn_seleccionarPersona.Click += new System.EventHandler(this.btn_seleccionarPersona_Click);
             // 
             // lbl_ClaveFiscal
             // 

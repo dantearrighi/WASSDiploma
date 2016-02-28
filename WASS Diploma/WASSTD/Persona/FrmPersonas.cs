@@ -143,7 +143,7 @@ namespace WASSTD
                 {
             
                     Modelo_Entidades.Persona oPersona = (Modelo_Entidades.Persona)dgv_datos.CurrentRow.DataBoundItem;
-                    if (cCU_GestionarPersonas.ValidarMiembrosPersona(oPersona) == false)
+                    if (cCU_GestionarPersonas.ValidarTramitesAsociadosPersona(oPersona) == false)
                     {
                         MessageBox.Show("Para eliminar la persona, primero debe eliminar todos sus tramites.");
                         return;

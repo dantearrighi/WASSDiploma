@@ -28,6 +28,8 @@ namespace WASSTD
         Modelo_Entidades.Usuario miUsuario;
         Modelo_Entidades.Detalles_Tramite oDetalles_Tramite;
 
+        FrmSeleccionPersonas formSeleccionarPersona;
+
 
         // Declaro como publico al constructor
         public FrmTramite(string fModo, Modelo_Entidades.Tramite miTramite, Modelo_Entidades.Usuario oUsuario)
@@ -265,6 +267,37 @@ namespace WASSTD
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+        // CLICK Seleccionar Persona
+        private void btn_seleccionarPersona_Click(object sender, EventArgs e)
+        {
+            formSeleccionarPersona = FrmSeleccionPersonas.ObtenerInstancia(miUsuario);
+            if (DialogResult.OK == formSeleccionarPersona.ShowDialog())
+            {
+                oPersona = formSeleccionarPersona.PersonaElegida;
+
+                lbl_TipoDocumento.Text = oPersona.Tipo_Documento.descripcion;
+                lbl_ClaveFiscal.Text = oPersona.clave_fiscal;
+                lbl_FechaNacimiento.Text = oPersona.fecha_nacimiento.ToShortDateString();
+                lbl_NombreyApellido.Text = oPersona.nombre_apellido;
+                lbl_NumeroDoc.Text = oPersona.dni.ToString();
+                lbl_Sexo.Text = oPersona.sexo;
+                lbl_TipoPersona.Text = oPersona.Tipo_Persona.descripcion;
+                
+                //Calculo la edad
+                Controladora.Persona.Age edad = Controladora.Persona.Age.CalcularEdad(oPersona.fecha_nacimiento.ToShortDateString());
+
+                // Muestro la edad en el label
+                this.lbl_Edad.Text = edad.Years.ToString() + " años, " + edad.Months.ToString() + " meses," + edad.Days.ToString() + " días.";
+
+                
+                //OCULTO EL MENSAJE DEBE SELECCIONAR PERSONA
+                lbl_DebeSeleccionar.Visible = false;
+                
+            }
+
         }
     }
 }
