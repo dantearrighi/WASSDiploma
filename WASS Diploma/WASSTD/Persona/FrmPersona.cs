@@ -17,48 +17,34 @@ namespace WASSTD
         string modo;
 
         // Declaro las controladoras a utilizar en el formulario
-        Controladora.cPersona cPersona;
-        Controladora.cGrupo cGrupo;
+      
         Controladora.cTipo_Documento cTipo_Documento;
         Controladora.cProvincia cProvincia;
         Controladora.cLocalidad cLocalidad;
         Controladora.cEstado cEstado;
-        Controladora.cVerificacion cVerificacion;
         Controladora.cTipo_Persona cTipo_Persona;
-   
-        
-        
-        
-        Controladora.cAuditoria cAuditoria;
-
+        Controladora.cCU_GestionarPersonas cCU_GestionarPersonas;
+          
         // Declaro las entidades
         Modelo_Entidades.Persona oPersona;
         Modelo_Entidades.Direccion oDireccion;
         Modelo_Entidades.Usuario miUsuario;
         
-
-       
-
-        
-        
-
-        
-
         // Declaro como publico al constructor
         public FrmPersona(string fModo, Modelo_Entidades.Persona miPersona, Modelo_Entidades.Usuario oUsuario)
         {
             InitializeComponent();
 
             // Inicializo a las controladoras
-            cPersona = Controladora.cPersona.ObtenerInstancia();
-            cGrupo = Controladora.cGrupo.ObtenerInstancia();
-            cTipo_Documento = Controladora.cTipo_Documento.ObtenerInstancia();
+         
+                    
+            // Algunos datos que necesito recuperar para dar de alta a una persona
+            cTipo_Documento = Controladora.cTipo_Documento.ObtenerInstancia(); //Sirve para cagar tipos de documento en el combo box correspondiente
             cTipo_Persona = Controladora.cTipo_Persona.ObtenerInstancia();
             cProvincia = Controladora.cProvincia.ObtenerInstancia();
             cLocalidad = Controladora.cLocalidad.ObtenerInstancia();
             cEstado = Controladora.cEstado.ObtenerInstancia();
-            cVerificacion = Controladora.cVerificacion.ObtenerInstancia();
-            cAuditoria = Controladora.cAuditoria.ObtenerInstancia();
+            cCU_GestionarPersonas = Controladora.cCU_GestionarPersonas.ObtenerInstancia();
 
             modo = fModo;
             oPersona = miPersona;
@@ -122,6 +108,7 @@ namespace WASSTD
                 try
                 {
                     #region Datos personales de la Persona
+
                 oPersona.Tipo_Documento = (Modelo_Entidades.Tipo_Documento)cmb_tiposdoc.SelectedItem;
                 oPersona.dni = Convert.ToInt32(txt_numero.Text);
                 oPersona.nombre_apellido = txt_nombreapellido.Text;
@@ -145,6 +132,7 @@ namespace WASSTD
                     oDireccion.direccion = txt_direccion.Text;
                     oDireccion.Localidad = (Modelo_Entidades.Localidad)cmb_localidades.SelectedItem;
                     oPersona.Direcciones.Add(oDireccion);
+                   
 
                     
                 }
@@ -186,7 +174,7 @@ namespace WASSTD
 
                     if (modo == "Alta")
                     {
-                        cPersona.Alta(oPersona);                    
+                        cCU_GestionarPersonas.Alta(oPersona);                    
 
                        
 
@@ -195,7 +183,7 @@ namespace WASSTD
 
                     else
                     {
-                        cPersona.Modificacion(oPersona);
+                        cCU_GestionarPersonas.Modificacion(oPersona);
                         MessageBox.Show("La persona se ha modificado correctamente");
                     }               
 
@@ -214,6 +202,7 @@ namespace WASSTD
         private bool ValidarObligatorios()
         {
             #region Datos personales
+
             if (cmb_tiposdoc.SelectedItem == null)
             {
                 MessageBox.Show("Debe ingresar un tipo de documento para la Persona");
@@ -226,9 +215,9 @@ namespace WASSTD
                 return false;
             }
 
-            // Valido que no exista un Persona con un DNI igual
-            if (cPersona.ValidarPersona(Convert.ToInt32(txt_numero.Text)) == false)
-            {
+            // Valido que no exista una Persona con un DNI igual
+            if (cCU_GestionarPersonas.ValidarPersona(Convert.ToInt32(txt_numero.Text)) == false)
+            { //Si la persona no se encuentra registrada, no entro aqui
                 if (oPersona.dni != Convert.ToInt32(txt_numero.Text))
                 {
                     MessageBox.Show("Ya existe un Persona con el DNI ingresado");
@@ -299,15 +288,12 @@ namespace WASSTD
                 MessageBox.Show("El E-Mail ingresado tiene un formato incorrecto.", "Error en Email", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+
             #endregion
 
-         
             return true;
         }
 
-      
-
-            
 
         // Al dejar un valor en el combo de localidades, se llena el código postal
         private void cmb_localidades_Leave(object sender, EventArgs e)

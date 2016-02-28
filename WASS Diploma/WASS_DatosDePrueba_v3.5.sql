@@ -150,3 +150,7 @@ insert into Detalles_Tramites values
 ('Realizando evaluación','25/03/15',1),
 ('Se derivó a ERR','03/12/09',2)
 
+INSERT INTO Direcciones values
+('Italia 94', 37073682, 1),
+('Callao 555', 11750105, 13),
+('Zeballos 562 9no A',34541691,1) 

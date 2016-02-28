@@ -11,6 +11,7 @@ namespace Controladora
         private static cCU_GestionarPersonas instancia;
         Controladora.Seguridad.cCU_RecuperarPerfilPorFormulario cCU_RecuperarPerfilPorFormulario;
         private Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
+        
        
         //Aplico el patron de diseño Singleton para la clase cGrupo (cuando la solicitan desde otra)
         public static cCU_GestionarPersonas ObtenerInstancia()
@@ -64,6 +65,74 @@ namespace Controladora
 
         #endregion
 
+        #region ////    ABMC PERSONAS    \\\\
 
+
+        // ALTA a una nueva Persona
+        public void Alta(Modelo_Entidades.Persona oPersona)
+        {
+            oModelo_Entidades.AddToPersonas(oPersona);
+            oModelo_Entidades.SaveChanges();
+        }
+
+        // MODIFICAR a una Persona
+        public void Modificacion(Modelo_Entidades.Persona oPersona)
+        {
+            oModelo_Entidades.ApplyCurrentValues("Personas", oPersona);
+            oModelo_Entidades.SaveChanges();
+        }
+
+        // ELIMINAR a una persona
+        public void EliminarPersona(Modelo_Entidades.Persona oPersona)
+        {
+                oModelo_Entidades.DeleteObject(oPersona);
+                oModelo_Entidades.SaveChanges();
+           
+        }
+
+        #endregion
+
+
+        #region ****    VALIDACIONES PERSONAS    ****
+        // Valido que una Persona no exista
+        public Boolean ValidarPersona(int dni)
+        {
+            Modelo_Entidades.Persona oPersona = oModelo_Entidades.Personas.ToList().Find(delegate(Modelo_Entidades.Persona fPersona)
+            {
+                return fPersona.dni == dni;
+            });
+
+
+            if (oPersona == null)
+            {     //Si no se encontro persona registrada con el dni ingresado, devuelvo true
+                return true;
+            }
+
+            else
+            {     //Si la persona ya existe
+                return false;
+            }
+        }
+
+
+        // Valido que no un grupo no tengo miembros asociados
+        public Boolean ValidarMiembrosPersona(Modelo_Entidades.Persona oPersona)
+        {
+            Modelo_Entidades.Persona oPers = oModelo_Entidades.Personas.ToList().Find(delegate(Modelo_Entidades.Persona fPersona)
+            {
+                return fPersona == oPersona;
+            });
+
+            if (oPers.Tramites.Count == 0)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+        #endregion
     }
 }

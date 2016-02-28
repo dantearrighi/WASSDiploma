@@ -69,7 +69,6 @@
   <ItemGroup>
     <EntityDeploy Include="WASSTD.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>WASSTD.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>

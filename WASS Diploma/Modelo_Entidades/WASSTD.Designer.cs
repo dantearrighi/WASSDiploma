@@ -30,7 +30,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "EstadoPersona", "Estado", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Estado), "Persona", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Persona))]
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "LocalidadDireccion", "Localidad", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Localidad), "Direccion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Direccion))]
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "Detalles_del_Tramite", "Detalles_Tramite", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Detalles_Tramite), "Tramite", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Tramite), true)]
-[assembly: EdmRelationshipAttribute("WASSTDModelo", "TramitePersona", "Tramite", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Tramite), "Persona", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Persona))]
+[assembly: EdmRelationshipAttribute("WASSTDModelo", "TramitesPersona", "Tramite", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Tramite), "Persona", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Persona))]
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "Tipo_PersonaPersona", "Tipo_Persona", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Tipo_Persona), "Persona", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Persona), true)]
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "Tipo_TramiteTramite", "Tipo_Tramite", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Tipo_Tramite), "Tramite", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Tramite), true)]
 
@@ -2192,18 +2192,18 @@ namespace Modelo_Entidades
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "TramitePersona", "Tramite")]
-        public EntityCollection<Tramite> Tramite
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "TramitesPersona", "Tramite")]
+        public EntityCollection<Tramite> Tramites
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Tramite>("WASSTDModelo.TramitePersona", "Tramite");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Tramite>("WASSTDModelo.TramitesPersona", "Tramite");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Tramite>("WASSTDModelo.TramitePersona", "Tramite", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Tramite>("WASSTDModelo.TramitesPersona", "Tramite", value);
                 }
             }
         }
@@ -2823,16 +2823,16 @@ namespace Modelo_Entidades
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "TramitePersona", "Persona")]
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "TramitesPersona", "Persona")]
         public Persona Persona
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Persona>("WASSTDModelo.TramitePersona", "Persona").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Persona>("WASSTDModelo.TramitesPersona", "Persona").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Persona>("WASSTDModelo.TramitePersona", "Persona").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Persona>("WASSTDModelo.TramitesPersona", "Persona").Value = value;
             }
         }
         /// <summary>
@@ -2844,13 +2844,13 @@ namespace Modelo_Entidades
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Persona>("WASSTDModelo.TramitePersona", "Persona");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Persona>("WASSTDModelo.TramitesPersona", "Persona");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Persona>("WASSTDModelo.TramitePersona", "Persona", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Persona>("WASSTDModelo.TramitesPersona", "Persona", value);
                 }
             }
         }

@@ -141,17 +141,16 @@ namespace WASSTD
                 DialogResult Rta = MessageBox.Show("¿Confirma la eliminación de la persona?", "Baja", MessageBoxButtons.YesNo);
                 if (Rta == DialogResult.Yes)
                 {
-                 
-                    /////////////////////////////////////////////////////////////////////////////////////////////////////CODIFICAR ACA LA BAJA DE LA PERSONA
-                    /*Modelo_Entidades.Grupo oGrup = (Modelo_Entidades.Grupo)dgv_datos.CurrentRow.DataBoundItem;
-                    if (cGrupo.ValidarMiembrosGrupo(oGrup) == false)
+            
+                    Modelo_Entidades.Persona oPersona = (Modelo_Entidades.Persona)dgv_datos.CurrentRow.DataBoundItem;
+                    if (cCU_GestionarPersonas.ValidarMiembrosPersona(oPersona) == false)
                     {
-                        MessageBox.Show("Para eliminar el grupo, primero debe desasociar a todos sus miembros y eliminar todos sus perfiles");
+                        MessageBox.Show("Para eliminar la persona, primero debe eliminar todos sus tramites.");
                         return;
                     }
-                    cGrupo.EliminarGrupo(oGrup);
-                    MessageBox.Show("El Grupo fue eliminado");
-                    Arma_Lista(); */
+                    cCU_GestionarPersonas.EliminarPersona(oPersona);
+                    MessageBox.Show("Se eliminó a "+oPersona.nombre_apellido.ToUpper()+" del sistema.");
+                    Arma_Lista();
                 }
 
                 else
