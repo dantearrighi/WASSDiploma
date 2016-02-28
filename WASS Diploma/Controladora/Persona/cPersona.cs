@@ -26,7 +26,7 @@ namespace Controladora
             oModelo_Entidades = Modelo_Entidades.WASSTDEntidades.ObtenerInstancia();
         }
 
-        // Dar de alta a un nuevo Persona
+        // Dar de alta a una nueva Persona
         public void Alta(Modelo_Entidades.Persona oPersona)
         {
             oModelo_Entidades.AddToPersonas(oPersona);
@@ -34,7 +34,7 @@ namespace Controladora
         }
 
 
-        //hice de todo 
+        
         // Modificar a un Persona
         public void Modificacion(Modelo_Entidades.Persona oPersona)
         {

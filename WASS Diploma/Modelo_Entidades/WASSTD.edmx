@@ -71,7 +71,7 @@
       <End Role="Detalles_Tramite" EntitySet="Detalles_Tramites" />
       <End Role="Tramite" EntitySet="Tramites" />
     </AssociationSet>
-    <AssociationSet Name="TramitesPersonas" Association="WASSTDModelo.Store.TramitePersona">
+    <AssociationSet Name="TramitesPersonas" Association="WASSTDModelo.Store.TramitesPersona">
       <End Role="Tramite" EntitySet="Tramites" />
       <End Role="Persona" EntitySet="Personas" />
     </AssociationSet>
@@ -291,7 +291,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="PersonaDirecciones">
-    <End Role="Persona" Type="WASSTDModelo.Store.Personas" Multiplicity="1" />
+    <End Role="Persona" Type="WASSTDModelo.Store.Personas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Direccion" Type="WASSTDModelo.Store.Direcciones" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Persona">
@@ -350,7 +352,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="TramitePersona">
+  <Association Name="TramitesPersona">
     <End Role="Tramite" Type="WASSTDModelo.Store.Tramites" Multiplicity="*" />
     <End Role="Persona" Type="WASSTDModelo.Store.Personas" Multiplicity="1" />
     <ReferentialConstraint>
@@ -473,7 +475,7 @@
             <End Role="Detalles_Tramite" EntitySet="Detalles_Tramites" />
             <End Role="Tramite" EntitySet="Tramites" />
           </AssociationSet>
-          <AssociationSet Name="TramitesPersonas" Association="WASSTDModelo.TramitePersona">
+          <AssociationSet Name="TramitesPersonas" Association="WASSTDModelo.TramitesPersona">
             <End Role="Tramite" EntitySet="Tramites" />
             <End Role="Persona" EntitySet="Personas" />
           </AssociationSet>
@@ -582,7 +584,7 @@
           <NavigationProperty Name="Estado" Relationship="WASSTDModelo.EstadoPersona" FromRole="Persona" ToRole="Estado" />
           <Property Name="clave_fiscal" Type="String" Nullable="false" />
           <Property Name="fecha_nacimiento" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="Tramite" Relationship="WASSTDModelo.TramitePersona" FromRole="Persona" ToRole="Tramite" />
+          <NavigationProperty Name="Tramites" Relationship="WASSTDModelo.TramitesPersona" FromRole="Persona" ToRole="Tramite" />
           <NavigationProperty Name="Tipo_Persona" Relationship="WASSTDModelo.Tipo_PersonaPersona" FromRole="Persona" ToRole="Tipo_Persona" />
           <Property Name="Tipo_PersonaId" Type="Int32" Nullable="false" />
         </EntityType>
@@ -626,7 +628,9 @@
           <NavigationProperty Name="Localidad" Relationship="WASSTDModelo.LocalidadDireccion" FromRole="Direccion" ToRole="Localidad" />
         </EntityType>
         <Association Name="PersonaDirecciones">
-          <End Type="WASSTDModelo.Persona" Role="Persona" Multiplicity="1" />
+          <End Type="WASSTDModelo.Persona" Role="Persona" Multiplicity="1" >
+            <OnDelete Action="Cascade" />
+          </End>
           <End Type="WASSTDModelo.Direccion" Role="Direccion" Multiplicity="*" />
         </Association>
         <EntityType Name="Tipo_Documento">
@@ -655,7 +659,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Detalles_Tramite" Relationship="WASSTDModelo.Detalles_del_Tramite" FromRole="Tramite" ToRole="Detalles_Tramite" />
-          <NavigationProperty Name="Persona" Relationship="WASSTDModelo.TramitePersona" FromRole="Tramite" ToRole="Persona" />
+          <NavigationProperty Name="Persona" Relationship="WASSTDModelo.TramitesPersona" FromRole="Tramite" ToRole="Persona" />
           <NavigationProperty Name="Tipo_Tramite" Relationship="WASSTDModelo.Tipo_TramiteTramite" FromRole="Tramite" ToRole="Tipo_Tramite" />
           <Property Name="Tipo_Tramite_id" Type="Int32" Nullable="false" />
           <Property Name="estado" Type="String" Nullable="false" />
@@ -682,7 +686,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="TramitePersona">
+        <Association Name="TramitesPersona">
           <End Type="WASSTDModelo.Tramite" Role="Tramite" Multiplicity="*" />
           <End Type="WASSTDModelo.Persona" Role="Persona" Multiplicity="1" />
         </Association>
@@ -956,7 +960,7 @@
         <ScalarProperty Name="id" ColumnName="id" />
       </EndProperty>
     </AssociationSetMapping>
-    <AssociationSetMapping Name="TramitesPersonas" TypeName="WASSTDModelo.TramitePersona" StoreEntitySet="Tramites">
+    <AssociationSetMapping Name="TramitesPersonas" TypeName="WASSTDModelo.TramitesPersona" StoreEntitySet="Tramites">
       <EndProperty Name="Persona">
         <ScalarProperty Name="dni" ColumnName="Persona_dni" />
       </EndProperty>
@@ -1038,7 +1042,7 @@
         <EntityTypeShape EntityType="WASSTDModelo.Tramite" Width="1.5" PointX="15.5" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="WASSTDModelo.Detalles_Tramite" Width="1.5" PointX="17.5" PointY="1.5" />
         <AssociationConnector Association="WASSTDModelo.Detalles_del_Tramite" />
-        <AssociationConnector Association="WASSTDModelo.TramitePersona" />
+        <AssociationConnector Association="WASSTDModelo.TramitesPersona" />
         <EntityTypeShape EntityType="WASSTDModelo.Tipo_Persona" Width="1.5" PointX="13.375" PointY="5.375" IsExpanded="true" />
         <AssociationConnector Association="WASSTDModelo.Tipo_PersonaPersona" />
         <EntityTypeShape EntityType="WASSTDModelo.Tipo_Tramite" Width="1.5" PointX="15.625" PointY="4.5" />

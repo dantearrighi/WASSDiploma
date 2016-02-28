@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 02/25/2016 17:41:56
+-- Date Created: 02/28/2016 05:11:44
 -- Generated from EDMX file: C:\Users\Dante\Documents\GitHub\WASSDiploma\WASS Diploma\Modelo_Entidades\WASSTD.edmx
 -- --------------------------------------------------
 
@@ -477,7 +477,7 @@ ADD CONSTRAINT [FK_PersonaDirecciones]
     FOREIGN KEY ([Persona_dni])
     REFERENCES [dbo].[Personas]
         ([dni])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_PersonaDirecciones'
 CREATE INDEX [IX_FK_PersonaDirecciones]
@@ -543,14 +543,14 @@ GO
 
 -- Creating foreign key on [Persona_dni] in table 'Tramites'
 ALTER TABLE [dbo].[Tramites]
-ADD CONSTRAINT [FK_TramitePersona]
+ADD CONSTRAINT [FK_TramitesPersona]
     FOREIGN KEY ([Persona_dni])
     REFERENCES [dbo].[Personas]
         ([dni])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
--- Creating non-clustered index for FOREIGN KEY 'FK_TramitePersona'
-CREATE INDEX [IX_FK_TramitePersona]
+-- Creating non-clustered index for FOREIGN KEY 'FK_TramitesPersona'
+CREATE INDEX [IX_FK_TramitesPersona]
 ON [dbo].[Tramites]
     ([Persona_dni]);
 GO
