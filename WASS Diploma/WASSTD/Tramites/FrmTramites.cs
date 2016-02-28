@@ -122,7 +122,7 @@ namespace WASSTD.Tramites
             // Ultima descripcion
             dgv_datos.Columns[2].HeaderText = "Descripción";
             dgv_datos.Columns[2].DisplayIndex = 4;
-            dgv_datos.Columns[2].Width = 925;
+            dgv_datos.Columns[2].Width = 500;
 
             // Fecha Ultima modificacion
             dgv_datos.Columns[3].HeaderText = "Ultima modificación";
