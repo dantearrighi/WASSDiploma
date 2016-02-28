@@ -58,7 +58,7 @@
             this.btn_CrearInforme = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btn_guardar = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.btn_RealizarCalculo = new System.Windows.Forms.Button();
             this.btn_RecordatorioVanina = new System.Windows.Forms.Button();
             this.btn_VerCalculosAnteriores = new System.Windows.Forms.Button();
@@ -68,12 +68,12 @@
             this.txt_fecha_Alta = new System.Windows.Forms.MaskedTextBox();
             this.cmb_tipos_tramites = new System.Windows.Forms.ComboBox();
             this.txt_nro_tramite = new System.Windows.Forms.TextBox();
-            this.lbl_Finalizado = new System.Windows.Forms.Label();
             this.lbl_UltimoMovimiento = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.lbl_Activo = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.lbl_Finalizado = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.grp_sexo.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -404,7 +404,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btn_guardar);
-            this.groupBox3.Controls.Add(this.button6);
+            this.groupBox3.Controls.Add(this.btnCerrar);
             this.groupBox3.Controls.Add(this.btn_RealizarCalculo);
             this.groupBox3.Controls.Add(this.btn_RecordatorioVanina);
             this.groupBox3.Controls.Add(this.btn_VerCalculosAnteriores);
@@ -429,17 +429,18 @@
             this.btn_guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_guardar.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnCerrar
             // 
-            this.button6.Image = global::WASSTD.Properties.Resources.cancel_icon_16;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.Location = new System.Drawing.Point(5, 426);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(204, 36);
-            this.button6.TabIndex = 71;
-            this.button6.Text = "Cerrar";
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnCerrar.Image = global::WASSTD.Properties.Resources.cancel_icon_16;
+            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCerrar.Location = new System.Drawing.Point(5, 426);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(204, 36);
+            this.btnCerrar.TabIndex = 71;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btn_RealizarCalculo
             // 
@@ -495,12 +496,12 @@
             this.groupBox4.Controls.Add(this.txt_fecha_Alta);
             this.groupBox4.Controls.Add(this.cmb_tipos_tramites);
             this.groupBox4.Controls.Add(this.txt_nro_tramite);
-            this.groupBox4.Controls.Add(this.lbl_Finalizado);
             this.groupBox4.Controls.Add(this.lbl_UltimoMovimiento);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.label19);
             this.groupBox4.Controls.Add(this.lbl_Activo);
             this.groupBox4.Controls.Add(this.label21);
+            this.groupBox4.Controls.Add(this.lbl_Finalizado);
             this.groupBox4.Location = new System.Drawing.Point(532, 12);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(397, 168);
@@ -544,19 +545,6 @@
             this.txt_nro_tramite.Size = new System.Drawing.Size(87, 20);
             this.txt_nro_tramite.TabIndex = 62;
             // 
-            // lbl_Finalizado
-            // 
-            this.lbl_Finalizado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Finalizado.ForeColor = System.Drawing.Color.Crimson;
-            this.lbl_Finalizado.Image = global::WASSTD.Properties.Resources.on_off_icon_16;
-            this.lbl_Finalizado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_Finalizado.Location = new System.Drawing.Point(235, 16);
-            this.lbl_Finalizado.Name = "lbl_Finalizado";
-            this.lbl_Finalizado.Size = new System.Drawing.Size(154, 35);
-            this.lbl_Finalizado.TabIndex = 61;
-            this.lbl_Finalizado.Text = "FINALIZADO";
-            this.lbl_Finalizado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // lbl_UltimoMovimiento
             // 
             this.lbl_UltimoMovimiento.Image = global::WASSTD.Properties.Resources.reload_icon_16;
@@ -594,7 +582,7 @@
             // lbl_Activo
             // 
             this.lbl_Activo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Activo.ForeColor = System.Drawing.Color.Crimson;
+            this.lbl_Activo.ForeColor = System.Drawing.Color.Green;
             this.lbl_Activo.Image = global::WASSTD.Properties.Resources.on_off_icon_16;
             this.lbl_Activo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbl_Activo.Location = new System.Drawing.Point(272, 16);
@@ -614,6 +602,19 @@
             this.label21.TabIndex = 0;
             this.label21.Text = "Tipo de Trámite:";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbl_Finalizado
+            // 
+            this.lbl_Finalizado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Finalizado.ForeColor = System.Drawing.Color.Crimson;
+            this.lbl_Finalizado.Image = global::WASSTD.Properties.Resources.on_off_icon_16;
+            this.lbl_Finalizado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_Finalizado.Location = new System.Drawing.Point(235, 16);
+            this.lbl_Finalizado.Name = "lbl_Finalizado";
+            this.lbl_Finalizado.Size = new System.Drawing.Size(154, 35);
+            this.lbl_Finalizado.TabIndex = 61;
+            this.lbl_Finalizado.Text = "FINALIZADO";
+            this.lbl_Finalizado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FrmTramite
             // 
@@ -672,7 +673,7 @@
         private System.Windows.Forms.Button btn_AñadirDetalle;
         private System.Windows.Forms.Button btn_CrearInforme;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btn_RealizarCalculo;
         private System.Windows.Forms.Button btn_RecordatorioVanina;
         private System.Windows.Forms.Button btn_VerCalculosAnteriores;
