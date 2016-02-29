@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Modelo_Entidades;
 
 namespace WASSTD
 {
@@ -28,6 +29,7 @@ namespace WASSTD
         Modelo_Entidades.Tramite oTramite;
         Modelo_Entidades.Usuario miUsuario;
         Modelo_Entidades.Detalles_Tramite oDetalles_Tramite;
+        Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
 
         FrmSeleccionPersonas formSeleccionarPersona;
 
@@ -88,6 +90,7 @@ namespace WASSTD
                 cmb_tipos_tramites.DataSource = cTipo_Tramite.ObtenerTipos_Tramites();
                 cmb_tipos_tramites.DisplayMember = "descripcion";
                 cmb_tipos_tramites.Text = "SELECCIONAR";
+                txt_Fecha_Del_Detalle.Text = DateTime.Now.ToShortDateString();
 
                 //OCULTO
                 txt_Ultimo_Movimiento.Text = DateTime.Today.ToString();
@@ -307,31 +310,79 @@ namespace WASSTD
         private void btn_guardar_Click(object sender, EventArgs e)
         {
             GuardarTramite();
+            
         }
-
+        
         // GUARDAR TRAMITE (PASO 4 CU ALTA TRAMITE)
         private void GuardarTramite()
         {
-            //ASIGNO TODOS LOS VALORES INGRESADO POR EL USUARIO, al objeto oTramite
+            try
+            {
+                /* *****************************************************
+               * 
+               * ACA LE ASIGNO TODOS LOS VALORES
+               * CORRESPONDIENTES AL TRAMITE...
+               * VOY MAPEANDO ENTRE LA INTERFAZ Y EL OBJETO oTramite
+               * *******************************************************/
+              
 
-            oTramite.Detalles_Tramite.Add(new Modelo_Entidades.Detalles_Tramite());//esto esta mal.. debo hacerlo bien
-           
-             /* *****************************************************
-             * 
-             * ACA LE ASIGNO TODOS LOS VALORES
-             * CORRESPONDIENTES AL TRAMITE...
-             * VOY MAPEANDO ENTRE LA INTERFAZ Y EL OBJETO oTramite
-             * 
-             * *****************************************************/
-        
-            //VALIDO OBLIGATORIOS (PASO 4)
-            cCU_GestionarTramites.cCU_AltaTramite.ValidarObligatorios(oTramite);
-            oTramite.estado = "Activo";
+                //ASIGNO TODOS LOS VALORES INGRESADO POR EL USUARIO, al objeto oTramite
 
-            //LO REGISTRO EN EL SISTEMA (PASO 5)
-            cCU_GestionarTramites.cCU_AltaTramite.AltaTramite(oTramite);
+                //Detalles del tramite (SOLO FUNCIONA PARA ALTA PORQUE TIENE UN DETALLE... resolver como hacerlo para modificacion o cuando se agregan mas detalles
+                if (modo == "Alta")
+                {
+                    //AGREGO DETALLE SI ES MODO **********  A L T A 
+                    Modelo_Entidades.Detalles_Tramite detalleNuevo = new Modelo_Entidades.Detalles_Tramite();
+                    detalleNuevo.descripcion = txt_Descripcion.Text;
+                    detalleNuevo.fecha_desde = Convert.ToDateTime(txt_Fecha_Del_Detalle.Text);
 
-            this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                    //Agrego el detalle al tramite
+                    oTramite.Detalles_Tramite.Add(detalleNuevo);
+                }
+                else
+                {
+                    //AGREGO DETALLE(S) SI ES MODO ********* M O D I F I C A C I O N Y AGREGUE VARIOS
+                    //ACA VA EL CODIGO PARA AGREGAR LOS DETALLES AL TRAMITE CUANDO SE MODIFICA, YA QUE EN EL ALTA SOLO SE PERMITE AÑADIR UN SOLO DETALLE
+                }
+
+                //NOSE SI ESTO HAY Q HACERLO O NO... creo que no
+                //detalleNuevo.TramiteId = oTramite.Id;
+
+                //Valido que se haya seleccionado una persona a la cual cargarle el tramite
+
+                if (oPersona != null)
+                {
+                    oTramite.Persona = this.oPersona;
+                }
+
+                //ASIGNO TIPO DE TRAMITE
+                foreach (Tipo_Tramite tt in cTipo_Tramite.ObtenerTipos_Tramites())
+                {
+                    if (tt == cmb_tipos_tramites.SelectedValue)
+                    {
+                        oTramite.Tipo_Tramite = tt;
+                    }
+                }
+
+
+
+
+                //VALIDO OBLIGATORIOS (PASO 4)
+                if (cCU_GestionarTramites.cCU_AltaTramite.ValidarObligatorios(oTramite))
+                {
+                    oTramite.estado = "Activo";
+                    //LO REGISTRO EN EL SISTEMA (PASO 5)
+                    cCU_GestionarTramites.cCU_AltaTramite.AltaTramite(oTramite);
+
+                    this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                }
+
+
+            }
+            catch (Exception Exc)
+            {
+                throw new Exception(Exc.Message);
+            }
         }
 
 

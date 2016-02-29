@@ -41,7 +41,7 @@ namespace Controladora
 
         #region ////    ABMC    \\\\
 
-        // CU GESTIONAR TRAMITES (PASO 5.a ALTA TRAMITE)
+      /*  // CU GESTIONAR TRAMITES (PASO 5.a ALTA TRAMITE)
         public void AltaTramite(Modelo_Entidades.Tramite oTramite)
         {
             cCU_AltaTramite = Controladora.cCU_AltaTramite.ObtenerInstancia();
@@ -51,12 +51,20 @@ namespace Controladora
                 cCU_AltaTramite.AltaTramite(oTramite);
             }
 
-            
+            */
  
         }
 
        
 
+
+
+
+
+
+
+
+    /*
 
         // CU MODIFICAR TRAMITE
         public void ModificarTramite(Modelo_Entidades.Tramite oTramite)
@@ -64,9 +72,9 @@ namespace Controladora
             oModelo_Entidades.ApplyCurrentValues("Tramites", oTramite);
             oModelo_Entidades.SaveChanges();
         }
-
+    */
 
 
         #endregion
     }
-}
+

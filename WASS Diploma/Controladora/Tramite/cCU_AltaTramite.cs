@@ -30,25 +30,46 @@ namespace Controladora
         // Validar Obligatorios (PASO 4 CU ALTA TRAMITE)
         public bool ValidarObligatorios(Modelo_Entidades.Tramite oTramite)
         {
-            
-            if (oTramite.Detalles_Tramite.Count == 0)
+            List<string> msgError = new List<string>();
+
+           
+            //VALIDAR TRAMITE EXISTENTE
+            if(!ValidarTramiteExistente(oTramite.Tipo_Tramite.id, oTramite.Persona.dni))
             {
-                return false;
-            }
-            if (oTramite.estado == null)
-            {
-                return false;
-            }
-            if (oTramite.Persona == null)
-            {
-                return false;
-            }
-            if (oTramite.Tipo_Tramite == null)
-            {
-                return false; 
+                string errorTramiteExistente = "Ya existe un trámite de "+oTramite.Tipo_Tramite.descripcion+" registrado para "+oTramite.Persona.nombre_apellido+".";
+                msgError.Add(errorTramiteExistente);
             }
 
-            return true;
+            //Valido DETALLE
+            if (oTramite.Detalles_Tramite.Count == 0)
+            {
+                msgError.Add("Debe asignarle un Detalles a la descripción del tramite.");
+            }
+            
+            //Valido PERSONA
+            if (oTramite.Persona == null)
+            {
+                msgError.Add("Debe seleccionar una Persona a la cual le carga el trámite");
+            }
+
+            //Valido TIPO TRAMITE
+            if (oTramite.Tipo_Tramite == null)
+            {
+                msgError.Add("Debe seleccionar un Tipo de Trámite.");
+            }
+            
+           foreach (String error in msgError)
+            {
+                throw new Exception(error); 
+            }
+
+            if(msgError.Count == 0)
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
         }
 
         // CU ALTA TRAMITE: REGISTRARLO EN EL SISTEMA (PASO 5)
@@ -59,5 +80,27 @@ namespace Controladora
 
         }
 
+
+        //VALIDO SI EXISTE UN TRAMITE DEL TIPO INGRESADO PARA LA PERSONA SELECCIONADA. DEVUELVE TRUE SI LO ENCUENTRA
+        private Boolean ValidarTramiteExistente(int iDtipoTram, int dniPersonaTramite)
+        {
+
+            Modelo_Entidades.Tramite oTramite= oModelo_Entidades.Tramites.ToList().Find(delegate(Modelo_Entidades.Tramite fTramite)
+            {
+                return (fTramite.Persona.dni == dniPersonaTramite && fTramite.Tipo_Tramite.id == iDtipoTram);
+            });
+
+
+            if (oTramite == null)
+            {     //Si no se encontro tramite registrado con el dni ingresado y con el mismo tipo de tramite, devuelvo true
+                return true;
+            }
+
+            else
+            {     //Si ya existe un tramite de este tipo para esta persona, devuelvo false
+                return false;
+            }
+ 
+        }
     }
 }

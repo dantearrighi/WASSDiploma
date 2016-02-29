@@ -219,14 +219,20 @@ namespace WASSTD.Tramites
 
         // Al hacer click en "Agregar" (PASO 5.a Gestionar Tramites)
         private void botonera1_Click_Alta(object sender, EventArgs e)
-        {   
-
-            //PASO 1 y 2 de CU ALTA TRAMITE
-            FormTramite = new FrmTramite("Alta", new Modelo_Entidades.Tramite(), miUsuario);
-            DialogResult dr = FormTramite.ShowDialog();
-            if (dr == DialogResult.OK)
+        {
+            try
             {
-                Arma_Lista();
+                //PASO 1 y 2 de CU ALTA TRAMITE
+                FormTramite = new FrmTramite("Alta", new Modelo_Entidades.Tramite(), miUsuario);
+                DialogResult dr = FormTramite.ShowDialog();
+                if (dr == DialogResult.OK)
+                {
+                    Arma_Lista();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Alta de trámite", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
 
         }
@@ -236,8 +242,7 @@ namespace WASSTD.Tramites
         {
             ModificarTramite();
         }
-
-
+        
         // METODO MODIFICAR TRAMITE
         private void ModificarTramite()
         {
@@ -265,8 +270,7 @@ namespace WASSTD.Tramites
             FormTramite = new FrmTramite("Consulta", (Modelo_Entidades.Tramite)dgv_datos.CurrentRow.DataBoundItem, miUsuario);
             DialogResult dr = FormTramite.ShowDialog();
         }
-
-        
+                
         // Al hacer click en "Eliminar"
         private void botonera1_Click_Baja(object sender, EventArgs e)
         {
@@ -305,8 +309,7 @@ namespace WASSTD.Tramites
                 MessageBox.Show(Exc.InnerException.ToString());
             }
         }
-
-
+        
         // Al cambiar texto en Nombre y apellido de la persona para filtrar
         private void txt_nya_Persona_TextChanged(object sender, EventArgs e)
         {
