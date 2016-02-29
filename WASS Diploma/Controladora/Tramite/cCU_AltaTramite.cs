@@ -27,13 +27,14 @@ namespace Controladora
         }
 
 
+
+
+
+
         // Validar Obligatorios (PASO 4 CU ALTA TRAMITE)
         public bool ValidarObligatorios(Modelo_Entidades.Tramite oTramite)
         {
             List<string> msgError = new List<string>();
-
-           
-            
 
             //Valido DETALLE
             if (oTramite.Detalles_Tramite.Count == 0)

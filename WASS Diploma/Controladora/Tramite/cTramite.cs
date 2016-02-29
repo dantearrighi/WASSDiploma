@@ -64,7 +64,18 @@ namespace Controladora
             return (List<Modelo_Entidades.Tramite>)Consulta.ToList();
         }
       
-       
+       //Obtener Tramite
+        // Obtengo un Persona dado su dni
+        public Modelo_Entidades.Tramite ObtenerTramite(int idTramite)
+        {
+            Modelo_Entidades.Tramite oTramite = oModelo_Entidades.Tramites.ToList().Find(delegate(Modelo_Entidades.Tramite fTramite)
+            {
+                return fTramite.Id == idTramite;
+            });
+
+            return oTramite;
+        }
+
 
     }
 }
