@@ -128,7 +128,10 @@ insert into Tipos_Documentos values
 insert into Estados values
 ('Habilitado'),
 ('No Habilitado'),
-('Baja')
+('Baja'),
+('Activo'),
+('Finalizado')
+
 
 
 -- Cargo personas
@@ -141,8 +144,8 @@ insert into Personas values
 
 --Solo para cuando ya estan cargada las personas con dni 34541691 y 11750105
 insert into Tramites values
-(3,'Activo',34541691),
-(1,'Finalizado',11750105)
+(3,4,34541691),
+(1,5,11750105)
 
 insert into Detalles_Tramites values
 ('Alta','20/03/15',1),

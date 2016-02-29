@@ -83,6 +83,10 @@
       <End Role="Tipo_Tramite" EntitySet="Tipos_Tramites" />
       <End Role="Tramite" EntitySet="Tramites" />
     </AssociationSet>
+    <AssociationSet Name="EstadoTramite" Association="WASSTDModelo.Store.EstadoTramite">
+      <End Role="Estado" EntitySet="Estados" />
+      <End Role="Tramite" EntitySet="Tramites" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Usuarios">
     <Key>
@@ -196,7 +200,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Tipo_Tramite_id" Type="int" Nullable="false" />
-    <Property Name="estado" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Estado_id" Type="int" Nullable="false" />
     <Property Name="Persona_dni" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Detalles_Tramites">
@@ -388,6 +392,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="EstadoTramite">
+    <End Role="Estado" Type="WASSTDModelo.Store.Estados" Multiplicity="1" />
+    <End Role="Tramite" Type="WASSTDModelo.Store.Tramites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Tramite">
+        <PropertyRef Name="Estado_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_UsuarioGrupo_Usuario">
     <End Role="Usuario" Type="WASSTDModelo.Store.Usuarios" Multiplicity="1" />
     <End Role="UsuarioGrupo" Type="WASSTDModelo.Store.UsuarioGrupo" Multiplicity="*" />
@@ -487,6 +503,10 @@
           <EntitySet Name="Tipos_Tramites" EntityType="WASSTDModelo.Tipo_Tramite" />
           <AssociationSet Name="Tipo_TramiteTramite" Association="WASSTDModelo.Tipo_TramiteTramite">
             <End Role="Tipo_Tramite" EntitySet="Tipos_Tramites" />
+            <End Role="Tramite" EntitySet="Tramites" />
+          </AssociationSet>
+          <AssociationSet Name="EstadoTramite" Association="WASSTDModelo.EstadoTramite">
+            <End Role="Estado" EntitySet="Estados" />
             <End Role="Tramite" EntitySet="Tramites" />
           </AssociationSet>
           </EntityContainer>
@@ -617,6 +637,7 @@
           <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="descripcion" Nullable="false" />
           <NavigationProperty Name="Personas" Relationship="WASSTDModelo.EstadoPersona" FromRole="Estado" ToRole="Persona" />
+          <NavigationProperty Name="Tramites" Relationship="WASSTDModelo.EstadoTramite" FromRole="Estado" ToRole="Tramite" />
         </EntityType>
         <EntityType Name="Direccion">
           <Key>
@@ -662,7 +683,8 @@
           <NavigationProperty Name="Persona" Relationship="WASSTDModelo.TramitesPersona" FromRole="Tramite" ToRole="Persona" />
           <NavigationProperty Name="Tipo_Tramite" Relationship="WASSTDModelo.Tipo_TramiteTramite" FromRole="Tramite" ToRole="Tipo_Tramite" />
           <Property Name="Tipo_Tramite_id" Type="Int32" Nullable="false" />
-          <Property Name="estado" Type="String" Nullable="false" />
+          <NavigationProperty Name="Estado" Relationship="WASSTDModelo.EstadoTramite" FromRole="Tramite" ToRole="Estado" />
+          <Property Name="Estado_id" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Detalles_Tramite">
           <Key>
@@ -727,6 +749,18 @@
             </Principal>
             <Dependent Role="Tramite">
               <PropertyRef Name="Tipo_Tramite_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EstadoTramite">
+          <End Type="WASSTDModelo.Estado" Role="Estado" Multiplicity="1" />
+          <End Type="WASSTDModelo.Tramite" Role="Tramite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Tramite">
+              <PropertyRef Name="Estado_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -850,7 +884,7 @@
         <MappingFragment StoreEntitySet="Tramites">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Tipo_Tramite_id" ColumnName="Tipo_Tramite_id" />
-          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="Estado_id" ColumnName="Estado_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1022,7 +1056,7 @@
           <ConnectorPoint PointX="1.6875" PointY="9.97068359375" />
           <ConnectorPoint PointX="1.6875" PointY="10.75" />
         </AssociationConnector>
-        <EntityTypeShape EntityType="WASSTDModelo.Estado" Width="1.875" PointX="10.25" PointY="2.375" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="WASSTDModelo.Estado" Width="1.875" PointX="10.25" PointY="2.375" Height="1.5956835937499996" IsExpanded="true" />
         <EntityTypeShape EntityType="WASSTDModelo.Direccion" Width="1.875" PointX="10.5" PointY="5.625" Height="1.7879850260416674" />
         <AssociationConnector Association="WASSTDModelo.PersonaDirecciones" ManuallyRouted="false">
         </AssociationConnector>
@@ -1047,6 +1081,7 @@
         <AssociationConnector Association="WASSTDModelo.Tipo_PersonaPersona" />
         <EntityTypeShape EntityType="WASSTDModelo.Tipo_Tramite" Width="1.5" PointX="15.625" PointY="4.5" />
         <AssociationConnector Association="WASSTDModelo.Tipo_TramiteTramite" />
+        <AssociationConnector Association="WASSTDModelo.EstadoTramite" />
         </Diagram>
     </Diagrams>
   </Designer>

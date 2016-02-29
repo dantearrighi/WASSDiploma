@@ -45,6 +45,11 @@
   <ItemGroup>
     <None Include="App.Config" />
     <Compile Include="Tramites\Tramite.cs" />
+    <Compile Include="WASSTD2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WASSTD.edmx</DependentUpon>
+    </Compile>
     <Compile Include="WASSTD_Auditoria.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -56,11 +61,6 @@
     <Compile Include="Personas\Localidad.cs" />
     <Compile Include="Personas\Provincia.cs" />
     <Compile Include="Seguridad\Formulario.cs" />
-    <Compile Include="WASSTD.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WASSTD.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Seguridad\Grupo.cs" />
     <Compile Include="Seguridad\Permiso.cs" />
     <Compile Include="Entidades %28Patron Singleton %29\WASSTDEntidades.cs" />
@@ -69,6 +69,7 @@
   <ItemGroup>
     <EntityDeploy Include="WASSTD.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WASSTD2.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>

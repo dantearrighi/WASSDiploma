@@ -220,8 +220,7 @@ namespace WASSTD.Tramites
         // Al hacer click en "Agregar" (PASO 5.a Gestionar Tramites)
         private void botonera1_Click_Alta(object sender, EventArgs e)
         {
-            try
-            {
+            
                 //PASO 1 y 2 de CU ALTA TRAMITE
                 FormTramite = new FrmTramite("Alta", new Modelo_Entidades.Tramite(), miUsuario);
                 DialogResult dr = FormTramite.ShowDialog();
@@ -229,11 +228,8 @@ namespace WASSTD.Tramites
                 {
                     Arma_Lista();
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Alta de trámite", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }
+            
+          
 
         }
 

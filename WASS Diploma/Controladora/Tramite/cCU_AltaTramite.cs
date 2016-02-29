@@ -33,12 +33,7 @@ namespace Controladora
             List<string> msgError = new List<string>();
 
            
-            //VALIDAR TRAMITE EXISTENTE
-            if(!ValidarTramiteExistente(oTramite.Tipo_Tramite.id, oTramite.Persona.dni))
-            {
-                string errorTramiteExistente = "Ya existe un trámite de "+oTramite.Tipo_Tramite.descripcion+" registrado para "+oTramite.Persona.nombre_apellido+".";
-                msgError.Add(errorTramiteExistente);
-            }
+            
 
             //Valido DETALLE
             if (oTramite.Detalles_Tramite.Count == 0)
@@ -57,12 +52,21 @@ namespace Controladora
             {
                 msgError.Add("Debe seleccionar un Tipo de Trámite.");
             }
-            
-           foreach (String error in msgError)
-            {
-                throw new Exception(error); 
-            }
 
+            
+           
+
+           //VALIDAR TRAMITE EXISTENTE
+           if (!ValidarTramiteExistente(oTramite))
+           {
+               string errorTramiteExistente = "Ya existe un trámite de " + oTramite.Tipo_Tramite.descripcion + " registrado para " + oTramite.Persona.nombre_apellido + ".";
+               msgError.Add(errorTramiteExistente);
+           }
+
+           foreach (String error in msgError)
+           {
+               throw new Exception(error);
+           }
             if(msgError.Count == 0)
             {
                 return true;
@@ -82,12 +86,12 @@ namespace Controladora
 
 
         //VALIDO SI EXISTE UN TRAMITE DEL TIPO INGRESADO PARA LA PERSONA SELECCIONADA. DEVUELVE TRUE SI LO ENCUENTRA
-        private Boolean ValidarTramiteExistente(int iDtipoTram, int dniPersonaTramite)
+        private Boolean ValidarTramiteExistente(Modelo_Entidades.Tramite pTramite)
         {
 
             Modelo_Entidades.Tramite oTramite= oModelo_Entidades.Tramites.ToList().Find(delegate(Modelo_Entidades.Tramite fTramite)
             {
-                return (fTramite.Persona.dni == dniPersonaTramite && fTramite.Tipo_Tramite.id == iDtipoTram);
+                return (fTramite.Persona.dni == pTramite.Persona.dni && fTramite.Tipo_Tramite.id == pTramite.Tipo_Tramite.id);
             });
 
 

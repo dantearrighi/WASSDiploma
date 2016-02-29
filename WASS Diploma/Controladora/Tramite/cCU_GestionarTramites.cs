@@ -13,7 +13,7 @@ namespace Controladora
         Controladora.Seguridad.cCU_RecuperarPerfilPorFormulario cCU_RecuperarPerfilPorFormulario;
         public Controladora.cCU_AltaTramite cCU_AltaTramite;
         private Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
-        
+
 
         //Aplico el patron de diseño Singleton para la clase cGrupo (cuando la solicitan desde otra)
         public static cCU_GestionarTramites ObtenerInstancia()
@@ -26,9 +26,10 @@ namespace Controladora
 
         // Coloco al constructor como privado.
         private cCU_GestionarTramites()
-        {           
+        {
             cCU_RecuperarPerfilPorFormulario = Controladora.Seguridad.cCU_RecuperarPerfilPorFormulario.ObtenerInstancia();
             oModelo_Entidades = Modelo_Entidades.WASSTDEntidades.ObtenerInstancia();
+            cCU_AltaTramite = Controladora.cCU_AltaTramite.ObtenerInstancia();
         }
 
 
@@ -39,42 +40,7 @@ namespace Controladora
             return cCU_RecuperarPerfilPorFormulario.ObtenerPermisosPorFormulario(oUsuario, nombreForm);
         }
 
-        #region ////    ABMC    \\\\
-
-      /*  // CU GESTIONAR TRAMITES (PASO 5.a ALTA TRAMITE)
-        public void AltaTramite(Modelo_Entidades.Tramite oTramite)
-        {
-            cCU_AltaTramite = Controladora.cCU_AltaTramite.ObtenerInstancia();
-
-            if (cCU_AltaTramite.ValidarObligatorios(oTramite))
-            {
-                cCU_AltaTramite.AltaTramite(oTramite);
-            }
-
-            */
- 
-        }
-
-       
-
-
-
-
-
-
-
-
-    /*
-
-        // CU MODIFICAR TRAMITE
-        public void ModificarTramite(Modelo_Entidades.Tramite oTramite)
-        {
-            oModelo_Entidades.ApplyCurrentValues("Tramites", oTramite);
-            oModelo_Entidades.SaveChanges();
-        }
-    */
-
-
-        #endregion
+        
     }
+}
 

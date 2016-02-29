@@ -64,5 +64,29 @@ namespace Controladora
 
             return oEstado;
         }
+
+        /////////////ESTADOS DEL TRAMITE   \\\\\\\\\\\\\\
+        
+        // Obtener el estado "TRAMITE ACTIVO"
+        public Modelo_Entidades.Estado ObtenerEstadoTramiteACTIVO()
+        {
+            Modelo_Entidades.Estado oEstado = oModelo_Entidades.Estados.ToList().Find(delegate(Modelo_Entidades.Estado fEstado)
+            {
+                return fEstado.descripcion == "Activo";
+            });
+
+            return oEstado;
+        }
+
+        // Obtener el estado "TRAMITE FINALIZADO"
+        public Modelo_Entidades.Estado ObtenerEstadoTramiteFINALIZADO()
+        {
+            Modelo_Entidades.Estado oEstado = oModelo_Entidades.Estados.ToList().Find(delegate(Modelo_Entidades.Estado fEstado)
+            {
+                return fEstado.descripcion == "Finalizado";
+            });
+
+            return oEstado;
+        }
     }
 }

@@ -23,6 +23,7 @@ namespace WASSTD
         Controladora.cAuditoria cAuditoria;
         Controladora.cTipo_Tramite cTipo_Tramite;
         Controladora.cCU_GestionarTramites cCU_GestionarTramites;
+        Controladora.cEstado cEstado;
 
         // Declaro las entidades
         Modelo_Entidades.Persona oPersona;
@@ -48,6 +49,7 @@ namespace WASSTD
             cDetalles_Tramite = Controladora.cDetalles_Tramite.ObtenerInstancia();
             cTipo_Tramite = Controladora.cTipo_Tramite.ObtenerInstancia();
             cCU_GestionarTramites = Controladora.cCU_GestionarTramites.ObtenerInstancia();
+            cEstado = Controladora.cEstado.ObtenerInstancia();
 
             modo = fModo;
             oTramite = miTramite;
@@ -79,6 +81,7 @@ namespace WASSTD
                     btn_NotificarCliente.Enabled = false;
                     btn_RecordatorioVanina.Enabled = false;
                     btn_VerCalculosAnteriores.Enabled = false;
+                    
                 }
             }
             else
@@ -90,6 +93,7 @@ namespace WASSTD
                 cmb_tipos_tramites.DataSource = cTipo_Tramite.ObtenerTipos_Tramites();
                 cmb_tipos_tramites.DisplayMember = "descripcion";
                 cmb_tipos_tramites.Text = "SELECCIONAR";
+                cmb_tipos_tramites.SelectedItem = null;
                 txt_Fecha_Del_Detalle.Text = DateTime.Now.ToShortDateString();
 
                 //OCULTO
@@ -110,22 +114,24 @@ namespace WASSTD
             }
 
             //Mostrar estado                               
-            if (oTramite.estado == "Activo")
+            if (oTramite.Estado != null)
             {
-                lbl_Finalizado.Visible = false;
-                lbl_Activo.Visible = true;
+                if (oTramite.Estado.descripcion == "Activo")
+                {
+                    lbl_Finalizado.Visible = false;
+                    lbl_Activo.Visible = true;
+                }
+                else if (oTramite.Estado.descripcion == "Finalizado")
+                {
+                    lbl_Finalizado.Visible = true;
+                    lbl_Activo.Visible = false;
+                }
+                else
+                {
+                    lbl_Finalizado.Visible = false;
+                    lbl_Activo.Visible = false;
+                }
             }
-            else if (oTramite.estado == "Finalizado")
-            {
-                lbl_Finalizado.Visible = true;
-                lbl_Activo.Visible = false;
-            }
-            else
-            {
-                lbl_Finalizado.Visible = false;
-                lbl_Activo.Visible = false;
-            }
-            
     
         }
 
@@ -141,6 +147,9 @@ namespace WASSTD
             lbl_TipoPersona.Text = oTramite.Persona.Tipo_Persona.descripcion;
             lbl_TipoDocumento.Text = oTramite.Persona.Tipo_Documento.descripcion;
             lbl_DebeSeleccionar.Visible = true;
+            cmb_tipos_tramites.SelectedText = oTramite.Tipo_Tramite.descripcion;
+            txt_Fecha_Del_Detalle.ReadOnly = false;
+            txt_Descripcion.ReadOnly = false;
             
             // Calcular edad
             Controladora.Persona.Age edad = Controladora.Persona.Age.CalcularEdad(lbl_FechaNacimiento.Text);
@@ -163,19 +172,31 @@ namespace WASSTD
             dgv_datos_detalles.DataSource = cDetalles_Tramite.Obtener_Detalles_Tramites(oTramite.Id);
             dgv_datos_detalles.Columns[4].Visible = false;
             dgv_datos_detalles.Columns[1].Width = 460;
+            dgv_datos_detalles.Columns[0].Visible = false;
         }
 
 
         //CLICK en Añadir detalle
         private void btn_AñadirDetalle_Click(object sender, EventArgs e)
         {
+            oDetalles_Tramite = new Detalles_Tramite();
             oDetalles_Tramite.descripcion = txt_Descripcion.Text;
-            
-            //Utilio la clase AGE y el metodo Calcular Edad para convertir el texto de la fecha del detalle en DateTime
-            Controladora.Persona.Age ObtenerFechaDetalle = Controladora.Persona.Age.CalcularEdad(txt_Fecha_Del_Detalle.Text);
-            DateTime fechaDetalle = new DateTime(ObtenerFechaDetalle.Years, ObtenerFechaDetalle.Months, ObtenerFechaDetalle.Days);
-            oDetalles_Tramite.fecha_desde = fechaDetalle;
 
+            //Utilio la clase AGE y el metodo Calcular Edad para convertir el texto de la fecha del detalle en DateTime
+            //    Controladora.Persona.Age ObtenerFechaDetalle = Controladora.Persona.Age.CalcularEdad(txt_Fecha_Del_Detalle.Text);
+            //    DateTime fechaDetalle = new DateTime(ObtenerFechaDetalle.Years, ObtenerFechaDetalle.Months, ObtenerFechaDetalle.Days);
+
+            if (txt_Fecha_Del_Detalle.Text != "  /  /")
+            {
+                oDetalles_Tramite.fecha_desde = Convert.ToDateTime(txt_Fecha_Del_Detalle.Text);
+            
+            }else
+            { 
+                //se podria preguntar si se le pone fecha de hoy o si ingresa otra.... aca va la del dia
+                oDetalles_Tramite.fecha_desde = DateTime.Now;
+            }
+            oTramite.Detalles_Tramite.Add(oDetalles_Tramite);
+            this.dgv_datos_detalles.DataSource = oTramite.Detalles_Tramite;
 
 
 
@@ -326,8 +347,7 @@ namespace WASSTD
                * *******************************************************/
               
 
-                //ASIGNO TODOS LOS VALORES INGRESADO POR EL USUARIO, al objeto oTramite
-
+               
                 //Detalles del tramite (SOLO FUNCIONA PARA ALTA PORQUE TIENE UN DETALLE... resolver como hacerlo para modificacion o cuando se agregan mas detalles
                 if (modo == "Alta")
                 {
@@ -345,9 +365,6 @@ namespace WASSTD
                     //ACA VA EL CODIGO PARA AGREGAR LOS DETALLES AL TRAMITE CUANDO SE MODIFICA, YA QUE EN EL ALTA SOLO SE PERMITE AÑADIR UN SOLO DETALLE
                 }
 
-                //NOSE SI ESTO HAY Q HACERLO O NO... creo que no
-                //detalleNuevo.TramiteId = oTramite.Id;
-
                 //Valido que se haya seleccionado una persona a la cual cargarle el tramite
 
                 if (oPersona != null)
@@ -355,33 +372,37 @@ namespace WASSTD
                     oTramite.Persona = this.oPersona;
                 }
 
+
                 //ASIGNO TIPO DE TRAMITE
-                foreach (Tipo_Tramite tt in cTipo_Tramite.ObtenerTipos_Tramites())
+                if (cmb_tipos_tramites.SelectedItem != null)
                 {
-                    if (tt == cmb_tipos_tramites.SelectedValue)
+                    foreach (Tipo_Tramite tt in cTipo_Tramite.ObtenerTipos_Tramites())
                     {
-                        oTramite.Tipo_Tramite = tt;
+                        if (tt == (Modelo_Entidades.Tipo_Tramite)cmb_tipos_tramites.SelectedItem)
+                        {
+                            oTramite.Tipo_Tramite = tt;
+                            break;
+                        }
                     }
                 }
 
 
+                
+                    //VALIDO OBLIGATORIOS (PASO 4)
+                    if (cCU_GestionarTramites.cCU_AltaTramite.ValidarObligatorios(oTramite))
+                    {
+                        oTramite.Estado = cEstado.ObtenerEstadoTramiteACTIVO();
+                        //LO REGISTRO EN EL SISTEMA (PASO 5)
+                        cCU_GestionarTramites.cCU_AltaTramite.AltaTramite(oTramite);
 
-
-                //VALIDO OBLIGATORIOS (PASO 4)
-                if (cCU_GestionarTramites.cCU_AltaTramite.ValidarObligatorios(oTramite))
-                {
-                    oTramite.estado = "Activo";
-                    //LO REGISTRO EN EL SISTEMA (PASO 5)
-                    cCU_GestionarTramites.cCU_AltaTramite.AltaTramite(oTramite);
-
-                    this.DialogResult = System.Windows.Forms.DialogResult.OK;
-                }
-
+                        this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                    }
+                
 
             }
             catch (Exception Exc)
             {
-                throw new Exception(Exc.Message);
+                MessageBox.Show(Exc.Message, "Alta de trámite", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 

@@ -2,12 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 02/28/2016 05:11:44
+-- Date Created: 02/29/2016 18:36:12
 -- Generated from EDMX file: C:\Users\Dante\Documents\GitHub\WASSDiploma\WASS Diploma\Modelo_Entidades\WASSTD.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
+
 USE [WASSTD];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
@@ -53,8 +54,8 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_Detalles_del_Tramite]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Detalles_Tramites] DROP CONSTRAINT [FK_Detalles_del_Tramite];
 GO
-IF OBJECT_ID(N'[dbo].[FK_TramitePersona]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Tramites] DROP CONSTRAINT [FK_TramitePersona];
+IF OBJECT_ID(N'[dbo].[FK_TramitesPersona]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Tramites] DROP CONSTRAINT [FK_TramitesPersona];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Tipo_PersonaPersona]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Personas] DROP CONSTRAINT [FK_Tipo_PersonaPersona];
@@ -233,7 +234,7 @@ GO
 CREATE TABLE [dbo].[Tramites] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Tipo_Tramite_id] int  NOT NULL,
-    [estado] nvarchar(max)  NOT NULL,
+    [Estado_id] int  NOT NULL,
     [Persona_dni] int  NOT NULL
 );
 GO
@@ -581,6 +582,20 @@ ADD CONSTRAINT [FK_Tipo_TramiteTramite]
 CREATE INDEX [IX_FK_Tipo_TramiteTramite]
 ON [dbo].[Tramites]
     ([Tipo_Tramite_id]);
+GO
+
+-- Creating foreign key on [Estado_id] in table 'Tramites'
+ALTER TABLE [dbo].[Tramites]
+ADD CONSTRAINT [FK_EstadoTramite]
+    FOREIGN KEY ([Estado_id])
+    REFERENCES [dbo].[Estados]
+        ([id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_EstadoTramite'
+CREATE INDEX [IX_FK_EstadoTramite]
+ON [dbo].[Tramites]
+    ([Estado_id]);
 GO
 
 -- --------------------------------------------------

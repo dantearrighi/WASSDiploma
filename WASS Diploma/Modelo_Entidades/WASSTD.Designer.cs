@@ -33,6 +33,7 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "TramitesPersona", "Tramite", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Tramite), "Persona", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Persona))]
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "Tipo_PersonaPersona", "Tipo_Persona", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Tipo_Persona), "Persona", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Persona), true)]
 [assembly: EdmRelationshipAttribute("WASSTDModelo", "Tipo_TramiteTramite", "Tipo_Tramite", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Tipo_Tramite), "Tramite", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Tramite), true)]
+[assembly: EdmRelationshipAttribute("WASSTDModelo", "EstadoTramite", "Estado", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(Modelo_Entidades.Estado), "Tramite", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(Modelo_Entidades.Tramite), true)]
 
 #endregion
 
@@ -919,6 +920,28 @@ namespace Modelo_Entidades
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Persona>("WASSTDModelo.EstadoPersona", "Persona", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "EstadoTramite", "Tramite")]
+        public EntityCollection<Tramite> Tramites
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Tramite>("WASSTDModelo.EstadoTramite", "Tramite");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Tramite>("WASSTDModelo.EstadoTramite", "Tramite", value);
                 }
             }
         }
@@ -2701,13 +2724,13 @@ namespace Modelo_Entidades
         /// </summary>
         /// <param name="id">Valor inicial de la propiedad Id.</param>
         /// <param name="tipo_Tramite_id">Valor inicial de la propiedad Tipo_Tramite_id.</param>
-        /// <param name="estado">Valor inicial de la propiedad estado.</param>
-        public static Tramite CreateTramite(global::System.Int32 id, global::System.Int32 tipo_Tramite_id, global::System.String estado)
+        /// <param name="estado_id">Valor inicial de la propiedad Estado_id.</param>
+        public static Tramite CreateTramite(global::System.Int32 id, global::System.Int32 tipo_Tramite_id, global::System.Int32 estado_id)
         {
             Tramite tramite = new Tramite();
             tramite.Id = id;
             tramite.Tipo_Tramite_id = tipo_Tramite_id;
-            tramite.estado = estado;
+            tramite.Estado_id = estado_id;
             return tramite;
         }
 
@@ -2771,24 +2794,24 @@ namespace Modelo_Entidades
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String estado
+        public global::System.Int32 Estado_id
         {
             get
             {
-                return _estado;
+                return _Estado_id;
             }
             set
             {
-                OnestadoChanging(value);
-                ReportPropertyChanging("estado");
-                _estado = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("estado");
-                OnestadoChanged();
+                OnEstado_idChanging(value);
+                ReportPropertyChanging("Estado_id");
+                _Estado_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Estado_id");
+                OnEstado_idChanged();
             }
         }
-        private global::System.String _estado;
-        partial void OnestadoChanging(global::System.String value);
-        partial void OnestadoChanged();
+        private global::System.Int32 _Estado_id;
+        partial void OnEstado_idChanging(global::System.Int32 value);
+        partial void OnEstado_idChanged();
 
         #endregion
 
@@ -2889,6 +2912,44 @@ namespace Modelo_Entidades
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Tipo_Tramite>("WASSTDModelo.Tipo_TramiteTramite", "Tipo_Tramite", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("WASSTDModelo", "EstadoTramite", "Estado")]
+        public Estado Estado
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Estado>("WASSTDModelo.EstadoTramite", "Estado").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Estado>("WASSTDModelo.EstadoTramite", "Estado").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Estado> EstadoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Estado>("WASSTDModelo.EstadoTramite", "Estado");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Estado>("WASSTDModelo.EstadoTramite", "Estado", value);
                 }
             }
         }
