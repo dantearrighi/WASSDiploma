@@ -52,7 +52,7 @@ namespace WASSTD
             Click_Cerrar(sender, e);
         }
 
-        public void ArmaPerfil(Modelo_Entidades.Usuario oUsuario, string form)
+        public void ArmaPerfil(Usuarios oUsuario, string form)
         {
             cPerfil = Controladora.cPerfil.ObtenerInstancia();
             cGrupo = Controladora.cGrupo.ObtenerInstancia();
@@ -65,9 +65,9 @@ namespace WASSTD
 
             try
             {
-                foreach (Modelo_Entidades.Grupo oGrupo in oUsuario.Grupos)
+                foreach (Grupos oGrupo in oUsuario.Grupos)
                 {
-                    foreach (Modelo_Entidades.Perfil oPerfil in oGrupo.Perfiles)
+                    foreach (Perfiles oPerfil in oGrupo.Perfiles)
                     {
                         if (oPerfil.Formulario.descripcion == form)
                         {
@@ -113,14 +113,14 @@ namespace WASSTD
         }
 
 
-        public void ArmaBotonera(List<Modelo_Entidades.Perfil> listaAccionesPermitidas)
+        public void ArmaBotonera(List<Perfiles> listaAccionesPermitidas)
         {
             btn_agregar.Enabled = false;
             btn_eliminar.Enabled = false;
             btn_modificar.Enabled = false;
             btn_verdetalle.Enabled = false;
 
-            foreach (Modelo_Entidades.Perfil oPerfil in listaAccionesPermitidas)
+            foreach (Perfiles oPerfil in listaAccionesPermitidas)
             {
 
                 switch (oPerfil.Permiso.descripcion)

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Entidades;
 namespace Controladora
 {
    public class cTipo_Persona
@@ -27,9 +27,9 @@ namespace Controladora
         }
 
         // Obtener los tipos de personas
-        public List<Modelo_Entidades.Tipo_Persona> ObtenerTipos_Personas()
+        public List<Tipos_Personas> ObtenerTipos_Personass()
         {
-            return oModelo_Entidades.Tipos_Personas.ToList();
+            return oModelo_Entidades.Tipos_Personass.ToList();
         }
     }
 }

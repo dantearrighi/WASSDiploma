@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Entidades;
 namespace Controladora.Seguridad
 {
     public class cCU_GestionarPerfiles
@@ -31,7 +31,7 @@ namespace Controladora.Seguridad
         }
 
         //CU RECUPERAR PERFIL POR FORMULARIO
-        public List<String> RecuperarPerfilPorFormulario(Modelo_Entidades.Usuario oUsuario, string form)
+        public List<String> RecuperarPerfilPorFormulario(Usuarios oUsuario, string form)
         {
             cPerfil = Controladora.cPerfil.ObtenerInstancia();
             cGrupo = Controladora.cGrupo.ObtenerInstancia();
@@ -43,9 +43,9 @@ namespace Controladora.Seguridad
 
             try
             {
-                foreach (Modelo_Entidades.Grupo oGrupo in cUsuario.ObtenerGruposUsuario(oUsuario.id))
+                foreach (Grupos oGrupo in cUsuario.ObtenerGruposUsuario(oUsuario.id))
                 {
-                    foreach (Modelo_Entidades.Permiso oPermiso in cPerfil.ObtenerPermisos(oGrupo.id, form))
+                    foreach (Permisos oPermiso in cPerfil.ObtenerPermisos(oGrupo.id, form))
                     {
                         switch (oPermiso.descripcion)
                         {

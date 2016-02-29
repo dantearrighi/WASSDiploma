@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Web;
-
+using Entidades;
 namespace WASSTD
 {
     public partial class FrmPerfiles : Form
@@ -19,11 +19,11 @@ namespace WASSTD
         Controladora.cPermiso cPermiso;
         Controladora.cFormulario cFormulario;
         FrmPerfil FormPerfil;
-        Modelo_Entidades.Usuario miUsuario;
+        Usuarios miUsuario;
         BindingSource BsPerfiles;
 
         // Declaro al formulario como público y le asigno el método "Obtener Instancia" para poder llamarlo desde el formulario principal
-        public static FrmPerfiles ObtenerInstancia(Modelo_Entidades.Usuario oUsuario)
+        public static FrmPerfiles ObtenerInstancia(Usuarios oUsuario)
         {
             if (instancia == null)
             {
@@ -39,7 +39,7 @@ namespace WASSTD
         }
 
         // Declaro al constructor como privado
-        private FrmPerfiles(Modelo_Entidades.Usuario oUsuario)
+        private FrmPerfiles(Usuarios oUsuario)
         {
             InitializeComponent();
             miUsuario = oUsuario;
@@ -92,7 +92,7 @@ namespace WASSTD
         // Al hacer click en "Agregar"
         private void botonera1_Click_Alta(object sender, EventArgs e)
         {
-            FormPerfil = new FrmPerfil("Alta", new Modelo_Entidades.Perfil());
+            FormPerfil = new FrmPerfil("Alta", new Perfiles());
             DialogResult dr = FormPerfil.ShowDialog();
             if (dr == DialogResult.OK)
             {
@@ -114,7 +114,7 @@ namespace WASSTD
                 DialogResult Rta = MessageBox.Show("¿Confirma la eliminación del perfil?", "Baja", MessageBoxButtons.YesNo);
                 if (Rta == DialogResult.Yes)
                 {
-                    Modelo_Entidades.Perfil oPer = (Modelo_Entidades.Perfil)dgv_datos.CurrentRow.DataBoundItem;
+                    Perfiles oPer = (Perfiles)dgv_datos.CurrentRow.DataBoundItem;
                     cPerfil.BajaPerfil(oPer);
                     MessageBox.Show("El Perfil fue eliminado");
                     Arma_Lista();
@@ -145,7 +145,7 @@ namespace WASSTD
                 return;
             }
 
-            FormPerfil = new FrmPerfil("Consulta", (Modelo_Entidades.Perfil)dgv_datos.CurrentRow.DataBoundItem);
+            FormPerfil = new FrmPerfil("Consulta", (Perfiles)dgv_datos.CurrentRow.DataBoundItem);
             DialogResult dr = FormPerfil.ShowDialog();
         }
 
@@ -157,7 +157,7 @@ namespace WASSTD
                 return;
             }
 
-            FormPerfil = new FrmPerfil("Modifica", (Modelo_Entidades.Perfil)dgv_datos.CurrentRow.DataBoundItem);
+            FormPerfil = new FrmPerfil("Modifica", (Perfiles)dgv_datos.CurrentRow.DataBoundItem);
             DialogResult dr = FormPerfil.ShowDialog();
             if (dr == DialogResult.OK)
             {

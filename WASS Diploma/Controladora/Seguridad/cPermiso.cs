@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Entidades;
 
 namespace Controladora
 {
@@ -27,9 +28,9 @@ namespace Controladora
         }
 
         // Obtengo los permisos
-        public List<Modelo_Entidades.Permiso> ObtenerPermisos()
+        public List<Permisos> ObtenerPermisos()
         {
-            return oModelo_Entidades.Permisos.ToList();
+            return oPermisoss.ToList();
         }
     }
 }

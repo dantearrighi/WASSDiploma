@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Entidades;
 
 namespace Controladora
 {
@@ -32,7 +33,7 @@ namespace Controladora
 
 
         // Validar Obligatorios (PASO 4 CU ALTA TRAMITE)
-        public bool ValidarObligatorios(Modelo_Entidades.Tramite oTramite)
+        public bool ValidarObligatorios(Tramites oTramite)
         {
             List<string> msgError = new List<string>();
 
@@ -78,7 +79,7 @@ namespace Controladora
         }
 
         // CU ALTA TRAMITE: REGISTRARLO EN EL SISTEMA (PASO 5)
-        public void AltaTramite(Modelo_Entidades.Tramite oTramite)
+        public void AltaTramite(Tramites oTramite)
         {
             oModelo_Entidades.AddToTramites(oTramite);
             oModelo_Entidades.SaveChanges();
@@ -87,10 +88,10 @@ namespace Controladora
 
 
         //VALIDO SI EXISTE UN TRAMITE DEL TIPO INGRESADO PARA LA PERSONA SELECCIONADA. DEVUELVE TRUE SI LO ENCUENTRA
-        private Boolean ValidarTramiteExistente(Modelo_Entidades.Tramite pTramite)
+        private Boolean ValidarTramiteExistente(Tramites pTramite)
         {
 
-            Modelo_Entidades.Tramite oTramite= oModelo_Entidades.Tramites.ToList().Find(delegate(Modelo_Entidades.Tramite fTramite)
+            Tramites oTramite= oTramitess.ToList().Find(delegate(Tramites fTramite)
             {
                 return (fTramite.Persona.dni == pTramite.Persona.dni && fTramite.Tipo_Tramite.id == pTramite.Tipo_Tramite.id);
             });

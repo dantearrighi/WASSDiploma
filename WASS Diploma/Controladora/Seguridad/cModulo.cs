@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Entidades;
 namespace Controladora
 {
     public class cModulo
@@ -27,19 +27,19 @@ namespace Controladora
         }
 
         // Obtengo los módulos
-        public List<Modelo_Entidades.Modulo> ObtenerModulos()
+        public List<Modulos> ObtenerModulos()
         {
-            return oModelo_Entidades.Modulos.ToList();
+            return oModuloss.ToList();
         }
 
         // Obtengo los formularios que pertenecen a un cierto modulo
-        public List<Modelo_Entidades.Formulario> ObtenerFormulariosPorModulo(int modulo)
+        public List<Formularios> ObtenerFormulariosPorModulo(int modulo)
         {
-            var Consulta = from oFormulario in oModelo_Entidades.Formularios.ToList()
+            var Consulta = from oFormulario in oFormularioss.ToList()
                            where oFormulario.Modulo.id == modulo
                            group oFormulario by oFormulario into Formularios
                            select Formularios.Key;
-            return (List<Modelo_Entidades.Formulario>)Consulta.ToList();
+            return (List<Formularios>)Consulta.ToList();
         }
     }
 }

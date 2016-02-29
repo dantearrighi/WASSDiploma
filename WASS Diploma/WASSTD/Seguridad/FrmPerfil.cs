@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using Entidades;
 namespace WASSTD
 {
     public partial class FrmPerfil : Form
@@ -17,9 +17,9 @@ namespace WASSTD
         Controladora.cPerfil cPerfil;
         Controladora.cFormulario cFormulario;
         Controladora.cPermiso cPermiso;
-        Modelo_Entidades.Perfil oPerfil;
+        Perfiles oPerfil;
 
-        public FrmPerfil(string fModo, Modelo_Entidades.Perfil miPerfil)
+        public FrmPerfil(string fModo, Perfiles miPerfil)
         {
             InitializeComponent();
             cGrupo = Controladora.cGrupo.ObtenerInstancia();
@@ -64,17 +64,17 @@ namespace WASSTD
         {
             if (ValidarObligatorios() == true)
             {
-                oPerfil.Grupo = (Modelo_Entidades.Grupo)cmb_grupos.SelectedItem;
-                oPerfil.Formulario = (Modelo_Entidades.Formulario)cmb_formularios.SelectedItem;
-                oPerfil.Permiso = (Modelo_Entidades.Permiso)cmb_permisos.SelectedItem;
+                oPerfil.Grupo = (Grupos)cmb_grupos.SelectedItem;
+                oPerfil.Formulario = (Formularios)cmb_formularios.SelectedItem;
+                oPerfil.Permiso = (Permisos)cmb_permisos.SelectedItem;
 
                 try
                 {
                     if (modo == "Alta")
                     {
-                        oPerfil.Grupo = (Modelo_Entidades.Grupo)cmb_grupos.SelectedItem;
-                        oPerfil.Formulario = (Modelo_Entidades.Formulario)cmb_formularios.SelectedItem;
-                        oPerfil.Permiso = (Modelo_Entidades.Permiso)cmb_permisos.SelectedItem;
+                        oPerfil.Grupo = (Grupos)cmb_grupos.SelectedItem;
+                        oPerfil.Formulario = (Formularios)cmb_formularios.SelectedItem;
+                        oPerfil.Permiso = (Permisos)cmb_permisos.SelectedItem;
                         cPerfil.AltaPerfil(oPerfil);
                     }
 
@@ -119,7 +119,7 @@ namespace WASSTD
                 return false;
             }
 
-            if (cPerfil.ValidarPerfil((Modelo_Entidades.Grupo)cmb_grupos.SelectedItem, (Modelo_Entidades.Formulario)cmb_formularios.SelectedItem, (Modelo_Entidades.Permiso)cmb_permisos.SelectedItem) == false)
+            if (cPerfil.ValidarPerfil((Grupos)cmb_grupos.SelectedItem, (Formularios)cmb_formularios.SelectedItem, (Permisos)cmb_permisos.SelectedItem) == false)
             {
                 MessageBox.Show("El perfil ya existe, ingrese otros parámetros");
                 return false;

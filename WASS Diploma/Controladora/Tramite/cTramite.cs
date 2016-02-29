@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Entidades;
 namespace Controladora
 {
   public  class cTramite
@@ -29,46 +29,46 @@ namespace Controladora
         }
 
         // Obtener los tramites
-        public List<Modelo_Entidades.Tramite> ObtenerTramites()
+        public List<Tramites> ObtenerTramites()
         {
-            return oModelo_Entidades.Tramites.ToList();
+            return oTramitess.ToList();
         }
 
         // Obtener los tramites de una persona POR NOMBRE Y APELLIDO
-        public List<Modelo_Entidades.Tramite> ObtenerTramitesPorNombeApellido(string textoNombre)
+        public List<Tramites> ObtenerTramitesPorNombeApellido(string textoNombre)
         {
             
-             var Consulta = from oTramite in oModelo_Entidades.Tramites.ToList()
+             var Consulta = from oTramite in oTramitess.ToList()
                            where oTramite.Persona.nombre_apellido.ToLower().Contains(textoNombre)
                            select oTramite;
-            return (List<Modelo_Entidades.Tramite>)Consulta.ToList();
+            return (List<Tramites>)Consulta.ToList();
         }
 
         // Obtener los tramites de una persona POR DNI
-        public List<Modelo_Entidades.Tramite> ObtenerTramitesPorDNI(string textoDNI)
+        public List<Tramites> ObtenerTramitesPorDNI(string textoDNI)
         {
 
-            var Consulta = from oTramite in oModelo_Entidades.Tramites.ToList()
+            var Consulta = from oTramite in oTramitess.ToList()
                            where oTramite.Persona.dni.ToString().ToLower().Contains(textoDNI)
                            select oTramite;
-            return (List<Modelo_Entidades.Tramite>)Consulta.ToList();
+            return (List<Tramites>)Consulta.ToList();
         }
 
         // Obtener los tramites de una persona POR ID/ NUMERO DE TRAMITE
-        public List<Modelo_Entidades.Tramite> ObtenerTramitesPorNumeroID(string textoID)
+        public List<Tramites> ObtenerTramitesPorNumeroID(string textoID)
         {
 
-            var Consulta = from oTramite in oModelo_Entidades.Tramites.ToList()
+            var Consulta = from oTramite in oTramitess.ToList()
                            where oTramite.Id.ToString().ToLower().Contains(textoID)
                            select oTramite;
-            return (List<Modelo_Entidades.Tramite>)Consulta.ToList();
+            return (List<Tramites>)Consulta.ToList();
         }
       
        //Obtener Tramite
         // Obtengo un Persona dado su dni
-        public Modelo_Entidades.Tramite ObtenerTramite(int idTramite)
+        public Tramites ObtenerTramite(int idTramite)
         {
-            Modelo_Entidades.Tramite oTramite = oModelo_Entidades.Tramites.ToList().Find(delegate(Modelo_Entidades.Tramite fTramite)
+            Tramites oTramite = oTramitess.ToList().Find(delegate(Tramites fTramite)
             {
                 return fTramite.Id == idTramite;
             });

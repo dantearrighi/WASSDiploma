@@ -6,18 +6,18 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using Entidades;
 namespace WASSTD
 {
     public partial class FrmCambiarClave : Form
     {
-        Modelo_Entidades.Usuario oUsuario;
+        Usuarios oUsuario;
         Controladora.Seguridad.cCU_GestionarUsuarios cCU_GestionarUsuarios;
 
         Controladora.cUsuario cUsuario;
 
         // Cuando inicializo el formulario
-        public FrmCambiarClave(Modelo_Entidades.Usuario fUsuario)
+        public FrmCambiarClave(Usuarios fUsuario)
         {
             InitializeComponent();
             oUsuario = fUsuario;

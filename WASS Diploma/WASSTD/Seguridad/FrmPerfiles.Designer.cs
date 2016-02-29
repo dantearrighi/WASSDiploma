@@ -161,7 +161,7 @@
             // 
             // perfilBindingSource
             // 
-            this.perfilBindingSource.DataSource = typeof(Modelo_Entidades.Perfil);
+            this.perfilBindingSource.DataSource = typeof(Perfiles);
             // 
             // FrmPerfiles
             // 

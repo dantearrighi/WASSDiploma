@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Entidades;
 
 namespace Controladora
 {
@@ -36,7 +36,7 @@ namespace Controladora
 
 
         //Obtener permisos de un usuario sobre un formulario
-        public List<Modelo_Entidades.Perfil> ObtenerPermisos(Modelo_Entidades.Usuario oUsuario, string nombreForm)
+        public List<Perfiles> ObtenerPermisos(Usuarios oUsuario, string nombreForm)
         {
             //Invoco al caso de uso que devuelve los permisos que tiene un usuario sobre el formulario solicitado
             return cCU_RecuperarPerfilPorFormulario.ObtenerPermisosPorFormulario(oUsuario, nombreForm);

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Entidades;
 namespace Controladora.Seguridad
 {
     public class cCU_GestionarUsuarios
@@ -52,12 +52,12 @@ namespace Controladora.Seguridad
         
         
         // LOGUEAR USUARIO
-        public Modelo_Entidades.Usuario Login(string usuario, string clave)
+        public Usuarios Login(string usuario, string clave)
         {
             // Aca instancio un objeto "Usuario" y tomo el objeto "Entidades" que instancie en un principio.
             // Luego, a esas "Entidades", les pido que me traigan a todos los "Usuarios" en forma de Lista.
             // A esa Lista de "Usuarios" le pido que me encuentre y que me devuelva el usuario "usuario" que pasé por parámetros. 
-            Modelo_Entidades.Usuario oUsuario = oModelo_Entidades.Usuarios.ToList().Find(delegate(Modelo_Entidades.Usuario fUsuario)
+            Usuarios oUsuario = oUsuarioss.ToList().Find(delegate(Usuarios fUsuario)
             {
                 return fUsuario.usuario == usuario;
             });
@@ -94,7 +94,7 @@ namespace Controladora.Seguridad
 
 
         // Validar que se hayan ingresado clave actual y la nueva 2 veces para modificarla
-        private bool ValidarObligatoriosCambiarClave(string claveNueva, string claveNuevaConfirmar, string claveActual, Modelo_Entidades.Usuario usrActual)
+        private bool ValidarObligatoriosCambiarClave(string claveNueva, string claveNuevaConfirmar, string claveActual, Usuarios usrActual)
         {
             // VALIDACION CAMPOS VACIOS:     ClaveNueva   -     Confirmacion                    y que coincida la confirmacion
             if (string.IsNullOrEmpty(claveNueva) || string.IsNullOrEmpty(claveNuevaConfirmar) ||  claveNueva != claveNuevaConfirmar)
@@ -124,7 +124,7 @@ namespace Controladora.Seguridad
         }
         
         // CAMBIAR CONTRASEÑA
-        public bool CambiarContraseña(string claveNueva, string claveNuevaConfirmar, string claveActual, Modelo_Entidades.Usuario usrActual)
+        public bool CambiarContraseña(string claveNueva, string claveNuevaConfirmar, string claveActual, Usuarios usrActual)
         {
             //SI ESTAN MAL LOS DATOS
             if (ValidarObligatoriosCambiarClave(claveNueva, claveNuevaConfirmar, claveActual, usrActual))

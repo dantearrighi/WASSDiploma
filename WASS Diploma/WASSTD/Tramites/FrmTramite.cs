@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Modelo_Entidades;
-
+using Entidades;
 namespace WASSTD
 {
     public partial class FrmTramite : Form
@@ -28,9 +28,9 @@ namespace WASSTD
         Controladora.cEstado cEstado;
 
         // Declaro las entidades
-        Modelo_Entidades.Persona oPersona;
-        Modelo_Entidades.Tramite oTramite;
-        Modelo_Entidades.Usuario miUsuario;
+        Personas oPersona;
+        Tramites oTramite;
+        Usuarios miUsuario;
         Modelo_Entidades.Detalles_Tramite oDetalles_Tramite;
         Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
 
@@ -38,7 +38,7 @@ namespace WASSTD
 
 
         // Declaro como publico al constructor
-        public FrmTramite(string fModo, Modelo_Entidades.Tramite miTramite, Modelo_Entidades.Usuario oUsuario)
+        public FrmTramite(string fModo, Tramites miTramite, Usuarios oUsuario)
         {
 
             InitializeComponent();
@@ -144,7 +144,7 @@ namespace WASSTD
 
 
         // Armo el formulario (si no es una alta)
-        private void ArmaFormulario(Modelo_Entidades.Tramite oTramite)
+        private void ArmaFormulario(Tramites oTramite)
         {
             // Sección de datos de la Persona y el Tramite
             lbl_ClaveFiscal.Text = oTramite.Persona.clave_fiscal.ToString();
@@ -231,11 +231,11 @@ namespace WASSTD
                     oTramite.
                    
 
-                    oPersona.Tipo_Documento = (Modelo_Entidades.Tipo_Documento)cmb_tiposdoc.SelectedItem;
+                    oPersona.Tipo_Documento = (Tipos_Documentos)cmb_tiposdoc.SelectedItem;
                     oPersona.dni = Convert.ToInt32(txt_numero.Text);
                     oPersona.nombre_apellido = txt_nombreapellido.Text;
                     oPersona.observaciones = txt_observaciones.Text;
-                    oPersona.Tipo_Persona = (Modelo_Entidades.Tipo_Persona)cmb_TipoPersona.SelectedItem;
+                    oPersona.Tipo_Persona = (Tipos_Personas)cmb_TipoPersona.SelectedItem;
                     oPersona.fecha_nacimiento = Convert.ToDateTime(txt_fechanacimiento.Text);
 
                     if (rbtn_masculino.Checked == true)
@@ -250,21 +250,21 @@ namespace WASSTD
 
                     if (modo == "Alta")
                     {
-                        oDireccion = new Modelo_Entidades.Direccion();
+                        oDireccion = new Direcciones();
                         oDireccion.direccion = txt_direccion.Text;
-                        oDireccion.Localidad = (Modelo_Entidades.Localidad)cmb_localidades.SelectedItem;
+                        oDireccion.Localidad = (Localidades)cmb_localidades.SelectedItem;
                         oPersona.Direcciones.Add(oDireccion);
 
-                        oDireccionE = new Modelo_Entidades.Direccion();
+                        oDireccionE = new Direcciones();
                         oDireccionE.direccion = txt_direccion.Text;
-                        oDireccionE.Localidad = (Modelo_Entidades.Localidad)cmb_localidades.SelectedItem;
+                        oDireccionE.Localidad = (Localidades)cmb_localidades.SelectedItem;
                         oPersona.Direcciones.Add(oDireccionE);
                     }
 
                     else
                     {
                         oDireccion = oPersona.Direcciones.ElementAt(0);
-                        oDireccion.Localidad = (Modelo_Entidades.Localidad)cmb_localidades.SelectedItem;
+                        oDireccion.Localidad = (Localidades)cmb_localidades.SelectedItem;
                         oDireccion.direccion = txt_direccion.Text;
                         oPersona.Direcciones.ElementAt(0).Equals(oDireccion);
 
@@ -405,7 +405,7 @@ namespace WASSTD
                 {
                     foreach (Tipo_Tramite tt in cTipo_Tramite.ObtenerTipos_Tramites())
                     {
-                        if (tt == (Modelo_Entidades.Tipo_Tramite)cmb_tipos_tramites.SelectedItem)
+                        if (tt == (Tipos_Tramites)cmb_tipos_tramites.SelectedItem)
                         {
                             oTramite.Tipo_Tramite = tt;
                             break;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Entidades;
 namespace Controladora
 {
     public class cFormulario
@@ -27,9 +27,9 @@ namespace Controladora
         }
 
         // Obtengo los formularios
-        public List<Modelo_Entidades.Formulario> ObtenerFormularios()
+        public List<Formularios> ObtenerFormularios()
         {
-            return oModelo_Entidades.Formularios.ToList();
+            return oFormularioss.ToList();
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Net.Mail;
-
+using Entidades;
 namespace Controladora
 {
     public class cUsuario
@@ -33,9 +33,9 @@ namespace Controladora
        
 
         // Busco al usuario según su email y código
-        public Modelo_Entidades.Usuario ObtenerUsuario(string usuario)
+        public Usuarios ObtenerUsuario(string usuario)
         {
-            Modelo_Entidades.Usuario oUsuario = oModelo_Entidades.Usuarios.ToList().Find(delegate(Modelo_Entidades.Usuario fUsuario)
+            Usuarios oUsuario = oUsuarioss.ToList().Find(delegate(Usuarios fUsuario)
             {
                 return fUsuario.usuario == usuario; 
             });
@@ -65,7 +65,7 @@ namespace Controladora
         }
 
         // Generar una clave al azar para la creación del usuario
-        public void ResetearClave(Modelo_Entidades.Usuario oUsuario, string email) 
+        public void ResetearClave(Usuarios oUsuario, string email) 
         {
             //generar una clave aleatoria
             oUsuario.clave = GenerarClaveAleatoria(4, false);
@@ -116,12 +116,12 @@ namespace Controladora
         }
 
         /*// Busco al usuario en las entidades, haciendo las validaciones necesarias
-        public Modelo_Entidades.Usuario Login(string usuario, string clave)
+        public Usuarios Login(string usuario, string clave)
         {
             // Aca instancio un objeto "Usuario" y tomo el objeto "Entidades" que instancie en un principio.
             // Luego, a esas "Entidades", les pido que me traigan a todos los "Usuarios" en forma de Lista.
             // A esa Lista de "Usuarios" le pido que me encuentre y que me devuelva el id del usuario "usuario" que pasé por parámetros. 
-            Modelo_Entidades.Usuario oUsuario = oModelo_Entidades.Usuarios.ToList().Find(delegate(Modelo_Entidades.Usuario fUsuario)
+            Usuarios oUsuario = oUsuarioss.ToList().Find(delegate(Usuarios fUsuario)
             {
                 return fUsuario.usuario == usuario;
             });
@@ -133,12 +133,12 @@ namespace Controladora
         }*/
 
         // Obtengo los grupos de un usuario
-        public List<Modelo_Entidades.Grupo> ObtenerGruposUsuario(int id)
+        public List<Grupos> ObtenerGruposUsuario(int id)
         {
             // Aca instancio un objeto "Usuario" y tomo el objeto "Entidades" que instancie en un principio.
             // Luego, a esas "Entidades", les pido que me traigan a todos los "Usuarios" en forma de Lista.
             // A esa Lista de "Usuarios" le pido que me encuentre y que me devuelva los grupos del usuario "usuario" que pasé por parámetros. 
-            Modelo_Entidades.Usuario oUsuario = oModelo_Entidades.Usuarios.ToList().Find(delegate(Modelo_Entidades.Usuario fUsuario)
+            Usuarios oUsuario = oUsuarioss.ToList().Find(delegate(Usuarios fUsuario)
             {
                     return fUsuario.id == id;
             });
@@ -146,38 +146,38 @@ namespace Controladora
         }
 
         // Dar de alta a un nuevo usuario
-        public void Alta(Modelo_Entidades.Usuario oUsuario)
+        public void Alta(Usuarios oUsuario)
         {
             oModelo_Entidades.AddToUsuarios(oUsuario);
             oModelo_Entidades.SaveChanges();
         }
 
         // Modificar a un usuario
-        public void Modificacion(Modelo_Entidades.Usuario oUsuario)
+        public void Modificacion(Usuarios oUsuario)
         {
             oModelo_Entidades.ApplyCurrentValues("Usuarios", oUsuario);
             oModelo_Entidades.SaveChanges();
         }
 
         // Obtener los usuarios
-        public List<Modelo_Entidades.Usuario> ObtenerUsuarios()
+        public List<Usuarios> ObtenerUsuarios()
         {
-            return oModelo_Entidades.Usuarios.ToList();
+            return oUsuarioss.ToList();
         }
 
         // Busco los usuarios por una descripción parcial
-        public List<Modelo_Entidades.Usuario> BuscarUsuarios(string texto)
+        public List<Usuarios> BuscarUsuarios(string texto)
         {
-            var Consulta = from oUsuario in oModelo_Entidades.Usuarios.ToList()
+            var Consulta = from oUsuario in oUsuarioss.ToList()
                            where oUsuario.nombre_apellido.ToLower().Contains(texto.ToLower())
                            select oUsuario;
-            return (List<Modelo_Entidades.Usuario>)Consulta.ToList();
+            return (List<Usuarios>)Consulta.ToList();
         }
 
         // Valido que no exista un usuario dado el nombre del usuario
         public Boolean ValidarUsuario(string usuario)
         {
-            Modelo_Entidades.Usuario oUsuario = oModelo_Entidades.Usuarios.ToList().Find(delegate(Modelo_Entidades.Usuario fUsuario)
+            Usuarios oUsuario = oUsuarioss.ToList().Find(delegate(Usuarios fUsuario)
             {
                 return fUsuario.usuario == usuario;
             });
@@ -195,9 +195,9 @@ namespace Controladora
 
 
         // Metodo de validación general para todos los usuarios - Los busca segun estado y grupo al que pertenecen 
-        public List<Modelo_Entidades.Usuario> FiltrarUsuarios(string nya, string grupo, string estado)
+        public List<Usuarios> FiltrarUsuarios(string nya, string grupo, string estado)
         {
-            var Consulta = from oUsuario in oModelo_Entidades.Usuarios.ToList()
+            var Consulta = from oUsuario in oUsuarioss.ToList()
                            select oUsuario;
 
             if (nya != "0")
@@ -220,13 +220,13 @@ namespace Controladora
                 Consulta = Consulta.Where(oUsuario => oUsuario.estado == true);
             }
 
-            return (List<Modelo_Entidades.Usuario>)Consulta.ToList();
+            return (List<Usuarios>)Consulta.ToList();
         }
 
         // Método interno para buscar un grupo
-        private Modelo_Entidades.Grupo BuscoGrupo(string grupo)
+        private Grupos BuscoGrupo(string grupo)
         {
-            Modelo_Entidades.Grupo oGrupo = oModelo_Entidades.Grupos.ToList().Find(delegate(Modelo_Entidades.Grupo fGrupo)
+            Grupos oGrupo = oGruposs.ToList().Find(delegate(Grupos fGrupo)
             {
                 return fGrupo.descripcion == grupo;
             });
@@ -237,7 +237,7 @@ namespace Controladora
 
 
         // Validar USUARIO ACTIVO
-        public bool ValidarUsuarioActivo(Modelo_Entidades.Usuario oUsuario)
+        public bool ValidarUsuarioActivo(Usuarios oUsuario)
         {
                 
             // Pregunto por el estado del usuario, y devuelvo un mensaje, en caso de que sea inactivo.
@@ -249,7 +249,7 @@ namespace Controladora
         }
 
         // Validar USUARIO EXISTENTE
-        public bool ValidarUsuarioExistente(Modelo_Entidades.Usuario oUsuario)
+        public bool ValidarUsuarioExistente(Usuarios oUsuario)
         {
             // Pregunto si el usuario es nulo, y devuelvo un mensaje, en caso de que sea así.
             if (oUsuario == null)
@@ -262,7 +262,7 @@ namespace Controladora
         }
 
         // Validar CONTRASEÑA INGRESADA
-        public bool ValidarContraseñaIngresada(Modelo_Entidades.Usuario usrActual, string claveIngresada)
+        public bool ValidarContraseñaIngresada(Usuarios usrActual, string claveIngresada)
         {
             if (usrActual.clave != claveIngresada)
             {
@@ -273,7 +273,7 @@ namespace Controladora
         }
 
         // Validar USUARIO: EXISTENTE, ACTIVO Y CONTRASEÑA
-        public bool ValidarUsuarioExistenteActivoContraseña(Modelo_Entidades.Usuario usrActual, string claveIngresada)
+        public bool ValidarUsuarioExistenteActivoContraseña(Usuarios usrActual, string claveIngresada)
         {
             if(ValidarContraseñaIngresada(usrActual,claveIngresada) || ValidarUsuarioActivo(usrActual) || ValidarUsuarioExistente(usrActual))
             {

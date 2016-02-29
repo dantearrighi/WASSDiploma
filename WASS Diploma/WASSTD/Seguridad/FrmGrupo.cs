@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using Entidades;
 namespace WASSTD
 {
     public partial class FrmGrupo : Form
@@ -18,12 +18,12 @@ namespace WASSTD
         Controladora.cFormulario cFormulario;
         Controladora.cUsuario cUsuario;
         Controladora.cPermiso cPermiso;
-        Modelo_Entidades.Grupo oGrupo;
-        Modelo_Entidades.Formulario oFormulario;
+        Grupos oGrupo;
+        Formularios oFormulario;
         bool checkearA = false;
 
         // Hago públio el formulario para poder llamarlo desde otros
-        public FrmGrupo(string fModo, Modelo_Entidades.Grupo miGrupo)
+        public FrmGrupo(string fModo, Grupos miGrupo)
         {
             InitializeComponent();
             cGrupo = Controladora.cGrupo.ObtenerInstancia();
@@ -62,7 +62,7 @@ namespace WASSTD
             cmb_formularios.DisplayMember = "nombredemuestra";
             
 
-            oFormulario = (Modelo_Entidades.Formulario)cmb_formularios.SelectedItem;
+            oFormulario = (Formularios)cmb_formularios.SelectedItem;
 
             chklstbox_usuarios.DataSource = cUsuario.ObtenerUsuarios();
             chklstbox_usuarios.DisplayMember = "nombre_apellido";
@@ -70,8 +70,8 @@ namespace WASSTD
             checkearA = false;
             for (int i = 0; i < chklstbox_usuarios.Items.Count; i++)
             {
-                Modelo_Entidades.Usuario oUsuario = (Modelo_Entidades.Usuario)chklstbox_usuarios.Items[i];
-                foreach (Modelo_Entidades.Usuario miUsuario in oGrupo.Usuarios)
+                Usuarios oUsuario = (Usuarios)chklstbox_usuarios.Items[i];
+                foreach (Usuarios miUsuario in oGrupo.Usuarios)
                 {
                     if (oUsuario.id == miUsuario.id)
                     {
@@ -95,8 +95,8 @@ namespace WASSTD
 
             for (int i = 0; i < chklstbox_permisos.Items.Count; i++)
             {
-                Modelo_Entidades.Permiso oPermiso = (Modelo_Entidades.Permiso)chklstbox_permisos.Items[i];
-                foreach (Modelo_Entidades.Permiso miPermiso in cPerfil.ObtenerPermisos(oGrupo.id, oFormulario.descripcion))
+                Permisos oPermiso = (Permisos)chklstbox_permisos.Items[i];
+                foreach (Permisos miPermiso in cPerfil.ObtenerPermisos(oGrupo.id, oFormulario.descripcion))
                 {
                     chklstbox_permisos.SetItemChecked(i, true);
                 }
@@ -146,14 +146,14 @@ namespace WASSTD
         // Cuando cambia el formulario
         private void cmb_formularios_ItemCheck(object sender, EventArgs e)
         {
-            oFormulario = (Modelo_Entidades.Formulario)cmb_formularios.SelectedItem;
+            oFormulario = (Formularios)cmb_formularios.SelectedItem;
             chklstbox_permisos.DataSource = cPerfil.ObtenerPermisos(oGrupo.id, oFormulario.descripcion);
             chklstbox_permisos.DisplayMember = "descripcion";
 
             for (int i = 0; i < chklstbox_permisos.Items.Count; i++)
             {
-                Modelo_Entidades.Permiso oPermiso = (Modelo_Entidades.Permiso)chklstbox_permisos.Items[i];
-                foreach (Modelo_Entidades.Permiso miPermiso in cPerfil.ObtenerPermisos(oGrupo.id, oFormulario.descripcion))
+                Permisos oPermiso = (Permisos)chklstbox_permisos.Items[i];
+                foreach (Permisos miPermiso in cPerfil.ObtenerPermisos(oGrupo.id, oFormulario.descripcion))
                 {
                     chklstbox_permisos.SetItemChecked(i, true);
                 }
@@ -165,7 +165,7 @@ namespace WASSTD
         {
             if (checkearA == false) return;
 
-            Modelo_Entidades.Usuario oUsuario = (Modelo_Entidades.Usuario)chklstbox_usuarios.SelectedItem;
+            Usuarios oUsuario = (Usuarios)chklstbox_usuarios.SelectedItem;
             if (e.NewValue == CheckState.Checked)
             {
                 oGrupo.Usuarios.Add(oUsuario);

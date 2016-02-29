@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using Entidades;
 namespace WASSTD
 {
     public partial class FrmPersonas : Form
@@ -16,12 +16,12 @@ namespace WASSTD
         Controladora.cPersona cPersona;
         FrmPersona FormPersona;
         BindingSource BsPersonas;
-        Modelo_Entidades.Usuario miUsuario;
+        Usuarios miUsuario;
 
         Controladora.cCU_GestionarPersonas cCU_GestionarPersonas;
 
         // Declaro al formulario como público y le asigno el método "Obtener Instancia" para poder llamarlo desde el formulario principal
-        public static FrmPersonas ObtenerInstancia(Modelo_Entidades.Usuario oUsuario)
+        public static FrmPersonas ObtenerInstancia(Usuarios oUsuario)
         {
             if (instancia == null)
             {
@@ -37,7 +37,7 @@ namespace WASSTD
         }
 
         // Establezco como privado al constructor
-        private FrmPersonas(Modelo_Entidades.Usuario oUsuario)
+        private FrmPersonas(Usuarios oUsuario)
         {
             InitializeComponent();
             cPersona = Controladora.cPersona.ObtenerInstancia();
@@ -91,7 +91,7 @@ namespace WASSTD
         // Al hacer click en "Agregar"
         private void botonera1_Click_Alta(object sender, EventArgs e)
         {
-            FormPersona = new FrmPersona("Alta", new Modelo_Entidades.Persona(), miUsuario);
+            FormPersona = new FrmPersona("Alta", new Personas(), miUsuario);
             DialogResult dr = FormPersona.ShowDialog();
             if (dr == DialogResult.OK)
             {
@@ -107,7 +107,7 @@ namespace WASSTD
                 return;
             }
 
-            FormPersona = new FrmPersona("Modifica", (Modelo_Entidades.Persona)dgv_datos.CurrentRow.DataBoundItem, miUsuario);
+            FormPersona = new FrmPersona("Modifica", (Personas)dgv_datos.CurrentRow.DataBoundItem, miUsuario);
             DialogResult dr = FormPersona.ShowDialog();
             if (dr == DialogResult.OK)
             {
@@ -123,7 +123,7 @@ namespace WASSTD
                 return;
             }
 
-            FormPersona = new FrmPersona("Consulta", (Modelo_Entidades.Persona)dgv_datos.CurrentRow.DataBoundItem, miUsuario);
+            FormPersona = new FrmPersona("Consulta", (Personas)dgv_datos.CurrentRow.DataBoundItem, miUsuario);
             DialogResult dr = FormPersona.ShowDialog();
         }
 
@@ -142,7 +142,7 @@ namespace WASSTD
                 if (Rta == DialogResult.Yes)
                 {
             
-                    Modelo_Entidades.Persona oPersona = (Modelo_Entidades.Persona)dgv_datos.CurrentRow.DataBoundItem;
+                    Personas oPersona = (Personas)dgv_datos.CurrentRow.DataBoundItem;
                     if (cCU_GestionarPersonas.ValidarTramitesAsociadosPersona(oPersona) == false)
                     {
                         MessageBox.Show("Para eliminar la persona, primero debe eliminar todos sus tramites.");

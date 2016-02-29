@@ -20,7 +20,7 @@ namespace WASSTD
         BindingSource BsAuditorias;
 
         // Declaro al formulario como público y le asigno el método "Obtener Instancia" para poder llamarlo desde el formulario principal
-        public static FrmAuditorias ObtenerInstancia(Modelo_Entidades.Usuario oUsuario)
+        public static FrmAuditorias ObtenerInstancia(Usuarios oUsuario)
         {
             if (instancia == null)
             {
@@ -36,7 +36,7 @@ namespace WASSTD
         }
         
         // Establezco como privado al constructor
-        private FrmAuditorias(Modelo_Entidades.Usuario oUsuario)
+        private FrmAuditorias(Usuarios oUsuario)
         {
             InitializeComponent();
             cUsuario = Controladora.cUsuario.ObtenerInstancia();

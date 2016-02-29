@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
-
+using Entidades;
 namespace WASSTD
 {
     public partial class FrmUsuario : Form
@@ -16,11 +16,11 @@ namespace WASSTD
         string modo;
         Controladora.cUsuario cUsuario;
         Controladora.cGrupo cGrupo;
-        Modelo_Entidades.Usuario oUsuario;
+        Usuarios oUsuario;
         bool checkearA;
 
         // Declaro como publico al constructor
-        public FrmUsuario(string fModo, Modelo_Entidades.Usuario miUsuario)
+        public FrmUsuario(string fModo, Usuarios miUsuario)
         {
             InitializeComponent();
             cUsuario = Controladora.cUsuario.ObtenerInstancia();
@@ -69,8 +69,8 @@ namespace WASSTD
             checkearA = false;
             for (int i = 0; i < chklstbox_grupos.Items.Count; i++)
             {
-                Modelo_Entidades.Grupo oGrupo = (Modelo_Entidades.Grupo)chklstbox_grupos.Items[i];
-                foreach (Modelo_Entidades.Grupo miGrupo in oUsuario.Grupos.ToList())
+                Grupos oGrupo = (Grupos)chklstbox_grupos.Items[i];
+                foreach (Grupos miGrupo in oUsuario.Grupos.ToList())
                 {
                     if (oGrupo.id == miGrupo.id)
                     {
@@ -136,7 +136,7 @@ namespace WASSTD
         private void chklstbox_grupos_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             if (checkearA == false) return;
-            Modelo_Entidades.Grupo oGrupo = (Modelo_Entidades.Grupo)chklstbox_grupos.SelectedItem;
+            Grupos oGrupo = (Grupos)chklstbox_grupos.SelectedItem;
             if (e.NewValue == CheckState.Checked)
             {
                 oUsuario.Grupos.Add(oGrupo);

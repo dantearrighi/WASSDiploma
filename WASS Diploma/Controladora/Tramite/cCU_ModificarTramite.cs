@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Entidades;
 namespace Controladora
 {
    public  class cCU_ModificarTramite
     {
          //Declaro variables
-      Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
+      //Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
       private static cCU_ModificarTramite instancia;
 
         public static cCU_ModificarTramite ObtenerInstancia()
@@ -28,7 +28,7 @@ namespace Controladora
       
 
         // MODIFICAR a un Tramite
-        public void ModificarTramite(Modelo_Entidades.Tramite oTramite)
+        public void ModificarTramite(Tramites oTramite)
         {
             oModelo_Entidades.ApplyCurrentValues("Tramites", oTramite);
             oModelo_Entidades.SaveChanges();

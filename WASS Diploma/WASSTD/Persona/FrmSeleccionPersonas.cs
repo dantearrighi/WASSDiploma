@@ -6,26 +6,26 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using Entidades;
 namespace WASSTD
 {
     public partial class FrmSeleccionPersonas : Form
     {
         // Declaro las variables que voy a utilizar en el formulario
         private static FrmSeleccionPersonas instancia;
-        private Modelo_Entidades.Usuario miUsuario;
+        private Usuarios miUsuario;
 
         // Declaro las controladoras a usar
         Controladora.cCU_GestionarPersonas cCU_GestionarPersonas;
 
         // Necesito devolver la persona que seleccione
-        public Modelo_Entidades.Persona PersonaElegida
+        public Personas PersonaElegida
         {
-            get { return (Modelo_Entidades.Persona)dgv_datos.CurrentRow.DataBoundItem; }
+            get { return (Personas)dgv_datos.CurrentRow.DataBoundItem; }
         }
 
         // Declaro al formulario como público y le asigno el método "Obtener Instancia" para poder llamarlo desde el formulario principal
-        public static FrmSeleccionPersonas ObtenerInstancia(Modelo_Entidades.Usuario oUsuario)
+        public static FrmSeleccionPersonas ObtenerInstancia(Usuarios oUsuario)
         {
             if (instancia == null)
             {
@@ -41,7 +41,7 @@ namespace WASSTD
         }
 
         // Cuando se incializa el formulario
-        public FrmSeleccionPersonas(Modelo_Entidades.Usuario oUsuario)
+        public FrmSeleccionPersonas(Usuarios oUsuario)
         {
             InitializeComponent();
             cCU_GestionarPersonas = Controladora.cCU_GestionarPersonas.ObtenerInstancia();
@@ -131,7 +131,7 @@ namespace WASSTD
         // CLICK AÑADIR PERSONA 
         private void btnAñadirPersona_Click(object sender, EventArgs e)
         {
-            FrmPersona formAlta = new FrmPersona("Alta", new Modelo_Entidades.Persona(), miUsuario);
+            FrmPersona formAlta = new FrmPersona("Alta", new Personas(), miUsuario);
             if(DialogResult.OK == formAlta.ShowDialog())
             Arma_Lista();
         }

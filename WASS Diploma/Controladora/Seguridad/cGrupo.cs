@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Entidades;
 namespace Controladora
 {
     public class cGrupo
@@ -27,30 +27,30 @@ namespace Controladora
         }
 
         // Obtengo los grupos
-        public List<Modelo_Entidades.Grupo> ObtenerGrupos()
+        public List<Grupos> ObtenerGrupos()
         {
-            return oModelo_Entidades.Grupos.ToList();
+            return oGruposs.ToList();
         }
 
         // Elimino a un grupo
-        public void EliminarGrupo(Modelo_Entidades.Grupo oGrupo)
+        public void EliminarGrupo(Grupos oGrupo)
         {
             oModelo_Entidades.DeleteObject(oGrupo);
             oModelo_Entidades.SaveChanges();
         }
 
         // Agrego un grupo
-        public void AgregarGrupo(Modelo_Entidades.Grupo oGrupo)
+        public void AgregarGrupo(Grupos oGrupo)
         {
             oModelo_Entidades.AddToGrupos(oGrupo);
             oModelo_Entidades.SaveChanges();
         }
 
         // Busco a un título por su ID y lo devuelvo
-        public Modelo_Entidades.Grupo BuscarGrupoPorId(int id)
+        public Grupos BuscarGrupoPorId(int id)
         {
             // Busca el grupo por la descripcion y lo devuelve.
-            Modelo_Entidades.Grupo oGrupo = oModelo_Entidades.Grupos.ToList().Find(delegate(Modelo_Entidades.Grupo fGrupo)
+            Grupos oGrupo = oGruposs.ToList().Find(delegate(Grupos fGrupo)
             {
                 return fGrupo.id == id;
             });
@@ -59,34 +59,34 @@ namespace Controladora
         }
 
         // Modifico un grupo
-        public void ModificarGrupo(Modelo_Entidades.Grupo oGrupo)
+        public void ModificarGrupo(Grupos oGrupo)
         {
             oModelo_Entidades.ApplyCurrentValues("Grupos", oGrupo);
             oModelo_Entidades.SaveChanges();
         }
 
         // Busco los grupos por una descripción parcial
-        public List<Modelo_Entidades.Grupo> FiltrarGrupos(string texto)
+        public List<Grupos> FiltrarGrupos(string texto)
         {
-            var Consulta = from oGrupo in oModelo_Entidades.Grupos.ToList()
+            var Consulta = from oGrupo in oGruposs.ToList()
             where oGrupo.descripcion.Contains(texto)
             select oGrupo;
-            return (List<Modelo_Entidades.Grupo>)Consulta.ToList();
+            return (List<Grupos>)Consulta.ToList();
         }
 
         // Busco los grupos dado un usuario
-        public List<Modelo_Entidades.Grupo> BuscarGruposdelUsuario(Modelo_Entidades.Usuario miUsuario)
+        public List<Grupos> BuscarGruposdelUsuario(Usuarios miUsuario)
         {
-            var Consulta = from oGrupo in oModelo_Entidades.Grupos.ToList()
+            var Consulta = from oGrupo in oGruposs.ToList()
                            where oGrupo.Usuarios.Contains(miUsuario)
                            select oGrupo;
-            return (List<Modelo_Entidades.Grupo>)Consulta.ToList();
+            return (List<Grupos>)Consulta.ToList();
         }
 
         // Valido que no exista un grupo dado el nombre del grupo
         public Boolean ValidarGrupo(string grupo)
         {
-            Modelo_Entidades.Grupo oGrupo = oModelo_Entidades.Grupos.ToList().Find(delegate(Modelo_Entidades.Grupo fGrupo)
+            Grupos oGrupo = oGruposs.ToList().Find(delegate(Grupos fGrupo)
             {
                 return fGrupo.descripcion == grupo;
             });
@@ -103,9 +103,9 @@ namespace Controladora
         }
 
         // Valido que no un grupo no tengo miembros asociados
-        public Boolean ValidarMiembrosGrupo(Modelo_Entidades.Grupo oGrup)
+        public Boolean ValidarMiembrosGrupo(Grupos oGrup)
         {
-            Modelo_Entidades.Grupo oGrupo = oModelo_Entidades.Grupos.ToList().Find(delegate(Modelo_Entidades.Grupo fGrupo)
+            Grupos oGrupo = oGruposs.ToList().Find(delegate(Grupos fGrupo)
             {
                 return fGrupo == oGrup;
             });

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using Entidades;
 
 namespace WASSTD
 {
@@ -26,12 +27,12 @@ namespace WASSTD
         Controladora.cCU_GestionarPersonas cCU_GestionarPersonas;
           
         // Declaro las entidades
-        Modelo_Entidades.Persona oPersona;
-        Modelo_Entidades.Direccion oDireccion;
-        Modelo_Entidades.Usuario miUsuario;
+        Personas oPersona;
+        Direcciones oDireccion;
+        Usuarios miUsuario;
         
         // Declaro como publico al constructor
-        public FrmPersona(string fModo, Modelo_Entidades.Persona miPersona, Modelo_Entidades.Usuario oUsuario)
+        public FrmPersona(string fModo, Personas miPersona, Usuarios oUsuario)
         {
             InitializeComponent();
 
@@ -66,7 +67,7 @@ namespace WASSTD
             cmb_localidades.DisplayMember = "descripcion";
             cmb_localidades.SelectedItem = null;
 
-            cmb_TipoPersona.DataSource = cTipo_Persona.ObtenerTipos_Personas();
+            cmb_TipoPersona.DataSource = cTipo_Persona.ObtenerTipos_Personass();
             cmb_TipoPersona.DisplayMember = "descripcion";
             cmb_TipoPersona.SelectedItem = null;
                       
@@ -108,11 +109,11 @@ namespace WASSTD
                 {
                     #region Datos personales de la Persona
 
-                oPersona.Tipo_Documento = (Modelo_Entidades.Tipo_Documento)cmb_tiposdoc.SelectedItem;
+                oPersona.Tipo_Documento = (Tipos_Documentos)cmb_tiposdoc.SelectedItem;
                 oPersona.dni = Convert.ToInt32(txt_numero.Text);
                 oPersona.nombre_apellido = txt_nombreapellido.Text;
                 oPersona.observaciones = txt_observaciones.Text;
-                oPersona.Tipo_Persona = (Modelo_Entidades.Tipo_Persona)cmb_TipoPersona.SelectedItem;
+                oPersona.Tipo_Persona = (Tipos_Personas)cmb_TipoPersona.SelectedItem;
                 oPersona.fecha_nacimiento = Convert.ToDateTime(txt_fechanacimiento.Text);
 
                 if (rbtn_masculino.Checked == true)
@@ -127,9 +128,9 @@ namespace WASSTD
 
                 if (modo == "Alta")
                 {
-                    oDireccion = new Modelo_Entidades.Direccion();
+                    oDireccion = new Direcciones();
                     oDireccion.direccion = txt_direccion.Text;
-                    oDireccion.Localidad = (Modelo_Entidades.Localidad)cmb_localidades.SelectedItem;
+                    oDireccion.Localidad = (Localidades)cmb_localidades.SelectedItem;
                     oPersona.Direcciones.Add(oDireccion);
                    
 
@@ -139,7 +140,7 @@ namespace WASSTD
                 else
                 {
                     oDireccion = oPersona.Direcciones.ElementAt(0);
-                    oDireccion.Localidad = (Modelo_Entidades.Localidad)cmb_localidades.SelectedItem;
+                    oDireccion.Localidad = (Localidades)cmb_localidades.SelectedItem;
                     oDireccion.direccion = txt_direccion.Text;
                     oPersona.Direcciones.ElementAt(0).Equals(oDireccion);
 
@@ -296,8 +297,8 @@ namespace WASSTD
         // Al dejar un valor en el combo de localidades, se llena el código postal
         private void cmb_localidades_Leave(object sender, EventArgs e)
         {
-            Modelo_Entidades.Localidad oLocalidad = (Modelo_Entidades.Localidad)cmb_localidades.SelectedItem;
-            if ((Modelo_Entidades.Localidad)cmb_localidades.SelectedItem == null)
+            Localidades oLocalidad = (Localidades)cmb_localidades.SelectedItem;
+            if ((Localidades)cmb_localidades.SelectedItem == null)
             {
                 return;
             }
@@ -317,7 +318,7 @@ namespace WASSTD
         // Al dejar un valor en el combo de provincias, se llena el combo de localidades de esa provincia
         private void cmb_provincias_Leave(object sender, EventArgs e)
         {
-            Modelo_Entidades.Provincia oProvincia = (Modelo_Entidades.Provincia)cmb_provincias.SelectedItem;
+            Provincias oProvincia = (Provincias)cmb_provincias.SelectedItem;
             if (oProvincia == null)
             {
                 return;
@@ -333,7 +334,7 @@ namespace WASSTD
 
                
         // Armo el formulario (si no es una alta)
-        private void ArmaFormulario(Modelo_Entidades.Persona oPersona)
+        private void ArmaFormulario(Personas oPersona)
         {
             // Sección de datos de la Persona
             txt_numero.Text = oPersona.dni.ToString();

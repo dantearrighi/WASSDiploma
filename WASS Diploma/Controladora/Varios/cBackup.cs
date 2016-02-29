@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
-
+using Entidades;
 namespace Controladora
 {
     public class cBackup

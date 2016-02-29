@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Entidades;
 
 namespace Controladora
 {
@@ -10,7 +11,7 @@ namespace Controladora
        // Declaración de variables a usar en la clase
         private static cCU_GestionarPersonas instancia;
         Controladora.Seguridad.cCU_RecuperarPerfilPorFormulario cCU_RecuperarPerfilPorFormulario;
-        private Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
+       
         
        
         //Aplico el patron de diseño Singleton para la clase cGrupo (cuando la solicitan desde otra)
@@ -30,7 +31,7 @@ namespace Controladora
         }
 
         //Obtener permisos de un usuario sobre un formulario
-        public List<Modelo_Entidades.Perfil> ObtenerPermisos(Modelo_Entidades.Usuario oUsuario, string nombreForm)
+        public List<Perfiles> ObtenerPermisos(Usuarios oUsuario, string nombreForm)
         {
             //Invoco al caso de uso que devuelve los permisos que tiene un usuario sobre el formulario solicitado
             return cCU_RecuperarPerfilPorFormulario.ObtenerPermisosPorFormulario(oUsuario, nombreForm);
@@ -40,27 +41,27 @@ namespace Controladora
         #region ====    OBTENER PERSONAS    ====
 
         // Obtener TODAS las Personas
-        public List<Modelo_Entidades.Persona> ObtenerPersonas()
+        public List<Personas> ObtenerPersonas()
         {
-            return oModelo_Entidades.Personas.ToList();
+            return oPersonass.ToList();
         }
 
         // Obtener personas por DNI
-        public List<Modelo_Entidades.Persona> FiltrarPorDNI(string dni)
+        public List<Personas> FiltrarPorDNI(string dni)
         {
-            var Consulta = from oPersona in oModelo_Entidades.Personas.ToList()
+            var Consulta = from oPersona in oPersonass.ToList()
                            where oPersona.dni.ToString().StartsWith(dni)
                            select oPersona;
-            return (List<Modelo_Entidades.Persona>)Consulta.ToList();
+            return (List<Personas>)Consulta.ToList();
         }
 
         // Obtener personas por Nombre y Apellido
-        public List<Modelo_Entidades.Persona> FiltrarPorNyA(string nya)
+        public List<Personas> FiltrarPorNyA(string nya)
         {
-            var Consulta = from oPersona in oModelo_Entidades.Personas.ToList()
+            var Consulta = from oPersona in oPersonass.ToList()
                            where oPersona.nombre_apellido.ToLower().Contains(nya)
                            select oPersona;
-            return (List<Modelo_Entidades.Persona>)Consulta.ToList();
+            return (List<Personas>)Consulta.ToList();
         }
 
         #endregion
@@ -69,21 +70,21 @@ namespace Controladora
 
 
         // ALTA a una nueva Persona
-        public void Alta(Modelo_Entidades.Persona oPersona)
+        public void Alta(Personas oPersona)
         {
             oModelo_Entidades.AddToPersonas(oPersona);
             oModelo_Entidades.SaveChanges();
         }
 
         // MODIFICAR a una Persona
-        public void Modificacion(Modelo_Entidades.Persona oPersona)
+        public void Modificacion(Personas oPersona)
         {
             oModelo_Entidades.ApplyCurrentValues("Personas", oPersona);
             oModelo_Entidades.SaveChanges();
         }
 
         // ELIMINAR a una persona
-        public void EliminarPersona(Modelo_Entidades.Persona oPersona)
+        public void EliminarPersona(Personas oPersona)
         {
                 oModelo_Entidades.DeleteObject(oPersona);
                 oModelo_Entidades.SaveChanges();
@@ -98,7 +99,7 @@ namespace Controladora
         // Valido que una Persona no exista
         public Boolean ValidarPersona(int dni)
         {
-            Modelo_Entidades.Persona oPersona = oModelo_Entidades.Personas.ToList().Find(delegate(Modelo_Entidades.Persona fPersona)
+            Personas oPersona = oPersonass.ToList().Find(delegate(Personas fPersona)
             {
                 return fPersona.dni == dni;
             });
@@ -117,9 +118,9 @@ namespace Controladora
 
 
         // Valido que no un grupo no tengo miembros asociados
-        public Boolean ValidarTramitesAsociadosPersona(Modelo_Entidades.Persona oPersona)
+        public Boolean ValidarTramitesAsociadosPersona(Personas oPersona)
         {
-            Modelo_Entidades.Persona oPers = oModelo_Entidades.Personas.ToList().Find(delegate(Modelo_Entidades.Persona fPersona)
+            Personas oPers = oPersonass.ToList().Find(delegate(Personas fPersona)
             {
                 return fPersona == oPersona;
             });

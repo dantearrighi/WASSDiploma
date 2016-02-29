@@ -15,10 +15,10 @@ namespace WASSTD
         private static FrmAuditoriaCuotas instancia;
         Controladora.cAuditoria cAuditoria;
         BindingSource BsAuditorias;
-        Modelo_Entidades.Usuario miUsuario;
+        Usuarios miUsuario;
 
         // Declaro al formulario como público y le asigno el método "Obtener Instancia" para poder llamarlo desde el formulario principal
-        public static FrmAuditoriaCuotas ObtenerInstancia(Modelo_Entidades.Usuario oUsuario)
+        public static FrmAuditoriaCuotas ObtenerInstancia(Usuarios oUsuario)
         {
             if (instancia == null)
             {
@@ -34,7 +34,7 @@ namespace WASSTD
         }
 
         // Establezco como privado al constructor
-        private FrmAuditoriaCuotas(Modelo_Entidades.Usuario oUsuario)
+        private FrmAuditoriaCuotas(Usuarios oUsuario)
         {
             InitializeComponent();
             cAuditoria = Controladora.cAuditoria.ObtenerInstancia();

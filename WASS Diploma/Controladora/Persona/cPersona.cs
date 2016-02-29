@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Entidades;
 namespace Controladora
 {
     public class cPersona
@@ -27,7 +27,7 @@ namespace Controladora
         }
 
         // Dar de alta a una nueva Persona
-        public void Alta(Modelo_Entidades.Persona oPersona)
+        public void Alta(Personas oPersona)
         {
             oModelo_Entidades.AddToPersonas(oPersona);
             oModelo_Entidades.SaveChanges();
@@ -36,42 +36,42 @@ namespace Controladora
 
         
         // Modificar a un Persona
-        public void Modificacion(Modelo_Entidades.Persona oPersona)
+        public void Modificacion(Personas oPersona)
         {
             oModelo_Entidades.ApplyCurrentValues("Personas", oPersona);
             oModelo_Entidades.SaveChanges();
         }
 
         // Obtener los Personas
-        public List<Modelo_Entidades.Persona> ObtenerPersonas()
+        public List<Personas> ObtenerPersonas()
         {
-            return oModelo_Entidades.Personas.ToList();
+            return oPersonass.ToList();
         }
 
         // Voy filtrando a los Personas según el DNI introducido
-        public List<Modelo_Entidades.Persona> FiltrarPorDNI(string dni)
+        public List<Personas> FiltrarPorDNI(string dni)
         {
-            var Consulta = from oPersona in oModelo_Entidades.Personas.ToList()
+            var Consulta = from oPersona in oPersonass.ToList()
                            where oPersona.dni.ToString().StartsWith(dni)
                            select oPersona;
-            return (List<Modelo_Entidades.Persona>)Consulta.ToList();
+            return (List<Personas>)Consulta.ToList();
         }
 
         
 
         // Voy filtrando a los Personas según el apellido y nombre introducido
-        public List<Modelo_Entidades.Persona> FiltrarPorNyA(string nya)
+        public List<Personas> FiltrarPorNyA(string nya)
         {
-            var Consulta = from oPersona in oModelo_Entidades.Personas.ToList()
+            var Consulta = from oPersona in oPersonass.ToList()
                            where oPersona.nombre_apellido.ToLower().Contains(nya)
                            select oPersona;
-            return (List<Modelo_Entidades.Persona>)Consulta.ToList();
+            return (List<Personas>)Consulta.ToList();
         }
 
         // Valido que un Persona no exista
         public Boolean ValidarPersona(int prof_dni)
         {
-            Modelo_Entidades.Persona oPersona = oModelo_Entidades.Personas.ToList().Find(delegate(Modelo_Entidades.Persona fPersona)
+            Personas oPersona = oPersonass.ToList().Find(delegate(Personas fPersona)
             {
                 return fPersona.dni == prof_dni;
             });
@@ -88,9 +88,9 @@ namespace Controladora
         }
 
         // Obtengo un Persona dado su dni
-        public Modelo_Entidades.Persona ObtenerPersona(int dni)
+        public Personas ObtenerPersona(int dni)
         {
-            Modelo_Entidades.Persona oPersona = oModelo_Entidades.Personas.ToList().Find(delegate(Modelo_Entidades.Persona fPersona)
+            Personas oPersona = oPersonass.ToList().Find(delegate(Personas fPersona)
             {
                 return fPersona.dni == dni;
             });

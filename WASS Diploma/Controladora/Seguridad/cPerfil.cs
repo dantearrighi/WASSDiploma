@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Entidades;
 
 namespace Controladora
 {
@@ -9,7 +10,7 @@ namespace Controladora
     {
         // Declaración de variables a usar en la clase
         private static cPerfil instancia;
-        private Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
+        //private Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
 
         //Aplico el patron de diseño Singleton para la clase cPerfil (cuando la solicitan desde otra)
         public static cPerfil ObtenerInstancia()
@@ -27,75 +28,75 @@ namespace Controladora
         }
 
         // Obtengo los módulos según el grupo del usuario
-        public List<Modelo_Entidades.Modulo> ObtenerModulosPorGrupo(int grupo)
+        public List<Modulos> ObtenerModulosPorGrupo(int grupo)
         {
-            var Consulta = from oPerfil in oModelo_Entidades.Perfiles.ToList()
+            var Consulta = from oPerfil in oPerfiles.ToList()
                            where oPerfil.Grupo.id == grupo 
                            group oPerfil by oPerfil.Formulario.Modulo into Modulos
                            select Modulos.Key;
-            return (List<Modelo_Entidades.Modulo>)Consulta.ToList();
+            return (List<Modulos>)Consulta.ToList();
         }
 
         // Obtengo los formulario según el grupo del usuario
-        public List<Modelo_Entidades.Formulario> ObtenerFormulariosPorGrupo(int grupo)
+        public List<Formularios> ObtenerFormulariosPorGrupo(int grupo)
         {
-            var Consulta = from oPerfil in oModelo_Entidades.Perfiles.ToList()
+            var Consulta = from oPerfil in oPerfiles.ToList()
                            where oPerfil.Grupo.id == grupo
                            group oPerfil by oPerfil.Formulario into Perfiles
                            select Perfiles.Key;
-            return (List<Modelo_Entidades.Formulario>)Consulta.ToList();
+            return (List<Formularios>)Consulta.ToList();
         }
 
         // Obtengo los formularios según modulo al que pertenecen
-        public List<Modelo_Entidades.Formulario> ObtenerFormulariosPorModulo(Modelo_Entidades.Modulo oModulo)
+        public List<Formularios> ObtenerFormulariosPorModulo(Modulos oModulo)
         {
-            var Consulta = from oPerfil in oModelo_Entidades.Perfiles.ToList()
+            var Consulta = from oPerfil in oPerfiles.ToList()
                            where oPerfil.Formulario.Modulo == oModulo
                            group oPerfil by oPerfil.Formulario into Formularios
                            select Formularios.Key;
-            return (List<Modelo_Entidades.Formulario>)Consulta.ToList();
+            return (List<Formularios>)Consulta.ToList();
         }
 
         // Obtengo los permisos según el grupo del usuario y el formulario seleccionado
-        public List<Modelo_Entidades.Permiso> ObtenerPermisos(int grupo, string formulario)
+        public List<Permisos> ObtenerPermisos(int grupo, string formulario)
         {
-            var Consulta = from oPerfil in oModelo_Entidades.Perfiles.ToList()
+            var Consulta = from oPerfil in oPerfiles.ToList()
                            where oPerfil.Grupo.id == grupo && oPerfil.Formulario.descripcion == formulario
                            select oPerfil.Permiso;
-            return (List<Modelo_Entidades.Permiso>)Consulta.ToList();
+            return (List<Permisos>)Consulta.ToList();
         }
 
         // Elimino un perfil
-        public void BajaPerfil(Modelo_Entidades.Perfil oPerfil)
+        public void BajaPerfil(Perfiles oPerfil)
         {
-            oModelo_Entidades.Perfiles.DeleteObject(oPerfil);
+            oPerfiles.DeleteObject(oPerfil);
             oModelo_Entidades.SaveChanges();
         }
 
         //Agrego un perfil
-        public void AltaPerfil(Modelo_Entidades.Perfil oPerfil)
+        public void AltaPerfil(Perfiles oPerfil)
         {
-            oModelo_Entidades.Perfiles.AddObject(oPerfil);
+            oPerfiles.AddObject(oPerfil);
             oModelo_Entidades.SaveChanges();
         }
 
         //Modifico a un perfil
-        public void ModificarPerfil(Modelo_Entidades.Perfil oPerfil)
+        public void ModificarPerfil(Perfiles oPerfil)
         {
             oModelo_Entidades.ApplyCurrentValues("Perfiles", oPerfil);
             oModelo_Entidades.SaveChanges();
         }
 
         // Obtengo los perfiles
-        public List<Modelo_Entidades.Perfil> ObtenerPerfiles()
+        public List<Perfiles> ObtenerPerfiles()
         {
-            return oModelo_Entidades.Perfiles.ToList();
+            return oPerfiles.ToList();
         }
 
         // Valido que no exista un perfil dado el grupo, formulario y permiso
-        public Boolean ValidarPerfil(Modelo_Entidades.Grupo oGrupo, Modelo_Entidades.Formulario oFormulario, Modelo_Entidades.Permiso oPermiso)
+        public Boolean ValidarPerfil(Grupos oGrupo, Formularios oFormulario, Permisos oPermiso)
         {
-            Modelo_Entidades.Perfil oPerfil = oModelo_Entidades.Perfiles.ToList().Find(delegate(Modelo_Entidades.Perfil fPerfil)
+            Perfiles oPerfil = oPerfiles.ToList().Find(delegate(Perfiles fPerfil)
             {
                 return fPerfil.Grupo == oGrupo && fPerfil.Formulario == oFormulario && fPerfil.Permiso == oPermiso;
             });
@@ -112,9 +113,9 @@ namespace Controladora
         }
 
         // Metodo de validación general para todos los perfiles
-        public List<Modelo_Entidades.Perfil> FiltrarPerfiles(string grupo, string formulario, string permiso)
+        public List<Perfiles> FiltrarPerfiles(string grupo, string formulario, string permiso)
         {
-            var Consulta = from oPerfil in oModelo_Entidades.Perfiles.ToList()
+            var Consulta = from oPerfil in oPerfiles.ToList()
                            select oPerfil;
 
             if (grupo != "0")
@@ -132,7 +133,7 @@ namespace Controladora
                 Consulta = Consulta.Where(oPerfil => oPerfil.Permiso.descripcion == permiso);
             }
 
-            return (List<Modelo_Entidades.Perfil>)Consulta.ToList();
+            return (List<Perfiles>)Consulta.ToList();
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Entidades;
 namespace Controladora
 {
     public class cProvincia
@@ -27,9 +27,9 @@ namespace Controladora
         }
 
         // Obtener las provincias
-        public List<Modelo_Entidades.Provincia> ObtenerProvincias()
+        public List<Provincias> ObtenerProvincias()
         {
-            return oModelo_Entidades.Provincias.ToList();
+            return oProvinciass.ToList();
         }
     }
 }

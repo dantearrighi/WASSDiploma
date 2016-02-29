@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using Entidades;
 namespace WASSTD
 {
     public partial class FrmUsuarios : Form
@@ -19,7 +19,7 @@ namespace WASSTD
         BindingSource BsUsuarios;
 
         // Declaro al formulario como público y le asigno el método "Obtener Instancia" para poder llamarlo desde el formulario principal
-        public static FrmUsuarios ObtenerInstancia(Modelo_Entidades.Usuario oUsuario)
+        public static FrmUsuarios ObtenerInstancia(Usuarios oUsuario)
         {
             if (instancia == null)
             {
@@ -35,7 +35,7 @@ namespace WASSTD
         }
         
         // Establezco como privado al constructor
-        private FrmUsuarios(Modelo_Entidades.Usuario oUsuario)
+        private FrmUsuarios(Usuarios oUsuario)
         {
             InitializeComponent();
             cUsuario = Controladora.cUsuario.ObtenerInstancia();
@@ -75,7 +75,7 @@ namespace WASSTD
         // Al hacer click en "Agregar"
         private void botonera1_Click_Alta(object sender, EventArgs e)
         {
-            FormUsuario = new FrmUsuario("Alta", new Modelo_Entidades.Usuario());
+            FormUsuario = new FrmUsuario("Alta", new Usuarios());
             DialogResult dr = FormUsuario.ShowDialog();
             if (dr == DialogResult.OK)
             {
@@ -92,7 +92,7 @@ namespace WASSTD
                 return;
             }
 
-            Modelo_Entidades.Usuario oUsua = (Modelo_Entidades.Usuario)dgv_datos.CurrentRow.DataBoundItem;
+            Usuarios oUsua = (Usuarios)dgv_datos.CurrentRow.DataBoundItem;
 
             if (oUsua.estado == false)
             {
@@ -105,7 +105,7 @@ namespace WASSTD
                 DialogResult Rta = MessageBox.Show("¿Confirma el cambio de estado a inactivo del usuario?", "Baja", MessageBoxButtons.YesNo);
                 if (Rta == DialogResult.Yes)
                 {
-                    Modelo_Entidades.Usuario oUsu = (Modelo_Entidades.Usuario)dgv_datos.CurrentRow.DataBoundItem;
+                    Usuarios oUsu = (Usuarios)dgv_datos.CurrentRow.DataBoundItem;
                     oUsu.estado = false;
                     // Nunca se borra un usuario, por eso solo se modifica el estado.
                     cUsuario.Modificacion(oUsu);
@@ -139,7 +139,7 @@ namespace WASSTD
                 return;
             }
            
-            FormUsuario = new FrmUsuario("Consulta", (Modelo_Entidades.Usuario)dgv_datos.CurrentRow.DataBoundItem);
+            FormUsuario = new FrmUsuario("Consulta", (Usuarios)dgv_datos.CurrentRow.DataBoundItem);
             DialogResult dr = FormUsuario.ShowDialog();
         }
 
@@ -151,7 +151,7 @@ namespace WASSTD
                 return;
             }
 
-            FormUsuario = new FrmUsuario("Modifica", (Modelo_Entidades.Usuario)dgv_datos.CurrentRow.DataBoundItem);
+            FormUsuario = new FrmUsuario("Modifica", (Usuarios)dgv_datos.CurrentRow.DataBoundItem);
             DialogResult dr = FormUsuario.ShowDialog();
             if (dr == DialogResult.OK)
             {

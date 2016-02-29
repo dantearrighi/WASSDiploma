@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Entidades;
 namespace Controladora
 {
     public class cDetalles_Tramite
@@ -31,7 +31,7 @@ namespace Controladora
         public DateTime ObtenerUltimaFechaDetalle(int idTramite)
         {
             //Obtengo todos los detalles del tramite especificado
-            List<Modelo_Entidades.Detalles_Tramite> listaDetalles = (from item in oModelo_Entidades.Detalles_Tramites.ToList()
+            List<Modelo_Entidades.Detalles_Tramite> listaDetalles = (from item in oDetalles_Tramites.ToList()
                                                                      where item.TramiteId == idTramite
                                                                      select item).ToList();
 
@@ -46,7 +46,7 @@ namespace Controladora
         public List<Modelo_Entidades.Detalles_Tramite> Obtener_Detalles_Tramites()
         {
 
-            List<Modelo_Entidades.Detalles_Tramite> listaDetalles = oModelo_Entidades.Detalles_Tramites.ToList();
+            List<Modelo_Entidades.Detalles_Tramite> listaDetalles = oDetalles_Tramites.ToList();
 
             listaDetalles = (from item in listaDetalles
 
@@ -62,7 +62,7 @@ namespace Controladora
         public List<Modelo_Entidades.Detalles_Tramite> Obtener_Detalles_Tramites(int idTramite)
         {
 
-            List<Modelo_Entidades.Detalles_Tramite> listaDetalles = oModelo_Entidades.Detalles_Tramites.ToList();
+            List<Modelo_Entidades.Detalles_Tramite> listaDetalles = oDetalles_Tramites.ToList();
 
             listaDetalles = (from item in listaDetalles
                              where item.TramiteId == idTramite

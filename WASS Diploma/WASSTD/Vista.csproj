@@ -315,10 +315,6 @@
       <Project>{6A2411B6-AE36-4C94-B3AC-347F5B14D659}</Project>
       <Name>Controladora</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Modelo_Entidades\Modelo_Entidades.csproj">
-      <Project>{F31944DF-5392-4330-BC2E-E0F8BCDB249D}</Project>
-      <Name>Modelo_Entidades</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\save_icon&amp;16.png" />

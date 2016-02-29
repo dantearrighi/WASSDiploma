@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Reflection;
-
+using Entidades;
 namespace WASSTD
 {
     public partial class FrmPrincipal : Form
     {
         // Declaracion de varibles a utilizar en el formulario
-        Modelo_Entidades.Usuario oUsuario;
+        Usuarios oUsuario;
         Modelo_Entidades.Auditoria_Log oAuditoria;
         Controladora.cModulo cModulo;
         Controladora.cPerfil cPerfil;
@@ -98,9 +98,9 @@ namespace WASSTD
             // Creo un objeto DropDwnButton para cargar los módulos en la barra de menúes del formulario
             ToolStripDropDownButton Menu_Modulo;
 
-            foreach (Modelo_Entidades.Grupo oGrupo in cUsuario.ObtenerGruposUsuario(oUsuario.id))
+            foreach (Grupos oGrupo in cUsuario.ObtenerGruposUsuario(oUsuario.id))
             {
-                foreach (Modelo_Entidades.Modulo oModulo in cPerfil.ObtenerModulosPorGrupo(oGrupo.id))
+                foreach (Modulos oModulo in cPerfil.ObtenerModulosPorGrupo(oGrupo.id))
                 {
                     // Por cáda módulo creo un objeto ToolStripDropDownButton
                     Menu_Modulo = new ToolStripDropDownButton();
@@ -127,7 +127,7 @@ namespace WASSTD
         }
 
         // Armo los menues y submenues
-        private void ArmaFormularios(int grupo, ToolStripDropDownButton Menu_Modulos, Modelo_Entidades.Modulo oModulo)
+        private void ArmaFormularios(int grupo, ToolStripDropDownButton Menu_Modulos, Modulos oModulo)
         {
             // Le solicito a la controladora la lista de funciones de un módulo determinado.
             // Defino un objeto ToolStripMenuItem para asignar los permisos recuperados.
@@ -135,7 +135,7 @@ namespace WASSTD
                         
             // Recorro el listado de los permisos según el perfil
 
-            foreach (Modelo_Entidades.Formulario oFormulario in cPerfil.ObtenerFormulariosPorModulo(oModulo))
+            foreach (Formularios oFormulario in cPerfil.ObtenerFormulariosPorModulo(oModulo))
                 {
                     // Creo el objeto ToolStripMenuItem para cargar la funcion recibida
                     SubMenu_Formularios = new ToolStripMenuItem();

@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using Entidades;
 namespace WASSTD.Tramites
 {
     public partial class FrmTramites : Form
@@ -23,10 +23,10 @@ namespace WASSTD.Tramites
 
         FrmTramite FormTramite;
         BindingSource BsTramites;
-        Modelo_Entidades.Usuario miUsuario;
+        Usuarios miUsuario;
 
         // Declaro al formulario como público y le asigno el método "Obtener Instancia" para poder llamarlo desde el formulario principal
-        public static FrmTramites ObtenerInstancia(Modelo_Entidades.Usuario oUsuario)
+        public static FrmTramites ObtenerInstancia(Usuarios oUsuario)
         {
             if (instancia == null)
             {
@@ -42,7 +42,7 @@ namespace WASSTD.Tramites
         }
 
         // Establezco como privado al constructor
-        private FrmTramites(Modelo_Entidades.Usuario oUsuario)
+        private FrmTramites(Usuarios oUsuario)
         {
             InitializeComponent();
             cUsuario = Controladora.cUsuario.ObtenerInstancia();
@@ -69,14 +69,14 @@ namespace WASSTD.Tramites
         {
             BsTramites = new BindingSource();
             BsTramites.DataSource = dgv_datos;
-            List<Modelo_Entidades.Tramite> Tramites = cTramite.ObtenerTramites();
+            List<Tramites> Tramites = cTramite.ObtenerTramites();
             List<Modelo_Entidades.Detalles_Tramite> Detalles_Tramites = cDetalles_Tramite.Obtener_Detalles_Tramites();
-            List<Modelo_Entidades.Persona> Personas = cPersonas.ObtenerPersonas();
+            List<Personas> Personas = cPersonas.ObtenerPersonas();
             
            
 
             //Conseguir ultimo detalle y ultima fecha de cada tramite en la lista
-            foreach (Modelo_Entidades.Tramite t in Tramites)
+            foreach (Tramites t in Tramites)
             {
                 //Obtengo la fecha del ultimo detalle de ese tramite
                 DateTime ultimaFecha = cDetalles_Tramite.ObtenerUltimaFechaDetalle(t.Id);
@@ -222,7 +222,7 @@ namespace WASSTD.Tramites
         {
             
                 //PASO 1 y 2 de CU ALTA TRAMITE
-                FormTramite = new FrmTramite("Alta", new Modelo_Entidades.Tramite(), miUsuario);
+                FormTramite = new FrmTramite("Alta", new Tramites(), miUsuario);
                 DialogResult dr = FormTramite.ShowDialog();
                 if (dr == DialogResult.OK)
                 {
@@ -246,8 +246,8 @@ namespace WASSTD.Tramites
             {
                 return;
             }
-            //FrmTramite FormTramite = new FrmTramite("Modifica", (Modelo_Entidades.Tramite)dgv_datos.CurrentRow.DataBoundItem
-            Modelo_Entidades.Tramite tramiteSeleccionado = cTramite.ObtenerTramite(((Modelo_Entidades.Tramite)dgv_datos.CurrentRow.DataBoundItem).Id);
+            //FrmTramite FormTramite = new FrmTramite("Modifica", (Tramites)dgv_datos.CurrentRow.DataBoundItem
+            Tramites tramiteSeleccionado = cTramite.ObtenerTramite(((Tramites)dgv_datos.CurrentRow.DataBoundItem).Id);
             FrmTramite FormTramite = new FrmTramite("Modifica", tramiteSeleccionado, miUsuario);
             DialogResult dr = FormTramite.ShowDialog();
             if (dr == DialogResult.OK)
@@ -264,7 +264,7 @@ namespace WASSTD.Tramites
                 return;
             }
 
-            FormTramite = new FrmTramite("Consulta", (Modelo_Entidades.Tramite)dgv_datos.CurrentRow.DataBoundItem, miUsuario);
+            FormTramite = new FrmTramite("Consulta", (Tramites)dgv_datos.CurrentRow.DataBoundItem, miUsuario);
             DialogResult dr = FormTramite.ShowDialog();
         }
                 
@@ -285,7 +285,7 @@ namespace WASSTD.Tramites
                 {
 
                     /////////////////////////////////////////////////////////////////////////////////////////////////////CODIFICAR ACA LA BAJA DEL Trámite
-                    /*Modelo_Entidades.Grupo oGrup = (Modelo_Entidades.Grupo)dgv_datos.CurrentRow.DataBoundItem;
+                    /*Grupos oGrup = (Grupos)dgv_datos.CurrentRow.DataBoundItem;
                     if (cGrupo.ValidarMiembrosGrupo(oGrup) == false)
                     {
                         MessageBox.Show("Para eliminar el grupo, primero debe desasociar a todos sus miembros y eliminar todos sus perfiles");
@@ -314,13 +314,13 @@ namespace WASSTD.Tramites
             BsTramites.DataSource = dgv_datos;
 
             //Obtengo los tramites de la/s personas filtrando por el Nombre y Apellido ingresado
-            List<Modelo_Entidades.Tramite> Tramites = cTramite.ObtenerTramitesPorNombeApellido(txt_nya_Persona.Text);
+            List<Tramites> Tramites = cTramite.ObtenerTramitesPorNombeApellido(txt_nya_Persona.Text);
             List<Modelo_Entidades.Detalles_Tramite> Detalles_Tramites = cDetalles_Tramite.Obtener_Detalles_Tramites();
-            List<Modelo_Entidades.Persona> Personas = cPersonas.ObtenerPersonas();
+            List<Personas> Personas = cPersonas.ObtenerPersonas();
 
 
             //Conseguir ultimo detalle y ultima fecha de cada tramite en la lista
-            foreach (Modelo_Entidades.Tramite t in Tramites)
+            foreach (Tramites t in Tramites)
             {
                 //Obtengo la fecha del ultimo detalle de ese tramite
                 DateTime ultimaFecha = cDetalles_Tramite.ObtenerUltimaFechaDetalle(t.Id);
@@ -390,13 +390,13 @@ namespace WASSTD.Tramites
             BsTramites.DataSource = dgv_datos;
 
             //Obtengo los tramites de la/s personas filtrando por el DNI ingresado
-            List<Modelo_Entidades.Tramite> Tramites = cTramite.ObtenerTramitesPorDNI(txt_dni.Text);
+            List<Tramites> Tramites = cTramite.ObtenerTramitesPorDNI(txt_dni.Text);
             List<Modelo_Entidades.Detalles_Tramite> Detalles_Tramites = cDetalles_Tramite.Obtener_Detalles_Tramites();
-            List<Modelo_Entidades.Persona> Personas = cPersonas.ObtenerPersonas();
+            List<Personas> Personas = cPersonas.ObtenerPersonas();
 
 
             //Conseguir ultimo detalle y ultima fecha de cada tramite en la lista
-            foreach (Modelo_Entidades.Tramite t in Tramites)
+            foreach (Tramites t in Tramites)
             {
                 //Obtengo la fecha del ultimo detalle de ese tramite
                 DateTime ultimaFecha = cDetalles_Tramite.ObtenerUltimaFechaDetalle(t.Id);
@@ -465,13 +465,13 @@ namespace WASSTD.Tramites
             BsTramites.DataSource = dgv_datos;
 
             //Obtengo los tramites de la/s personas filtrando por el DNI ingresado
-            List<Modelo_Entidades.Tramite> Tramites = cTramite.ObtenerTramitesPorNumeroID(txt_NroDeTramite.Text);
+            List<Tramites> Tramites = cTramite.ObtenerTramitesPorNumeroID(txt_NroDeTramite.Text);
             List<Modelo_Entidades.Detalles_Tramite> Detalles_Tramites = cDetalles_Tramite.Obtener_Detalles_Tramites();
-            List<Modelo_Entidades.Persona> Personas = cPersonas.ObtenerPersonas();
+            List<Personas> Personas = cPersonas.ObtenerPersonas();
 
 
             //Conseguir ultimo detalle y ultima fecha de cada tramite en la lista
-            foreach (Modelo_Entidades.Tramite t in Tramites)
+            foreach (Tramites t in Tramites)
             {
                 //Obtengo la fecha del ultimo detalle de ese tramite
                 DateTime ultimaFecha = cDetalles_Tramite.ObtenerUltimaFechaDetalle(t.Id);

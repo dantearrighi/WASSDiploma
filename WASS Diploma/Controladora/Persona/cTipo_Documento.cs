@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Entidades;
 namespace Controladora
 {
     public class cTipo_Documento
@@ -27,7 +27,7 @@ namespace Controladora
         }
 
         // Obtener los tipos de documentos
-        public List<Modelo_Entidades.Tipo_Documento> ObtenerTipos_Documentos()
+        public List<Tipos_Documentos> ObtenerTipos_Documentos()
         {
             return oModelo_Entidades.Tipos_Documentos.ToList();
         }

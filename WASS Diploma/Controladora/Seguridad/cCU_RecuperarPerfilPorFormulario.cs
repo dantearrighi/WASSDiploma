@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Entidades;
 namespace Controladora.Seguridad
 {
     public class cCU_RecuperarPerfilPorFormulario
@@ -10,7 +10,7 @@ namespace Controladora.Seguridad
         // Declaración de variables a usar en la clase
         private static cCU_RecuperarPerfilPorFormulario instancia;
         //Creo una lista de permisos que tiene el usuario sobre el formulario especificado
-        private List<Modelo_Entidades.Perfil> ListaPermisosFormulario = new List<Modelo_Entidades.Perfil>();
+        private List<Perfiles> ListaPermisosFormulario = new List<Perfiles>();
 
 
         //Aplico el patron de diseño Singleton para la clase cGrupo (cuando la solicitan desde otra)
@@ -32,7 +32,7 @@ namespace Controladora.Seguridad
 
         
         //Listar Permisos para un formulario de un usuario ----- equivalente a ArmaPerfil
-        public List<Modelo_Entidades.Perfil> ObtenerPermisosPorFormulario(Modelo_Entidades.Usuario oUsuario, string nombreForm)
+        public List<Perfiles> ObtenerPermisosPorFormulario(Usuarios oUsuario, string nombreForm)
         {
             
             //Limpio la lista por si tiene residuo
@@ -40,10 +40,10 @@ namespace Controladora.Seguridad
 
             try
             {   //Para cada uno de los grupos a los que pertenece el usuario
-                foreach (Modelo_Entidades.Grupo oGrupo in oUsuario.Grupos)
+                foreach (Grupos oGrupo in oUsuario.Grupos)
                 {
                     //Y para cada uno de los perfiles (o acciones que puede ejecutar un grupo en un formulario) que hay en ese grupo
-                    foreach (Modelo_Entidades.Perfil oPerfil in oGrupo.Perfiles)
+                    foreach (Perfiles oPerfil in oGrupo.Perfiles)
                     {
                         //Valido que corresponda al formulario sobre el cual solicito los permisos
                         if (oPerfil.Formulario.descripcion == nombreForm)

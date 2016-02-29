@@ -6,21 +6,21 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using Entidades;
 namespace WASSTD
 {
     public partial class FrmLogin : Form
     {
         // Declaro las variables a utilizar en el formualario
         Controladora.cUsuario cUsuario;
-        Modelo_Entidades.Usuario oUsuario;
+        Usuarios oUsuario;
         Controladora.cGrupo cGrupo;
         Controladora.Seguridad.cCU_GestionarUsuarios cCu_GestionarUsuarios;
         
         
         
         // Necesito devolver el usuario que consegui en el Login
-        public Modelo_Entidades.Usuario UsuarioLogin
+        public Usuarios UsuarioLogin
         {
             get { return oUsuario; }
         }

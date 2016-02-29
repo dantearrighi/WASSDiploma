@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Entidades;
 
 namespace Controladora
 {
@@ -9,7 +10,7 @@ namespace Controladora
     {
         // Declaro las variables a utilizar en la clase
         private static cEstado instancia;
-        private Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
+        //private Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
 
         // Aplico el patrón de diseño Singleton a la clase
         public static cEstado ObtenerInstancia()
@@ -27,15 +28,15 @@ namespace Controladora
         }
 
         // Obtener los estados
-        public List<Modelo_Entidades.Estado> ObtenerEstados()
+        public List<Estados> ObtenerEstados()
         {
-            return oModelo_Entidades.Estados.ToList();
+            return oEstadoss.ToList();
         }
 
         // Obtener el estado "Habilitado"
-        public Modelo_Entidades.Estado ObtenerEstadoHabilitado()
+        public Estados ObtenerEstadoHabilitado()
         {
-            Modelo_Entidades.Estado oEstado = oModelo_Entidades.Estados.ToList().Find(delegate(Modelo_Entidades.Estado fEstado)
+            Estados oEstado = oEstadoss.ToList().Find(delegate(Estados fEstado)
             {
                 return fEstado.descripcion == "Habilitado";
             });
@@ -44,9 +45,9 @@ namespace Controladora
         }
 
         // Obtener el estado "No Habilitado"
-        public Modelo_Entidades.Estado ObtenerEstadoNoHabilitado()
+        public Estados ObtenerEstadoNoHabilitado()
         {
-            Modelo_Entidades.Estado oEstado = oModelo_Entidades.Estados.ToList().Find(delegate(Modelo_Entidades.Estado fEstado)
+            Estados oEstado = oEstadoss.ToList().Find(delegate(Estados fEstado)
             {
                 return fEstado.descripcion == "No Habilitado";
             });
@@ -55,9 +56,9 @@ namespace Controladora
         }
 
         // Obtener el estado "Baja"
-        public Modelo_Entidades.Estado ObtenerEstadoBaja()
+        public Estados ObtenerEstadoBaja()
         {
-            Modelo_Entidades.Estado oEstado = oModelo_Entidades.Estados.ToList().Find(delegate(Modelo_Entidades.Estado fEstado)
+            Estados oEstado = oEstadoss.ToList().Find(delegate(Estados fEstado)
             {
                 return fEstado.descripcion == "Baja";
             });
@@ -68,9 +69,9 @@ namespace Controladora
         /////////////ESTADOS DEL TRAMITE   \\\\\\\\\\\\\\
         
         // Obtener el estado "TRAMITE ACTIVO"
-        public Modelo_Entidades.Estado ObtenerEstadoTramiteACTIVO()
+        public Estados ObtenerEstadoTramiteACTIVO()
         {
-            Modelo_Entidades.Estado oEstado = oModelo_Entidades.Estados.ToList().Find(delegate(Modelo_Entidades.Estado fEstado)
+            Estados oEstado = oEstadoss.ToList().Find(delegate(Estados fEstado)
             {
                 return fEstado.descripcion == "Activo";
             });
@@ -79,9 +80,9 @@ namespace Controladora
         }
 
         // Obtener el estado "TRAMITE FINALIZADO"
-        public Modelo_Entidades.Estado ObtenerEstadoTramiteFINALIZADO()
+        public Estados ObtenerEstadoTramiteFINALIZADO()
         {
-            Modelo_Entidades.Estado oEstado = oModelo_Entidades.Estados.ToList().Find(delegate(Modelo_Entidades.Estado fEstado)
+            Estados oEstado = oEstadoss.ToList().Find(delegate(Estados fEstado)
             {
                 return fEstado.descripcion == "Finalizado";
             });

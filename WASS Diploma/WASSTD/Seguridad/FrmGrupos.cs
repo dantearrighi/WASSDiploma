@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using Entidades;
 namespace WASSTD
 {
     public partial class FrmGrupos : Form
@@ -18,7 +18,7 @@ namespace WASSTD
         BindingSource BsGrupos;
 
         // Declaro al formulario como público y le asigno el método "Obtener Instancia" para poder llamarlo desde el formulario principal
-        public static FrmGrupos ObtenerInstancia(Modelo_Entidades.Usuario oUsuario)
+        public static FrmGrupos ObtenerInstancia(Usuarios oUsuario)
         {
             if (instancia == null)
             {
@@ -34,7 +34,7 @@ namespace WASSTD
         }
 
         // Declaro al constructor como privado
-        private FrmGrupos(Modelo_Entidades.Usuario oUsuario)
+        private FrmGrupos(Usuarios oUsuario)
         {
             InitializeComponent();
             cGrupo = Controladora.cGrupo.ObtenerInstancia();
@@ -69,7 +69,7 @@ namespace WASSTD
         // Al hacer click en "Agregar"
         private void botonera1_Click_Alta(object sender, EventArgs e)
         {
-            FormGrupo = new FrmGrupo("Alta", new Modelo_Entidades.Grupo());
+            FormGrupo = new FrmGrupo("Alta", new Grupos());
             DialogResult dr = FormGrupo.ShowDialog();
             if (dr == DialogResult.OK)
             {
@@ -91,7 +91,7 @@ namespace WASSTD
                 DialogResult Rta = MessageBox.Show("¿Confirma la eliminación del grupo?", "Baja", MessageBoxButtons.YesNo);
                 if (Rta == DialogResult.Yes)
                 {
-                    Modelo_Entidades.Grupo oGrup = (Modelo_Entidades.Grupo)dgv_datos.CurrentRow.DataBoundItem;
+                    Grupos oGrup = (Grupos)dgv_datos.CurrentRow.DataBoundItem;
                     if (cGrupo.ValidarMiembrosGrupo(oGrup) == false)
                     {
                         MessageBox.Show("Para eliminar el grupo, primero debe desasociar a todos sus miembros y eliminar todos sus perfiles");
@@ -127,7 +127,7 @@ namespace WASSTD
                 return;
             }
 
-            FormGrupo = new FrmGrupo("Consulta", (Modelo_Entidades.Grupo)dgv_datos.CurrentRow.DataBoundItem);
+            FormGrupo = new FrmGrupo("Consulta", (Grupos)dgv_datos.CurrentRow.DataBoundItem);
             DialogResult dr = FormGrupo.ShowDialog();
         }
 
@@ -139,7 +139,7 @@ namespace WASSTD
                 return;
             }
 
-            FormGrupo = new FrmGrupo("Modifica", (Modelo_Entidades.Grupo)dgv_datos.CurrentRow.DataBoundItem);
+            FormGrupo = new FrmGrupo("Modifica", (Grupos)dgv_datos.CurrentRow.DataBoundItem);
             DialogResult dr = FormGrupo.ShowDialog();
             if (dr == DialogResult.OK)
             {

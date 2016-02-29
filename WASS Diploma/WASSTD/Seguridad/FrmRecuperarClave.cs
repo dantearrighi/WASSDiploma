@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-
+using Entidades;
 namespace WASSTD
 {
     public partial class FrmRecuperarClave : Form
     {
         // Declaración de variables del formualario
         private static FrmRecuperarClave Instancia;
-        Modelo_Entidades.Usuario oUsuario;
+        Usuarios oUsuario;
         Controladora.cUsuario cUsuario;
 
         // Aplico patrón singleton al formulario

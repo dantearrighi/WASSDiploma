@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Entidades;
 namespace Controladora
 {
  public   class cTipo_Tramite
@@ -28,7 +28,7 @@ namespace Controladora
         }
 
         // Obtener los tipos de tramites
-        public List<Modelo_Entidades.Tipo_Tramite> ObtenerTipos_Tramites()
+        public List<Tipos_Tramites> ObtenerTipos_Tramites()
         {
             return oModelo_Entidades.Tipos_Tramites.ToList();
         }
