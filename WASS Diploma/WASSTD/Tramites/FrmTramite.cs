@@ -14,8 +14,6 @@ namespace WASSTD
     {
         // Declaro las variables que voy a utilizar en el formulario.
         string modo;
-        //List<Modelo_Entidades.Detalles_Tramite> ListaDetalles;
-        public List<Modelo_Entidades.Detalles_Tramite> ListaDetalles { get; set; }
 
         // Declaro las controladoras a utilizar en el formulario
         Controladora.cTramite cTramite;
@@ -52,11 +50,8 @@ namespace WASSTD
             cTipo_Tramite = Controladora.cTipo_Tramite.ObtenerInstancia();
             cCU_GestionarTramites = Controladora.cCU_GestionarTramites.ObtenerInstancia();
             cEstado = Controladora.cEstado.ObtenerInstancia();
-            ListaDetalles = new List<Detalles_Tramite>();
-            ListaDetalles.Clear();
 
             modo = fModo;
-           
             oTramite = miTramite;
             miUsuario = oUsuario;
         }
@@ -71,10 +66,8 @@ namespace WASSTD
                 btn_seleccionarPersona.Visible = false;
                 lbl_DebeSeleccionar.Visible = false;
                 
-                ListaDetalles.AddRange(oTramite.Detalles_Tramite);
+                
                 ArmaFormulario(oTramite);
-                
-                
                 // MODO CONSULTA
                 if (modo == "Consulta")
                 {
@@ -175,17 +168,8 @@ namespace WASSTD
                 lbl_Sexo.Text = "Femenino";
             }
 
-            //Cargo los detalles SEGUI MODIFICANDO ACA PARA DARLE FORMA A LA VISTA
-            ArmarGrillaDetalles();
-        }
-
-
-        //Armo grilla detalles
-        private void ArmarGrillaDetalles()
-        {
-            
-            dgv_datos_detalles.DataSource = null;
-            dgv_datos_detalles.DataSource = ListaDetalles;
+            //                                                                                              SEGUI MODIFICANDO ACA PARA DARLE FORMA A LA VISTA
+            dgv_datos_detalles.DataSource = cDetalles_Tramite.Obtener_Detalles_Tramites(oTramite.Id);
             dgv_datos_detalles.Columns[4].Visible = false;
             dgv_datos_detalles.Columns[1].Width = 460;
             dgv_datos_detalles.Columns[0].Visible = false;
@@ -195,7 +179,6 @@ namespace WASSTD
         //CLICK en Añadir detalle
         private void btn_AñadirDetalle_Click(object sender, EventArgs e)
         {
-            oDetalles_Tramite = null;
             oDetalles_Tramite = new Detalles_Tramite();
             oDetalles_Tramite.descripcion = txt_Descripcion.Text;
 
@@ -212,13 +195,8 @@ namespace WASSTD
                 //se podria preguntar si se le pone fecha de hoy o si ingresa otra.... aca va la del dia
                 oDetalles_Tramite.fecha_desde = DateTime.Now;
             }
-
-            ListaDetalles.Clear();
-            ListaDetalles.AddRange(oTramite.Detalles_Tramite);
-            ListaDetalles.Add(oDetalles_Tramite);
-
             oTramite.Detalles_Tramite.Add(oDetalles_Tramite);
-            ArmarGrillaDetalles();
+            this.dgv_datos_detalles.DataSource = oTramite.Detalles_Tramite;
 
 
 
@@ -314,9 +292,6 @@ namespace WASSTD
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            ListaDetalles.Clear();
-            oDetalles_Tramite = null;
-            oTramite = null;
             this.Close();
         }
 
@@ -388,12 +363,10 @@ namespace WASSTD
                 {
                     //AGREGO DETALLE(S) SI ES MODO ********* M O D I F I C A C I O N Y AGREGUE VARIOS
                     //ACA VA EL CODIGO PARA AGREGAR LOS DETALLES AL TRAMITE CUANDO SE MODIFICA, YA QUE EN EL ALTA SOLO SE PERMITE AÑADIR UN SOLO DETALLE
-
-                    MessageBox.Show("Estoy modificando el tramite");
-
                 }
 
                 //Valido que se haya seleccionado una persona a la cual cargarle el tramite
+
                 if (oPersona != null)
                 {
                     oTramite.Persona = this.oPersona;
@@ -414,8 +387,8 @@ namespace WASSTD
                 }
 
 
-                if (modo == "Alta")
-                {   //VALIDO OBLIGATORIOS (PASO 4)
+                
+                    //VALIDO OBLIGATORIOS (PASO 4)
                     if (cCU_GestionarTramites.cCU_AltaTramite.ValidarObligatorios(oTramite))
                     {
                         oTramite.Estado = cEstado.ObtenerEstadoTramiteACTIVO();
@@ -424,20 +397,12 @@ namespace WASSTD
 
                         this.DialogResult = System.Windows.Forms.DialogResult.OK;
                     }
-                }
-                else
-                {
-                    
-
-                        cCU_GestionarTramites.cCU_ModificarTramite.ModificarTramite(oTramite);
-
-                }
+                
 
             }
             catch (Exception Exc)
             {
-                
-                MessageBox.Show(Exc.Message, "Error al guardar el trámite", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show(Exc.Message, "Alta de trámite", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 

@@ -12,7 +12,6 @@ namespace Controladora
         private static cCU_GestionarTramites instancia;
         Controladora.Seguridad.cCU_RecuperarPerfilPorFormulario cCU_RecuperarPerfilPorFormulario;
         public Controladora.cCU_AltaTramite cCU_AltaTramite;
-        public Controladora.cCU_ModificarTramite cCU_ModificarTramite;
         private Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
 
 
@@ -31,7 +30,6 @@ namespace Controladora
             cCU_RecuperarPerfilPorFormulario = Controladora.Seguridad.cCU_RecuperarPerfilPorFormulario.ObtenerInstancia();
             oModelo_Entidades = Modelo_Entidades.WASSTDEntidades.ObtenerInstancia();
             cCU_AltaTramite = Controladora.cCU_AltaTramite.ObtenerInstancia();
-            cCU_ModificarTramite = Controladora.cCU_ModificarTramite.ObtenerInstancia();
         }
 
 

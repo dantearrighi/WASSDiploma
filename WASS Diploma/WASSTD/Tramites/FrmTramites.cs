@@ -246,9 +246,8 @@ namespace WASSTD.Tramites
             {
                 return;
             }
-            //FrmTramite FormTramite = new FrmTramite("Modifica", (Modelo_Entidades.Tramite)dgv_datos.CurrentRow.DataBoundItem
-            Modelo_Entidades.Tramite tramiteSeleccionado = cTramite.ObtenerTramite(((Modelo_Entidades.Tramite)dgv_datos.CurrentRow.DataBoundItem).Id);
-            FrmTramite FormTramite = new FrmTramite("Modifica", tramiteSeleccionado, miUsuario);
+
+            FrmTramite FormTramite = new FrmTramite("Modifica", (Modelo_Entidades.Tramite)dgv_datos.CurrentRow.DataBoundItem, miUsuario);
             DialogResult dr = FormTramite.ShowDialog();
             if (dr == DialogResult.OK)
             {

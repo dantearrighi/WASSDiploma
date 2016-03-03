@@ -50,7 +50,6 @@
     <Compile Include="Seguridad\cCU_RecuperarPerfilPorFormulario.cs" />
     <Compile Include="Tramite\cCU_AltaTramite.cs" />
     <Compile Include="Tramite\cCU_GestionarTramites.cs" />
-    <Compile Include="Tramite\cCU_ModificarTramite.cs" />
     <Compile Include="Tramite\cDetalles_Tramite.cs" />
     <Compile Include="Tramite\cTipo_Tramite.cs" />
     <Compile Include="Tramite\cTramite.cs" />
