@@ -84,7 +84,6 @@ namespace WASSTD
             // Asigno el binding a la grilla
             dgv_datos.DataSource = BsPerfiles;
             dgv_datos.Columns[0].HeaderText = "Identificador";
-            dgv_datos.Columns[0].Visible = false;//OCULTO COLUMNA ID
             dgv_datos.Columns[1].HeaderText = "Grupo";
             dgv_datos.Columns[2].HeaderText = "Permiso";
             dgv_datos.Columns[3].HeaderText = "Formulario";

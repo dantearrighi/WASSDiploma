@@ -170,9 +170,6 @@ namespace WASSTD
 
             //                                                                                              SEGUI MODIFICANDO ACA PARA DARLE FORMA A LA VISTA
             dgv_datos_detalles.DataSource = cDetalles_Tramite.Obtener_Detalles_Tramites(oTramite.Id);
-            dgv_datos_detalles.Columns["TramiteId"].Visible = false;//OCULTO COLUMNA ID
-            dgv_datos_detalles.Columns["descripcion"].HeaderText = "Descripcion";
-            dgv_datos_detalles.Columns["fecha_desde"].HeaderText = "Fecha movimiento"; 
             dgv_datos_detalles.Columns[4].Visible = false;
             dgv_datos_detalles.Columns[1].Width = 460;
             dgv_datos_detalles.Columns[0].Visible = false;
