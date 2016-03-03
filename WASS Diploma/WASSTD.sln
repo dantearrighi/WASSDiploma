@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo_Entidades", "Modelo_Entidades\Modelo_Entidades.csproj", "{F31944DF-5392-4330-BC2E-E0F8BCDB249D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Modelo_Entidades\Datos.csproj", "{F31944DF-5392-4330-BC2E-E0F8BCDB249D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controladora", "Controladora\Controladora.csproj", "{6A2411B6-AE36-4C94-B3AC-347F5B14D659}"
 EndProject
