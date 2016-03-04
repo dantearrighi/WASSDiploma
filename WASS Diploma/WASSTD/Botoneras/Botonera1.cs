@@ -6,7 +6,7 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using WASSTDModelo;
+using Modelo_Entidades;
 
 namespace WASSTD
 {

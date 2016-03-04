@@ -8,9 +8,9 @@ namespace Controladora
   public  class cCU_AltaTramite
     {
 
-      //Declaro variables
-      Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
-      private static cCU_AltaTramite instancia;
+        //Declaro variables
+        Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
+        private static cCU_AltaTramite instancia;
 
         public static cCU_AltaTramite ObtenerInstancia()
         {
@@ -28,12 +28,9 @@ namespace Controladora
 
 
         // Validar Obligatorios (PASO 4 CU ALTA TRAMITE)
-        public bool ValidarObligatorios(Modelo_Entidades.Tramite oTramite)
+        public bool ValidarObligatorios(Modelo_Entidades.Tramite oTramite,string modo)
         {
             List<string> msgError = new List<string>();
-
-           
-            
 
             //Valido DETALLE
             if (oTramite.Detalles_Tramite.Count == 0)
@@ -53,15 +50,16 @@ namespace Controladora
                 msgError.Add("Debe seleccionar un Tipo de Trámite.");
             }
 
-            
-           
 
-           //VALIDAR TRAMITE EXISTENTE
-           if (!ValidarTramiteExistente(oTramite))
-           {
-               string errorTramiteExistente = "Ya existe un trámite de " + oTramite.Tipo_Tramite.descripcion + " registrado para " + oTramite.Persona.nombre_apellido + ".";
-               msgError.Add(errorTramiteExistente);
-           }
+            if (modo == "Alta")
+            {
+                //VALIDAR TRAMITE EXISTENTE
+                if (!ValidarTramiteExistente(oTramite))
+                {
+                    string errorTramiteExistente = "Ya existe un trámite de " + oTramite.Tipo_Tramite.descripcion + " registrado para " + oTramite.Persona.nombre_apellido + ".";
+                    msgError.Add(errorTramiteExistente);
+                }
+            }
 
            foreach (String error in msgError)
            {

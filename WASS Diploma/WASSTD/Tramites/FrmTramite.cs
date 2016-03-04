@@ -171,6 +171,8 @@ namespace WASSTD
             //                                                                                              SEGUI MODIFICANDO ACA PARA DARLE FORMA A LA VISTA
             dgv_datos_detalles.DataSource = cDetalles_Tramite.Obtener_Detalles_Tramites(oTramite.Id);
             dgv_datos_detalles.Columns[4].Visible = false;
+            dgv_datos_detalles.Columns["TramiteId"].Visible = false;
+            
             dgv_datos_detalles.Columns[1].Width = 460;
             dgv_datos_detalles.Columns[0].Visible = false;
         }
@@ -389,7 +391,7 @@ namespace WASSTD
 
                 
                     //VALIDO OBLIGATORIOS (PASO 4)
-                    if (cCU_GestionarTramites.cCU_AltaTramite.ValidarObligatorios(oTramite))
+                    if (cCU_GestionarTramites.cCU_AltaTramite.ValidarObligatorios(oTramite,modo))
                     {
                         oTramite.Estado = cEstado.ObtenerEstadoTramiteACTIVO();
                         //LO REGISTRO EN EL SISTEMA (PASO 5)

@@ -44,13 +44,10 @@ namespace WASSTD
 
         // Al hacer click en ingresar
         private void btn_ingresar_Click(object sender, EventArgs e)
-        {
-           
+        {          
             // Ingreso al sistema mediante un TryCatch 
             try
             {
-
-                
                 if (cCu_GestionarUsuarios.ValidarObligatoriosLogin(txt_nombredeusuario.Text, txt_contraseña.Text))
                 {
                     oUsuario = cCu_GestionarUsuarios.Login(txt_nombredeusuario.Text,  Controladora.cEncriptacion.Encriptar(txt_contraseña.Text));
@@ -60,11 +57,9 @@ namespace WASSTD
                 {
                     this.MostrarErrorCamposObligatorios();
                 }
-                
             }
             catch (Exception Exc)
             {
-                
                 MessageBox.Show(Exc.Message, "Ingreso al sistema", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
@@ -74,16 +69,17 @@ namespace WASSTD
         {
             FrmRecuperarClave.ObtenerInstancia().ShowDialog();
         }
-
+                
         // Valido los datos obligatorios
         private void MostrarErrorCamposObligatorios()
         {
             if (txt_nombredeusuario.Text == "" || txt_contraseña.Text =="")
             {
-                MessageBox.Show("Falta ingresar algun dato obligatorio. Verifique y vuelva a intentar");
+                MessageBox.Show("Falta ingresar algun dato obligatorio. Verifique y vuelva a intentar", "Ingreso al sistema", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
 
             
         }
+
     }
 }
