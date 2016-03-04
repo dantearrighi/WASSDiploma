@@ -24,7 +24,7 @@ namespace WASSTD
         {
             get { return oUsuario; }
         }
-     
+      
         // Declaro como publico al constructor
         public FrmLogin()
         {

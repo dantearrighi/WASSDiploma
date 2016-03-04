@@ -30,7 +30,7 @@ namespace WASSTD
         Modelo_Entidades.Tramite oTramite;
         Modelo_Entidades.Usuario miUsuario;
         Modelo_Entidades.Detalles_Tramite oDetalles_Tramite;
-        Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
+        
 
         FrmSeleccionPersonas formSeleccionarPersona;
 

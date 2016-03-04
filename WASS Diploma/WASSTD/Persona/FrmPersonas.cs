@@ -15,7 +15,7 @@ namespace WASSTD
         private static FrmPersonas instancia;
         Controladora.cPersona cPersona;
         FrmPersona FormPersona;
-        BindingSource BsPersonas;
+        
         Modelo_Entidades.Usuario miUsuario;
 
         Controladora.cCU_GestionarPersonas cCU_GestionarPersonas;
