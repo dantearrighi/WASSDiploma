@@ -12,6 +12,7 @@ namespace Controladora
         private static cCU_GestionarTramites instancia;
         Controladora.Seguridad.cCU_RecuperarPerfilPorFormulario cCU_RecuperarPerfilPorFormulario;
         public Controladora.cCU_AltaTramite cCU_AltaTramite;
+        public Controladora.cCU_ModificarTramite cCU_ModificarTramite;
         private Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
 
 
@@ -30,6 +31,7 @@ namespace Controladora
             cCU_RecuperarPerfilPorFormulario = Controladora.Seguridad.cCU_RecuperarPerfilPorFormulario.ObtenerInstancia();
             oModelo_Entidades = Modelo_Entidades.WASSTDEntidades.ObtenerInstancia();
             cCU_AltaTramite = Controladora.cCU_AltaTramite.ObtenerInstancia();
+            cCU_ModificarTramite = Controladora.cCU_ModificarTramite.ObtenerInstancia();
         }
 
         //Obtener permisos de un usuario sobre un formulario
@@ -38,6 +40,8 @@ namespace Controladora
             //Invoco al caso de uso que devuelve los permisos que tiene un usuario sobre el formulario solicitado
             return cCU_RecuperarPerfilPorFormulario.ObtenerPermisosPorFormulario(oUsuario, nombreForm);
         }
+
+
 
         #region OBTENER TRAMITES
 
@@ -94,8 +98,23 @@ namespace Controladora
             return (List<Modelo_Entidades.Tramite>)Consulta.ToList();
         }
 
+
+        // Obtener los tramites DE UN TIPO DE TRAMITE
+        public List<Modelo_Entidades.Tramite> ObtenerTramitesPorTipo(string textoTipoTramite)
+        {
+
+            var Consulta = from oTramite in oModelo_Entidades.Tramites.ToList()
+                           where oTramite.Tipo_Tramite.descripcion.Equals(textoTipoTramite)
+                           select oTramite;
+            return (List<Modelo_Entidades.Tramite>)Consulta.ToList();
+        }
         #endregion
 
+        // Obtener los tipos de tramites
+        public List<Modelo_Entidades.Tipo_Tramite> ObtenerTipos_Tramites()
+        {
+            return oModelo_Entidades.Tipos_Tramites.ToList();
+        }
 
     }
 }

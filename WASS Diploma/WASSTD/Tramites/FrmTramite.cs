@@ -90,7 +90,7 @@ namespace WASSTD
                 btn_seleccionarPersona.Visible = true;
                 lbl_DebeSeleccionar.Visible = true;
                 txt_fecha_Alta.Text = DateTime.Today.ToString();
-                cmb_tipos_tramites.DataSource = cTipo_Tramite.ObtenerTipos_Tramites();
+                cmb_tipos_tramites.DataSource = cCU_GestionarTramites.ObtenerTipos_Tramites();
                 cmb_tipos_tramites.DisplayMember = "descripcion";
                 cmb_tipos_tramites.Text = "SELECCIONAR";
                 cmb_tipos_tramites.SelectedItem = null;
@@ -181,10 +181,10 @@ namespace WASSTD
         //CLICK en Añadir detalle
         private void btn_AñadirDetalle_Click(object sender, EventArgs e)
         {
-            oDetalles_Tramite = new Detalles_Tramite();
+           Modelo_Entidades.Detalles_Tramite oDetalles_Tramite = new Detalles_Tramite();
             oDetalles_Tramite.descripcion = txt_Descripcion.Text;
 
-            //Utilio la clase AGE y el metodo Calcular Edad para convertir el texto de la fecha del detalle en DateTime
+            //    Utilio la clase AGE y el metodo Calcular Edad para convertir el texto de la fecha del detalle en DateTime
             //    Controladora.Persona.Age ObtenerFechaDetalle = Controladora.Persona.Age.CalcularEdad(txt_Fecha_Del_Detalle.Text);
             //    DateTime fechaDetalle = new DateTime(ObtenerFechaDetalle.Years, ObtenerFechaDetalle.Months, ObtenerFechaDetalle.Days);
 
@@ -363,7 +363,7 @@ namespace WASSTD
                 }
                 else
                 {
-                    //AGREGO DETALLE(S) SI ES MODO ********* M O D I F I C A C I O N Y AGREGUE VARIOS
+                    //AGREGO DETALLE(S) SI ES MODO ********* M O D I F I C A C I O N      Y AGREGUE VARIOS
                     //ACA VA EL CODIGO PARA AGREGAR LOS DETALLES AL TRAMITE CUANDO SE MODIFICA, YA QUE EN EL ALTA SOLO SE PERMITE AÑADIR UN SOLO DETALLE
                 }
 
@@ -378,7 +378,7 @@ namespace WASSTD
                 //ASIGNO TIPO DE TRAMITE
                 if (cmb_tipos_tramites.SelectedItem != null)
                 {
-                    foreach (Tipo_Tramite tt in cTipo_Tramite.ObtenerTipos_Tramites())
+                    foreach (Tipo_Tramite tt in cCU_GestionarTramites.ObtenerTipos_Tramites())
                     {
                         if (tt == (Modelo_Entidades.Tipo_Tramite)cmb_tipos_tramites.SelectedItem)
                         {
@@ -389,16 +389,23 @@ namespace WASSTD
                 }
 
 
-                
-                    //VALIDO OBLIGATORIOS (PASO 4)
-                    if (cCU_GestionarTramites.cCU_AltaTramite.ValidarObligatorios(oTramite,modo))
+                if (modo == "Alta")
+                {
+                    //VALIDO OBLIGATORIOS (PASO 4 ALTA TRAMITE)
+                    if (cCU_GestionarTramites.cCU_AltaTramite.ValidarObligatorios(oTramite, modo))
                     {
                         oTramite.Estado = cEstado.ObtenerEstadoTramiteACTIVO();
-                        //LO REGISTRO EN EL SISTEMA (PASO 5)
+                        //LO REGISTRO EN EL SISTEMA (PASO 5 ALTA TRAMITE)
                         cCU_GestionarTramites.cCU_AltaTramite.AltaTramite(oTramite);
 
                         this.DialogResult = System.Windows.Forms.DialogResult.OK;
                     }
+                }
+                if (modo == "Modifica")
+                {
+                    cCU_GestionarTramites.cCU_ModificarTramite.Modificacion(oTramite);
+                    this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                }
                 
 
             }

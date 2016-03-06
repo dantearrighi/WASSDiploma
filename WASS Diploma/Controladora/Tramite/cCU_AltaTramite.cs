@@ -77,6 +77,7 @@ namespace Controladora
         // CU ALTA TRAMITE: REGISTRARLO EN EL SISTEMA (PASO 5)
         public void AltaTramite(Modelo_Entidades.Tramite oTramite)
         {
+            
             oModelo_Entidades.AddToTramites(oTramite);
             oModelo_Entidades.SaveChanges();
 

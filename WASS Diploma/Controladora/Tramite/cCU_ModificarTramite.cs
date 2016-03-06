@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Controladora.Tramite
+namespace Controladora
 {
     public class cCU_ModificarTramite
     {
@@ -25,5 +25,13 @@ namespace Controladora.Tramite
             oModelo_Entidades = Modelo_Entidades.WASSTDEntidades.ObtenerInstancia();
         }
 
+
+        // Modificar a un tramite
+        public void Modificacion(Modelo_Entidades.Tramite oTramite)
+        {
+
+            oModelo_Entidades.ApplyCurrentValues("Tramites", oTramite);
+            oModelo_Entidades.SaveChanges();
+        }
     }
 }

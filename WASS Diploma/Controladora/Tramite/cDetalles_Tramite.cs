@@ -27,6 +27,8 @@ namespace Controladora
 
         }
 
+
+
         // Obtener ultima fecha del detalle de un tramite especifico
         public DateTime ObtenerUltimaFechaDetalle(int idTramite)
         {
@@ -58,7 +60,7 @@ namespace Controladora
         }
 
 
-        // Obtener todos los detalles de UN SOLO, ordenados por fecha de mayor a menor
+        // Obtener todos los detalles de UN SOLO tramite, ordenados por fecha de mayor a menor
         public List<Modelo_Entidades.Detalles_Tramite> Obtener_Detalles_Tramites(int idTramite)
         {
 

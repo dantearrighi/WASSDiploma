@@ -197,6 +197,7 @@
             this.cmb_tipos_tramites.Name = "cmb_tipos_tramites";
             this.cmb_tipos_tramites.Size = new System.Drawing.Size(262, 21);
             this.cmb_tipos_tramites.TabIndex = 65;
+           
             // 
             // label21
             // 
