@@ -32,7 +32,6 @@ namespace Controladora
             cCU_AltaTramite = Controladora.cCU_AltaTramite.ObtenerInstancia();
         }
 
-
         //Obtener permisos de un usuario sobre un formulario
         public List<Modelo_Entidades.Perfil> ObtenerPermisos(Modelo_Entidades.Usuario oUsuario, string nombreForm)
         {
@@ -40,7 +39,64 @@ namespace Controladora
             return cCU_RecuperarPerfilPorFormulario.ObtenerPermisosPorFormulario(oUsuario, nombreForm);
         }
 
-        
+        #region OBTENER TRAMITES
+
+        // Obtener los tramites
+        public List<Modelo_Entidades.Tramite> ObtenerTramites()
+        {
+            return oModelo_Entidades.Tramites.ToList();
+        }
+
+        // Obtener los tramites de una persona POR NOMBRE Y APELLIDO
+        public List<Modelo_Entidades.Tramite> ObtenerTramitesPorNombeApellido(string textoNombre)
+        {
+
+            var Consulta = from oTramite in oModelo_Entidades.Tramites.ToList()
+                           where oTramite.Persona.nombre_apellido.ToLower().Contains(textoNombre)
+                           select oTramite;
+            return (List<Modelo_Entidades.Tramite>)Consulta.ToList();
+        }
+
+        // Obtener los tramites de una persona POR DNI
+        public List<Modelo_Entidades.Tramite> ObtenerTramitesPorDNI(string textoDNI)
+        {
+
+            var Consulta = from oTramite in oModelo_Entidades.Tramites.ToList()
+                           where oTramite.Persona.dni.ToString().ToLower().Contains(textoDNI)
+                           select oTramite;
+            return (List<Modelo_Entidades.Tramite>)Consulta.ToList();
+        }
+
+        // Obtener los tramites de una persona POR ID/ NUMERO DE TRAMITE
+        public List<Modelo_Entidades.Tramite> ObtenerTramitesPorNumeroID(string textoID)
+        {
+
+            var Consulta = from oTramite in oModelo_Entidades.Tramites.ToList()
+                           where oTramite.Id.ToString().ToLower().Contains(textoID)
+                           select oTramite;
+
+            /* ESTO DEBERIA HACERLO ACA 
+             * //Conseguir ultimo detalle y ultima fecha de cada tramite en la lista
+             foreach (Modelo_Entidades.Tramite t in Consulta)
+             {
+                
+                 //Obtengo la descripción correspondiente a la ultima fecha y la fecha
+                 foreach (Modelo_Entidades.Detalles_Tramite dt in t.Detalles_Tramite)
+                 {
+                     //Si la fecha del detalle es la ultima, me quedo con el dato descripcion y fecha
+                     if (dt.fecha_desde == t.Detalles_Tramite.OrderByDescending(ddt => ddt.fecha_desde).FirstOrDefault().fecha_desde)
+                     {
+                         t.Ultima_Descripcion = dt.descripcion;
+                         t.Ultima_Fecha = Convert.ToDateTime(dt.fecha_desde.ToString());
+                     }
+                 }
+             }*/
+            return (List<Modelo_Entidades.Tramite>)Consulta.ToList();
+        }
+
+        #endregion
+
+
     }
 }
 

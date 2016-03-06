@@ -13,8 +13,10 @@ namespace WASSTD
     {
         // Declaro las variables que voy a utilizar en el formulario
         private static FrmUsuarios instancia;
-        Controladora.cUsuario cUsuario;
-        Controladora.cGrupo cGrupo;
+      
+        Controladora.Seguridad.cCU_GestionarUsuarios cCU_GestionarUsuarios;
+        Controladora.Seguridad.cCU_GestionarGrupos cCU_GestionarGrupos;
+       
         FrmUsuario FormUsuario;
         BindingSource BsUsuarios;
 
@@ -38,8 +40,9 @@ namespace WASSTD
         private FrmUsuarios(Modelo_Entidades.Usuario oUsuario)
         {
             InitializeComponent();
-            cUsuario = Controladora.cUsuario.ObtenerInstancia();
-            cGrupo = Controladora.cGrupo.ObtenerInstancia();
+          
+            cCU_GestionarUsuarios = Controladora.Seguridad.cCU_GestionarUsuarios.ObtenerInstancia();
+            cCU_GestionarGrupos = Controladora.Seguridad.cCU_GestionarGrupos.ObtenerInstancia();
             botonera1.ArmaPerfil(oUsuario, "FrmUsuarios");
         }
 
@@ -56,12 +59,12 @@ namespace WASSTD
             BsUsuarios = new BindingSource();
             BsUsuarios.DataSource = dgv_datos;
 
-            cmb_grupos.DataSource = cGrupo.ObtenerGrupos();
+            cmb_grupos.DataSource = cCU_GestionarGrupos.ObtenerGrupos();
             cmb_grupos.DisplayMember = "descripcion";
             cmb_grupos.SelectedItem = null;
 
             dgv_datos.DataSource = null;
-            BsUsuarios.DataSource = cUsuario.ObtenerUsuarios();
+            BsUsuarios.DataSource = cCU_GestionarUsuarios.ObtenerUsuarios();
             dgv_datos.DataSource = BsUsuarios;
             dgv_datos.Columns[0].Visible = false;
             dgv_datos.Columns[1].HeaderText = "Nombre y Apellido";
@@ -108,7 +111,7 @@ namespace WASSTD
                     Modelo_Entidades.Usuario oUsu = (Modelo_Entidades.Usuario)dgv_datos.CurrentRow.DataBoundItem;
                     oUsu.estado = false;
                     // Nunca se borra un usuario, por eso solo se modifica el estado.
-                    cUsuario.Modificacion(oUsu);
+                    cCU_GestionarUsuarios.Modificacion(oUsu);
                     MessageBox.Show("El usuario fue pasado a inactivo");
                     Arma_Lista();
                 }
@@ -196,7 +199,7 @@ namespace WASSTD
                 activa = "0";
             }
 
-            BsUsuarios.DataSource = cUsuario.FiltrarUsuarios(nombreyapellido, VarCombo_Grupo, activa);
+            BsUsuarios.DataSource = cCU_GestionarUsuarios.FiltrarUsuarios(nombreyapellido, VarCombo_Grupo, activa);
             dgv_datos.DataSource = BsUsuarios;
 
             dgv_datos.Columns[0].Visible = false;
@@ -220,12 +223,12 @@ namespace WASSTD
             BsUsuarios = new BindingSource();
             BsUsuarios.DataSource = dgv_datos;
 
-            cmb_grupos.DataSource = cGrupo.ObtenerGrupos();
+            cmb_grupos.DataSource = cCU_GestionarGrupos.ObtenerGrupos();
             cmb_grupos.DisplayMember = "descripcion";
             cmb_grupos.SelectedItem = null;
 
             dgv_datos.DataSource = null;
-            BsUsuarios.DataSource = cUsuario.BuscarUsuarios(txt_nombreapellido.Text);
+            BsUsuarios.DataSource = cCU_GestionarUsuarios.BuscarUsuarios(txt_nombreapellido.Text);
             dgv_datos.DataSource = BsUsuarios;
             dgv_datos.Columns[0].Visible = false;
             dgv_datos.Columns[1].HeaderText = "Nombre y Apellido";

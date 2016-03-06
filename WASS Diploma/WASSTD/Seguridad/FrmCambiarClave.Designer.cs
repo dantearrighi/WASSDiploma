@@ -45,18 +45,18 @@
             // txt_contraseña_actual
             // 
             this.txt_contraseña_actual.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txt_contraseña_actual.Location = new System.Drawing.Point(173, 152);
+            this.txt_contraseña_actual.Location = new System.Drawing.Point(173, 74);
             this.txt_contraseña_actual.Name = "txt_contraseña_actual";
             this.txt_contraseña_actual.PasswordChar = '*';
             this.txt_contraseña_actual.Size = new System.Drawing.Size(319, 20);
-            this.txt_contraseña_actual.TabIndex = 13;
+            this.txt_contraseña_actual.TabIndex = 0;
             // 
             // lb_contraseña_actual
             // 
             this.lb_contraseña_actual.BackColor = System.Drawing.Color.Transparent;
             this.lb_contraseña_actual.Image = global::WASSTD.Properties.Resources.key_icon_16;
             this.lb_contraseña_actual.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lb_contraseña_actual.Location = new System.Drawing.Point(37, 144);
+            this.lb_contraseña_actual.Location = new System.Drawing.Point(37, 66);
             this.lb_contraseña_actual.Name = "lb_contraseña_actual";
             this.lb_contraseña_actual.Size = new System.Drawing.Size(130, 35);
             this.lb_contraseña_actual.TabIndex = 12;
@@ -66,27 +66,27 @@
             // txt_repetircontraseña
             // 
             this.txt_repetircontraseña.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txt_repetircontraseña.Location = new System.Drawing.Point(173, 119);
+            this.txt_repetircontraseña.Location = new System.Drawing.Point(173, 144);
             this.txt_repetircontraseña.Name = "txt_repetircontraseña";
             this.txt_repetircontraseña.PasswordChar = '*';
             this.txt_repetircontraseña.Size = new System.Drawing.Size(319, 20);
-            this.txt_repetircontraseña.TabIndex = 11;
+            this.txt_repetircontraseña.TabIndex = 2;
             // 
             // txt_nuevacontraseña
             // 
             this.txt_nuevacontraseña.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txt_nuevacontraseña.Location = new System.Drawing.Point(173, 84);
+            this.txt_nuevacontraseña.Location = new System.Drawing.Point(173, 109);
             this.txt_nuevacontraseña.Name = "txt_nuevacontraseña";
             this.txt_nuevacontraseña.PasswordChar = '*';
             this.txt_nuevacontraseña.Size = new System.Drawing.Size(319, 20);
-            this.txt_nuevacontraseña.TabIndex = 10;
+            this.txt_nuevacontraseña.TabIndex = 1;
             // 
             // lb_repetircontraseña
             // 
             this.lb_repetircontraseña.BackColor = System.Drawing.Color.Transparent;
             this.lb_repetircontraseña.Image = global::WASSTD.Properties.Resources.key_icon_16;
             this.lb_repetircontraseña.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lb_repetircontraseña.Location = new System.Drawing.Point(34, 111);
+            this.lb_repetircontraseña.Location = new System.Drawing.Point(34, 136);
             this.lb_repetircontraseña.Name = "lb_repetircontraseña";
             this.lb_repetircontraseña.Size = new System.Drawing.Size(133, 35);
             this.lb_repetircontraseña.TabIndex = 9;
@@ -98,7 +98,7 @@
             this.lb_nuevacontraseña.BackColor = System.Drawing.Color.Transparent;
             this.lb_nuevacontraseña.Image = global::WASSTD.Properties.Resources.key_icon_16;
             this.lb_nuevacontraseña.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lb_nuevacontraseña.Location = new System.Drawing.Point(37, 76);
+            this.lb_nuevacontraseña.Location = new System.Drawing.Point(37, 101);
             this.lb_nuevacontraseña.Name = "lb_nuevacontraseña";
             this.lb_nuevacontraseña.Size = new System.Drawing.Size(130, 35);
             this.lb_nuevacontraseña.TabIndex = 8;
@@ -149,7 +149,7 @@
             this.btn_guardar.Location = new System.Drawing.Point(335, 185);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(75, 35);
-            this.btn_guardar.TabIndex = 17;
+            this.btn_guardar.TabIndex = 3;
             this.btn_guardar.Text = "Guardar";
             this.btn_guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_guardar.UseVisualStyleBackColor = true;
@@ -162,7 +162,7 @@
             this.btn_cancelar.Location = new System.Drawing.Point(416, 185);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(75, 35);
-            this.btn_cancelar.TabIndex = 16;
+            this.btn_cancelar.TabIndex = 4;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_cancelar.UseVisualStyleBackColor = true;

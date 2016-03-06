@@ -10,9 +10,9 @@ namespace Controladora.Seguridad
         // Declaración de variables a usar en la clase
         private static cCU_GestionarPerfiles instancia;
         private Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
-        Controladora.cPerfil cPerfil;
-        Controladora.cGrupo cGrupo;
-        Controladora.cUsuario cUsuario; 
+        private cCU_GestionarGrupos cCU_GestionarGrupos;
+       
+        
 
 
         //Aplico el patron de diseño Singleton para la clase controladora del CU Gestionar PERFILES (cuando la solicitan desde otra)
@@ -28,24 +28,117 @@ namespace Controladora.Seguridad
         private cCU_GestionarPerfiles()
         {
             oModelo_Entidades = Modelo_Entidades.WASSTDEntidades.ObtenerInstancia();
+            cCU_GestionarGrupos = Controladora.Seguridad.cCU_GestionarGrupos.ObtenerInstancia();
+            
         }
+
+        #region Obtener Perfiles
+
+        // Obtengo los perfiles
+        public List<Modelo_Entidades.Perfil> ObtenerPerfiles()
+        {
+            return oModelo_Entidades.Perfiles.ToList();
+        }
+
+
+        // Metodo de validación general para todos los perfiles
+        public List<Modelo_Entidades.Perfil> FiltrarPerfiles(string grupo, string formulario, string permiso)
+        {
+            var Consulta = from oPerfil in oModelo_Entidades.Perfiles.ToList()
+                           select oPerfil;
+
+            if (grupo != "0")
+            {
+                Consulta = Consulta.Where(oPerfil => oPerfil.Grupo.descripcion == grupo);
+            }
+
+            if (formulario != "0")
+            {
+                Consulta = Consulta.Where(oPerfil => oPerfil.Formulario.nombredemuestra == formulario);
+            }
+
+            if (permiso != "0")
+            {
+                Consulta = Consulta.Where(oPerfil => oPerfil.Permiso.descripcion == permiso);
+            }
+
+            return (List<Modelo_Entidades.Perfil>)Consulta.ToList();
+        }
+
+        #endregion
+
+        
+        #region ALTA BAJA Y MODIFICACION PERFILES
+
+        //Agrego un perfil
+        public void AltaPerfil(Modelo_Entidades.Perfil oPerfil)
+        {
+            oModelo_Entidades.Perfiles.AddObject(oPerfil);
+            oModelo_Entidades.SaveChanges();
+        }
+        //Modifico a un perfil
+        public void ModificarPerfil(Modelo_Entidades.Perfil oPerfil)
+        {
+            oModelo_Entidades.ApplyCurrentValues("Perfiles", oPerfil);
+            oModelo_Entidades.SaveChanges();
+        }
+
+        
+        
+        
+        
+        
+        // Elimino un perfil
+        public void BajaPerfil(Modelo_Entidades.Perfil oPerfil)
+        {
+            oModelo_Entidades.Perfiles.DeleteObject(oPerfil);
+            oModelo_Entidades.SaveChanges();
+        }
+
+
+
+
+        #endregion
+
+
+        #region VALIDACIONES PERFIL
+
+        // Valido que no exista un perfil dado el grupo, formulario y permiso
+        public Boolean ValidarPerfil(Modelo_Entidades.Grupo oGrupo, Modelo_Entidades.Formulario oFormulario, Modelo_Entidades.Permiso oPermiso)
+        {
+            Modelo_Entidades.Perfil oPerfil = oModelo_Entidades.Perfiles.ToList().Find(delegate(Modelo_Entidades.Perfil fPerfil)
+            {
+                return fPerfil.Grupo == oGrupo && fPerfil.Formulario == oFormulario && fPerfil.Permiso == oPermiso;
+            });
+
+            if (oPerfil == null)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+
+
+
+        #endregion
 
         //CU RECUPERAR PERFIL POR FORMULARIO
         public List<String> RecuperarPerfilPorFormulario(Modelo_Entidades.Usuario oUsuario, string form)
         {
-            cPerfil = Controladora.cPerfil.ObtenerInstancia();
-            cGrupo = Controladora.cGrupo.ObtenerInstancia();
-            cUsuario = Controladora.cUsuario.ObtenerInstancia();
-
+            
             List<String> AccionesHabilitadas = new List<String>();
             String accion;
           
 
             try
             {
-                foreach (Modelo_Entidades.Grupo oGrupo in cUsuario.ObtenerGruposUsuario(oUsuario.id))
+                foreach (Modelo_Entidades.Grupo oGrupo in cCU_GestionarGrupos.ObtenerGruposUsuario(oUsuario.id))
                 {
-                    foreach (Modelo_Entidades.Permiso oPermiso in cPerfil.ObtenerPermisos(oGrupo.id, form))
+                    foreach (Modelo_Entidades.Permiso oPermiso in ObtenerPermisos(oGrupo.id, form))
                     {
                         switch (oPermiso.descripcion)
                         {
@@ -80,6 +173,14 @@ namespace Controladora.Seguridad
             }
         }
 
+        // Obtengo los permisos según el grupo del usuario y el formulario seleccionado
+        public List<Modelo_Entidades.Permiso> ObtenerPermisos(int grupo, string formulario)
+        {
+            var Consulta = from oPerfil in oModelo_Entidades.Perfiles.ToList()
+                           where oPerfil.Grupo.id == grupo && oPerfil.Formulario.descripcion == formulario
+                           select oPerfil.Permiso;
+            return (List<Modelo_Entidades.Permiso>)Consulta.ToList();
+        }
 
     }
 }

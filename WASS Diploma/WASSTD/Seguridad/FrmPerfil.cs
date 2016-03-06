@@ -14,18 +14,23 @@ namespace WASSTD
         // Declaron las variables que voy a utilizar en el formulario
         string modo;
         Controladora.cGrupo cGrupo;
-        Controladora.cPerfil cPerfil;
+        
         Controladora.cFormulario cFormulario;
         Controladora.cPermiso cPermiso;
         Modelo_Entidades.Perfil oPerfil;
+        Controladora.Seguridad.cCU_GestionarGrupos cCU_GestionarGrupos;
+
+        Controladora.Seguridad.cCU_GestionarPerfiles cCU_GestionarPerfiles;
 
         public FrmPerfil(string fModo, Modelo_Entidades.Perfil miPerfil)
         {
             InitializeComponent();
             cGrupo = Controladora.cGrupo.ObtenerInstancia();
-            cPerfil = Controladora.cPerfil.ObtenerInstancia();
+           
             cPermiso = Controladora.cPermiso.ObtenerInstancia();
             cFormulario = Controladora.cFormulario.ObtenerInstancia();
+            cCU_GestionarPerfiles = Controladora.Seguridad.cCU_GestionarPerfiles.ObtenerInstancia();
+            cCU_GestionarGrupos = Controladora.Seguridad.cCU_GestionarGrupos.ObtenerInstancia();
 
             modo = fModo;
             oPerfil = miPerfil;
@@ -75,12 +80,12 @@ namespace WASSTD
                         oPerfil.Grupo = (Modelo_Entidades.Grupo)cmb_grupos.SelectedItem;
                         oPerfil.Formulario = (Modelo_Entidades.Formulario)cmb_formularios.SelectedItem;
                         oPerfil.Permiso = (Modelo_Entidades.Permiso)cmb_permisos.SelectedItem;
-                        cPerfil.AltaPerfil(oPerfil);
+                        cCU_GestionarPerfiles.AltaPerfil(oPerfil);
                     }
 
                     else
                     {
-                        cPerfil.ModificarPerfil(oPerfil);
+                        cCU_GestionarPerfiles.ModificarPerfil(oPerfil);
                     }
 
                     this.DialogResult = DialogResult.OK;
@@ -119,7 +124,7 @@ namespace WASSTD
                 return false;
             }
 
-            if (cPerfil.ValidarPerfil((Modelo_Entidades.Grupo)cmb_grupos.SelectedItem, (Modelo_Entidades.Formulario)cmb_formularios.SelectedItem, (Modelo_Entidades.Permiso)cmb_permisos.SelectedItem) == false)
+            if (cCU_GestionarPerfiles.ValidarPerfil((Modelo_Entidades.Grupo)cmb_grupos.SelectedItem, (Modelo_Entidades.Formulario)cmb_formularios.SelectedItem, (Modelo_Entidades.Permiso)cmb_permisos.SelectedItem) == false)
             {
                 MessageBox.Show("El perfil ya existe, ingrese otros parámetros");
                 return false;
@@ -131,7 +136,7 @@ namespace WASSTD
         // Cargo los datos en los controles correspondientes
         private void CargaDatos()
         {
-            cmb_grupos.DataSource = cGrupo.ObtenerGrupos();
+            cmb_grupos.DataSource = cCU_GestionarGrupos.ObtenerGrupos();
             cmb_grupos.DisplayMember = "descripcion";
             cmb_grupos.SelectedItem = null;
             cmb_formularios.DataSource = cFormulario.ObtenerFormularios();

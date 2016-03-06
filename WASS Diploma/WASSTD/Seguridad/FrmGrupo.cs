@@ -14,9 +14,10 @@ namespace WASSTD
         // Declaron las variables que voy a utilizar en el formulario
         string modo;
         Controladora.cGrupo cGrupo;
-        Controladora.cPerfil cPerfil;
+        
         Controladora.cFormulario cFormulario;
-        Controladora.cUsuario cUsuario;
+        Controladora.Seguridad.cCU_GestionarUsuarios cCU_GestionarUsuarios;
+        Controladora.Seguridad.cCU_GestionarPerfiles cCU_GestionarPerfiles;
         Controladora.cPermiso cPermiso;
         Modelo_Entidades.Grupo oGrupo;
         Modelo_Entidades.Formulario oFormulario;
@@ -27,9 +28,10 @@ namespace WASSTD
         {
             InitializeComponent();
             cGrupo = Controladora.cGrupo.ObtenerInstancia();
-            cPerfil = Controladora.cPerfil.ObtenerInstancia();
+       
             cFormulario = Controladora.cFormulario.ObtenerInstancia();
-            cUsuario = Controladora.cUsuario.ObtenerInstancia();
+            cCU_GestionarUsuarios = Controladora.Seguridad.cCU_GestionarUsuarios.ObtenerInstancia();
+            cCU_GestionarPerfiles = Controladora.Seguridad.cCU_GestionarPerfiles.ObtenerInstancia();
             cPermiso = Controladora.cPermiso.ObtenerInstancia();
 
             modo = fModo;
@@ -64,7 +66,7 @@ namespace WASSTD
 
             oFormulario = (Modelo_Entidades.Formulario)cmb_formularios.SelectedItem;
 
-            chklstbox_usuarios.DataSource = cUsuario.ObtenerUsuarios();
+            chklstbox_usuarios.DataSource = cCU_GestionarUsuarios.ObtenerUsuarios();
             chklstbox_usuarios.DisplayMember = "nombre_apellido";
 
             checkearA = false;
@@ -89,14 +91,14 @@ namespace WASSTD
 
             else
             {
-                chklstbox_permisos.DataSource = cPerfil.ObtenerPermisos(oGrupo.id, oFormulario.descripcion);
+                chklstbox_permisos.DataSource = cCU_GestionarPerfiles.ObtenerPermisos(oGrupo.id, oFormulario.descripcion);
                 chklstbox_permisos.DisplayMember = "descripcion";
             }
 
             for (int i = 0; i < chklstbox_permisos.Items.Count; i++)
             {
                 Modelo_Entidades.Permiso oPermiso = (Modelo_Entidades.Permiso)chklstbox_permisos.Items[i];
-                foreach (Modelo_Entidades.Permiso miPermiso in cPerfil.ObtenerPermisos(oGrupo.id, oFormulario.descripcion))
+                foreach (Modelo_Entidades.Permiso miPermiso in cCU_GestionarPerfiles.ObtenerPermisos(oGrupo.id, oFormulario.descripcion))
                 {
                     chklstbox_permisos.SetItemChecked(i, true);
                 }
@@ -147,13 +149,13 @@ namespace WASSTD
         private void cmb_formularios_ItemCheck(object sender, EventArgs e)
         {
             oFormulario = (Modelo_Entidades.Formulario)cmb_formularios.SelectedItem;
-            chklstbox_permisos.DataSource = cPerfil.ObtenerPermisos(oGrupo.id, oFormulario.descripcion);
+            chklstbox_permisos.DataSource = cCU_GestionarPerfiles.ObtenerPermisos(oGrupo.id, oFormulario.descripcion);
             chklstbox_permisos.DisplayMember = "descripcion";
 
             for (int i = 0; i < chklstbox_permisos.Items.Count; i++)
             {
                 Modelo_Entidades.Permiso oPermiso = (Modelo_Entidades.Permiso)chklstbox_permisos.Items[i];
-                foreach (Modelo_Entidades.Permiso miPermiso in cPerfil.ObtenerPermisos(oGrupo.id, oFormulario.descripcion))
+                foreach (Modelo_Entidades.Permiso miPermiso in cCU_GestionarPerfiles.ObtenerPermisos(oGrupo.id, oFormulario.descripcion))
                 {
                     chklstbox_permisos.SetItemChecked(i, true);
                 }
@@ -201,7 +203,7 @@ namespace WASSTD
         private void CargaDatos()
         {
             cmb_formularios.DataSource = cFormulario.ObtenerFormularios();
-            chklstbox_usuarios.DataSource = cUsuario.ObtenerUsuarios();
+            chklstbox_usuarios.DataSource = cCU_GestionarUsuarios.ObtenerUsuarios();
         }
     }
 }

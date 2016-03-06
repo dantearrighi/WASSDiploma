@@ -13,8 +13,7 @@ namespace WASSTD
     {
         // Declaro las variables que voy a utilizar en el formulario
         private static FrmAuditorias instancia;
-        Controladora.cUsuario cUsuario;
-        Controladora.cGrupo cGrupo;
+       
         Controladora.cAuditoria cAuditoria;
         FrmAuditoria FormAuditoria;
         BindingSource BsAuditorias;
@@ -39,8 +38,8 @@ namespace WASSTD
         private FrmAuditorias(Modelo_Entidades.Usuario oUsuario)
         {
             InitializeComponent();
-            cUsuario = Controladora.cUsuario.ObtenerInstancia();
-            cGrupo = Controladora.cGrupo.ObtenerInstancia();
+          
+          
             cAuditoria = Controladora.cAuditoria.ObtenerInstancia();
             botonera1.ArmaPerfil(oUsuario, "FrmAuditorias");
         }

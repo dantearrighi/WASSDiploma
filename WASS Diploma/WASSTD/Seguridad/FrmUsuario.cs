@@ -14,17 +14,22 @@ namespace WASSTD
     {
         // Declaro las variables que voy a utilizar en el formulario.
         string modo;
-        Controladora.cUsuario cUsuario;
-        Controladora.cGrupo cGrupo;
+        
+        
         Modelo_Entidades.Usuario oUsuario;
+        Controladora.Seguridad.cAdministrarSeguridad cAdministrarSeguridad;
+        Controladora.Seguridad.cCU_GestionarUsuarios cCU_GestionarUsuarios;
+        Controladora.Seguridad.cCU_GestionarGrupos cCU_GestionarGrupos;
         bool checkearA;
 
         // Declaro como publico al constructor
         public FrmUsuario(string fModo, Modelo_Entidades.Usuario miUsuario)
         {
             InitializeComponent();
-            cUsuario = Controladora.cUsuario.ObtenerInstancia();
-            cGrupo = Controladora.cGrupo.ObtenerInstancia();
+          
+            cAdministrarSeguridad = Controladora.Seguridad.cAdministrarSeguridad.ObtenerInstancia();
+            cCU_GestionarUsuarios = Controladora.Seguridad.cCU_GestionarUsuarios.ObtenerInstancia();
+            cCU_GestionarGrupos = Controladora.Seguridad.cCU_GestionarGrupos.ObtenerInstancia();
             modo = fModo;
             oUsuario = miUsuario;
 
@@ -106,14 +111,14 @@ namespace WASSTD
                     {
                        // oUsuario.clave = Controladora.cEncriptacion.Encriptar(txt_nuevacontraseña.Text);
                         oUsuario.clave = "UsuarioSinClave";
-                        cUsuario.Alta(oUsuario);
-                        cUsuario.ResetearClave(oUsuario, oUsuario.email);
+                        cCU_GestionarUsuarios.AltaUsuario(oUsuario);
+                        cAdministrarSeguridad.ResetearClave(oUsuario, oUsuario.email);
                     }
 
                     else
                     {
-                        oUsuario.clave = Controladora.cEncriptacion.Encriptar(txt_nuevacontraseña.Text);
-                        cUsuario.Modificacion(oUsuario);
+                        oUsuario.clave = cAdministrarSeguridad.Encriptar(txt_nuevacontraseña.Text);
+                        cCU_GestionarUsuarios.Modificacion(oUsuario);
                     }
 
                     this.DialogResult = DialogResult.OK;
@@ -176,7 +181,7 @@ namespace WASSTD
                 return false;
             }
 
-            if (cUsuario.ValidarUsuario(txt_nombreusuario.Text) == false)
+            if (cCU_GestionarUsuarios.ValidarNombreUsuario(txt_nombreusuario.Text) == false)
             {
                 if (oUsuario.usuario != txt_nombreusuario.Text)
                 {
@@ -232,7 +237,7 @@ namespace WASSTD
         private void CargaDatos()
         {
             chklstbox_grupos.DataSource = null;
-            chklstbox_grupos.DataSource = cGrupo.ObtenerGrupos();
+            chklstbox_grupos.DataSource = cCU_GestionarGrupos.ObtenerGrupos();
             chklstbox_grupos.DisplayMember = "descripcion";
         }
     }

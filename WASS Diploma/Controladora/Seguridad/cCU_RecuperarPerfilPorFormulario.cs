@@ -10,7 +10,7 @@ namespace Controladora.Seguridad
         // Declaración de variables a usar en la clase
         private static cCU_RecuperarPerfilPorFormulario instancia;
         //Creo una lista de permisos que tiene el usuario sobre el formulario especificado
-        private List<Modelo_Entidades.Perfil> ListaPermisosFormulario = new List<Modelo_Entidades.Perfil>();
+        private List<Modelo_Entidades.Perfil> ListaPermisosFormulario;
 
 
         //Aplico el patron de diseño Singleton para la clase cGrupo (cuando la solicitan desde otra)
@@ -27,7 +27,7 @@ namespace Controladora.Seguridad
         // Coloco al constructor como privado.
         private cCU_RecuperarPerfilPorFormulario()
         {
-         
+        ListaPermisosFormulario = new List<Modelo_Entidades.Perfil>();
         }
 
         

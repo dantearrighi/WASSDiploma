@@ -19,9 +19,7 @@ namespace WASSTD
         public event Eventos_Botonera Click_Modificacion;
         public event Eventos_Botonera Click_Consulta;
         public event Eventos_Botonera Click_Cerrar;
-        Controladora.cPerfil cPerfil;
-        Controladora.cGrupo cGrupo;
-        Controladora.cUsuario cUsuario;
+    
 
         public Botonera1()
         {
@@ -55,9 +53,7 @@ namespace WASSTD
 
         public void ArmaPerfil(Modelo_Entidades.Usuario oUsuario, string form)
         {
-            cPerfil = Controladora.cPerfil.ObtenerInstancia();
-            cGrupo = Controladora.cGrupo.ObtenerInstancia();
-            cUsuario = Controladora.cUsuario.ObtenerInstancia();
+            
 
             btn_agregar.Enabled = false;
             btn_eliminar.Enabled = false;

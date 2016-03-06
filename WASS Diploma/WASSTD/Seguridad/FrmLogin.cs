@@ -12,10 +12,12 @@ namespace WASSTD
     public partial class FrmLogin : Form
     {
         // Declaro las variables a utilizar en el formualario
-        Controladora.cUsuario cUsuario;
+       
         Modelo_Entidades.Usuario oUsuario;
-        Controladora.cGrupo cGrupo;
+        
         Controladora.Seguridad.cCU_GestionarUsuarios cCu_GestionarUsuarios;
+        Controladora.Seguridad.cCU_Login cCU_Login;
+        Controladora.Seguridad.cAdministrarSeguridad cAdministrarSeguridad;
         
         
         
@@ -30,9 +32,11 @@ namespace WASSTD
         {
             InitializeComponent();
             // Creo una controladora de usuario para trabajarla durante el formulario
-            cUsuario = Controladora.cUsuario.ObtenerInstancia();
-            cGrupo = Controladora.cGrupo.ObtenerInstancia();
+            
+          
             cCu_GestionarUsuarios = Controladora.Seguridad.cCU_GestionarUsuarios.ObtenerInstancia();
+            cCU_Login = Controladora.Seguridad.cCU_Login.ObtenerInstancia();
+            cAdministrarSeguridad = Controladora.Seguridad.cAdministrarSeguridad.ObtenerInstancia();
           
         }
 
@@ -48,9 +52,9 @@ namespace WASSTD
             // Ingreso al sistema mediante un TryCatch 
             try
             {
-                if (cCu_GestionarUsuarios.ValidarObligatoriosLogin(txt_nombredeusuario.Text, txt_contraseña.Text))
+                if (cAdministrarSeguridad.ValidarObligatoriosLogin(txt_nombredeusuario.Text, txt_contraseña.Text))
                 {
-                    oUsuario = cCu_GestionarUsuarios.Login(txt_nombredeusuario.Text,  Controladora.cEncriptacion.Encriptar(txt_contraseña.Text));
+                    oUsuario = cAdministrarSeguridad.Login(txt_nombredeusuario.Text,  cAdministrarSeguridad.Encriptar(txt_contraseña.Text));
                     this.DialogResult = DialogResult.OK;
                 }
                 else

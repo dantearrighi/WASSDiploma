@@ -14,7 +14,8 @@ namespace WASSTD
     {
         // Declaro las variables que voy a utilizar en el formulario
         private static FrmPerfiles instancia;
-        Controladora.cPerfil cPerfil;
+        Controladora.Seguridad.cCU_GestionarPerfiles cCU_GestionarPerfiles;
+        Controladora.Seguridad.cCU_GestionarGrupos cCU_GestionarGrupos;
         Controladora.cGrupo cGrupo;
         Controladora.cPermiso cPermiso;
         Controladora.cFormulario cFormulario;
@@ -43,7 +44,8 @@ namespace WASSTD
         {
             InitializeComponent();
             miUsuario = oUsuario;
-            cPerfil = Controladora.cPerfil.ObtenerInstancia();
+            cCU_GestionarPerfiles = Controladora.Seguridad.cCU_GestionarPerfiles.ObtenerInstancia();
+            cCU_GestionarGrupos = Controladora.Seguridad.cCU_GestionarGrupos.ObtenerInstancia();
             cGrupo = Controladora.cGrupo.ObtenerInstancia();
             cPermiso = Controladora.cPermiso.ObtenerInstancia();
             cFormulario = Controladora.cFormulario.ObtenerInstancia();
@@ -63,8 +65,8 @@ namespace WASSTD
             BsPerfiles = new BindingSource();
             //Luego lo lleno con los datos de la grilla
             BsPerfiles.DataSource = dgv_datos;
-            
-            cmb_grupos.DataSource = cGrupo.ObtenerGrupos();
+
+            cmb_grupos.DataSource = cCU_GestionarGrupos.ObtenerGrupos();
             cmb_grupos.DisplayMember = "descripcion";           
             cmb_grupos.SelectedItem = null;
             cmb_grupos.SelectedText = "Todos";
@@ -80,7 +82,7 @@ namespace WASSTD
             // Limpio la grilla
             dgv_datos.DataSource = null;
             // LLeno el binding con los datos que traigo de las entidades
-            BsPerfiles.DataSource = cPerfil.ObtenerPerfiles();
+            BsPerfiles.DataSource = cCU_GestionarPerfiles.ObtenerPerfiles();
             // Asigno el binding a la grilla
             dgv_datos.DataSource = BsPerfiles;
             dgv_datos.Columns[0].HeaderText = "Identificador";
@@ -115,7 +117,7 @@ namespace WASSTD
                 if (Rta == DialogResult.Yes)
                 {
                     Modelo_Entidades.Perfil oPer = (Modelo_Entidades.Perfil)dgv_datos.CurrentRow.DataBoundItem;
-                    cPerfil.BajaPerfil(oPer);
+                    cCU_GestionarPerfiles.BajaPerfil(oPer);
                     MessageBox.Show("El Perfil fue eliminado");
                     Arma_Lista();
                 }
@@ -202,7 +204,7 @@ namespace WASSTD
                 VarCombo_Permiso = cmb_permisos.SelectedValue.ToString();
             }
 
-            BsPerfiles.DataSource = cPerfil.FiltrarPerfiles(VarCombo_Grupo, VarCombo_Formulario, VarCombo_Permiso);
+            BsPerfiles.DataSource = cCU_GestionarPerfiles.FiltrarPerfiles(VarCombo_Grupo, VarCombo_Formulario, VarCombo_Permiso);
             dgv_datos.DataSource = BsPerfiles;
 
             dgv_datos.Columns[0].HeaderText = "Identificador";
@@ -224,5 +226,7 @@ namespace WASSTD
         {
             botonera1.ArmaPerfil(miUsuario, "FrmPerfiles");
         }
+
+
     }
 }

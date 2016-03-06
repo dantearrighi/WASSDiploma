@@ -44,16 +44,20 @@
     <Compile Include="Persona\Age.cs" />
     <Compile Include="Persona\cCU_GestionarPersonas.cs" />
     <Compile Include="Persona\cTipo_Persona.cs" />
+    <Compile Include="Seguridad\cAdministrarSeguridad.cs" />
+    <Compile Include="Seguridad\cCU_AltaUsuario.cs" />
     <Compile Include="Seguridad\cCU_GestionarGrupos.cs" />
     <Compile Include="Seguridad\cCU_GestionarPerfiles.cs" />
     <Compile Include="Seguridad\cCU_GestionarUsuarios.cs" />
+    <Compile Include="Seguridad\cCU_Login.cs" />
+    <Compile Include="Seguridad\cCU_ModificarUsuario.cs" />
     <Compile Include="Seguridad\cCU_RecuperarPerfilPorFormulario.cs" />
+    <Compile Include="Seguridad\cCU_ResetearClave.cs" />
     <Compile Include="Tramite\cCU_AltaTramite.cs" />
     <Compile Include="Tramite\cCU_GestionarTramites.cs" />
     <Compile Include="Tramite\cCU_ModificarTramite.cs" />
     <Compile Include="Tramite\cDetalles_Tramite.cs" />
     <Compile Include="Tramite\cTipo_Tramite.cs" />
-    <Compile Include="Tramite\cTramite.cs" />
     <Compile Include="Varios\cBackup.cs" />
     <Compile Include="Varios\cAuditoria.cs" />
     <Compile Include="Varios\cEncriptacion.cs" />
@@ -67,8 +71,6 @@
     <Compile Include="Seguridad\cGrupo.cs" />
     <Compile Include="Seguridad\cModulo.cs" />
     <Compile Include="Seguridad\cPermiso.cs" />
-    <Compile Include="Seguridad\cUsuario.cs" />
-    <Compile Include="Seguridad\cPerfil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

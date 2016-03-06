@@ -9,9 +9,12 @@ namespace Controladora.Seguridad
     {
         // Declaro las variables a utilizar en la clase
         private static cCU_GestionarUsuarios instancia;
+
         private Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
-        Controladora.cEncriptacion cEncriptacion = new cEncriptacion();
-        Controladora.cUsuario cUsuario;
+        cCU_AltaUsuario cCU_AltaUsuario;
+        cCU_ModificarUsuario cCU_ModificarUsuario;
+       
+        
         
 
         // Aplico el patrón de diseño Singleton a la clase
@@ -22,125 +25,125 @@ namespace Controladora.Seguridad
 
             return instancia;
         }
-
         // Coloco al constructor como privado.
         private cCU_GestionarUsuarios()
         {
             oModelo_Entidades = Modelo_Entidades.WASSTDEntidades.ObtenerInstancia();
-            cUsuario = cUsuario.ObtenerInstancia();
+            cCU_AltaUsuario = Controladora.Seguridad.cCU_AltaUsuario.ObtenerInstancia();
+            cCU_ModificarUsuario = Controladora.Seguridad.cCU_ModificarUsuario.ObtenerInstancia();
+            
         }
 
-       
-    
+        #region Obtener Usuario/S
 
-        // Validar que se hayan INGRESADO un nombre de usuario y contraseña
-        public bool ValidarObligatoriosLogin(string username, string password)
-        {
-
-            if (username == "")
-            {
-                return false;
-            }
-
-            if (password == "")
-            {
-                return false;
-            }
-
-            return true;
-        }
-        
-        
-        // LOGUEAR USUARIO
-        public Modelo_Entidades.Usuario Login(string usuario, string clave)
-        {
-            // Aca instancio un objeto "Usuario" y tomo el objeto "Entidades" que instancie en un principio.
+        //Obtener un usuario
+        public Modelo_Entidades.Usuario ObtenerUsuario(string userName)
+        {    // Aca instancio un objeto "Usuario" y tomo el objeto "Entidades" que instancie en un principio.
             // Luego, a esas "Entidades", les pido que me traigan a todos los "Usuarios" en forma de Lista.
-            // A esa Lista de "Usuarios" le pido que me encuentre y que me devuelva el usuario "usuario" que pasé por parámetros. 
+            // A esa Lista de "Usuarios" le pido que me encuentre y que me devuelva el usuario cuyo nombre es "usuario" que pasé por parámetros. 
+            Modelo_Entidades.Usuario oUsuario = oModelo_Entidades.Usuarios.ToList().Find(delegate(Modelo_Entidades.Usuario fUsuario)
+            {
+                return fUsuario.usuario == userName;
+            });
+
+            return oUsuario;
+        }
+
+        //Obtener  todos los usuarios
+        public List<Modelo_Entidades.Usuario> ObtenerUsuarios()
+        {
+            return oModelo_Entidades.Usuarios.ToList();
+        }
+        
+        // Busco los usuarios por una descripción parcial
+        public List<Modelo_Entidades.Usuario> BuscarUsuarios(string texto)
+        {
+            var Consulta = from oUsuario in oModelo_Entidades.Usuarios.ToList()
+                           where oUsuario.nombre_apellido.ToLower().Contains(texto.ToLower())
+                           select oUsuario;
+            return (List<Modelo_Entidades.Usuario>)Consulta.ToList();
+        }
+
+        // Metodo de validación general para todos los usuarios - Los busca segun estado y grupo al que pertenecen 
+        public List<Modelo_Entidades.Usuario> FiltrarUsuarios(string nya, string grupo, string estado)
+        {
+            var Consulta = from oUsuario in oModelo_Entidades.Usuarios.ToList()
+                           select oUsuario;
+
+            if (nya != "0")
+            {                                                                   // aca iba containts
+                Consulta = Consulta.Where(oUsuario => oUsuario.nombre_apellido.Contains(nya));
+            }
+
+            if (grupo != "0")
+            {
+                Consulta = Consulta.Where(oUsuario => oUsuario.Grupos.Contains(this.BuscoGrupo(grupo)));
+            }
+
+            if (estado == "0")
+            {
+                Consulta = Consulta.Where(oUsuario => oUsuario.estado == false);
+            }
+
+            if (estado == "1")
+            {
+                Consulta = Consulta.Where(oUsuario => oUsuario.estado == true);
+            }
+
+            return (List<Modelo_Entidades.Usuario>)Consulta.ToList();
+        }
+        // Método interno para buscar un grupo
+        private Modelo_Entidades.Grupo BuscoGrupo(string grupo)
+        {
+            Modelo_Entidades.Grupo oGrupo = oModelo_Entidades.Grupos.ToList().Find(delegate(Modelo_Entidades.Grupo fGrupo)
+            {
+                return fGrupo.descripcion == grupo;
+            });
+
+            return oGrupo;
+        }
+
+
+
+        #endregion
+
+        #region ABM Usuario
+        // Alta de usuario
+        public void AltaUsuario(Modelo_Entidades.Usuario oUsuario)
+        {
+            cCU_AltaUsuario.Alta(oUsuario);
+
+        }
+
+
+        // Modificar a un usuario
+        public void Modificacion(Modelo_Entidades.Usuario oUsuario)
+        {
+            cCU_ModificarUsuario.Modificacion(oUsuario);
+
+            
+        }
+
+        #endregion
+
+        // Valido que no exista un usuario dado el nombre del usuario
+        public Boolean ValidarNombreUsuario(string usuario)
+        {
             Modelo_Entidades.Usuario oUsuario = oModelo_Entidades.Usuarios.ToList().Find(delegate(Modelo_Entidades.Usuario fUsuario)
             {
                 return fUsuario.usuario == usuario;
             });
 
-
-            if (cUsuario.ValidarUsuarioExistente(oUsuario))
+            if (oUsuario == null)
             {
-                if (cUsuario.ValidarUsuarioActivo(oUsuario))
-                {
-                    if (cUsuario.ValidarContraseñaIngresada(oUsuario, clave))
-                    {
-                        // En caso de que pase todas la validaciones, devuelvo al Usuario
-                        return oUsuario;
-                    }
-                    else
-                    {
-                        throw new Exception("La contraseña ingresada es incorrecta."); 
-                    }
-                }
-                else
-                {
-                    throw new Exception("El usuario se encuentra desactivado.");
-                }
-            }
-            else
-            {
-                throw new Exception("El usuario ingresado no se encuentra registrado en el sistema.");
-                
-            }
-            
-        }
-
-
-
-
-        // Validar que se hayan ingresado clave actual y la nueva 2 veces para modificarla
-        private bool ValidarObligatoriosCambiarClave(string claveNueva, string claveNuevaConfirmar, string claveActual, Modelo_Entidades.Usuario usrActual)
-        {
-            // VALIDACION CAMPOS VACIOS:     ClaveNueva   -     Confirmacion                    y que coincida la confirmacion
-            if (string.IsNullOrEmpty(claveNueva) || string.IsNullOrEmpty(claveNuevaConfirmar) ||  claveNueva != claveNuevaConfirmar)
-            {
-                throw new Exception("Debe ingresar una contraseña, ya que o no las ha ingresado, o no coinciden");
-                
-
-            }
-
-            // Validacion CAMPO VACIO CLAVE ACTUAL
-            if (string.IsNullOrEmpty(claveActual))
-            {
-                throw new Exception("Es obligatorio ingresar la clave actual.");
-            }
-           
-            // Validacion de la clave actual
-           if (!cUsuario.ValidarContraseñaIngresada(usrActual, claveActual))
-            {
-                //MessageBox.Show("La contraseña actual es incorrecta, por favor introduscula nuevamente");
-                throw new Exception("La contraseña actual es incorrecta.");
-            }
-
-           
-
-
-            return true;
-        }
-        
-        // CAMBIAR CONTRASEÑA
-        public bool CambiarContraseña(string claveNueva, string claveNuevaConfirmar, string claveActual, Modelo_Entidades.Usuario usrActual)
-        {
-            //SI ESTAN MAL LOS DATOS
-            if (ValidarObligatoriosCambiarClave(claveNueva, claveNuevaConfirmar, claveActual, usrActual))
-            {
-                usrActual.clave = claveNueva;
-                cUsuario.Modificacion(usrActual);
                 return true;
             }
+
             else
             {
-                throw new Exception("Las contraseñas no coinciden o la clave actual es incorrecta. Verifique y vuelva a intentarlo.");
+                return false;
             }
-                                   
-          
         }
-
      
 
     

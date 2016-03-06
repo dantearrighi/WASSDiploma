@@ -15,10 +15,15 @@ namespace WASSTD
         // Declaracion de varibles a utilizar en el formulario
         Modelo_Entidades.Usuario oUsuario;
         Modelo_Entidades.Auditoria_Log oAuditoria;
+        Controladora.Seguridad.cCU_GestionarGrupos cCU_GestionarGrupos;
+        Controladora.Seguridad.cAdministrarSeguridad cAdministrarSeguridad;
+        
         Controladora.cModulo cModulo;
-        Controladora.cPerfil cPerfil;
-        Controladora.cUsuario cUsuario;
+       
+      
         Controladora.cAuditoria cAuditoria;
+
+
 
         // Declaro como privado al formulario
         private Form miFormulario;
@@ -29,9 +34,10 @@ namespace WASSTD
             InitializeComponent();
 
             // Instancio a las controladoras del modulo
+            cCU_GestionarGrupos = Controladora.Seguridad.cCU_GestionarGrupos.ObtenerInstancia();
+            cAdministrarSeguridad = Controladora.Seguridad.cAdministrarSeguridad.ObtenerInstancia();
             cModulo = Controladora.cModulo.ObtenerInstancia();
-            cPerfil = Controladora.cPerfil.ObtenerInstancia();
-            cUsuario = Controladora.cUsuario.ObtenerInstancia();
+            
             cAuditoria = Controladora.cAuditoria.ObtenerInstancia();
             oAuditoria = new Modelo_Entidades.Auditoria_Log();
         }
@@ -98,9 +104,9 @@ namespace WASSTD
             // Creo un objeto DropDwnButton para cargar los módulos en la barra de menúes del formulario
             ToolStripDropDownButton Menu_Modulo;
 
-            foreach (Modelo_Entidades.Grupo oGrupo in cUsuario.ObtenerGruposUsuario(oUsuario.id))
+            foreach (Modelo_Entidades.Grupo oGrupo in cCU_GestionarGrupos.ObtenerGruposUsuario(oUsuario.id))
             {
-                foreach (Modelo_Entidades.Modulo oModulo in cPerfil.ObtenerModulosPorGrupo(oGrupo.id))
+                foreach (Modelo_Entidades.Modulo oModulo in cCU_GestionarGrupos.ObtenerModulosPorGrupo(oGrupo.id))
                 {
                     // Por cáda módulo creo un objeto ToolStripDropDownButton
                     Menu_Modulo = new ToolStripDropDownButton();
@@ -135,7 +141,7 @@ namespace WASSTD
                         
             // Recorro el listado de los permisos según el perfil
 
-            foreach (Modelo_Entidades.Formulario oFormulario in cPerfil.ObtenerFormulariosPorModulo(oModulo))
+            foreach (Modelo_Entidades.Formulario oFormulario in cAdministrarSeguridad.ObtenerFormulariosPorModulo(oModulo))
                 {
                     // Creo el objeto ToolStripMenuItem para cargar la funcion recibida
                     SubMenu_Formularios = new ToolStripMenuItem();

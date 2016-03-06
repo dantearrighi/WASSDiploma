@@ -17,5 +17,7 @@ namespace Modelo_Entidades
             return Ultima_Descripcion.ToString();
         }
 
+         
+
     }
 }

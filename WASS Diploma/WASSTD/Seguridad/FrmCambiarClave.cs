@@ -13,15 +13,16 @@ namespace WASSTD
     {
         Modelo_Entidades.Usuario oUsuario;
         Controladora.Seguridad.cCU_GestionarUsuarios cCU_GestionarUsuarios;
+        Controladora.Seguridad.cAdministrarSeguridad cAdministrarSeguridad;
 
-        Controladora.cUsuario cUsuario;
-
+       
         // Cuando inicializo el formulario
         public FrmCambiarClave(Modelo_Entidades.Usuario fUsuario)
         {
             InitializeComponent();
             oUsuario = fUsuario;
-            cUsuario = Controladora.cUsuario.ObtenerInstancia();
+            cAdministrarSeguridad = Controladora.Seguridad.cAdministrarSeguridad.ObtenerInstancia();
+          
             cCU_GestionarUsuarios = Controladora.Seguridad.cCU_GestionarUsuarios.ObtenerInstancia();
         }
 
@@ -42,15 +43,22 @@ namespace WASSTD
         {
             try
             {
-                if (cCU_GestionarUsuarios.CambiarContraseña(Controladora.cEncriptacion.Encriptar(txt_nuevacontraseña.Text), Controladora.cEncriptacion.Encriptar(txt_repetircontraseña.Text), Controladora.cEncriptacion.Encriptar(txt_contraseña_actual.Text), oUsuario))
+                if (!String.IsNullOrEmpty(txt_nuevacontraseña.Text) && !String.IsNullOrEmpty(txt_repetircontraseña.Text) && !String.IsNullOrEmpty(txt_contraseña_actual.Text))
                 {
-                    MessageBox.Show("La contraseña se ha modificado con éxito.");
-                    this.Close();
+                    if (cAdministrarSeguridad.CambiarContraseña(cAdministrarSeguridad.Encriptar(txt_nuevacontraseña.Text), cAdministrarSeguridad.Encriptar(txt_repetircontraseña.Text), cAdministrarSeguridad.Encriptar(txt_contraseña_actual.Text), oUsuario))
+                    {
+                        MessageBox.Show("La contraseña se ha modificado con éxito.","Cambio de contraseña",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        //MessageBox.Show("Las contraseñas no coinciden o la clave actual es incorrecta. Verifique y vuelva a intentarlo.");
+                        this.Show();
+                    }
                 }
                 else
                 {
-                    //MessageBox.Show("Las contraseñas no coinciden o la clave actual es incorrecta. Verifique y vuelva a intentarlo.");
-                    this.Show();
+                    throw new Exception("ERROR: No puede dejar campos obligatorios vacios. Verifique y vuelva a intentar.");
                 }
             }
             catch (Exception Exc)
@@ -87,15 +95,19 @@ namespace WASSTD
         // Creo un método interno para validar los datos
         private bool ValidarObligatorios()
         {
-            if (string.IsNullOrEmpty(txt_nuevacontraseña.Text) || string.IsNullOrEmpty(txt_repetircontraseña.Text) || string.IsNullOrEmpty(txt_contraseña_actual.Text) || txt_nuevacontraseña.Text != txt_repetircontraseña.Text)
+            if (string.IsNullOrEmpty(txt_nuevacontraseña.Text) || string.IsNullOrEmpty(txt_repetircontraseña.Text) || string.IsNullOrEmpty(txt_contraseña_actual.Text))
             {
-                MessageBox.Show("Debe ingresar una contraseña, ya que o no las ha ingresado, o no coinciden");
+                MessageBox.Show("Falta ingresar contraseña en un campo obligatorio.");
                 return false;
             }
-            else if (Controladora.cEncriptacion.Encriptar(txt_contraseña_actual.Text) != oUsuario.clave)
+            else if (cAdministrarSeguridad.Encriptar(txt_contraseña_actual.Text) != oUsuario.clave)
             {
-                    MessageBox.Show("La contraseña actual es incorrecta, por favor introduscula nuevamente");
+                    MessageBox.Show("La contraseña actual es incorrecta, por favor ingrese nuevamente");
                     return false;
+            }
+            if(txt_nuevacontraseña.Text != txt_repetircontraseña.Text)
+            {
+                MessageBox.Show("Las contraseñas ingresadas no coinciden.");
             }
 
             return true;

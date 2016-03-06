@@ -15,7 +15,9 @@ namespace WASSTD
         // Declaración de variables del formualario
         private static FrmRecuperarClave Instancia;
         Modelo_Entidades.Usuario oUsuario;
-        Controladora.cUsuario cUsuario;
+        Controladora.Seguridad.cAdministrarSeguridad cAdministrarSeguridad;
+        Controladora.Seguridad.cCU_GestionarUsuarios cCU_GestionarUsuarios;
+       
 
         // Aplico patrón singleton al formulario
         public static FrmRecuperarClave ObtenerInstancia()
@@ -28,14 +30,16 @@ namespace WASSTD
         // Colo el formulario como privado
         private FrmRecuperarClave()
         {
-            cUsuario = Controladora.cUsuario.ObtenerInstancia();
+            
+            cAdministrarSeguridad = Controladora.Seguridad.cAdministrarSeguridad.ObtenerInstancia();
+            cCU_GestionarUsuarios = Controladora.Seguridad.cCU_GestionarUsuarios.ObtenerInstancia();
             InitializeComponent();
         }
 
         // Valido los datos
         public bool ValidarDatos()
         {
-            oUsuario = cUsuario.ObtenerUsuario(this.txt_nombredeusuario.Text);
+            oUsuario = cCU_GestionarUsuarios.ObtenerUsuario(this.txt_nombredeusuario.Text);
             if (string.IsNullOrEmpty(this.txt_nombredeusuario.Text))
             {
                 this.txt_email.Focus();
@@ -75,14 +79,14 @@ namespace WASSTD
         {
             if (ValidarDatos())
             {
-                oUsuario = cUsuario.ObtenerUsuario(this.txt_nombredeusuario.Text);
+                oUsuario = cCU_GestionarUsuarios.ObtenerUsuario(this.txt_nombredeusuario.Text);
                 if (oUsuario != null)
                 {
                     if (oUsuario.estado != false)
                     {
                         try
                         {
-                            cUsuario.ResetearClave(oUsuario, txt_email.Text);
+                            cAdministrarSeguridad.ResetearClave(oUsuario, txt_email.Text);
                             MessageBox.Show("Contraseña reseteada con éxito.", "Resultado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
                         }

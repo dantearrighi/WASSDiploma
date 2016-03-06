@@ -13,9 +13,8 @@ namespace WASSTD.Tramites
     {
         // Declaro las variables que voy a utilizar en el formulario
         private static FrmTramites instancia;
-        Controladora.cUsuario cUsuario;
-        Controladora.cGrupo cGrupo;
-        Controladora.cTramite cTramite;
+       
+       
         Controladora.cDetalles_Tramite cDetalles_Tramite;
         Controladora.cPersona cPersonas;
         Controladora.cCU_GestionarTramites cCU_GestionarTramites;
@@ -45,10 +44,9 @@ namespace WASSTD.Tramites
         private FrmTramites(Modelo_Entidades.Usuario oUsuario)
         {
             InitializeComponent();
-            cUsuario = Controladora.cUsuario.ObtenerInstancia();
-            cGrupo = Controladora.cGrupo.ObtenerInstancia();
+        
             cPersonas = Controladora.cPersona.ObtenerInstancia();
-            cTramite = Controladora.cTramite.ObtenerInstancia();
+           
             cDetalles_Tramite = Controladora.cDetalles_Tramite.ObtenerInstancia();
             cCU_GestionarTramites = Controladora.cCU_GestionarTramites.ObtenerInstancia();
             miUsuario = oUsuario;
@@ -69,12 +67,12 @@ namespace WASSTD.Tramites
         {
             BsTramites = new BindingSource();
             BsTramites.DataSource = dgv_datos;
-            List<Modelo_Entidades.Tramite> Tramites = cTramite.ObtenerTramites();
+            List<Modelo_Entidades.Tramite> Tramites = cCU_GestionarTramites.ObtenerTramites();
             List<Modelo_Entidades.Detalles_Tramite> Detalles_Tramites = cDetalles_Tramite.Obtener_Detalles_Tramites();
             List<Modelo_Entidades.Persona> Personas = cPersonas.ObtenerPersonas();
             
            
-
+            // CREO Q ESTO NO LO NECESITO MAS PORQUE LO PUSE EN EL OBTENER TRAMITES
             //Conseguir ultimo detalle y ultima fecha de cada tramite en la lista
             foreach (Modelo_Entidades.Tramite t in Tramites)
             {
@@ -313,7 +311,7 @@ namespace WASSTD.Tramites
             BsTramites.DataSource = dgv_datos;
 
             //Obtengo los tramites de la/s personas filtrando por el Nombre y Apellido ingresado
-            List<Modelo_Entidades.Tramite> Tramites = cTramite.ObtenerTramitesPorNombeApellido(txt_nya_Persona.Text);
+            List<Modelo_Entidades.Tramite> Tramites = cCU_GestionarTramites.ObtenerTramitesPorNombeApellido(txt_nya_Persona.Text);
             List<Modelo_Entidades.Detalles_Tramite> Detalles_Tramites = cDetalles_Tramite.Obtener_Detalles_Tramites();
             List<Modelo_Entidades.Persona> Personas = cPersonas.ObtenerPersonas();
 
@@ -389,7 +387,7 @@ namespace WASSTD.Tramites
             BsTramites.DataSource = dgv_datos;
 
             //Obtengo los tramites de la/s personas filtrando por el DNI ingresado
-            List<Modelo_Entidades.Tramite> Tramites = cTramite.ObtenerTramitesPorDNI(txt_dni.Text);
+            List<Modelo_Entidades.Tramite> Tramites = cCU_GestionarTramites.ObtenerTramitesPorDNI(txt_dni.Text);
             List<Modelo_Entidades.Detalles_Tramite> Detalles_Tramites = cDetalles_Tramite.Obtener_Detalles_Tramites();
             List<Modelo_Entidades.Persona> Personas = cPersonas.ObtenerPersonas();
 
@@ -464,7 +462,7 @@ namespace WASSTD.Tramites
             BsTramites.DataSource = dgv_datos;
 
             //Obtengo los tramites de la/s personas filtrando por el DNI ingresado
-            List<Modelo_Entidades.Tramite> Tramites = cTramite.ObtenerTramitesPorNumeroID(txt_NroDeTramite.Text);
+            List<Modelo_Entidades.Tramite> Tramites = cCU_GestionarTramites.ObtenerTramitesPorNumeroID(txt_NroDeTramite.Text);
             List<Modelo_Entidades.Detalles_Tramite> Detalles_Tramites = cDetalles_Tramite.Obtener_Detalles_Tramites();
             List<Modelo_Entidades.Persona> Personas = cPersonas.ObtenerPersonas();
 

@@ -16,6 +16,8 @@ namespace WASSTD
         Controladora.cGrupo cGrupo;
         FrmGrupo FormGrupo;
         BindingSource BsGrupos;
+        Controladora.Seguridad.cCU_GestionarGrupos cCU_GestionarGrupos;
+
 
         // Declaro al formulario como público y le asigno el método "Obtener Instancia" para poder llamarlo desde el formulario principal
         public static FrmGrupos ObtenerInstancia(Modelo_Entidades.Usuario oUsuario)
@@ -38,6 +40,7 @@ namespace WASSTD
         {
             InitializeComponent();
             cGrupo = Controladora.cGrupo.ObtenerInstancia();
+            cCU_GestionarGrupos = Controladora.Seguridad.cCU_GestionarGrupos.ObtenerInstancia();
             botonera1.ArmaPerfil(oUsuario, "FrmGrupos");
         }
 
@@ -56,7 +59,7 @@ namespace WASSTD
             // Limpio la grilla
             dgv_datos.DataSource = null;
             // LLeno el binding con los datos que traigo de las entidades
-            BsGrupos.DataSource = cGrupo.ObtenerGrupos();
+            BsGrupos.DataSource = cCU_GestionarGrupos.ObtenerGrupos();
             // Asigno el binding a la grilla
             dgv_datos.DataSource = BsGrupos;
             // Edito las columnas de la grilla

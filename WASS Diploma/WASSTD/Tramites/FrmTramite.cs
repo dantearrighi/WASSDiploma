@@ -16,7 +16,7 @@ namespace WASSTD
         string modo;
 
         // Declaro las controladoras a utilizar en el formulario
-        Controladora.cTramite cTramite;
+     
         Controladora.cGrupo cGrupo;
         Controladora.cPersona cPersona;
         Controladora.cDetalles_Tramite cDetalles_Tramite;
@@ -45,7 +45,7 @@ namespace WASSTD
             cPersona = Controladora.cPersona.ObtenerInstancia();
             cGrupo = Controladora.cGrupo.ObtenerInstancia();
             cAuditoria = Controladora.cAuditoria.ObtenerInstancia();
-            cTramite = Controladora.cTramite.ObtenerInstancia();
+         
             cDetalles_Tramite = Controladora.cDetalles_Tramite.ObtenerInstancia();
             cTipo_Tramite = Controladora.cTipo_Tramite.ObtenerInstancia();
             cCU_GestionarTramites = Controladora.cCU_GestionarTramites.ObtenerInstancia();
