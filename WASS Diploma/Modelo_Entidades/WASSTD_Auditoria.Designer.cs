@@ -488,19 +488,19 @@ namespace Modelo_Entidades
         /// Crear un nuevo objeto Auditoria_Tramite.
         /// </summary>
         /// <param name="id">Valor inicial de la propiedad id.</param>
-        /// <param name="tipoTramite">Valor inicial de la propiedad tipoTramite.</param>
-        /// <param name="enviadoPor">Valor inicial de la propiedad enviadoPor.</param>
-        /// <param name="dni_cuil_cliente">Valor inicial de la propiedad dni_cuil_cliente.</param>
+        /// <param name="tipo_Tramite_id">Valor inicial de la propiedad Tipo_Tramite_id.</param>
+        /// <param name="estado_id">Valor inicial de la propiedad Estado_id.</param>
+        /// <param name="persona_DNI">Valor inicial de la propiedad Persona_DNI.</param>
         /// <param name="accion">Valor inicial de la propiedad accion.</param>
         /// <param name="usuario">Valor inicial de la propiedad usuario.</param>
         /// <param name="id_tramite">Valor inicial de la propiedad id_tramite.</param>
-        public static Auditoria_Tramite CreateAuditoria_Tramite(global::System.Int32 id, global::System.Boolean tipoTramite, global::System.String enviadoPor, global::System.Int32 dni_cuil_cliente, global::System.String accion, global::System.String usuario, global::System.Int32 id_tramite)
+        public static Auditoria_Tramite CreateAuditoria_Tramite(global::System.Int32 id, global::System.Boolean tipo_Tramite_id, global::System.String estado_id, global::System.Int32 persona_DNI, global::System.String accion, global::System.String usuario, global::System.Int32 id_tramite)
         {
             Auditoria_Tramite auditoria_Tramite = new Auditoria_Tramite();
             auditoria_Tramite.id = id;
-            auditoria_Tramite.tipoTramite = tipoTramite;
-            auditoria_Tramite.enviadoPor = enviadoPor;
-            auditoria_Tramite.dni_cuil_cliente = dni_cuil_cliente;
+            auditoria_Tramite.Tipo_Tramite_id = tipo_Tramite_id;
+            auditoria_Tramite.Estado_id = estado_id;
+            auditoria_Tramite.Persona_DNI = persona_DNI;
             auditoria_Tramite.accion = accion;
             auditoria_Tramite.usuario = usuario;
             auditoria_Tramite.id_tramite = id_tramite;
@@ -543,72 +543,72 @@ namespace Modelo_Entidades
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Boolean tipoTramite
+        public global::System.Boolean Tipo_Tramite_id
         {
             get
             {
-                return _tipoTramite;
+                return _Tipo_Tramite_id;
             }
             set
             {
-                OntipoTramiteChanging(value);
-                ReportPropertyChanging("tipoTramite");
-                _tipoTramite = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("tipoTramite");
-                OntipoTramiteChanged();
+                OnTipo_Tramite_idChanging(value);
+                ReportPropertyChanging("Tipo_Tramite_id");
+                _Tipo_Tramite_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Tipo_Tramite_id");
+                OnTipo_Tramite_idChanged();
             }
         }
-        private global::System.Boolean _tipoTramite;
-        partial void OntipoTramiteChanging(global::System.Boolean value);
-        partial void OntipoTramiteChanged();
+        private global::System.Boolean _Tipo_Tramite_id;
+        partial void OnTipo_Tramite_idChanging(global::System.Boolean value);
+        partial void OnTipo_Tramite_idChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String enviadoPor
+        public global::System.String Estado_id
         {
             get
             {
-                return _enviadoPor;
+                return _Estado_id;
             }
             set
             {
-                OnenviadoPorChanging(value);
-                ReportPropertyChanging("enviadoPor");
-                _enviadoPor = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("enviadoPor");
-                OnenviadoPorChanged();
+                OnEstado_idChanging(value);
+                ReportPropertyChanging("Estado_id");
+                _Estado_id = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Estado_id");
+                OnEstado_idChanged();
             }
         }
-        private global::System.String _enviadoPor;
-        partial void OnenviadoPorChanging(global::System.String value);
-        partial void OnenviadoPorChanged();
+        private global::System.String _Estado_id;
+        partial void OnEstado_idChanging(global::System.String value);
+        partial void OnEstado_idChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 dni_cuil_cliente
+        public global::System.Int32 Persona_DNI
         {
             get
             {
-                return _dni_cuil_cliente;
+                return _Persona_DNI;
             }
             set
             {
-                Ondni_cuil_clienteChanging(value);
-                ReportPropertyChanging("dni_cuil_cliente");
-                _dni_cuil_cliente = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("dni_cuil_cliente");
-                Ondni_cuil_clienteChanged();
+                OnPersona_DNIChanging(value);
+                ReportPropertyChanging("Persona_DNI");
+                _Persona_DNI = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Persona_DNI");
+                OnPersona_DNIChanged();
             }
         }
-        private global::System.Int32 _dni_cuil_cliente;
-        partial void Ondni_cuil_clienteChanging(global::System.Int32 value);
-        partial void Ondni_cuil_clienteChanged();
+        private global::System.Int32 _Persona_DNI;
+        partial void OnPersona_DNIChanging(global::System.Int32 value);
+        partial void OnPersona_DNIChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.

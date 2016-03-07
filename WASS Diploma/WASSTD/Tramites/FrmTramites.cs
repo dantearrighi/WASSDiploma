@@ -164,16 +164,17 @@ namespace WASSTD.Tramites
             dgv_datos.Columns[9].Visible = false;
 
 
-            int h = 0;
+           /* FILTRO PARA OCULTAR LOS TRAMITES DADOS DE BAJA
+            * int h = 0;
             foreach(DataGridViewRow fila in dgv_datos.Rows)
             {
-                int poronga = fila.Cells[6].ColumnIndex;
-                if (poronga == 6)
+                int porqueria = fila.Cells[6].ColumnIndex;
+                if (porqueria == 6)
                 {
                     dgv_datos.Rows[j].Visible = false;
                 }
                 h++;
-            }
+            }*/
 
           
 
@@ -473,14 +474,11 @@ namespace WASSTD.Tramites
 
             try
             {
-               
                 DialogResult Rta = MessageBox.Show("¿Confirma la eliminación del trámite seleccionado?", "Baja", MessageBoxButtons.YesNo);
                 if (Rta == DialogResult.Yes)
                 {
-
-                    
                    cCU_GestionarTramites.BajaTramite((Modelo_Entidades.Tramite)dgv_datos.CurrentRow.DataBoundItem);
-                   MessageBox.Show("El Trámite fue eliminado");
+                   MessageBox.Show("El Trámite fue dado de baja");
                    Arma_Lista();
                 }
 

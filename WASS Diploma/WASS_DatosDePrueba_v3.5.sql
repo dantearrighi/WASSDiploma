@@ -157,3 +157,42 @@ INSERT INTO Direcciones values
 ('Italia 94', 37073682, 1),
 ('Callao 555', 11750105, 13),
 ('Zeballos 562 9no A',34541691,1) 
+
+
+/* ========================== ELIMINA TODO Y RESETEA IDENTITY
+USE WASSTD_Auditoria
+EXEC sp_MSForEachTable 'ALTER TABLE ? NOCHECK CONSTRAINT ALL'
+GO
+EXEC sp_MSForEachTable 'ALTER TABLE ? DISABLE TRIGGER ALL'
+GO
+EXEC sp_MSForEachTable
+'BEGIN TRY
+TRUNCATE TABLE ?;
+END TRY
+BEGIN CATCH
+DELETE FROM ?
+END CATCH;'
+EXEC sp_MSForEachTable 'ALTER TABLE ? CHECK CONSTRAINT ALL'
+GO
+EXEC sp_MSForEachTable 'ALTER TABLE ? ENABLE TRIGGER ALL'
+GO
+
+DBCC CHECKIDENT ('dbo.Detalles_Tramites', RESEED, 0)
+DBCC CHECKIDENT ('dbo.Direcciones', RESEED, 0)
+DBCC CHECKIDENT ('dbo.Estados', RESEED, 0)
+DBCC CHECKIDENT ('dbo.Formularios', RESEED, 0)
+DBCC CHECKIDENT ('dbo.Grupos', RESEED, 0)
+DBCC CHECKIDENT ('dbo.Localidades', RESEED, 0)
+DBCC CHECKIDENT ('dbo.Modulos', RESEED, 0)
+DBCC CHECKIDENT ('dbo.Perfiles', RESEED, 0)
+DBCC CHECKIDENT ('dbo.Permisos', RESEED, 0)
+DBCC CHECKIDENT ('dbo.Personas', RESEED, 0)
+DBCC CHECKIDENT ('dbo.Provincias', RESEED, 0)
+DBCC CHECKIDENT ('dbo.Tipos_Documentos', RESEED, 0)
+DBCC CHECKIDENT ('dbo.Tipos_Personas', RESEED, 0)
+DBCC CHECKIDENT ('dbo.Tipos_Tramites', RESEED, 0)
+DBCC CHECKIDENT ('dbo.Tramites', RESEED, 0)
+DBCC CHECKIDENT ('dbo.Usuarios', RESEED, 0)
+DBCC CHECKIDENT ('dbo.UsuariosGrupos', RESEED, 0)
+*/
+

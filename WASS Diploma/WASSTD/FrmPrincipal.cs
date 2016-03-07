@@ -126,6 +126,7 @@ namespace WASSTD
         //AUDITORIA: Agregar accion que realiza el usuario a Auditorias_Log
         private void AñadirAuditoria(string accion)
         {
+            oAuditoria = new Modelo_Entidades.Auditoria_Log();
             oAuditoria.usuario = oUsuario.nombre_apellido;
             oAuditoria.fecha = DateTime.Now;
             oAuditoria.accion = accion;

@@ -33,8 +33,8 @@ namespace Controladora
             oModelo_Entidades.SaveChanges();
         }
 
-        // Audito el login de un usuario y agrego la auditoria
-        public void AuditarCuota(Modelo_Entidades.Auditoria_Tramite oTramite)
+        // Auditoria tramite
+        public void AuditarTramite(Modelo_Entidades.Auditoria_Tramite oTramite)
         {
             oModelo_Entidades.AddToAuditorias_Tramites(oTramite);
             oModelo_Entidades.SaveChanges();
@@ -116,7 +116,7 @@ namespace Controladora
 
             if (dni != "0")
             {
-                Consulta = Consulta.Where(oAuditoria => oAuditoria.dni_cuil_cliente.ToString() == dni);
+                Consulta = Consulta.Where(oAuditoria => oAuditoria.Persona_DNI.ToString() == dni);
             }
 
            
