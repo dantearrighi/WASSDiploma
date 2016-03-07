@@ -123,14 +123,24 @@ namespace WASSTD
                 if (oTramite.Estado.descripcion == "Activo")
                 {
                     lbl_Finalizado.Visible = false;
+                    lbl_DE_BAJA.Visible = false;
+
                     lbl_Activo.Visible = true;
                 }
                 else if (oTramite.Estado.descripcion == "Finalizado")
                 {
                     lbl_Finalizado.Visible = true;
+
+                    lbl_DE_BAJA.Visible = false;
                     lbl_Activo.Visible = false;
                 }
-                else
+                else if (oTramite.Estado.descripcion == "Baja")
+                {
+                    lbl_DE_BAJA.Visible = true;
+
+                    lbl_Activo.Visible = false;
+                    lbl_Finalizado.Visible = false;
+                }else
                 {
                     lbl_Finalizado.Visible = false;
                     lbl_Activo.Visible = false;

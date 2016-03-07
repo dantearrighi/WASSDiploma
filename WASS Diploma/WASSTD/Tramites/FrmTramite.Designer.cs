@@ -74,6 +74,7 @@
             this.lbl_Activo = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.lbl_Finalizado = new System.Windows.Forms.Label();
+            this.lbl_DE_BAJA = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.grp_sexo.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -494,6 +495,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.lbl_DE_BAJA);
             this.groupBox4.Controls.Add(this.txt_Ultimo_Movimiento);
             this.groupBox4.Controls.Add(this.txt_fecha_Alta);
             this.groupBox4.Controls.Add(this.cmb_tipos_tramites);
@@ -618,6 +620,19 @@
             this.lbl_Finalizado.Text = "FINALIZADO";
             this.lbl_Finalizado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // lbl_DE_BAJA
+            // 
+            this.lbl_DE_BAJA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DE_BAJA.ForeColor = System.Drawing.Color.Crimson;
+            this.lbl_DE_BAJA.Image = global::WASSTD.Properties.Resources.on_off_icon_16;
+            this.lbl_DE_BAJA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_DE_BAJA.Location = new System.Drawing.Point(272, 16);
+            this.lbl_DE_BAJA.Name = "lbl_DE_BAJA";
+            this.lbl_DE_BAJA.Size = new System.Drawing.Size(117, 35);
+            this.lbl_DE_BAJA.TabIndex = 66;
+            this.lbl_DE_BAJA.Text = "DE BAJA";
+            this.lbl_DE_BAJA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // FrmTramite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -694,5 +709,6 @@
         private System.Windows.Forms.MaskedTextBox txt_Ultimo_Movimiento;
         private System.Windows.Forms.MaskedTextBox txt_Fecha_Del_Detalle;
         private System.Windows.Forms.Label lbl_Fecha_Del_Detalle;
+        private System.Windows.Forms.Label lbl_DE_BAJA;
     }
 }

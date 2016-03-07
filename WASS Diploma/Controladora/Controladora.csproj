@@ -45,14 +45,19 @@
     <Compile Include="Persona\cCU_GestionarPersonas.cs" />
     <Compile Include="Persona\cTipo_Persona.cs" />
     <Compile Include="Seguridad\cAdministrarSeguridad.cs" />
-    <Compile Include="Seguridad\cCU_AltaUsuario.cs" />
-    <Compile Include="Seguridad\cCU_GestionarGrupos.cs" />
-    <Compile Include="Seguridad\cCU_GestionarPerfiles.cs" />
-    <Compile Include="Seguridad\cCU_GestionarUsuarios.cs" />
-    <Compile Include="Seguridad\cCU_Login.cs" />
-    <Compile Include="Seguridad\cCU_ModificarUsuario.cs" />
-    <Compile Include="Seguridad\cCU_RecuperarPerfilPorFormulario.cs" />
-    <Compile Include="Seguridad\cCU_ResetearClave.cs" />
+    <Compile Include="Seguridad\Grupo\cCU_AltaGrupo.cs" />
+    <Compile Include="Seguridad\Grupo\cCU_BajaGrupo.cs" />
+    <Compile Include="Seguridad\Grupo\cCU_ModificarGrupo.cs" />
+    <Compile Include="Seguridad\Perfil\cCU_AltaPerfil.cs" />
+    <Compile Include="Seguridad\Perfil\cCU_ModificarPerfil.cs" />
+    <Compile Include="Seguridad\Usuario\cCU_AltaUsuario.cs" />
+    <Compile Include="Seguridad\Grupo\cCU_GestionarGrupos.cs" />
+    <Compile Include="Seguridad\Perfil\cCU_GestionarPerfiles.cs" />
+    <Compile Include="Seguridad\Usuario\cCU_GestionarUsuarios.cs" />
+    <Compile Include="Seguridad\Usuario\cCU_Login.cs" />
+    <Compile Include="Seguridad\Usuario\cCU_ModificarUsuario.cs" />
+    <Compile Include="Seguridad\Perfil\cCU_RecuperarPerfilPorFormulario.cs" />
+    <Compile Include="Seguridad\Usuario\cCU_ResetearClave.cs" />
     <Compile Include="Tramite\cCU_AltaTramite.cs" />
     <Compile Include="Tramite\cCU_GestionarTramites.cs" />
     <Compile Include="Tramite\cCU_ModificarTramite.cs" />
@@ -67,10 +72,9 @@
     <Compile Include="Persona\cPersona.cs" />
     <Compile Include="Persona\cProvincia.cs" />
     <Compile Include="Persona\cTipo_Documento.cs" />
-    <Compile Include="Seguridad\cFormulario.cs" />
-    <Compile Include="Seguridad\cGrupo.cs" />
-    <Compile Include="Seguridad\cModulo.cs" />
-    <Compile Include="Seguridad\cPermiso.cs" />
+    <Compile Include="Seguridad\Config Controllers\cFormulario.cs" />
+    <Compile Include="Seguridad\Config Controllers\cModulo.cs" />
+    <Compile Include="Seguridad\Config Controllers\cPermiso.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

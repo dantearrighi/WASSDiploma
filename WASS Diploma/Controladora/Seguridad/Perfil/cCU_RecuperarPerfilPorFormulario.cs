@@ -27,7 +27,7 @@ namespace Controladora.Seguridad
         // Coloco al constructor como privado.
         private cCU_RecuperarPerfilPorFormulario()
         {
-        ListaPermisosFormulario = new List<Modelo_Entidades.Perfil>();
+            ListaPermisosFormulario = new List<Modelo_Entidades.Perfil>();
         }
 
         

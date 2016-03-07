@@ -13,11 +13,10 @@ namespace WASSTD
     {
         // Declaron las variables que voy a utilizar en el formulario
         string modo;
-        Controladora.cGrupo cGrupo;
-        
         Controladora.cFormulario cFormulario;
         Controladora.Seguridad.cCU_GestionarUsuarios cCU_GestionarUsuarios;
         Controladora.Seguridad.cCU_GestionarPerfiles cCU_GestionarPerfiles;
+        Controladora.Seguridad.cCU_GestionarGrupos cCU_GestionarGrupos;
         Controladora.cPermiso cPermiso;
         Modelo_Entidades.Grupo oGrupo;
         Modelo_Entidades.Formulario oFormulario;
@@ -27,11 +26,12 @@ namespace WASSTD
         public FrmGrupo(string fModo, Modelo_Entidades.Grupo miGrupo)
         {
             InitializeComponent();
-            cGrupo = Controladora.cGrupo.ObtenerInstancia();
+            
        
             cFormulario = Controladora.cFormulario.ObtenerInstancia();
             cCU_GestionarUsuarios = Controladora.Seguridad.cCU_GestionarUsuarios.ObtenerInstancia();
             cCU_GestionarPerfiles = Controladora.Seguridad.cCU_GestionarPerfiles.ObtenerInstancia();
+            cCU_GestionarGrupos = Controladora.Seguridad.cCU_GestionarGrupos.ObtenerInstancia();
             cPermiso = Controladora.cPermiso.ObtenerInstancia();
 
             modo = fModo;
@@ -60,9 +60,14 @@ namespace WASSTD
         // Al cargar el formulario
         private void FrmGrupo_Load(object sender, EventArgs e)
         {
-            cmb_formularios.DataSource = cFormulario.ObtenerFormularios();         
+            Arma_Formulario();
+        }
+
+        private void Arma_Formulario()
+        {
+            cmb_formularios.DataSource = cFormulario.ObtenerFormularios();
             cmb_formularios.DisplayMember = "nombredemuestra";
-            
+
 
             oFormulario = (Modelo_Entidades.Formulario)cmb_formularios.SelectedItem;
 
@@ -114,6 +119,11 @@ namespace WASSTD
         // Al hacer click en guardar
         private void btn_guardar_Click(object sender, EventArgs e)
         {
+            AltaGrupo();
+        }
+
+        private void AltaGrupo()
+        {
             if (ValidarObligatorios() == true)
             {
                 try
@@ -122,12 +132,12 @@ namespace WASSTD
 
                     if (modo == "Alta")
                     {
-                        cGrupo.AgregarGrupo(oGrupo);
+                        cCU_GestionarGrupos.AltaGrupo(oGrupo);
                     }
 
                     else
                     {
-                        cGrupo.ModificarGrupo(oGrupo);
+                        cCU_GestionarGrupos.ModificarGrupo(oGrupo);
                     }
 
                     this.DialogResult = DialogResult.OK;
@@ -135,7 +145,7 @@ namespace WASSTD
 
                 catch (Exception Exc)
                 {
-                    MessageBox.Show(Exc.InnerException.Message.ToString());
+                    MessageBox.Show(Exc.Message.ToString(),"Gestionar Grupos",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
 
@@ -181,18 +191,9 @@ namespace WASSTD
         // Valido los datos del grupo
         private bool ValidarObligatorios()
         {
-            if (cGrupo.ValidarGrupo(txt_descripcion.Text) == false)
-            {
-                if (oGrupo.descripcion != txt_descripcion.Text)
-                {
-                    MessageBox.Show("Debe ingresar una descipción para el grupo ya que existe otro grupo con el mismo nombre");
-                    return false;
-                }
-            }
-
             if (string.IsNullOrEmpty(txt_descripcion.Text))
             {
-                MessageBox.Show("Debe ingresar una descipción para el grupo ya sea o por que no la ha ingresado o por que ya existe otro grupo con el nombre ingresado");
+                MessageBox.Show("Debe ingresar una descipción para el grupo","Alta grupo",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return false;
             }
 

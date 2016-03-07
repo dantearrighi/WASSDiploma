@@ -13,10 +13,11 @@ namespace WASSTD
     {
         // Declaro las variables que voy a utilizar en el formulario
         private static FrmGrupos instancia;
-        Controladora.cGrupo cGrupo;
+      
         FrmGrupo FormGrupo;
         BindingSource BsGrupos;
         Controladora.Seguridad.cCU_GestionarGrupos cCU_GestionarGrupos;
+        Modelo_Entidades.Usuario miUsuario;
 
 
         // Declaro al formulario como público y le asigno el método "Obtener Instancia" para poder llamarlo desde el formulario principal
@@ -39,9 +40,10 @@ namespace WASSTD
         private FrmGrupos(Modelo_Entidades.Usuario oUsuario)
         {
             InitializeComponent();
-            cGrupo = Controladora.cGrupo.ObtenerInstancia();
+            miUsuario = oUsuario;
             cCU_GestionarGrupos = Controladora.Seguridad.cCU_GestionarGrupos.ObtenerInstancia();
-            botonera1.ArmaPerfil(oUsuario, "FrmGrupos");
+
+            botonera1.ArmaBotonera(cCU_GestionarGrupos.ObtenerPermisos(oUsuario, "FrmGrupos"));
         }
 
         // Cuando carga el formulario
@@ -95,13 +97,8 @@ namespace WASSTD
                 if (Rta == DialogResult.Yes)
                 {
                     Modelo_Entidades.Grupo oGrup = (Modelo_Entidades.Grupo)dgv_datos.CurrentRow.DataBoundItem;
-                    if (cGrupo.ValidarMiembrosGrupo(oGrup) == false)
-                    {
-                        MessageBox.Show("Para eliminar el grupo, primero debe desasociar a todos sus miembros y eliminar todos sus perfiles");
-                        return;
-                    }
-                    cGrupo.EliminarGrupo(oGrup);
-                    MessageBox.Show("El Grupo fue eliminado");
+                    cCU_GestionarGrupos.EliminarGrupo(oGrup);
+                    MessageBox.Show("El Grupo fue eliminado","Gestionar Grupos",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     Arma_Lista();
                 }
 
@@ -112,7 +109,7 @@ namespace WASSTD
             }
             catch (Exception Exc)
             {
-                MessageBox.Show(Exc.InnerException.ToString());
+                MessageBox.Show(Exc.Message.ToString(), "Gestionar Grupos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -153,7 +150,7 @@ namespace WASSTD
         // Al hacer click en el botón filtrar
         private void btn_filtrar_Click(object sender, EventArgs e)
         {
-            BsGrupos.DataSource = cGrupo.FiltrarGrupos(txt_grupo.Text);
+            BsGrupos.DataSource = cCU_GestionarGrupos.FiltrarGrupos(txt_grupo.Text);
             dgv_datos.DataSource = BsGrupos;
             dgv_datos.Columns[0].HeaderText = "Identificador";
             dgv_datos.Columns[1].HeaderText = "Descripción del Grupo";

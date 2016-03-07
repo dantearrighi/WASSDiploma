@@ -89,9 +89,15 @@ namespace WASSTD
         // Al hacer click en "Eliminar"
         private void botonera1_Click_Baja(object sender, EventArgs e)
         {
+            BajaUsuario();
+        }
+
+        //Baja Usuario
+        private void BajaUsuario()
+        {
             if (dgv_datos.CurrentRow == null)
             {
-                MessageBox.Show("Debe seleccionar un usuario para eliminar.");
+                MessageBox.Show("Debe seleccionar un usuario para deshabilitarlo.");
                 return;
             }
 
@@ -124,7 +130,7 @@ namespace WASSTD
 
             catch (Exception Exc)
             {
-                MessageBox.Show(Exc.InnerException.ToString());
+                MessageBox.Show(Exc.Message.ToString(),"Gestionar Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

@@ -16,7 +16,7 @@ namespace WASSTD
         private static FrmPerfiles instancia;
         Controladora.Seguridad.cCU_GestionarPerfiles cCU_GestionarPerfiles;
         Controladora.Seguridad.cCU_GestionarGrupos cCU_GestionarGrupos;
-        Controladora.cGrupo cGrupo;
+       
         Controladora.cPermiso cPermiso;
         Controladora.cFormulario cFormulario;
         FrmPerfil FormPerfil;
@@ -46,7 +46,7 @@ namespace WASSTD
             miUsuario = oUsuario;
             cCU_GestionarPerfiles = Controladora.Seguridad.cCU_GestionarPerfiles.ObtenerInstancia();
             cCU_GestionarGrupos = Controladora.Seguridad.cCU_GestionarGrupos.ObtenerInstancia();
-            cGrupo = Controladora.cGrupo.ObtenerInstancia();
+            
             cPermiso = Controladora.cPermiso.ObtenerInstancia();
             cFormulario = Controladora.cFormulario.ObtenerInstancia();
             botonera1.ArmaPerfil(oUsuario, "FrmPerfiles");
@@ -129,7 +129,7 @@ namespace WASSTD
             }
             catch (Exception Exc)
             {
-                MessageBox.Show(Exc.InnerException.ToString());
+                MessageBox.Show(Exc.Message.ToString(), "Gestionar Perfiles", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

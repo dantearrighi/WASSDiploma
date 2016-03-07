@@ -13,7 +13,7 @@ namespace WASSTD
     {
         // Declaron las variables que voy a utilizar en el formulario
         string modo;
-        Controladora.cGrupo cGrupo;
+  
         
         Controladora.cFormulario cFormulario;
         Controladora.cPermiso cPermiso;
@@ -25,7 +25,7 @@ namespace WASSTD
         public FrmPerfil(string fModo, Modelo_Entidades.Perfil miPerfil)
         {
             InitializeComponent();
-            cGrupo = Controladora.cGrupo.ObtenerInstancia();
+          
            
             cPermiso = Controladora.cPermiso.ObtenerInstancia();
             cFormulario = Controladora.cFormulario.ObtenerInstancia();
@@ -69,14 +69,13 @@ namespace WASSTD
         {
             if (ValidarObligatorios() == true)
             {
-                oPerfil.Grupo = (Modelo_Entidades.Grupo)cmb_grupos.SelectedItem;
-                oPerfil.Formulario = (Modelo_Entidades.Formulario)cmb_formularios.SelectedItem;
-                oPerfil.Permiso = (Modelo_Entidades.Permiso)cmb_permisos.SelectedItem;
+                
 
                 try
                 {
                     if (modo == "Alta")
                     {
+                        oPerfil = new Modelo_Entidades.Perfil();
                         oPerfil.Grupo = (Modelo_Entidades.Grupo)cmb_grupos.SelectedItem;
                         oPerfil.Formulario = (Modelo_Entidades.Formulario)cmb_formularios.SelectedItem;
                         oPerfil.Permiso = (Modelo_Entidades.Permiso)cmb_permisos.SelectedItem;
@@ -85,7 +84,12 @@ namespace WASSTD
 
                     else
                     {
-                        cCU_GestionarPerfiles.ModificarPerfil(oPerfil);
+                        Modelo_Entidades.Perfil oPerfilModificado = new Modelo_Entidades.Perfil();
+                        oPerfilModificado.Grupo = (Modelo_Entidades.Grupo)cmb_grupos.SelectedItem;
+                        oPerfilModificado.Formulario = (Modelo_Entidades.Formulario)cmb_formularios.SelectedItem;
+                        oPerfilModificado.Permiso = (Modelo_Entidades.Permiso)cmb_permisos.SelectedItem;
+
+                        cCU_GestionarPerfiles.ModificarPerfil(oPerfil,oPerfilModificado);
                     }
 
                     this.DialogResult = DialogResult.OK;
@@ -93,7 +97,7 @@ namespace WASSTD
 
                 catch (Exception Exc)
                 {
-                    MessageBox.Show(Exc.InnerException.Message.ToString());
+                    MessageBox.Show(Exc.Message.ToString(), "Gestionar Perfiles", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
 
@@ -124,11 +128,12 @@ namespace WASSTD
                 return false;
             }
 
-            if (cCU_GestionarPerfiles.ValidarPerfil((Modelo_Entidades.Grupo)cmb_grupos.SelectedItem, (Modelo_Entidades.Formulario)cmb_formularios.SelectedItem, (Modelo_Entidades.Permiso)cmb_permisos.SelectedItem) == false)
+            //Esta validacion corresponde al CU Alta Perfil y al CU Modificar Perfil. Se deja implementado en CU Gestionar Perfiles antes de Alta y de Modificacion
+           /*   if (cCU_GestionarPerfiles.ValidarPerfil((Modelo_Entidades.Grupo)cmb_grupos.SelectedItem, (Modelo_Entidades.Formulario)cmb_formularios.SelectedItem, (Modelo_Entidades.Permiso)cmb_permisos.SelectedItem) == false)
             {
-                MessageBox.Show("El perfil ya existe, ingrese otros parámetros");
+                MessageBox.Show("El perfil ya existe, ingrese otros parámetros","Gestionar perfiles", MessageBoxButtons.OK,MessageBoxIcon.Warning); 
                 return false;
-            }
+            }*/
 
             return true;
         }
