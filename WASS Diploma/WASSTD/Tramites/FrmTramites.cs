@@ -16,7 +16,7 @@ namespace WASSTD.Tramites
        
        
         Controladora.cDetalles_Tramite cDetalles_Tramite;
-        Controladora.cPersona cPersonas;
+        Controladora.cCU_GestionarPersonas cCU_GestionarPersonas;
         Controladora.cCU_GestionarTramites cCU_GestionarTramites;
 
 
@@ -45,10 +45,11 @@ namespace WASSTD.Tramites
         {
             InitializeComponent();
         
-            cPersonas = Controladora.cPersona.ObtenerInstancia();
+           
            
             cDetalles_Tramite = Controladora.cDetalles_Tramite.ObtenerInstancia();
             cCU_GestionarTramites = Controladora.cCU_GestionarTramites.ObtenerInstancia();
+            cCU_GestionarPersonas = Controladora.cCU_GestionarPersonas.ObtenerInstancia();
             miUsuario = oUsuario;
 
             //CU Gestionar Tramites: Paso 1
@@ -73,7 +74,7 @@ namespace WASSTD.Tramites
             BsTramites.DataSource = dgv_datos;
             List<Modelo_Entidades.Tramite> Tramites = cCU_GestionarTramites.ObtenerTramites();
             List<Modelo_Entidades.Detalles_Tramite> Detalles_Tramites = cDetalles_Tramite.Obtener_Detalles_Tramites();
-            List<Modelo_Entidades.Persona> Personas = cPersonas.ObtenerPersonas();
+            List<Modelo_Entidades.Persona> Personas = cCU_GestionarPersonas.ObtenerPersonas();
             
            
             // CREO Q ESTO NO LO NECESITO MAS PORQUE LO PUSE EN EL OBTENER TRAMITES
@@ -161,8 +162,18 @@ namespace WASSTD.Tramites
             dgv_datos.Columns[9].DisplayIndex = 1;
             dgv_datos.Columns[9].Width = 200;
             dgv_datos.Columns[9].Visible = false;
-            
-           
+
+
+            int h = 0;
+            foreach(DataGridViewRow fila in dgv_datos.Rows)
+            {
+                int poronga = fila.Cells[6].ColumnIndex;
+                if (poronga == 6)
+                {
+                    dgv_datos.Rows[j].Visible = false;
+                }
+                h++;
+            }
 
           
 
@@ -242,7 +253,7 @@ namespace WASSTD.Tramites
             }
             
             List<Modelo_Entidades.Detalles_Tramite> Detalles_Tramites = cDetalles_Tramite.Obtener_Detalles_Tramites();
-            List<Modelo_Entidades.Persona> Personas = cPersonas.ObtenerPersonas();
+            List<Modelo_Entidades.Persona> Personas = cCU_GestionarPersonas.ObtenerPersonas();
 
 
             // CREO Q ESTO NO LO NECESITO MAS PORQUE LO PUSE EN EL OBTENER TRAMITES
@@ -389,20 +400,26 @@ namespace WASSTD.Tramites
         }
 
         
-        // Al hacer click en "Agregar" (PASO 5.a Gestionar Tramites)
+        // Al hacer click en "Agregar" (PASO 5.a Gestionar Tramites (Invoca al CU_Alta Tramite)
         private void botonera1_Click_Alta(object sender, EventArgs e)
         {
-            
-                //PASO 1 y 2 de CU ALTA TRAMITE
-                FormTramite = new FrmTramite("Alta", new Modelo_Entidades.Tramite(), miUsuario);
-                DialogResult dr = FormTramite.ShowDialog();
-                if (dr == DialogResult.OK)
-                {
-                    Arma_Lista();
-                }
+
+            AltaTramite();
             
           
 
+        }
+        
+        // ALTA TRAMITE
+        private void AltaTramite()
+        {
+            //PASO 1 y 2 de CU ALTA TRAMITE
+            FormTramite = new FrmTramite("Alta", new Modelo_Entidades.Tramite(), miUsuario);
+            DialogResult dr = FormTramite.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                Arma_Lista();
+            }
         }
 
         // Al hacer click en "Modificar"
@@ -411,7 +428,7 @@ namespace WASSTD.Tramites
             ModificarTramite();
         }
         
-        // METODO MODIFICAR TRAMITE
+        // MODIFICAR TRAMITE
         private void ModificarTramite()
         {
             if (dgv_datos.CurrentRow == null)
@@ -442,6 +459,12 @@ namespace WASSTD.Tramites
         // Al hacer click en "Eliminar"
         private void botonera1_Click_Baja(object sender, EventArgs e)
         {
+            BajaTramite();
+        }
+
+        // BAJA TRAMITE
+        private void BajaTramite()
+        {
             if (dgv_datos.CurrentRow == null)
             {
                 MessageBox.Show("Debe seleccionar un trámite para eliminar.");
@@ -450,21 +473,15 @@ namespace WASSTD.Tramites
 
             try
             {
-                DialogResult Rta1 = MessageBox.Show("El trámite posee muchos detalles. Se considera que no fue dado de alta por error. No es posible eliminarlo.", "Baja", MessageBoxButtons.OK);
+               
                 DialogResult Rta = MessageBox.Show("¿Confirma la eliminación del trámite seleccionado?", "Baja", MessageBoxButtons.YesNo);
                 if (Rta == DialogResult.Yes)
                 {
 
-                    /////////////////////////////////////////////////////////////////////////////////////////////////////CODIFICAR ACA LA BAJA DEL Trámite
-                    /*Modelo_Entidades.Grupo oGrup = (Modelo_Entidades.Grupo)dgv_datos.CurrentRow.DataBoundItem;
-                    if (cGrupo.ValidarMiembrosGrupo(oGrup) == false)
-                    {
-                        MessageBox.Show("Para eliminar el grupo, primero debe desasociar a todos sus miembros y eliminar todos sus perfiles");
-                        return;
-                    }
-                    cGrupo.EliminarGrupo(oGrup);
-                    MessageBox.Show("El Grupo fue eliminado");
-                    Arma_Lista(); */
+                    
+                   cCU_GestionarTramites.BajaTramite((Modelo_Entidades.Tramite)dgv_datos.CurrentRow.DataBoundItem);
+                   MessageBox.Show("El Trámite fue eliminado");
+                   Arma_Lista();
                 }
 
                 else

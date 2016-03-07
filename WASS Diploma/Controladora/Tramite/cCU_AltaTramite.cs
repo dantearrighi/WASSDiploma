@@ -11,6 +11,7 @@ namespace Controladora
         //Declaro variables
         Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
         private static cCU_AltaTramite instancia;
+        private cEstado cEstado;
 
         public static cCU_AltaTramite ObtenerInstancia()
         {
@@ -24,6 +25,7 @@ namespace Controladora
         private cCU_AltaTramite()
         {           
             oModelo_Entidades = Modelo_Entidades.WASSTDEntidades.ObtenerInstancia();
+            cEstado = Controladora.cEstado.ObtenerInstancia();
         }
 
 
@@ -77,9 +79,13 @@ namespace Controladora
         // CU ALTA TRAMITE: REGISTRARLO EN EL SISTEMA (PASO 5)
         public void AltaTramite(Modelo_Entidades.Tramite oTramite)
         {
-            
-            oModelo_Entidades.AddToTramites(oTramite);
-            oModelo_Entidades.SaveChanges();
+            oTramite.Estado = ObtenerEstadoTramiteACTIVO();
+            if(ValidarObligatorios(oTramite,"Alta"))
+            {
+                oModelo_Entidades.AddToTramites(oTramite);
+                oModelo_Entidades.SaveChanges();
+            }
+           
 
         }
 
@@ -105,5 +111,20 @@ namespace Controladora
             }
  
         }
+        
+      
+      // Obtener el estado "TRAMITE ACTIVO"
+        public Modelo_Entidades.Estado ObtenerEstadoTramiteACTIVO()
+        {
+            Modelo_Entidades.Estado oEstado = oModelo_Entidades.Estados.ToList().Find(delegate(Modelo_Entidades.Estado fEstado)
+            {
+                return fEstado.descripcion == "Activo";
+            });
+
+            return oEstado;
+        }
+
+
+
     }
 }

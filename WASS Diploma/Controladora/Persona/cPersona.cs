@@ -42,11 +42,6 @@ namespace Controladora
             oModelo_Entidades.SaveChanges();
         }
 
-        // Obtener los Personas
-        public List<Modelo_Entidades.Persona> ObtenerPersonas()
-        {
-            return oModelo_Entidades.Personas.ToList();
-        }
 
         // Voy filtrando a los Personas según el DNI introducido
         public List<Modelo_Entidades.Persona> FiltrarPorDNI(string dni)

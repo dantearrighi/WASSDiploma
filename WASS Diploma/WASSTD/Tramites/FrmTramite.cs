@@ -17,8 +17,8 @@ namespace WASSTD
 
         // Declaro las controladoras a utilizar en el formulario
      
-        Controladora.cGrupo cGrupo;
-        Controladora.cPersona cPersona;
+       
+        
         Controladora.cDetalles_Tramite cDetalles_Tramite;
         Controladora.cAuditoria cAuditoria;
         Controladora.cTipo_Tramite cTipo_Tramite;
@@ -42,15 +42,11 @@ namespace WASSTD
             InitializeComponent();
 
             // Inicializo a las controladoras
-            cPersona = Controladora.cPersona.ObtenerInstancia();
-            cGrupo = Controladora.cGrupo.ObtenerInstancia();
             cAuditoria = Controladora.cAuditoria.ObtenerInstancia();
-         
             cDetalles_Tramite = Controladora.cDetalles_Tramite.ObtenerInstancia();
             cTipo_Tramite = Controladora.cTipo_Tramite.ObtenerInstancia();
             cCU_GestionarTramites = Controladora.cCU_GestionarTramites.ObtenerInstancia();
             cEstado = Controladora.cEstado.ObtenerInstancia();
-
             modo = fModo;
             oTramite = miTramite;
             miUsuario = oUsuario;
@@ -60,14 +56,22 @@ namespace WASSTD
         // Al Cargar el formulario                                             FALTA CONFIGURAR UN POCO MAS ESTE COMPORTAMIENTO, que hace si es alta, si es modificación o lo que sea
         private void FrmTramite_Load(object sender, EventArgs e)
         {
+            ArmarFormulario();
+    
+        }
+
+
+        // Configuro que controles se muestran y que controles no, y sus valores
+        private void ArmarFormulario()
+        {
             if (modo != "Alta")
             {
                 // Inhabilito controles
                 btn_seleccionarPersona.Visible = false;
                 lbl_DebeSeleccionar.Visible = false;
-                
-                
-                ArmaFormulario(oTramite);
+
+
+                CargarDatosTramite(oTramite);
                 // MODO CONSULTA
                 if (modo == "Consulta")
                 {
@@ -81,7 +85,7 @@ namespace WASSTD
                     btn_NotificarCliente.Enabled = false;
                     btn_RecordatorioVanina.Enabled = false;
                     btn_VerCalculosAnteriores.Enabled = false;
-                    
+
                 }
             }
             else
@@ -132,12 +136,11 @@ namespace WASSTD
                     lbl_Activo.Visible = false;
                 }
             }
-    
         }
 
 
-        // Armo el formulario (si no es una alta)
-        private void ArmaFormulario(Modelo_Entidades.Tramite oTramite)
+        // Cargar datos tramite en el formulario (si no es un alta)
+        private void CargarDatosTramite(Modelo_Entidades.Tramite oTramite)
         {
             // Sección de datos de la Persona y el Tramite
             lbl_ClaveFiscal.Text = oTramite.Persona.clave_fiscal.ToString();
@@ -146,9 +149,13 @@ namespace WASSTD
             lbl_NumeroDoc.Text = oTramite.Persona.dni.ToString();
             lbl_TipoPersona.Text = oTramite.Persona.Tipo_Persona.descripcion;
             lbl_TipoDocumento.Text = oTramite.Persona.Tipo_Documento.descripcion;
-            lbl_DebeSeleccionar.Visible = true;
+            txt_fecha_Alta.Text = oTramite.Detalles_Tramite.FirstOrDefault().fecha_desde.ToString();
+            txt_Ultimo_Movimiento.Text = oTramite.Detalles_Tramite.LastOrDefault().fecha_desde.ToString();
             cmb_tipos_tramites.SelectedText = oTramite.Tipo_Tramite.descripcion;
             txt_Fecha_Del_Detalle.ReadOnly = false;
+            txt_nro_tramite.Text = oTramite.Id.ToString();
+            lbl_DebeSeleccionar.Visible = false;
+            txt_Descripcion.Text = "INGRESAR AQUI LOS DATOS DEL ULTIMO MOVIMIENTO";
             txt_Descripcion.ReadOnly = false;
             
             // Calcular edad
@@ -181,81 +188,89 @@ namespace WASSTD
         //CLICK en Añadir detalle
         private void btn_AñadirDetalle_Click(object sender, EventArgs e)
         {
-           Modelo_Entidades.Detalles_Tramite oDetalles_Tramite = new Detalles_Tramite();
-            oDetalles_Tramite.descripcion = txt_Descripcion.Text;
+            AñadirDetalle();
+        }
 
-            //    Utilio la clase AGE y el metodo Calcular Edad para convertir el texto de la fecha del detalle en DateTime
-            //    Controladora.Persona.Age ObtenerFechaDetalle = Controladora.Persona.Age.CalcularEdad(txt_Fecha_Del_Detalle.Text);
-            //    DateTime fechaDetalle = new DateTime(ObtenerFechaDetalle.Years, ObtenerFechaDetalle.Months, ObtenerFechaDetalle.Days);
-
-            if (txt_Fecha_Del_Detalle.Text != "  /  /")
+        private void AñadirDetalle()
+        {
+            if (!(txt_Descripcion.Text == "Alta") || !(txt_Descripcion.Text == ""))
             {
-                oDetalles_Tramite.fecha_desde = Convert.ToDateTime(txt_Fecha_Del_Detalle.Text);
-            
-            }else
-            { 
-                //se podria preguntar si se le pone fecha de hoy o si ingresa otra.... aca va la del dia
-                oDetalles_Tramite.fecha_desde = DateTime.Now;
-            }
-            oTramite.Detalles_Tramite.Add(oDetalles_Tramite);
-            this.dgv_datos_detalles.DataSource = oTramite.Detalles_Tramite;
+                Modelo_Entidades.Detalles_Tramite oDetalles_Tramite = new Detalles_Tramite();
+                oDetalles_Tramite.descripcion = txt_Descripcion.Text;
 
+                //    Utilio la clase AGE y el metodo Calcular Edad para convertir el texto de la fecha del detalle en DateTime
+                //    Controladora.Persona.Age ObtenerFechaDetalle = Controladora.Persona.Age.CalcularEdad(txt_Fecha_Del_Detalle.Text);
+                //    DateTime fechaDetalle = new DateTime(ObtenerFechaDetalle.Years, ObtenerFechaDetalle.Months, ObtenerFechaDetalle.Days);
 
-
-
-            /*
-            if (ValidarObligatorios() == true)
-            {
-                try
+                if (txt_Fecha_Del_Detalle.Text != "  /  /")
                 {
-                    oTramite.
+                    oDetalles_Tramite.fecha_desde = Convert.ToDateTime(txt_Fecha_Del_Detalle.Text);
+
+                }
+                else
+                {
+                    //se podria preguntar si se le pone fecha de hoy o si ingresa otra.... aca va la del dia
+                    oDetalles_Tramite.fecha_desde = DateTime.Now;
+                }
+                oTramite.Detalles_Tramite.Add(oDetalles_Tramite);
+                this.dgv_datos_detalles.DataSource = oTramite.Detalles_Tramite;
+
+
+
+
+                /*
+                if (ValidarObligatorios() == true)
+                {
+                    try
+                    {
+                        oTramite.
                    
 
-                    oPersona.Tipo_Documento = (Modelo_Entidades.Tipo_Documento)cmb_tiposdoc.SelectedItem;
-                    oPersona.dni = Convert.ToInt32(txt_numero.Text);
-                    oPersona.nombre_apellido = txt_nombreapellido.Text;
-                    oPersona.observaciones = txt_observaciones.Text;
-                    oPersona.Tipo_Persona = (Modelo_Entidades.Tipo_Persona)cmb_TipoPersona.SelectedItem;
-                    oPersona.fecha_nacimiento = Convert.ToDateTime(txt_fechanacimiento.Text);
+                        oPersona.Tipo_Documento = (Modelo_Entidades.Tipo_Documento)cmb_tiposdoc.SelectedItem;
+                        oPersona.dni = Convert.ToInt32(txt_numero.Text);
+                        oPersona.nombre_apellido = txt_nombreapellido.Text;
+                        oPersona.observaciones = txt_observaciones.Text;
+                        oPersona.Tipo_Persona = (Modelo_Entidades.Tipo_Persona)cmb_TipoPersona.SelectedItem;
+                        oPersona.fecha_nacimiento = Convert.ToDateTime(txt_fechanacimiento.Text);
 
-                    if (rbtn_masculino.Checked == true)
-                    {
-                        oPersona.sexo = "Masculino";
-                    }
+                        if (rbtn_masculino.Checked == true)
+                        {
+                            oPersona.sexo = "Masculino";
+                        }
 
-                    else
-                    {
-                        oPersona.sexo = "Femenino";
-                    }
+                        else
+                        {
+                            oPersona.sexo = "Femenino";
+                        }
 
-                    if (modo == "Alta")
-                    {
-                        oDireccion = new Modelo_Entidades.Direccion();
-                        oDireccion.direccion = txt_direccion.Text;
-                        oDireccion.Localidad = (Modelo_Entidades.Localidad)cmb_localidades.SelectedItem;
-                        oPersona.Direcciones.Add(oDireccion);
+                        if (modo == "Alta")
+                        {
+                            oDireccion = new Modelo_Entidades.Direccion();
+                            oDireccion.direccion = txt_direccion.Text;
+                            oDireccion.Localidad = (Modelo_Entidades.Localidad)cmb_localidades.SelectedItem;
+                            oPersona.Direcciones.Add(oDireccion);
 
-                        oDireccionE = new Modelo_Entidades.Direccion();
-                        oDireccionE.direccion = txt_direccion.Text;
-                        oDireccionE.Localidad = (Modelo_Entidades.Localidad)cmb_localidades.SelectedItem;
-                        oPersona.Direcciones.Add(oDireccionE);
-                    }
+                            oDireccionE = new Modelo_Entidades.Direccion();
+                            oDireccionE.direccion = txt_direccion.Text;
+                            oDireccionE.Localidad = (Modelo_Entidades.Localidad)cmb_localidades.SelectedItem;
+                            oPersona.Direcciones.Add(oDireccionE);
+                        }
 
-                    else
-                    {
-                        oDireccion = oPersona.Direcciones.ElementAt(0);
-                        oDireccion.Localidad = (Modelo_Entidades.Localidad)cmb_localidades.SelectedItem;
-                        oDireccion.direccion = txt_direccion.Text;
-                        oPersona.Direcciones.ElementAt(0).Equals(oDireccion);
+                        else
+                        {
+                            oDireccion = oPersona.Direcciones.ElementAt(0);
+                            oDireccion.Localidad = (Modelo_Entidades.Localidad)cmb_localidades.SelectedItem;
+                            oDireccion.direccion = txt_direccion.Text;
+                            oPersona.Direcciones.ElementAt(0).Equals(oDireccion);
 
 
-                    }
+                        }
 
-                    oPersona.telefono = txt_telfijo.Text;
-                    oPersona.celular = txt_celular.Text;
-                    oPersona.email1 = txt_emailpricipal.Text;
-                    oPersona.Estado = cEstado.ObtenerEstadoHabilitado();
-                    oPersona.clave_fiscal = txt_ClaveFiscal.Text;
+                        oPersona.telefono = txt_telfijo.Text;
+                        oPersona.celular = txt_celular.Text;
+                        oPersona.email1 = txt_emailpricipal.Text;
+                        oPersona.Estado = cEstado.ObtenerEstadoHabilitado();
+                        oPersona.clave_fiscal = txt_ClaveFiscal.Text;
 
                 
 
@@ -265,31 +280,36 @@ namespace WASSTD
 
 
 
-                    if (modo == "Alta")
-                    {
-                        cPersona.Alta(oPersona);
+                        if (modo == "Alta")
+                        {
+                            cPersona.Alta(oPersona);
 
 
 
-                        MessageBox.Show("La persona se ha registrado correctamente");
+                            MessageBox.Show("La persona se ha registrado correctamente");
+                        }
+
+                        else
+                        {
+                            cPersona.Modificacion(oPersona);
+                            MessageBox.Show("La persona se ha modificado correctamente");
+                        }
+
+                        this.DialogResult = DialogResult.OK;
+
                     }
 
-                    else
+                    catch (Exception Exc)
                     {
-                        cPersona.Modificacion(oPersona);
-                        MessageBox.Show("La persona se ha modificado correctamente");
+                        MessageBox.Show(Exc.Message.ToString());
                     }
-
-                    this.DialogResult = DialogResult.OK;
-
                 }
-
-                catch (Exception Exc)
-                {
-                    MessageBox.Show(Exc.Message.ToString());
-                }
+                */
             }
-            */
+            else
+            {
+                MessageBox.Show("Ha ingresado 'ALTA' en la descripción del movimiento. El trámite ya fue dado de alta el " + oTramite.Detalles_Tramite.FirstOrDefault().ToString() + ". No es posible añadir esta descripción. Modifique los datos antes de añadir el detalle.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -300,6 +320,12 @@ namespace WASSTD
 
         // CLICK Seleccionar Persona
         private void btn_seleccionarPersona_Click(object sender, EventArgs e)
+        {
+            SeleccionarPersona();
+
+        }
+
+        private void SeleccionarPersona()
         {
             formSeleccionarPersona = FrmSeleccionPersonas.ObtenerInstancia(miUsuario);
             if (DialogResult.OK == formSeleccionarPersona.ShowDialog())
@@ -313,19 +339,18 @@ namespace WASSTD
                 lbl_NumeroDoc.Text = oPersona.dni.ToString();
                 lbl_Sexo.Text = oPersona.sexo;
                 lbl_TipoPersona.Text = oPersona.Tipo_Persona.descripcion;
-                
+
                 //Calculo la edad
                 Controladora.Persona.Age edad = Controladora.Persona.Age.CalcularEdad(oPersona.fecha_nacimiento.ToShortDateString());
 
                 // Muestro la edad en el label
                 this.lbl_Edad.Text = edad.Years.ToString() + " años, " + edad.Months.ToString() + " meses," + edad.Days.ToString() + " días.";
 
-                
+
                 //OCULTO EL MENSAJE DEBE SELECCIONAR PERSONA
                 lbl_DebeSeleccionar.Visible = false;
-                
-            }
 
+            }
         }
 
 
@@ -337,7 +362,7 @@ namespace WASSTD
         }
         
         // GUARDAR TRAMITE (PASO 4 CU ALTA TRAMITE)
-        private void GuardarTramite()
+                private void GuardarTramite()
         {
             try
             {
@@ -392,14 +417,13 @@ namespace WASSTD
                 if (modo == "Alta")
                 {
                     //VALIDO OBLIGATORIOS (PASO 4 ALTA TRAMITE)
-                    if (cCU_GestionarTramites.cCU_AltaTramite.ValidarObligatorios(oTramite, modo))
-                    {
-                        oTramite.Estado = cEstado.ObtenerEstadoTramiteACTIVO();
+                    //if (cCU_GestionarTramites.cCU_AltaTramite.ValidarObligatorios(oTramite, modo))
+                   // {
                         //LO REGISTRO EN EL SISTEMA (PASO 5 ALTA TRAMITE)
                         cCU_GestionarTramites.cCU_AltaTramite.AltaTramite(oTramite);
 
                         this.DialogResult = System.Windows.Forms.DialogResult.OK;
-                    }
+                    //}
                 }
                 if (modo == "Modifica")
                 {

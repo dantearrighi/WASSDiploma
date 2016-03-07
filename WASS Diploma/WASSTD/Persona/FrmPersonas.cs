@@ -13,7 +13,7 @@ namespace WASSTD
     {
         // Declaro las variables que voy a utilizar en el formulario
         private static FrmPersonas instancia;
-        Controladora.cPersona cPersona;
+       
         FrmPersona FormPersona;
         
         Modelo_Entidades.Usuario miUsuario;
@@ -40,7 +40,7 @@ namespace WASSTD
         private FrmPersonas(Modelo_Entidades.Usuario oUsuario)
         {
             InitializeComponent();
-            cPersona = Controladora.cPersona.ObtenerInstancia();
+            
             cCU_GestionarPersonas = Controladora.cCU_GestionarPersonas.ObtenerInstancia();
             botonera1.ArmaPerfil(oUsuario, "FrmPersonas");
             miUsuario = oUsuario;

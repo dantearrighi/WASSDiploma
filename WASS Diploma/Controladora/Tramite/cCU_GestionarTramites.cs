@@ -14,6 +14,7 @@ namespace Controladora
         public Controladora.cCU_AltaTramite cCU_AltaTramite;
         public Controladora.cCU_ModificarTramite cCU_ModificarTramite;
         private Modelo_Entidades.WASSTDEntidades oModelo_Entidades;
+        private cEstado cEstado;
 
 
         //Aplico el patron de diseño Singleton para la clase cGrupo (cuando la solicitan desde otra)
@@ -32,6 +33,7 @@ namespace Controladora
             oModelo_Entidades = Modelo_Entidades.WASSTDEntidades.ObtenerInstancia();
             cCU_AltaTramite = Controladora.cCU_AltaTramite.ObtenerInstancia();
             cCU_ModificarTramite = Controladora.cCU_ModificarTramite.ObtenerInstancia();
+            cEstado = cEstado.ObtenerInstancia();
         }
 
         //Obtener permisos de un usuario sobre un formulario
@@ -42,6 +44,19 @@ namespace Controladora
         }
 
 
+
+       
+
+        // BAJA TRAMITE
+        public void BajaTramite(Modelo_Entidades.Tramite oTramite)
+        {
+            oTramite.Estado = cEstado.ObtenerEstadoBaja();
+            cCU_ModificarTramite.Modificacion(oTramite);
+        }
+        
+
+
+        
 
         #region OBTENER TRAMITES
 
@@ -108,13 +123,15 @@ namespace Controladora
                            select oTramite;
             return (List<Modelo_Entidades.Tramite>)Consulta.ToList();
         }
-        #endregion
 
         // Obtener los tipos de tramites
         public List<Modelo_Entidades.Tipo_Tramite> ObtenerTipos_Tramites()
         {
             return oModelo_Entidades.Tipos_Tramites.ToList();
         }
+        #endregion
+
+        
 
     }
 }
