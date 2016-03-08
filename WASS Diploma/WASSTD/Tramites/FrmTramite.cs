@@ -29,7 +29,7 @@ namespace WASSTD
         Modelo_Entidades.Persona oPersona;
         Modelo_Entidades.Tramite oTramite;
         Modelo_Entidades.Usuario miUsuario;
-        Modelo_Entidades.Detalles_Tramite oDetalles_Tramite;
+       // Modelo_Entidades.Detalles_Tramite oDetalles_Tramite;
         
 
         FrmSeleccionPersonas formSeleccionarPersona;
@@ -115,6 +115,7 @@ namespace WASSTD
                 btn_VerCalculosAnteriores.Enabled = false;
                 lbl_Finalizado.Visible = false;
                 lbl_Activo.Visible = false;
+                lbl_DE_BAJA.Visible = false;
             }
 
             //Mostrar estado                               
@@ -337,6 +338,8 @@ namespace WASSTD
 
         private void SeleccionarPersona()
         {
+
+            // Invocar CU Gestionar Personas
             formSeleccionarPersona = FrmSeleccionPersonas.ObtenerInstancia(miUsuario);
             if (DialogResult.OK == formSeleccionarPersona.ShowDialog())
             {

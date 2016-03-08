@@ -192,7 +192,7 @@ namespace WASSTD
 
                 catch (Exception Exc)
                 {
-                    MessageBox.Show(Exc.Message.ToString());
+                    MessageBox.Show(Exc.Message.ToString(),"Gestionar Personas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
