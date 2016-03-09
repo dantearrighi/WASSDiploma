@@ -34,6 +34,7 @@
             this.lb_dni = new System.Windows.Forms.Label();
             this.lb_nya_Persona = new System.Windows.Forms.Label();
             this.botonera1 = new WASSTD.Botonera1();
+            this.btnSeleccionarPersona = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_datos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,11 +106,24 @@
             this.botonera1.Click_Consulta += new WASSTD.Eventos_Botonera(this.botonera1_Click_Consulta);
             this.botonera1.Click_Cerrar += new WASSTD.Eventos_Botonera(this.botonera1_Click_Cerrar);
             // 
+            // btnSeleccionarPersona
+            // 
+            this.btnSeleccionarPersona.Image = global::WASSTD.Properties.Resources.checkmark_icon_16;
+            this.btnSeleccionarPersona.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSeleccionarPersona.Location = new System.Drawing.Point(713, 17);
+            this.btnSeleccionarPersona.Name = "btnSeleccionarPersona";
+            this.btnSeleccionarPersona.Size = new System.Drawing.Size(144, 42);
+            this.btnSeleccionarPersona.TabIndex = 10;
+            this.btnSeleccionarPersona.Text = "Seleccionar";
+            this.btnSeleccionarPersona.UseVisualStyleBackColor = true;
+            this.btnSeleccionarPersona.Click += new System.EventHandler(this.btnSeleccionarPersona_Click);
+            // 
             // FrmPersonas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(869, 462);
+            this.Controls.Add(this.btnSeleccionarPersona);
             this.Controls.Add(this.txt_dni);
             this.Controls.Add(this.botonera1);
             this.Controls.Add(this.dgv_datos);
@@ -136,5 +150,6 @@
         private System.Windows.Forms.DataGridView dgv_datos;
         private Botonera1 botonera1;
         private System.Windows.Forms.MaskedTextBox txt_dni;
+        private System.Windows.Forms.Button btnSeleccionarPersona;
     }
 }

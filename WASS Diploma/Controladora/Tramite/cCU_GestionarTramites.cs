@@ -43,10 +43,6 @@ namespace Controladora
             return cCU_RecuperarPerfilPorFormulario.ObtenerPermisosPorFormulario(oUsuario, nombreForm);
         }
 
-
-
-       
-
         // BAJA TRAMITE
         public void BajaTramite(Modelo_Entidades.Tramite oTramite)
         {
@@ -55,7 +51,11 @@ namespace Controladora
         }
         
 
-
+        // Obtener ultimo numero de tramite
+        public int ObtenerUltimoNroTramite()
+        {
+            return oModelo_Entidades.Tramites.Max(t => t.Id);
+        }
         
 
         #region OBTENER TRAMITES

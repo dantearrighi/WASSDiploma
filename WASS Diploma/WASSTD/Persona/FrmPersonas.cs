@@ -13,7 +13,8 @@ namespace WASSTD
     {
         // Declaro las variables que voy a utilizar en el formulario
         private static FrmPersonas instancia;
-       
+        public Modelo_Entidades.Persona oPersonaSeleccionada;
+      
         FrmPersona FormPersona;
         
         Modelo_Entidades.Usuario miUsuario;
@@ -50,6 +51,7 @@ namespace WASSTD
         private void FrmPersonas_Load(object sender, EventArgs e)
         {            
             Arma_Lista();
+          
         }
 
         #region ==== ARMAR LISTA ====
@@ -207,6 +209,33 @@ namespace WASSTD
             dgv_datos.Columns[14].Visible = false; // Tipo Persona
         }
 
+
+        #region Seleccionar Persona
+
+        private void btnSeleccionarPersona_Click(object sender, EventArgs e)
+        {
+            if (dgv_datos.CurrentRow.DataBoundItem == null)
+            {
+                MessageBox.Show("Debe seleccionar una Persona");
+            }
+
+            // Le mando el ok al otro formulario mediante el dialogresult
+            try
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+            catch (Exception Exc)
+            {
+                MessageBox.Show(Exc.Message, "Selección correcta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
+        // Necesito devolver la persona que seleccione
+        public Modelo_Entidades.Persona PersonaElegida
+        {
+            get { return (Modelo_Entidades.Persona)dgv_datos.CurrentRow.DataBoundItem; }
+        }
+
+        #endregion
 
     }
 }

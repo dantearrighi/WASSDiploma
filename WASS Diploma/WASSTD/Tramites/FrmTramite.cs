@@ -32,7 +32,7 @@ namespace WASSTD
        // Modelo_Entidades.Detalles_Tramite oDetalles_Tramite;
         
 
-        FrmSeleccionPersonas formSeleccionarPersona;
+        FrmPersonas formSeleccionarPersona;
 
 
         // Declaro como publico al constructor
@@ -99,6 +99,7 @@ namespace WASSTD
                 cmb_tipos_tramites.Text = "SELECCIONAR";
                 cmb_tipos_tramites.SelectedItem = null;
                 txt_Fecha_Del_Detalle.Text = DateTime.Now.ToShortDateString();
+                txt_nro_tramite.Text = (cCU_GestionarTramites.ObtenerUltimoNroTramite()+1).ToString();
 
                 //OCULTO
                 txt_Ultimo_Movimiento.Text = DateTime.Today.ToString();
@@ -340,7 +341,7 @@ namespace WASSTD
         {
 
             // Invocar CU Gestionar Personas
-            formSeleccionarPersona = FrmSeleccionPersonas.ObtenerInstancia(miUsuario);
+            formSeleccionarPersona = FrmPersonas.ObtenerInstancia(miUsuario);
             if (DialogResult.OK == formSeleccionarPersona.ShowDialog())
             {
                 oPersona = formSeleccionarPersona.PersonaElegida;

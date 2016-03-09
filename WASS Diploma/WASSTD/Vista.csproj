@@ -202,12 +202,6 @@
     <Compile Include="Seguridad\FrmCambiarClave.Designer.cs">
       <DependentUpon>FrmCambiarClave.cs</DependentUpon>
     </Compile>
-    <Compile Include="Persona\FrmSeleccionPersonas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Persona\FrmSeleccionPersonas.Designer.cs">
-      <DependentUpon>FrmSeleccionPersonas.cs</DependentUpon>
-    </Compile>
     <Compile Include="Seguridad\FrmRecuperarClave.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -290,9 +284,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\FrmCambiarClave.resx">
       <DependentUpon>FrmCambiarClave.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Persona\FrmSeleccionPersonas.resx">
-      <DependentUpon>FrmSeleccionPersonas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\FrmRecuperarClave.resx">
       <DependentUpon>FrmRecuperarClave.cs</DependentUpon>
