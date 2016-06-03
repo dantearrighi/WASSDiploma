@@ -93,6 +93,7 @@ namespace Controladora.Seguridad
         // Generar una clave al azar para la creación del usuario
         public void ResetearClave(Modelo_Entidades.Usuario oUsuario, string email)
         {
+            // _cCU_ResetearClave.ResetearClave(oUsuario,oUsuario.email);
             _cCU_ResetearClave.ResetearClave(oUsuario, email);
             
         }
