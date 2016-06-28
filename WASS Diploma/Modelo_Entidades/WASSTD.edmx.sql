@@ -2,13 +2,12 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 02/29/2016 18:36:12
--- Generated from EDMX file: C:\Users\Dante\Documents\GitHub\WASSDiploma\WASS Diploma\Modelo_Entidades\WASSTD.edmx
+-- Date Created: 06/28/2016 11:42:21
+-- Generated from EDMX file: D:\Documentos\UAI\WASS\WASS Diploma\Modelo_Entidades\WASSTD.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-
 USE [WASSTD];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
@@ -62,6 +61,9 @@ IF OBJECT_ID(N'[dbo].[FK_Tipo_PersonaPersona]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_Tipo_TramiteTramite]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Tramites] DROP CONSTRAINT [FK_Tipo_TramiteTramite];
+GO
+IF OBJECT_ID(N'[dbo].[FK_EstadoTramite]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Tramites] DROP CONSTRAINT [FK_EstadoTramite];
 GO
 
 -- --------------------------------------------------
@@ -395,6 +397,7 @@ ADD CONSTRAINT [FK_UsuarioGrupo_Grupo]
     REFERENCES [dbo].[Grupos]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_UsuarioGrupo_Grupo'
 CREATE INDEX [IX_FK_UsuarioGrupo_Grupo]
@@ -409,6 +412,7 @@ ADD CONSTRAINT [FK_PerfilGrupo]
     REFERENCES [dbo].[Grupos]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_PerfilGrupo'
 CREATE INDEX [IX_FK_PerfilGrupo]
@@ -423,6 +427,7 @@ ADD CONSTRAINT [FK_PerfilPermiso]
     REFERENCES [dbo].[Permisos]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_PerfilPermiso'
 CREATE INDEX [IX_FK_PerfilPermiso]
@@ -437,6 +442,7 @@ ADD CONSTRAINT [FK_PerfilFormulario]
     REFERENCES [dbo].[Formularios]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_PerfilFormulario'
 CREATE INDEX [IX_FK_PerfilFormulario]
@@ -451,6 +457,7 @@ ADD CONSTRAINT [FK_FormularioModulo]
     REFERENCES [dbo].[Modulos]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_FormularioModulo'
 CREATE INDEX [IX_FK_FormularioModulo]
@@ -465,6 +472,7 @@ ADD CONSTRAINT [FK_ProvinciaLocalidades]
     REFERENCES [dbo].[Provincias]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ProvinciaLocalidades'
 CREATE INDEX [IX_FK_ProvinciaLocalidades]
@@ -479,6 +487,7 @@ ADD CONSTRAINT [FK_PersonaDirecciones]
     REFERENCES [dbo].[Personas]
         ([dni])
     ON DELETE CASCADE ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_PersonaDirecciones'
 CREATE INDEX [IX_FK_PersonaDirecciones]
@@ -493,6 +502,7 @@ ADD CONSTRAINT [FK_Tipo_DocumentoPersona]
     REFERENCES [dbo].[Tipos_Documentos]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Tipo_DocumentoPersona'
 CREATE INDEX [IX_FK_Tipo_DocumentoPersona]
@@ -507,6 +517,7 @@ ADD CONSTRAINT [FK_EstadoPersona]
     REFERENCES [dbo].[Estados]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_EstadoPersona'
 CREATE INDEX [IX_FK_EstadoPersona]
@@ -521,6 +532,7 @@ ADD CONSTRAINT [FK_LocalidadDireccion]
     REFERENCES [dbo].[Localidades]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_LocalidadDireccion'
 CREATE INDEX [IX_FK_LocalidadDireccion]
@@ -535,6 +547,7 @@ ADD CONSTRAINT [FK_Detalles_del_Tramite]
     REFERENCES [dbo].[Tramites]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Detalles_del_Tramite'
 CREATE INDEX [IX_FK_Detalles_del_Tramite]
@@ -549,6 +562,7 @@ ADD CONSTRAINT [FK_TramitesPersona]
     REFERENCES [dbo].[Personas]
         ([dni])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_TramitesPersona'
 CREATE INDEX [IX_FK_TramitesPersona]
@@ -563,6 +577,7 @@ ADD CONSTRAINT [FK_Tipo_PersonaPersona]
     REFERENCES [dbo].[Tipos_Personas]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Tipo_PersonaPersona'
 CREATE INDEX [IX_FK_Tipo_PersonaPersona]
@@ -577,6 +592,7 @@ ADD CONSTRAINT [FK_Tipo_TramiteTramite]
     REFERENCES [dbo].[Tipos_Tramites]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_Tipo_TramiteTramite'
 CREATE INDEX [IX_FK_Tipo_TramiteTramite]
@@ -591,6 +607,7 @@ ADD CONSTRAINT [FK_EstadoTramite]
     REFERENCES [dbo].[Estados]
         ([id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_EstadoTramite'
 CREATE INDEX [IX_FK_EstadoTramite]
