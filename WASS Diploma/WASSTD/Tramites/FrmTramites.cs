@@ -12,7 +12,7 @@ namespace WASSTD.Tramites
     public partial class FrmTramites : Form
     {
         // Declaro las variables que voy a utilizar en el formulario
-        private static FrmTramites instancia;
+        
        
        
         Controladora.cDetalles_Tramite cDetalles_Tramite;
@@ -23,7 +23,7 @@ namespace WASSTD.Tramites
         FrmTramite FormTramite;
         BindingSource BsTramites;
         Modelo_Entidades.Usuario miUsuario;
-
+        private static FrmTramites instancia;
         // Declaro al formulario como público y le asigno el método "Obtener Instancia" para poder llamarlo desde el formulario principal
         public static FrmTramites ObtenerInstancia(Modelo_Entidades.Usuario oUsuario)
         {

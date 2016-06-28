@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Tramites_x_Estado" targetNamespace="http://tempuri.org/Tramites_x_Estado.xsd" xmlns:mstns="http://tempuri.org/Tramites_x_Estado.xsd" xmlns="http://tempuri.org/Tramites_x_Estado.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="WASSTDConnectionStringLocalhosti7" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="WASSTDConnectionStringLocalhosti7 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WASSTD.Properties.Settings.GlobalReference.Default.WASSTDConnectionStringLocalhosti7" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Tramites_x_Tipo_x_EstadosTableAdapter" GeneratorDataComponentClassName="Tramites_x_Tipo_x_EstadosTableAdapter" Name="Tramites_x_Tipo_x_Estados" UserDataComponentName="Tramites_x_Tipo_x_EstadosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="WASSTDConnectionStringLocalhosti7 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Estados.descripcion AS Estado, Tipos_Tramites.descripcion AS Tipo, COUNT(Tramites.Id) AS Cantidad
+FROM            Tramites INNER JOIN
+                         Estados ON Tramites.Estado_id = Estados.id INNER JOIN
+                         Tipos_Tramites ON Tramites.Tipo_Tramite_id = Tipos_Tramites.id
+GROUP BY Tipos_Tramites.id, Estados.descripcion, Tipos_Tramites.descripcion</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Estado" DataSetColumn="Estado" />
+              <Mapping SourceColumn="Tipo" DataSetColumn="Tipo" />
+              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Tramites_x_Estado" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Tramites_x_Estado" msprop:Generator_UserDSName="Tramites_x_Estado">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Tramites_x_Tipo_x_Estados" msprop:Generator_TableClassName="Tramites_x_Tipo_x_EstadosDataTable" msprop:Generator_TableVarName="tableTramites_x_Tipo_x_Estados" msprop:Generator_TablePropName="Tramites_x_Tipo_x_Estados" msprop:Generator_RowDeletingName="Tramites_x_Tipo_x_EstadosRowDeleting" msprop:Generator_RowChangingName="Tramites_x_Tipo_x_EstadosRowChanging" msprop:Generator_RowEvHandlerName="Tramites_x_Tipo_x_EstadosRowChangeEventHandler" msprop:Generator_RowDeletedName="Tramites_x_Tipo_x_EstadosRowDeleted" msprop:Generator_UserTableName="Tramites_x_Tipo_x_Estados" msprop:Generator_RowChangedName="Tramites_x_Tipo_x_EstadosRowChanged" msprop:Generator_RowEvArgName="Tramites_x_Tipo_x_EstadosRowChangeEvent" msprop:Generator_RowClassName="Tramites_x_Tipo_x_EstadosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Estado" msprop:Generator_ColumnVarNameInTable="columnEstado" msprop:Generator_ColumnPropNameInRow="Estado" msprop:Generator_ColumnPropNameInTable="EstadoColumn" msprop:Generator_UserColumnName="Estado">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" msprop:Generator_UserColumnName="Tipo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantidad" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
