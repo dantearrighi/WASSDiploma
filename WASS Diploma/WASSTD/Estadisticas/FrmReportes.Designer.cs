@@ -39,7 +39,6 @@
             this.rb_TxEstado = new System.Windows.Forms.RadioButton();
             this.rbTVencidos = new System.Windows.Forms.RadioButton();
             this.rbTxPersona = new System.Windows.Forms.RadioButton();
-            this.rbTxTipo = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -47,6 +46,7 @@
             // 
             // btn_cerrar
             // 
+            this.btn_cerrar.Image = global::WASSTD.Properties.Resources.cancel_icon_16;
             this.btn_cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_cerrar.Location = new System.Drawing.Point(280, 191);
             this.btn_cerrar.Name = "btn_cerrar";
@@ -58,6 +58,7 @@
             // 
             // btn_CrearReporte
             // 
+            this.btn_CrearReporte.Image = global::WASSTD.Properties.Resources.font_italic_icon_16;
             this.btn_CrearReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_CrearReporte.Location = new System.Drawing.Point(172, 191);
             this.btn_CrearReporte.Name = "btn_CrearReporte";
@@ -79,7 +80,7 @@
             this.groupBox1.Size = new System.Drawing.Size(370, 238);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Seleccione un reporte";
+            this.groupBox1.Text = "Seleccione una opción";
             // 
             // groupBox3
             // 
@@ -131,7 +132,6 @@
             this.groupBox2.Controls.Add(this.rb_TxEstado);
             this.groupBox2.Controls.Add(this.rbTVencidos);
             this.groupBox2.Controls.Add(this.rbTxPersona);
-            this.groupBox2.Controls.Add(this.rbTxTipo);
             this.groupBox2.Location = new System.Drawing.Point(6, 42);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(163, 143);
@@ -141,18 +141,18 @@
             // 
             // rb_TxEstado
             // 
-            this.rb_TxEstado.Location = new System.Drawing.Point(6, 49);
+            this.rb_TxEstado.Location = new System.Drawing.Point(6, 27);
             this.rb_TxEstado.Name = "rb_TxEstado";
-            this.rb_TxEstado.Size = new System.Drawing.Size(137, 24);
+            this.rb_TxEstado.Size = new System.Drawing.Size(151, 24);
             this.rb_TxEstado.TabIndex = 1;
             this.rb_TxEstado.TabStop = true;
-            this.rb_TxEstado.Text = "Trámites por estado";
+            this.rb_TxEstado.Text = "Trámites por Tipo y Estado";
             this.rb_TxEstado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rb_TxEstado.UseVisualStyleBackColor = true;
             // 
             // rbTVencidos
             // 
-            this.rbTVencidos.Location = new System.Drawing.Point(6, 79);
+            this.rbTVencidos.Location = new System.Drawing.Point(6, 57);
             this.rbTVencidos.Name = "rbTVencidos";
             this.rbTVencidos.Size = new System.Drawing.Size(137, 24);
             this.rbTVencidos.TabIndex = 2;
@@ -163,7 +163,7 @@
             // 
             // rbTxPersona
             // 
-            this.rbTxPersona.Location = new System.Drawing.Point(6, 109);
+            this.rbTxPersona.Location = new System.Drawing.Point(6, 87);
             this.rbTxPersona.Name = "rbTxPersona";
             this.rbTxPersona.Size = new System.Drawing.Size(137, 24);
             this.rbTxPersona.TabIndex = 0;
@@ -172,17 +172,6 @@
             this.rbTxPersona.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rbTxPersona.UseVisualStyleBackColor = true;
             // 
-            // rbTxTipo
-            // 
-            this.rbTxTipo.Location = new System.Drawing.Point(6, 19);
-            this.rbTxTipo.Name = "rbTxTipo";
-            this.rbTxTipo.Size = new System.Drawing.Size(137, 24);
-            this.rbTxTipo.TabIndex = 0;
-            this.rbTxTipo.TabStop = true;
-            this.rbTxTipo.Text = "Trámites por tipo";
-            this.rbTxTipo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rbTxTipo.UseVisualStyleBackColor = true;
-            // 
             // FrmReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,7 +179,8 @@
             this.ClientSize = new System.Drawing.Size(395, 263);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmReportes";
-            this.Text = "FrmReportes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Informes disponibles";
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -211,6 +201,5 @@
         private System.Windows.Forms.RadioButton rb_TxEstado;
         private System.Windows.Forms.RadioButton rbTVencidos;
         private System.Windows.Forms.RadioButton rbTxPersona;
-        private System.Windows.Forms.RadioButton rbTxTipo;
     }
 }

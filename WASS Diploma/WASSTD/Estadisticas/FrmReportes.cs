@@ -39,7 +39,12 @@ namespace WASSTD.Reportes
         {
             if (rb_TxEstado.Checked)
             {
-                Frm_Rep_Tramite_x_Estado formReporte = new Frm_Rep_Tramite_x_Estado();
+                Frm_Tramites_x_Tipo_x_Estado formReporte = new Frm_Tramites_x_Tipo_x_Estado();
+                formReporte.ShowDialog();
+            }
+            if (rbTxPersona.Checked)
+            {
+                Frm_Tramites_x_Persona formReporte = new Frm_Tramites_x_Persona();
                 formReporte.ShowDialog();
             }
         }

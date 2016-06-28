@@ -132,11 +132,22 @@
     <Compile Include="Estadisticas\FrmReportes.Designer.cs">
       <DependentUpon>FrmReportes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\Frm_Rep_Tramite_x_Estado.cs">
+    <Compile Include="Reportes\DS_Tramites_x_Persona.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Tramites_x_Persona.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Tramites_x_Persona.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\Frm_Rep_Tramite_x_Estado.Designer.cs">
-      <DependentUpon>Frm_Rep_Tramite_x_Estado.cs</DependentUpon>
+    <Compile Include="Reportes\Frm_Tramites_x_Persona.Designer.cs">
+      <DependentUpon>Frm_Tramites_x_Persona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Tramites_x_Tipo_x_Estado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Tramites_x_Tipo_x_Estado.Designer.cs">
+      <DependentUpon>Frm_Tramites_x_Tipo_x_Estado.cs</DependentUpon>
     </Compile>
     <Compile Include="Tramites\FrmTramite.cs">
       <SubType>Form</SubType>
@@ -150,17 +161,22 @@
     <Compile Include="Tramites\FrmTramites.Designer.cs">
       <DependentUpon>FrmTramites.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tramites_x_Estado.Designer.cs">
+    <Compile Include="Reportes\Tramites_x_Tipo_x_Estado.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Tramites_x_Estado.xsd</DependentUpon>
+      <DependentUpon>Tramites_x_Tipo_x_Estado.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Estadisticas\FrmReportes.resx">
       <DependentUpon>FrmReportes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Frm_Rep_Tramite_x_Estado.resx">
-      <DependentUpon>Frm_Rep_Tramite_x_Estado.cs</DependentUpon>
+    <EmbeddedResource Include="Reportes\Frm_Tramites_x_Persona.resx">
+      <DependentUpon>Frm_Tramites_x_Persona.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Tramites_x_Tipo_x_Estado.resx">
+      <DependentUpon>Frm_Tramites_x_Tipo_x_Estado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Tramites_x_Persona.rdlc" />
+    <EmbeddedResource Include="Reportes\Tramites_x_Tipo_x_Estado.rdlc" />
     <EmbeddedResource Include="Tramites\FrmTramite.resx">
       <DependentUpon>FrmTramite.cs</DependentUpon>
     </EmbeddedResource>
@@ -324,16 +340,27 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Tramites_x_Estado.xsc">
-      <DependentUpon>Tramites_x_Estado.xsd</DependentUpon>
+    <None Include="Reportes\DS_Tramites_x_Persona.xsc">
+      <DependentUpon>DS_Tramites_x_Persona.xsd</DependentUpon>
     </None>
-    <None Include="Tramites_x_Estado.xsd">
+    <None Include="Reportes\DS_Tramites_x_Persona.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Tramites_x_Estado.Designer.cs</LastGenOutput>
+      <LastGenOutput>DS_Tramites_x_Persona.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Tramites_x_Estado.xss">
-      <DependentUpon>Tramites_x_Estado.xsd</DependentUpon>
+    <None Include="Reportes\DS_Tramites_x_Persona.xss">
+      <DependentUpon>DS_Tramites_x_Persona.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Tramites_x_Tipo_x_Estado.xsc">
+      <DependentUpon>Tramites_x_Tipo_x_Estado.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\Tramites_x_Tipo_x_Estado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Tramites_x_Tipo_x_Estado.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\Tramites_x_Tipo_x_Estado.xss">
+      <DependentUpon>Tramites_x_Tipo_x_Estado.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
