@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9f45600227ce4009940d8916814b7c5f" Name="Diagram1">
+        <EntityTypeShape EntityType="WASSTDModel.Detalles_Tramites" Width="1.5" PointX="10.5" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WASSTDModel.Direccione" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WASSTDModel.Estado" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WASSTDModel.Formulario" Width="1.5" PointX="5.75" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WASSTDModel.Grupos" Width="1.5" PointX="5.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WASSTDModel.Localidade" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WASSTDModel.Modulo" Width="1.5" PointX="3.5" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WASSTDModel.Perfile" Width="1.5" PointX="8" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WASSTDModel.Permiso" Width="1.5" PointX="5.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WASSTDModel.Persona" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WASSTDModel.Provincia" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WASSTDModel.Tipos_Documentos" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WASSTDModel.Tipos_Personas" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WASSTDModel.Tipos_Tramites" Width="1.5" PointX="6" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WASSTDModel.Tramite" Width="1.5" PointX="8.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WASSTDModel.Usuario" Width="1.5" PointX="8" PointY="12.625" IsExpanded="true" />
+        <AssociationConnector Association="WASSTDModel.FK_Detalles_del_Tramite" ManuallyRouted="false" />
+        <AssociationConnector Association="WASSTDModel.FK_LocalidadDireccion" ManuallyRouted="false" />
+        <AssociationConnector Association="WASSTDModel.FK_PersonaDirecciones" ManuallyRouted="false" />
+        <AssociationConnector Association="WASSTDModel.FK_EstadoPersona" ManuallyRouted="false" />
+        <AssociationConnector Association="WASSTDModel.FK_EstadoTramite" ManuallyRouted="false" />
+        <AssociationConnector Association="WASSTDModel.FK_FormularioModulo" ManuallyRouted="false" />
+        <AssociationConnector Association="WASSTDModel.FK_PerfilFormulario" ManuallyRouted="false" />
+        <AssociationConnector Association="WASSTDModel.FK_PerfilGrupo" ManuallyRouted="false" />
+        <AssociationConnector Association="WASSTDModel.FK_ProvinciaLocalidades" ManuallyRouted="false" />
+        <AssociationConnector Association="WASSTDModel.FK_PerfilPermiso" ManuallyRouted="false" />
+        <AssociationConnector Association="WASSTDModel.FK_Tipo_DocumentoPersona" ManuallyRouted="false" />
+        <AssociationConnector Association="WASSTDModel.FK_Tipo_PersonaPersona" ManuallyRouted="false" />
+        <AssociationConnector Association="WASSTDModel.FK_TramitesPersona" ManuallyRouted="false" />
+        <AssociationConnector Association="WASSTDModel.FK_Tipo_TramiteTramite" ManuallyRouted="false" />
+        <AssociationConnector Association="WASSTDModel.UsuariosGrupos" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

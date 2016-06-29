@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controladora", "Controlador
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vista", "WASSTD\Vista.csproj", "{56C15B7A-F7C9-4D5C-90A4-88A6F9C82BB9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vista-Web", "Vista-Web\Vista-Web.csproj", "{08B11328-3F88-46D1-AADA-B6A4E55F7F69}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,16 @@ Global
 		{56C15B7A-F7C9-4D5C-90A4-88A6F9C82BB9}.Release|Mixed Platforms.Build.0 = Release|x86
 		{56C15B7A-F7C9-4D5C-90A4-88A6F9C82BB9}.Release|x86.ActiveCfg = Release|x86
 		{56C15B7A-F7C9-4D5C-90A4-88A6F9C82BB9}.Release|x86.Build.0 = Release|x86
+		{08B11328-3F88-46D1-AADA-B6A4E55F7F69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08B11328-3F88-46D1-AADA-B6A4E55F7F69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08B11328-3F88-46D1-AADA-B6A4E55F7F69}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{08B11328-3F88-46D1-AADA-B6A4E55F7F69}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{08B11328-3F88-46D1-AADA-B6A4E55F7F69}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{08B11328-3F88-46D1-AADA-B6A4E55F7F69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08B11328-3F88-46D1-AADA-B6A4E55F7F69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08B11328-3F88-46D1-AADA-B6A4E55F7F69}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{08B11328-3F88-46D1-AADA-B6A4E55F7F69}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{08B11328-3F88-46D1-AADA-B6A4E55F7F69}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

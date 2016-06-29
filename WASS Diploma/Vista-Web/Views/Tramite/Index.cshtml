@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Vista_Web.Models.Tramite>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Persona.nombre_apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipos_Tramites.descripcion)
+        </th>
+      
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Persona.nombre_apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipos_Tramites.descripcion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

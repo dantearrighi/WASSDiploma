@@ -1,0 +1,42 @@
+﻿@model Vista_Web.Models.Tramite
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tramite</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Persona.nombre_apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Persona.nombre_apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipos_Tramites.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipos_Tramites.descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

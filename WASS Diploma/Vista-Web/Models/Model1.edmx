@@ -1,0 +1,1047 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="WASSTDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Detalles_Tramites">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="fecha_desde" Type="datetime" />
+          <Property Name="TramiteId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Direcciones">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="direccion" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Persona_dni" Type="int" Nullable="false" />
+          <Property Name="Localidad_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Estados">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Formularios">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="nombredemuestra" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Modulo_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Grupos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Localidades">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="cp" Type="int" Nullable="false" />
+          <Property Name="Provincia_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Modulos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Perfiles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Grupo_id" Type="int" Nullable="false" />
+          <Property Name="Permiso_id" Type="int" Nullable="false" />
+          <Property Name="Formulario_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Permisos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Personas">
+          <Key>
+            <PropertyRef Name="dni" />
+          </Key>
+          <Property Name="dni" Type="int" Nullable="false" />
+          <Property Name="nombre_apellido" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="sexo" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="telefono" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="celular" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="email1" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="observaciones" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="clave_fiscal" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="fecha_nacimiento" Type="datetime" Nullable="false" />
+          <Property Name="Tipo_PersonaId" Type="int" Nullable="false" />
+          <Property Name="Tipo_Documento_id" Type="int" Nullable="false" />
+          <Property Name="Estado_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Provincias">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tipos_Documentos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tipos_Personas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tipos_Tramites">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descripcion" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tramites">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tipo_Tramite_id" Type="int" Nullable="false" />
+          <Property Name="Estado_id" Type="int" Nullable="false" />
+          <Property Name="Persona_dni" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre_apellido" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="clave" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="estado" Type="bit" Nullable="false" />
+          <Property Name="usuario" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsuariosGrupos">
+          <Key>
+            <PropertyRef Name="Usuarios_id" />
+            <PropertyRef Name="Grupos_id" />
+          </Key>
+          <Property Name="Usuarios_id" Type="int" Nullable="false" />
+          <Property Name="Grupos_id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Detalles_del_Tramite">
+          <End Role="Tramites" Type="Self.Tramites" Multiplicity="1" />
+          <End Role="Detalles_Tramites" Type="Self.Detalles_Tramites" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tramites">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Detalles_Tramites">
+              <PropertyRef Name="TramiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstadoPersona">
+          <End Role="Estados" Type="Self.Estados" Multiplicity="1" />
+          <End Role="Personas" Type="Self.Personas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Personas">
+              <PropertyRef Name="Estado_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstadoTramite">
+          <End Role="Estados" Type="Self.Estados" Multiplicity="1" />
+          <End Role="Tramites" Type="Self.Tramites" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Tramites">
+              <PropertyRef Name="Estado_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FormularioModulo">
+          <End Role="Modulos" Type="Self.Modulos" Multiplicity="1" />
+          <End Role="Formularios" Type="Self.Formularios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modulos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Formularios">
+              <PropertyRef Name="Modulo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LocalidadDireccion">
+          <End Role="Localidades" Type="Self.Localidades" Multiplicity="1" />
+          <End Role="Direcciones" Type="Self.Direcciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Localidades">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Direcciones">
+              <PropertyRef Name="Localidad_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PerfilFormulario">
+          <End Role="Formularios" Type="Self.Formularios" Multiplicity="1" />
+          <End Role="Perfiles" Type="Self.Perfiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Formularios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Perfiles">
+              <PropertyRef Name="Formulario_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PerfilGrupo">
+          <End Role="Grupos" Type="Self.Grupos" Multiplicity="1" />
+          <End Role="Perfiles" Type="Self.Perfiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Perfiles">
+              <PropertyRef Name="Grupo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PerfilPermiso">
+          <End Role="Permisos" Type="Self.Permisos" Multiplicity="1" />
+          <End Role="Perfiles" Type="Self.Perfiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Permisos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Perfiles">
+              <PropertyRef Name="Permiso_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonaDirecciones">
+          <End Role="Personas" Type="Self.Personas" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Direcciones" Type="Self.Direcciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="dni" />
+            </Principal>
+            <Dependent Role="Direcciones">
+              <PropertyRef Name="Persona_dni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProvinciaLocalidades">
+          <End Role="Provincias" Type="Self.Provincias" Multiplicity="1" />
+          <End Role="Localidades" Type="Self.Localidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provincias">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Localidades">
+              <PropertyRef Name="Provincia_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tipo_DocumentoPersona">
+          <End Role="Tipos_Documentos" Type="Self.Tipos_Documentos" Multiplicity="1" />
+          <End Role="Personas" Type="Self.Personas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipos_Documentos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Personas">
+              <PropertyRef Name="Tipo_Documento_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tipo_PersonaPersona">
+          <End Role="Tipos_Personas" Type="Self.Tipos_Personas" Multiplicity="1" />
+          <End Role="Personas" Type="Self.Personas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipos_Personas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Personas">
+              <PropertyRef Name="Tipo_PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tipo_TramiteTramite">
+          <End Role="Tipos_Tramites" Type="Self.Tipos_Tramites" Multiplicity="1" />
+          <End Role="Tramites" Type="Self.Tramites" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipos_Tramites">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Tramites">
+              <PropertyRef Name="Tipo_Tramite_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TramitesPersona">
+          <End Role="Personas" Type="Self.Personas" Multiplicity="1" />
+          <End Role="Tramites" Type="Self.Tramites" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="dni" />
+            </Principal>
+            <Dependent Role="Tramites">
+              <PropertyRef Name="Persona_dni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioGrupo_Grupo">
+          <End Role="Grupos" Type="Self.Grupos" Multiplicity="1" />
+          <End Role="UsuariosGrupos" Type="Self.UsuariosGrupos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="UsuariosGrupos">
+              <PropertyRef Name="Grupos_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioGrupo_Usuario">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="UsuariosGrupos" Type="Self.UsuariosGrupos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="UsuariosGrupos">
+              <PropertyRef Name="Usuarios_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WASSTDModelStoreContainer">
+          <EntitySet Name="Detalles_Tramites" EntityType="Self.Detalles_Tramites" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Direcciones" EntityType="Self.Direcciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estados" EntityType="Self.Estados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Formularios" EntityType="Self.Formularios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Grupos" EntityType="Self.Grupos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Localidades" EntityType="Self.Localidades" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Modulos" EntityType="Self.Modulos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Perfiles" EntityType="Self.Perfiles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Permisos" EntityType="Self.Permisos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personas" EntityType="Self.Personas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Provincias" EntityType="Self.Provincias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipos_Documentos" EntityType="Self.Tipos_Documentos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipos_Personas" EntityType="Self.Tipos_Personas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipos_Tramites" EntityType="Self.Tipos_Tramites" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tramites" EntityType="Self.Tramites" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsuariosGrupos" EntityType="Self.UsuariosGrupos" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Detalles_del_Tramite" Association="Self.FK_Detalles_del_Tramite">
+            <End Role="Tramites" EntitySet="Tramites" />
+            <End Role="Detalles_Tramites" EntitySet="Detalles_Tramites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstadoPersona" Association="Self.FK_EstadoPersona">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Personas" EntitySet="Personas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstadoTramite" Association="Self.FK_EstadoTramite">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Tramites" EntitySet="Tramites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FormularioModulo" Association="Self.FK_FormularioModulo">
+            <End Role="Modulos" EntitySet="Modulos" />
+            <End Role="Formularios" EntitySet="Formularios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LocalidadDireccion" Association="Self.FK_LocalidadDireccion">
+            <End Role="Localidades" EntitySet="Localidades" />
+            <End Role="Direcciones" EntitySet="Direcciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PerfilFormulario" Association="Self.FK_PerfilFormulario">
+            <End Role="Formularios" EntitySet="Formularios" />
+            <End Role="Perfiles" EntitySet="Perfiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PerfilGrupo" Association="Self.FK_PerfilGrupo">
+            <End Role="Grupos" EntitySet="Grupos" />
+            <End Role="Perfiles" EntitySet="Perfiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PerfilPermiso" Association="Self.FK_PerfilPermiso">
+            <End Role="Permisos" EntitySet="Permisos" />
+            <End Role="Perfiles" EntitySet="Perfiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonaDirecciones" Association="Self.FK_PersonaDirecciones">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Direcciones" EntitySet="Direcciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProvinciaLocalidades" Association="Self.FK_ProvinciaLocalidades">
+            <End Role="Provincias" EntitySet="Provincias" />
+            <End Role="Localidades" EntitySet="Localidades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tipo_DocumentoPersona" Association="Self.FK_Tipo_DocumentoPersona">
+            <End Role="Tipos_Documentos" EntitySet="Tipos_Documentos" />
+            <End Role="Personas" EntitySet="Personas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tipo_PersonaPersona" Association="Self.FK_Tipo_PersonaPersona">
+            <End Role="Tipos_Personas" EntitySet="Tipos_Personas" />
+            <End Role="Personas" EntitySet="Personas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tipo_TramiteTramite" Association="Self.FK_Tipo_TramiteTramite">
+            <End Role="Tipos_Tramites" EntitySet="Tipos_Tramites" />
+            <End Role="Tramites" EntitySet="Tramites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TramitesPersona" Association="Self.FK_TramitesPersona">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Tramites" EntitySet="Tramites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioGrupo_Grupo" Association="Self.FK_UsuarioGrupo_Grupo">
+            <End Role="Grupos" EntitySet="Grupos" />
+            <End Role="UsuariosGrupos" EntitySet="UsuariosGrupos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioGrupo_Usuario" Association="Self.FK_UsuarioGrupo_Usuario">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="UsuariosGrupos" EntitySet="UsuariosGrupos" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WASSTDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Detalles_Tramites">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fecha_desde" Type="DateTime" Precision="3" />
+          <Property Name="TramiteId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Tramite" Relationship="Self.FK_Detalles_del_Tramite" FromRole="Detalles_Tramites" ToRole="Tramites" />
+        </EntityType>
+        <EntityType Name="Direccione">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="direccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Persona_dni" Type="Int32" Nullable="false" />
+          <Property Name="Localidad_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Localidade" Relationship="Self.FK_LocalidadDireccion" FromRole="Direcciones" ToRole="Localidades" />
+          <NavigationProperty Name="Persona" Relationship="Self.FK_PersonaDirecciones" FromRole="Direcciones" ToRole="Personas" />
+        </EntityType>
+        <EntityType Name="Estado">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Personas" Relationship="Self.FK_EstadoPersona" FromRole="Estados" ToRole="Personas" />
+          <NavigationProperty Name="Tramites" Relationship="Self.FK_EstadoTramite" FromRole="Estados" ToRole="Tramites" />
+        </EntityType>
+        <EntityType Name="Formulario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="nombredemuestra" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Modulo_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Modulo" Relationship="Self.FK_FormularioModulo" FromRole="Formularios" ToRole="Modulos" />
+          <NavigationProperty Name="Perfiles" Relationship="Self.FK_PerfilFormulario" FromRole="Formularios" ToRole="Perfiles" />
+        </EntityType>
+        <EntityType Name="Grupos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Perfiles" Relationship="Self.FK_PerfilGrupo" FromRole="Grupos" ToRole="Perfiles" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.UsuariosGrupos" FromRole="Grupos" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Localidade">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cp" Type="Int32" Nullable="false" />
+          <Property Name="Provincia_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Direcciones" Relationship="Self.FK_LocalidadDireccion" FromRole="Localidades" ToRole="Direcciones" />
+          <NavigationProperty Name="Provincia" Relationship="Self.FK_ProvinciaLocalidades" FromRole="Localidades" ToRole="Provincias" />
+        </EntityType>
+        <EntityType Name="Modulo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Formularios" Relationship="Self.FK_FormularioModulo" FromRole="Modulos" ToRole="Formularios" />
+        </EntityType>
+        <EntityType Name="Perfile">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Grupo_id" Type="Int32" Nullable="false" />
+          <Property Name="Permiso_id" Type="Int32" Nullable="false" />
+          <Property Name="Formulario_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Formulario" Relationship="Self.FK_PerfilFormulario" FromRole="Perfiles" ToRole="Formularios" />
+          <NavigationProperty Name="Grupos" Relationship="Self.FK_PerfilGrupo" FromRole="Perfiles" ToRole="Grupos" />
+          <NavigationProperty Name="Permiso" Relationship="Self.FK_PerfilPermiso" FromRole="Perfiles" ToRole="Permisos" />
+        </EntityType>
+        <EntityType Name="Permiso">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Perfiles" Relationship="Self.FK_PerfilPermiso" FromRole="Permisos" ToRole="Perfiles" />
+        </EntityType>
+        <EntityType Name="Persona">
+          <Key>
+            <PropertyRef Name="dni" />
+          </Key>
+          <Property Name="dni" Type="Int32" Nullable="false" />
+          <Property Name="nombre_apellido" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sexo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="telefono" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="celular" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="observaciones" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="clave_fiscal" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fecha_nacimiento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Tipo_PersonaId" Type="Int32" Nullable="false" />
+          <Property Name="Tipo_Documento_id" Type="Int32" Nullable="false" />
+          <Property Name="Estado_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Direcciones" Relationship="Self.FK_PersonaDirecciones" FromRole="Personas" ToRole="Direcciones" />
+          <NavigationProperty Name="Estado" Relationship="Self.FK_EstadoPersona" FromRole="Personas" ToRole="Estados" />
+          <NavigationProperty Name="Tipos_Documentos" Relationship="Self.FK_Tipo_DocumentoPersona" FromRole="Personas" ToRole="Tipos_Documentos" />
+          <NavigationProperty Name="Tipos_Personas" Relationship="Self.FK_Tipo_PersonaPersona" FromRole="Personas" ToRole="Tipos_Personas" />
+          <NavigationProperty Name="Tramites" Relationship="Self.FK_TramitesPersona" FromRole="Personas" ToRole="Tramites" />
+        </EntityType>
+        <EntityType Name="Provincia">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Localidades" Relationship="Self.FK_ProvinciaLocalidades" FromRole="Provincias" ToRole="Localidades" />
+        </EntityType>
+        <EntityType Name="Tipos_Documentos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Personas" Relationship="Self.FK_Tipo_DocumentoPersona" FromRole="Tipos_Documentos" ToRole="Personas" />
+        </EntityType>
+        <EntityType Name="Tipos_Personas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Personas" Relationship="Self.FK_Tipo_PersonaPersona" FromRole="Tipos_Personas" ToRole="Personas" />
+        </EntityType>
+        <EntityType Name="Tipos_Tramites">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Tramites" Relationship="Self.FK_Tipo_TramiteTramite" FromRole="Tipos_Tramites" ToRole="Tramites" />
+        </EntityType>
+        <EntityType Name="Tramite">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tipo_Tramite_id" Type="Int32" Nullable="false" />
+          <Property Name="Estado_id" Type="Int32" Nullable="false" />
+          <Property Name="Persona_dni" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Detalles_Tramites" Relationship="Self.FK_Detalles_del_Tramite" FromRole="Tramites" ToRole="Detalles_Tramites" />
+          <NavigationProperty Name="Estado" Relationship="Self.FK_EstadoTramite" FromRole="Tramites" ToRole="Estados" />
+          <NavigationProperty Name="Persona" Relationship="Self.FK_TramitesPersona" FromRole="Tramites" ToRole="Personas" />
+          <NavigationProperty Name="Tipos_Tramites" Relationship="Self.FK_Tipo_TramiteTramite" FromRole="Tramites" ToRole="Tipos_Tramites" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_apellido" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="clave" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="estado" Type="Boolean" Nullable="false" />
+          <Property Name="usuario1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Grupos" Relationship="Self.UsuariosGrupos" FromRole="Usuarios" ToRole="Grupos" />
+        </EntityType>
+        <Association Name="FK_Detalles_del_Tramite">
+          <End Role="Tramites" Type="Self.Tramite" Multiplicity="1" />
+          <End Role="Detalles_Tramites" Type="Self.Detalles_Tramites" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tramites">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Detalles_Tramites">
+              <PropertyRef Name="TramiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LocalidadDireccion">
+          <End Role="Localidades" Type="Self.Localidade" Multiplicity="1" />
+          <End Role="Direcciones" Type="Self.Direccione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Localidades">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Direcciones">
+              <PropertyRef Name="Localidad_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonaDirecciones">
+          <End Role="Personas" Type="Self.Persona" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Direcciones" Type="Self.Direccione" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="dni" />
+            </Principal>
+            <Dependent Role="Direcciones">
+              <PropertyRef Name="Persona_dni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstadoPersona">
+          <End Role="Estados" Type="Self.Estado" Multiplicity="1" />
+          <End Role="Personas" Type="Self.Persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Personas">
+              <PropertyRef Name="Estado_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstadoTramite">
+          <End Role="Estados" Type="Self.Estado" Multiplicity="1" />
+          <End Role="Tramites" Type="Self.Tramite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Tramites">
+              <PropertyRef Name="Estado_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FormularioModulo">
+          <End Role="Modulos" Type="Self.Modulo" Multiplicity="1" />
+          <End Role="Formularios" Type="Self.Formulario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modulos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Formularios">
+              <PropertyRef Name="Modulo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PerfilFormulario">
+          <End Role="Formularios" Type="Self.Formulario" Multiplicity="1" />
+          <End Role="Perfiles" Type="Self.Perfile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Formularios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Perfiles">
+              <PropertyRef Name="Formulario_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PerfilGrupo">
+          <End Role="Grupos" Type="Self.Grupos" Multiplicity="1" />
+          <End Role="Perfiles" Type="Self.Perfile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grupos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Perfiles">
+              <PropertyRef Name="Grupo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProvinciaLocalidades">
+          <End Role="Provincias" Type="Self.Provincia" Multiplicity="1" />
+          <End Role="Localidades" Type="Self.Localidade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provincias">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Localidades">
+              <PropertyRef Name="Provincia_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PerfilPermiso">
+          <End Role="Permisos" Type="Self.Permiso" Multiplicity="1" />
+          <End Role="Perfiles" Type="Self.Perfile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Permisos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Perfiles">
+              <PropertyRef Name="Permiso_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tipo_DocumentoPersona">
+          <End Role="Tipos_Documentos" Type="Self.Tipos_Documentos" Multiplicity="1" />
+          <End Role="Personas" Type="Self.Persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipos_Documentos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Personas">
+              <PropertyRef Name="Tipo_Documento_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tipo_PersonaPersona">
+          <End Role="Tipos_Personas" Type="Self.Tipos_Personas" Multiplicity="1" />
+          <End Role="Personas" Type="Self.Persona" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipos_Personas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Personas">
+              <PropertyRef Name="Tipo_PersonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TramitesPersona">
+          <End Role="Personas" Type="Self.Persona" Multiplicity="1" />
+          <End Role="Tramites" Type="Self.Tramite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="dni" />
+            </Principal>
+            <Dependent Role="Tramites">
+              <PropertyRef Name="Persona_dni" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tipo_TramiteTramite">
+          <End Role="Tipos_Tramites" Type="Self.Tipos_Tramites" Multiplicity="1" />
+          <End Role="Tramites" Type="Self.Tramite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipos_Tramites">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Tramites">
+              <PropertyRef Name="Tipo_Tramite_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UsuariosGrupos">
+          <End Role="Grupos" Type="Self.Grupos" Multiplicity="*" />
+          <End Role="Usuarios" Type="Self.Usuario" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="WASSTDEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Detalles_Tramites" EntityType="Self.Detalles_Tramites" />
+          <EntitySet Name="Direcciones" EntityType="Self.Direccione" />
+          <EntitySet Name="Estados" EntityType="Self.Estado" />
+          <EntitySet Name="Formularios" EntityType="Self.Formulario" />
+          <EntitySet Name="Grupos" EntityType="Self.Grupos" />
+          <EntitySet Name="Localidades" EntityType="Self.Localidade" />
+          <EntitySet Name="Modulos" EntityType="Self.Modulo" />
+          <EntitySet Name="Perfiles" EntityType="Self.Perfile" />
+          <EntitySet Name="Permisos" EntityType="Self.Permiso" />
+          <EntitySet Name="Personas" EntityType="Self.Persona" />
+          <EntitySet Name="Provincias" EntityType="Self.Provincia" />
+          <EntitySet Name="Tipos_Documentos" EntityType="Self.Tipos_Documentos" />
+          <EntitySet Name="Tipos_Personas" EntityType="Self.Tipos_Personas" />
+          <EntitySet Name="Tipos_Tramites" EntityType="Self.Tipos_Tramites" />
+          <EntitySet Name="Tramites" EntityType="Self.Tramite" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+          <AssociationSet Name="FK_Detalles_del_Tramite" Association="Self.FK_Detalles_del_Tramite">
+            <End Role="Tramites" EntitySet="Tramites" />
+            <End Role="Detalles_Tramites" EntitySet="Detalles_Tramites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LocalidadDireccion" Association="Self.FK_LocalidadDireccion">
+            <End Role="Localidades" EntitySet="Localidades" />
+            <End Role="Direcciones" EntitySet="Direcciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonaDirecciones" Association="Self.FK_PersonaDirecciones">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Direcciones" EntitySet="Direcciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstadoPersona" Association="Self.FK_EstadoPersona">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Personas" EntitySet="Personas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstadoTramite" Association="Self.FK_EstadoTramite">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Tramites" EntitySet="Tramites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FormularioModulo" Association="Self.FK_FormularioModulo">
+            <End Role="Modulos" EntitySet="Modulos" />
+            <End Role="Formularios" EntitySet="Formularios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PerfilFormulario" Association="Self.FK_PerfilFormulario">
+            <End Role="Formularios" EntitySet="Formularios" />
+            <End Role="Perfiles" EntitySet="Perfiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PerfilGrupo" Association="Self.FK_PerfilGrupo">
+            <End Role="Grupos" EntitySet="Grupos" />
+            <End Role="Perfiles" EntitySet="Perfiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProvinciaLocalidades" Association="Self.FK_ProvinciaLocalidades">
+            <End Role="Provincias" EntitySet="Provincias" />
+            <End Role="Localidades" EntitySet="Localidades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PerfilPermiso" Association="Self.FK_PerfilPermiso">
+            <End Role="Permisos" EntitySet="Permisos" />
+            <End Role="Perfiles" EntitySet="Perfiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tipo_DocumentoPersona" Association="Self.FK_Tipo_DocumentoPersona">
+            <End Role="Tipos_Documentos" EntitySet="Tipos_Documentos" />
+            <End Role="Personas" EntitySet="Personas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tipo_PersonaPersona" Association="Self.FK_Tipo_PersonaPersona">
+            <End Role="Tipos_Personas" EntitySet="Tipos_Personas" />
+            <End Role="Personas" EntitySet="Personas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TramitesPersona" Association="Self.FK_TramitesPersona">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Tramites" EntitySet="Tramites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tipo_TramiteTramite" Association="Self.FK_Tipo_TramiteTramite">
+            <End Role="Tipos_Tramites" EntitySet="Tipos_Tramites" />
+            <End Role="Tramites" EntitySet="Tramites" />
+          </AssociationSet>
+          <AssociationSet Name="UsuariosGrupos" Association="Self.UsuariosGrupos">
+            <End Role="Grupos" EntitySet="Grupos" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WASSTDModelStoreContainer" CdmEntityContainer="WASSTDEntities">
+          <EntitySetMapping Name="Detalles_Tramites">
+            <EntityTypeMapping TypeName="WASSTDModel.Detalles_Tramites">
+              <MappingFragment StoreEntitySet="Detalles_Tramites">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="fecha_desde" ColumnName="fecha_desde" />
+                <ScalarProperty Name="TramiteId" ColumnName="TramiteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Direcciones">
+            <EntityTypeMapping TypeName="WASSTDModel.Direccione">
+              <MappingFragment StoreEntitySet="Direcciones">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="Persona_dni" ColumnName="Persona_dni" />
+                <ScalarProperty Name="Localidad_id" ColumnName="Localidad_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estados">
+            <EntityTypeMapping TypeName="WASSTDModel.Estado">
+              <MappingFragment StoreEntitySet="Estados">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Formularios">
+            <EntityTypeMapping TypeName="WASSTDModel.Formulario">
+              <MappingFragment StoreEntitySet="Formularios">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="nombredemuestra" ColumnName="nombredemuestra" />
+                <ScalarProperty Name="Modulo_id" ColumnName="Modulo_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Grupos">
+            <EntityTypeMapping TypeName="WASSTDModel.Grupos">
+              <MappingFragment StoreEntitySet="Grupos">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Localidades">
+            <EntityTypeMapping TypeName="WASSTDModel.Localidade">
+              <MappingFragment StoreEntitySet="Localidades">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="cp" ColumnName="cp" />
+                <ScalarProperty Name="Provincia_id" ColumnName="Provincia_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Modulos">
+            <EntityTypeMapping TypeName="WASSTDModel.Modulo">
+              <MappingFragment StoreEntitySet="Modulos">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Perfiles">
+            <EntityTypeMapping TypeName="WASSTDModel.Perfile">
+              <MappingFragment StoreEntitySet="Perfiles">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Grupo_id" ColumnName="Grupo_id" />
+                <ScalarProperty Name="Permiso_id" ColumnName="Permiso_id" />
+                <ScalarProperty Name="Formulario_id" ColumnName="Formulario_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Permisos">
+            <EntityTypeMapping TypeName="WASSTDModel.Permiso">
+              <MappingFragment StoreEntitySet="Permisos">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personas">
+            <EntityTypeMapping TypeName="WASSTDModel.Persona">
+              <MappingFragment StoreEntitySet="Personas">
+                <ScalarProperty Name="dni" ColumnName="dni" />
+                <ScalarProperty Name="nombre_apellido" ColumnName="nombre_apellido" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="email1" ColumnName="email1" />
+                <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+                <ScalarProperty Name="clave_fiscal" ColumnName="clave_fiscal" />
+                <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+                <ScalarProperty Name="Tipo_PersonaId" ColumnName="Tipo_PersonaId" />
+                <ScalarProperty Name="Tipo_Documento_id" ColumnName="Tipo_Documento_id" />
+                <ScalarProperty Name="Estado_id" ColumnName="Estado_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Provincias">
+            <EntityTypeMapping TypeName="WASSTDModel.Provincia">
+              <MappingFragment StoreEntitySet="Provincias">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipos_Documentos">
+            <EntityTypeMapping TypeName="WASSTDModel.Tipos_Documentos">
+              <MappingFragment StoreEntitySet="Tipos_Documentos">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipos_Personas">
+            <EntityTypeMapping TypeName="WASSTDModel.Tipos_Personas">
+              <MappingFragment StoreEntitySet="Tipos_Personas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipos_Tramites">
+            <EntityTypeMapping TypeName="WASSTDModel.Tipos_Tramites">
+              <MappingFragment StoreEntitySet="Tipos_Tramites">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tramites">
+            <EntityTypeMapping TypeName="WASSTDModel.Tramite">
+              <MappingFragment StoreEntitySet="Tramites">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Tipo_Tramite_id" ColumnName="Tipo_Tramite_id" />
+                <ScalarProperty Name="Estado_id" ColumnName="Estado_id" />
+                <ScalarProperty Name="Persona_dni" ColumnName="Persona_dni" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="WASSTDModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre_apellido" ColumnName="nombre_apellido" />
+                <ScalarProperty Name="clave" ColumnName="clave" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="usuario1" ColumnName="usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="UsuariosGrupos" TypeName="WASSTDModel.UsuariosGrupos" StoreEntitySet="UsuariosGrupos">
+            <EndProperty Name="Grupos">
+              <ScalarProperty Name="id" ColumnName="Grupos_id" />
+            </EndProperty>
+            <EndProperty Name="Usuarios">
+              <ScalarProperty Name="id" ColumnName="Usuarios_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
