@@ -39,10 +39,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pdfmanual.Enabled = true;
-            this.pdfmanual.Location = new System.Drawing.Point(12, 72);
+            this.pdfmanual.Location = new System.Drawing.Point(12, 12);
             this.pdfmanual.Name = "pdfmanual";
             this.pdfmanual.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("pdfmanual.OcxState")));
-            this.pdfmanual.Size = new System.Drawing.Size(718, 479);
+            this.pdfmanual.Size = new System.Drawing.Size(718, 539);
             this.pdfmanual.TabIndex = 0;
             // 
             // FrmManual
