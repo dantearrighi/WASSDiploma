@@ -11,14 +11,19 @@ namespace WASSTD
 {
     public partial class frmHaber24241 : Form
     {
+        Controladora.Calculo.DatosCalculo oDatosCalculo = new Controladora.Calculo.DatosCalculo();
+        Controladora.Calculo.Calculo oCalculo = new Controladora.Calculo.Calculo();
+
         public frmHaber24241()
         {
             InitializeComponent();
+            oCalculo.SetCalculoStrategy(new Controladora.Calculo.Ley24241());
         }
 
 
         #region  // VARIABLES
-        Controladora.Calculo.DatosCalculo oDatosCalculo = new Controladora.Calculo.DatosCalculo();
+
+       
 
         //PC
         decimal PCn;
@@ -137,6 +142,89 @@ namespace WASSTD
 
             }
             
+
+
+        /*
+         * //INGRESAR DATO . , 
+        private void IngresarDato(decimal var, TextBox txt)
+        {
+            ControlarTxtVacio(txt);
+
+            if (txt.Text.Contains("$"))
+            {
+                txt.Text = txt.Text.Replace("$", "");
+            }
+            
+                txt.Text = txt.Text.Replace(".", ",");
+                var = Convert.ToDecimal(txt.Text);
+
+                switch (txt.Name)
+                {
+                    case "N0":
+                        oDatosCalculo.PCN = var;
+                        break;
+
+                    case "n1":
+                        oDatosCalculo.PCn = var;
+                        break;
+
+                    case "W":
+                        oDatosCalculo.PCW = var;
+                        break;
+
+                    case "m":
+                        oDatosCalculo.PCm = var;
+                        break;
+
+                    case "R":
+                        oDatosCalculo.PCR = var;
+                        break;
+
+                    case "p":
+                        oDatosCalculo.PCp = var;
+                        break;
+
+                    case "NN":
+                        oDatosCalculo.PAPN = var;
+                        break;
+
+                    case "nn1":
+                        oDatosCalculo.PAPn = var;
+                        break;
+
+                    case "WW":
+                        oDatosCalculo.PAPW = var;
+                        break;
+
+                    case "mm":
+                        oDatosCalculo.PAPm = var;
+                        break;
+
+                    case "RR":
+                        oDatosCalculo.PAPR = var;
+                        break;
+
+                    case "pp":
+                        oDatosCalculo.PAPp = var;
+                        break;
+
+                    case "txtPBU":
+                        oDatosCalculo.PBU = var;
+                        break;
+
+                    case "txtSuplMov":
+                        oDatosCalculo.SuplMov = var;
+                        break;
+
+                    default:
+                        break;
+
+                }
+
+            }
+         * */
+
+        
          
         //QUITAR $
         private string QuitarSignoPeso(string texto)
@@ -146,29 +234,39 @@ namespace WASSTD
             return texto;
         }
 
-        //Calcular Prestación Compensatoria
+        //Calcular Prestación Compensatoria PC Y PAP
         private void CalcularPC()
         {
-            PCn = Convert.ToDecimal(QuitarSignoPeso(n1.Text));
-            PCN = Convert.ToDecimal(QuitarSignoPeso(N0.Text));
-            PCp = Convert.ToDecimal(QuitarSignoPeso(p.Text));
-            PCW = Convert.ToDecimal(QuitarSignoPeso(W.Text));
-            PCm = Convert.ToDecimal(QuitarSignoPeso(m.Text));
-            PCR = Convert.ToDecimal(QuitarSignoPeso(R.Text));
-
-            if (PCm != 0 || PCn != 0 || PCp != 0)
-            {
-                PC = (Convert.ToDecimal(0.015) * PCN) * (((PCn + PCp) * PCW + (PCm + PCp) * PCR) / (PCn + PCm + PCp));
-
-
-                PC = Decimal.Round(PC, 2);
-                txtPrestacionCompensatoria.Text = "$ " + PC.ToString();
-            }
-            else
-            {
-                MessageBox.Show("Meses RD = 0. \tMeses AU = 0. \tMeses simultáneos =0. \n\nAlguno de estos campos debe ser distinto de 0. \nSe requiere corregir este error antes de volver a realizar el cálculo.", "PC - Error de cálculo: División por 0 (cero)", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            RealizarCalculo();
+            
            
-            }
+        }
+
+        private void RealizarCalculo()
+        {
+            //OBTENGO DATOS PARA EL CALCULO PC
+            oDatosCalculo.PCn = Convert.ToDecimal(QuitarSignoPeso(n1.Text));
+            oDatosCalculo.PCN = Convert.ToDecimal(QuitarSignoPeso(N0.Text));
+            oDatosCalculo.PCp = Convert.ToDecimal(QuitarSignoPeso(p.Text));
+            oDatosCalculo.PCW = Convert.ToDecimal(QuitarSignoPeso(W.Text));
+            oDatosCalculo.PCm = Convert.ToDecimal(QuitarSignoPeso(m.Text));
+            oDatosCalculo.PCR = Convert.ToDecimal(QuitarSignoPeso(R.Text));
+
+            //OBTENGO DATOS PARA CALCULO DE PAP
+            oDatosCalculo.PAPn = Convert.ToDecimal(QuitarSignoPeso(nn1.Text));
+            oDatosCalculo.PAPN = Convert.ToDecimal(QuitarSignoPeso(NN.Text));
+            oDatosCalculo.PAPp = Convert.ToDecimal(QuitarSignoPeso(pp.Text));
+            oDatosCalculo.PAPW = Convert.ToDecimal(QuitarSignoPeso(WW.Text));
+            oDatosCalculo.PAPm = Convert.ToDecimal(QuitarSignoPeso(mm.Text));
+            oDatosCalculo.PAPR = Convert.ToDecimal(QuitarSignoPeso(RR.Text));
+
+            oDatosCalculo.PBU = Convert.ToDecimal(QuitarSignoPeso(txtPBU.Text));
+
+            //Realizo el Calculo (previamente establecido en Haber 24.241)
+            oCalculo.Calcular(oDatosCalculo);
+
+            txtPrestacionCompensatoria.Text = oDatosCalculo.txtPrestacionCompensatoria.ToString();
+            txtPap.Text = oDatosCalculo.txtPap.ToString();
         }
 
         //Calcular Prestación Adicional por Permanencia
@@ -317,9 +415,9 @@ namespace WASSTD
         //CALCULAR HABER TOTAL 
         private void btnCalcularHaberT_Click(object sender, EventArgs e)
         {
-         
-           
-            HT = PC + PBU + SuplMov + PAP;
+
+
+            HT = oDatosCalculo.PC + oDatosCalculo.PBU + SuplMov + oDatosCalculo.PAP;
             HT = Decimal.Round(HT, 2);
 
             txtHaberTotal.Text = HT.ToString();
@@ -549,6 +647,11 @@ namespace WASSTD
 
 
         #endregion
+
+        private void btnRealizarCalculo_Click(object sender, EventArgs e)
+        {
+            RealizarCalculo();
+        }
 
 
 
