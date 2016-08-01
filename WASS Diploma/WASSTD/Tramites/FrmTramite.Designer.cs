@@ -64,6 +64,7 @@
             this.btn_VerCalculosAnteriores = new System.Windows.Forms.Button();
             this.btn_NotificarCliente = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lbl_DE_BAJA = new System.Windows.Forms.Label();
             this.txt_Ultimo_Movimiento = new System.Windows.Forms.MaskedTextBox();
             this.txt_fecha_Alta = new System.Windows.Forms.MaskedTextBox();
             this.cmb_tipos_tramites = new System.Windows.Forms.ComboBox();
@@ -74,7 +75,6 @@
             this.lbl_Activo = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.lbl_Finalizado = new System.Windows.Forms.Label();
-            this.lbl_DE_BAJA = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.grp_sexo.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -456,6 +456,7 @@
             this.btn_RealizarCalculo.Text = "Realizar cálculo";
             this.btn_RealizarCalculo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_RealizarCalculo.UseVisualStyleBackColor = true;
+            this.btn_RealizarCalculo.Click += new System.EventHandler(this.btn_RealizarCalculo_Click);
             // 
             // btn_RecordatorioVanina
             // 
@@ -512,6 +513,19 @@
             this.groupBox4.TabIndex = 66;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Información del trámite";
+            // 
+            // lbl_DE_BAJA
+            // 
+            this.lbl_DE_BAJA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DE_BAJA.ForeColor = System.Drawing.Color.Crimson;
+            this.lbl_DE_BAJA.Image = global::WASSTD.Properties.Resources.on_off_icon_16;
+            this.lbl_DE_BAJA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_DE_BAJA.Location = new System.Drawing.Point(272, 16);
+            this.lbl_DE_BAJA.Name = "lbl_DE_BAJA";
+            this.lbl_DE_BAJA.Size = new System.Drawing.Size(117, 35);
+            this.lbl_DE_BAJA.TabIndex = 66;
+            this.lbl_DE_BAJA.Text = "DE BAJA";
+            this.lbl_DE_BAJA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txt_Ultimo_Movimiento
             // 
@@ -619,19 +633,6 @@
             this.lbl_Finalizado.TabIndex = 61;
             this.lbl_Finalizado.Text = "FINALIZADO";
             this.lbl_Finalizado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbl_DE_BAJA
-            // 
-            this.lbl_DE_BAJA.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_DE_BAJA.ForeColor = System.Drawing.Color.Crimson;
-            this.lbl_DE_BAJA.Image = global::WASSTD.Properties.Resources.on_off_icon_16;
-            this.lbl_DE_BAJA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbl_DE_BAJA.Location = new System.Drawing.Point(272, 16);
-            this.lbl_DE_BAJA.Name = "lbl_DE_BAJA";
-            this.lbl_DE_BAJA.Size = new System.Drawing.Size(117, 35);
-            this.lbl_DE_BAJA.TabIndex = 66;
-            this.lbl_DE_BAJA.Text = "DE BAJA";
-            this.lbl_DE_BAJA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FrmTramite
             // 

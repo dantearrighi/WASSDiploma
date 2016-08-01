@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculo\Calculo.cs" />
+    <Compile Include="Calculo\DatosCalculo.cs" />
+    <Compile Include="Calculo\Ley24241.cs" />
     <Compile Include="Persona\Age.cs" />
     <Compile Include="Persona\cCU_GestionarPersonas.cs" />
     <Compile Include="Persona\cTipo_Persona.cs" />

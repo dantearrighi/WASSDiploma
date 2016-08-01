@@ -453,6 +453,13 @@ namespace WASSTD
             }
         }
 
+                private void btn_RealizarCalculo_Click(object sender, EventArgs e)
+                {
+                    frmCalculos formCalculo = new frmCalculos();
+                    formCalculo.ShowDialog();
+                   
+                }
+
 
         
     }

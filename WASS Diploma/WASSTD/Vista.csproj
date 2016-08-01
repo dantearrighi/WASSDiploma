@@ -144,6 +144,18 @@
     <Compile Include="Auditorias\FrmAuditoriaCuotas.Designer.cs">
       <DependentUpon>FrmAuditoriaCuotas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calculos\frmCalculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculos\frmCalculos.designer.cs">
+      <DependentUpon>frmCalculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calculos\frmHaber24241.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculos\frmHaber24241.designer.cs">
+      <DependentUpon>frmHaber24241.cs</DependentUpon>
+    </Compile>
     <Compile Include="Estadisticas\FrmReportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +198,12 @@
     </Compile>
     <EmbeddedResource Include="Ayuda\FrmManual.resx">
       <DependentUpon>FrmManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculos\frmCalculos.resx">
+      <DependentUpon>frmCalculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculos\frmHaber24241.resx">
+      <DependentUpon>frmHaber24241.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Estadisticas\FrmReportes.resx">
       <DependentUpon>FrmReportes.cs</DependentUpon>
@@ -633,6 +651,7 @@
   <ItemGroup>
     <Content Include="Resources\accept_business_user.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
