@@ -156,6 +156,12 @@
     <Compile Include="Calculos\frmHaber24241.designer.cs">
       <DependentUpon>frmHaber24241.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calculos\frmHaberVetMalvinas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calculos\frmHaberVetMalvinas.designer.cs">
+      <DependentUpon>frmHaberVetMalvinas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Estadisticas\FrmReportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calculos\frmHaber24241.resx">
       <DependentUpon>frmHaber24241.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calculos\frmHaberVetMalvinas.resx">
+      <DependentUpon>frmHaberVetMalvinas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Estadisticas\FrmReportes.resx">
       <DependentUpon>FrmReportes.cs</DependentUpon>

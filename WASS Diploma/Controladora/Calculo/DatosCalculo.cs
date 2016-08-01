@@ -33,5 +33,7 @@ namespace Controladora.Calculo
 
         public string txtPrestacionCompensatoria { get; set; }
         public string txtPap { get; set; }
+
+        public string txtHaberVeterano { get; set; }
     }
 }

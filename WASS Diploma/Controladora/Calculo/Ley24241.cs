@@ -5,12 +5,15 @@ using System.Text;
 
 namespace Controladora.Calculo
 {
-    class Ley24241 : Calculo
+   public class Ley24241 : CalculoStrategy
     {
 
-        public override void RealizarCalculo(DatosCalculo pDatos)
+        public override DatosCalculo RealizarCalculo(DatosCalculo pDatos)
         {
-            
+
+           pDatos.txtPrestacionCompensatoria= CalcularPC(pDatos);
+           pDatos.txtPap = CalcularPAP(pDatos);
+           return pDatos;
             
         }
 
@@ -56,6 +59,8 @@ namespace Controladora.Calculo
             }
 
         }
+
+
 
     }
 }

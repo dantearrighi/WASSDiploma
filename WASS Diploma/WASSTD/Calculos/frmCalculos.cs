@@ -26,5 +26,11 @@ namespace WASSTD
         {
             this.Close();
         }
+
+        private void btnVetMalvina_Click(object sender, EventArgs e)
+        {
+            frmVetMalvinas formCalculo = new frmVetMalvinas();
+            formCalculo.ShowDialog();
+        }
     }
 }
