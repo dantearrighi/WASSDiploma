@@ -31,8 +31,8 @@
             this.btn_cerrar = new System.Windows.Forms.Button();
             this.btn_CrearReporte = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbl_Descripcion = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -48,7 +48,7 @@
             // 
             this.btn_cerrar.Image = global::WASSTD.Properties.Resources.cancel_icon_16;
             this.btn_cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_cerrar.Location = new System.Drawing.Point(280, 191);
+            this.btn_cerrar.Location = new System.Drawing.Point(280, 223);
             this.btn_cerrar.Name = "btn_cerrar";
             this.btn_cerrar.Size = new System.Drawing.Size(75, 40);
             this.btn_cerrar.TabIndex = 5;
@@ -60,7 +60,7 @@
             // 
             this.btn_CrearReporte.Image = global::WASSTD.Properties.Resources.font_italic_icon_16;
             this.btn_CrearReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_CrearReporte.Location = new System.Drawing.Point(172, 191);
+            this.btn_CrearReporte.Location = new System.Drawing.Point(172, 223);
             this.btn_CrearReporte.Name = "btn_CrearReporte";
             this.btn_CrearReporte.Size = new System.Drawing.Size(102, 40);
             this.btn_CrearReporte.TabIndex = 6;
@@ -71,20 +71,29 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbl_Descripcion);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.btn_CrearReporte);
             this.groupBox1.Controls.Add(this.btn_cerrar);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(370, 238);
+            this.groupBox1.Size = new System.Drawing.Size(370, 275);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccione una opción";
             // 
+            // lbl_Descripcion
+            // 
+            this.lbl_Descripcion.AutoSize = true;
+            this.lbl_Descripcion.Location = new System.Drawing.Point(6, 205);
+            this.lbl_Descripcion.Name = "lbl_Descripcion";
+            this.lbl_Descripcion.Size = new System.Drawing.Size(355, 13);
+            this.lbl_Descripcion.TabIndex = 7;
+            this.lbl_Descripcion.Text = "Muestra un informe de trámites agrupados por estado y por tipo de trámite.";
+            // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.radioButton7);
             this.groupBox3.Controls.Add(this.radioButton4);
             this.groupBox3.Controls.Add(this.radioButton5);
             this.groupBox3.Location = new System.Drawing.Point(192, 42);
@@ -94,20 +103,9 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Personas";
             // 
-            // radioButton7
-            // 
-            this.radioButton7.Location = new System.Drawing.Point(6, 93);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(137, 24);
-            this.radioButton7.TabIndex = 3;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "Datos incompletos";
-            this.radioButton7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton7.UseVisualStyleBackColor = true;
-            // 
             // radioButton4
             // 
-            this.radioButton4.Location = new System.Drawing.Point(6, 33);
+            this.radioButton4.Location = new System.Drawing.Point(6, 46);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(137, 24);
             this.radioButton4.TabIndex = 1;
@@ -118,7 +116,7 @@
             // 
             // radioButton5
             // 
-            this.radioButton5.Location = new System.Drawing.Point(6, 63);
+            this.radioButton5.Location = new System.Drawing.Point(6, 76);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(137, 24);
             this.radioButton5.TabIndex = 2;
@@ -149,6 +147,7 @@
             this.rb_TxEstado.Text = "Trámites por Tipo y Estado";
             this.rb_TxEstado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rb_TxEstado.UseVisualStyleBackColor = true;
+            this.rb_TxEstado.CheckedChanged += new System.EventHandler(this.rb_TxEstado_CheckedChanged);
             // 
             // rbTVencidos
             // 
@@ -157,9 +156,10 @@
             this.rbTVencidos.Size = new System.Drawing.Size(137, 24);
             this.rbTVencidos.TabIndex = 2;
             this.rbTVencidos.TabStop = true;
-            this.rbTVencidos.Text = "Trámites vencidos";
+            this.rbTVencidos.Text = "Trámites por vencer";
             this.rbTVencidos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rbTVencidos.UseVisualStyleBackColor = true;
+            this.rbTVencidos.CheckedChanged += new System.EventHandler(this.rbTVencidos_CheckedChanged);
             // 
             // rbTxPersona
             // 
@@ -171,17 +171,19 @@
             this.rbTxPersona.Text = "Trámites por Persona";
             this.rbTxPersona.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rbTxPersona.UseVisualStyleBackColor = true;
+            this.rbTxPersona.CheckedChanged += new System.EventHandler(this.rbTxPersona_CheckedChanged);
             // 
             // FrmReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(395, 263);
+            this.ClientSize = new System.Drawing.Size(395, 293);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmReportes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Informes disponibles";
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -194,12 +196,12 @@
         private System.Windows.Forms.Button btn_CrearReporte;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton radioButton7;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton rb_TxEstado;
         private System.Windows.Forms.RadioButton rbTVencidos;
         private System.Windows.Forms.RadioButton rbTxPersona;
+        private System.Windows.Forms.Label lbl_Descripcion;
     }
 }

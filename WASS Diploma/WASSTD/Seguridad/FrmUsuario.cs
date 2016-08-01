@@ -86,6 +86,7 @@ namespace WASSTD
 
             checkearA = true;
             lb_checkusuario.Visible = false;
+            tab_contraseña.Hide();
         }
 
         // Al hacer click en cancelar

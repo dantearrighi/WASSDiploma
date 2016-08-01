@@ -33,6 +33,7 @@ namespace WASSTD.Reportes
         {
             InitializeComponent();
             miUsuario = oUsuario;
+            this.ActualizarInfo();
         }
 
         private void btn_CrearReporte_Click(object sender, EventArgs e)
@@ -47,6 +48,38 @@ namespace WASSTD.Reportes
                 Frm_Tramites_x_Persona formReporte = new Frm_Tramites_x_Persona();
                 formReporte.ShowDialog();
             }
+        }
+
+        private void rb_TxEstado_CheckedChanged(object sender, EventArgs e)
+        {
+            ActualizarInfo();
+        }
+
+        private void ActualizarInfo()
+        {
+            if (this.rb_TxEstado.Checked)
+            {
+                this.lbl_Descripcion.Text = "Muestra un informe de trámites agrupados por estado y por tipo de trámite.";
+            }
+            if (this.rbTxPersona.Checked)
+            {
+                this.lbl_Descripcion.Text = "Muestra un informe de trámites agrupados por Persona.";
+            }
+
+            if (this.rbTVencidos.Checked)
+            {
+                this.lbl_Descripcion.Text = "Muestra un informe de trámites sin movimientos desde hace 3 meses.";
+            }
+        }
+
+        private void rbTVencidos_CheckedChanged(object sender, EventArgs e)
+        {
+            ActualizarInfo();
+        }
+
+        private void rbTxPersona_CheckedChanged(object sender, EventArgs e)
+        {
+            ActualizarInfo();
         }
     }
 }
