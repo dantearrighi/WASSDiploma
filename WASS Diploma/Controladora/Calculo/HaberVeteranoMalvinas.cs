@@ -11,7 +11,7 @@ namespace Controladora.Calculo
         {
 
             pDatos.txtPrestacionCompensatoria = CalcularHaberVeterano(pDatos);
-                        return pDatos;
+            return pDatos;
 
         }
 
@@ -24,9 +24,10 @@ namespace Controladora.Calculo
             {
                 pDatos.PC = (Convert.ToDecimal(0.015) * pDatos.PCN) * (((pDatos.PCn + pDatos.PCp) * pDatos.PCW + (pDatos.PCm + pDatos.PCp) * pDatos.PCR) / (pDatos.PCn + pDatos.PCm + pDatos.PCp));
 
+                pDatos.PC = pDatos.PC + 2500;
 
                 pDatos.PC = Decimal.Round(pDatos.PC, 2);
-                pDatos.txtPrestacionCompensatoria = "$ " + pDatos.PC.ToString();
+                pDatos.txtHaberVeterano = "$ " + pDatos.PC.ToString();
                 return pDatos.txtHaberVeterano ;
             }
             else

@@ -34,8 +34,8 @@
             this.n1 = new System.Windows.Forms.TextBox();
             this.N0 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtPrestacionCompensatoria = new System.Windows.Forms.TextBox();
-            this.btnPrestacionCompensatoria = new System.Windows.Forms.Button();
+            this.txtPrestVet = new System.Windows.Forms.TextBox();
+            this.btnPrestVet = new System.Windows.Forms.Button();
             this.R = new System.Windows.Forms.TextBox();
             this.W = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -134,38 +134,38 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtPrestacionCompensatoria);
-            this.groupBox2.Controls.Add(this.btnPrestacionCompensatoria);
+            this.groupBox2.Controls.Add(this.txtPrestVet);
+            this.groupBox2.Controls.Add(this.btnPrestVet);
             this.groupBox2.Location = new System.Drawing.Point(6, 185);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(334, 58);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             // 
-            // txtPrestacionCompensatoria
+            // txtPrestVet
             // 
-            this.txtPrestacionCompensatoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtPrestacionCompensatoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrestacionCompensatoria.ForeColor = System.Drawing.Color.Black;
-            this.txtPrestacionCompensatoria.Location = new System.Drawing.Point(159, 17);
-            this.txtPrestacionCompensatoria.Name = "txtPrestacionCompensatoria";
-            this.txtPrestacionCompensatoria.ReadOnly = true;
-            this.txtPrestacionCompensatoria.Size = new System.Drawing.Size(166, 31);
-            this.txtPrestacionCompensatoria.TabIndex = 1;
-            this.txtPrestacionCompensatoria.Text = "$ 0";
-            this.txtPrestacionCompensatoria.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPrestVet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtPrestVet.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrestVet.ForeColor = System.Drawing.Color.Black;
+            this.txtPrestVet.Location = new System.Drawing.Point(159, 17);
+            this.txtPrestVet.Name = "txtPrestVet";
+            this.txtPrestVet.ReadOnly = true;
+            this.txtPrestVet.Size = new System.Drawing.Size(166, 31);
+            this.txtPrestVet.TabIndex = 1;
+            this.txtPrestVet.Text = "$ 0";
+            this.txtPrestVet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btnPrestacionCompensatoria
+            // btnPrestVet
             // 
-            this.btnPrestacionCompensatoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrestacionCompensatoria.Location = new System.Drawing.Point(19, 16);
-            this.btnPrestacionCompensatoria.Name = "btnPrestacionCompensatoria";
-            this.btnPrestacionCompensatoria.Size = new System.Drawing.Size(134, 32);
-            this.btnPrestacionCompensatoria.TabIndex = 0;
-            this.btnPrestacionCompensatoria.Text = "Prestación Vet";
-            this.btnPrestacionCompensatoria.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnPrestacionCompensatoria.UseVisualStyleBackColor = true;
-            this.btnPrestacionCompensatoria.Click += new System.EventHandler(this.btnPrestacionCompensatoria_Click);
+            this.btnPrestVet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrestVet.Location = new System.Drawing.Point(19, 16);
+            this.btnPrestVet.Name = "btnPrestVet";
+            this.btnPrestVet.Size = new System.Drawing.Size(134, 32);
+            this.btnPrestVet.TabIndex = 0;
+            this.btnPrestVet.Text = "Prestación Vet";
+            this.btnPrestVet.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnPrestVet.UseVisualStyleBackColor = true;
+            this.btnPrestVet.Click += new System.EventHandler(this.btnPrestacionCompensatoria_Click);
             // 
             // R
             // 
@@ -383,7 +383,7 @@
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(125, 13);
             this.label30.TabIndex = 16;
-            this.label30.Text = "Haber TOTAL: $3606,28";
+            this.label30.Text = "Haber TOTAL: $4629,12";
             // 
             // label29
             // 
@@ -492,8 +492,8 @@
         private System.Windows.Forms.TextBox R;
         private System.Windows.Forms.TextBox W;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtPrestacionCompensatoria;
-        private System.Windows.Forms.Button btnPrestacionCompensatoria;
+        private System.Windows.Forms.TextBox txtPrestVet;
+        private System.Windows.Forms.Button btnPrestVet;
         private System.Windows.Forms.TextBox N0;
         private System.Windows.Forms.TextBox n1;
         private System.Windows.Forms.TextBox m;

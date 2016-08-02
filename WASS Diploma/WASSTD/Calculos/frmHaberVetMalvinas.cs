@@ -11,9 +11,13 @@ namespace WASSTD
 {
     public partial class frmVetMalvinas : Form
     {
+        Controladora.Calculo.DatosCalculo oDatosCalculo = new Controladora.Calculo.DatosCalculo();
+        Controladora.Calculo.Calculo oCalculo = new Controladora.Calculo.Calculo();
+
         public frmVetMalvinas()
         {
             InitializeComponent();
+            oCalculo.SetCalculoStrategy(new Controladora.Calculo.HaberVeteranoMalvinas());
         }
 
 
@@ -148,26 +152,22 @@ namespace WASSTD
         //Calcular Prestación Compensatoria
         private void CalcularPC()
         {
-            PCn = Convert.ToDecimal(QuitarSignoPeso(n1.Text));
-            PCN = Convert.ToDecimal(QuitarSignoPeso(N0.Text));
-            PCp = Convert.ToDecimal(QuitarSignoPeso(p.Text));
-            PCW = Convert.ToDecimal(QuitarSignoPeso(W.Text));
-            PCm = Convert.ToDecimal(QuitarSignoPeso(m.Text));
-            PCR = Convert.ToDecimal(QuitarSignoPeso(R.Text));
+            //OBTENGO DATOS PARA EL CALCULO PC
+            oDatosCalculo.PCn = Convert.ToDecimal(QuitarSignoPeso(n1.Text));
+            oDatosCalculo.PCN = Convert.ToDecimal(QuitarSignoPeso(N0.Text));
+            oDatosCalculo.PCp = Convert.ToDecimal(QuitarSignoPeso(p.Text));
+            oDatosCalculo.PCW = Convert.ToDecimal(QuitarSignoPeso(W.Text));
+            oDatosCalculo.PCm = Convert.ToDecimal(QuitarSignoPeso(m.Text));
+            oDatosCalculo.PCR = Convert.ToDecimal(QuitarSignoPeso(R.Text));
 
-            if (PCm != 0 || PCn != 0 || PCp != 0)
-            {
-                PC = (Convert.ToDecimal(0.015) * PCN) * (((PCn + PCp) * PCW + (PCm + PCp) * PCR) / (PCn + PCm + PCp));
+            oDatosCalculo.PBU = Convert.ToDecimal(QuitarSignoPeso(txtPBU.Text));
+
+            //Realizo el Calculo (previamente establecido en Haber Veterano Malvinas)
+            oCalculo.Calcular(oDatosCalculo);
+            txtPrestVet.Text = oDatosCalculo.txtPrestacionCompensatoria.ToString();
 
 
-                PC = Decimal.Round(PC, 2);
-                txtPrestacionCompensatoria.Text = "$ " + PC.ToString();
-            }
-            else
-            {
-                MessageBox.Show("Meses RD = 0. \tMeses AU = 0. \tMeses simultáneos =0. \n\nAlguno de estos campos debe ser distinto de 0. \nSe requiere corregir este error antes de volver a realizar el cálculo.", "PC - Error de cálculo: División por 0 (cero)", MessageBoxButtons.OK, MessageBoxIcon.Error);
-           
-            }
+            
         }
 
        
@@ -254,9 +254,9 @@ namespace WASSTD
         //CALCULAR HABER TOTAL 
         private void btnCalcularHaberT_Click(object sender, EventArgs e)
         {
-         
-           
-            HT = PC + 2500;
+
+
+            HT = oDatosCalculo.PC + oDatosCalculo.PBU + SuplMov;
             HT = Decimal.Round(HT, 2);
 
             txtHaberTotal.Text = HT.ToString();
